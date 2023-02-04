@@ -22,7 +22,7 @@ export default function Home() {
             >
               <Heading
                 size="3xl"
-                w={["25rem", "30rem", "30rem", "30rem"]}
+                w={["20rem", "30rem", "30rem", "30rem"]}
                 lineHeight={["3.9rem", "4.5rem", "4.5rem", "4.5rem"]}
                 mb="0.8rem"
                 mt={["4rem", "5rem", "2rem", "7rem"]}
@@ -35,9 +35,9 @@ export default function Home() {
                 // mt="3rem"
                 fontWeight={500}
                 color="grey"
-                fontSize="1.2rem"
+                fontSize={["0.9rem", "1.1rem", "1.1rem", "1.1rem"]}
                 mb="2.4rem"
-                w={["20rem", "30rem", "30rem", "30rem"]}
+                w={["18rem", "30rem", "30rem", "30rem"]}
                 justifyContent="center"
                 // alignItems="center"
                 textAlign="center"
@@ -62,7 +62,7 @@ export default function Home() {
 
             <Box
               ml={["0.2rem", "4rem", "4rem", "4rem"]}
-              w={["30rem", "40rem", "40rem", "40rem"]}
+              w={["27rem", "40rem", "40rem", "40rem"]}
               mt={["1rem", "", "3rem", ""]}
             >
               <Image

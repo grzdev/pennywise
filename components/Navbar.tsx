@@ -151,8 +151,9 @@ const Navbar = () => {
         <Flex
           justifyContent="center"
           alignItems="center"
-          ml={["0.1rem", "2.6rem", "1rem", "2.6rem"]}
+          ml={["0.1rem", "1rem", "1rem", "2.6rem"]}
           flexDir="initial"
+          mt="0.4rem"
         >
           <BsPiggyBank 
             fontSize="3rem"
