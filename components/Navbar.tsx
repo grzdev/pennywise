@@ -238,7 +238,7 @@ const DesktopNav = () => {
     <Stack
      direction={'row'}
      spacing={12}
-     ml={["0.1rem","4rem", "5rem", "17rem"]}
+     ml={["0.1rem","4rem", "5rem", "21rem"]}
      mt="0.8rem"
     >
       {NAV_ITEMS.map((navItem) => (
