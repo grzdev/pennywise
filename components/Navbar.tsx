@@ -203,7 +203,7 @@ const Navbar = () => {
           bg={'black'}
           // href={'#'}
           _hover={{
-            bg: 'grey',
+            bg: '#308DFF',
           }}
           borderRadius="0.6rem"
           >

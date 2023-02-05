@@ -11,7 +11,7 @@ import {
 import { Inter } from '@next/font/google'
 import Image from 'next/image'
 import SavingImage from '../../images/image6.png'
-import Divider from '../../images/divider.svg'
+import GrapgImage from '../../images/image8.png'
 import React from 'react'
 import { VscGraph } from 'react-icons/vsc'
 import Link from 'next/link'
@@ -78,6 +78,9 @@ export default function Home() {
                   color="white"
                   mt={["2rem", "1.3rem", "1.3rem", "-1.3rem"]}
                   borderRadius="0.6rem"
+                  _hover={{
+                    bg: '#308DFF',
+                  }}
                 >
                   Create free account
                 </Button>
@@ -101,18 +104,18 @@ export default function Home() {
           <Flex
             justifyContent={["center","center","center","center"]}
             alignItems={["center","center","center","center"]}
-            mt={["9rem", "9rem", "9rem","8rem"]}
+            mt={["9rem", "9rem", "6rem","6rem"]}
             ml={["","","","20rem"]}
             mb={["","","","8rem"]}
             flexDir={["column", "column", "column", "row"]}
           >
             <Flex
               mr={["","","","2.7rem"]}
-              mt={["","","","2rem"]}
+              mt={["","","","-7rem"]}
             >
               <VscGraph
-                fontSize="6rem"
-                color='#1F60BD'
+                fontSize="8rem"
+                color='#2385af'
               />
             </Flex>
             <VStack
@@ -120,12 +123,13 @@ export default function Home() {
             >
               <Heading
                 size="xl"
-                w={["20rem", "30rem", "30rem", "30rem"]}
-                mt={["2.8rem","","",""]}
-                lineHeight={["2rem", "4.5rem", "2rem", "4.5rem"]}
-                mb={["0.2rem", "-0.4rem", "-0.4rem", "-0.4rem"]}
+                w={["20rem", "30rem", "30rem", "45rem"]}
+                noOfLines={[3,3,3,1]}
+                mt={["1.8rem","","",""]}
+                lineHeight={["2rem", "4.5rem", "2rem", "2.3rem"]}
+                mb={["0.2rem", "-0.4rem", "-0.4rem", "1.1rem"]}
                 // mt={["4rem", "5rem", "2rem", "11rem"]}
-                ml={["", "", "", "-19.4rem"]}
+                ml={["", "", "", "-15rem"]}
                 textAlign={["center", "initial"]}
                 fontFamily="'poppins', sans-serif"
               >
@@ -152,7 +156,7 @@ export default function Home() {
               <Link href={""}>
                 <Text
                   ml={["","","","-30rem"]}
-                  color="blue"
+                  color="#2385af"
                   fontWeight={500}
                   fontSize="1.1rem"
                   mt={["1.5rem", "-0.4rem", "-0.4rem", "1rem"]}
@@ -164,23 +168,35 @@ export default function Home() {
             </VStack>
           </Flex>
          
-          {/* Feature 2
+          {/* Feature 2 */}
           <Flex
-            flexDir={["column", "column", "column", "row-reverse"]}
+            flexDir={["column", "column", "column", "row"]}
           >
+            <Box
+              ml={["0.2rem", "4rem", "4rem", "-5rem"]}
+              w={["27rem", "40rem", "40rem", "51rem"]}
+              mt={["-0.8rem", "", "3rem", "-12rem"]}
+            >
+              <Image
+                src={GrapgImage}
+                alt=""
+                
+              />
+            </Box>
+
             <VStack
             >
               <Heading
-                size="3xl"
+                size="2xl"
                 w={["20rem", "30rem", "30rem", "30rem"]}
-                lineHeight={["3.9rem", "4.5rem", "4.5rem", "4.5rem"]}
+                lineHeight={["3rem", "4.5rem", "4.5rem", "4rem"]}
                 mb="0.6rem"
-                mt={["4rem", "5rem", "2rem", "11rem"]}
+                mt={["4rem", "5rem", "2rem", "-4rem"]}
                 ml={["", "", "", "6rem"]}
                 textAlign={["center", "initial"]}
                 fontFamily="'Roboto', sans-serif"
               >
-                Document Your Daily Spendings.
+                Visualize Your Daily And Weekly Expenses.
               </Heading>
 
               <Flex
@@ -197,7 +213,7 @@ export default function Home() {
                   fontFamily="'DM Sans',sans-serif "
                   
                 >
-                  TrackDaily helps users budget their income by tracking the amount they spend on a daily basis.
+                  We will put your spending data into a graph so you can take note of any spike or decrease in expenses.
                 </Text>
               </Flex>
               
@@ -212,24 +228,16 @@ export default function Home() {
                   color="white"
                   mt={["2rem", "1.3rem", "1.3rem", "-1.3rem"]}
                   borderRadius="0.6rem"
+                  _hover={{
+                    bg: '#308DFF',
+                  }}
                 >
                   Create free account
                 </Button>
               </Flex>
             </VStack>
 
-            <Box
-              ml={["0.2rem", "4rem", "4rem", "4.8rem"]}
-              w={["27rem", "40rem", "40rem", "51rem"]}
-              mt={["2rem", "", "3rem", ""]}
-            >
-              <Image
-                src={SavingImage}
-                alt=""
-                
-              />
-            </Box>
-          </Flex> */}
+          </Flex>
         </Container>
       </main>   
     </>
