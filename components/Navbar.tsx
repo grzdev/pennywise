@@ -182,7 +182,7 @@ const Navbar = () => {
         justify={'flex-end'}
         direction={'row'}
         spacing={6}
-        mr={["", "", "", "8.5rem"]}
+        mr={["", "", "1rem", "8.5rem"]}
         >
         <Button
           as={'a'}

@@ -39,12 +39,12 @@ export default function Home() {
                 w={["20rem", "30rem", "30rem", "30rem"]}
                 lineHeight={["3.9rem", "4.5rem", "4.5rem", "4.5rem"]}
                 mb="0.6rem"
-                mt={["4rem", "5rem", "2rem", "11rem"]}
+                mt={["5rem", "5rem", "2rem", "11rem"]}
                 ml={["", "", "", "6rem"]}
                 textAlign={["center", "initial"]}
                 fontFamily="'Roboto', sans-serif"
               >
-                Keep Tabs Your Daily Spendings.
+                Keep Tabs On Your Daily Spendings.
               </Heading>
 
               <Flex
@@ -69,13 +69,11 @@ export default function Home() {
               
 
               <Flex
-                // display="block"
               >
                 <Button
                   size="lg"
                   h="3.5rem"
                   variant='solid'
-                  // colorScheme="#000000"
                   bg='black'
                   color="white"
                   mt={["2rem", "1.3rem", "1.3rem", "-1.3rem"]}
@@ -87,7 +85,7 @@ export default function Home() {
             </VStack>
 
             <Box
-              ml={["0.2rem", "4rem", "4rem", "4.8rem"]}
+              ml={["0.2rem", "4rem", "3rem", "4.8rem"]}
               w={["27rem", "40rem", "40rem", "51rem"]}
               mt={["2rem", "", "3rem", ""]}
             >
@@ -100,19 +98,13 @@ export default function Home() {
           </Flex>
 
           {/* Divider */}
-          {/* <Flex>
-            <Image
-              src={Divider}
-              alt=""
-            />
-          </Flex> */}
-
           <Flex
-            justifyContent={["","","","center"]}
-            alignItems={["","","","center"]}
-            mt={["", "", "","8rem"]}
+            justifyContent={["center","center","center","center"]}
+            alignItems={["center","center","center","center"]}
+            mt={["9rem", "9rem", "9rem","8rem"]}
             ml={["","","","20rem"]}
             mb={["","","","8rem"]}
+            flexDir={["column", "column", "column", "row"]}
           >
             <Flex
               mr={["","","","2.7rem"]}
@@ -128,12 +120,13 @@ export default function Home() {
             >
               <Heading
                 size="xl"
-                // w={["20rem", "30rem", "30rem", "30rem"]}
-                lineHeight={["3.9rem", "4.5rem", "4.5rem", "4.5rem"]}
-                mb={["-0.4rem", "-0.4rem", "-0.4rem", "-0.4rem"]}
+                w={["20rem", "30rem", "30rem", "30rem"]}
+                mt={["2.8rem","","",""]}
+                lineHeight={["2rem", "4.5rem", "2rem", "4.5rem"]}
+                mb={["0.2rem", "-0.4rem", "-0.4rem", "-0.4rem"]}
                 // mt={["4rem", "5rem", "2rem", "11rem"]}
                 ml={["", "", "", "-19.4rem"]}
-                // textAlign={["center", "initial"]}
+                textAlign={["center", "initial"]}
                 fontFamily="'poppins', sans-serif"
               >
                 We will help you economize efficiently
@@ -144,7 +137,7 @@ export default function Home() {
                 fontSize={["1.1rem", "1.1rem", "1.1rem", "1.2rem"]}
                 mb={["0.4rem", "0.4rem", "0.4rem", "3rem"]}
                 w={["18rem", "30rem", "30rem", "60rem"]}
-                noOfLines={2}
+                noOfLines={[6,6,6,2]}
                 justifyContent="center"
                 alignItems="center"
                 textAlign={["center", "initial"]}
@@ -162,7 +155,8 @@ export default function Home() {
                   color="blue"
                   fontWeight={500}
                   fontSize="1.1rem"
-                  mt={["-0.4rem", "-0.4rem", "-0.4rem", "1rem"]}
+                  mt={["1.5rem", "-0.4rem", "-0.4rem", "1rem"]}
+                  mb={["10rem","","",""]}
                 >
                   Learn more <ChevronRightIcon/>
                 </Text>
