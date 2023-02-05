@@ -156,7 +156,7 @@ const Navbar = () => {
           mt="0.4rem"
         >
           <Flex
-            mt={["-0.2rem", "0.2rem", "0.2rem", "0.2rem"]}
+            mt={["-0.1rem", "0.2rem", "0.2rem", "-0.1rem"]}
           >
             <BsPiggyBank 
               fontSize="2rem"
@@ -165,7 +165,7 @@ const Navbar = () => {
           </Flex>
 
           <Heading
-            size="lg"
+            size="md"
             ml="0.2rem"
           >
             trackdaily
