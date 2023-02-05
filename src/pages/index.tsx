@@ -119,7 +119,6 @@ export default function Home() {
               />
             </Flex>
             <VStack
-              // w={["18rem", "30rem", "30rem", "35rem"]}
             >
               <Heading
                 size="xl"
@@ -128,7 +127,6 @@ export default function Home() {
                 mt={["1.8rem","","",""]}
                 lineHeight={["2rem", "4.5rem", "2rem", "2.3rem"]}
                 mb={["0.2rem", "-0.4rem", "-0.4rem", "1.1rem"]}
-                // mt={["4rem", "5rem", "2rem", "11rem"]}
                 ml={["", "", "", "-15rem"]}
                 textAlign={["center", "initial"]}
                 fontFamily="'poppins', sans-serif"

@@ -106,14 +106,17 @@ const Navbar = () => {
     <Flex
       bg={useColorModeValue('white', 'gray.800')}
       color={useColorModeValue('gray.600', 'white')}
-      minH={'60px'}
+      minH={'5rem'}
       py={{ base: 2 }}
       px={{ base: 4 }}
-      borderBottom={1}
+      borderBottom={1} 
       borderStyle={'solid'}
       borderColor={useColorModeValue('gray.200', 'gray.900')}
       align={'center'}
-      
+      position="fixed"
+      w="100%"
+      // backgroundColor="rgba(255, 
+      //   255, 255, 0.8)" backdropFilter="saturate(180%) blur(5px)"
       >
       <Flex
         flex={{ base: 1, md: 'auto' }}
@@ -183,6 +186,7 @@ const Navbar = () => {
         direction={'row'}
         spacing={6}
         mr={["", "", "1rem", "8.5rem"]}
+        mt={["0.6rem", "0.1rem", "0.1rem", "0.1rem"]}
         >
         <Button
           as={'a'}
@@ -190,7 +194,7 @@ const Navbar = () => {
           fontWeight={600}
           variant={'outlne'}
           href={'#'}
-          mt={["0.6rem", "0.1rem", "0.1rem", "0.1rem"]}
+          
           
           >
           Sign In
