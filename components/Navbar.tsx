@@ -151,13 +151,19 @@ const Navbar = () => {
         <Flex
           justifyContent="center"
           alignItems="center"
-          ml={["0.1rem", "1rem", "1rem", "2.6rem"]}
+          ml={["0.1rem", "1rem", "1rem", "8.4rem"]}
           flexDir="initial"
           mt="0.4rem"
         >
-          <BsPiggyBank 
-            fontSize="2.6rem"
-          />
+          <Flex
+            mt={["-0.2rem", "0.2rem", "0.2rem", "0.2rem"]}
+          >
+            <BsPiggyBank 
+              fontSize="2rem"
+              
+            />
+          </Flex>
+
           <Heading
             size="lg"
             ml="0.2rem"
@@ -175,7 +181,9 @@ const Navbar = () => {
         flex={{ base: 1, md: 0 }}
         justify={'flex-end'}
         direction={'row'}
-        spacing={6}>
+        spacing={6}
+        mr={["", "", "", "8.5rem"]}
+        >
         <Button
           as={'a'}
           fontSize={'sm'}
@@ -183,20 +191,23 @@ const Navbar = () => {
           variant={'outlne'}
           href={'#'}
           mt={["0.6rem", "0.1rem", "0.1rem", "0.1rem"]}
+          
           >
           Sign In
         </Button>
         <Button
           display={{ base: 'none', md: 'inline-flex' }}
           fontSize={'sm'}
-          fontWeight={600}
+          fontWeight={700}
           color={'white'}
-          bg={'#3182CE'}
+          bg={'black'}
           // href={'#'}
           _hover={{
-            bg: 'pink.300',
-          }}>
-          Create an account
+            bg: 'grey',
+          }}
+          borderRadius="0.6rem"
+          >
+          Create free account
         </Button>
       </Stack>
       
@@ -241,7 +252,7 @@ const DesktopNav = () => {
     <Stack
      direction={'row'}
      spacing={12}
-     ml={["0.1rem","4rem", "5rem", "21rem"]}
+     ml={["0.1rem","4rem", "5rem", "16rem"]}
      mt="0.8rem"
     >
       {NAV_ITEMS.map((navItem) => (
@@ -251,7 +262,7 @@ const DesktopNav = () => {
               <Link
                 p={2}
                 href={navItem.href ?? '#'}
-                fontSize={'md'}
+                fontSize={'lg'}
                 fontWeight={500}
                 color={linkColor}
                 _hover={{
