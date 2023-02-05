@@ -156,7 +156,7 @@ const Navbar = () => {
           mt="0.4rem"
         >
           <BsPiggyBank 
-            fontSize="3rem"
+            fontSize="2.6rem"
           />
           <Heading
             size="lg"
