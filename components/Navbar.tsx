@@ -32,76 +32,6 @@ const Navbar = () => {
   const { isOpen, onToggle } = useDisclosure();
 
   return (
-    // <Stack>
-    //   <HStack 
-    //     p={["2rem","2rem","1.4rem","2rem"]}
-    //   >
-    //     <Flex
-    //       justifyContent="center"
-    //       alignItems="center"
-    //       ml={["2.6rem", "2.6rem", "1rem", "2.6rem"]}
-    //     >
-    //       <BsPiggyBank 
-    //         fontSize="3rem"
-    //       />
-    //       <Heading
-    //         size="lg"
-    //         ml="0.2rem"
-    //       >
-    //         trackdaily
-    //       </Heading>
-    //     </Flex>
-
-    //     <Flex
-    //       gap={["6rem","6rem","3rem","6rem"]}
-    //     >
-    //       <Heading
-    //         ml={["18rem", "18rem", "5rem", "18rem"]}
-    //         size="md"
-    //         fontWeight={750}
-    //         color="grey"
-    //       >
-    //         Save
-    //       </Heading>
-
-    //       <Heading
-    //         size="md"
-    //         fontWeight={750}
-    //         color="grey"
-    //       >
-    //         Invest
-    //       </Heading>
-
-    //       <Heading
-    //         size="md"
-    //         fontWeight={750}
-    //         color="grey"
-    //       >
-    //         Stories
-    //       </Heading>
-    //     </Flex>
-
-    //     <Flex>
-    //       <Button
-    //         ml={["15rem", "15rem", "2.5rem", "15rem"]}
-    //         mr="1rem"
-    //         size="lg"
-    //         variant='outline'
-    //       >
-    //         Sign in
-    //       </Button>
-
-    //       <Button
-    //         size="lg"
-    //         variant='solid'
-    //         // colorScheme="#000000"
-    //         colorScheme="blue"
-    //       >
-    //         Create an account
-    //       </Button>
-    //     </Flex>
-    //   </HStack>
-    // </Stack>
     <Box>
     <Flex
       bg={useColorModeValue('white', 'gray.800')}
@@ -163,6 +93,7 @@ const Navbar = () => {
           >
             <BsPiggyBank 
               fontSize="2rem"
+              color='black'
               
             />
           </Flex>
@@ -170,6 +101,7 @@ const Navbar = () => {
           <Heading
             size="md"
             ml="0.2rem"
+            color='black'
           >
             trackdaily
           </Heading>

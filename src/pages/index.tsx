@@ -6,7 +6,8 @@ import {
   Text, 
   VStack, 
   Box, 
-  Button, 
+  Button,
+  Input, 
 } from '@chakra-ui/react'
 import { Inter } from '@next/font/google'
 import Image from 'next/image'
@@ -39,7 +40,7 @@ export default function Home() {
                 w={["20rem", "30rem", "30rem", "30rem"]}
                 lineHeight={["3.9rem", "4.5rem", "4.5rem", "4.5rem"]}
                 mb="0.6rem"
-                mt={["5rem", "5rem", "2rem", "11rem"]}
+                mt={["10rem", "10rem", "10rem", "15rem"]}
                 ml={["", "", "", "6rem"]}
                 textAlign={["center", "initial"]}
                 fontFamily="'Roboto', sans-serif"
@@ -90,7 +91,7 @@ export default function Home() {
             <Box
               ml={["0.2rem", "4rem", "3rem", "4.8rem"]}
               w={["27rem", "40rem", "40rem", "51rem"]}
-              mt={["2rem", "", "3rem", ""]}
+              mt={["2rem", "", "3rem", "7rem"]}
             >
               <Image
                 src={SavingImage}
@@ -194,7 +195,7 @@ export default function Home() {
                 textAlign={["center", "initial"]}
                 fontFamily="'Roboto', sans-serif"
               >
-                Visualize Your Daily And Weekly Expenses.
+                Visualize your daily and weekly expenses.
               </Heading>
 
               <Flex
@@ -216,7 +217,7 @@ export default function Home() {
               </Flex>
               
 
-              <Flex
+              {/* <Flex
               >
                 <Button
                   size="lg"
@@ -232,9 +233,74 @@ export default function Home() {
                 >
                   Create free account
                 </Button>
-              </Flex>
+              </Flex> */}
             </VStack>
 
+          </Flex>
+
+          <Flex
+            w={["20rem","30rem","40rem","90rem"]}
+            h={["20rem","20rem","20rem","15rem"]}
+            bg="#308DFF"
+            mt={["7rem","7rem","7rem","7rem"]}
+            mb={["7rem","7rem","7rem","7rem"]}
+            borderRadius="1.1rem"
+            justifyContent="center"
+            alignItems="center"
+            flexDir={["column","column","column","row"]}
+          >
+            
+            <Flex
+              mr={["","","","10rem"]}
+              // w={["","","","20rem"]}
+              flexDir={["column","column","column","column"]}
+            >
+              <Heading
+                color="white"
+                noOfLines={1}
+                w={["","","","20rem"]}
+                size={["lg","lg","xl","xl"]}
+              >
+                Sign up for free.
+              </Heading>
+              <Heading
+                color="white"
+                noOfLines={1}
+                w={["","","","25rem"]}
+                size={["lg","lg","xl","xl"]}
+                >
+                Start tracking today.
+              </Heading>
+            </Flex>
+
+            <Flex
+              flexDir={["column","column","column","row"]}
+              justifyContent="center"
+              alignItems="center"
+              mt={["2rem","","",""]}
+            >
+              <Input
+                placeholder='Your email...'
+                size={["md","lg","lg","lg"]}
+                variant='filled'
+                mr="0.4rem"
+              />
+              <Button
+                size={["md","lg","lg","lg"]}
+                h="3.5rem"
+                variant='solid'
+                bg='black'
+                color="white"
+                mt={["1rem","","","0.1rem"]}
+                // mt={["2rem", "1.3rem", "1.3rem", "-1.3rem"]}
+                borderRadius="0.6rem"
+                _hover={{
+                  bg: '#308DFF',
+                }}
+              >
+                Sign up
+              </Button>
+            </Flex>
           </Flex>
         </Container>
       </main>   
