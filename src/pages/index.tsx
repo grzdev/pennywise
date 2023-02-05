@@ -26,9 +26,10 @@ export default function Home() {
                 lineHeight={["3.9rem", "4.5rem", "4.5rem", "4.5rem"]}
                 mb="0.8rem"
                 mt={["4rem", "5rem", "2rem", "7rem"]}
-                textAlign="center"
+                textAlign={["center", "initial"]}
+                fontFamily="'Roboto', sans-serif"
               >
-                Document your daily spendings.
+                Document Your Daily Spendings.
               </Heading>
 
               <Text
@@ -40,12 +41,13 @@ export default function Home() {
                 w={["18rem", "30rem", "30rem", "30rem"]}
                 justifyContent="center"
                 // alignItems="center"
-                textAlign="center"
+                textAlign={["center", "initial"]}
+                fontFamily="'DM Sans',sans-serif "
               >
                 TrackDaily helps users budget their income by tracking the amount they spend on a daily basis.
               </Text>
 
-              <Box
+              <Flex
                 // display="block"
               >
                 <Button
@@ -57,7 +59,7 @@ export default function Home() {
                 >
                   Create an account
                 </Button>
-              </Box>
+              </Flex>
             </VStack>
 
             <Box
