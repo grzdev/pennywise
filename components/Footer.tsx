@@ -131,7 +131,7 @@ const Footer = () => {
           <Flex
             gap="1rem"
             flexDir={["column","column","column","column"]} 
-            ml={["-25rem","0.1rem","0.1rem","0.1rem"]} 
+            ml={["-24rem","0.1rem","0.1rem","0.1rem"]} 
             justifyContent={["center","","",""]}
             alignItems={["center","","",""]}
             mt={["13rem","0.1rem","0.1rem","0.1rem"]}
@@ -159,15 +159,16 @@ const Footer = () => {
 
         <Flex
           mt={["5rem","","","10rem"]}
-          ml={["6rem","","",""]}
+          ml={["9rem","","",""]}
           // justifyContent={["center","","",""]}
           // alignItems={["center","","",""]}
         >
           <Text
             fontWeight={600}
             color="blue"
+            fontSize="0.8rem"
           >
-            2023 TrackTech Global Limited
+            2023 TrackTech and co.
           </Text>
         </Flex>
     </Flex>
