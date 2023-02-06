@@ -109,6 +109,8 @@ export default function Home() {
             ml={["","","","20rem"]}
             mb={["","","","8rem"]}
             flexDir={["column", "column", "column", "row"]}
+            // bg="#eceaea"
+            // w="100vh"
           >
             <Flex
               mr={["","","","2.7rem"]}
@@ -120,6 +122,7 @@ export default function Home() {
               />
             </Flex>
             <VStack
+              
             >
               <Heading
                 size="xl"
@@ -184,13 +187,16 @@ export default function Home() {
             </Box>
 
             <VStack
+              w={["","","",""]}
+              h={["18rem","","","25rem"]}
+              borderRadius="1.2rem"
+              mt={["1rem", "5rem", "2rem", "-4rem"]}
             >
               <Heading
                 size="2xl"
                 w={["20rem", "30rem", "30rem", "30rem"]}
                 lineHeight={["3rem", "4.5rem", "4.5rem", "4rem"]}
                 mb="0.6rem"
-                mt={["4rem", "5rem", "2rem", "-4rem"]}
                 ml={["", "", "", "6rem"]}
                 textAlign={["center", "initial"]}
                 fontFamily="'Roboto', sans-serif"
@@ -241,7 +247,7 @@ export default function Home() {
           <Flex
             w={["20rem","30rem","40rem","90rem"]}
             h={["20rem","20rem","20rem","15rem"]}
-            bg="#308DFF"
+            bg="#2469be"
             mt={["7rem","7rem","7rem","7rem"]}
             mb={["7rem","7rem","7rem","7rem"]}
             borderRadius="1.1rem"

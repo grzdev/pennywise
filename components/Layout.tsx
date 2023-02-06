@@ -23,7 +23,7 @@ const Layout = ({ children }: Props) => {
             {children}    
         </main>
         <footer>
-            {/* <Footer/> */}
+            <Footer/>
         </footer>
     </div>
   )
