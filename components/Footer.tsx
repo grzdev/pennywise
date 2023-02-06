@@ -131,7 +131,7 @@ const Footer = () => {
           <Flex
             gap="1rem"
             flexDir={["column","column","column","column"]} 
-            ml={["-24rem","0.1rem","0.1rem","0.1rem"]} 
+            ml={["-27rem","0.1rem","0.1rem","0.1rem"]} 
             justifyContent={["center","","",""]}
             alignItems={["center","","",""]}
             mt={["13rem","0.1rem","0.1rem","0.1rem"]}
@@ -159,9 +159,9 @@ const Footer = () => {
 
         <Flex
           mt={["5rem","","","10rem"]}
-          ml={["9rem","","",""]}
-          // justifyContent={["center","","",""]}
-          // alignItems={["center","","",""]}
+          // ml={["rem","","",""]}
+          justifyContent={["center","","",""]}
+          alignItems={["center","","",""]}
         >
           <Text
             fontWeight={600}
