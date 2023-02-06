@@ -43,7 +43,7 @@ const Navbar = () => {
       borderStyle={'solid'}
       borderColor={useColorModeValue('gray.200', 'gray.900')}
       align={'center'}
-      position="fixed"
+      // position="fixed"
       w="100%"
       // backgroundColor="rgba(255, 
       //   255, 255, 0.8)" backdropFilter="saturate(180%) blur(5px)"
