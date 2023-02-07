@@ -40,7 +40,7 @@ export default function Home() {
                 w={["20rem", "30rem", "30rem", "30rem"]}
                 lineHeight={["3.9rem", "4.5rem", "4.5rem", "4.5rem"]}
                 mb="0.6rem"
-                mt={["10rem", "10rem", "10rem", "15rem"]}
+                mt={["6rem", "10rem", "10rem", "15rem"]}
                 ml={["", "", "", "6rem"]}
                 textAlign={["center", "initial"]}
                 fontFamily="'Roboto', sans-serif"
@@ -195,7 +195,7 @@ export default function Home() {
               <Heading
                 size="2xl"
                 w={["20rem", "30rem", "30rem", "30rem"]}
-                lineHeight={["3rem", "4.5rem", "4.5rem", "4rem"]}
+                lineHeight={["2rem", "4.5rem", "4.5rem", "4rem"]}
                 mb="0.6rem"
                 ml={["", "", "", "6rem"]}
                 textAlign={["center", "initial"]}
@@ -218,7 +218,7 @@ export default function Home() {
                   fontFamily="'DM Sans',sans-serif "
                   
                 >
-                  We will put your spending data into a graph so you can take note of any spike or decrease in expenses.
+                 A graph that shows your spending data will be provided to you so you can take note of any spike or decrease in expenses.
                 </Text>
               </Flex>
               
