@@ -23,6 +23,9 @@ const Footer = () => {
   return (
     <Flex
       flexDir={["column","column","column","column"]}
+      fontFamily="'Fira Sans', sans-serif"
+      // fontWeight={600}
+      color="black"
     >
       <Flex
         w={["20rem","30rem","40rem","90rem"]}
@@ -125,7 +128,7 @@ const Footer = () => {
 
         <Flex
           flexDir="column"
-          mt={["5rem","","","0.1rem"]}
+          mt={["3rem","","","0.1rem"]}
           justifyContent={["center","","","center"]}
           alignItems={["center","","","center"]}
         >
