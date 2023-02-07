@@ -1,5 +1,3 @@
-// import { HStack, Stack, Flex, Heading, Button } from '@chakra-ui/react'
-// import React from 'react'
 import { BsPiggyBank } from "react-icons/bs"
 import {
   Box,
@@ -45,14 +43,11 @@ const Navbar = () => {
       align={'center'}
       // position="fixed"
       w="100%"
-      // backgroundColor="rgba(255, 
-      //   255, 255, 0.8)" backdropFilter="saturate(180%) blur(5px)"
       >
       <Flex
         flex={{ base: 1, md: 'auto' }}
         ml={{ base: -2 }}
         display={{ base: 'flex', md: 'none' }}
-        
       >
         <IconButton
           onClick={onToggle}
@@ -63,24 +58,10 @@ const Navbar = () => {
           aria-label={'Toggle Navigation'}
         />
       </Flex>
-      <Flex 
-       flex={{ base: 1 }} 
+      <Flex
+       flex={{ base: 1 }}
        justify={{ base: 'center', md: 'start' }}
        >
-        {/* <Text
-          textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
-          fontFamily={'heading'}
-          color={useColorModeValue('gray.800', 'white')}>
-          <BsPiggyBank 
-            fontSize="3rem"
-          />
-          <Heading
-            size="lg"
-            ml="0.2rem"
-          >
-            trackdaily
-          </Heading>
-        </Text> */}
         <Flex
           justifyContent="center"
           alignItems="center"
@@ -91,10 +72,9 @@ const Navbar = () => {
           <Flex
             mt={["-0.1rem", "0.2rem", "0.2rem", "-0.1rem"]}
           >
-            <BsPiggyBank 
+            <BsPiggyBank
               fontSize="2rem"
               color='black'
-              
             />
           </Flex>
 
@@ -126,8 +106,6 @@ const Navbar = () => {
           fontWeight={600}
           variant={'outlne'}
           href={'#'}
-          
-          
           >
           Sign In
         </Button>
@@ -146,30 +124,6 @@ const Navbar = () => {
           Create free account
         </Button>
       </Stack>
-      
-        {/* <Flex
-          flexDir={["column", "row", "row", "row"]}
-          justifyContent="center"
-          alignItems="center"
-        >
-           <Button
-            ml={["0.1rem", "2.5rem", "2.5rem", "15rem"]}
-            mr="1rem"
-            size={["xs","md", "md", "lg"]}
-            variant='outline'
-          >
-            Sign in
-          </Button>
-
-          <Button
-            size={["xs","md", "md", "lg"]}
-            variant='solid'
-            // colorScheme="#000000"
-            colorScheme="blue"
-          >
-            Create an account
-          </Button>
-        </Flex> */}
     </Flex>
 
     <Collapse in={isOpen} animateOpacity>
@@ -307,8 +261,6 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
           />
         )}
       </Flex>
-      
-
       <Collapse in={isOpen} animateOpacity style={{ marginTop: '0!important' }}>
         <Stack
           mt={2}

@@ -28,7 +28,6 @@ export default function Home() {
           centerContent
           maxW="container.lg"
         >
-          {/* Feature 1 */}
           <Flex
             mt={["3rem", "1rem"]}
             flexDir={["column", "column", "column", "row"]}
@@ -49,10 +48,8 @@ export default function Home() {
               </Heading>
 
               <Flex
-                // ml={["", "", "", "6rem"]}
               >
                 <Text
-                  // mt="3rem"
                   fontWeight={500}
                   color="grey"
                   fontSize={["1.1rem", "1.1rem", "1.1rem", "1.2rem"]}
@@ -62,13 +59,10 @@ export default function Home() {
                   alignItems="center"
                   textAlign={["center", "initial"]}
                   fontFamily="'DM Sans',sans-serif "
-                  
                 >
                   TrackDaily helps users budget their income by tracking the amount they spend on a daily basis.
                 </Text>
               </Flex>
-              
-
               <Flex
               >
                 <Button
@@ -96,12 +90,9 @@ export default function Home() {
               <Image
                 src={SavingImage}
                 alt=""
-                
               />
             </Box>
           </Flex>
-
-          {/* Divider */}
           <Flex
             justifyContent={["center","center","center","center"]}
             alignItems={["center","center","center","center"]}
@@ -109,8 +100,6 @@ export default function Home() {
             ml={["","","","20rem"]}
             mb={["","","","8rem"]}
             flexDir={["column", "column", "column", "row"]}
-            // bg="#eceaea"
-            // w="100vh"
           >
             <Flex
               mr={["","","","2.7rem"]}
@@ -122,7 +111,6 @@ export default function Home() {
               />
             </Flex>
             <VStack
-              
             >
               <Heading
                 size="xl"
@@ -149,12 +137,10 @@ export default function Home() {
                 textAlign={["center", "initial"]}
                 ml={["", "", "", "16rem"]}
                 fontFamily="'poppins',sans-serif "
-                
               >
                 It is hard to keep track of how much we spend in a day, this may result to people spending more than their budget.
                 TrackDaily helps to keep tabs on what we spend on and the total amount spent.
               </Text>
-              
               <Link href={""}>
                 <Text
                   ml={["","","","-30rem"]}
@@ -169,8 +155,6 @@ export default function Home() {
               </Link>
             </VStack>
           </Flex>
-         
-          {/* Feature 2 */}
           <Flex
             flexDir={["column", "column", "column", "row"]}
           >
@@ -182,7 +166,6 @@ export default function Home() {
               <Image
                 src={GrapgImage}
                 alt=""
-                
               />
             </Box>
 
@@ -216,30 +199,10 @@ export default function Home() {
                   alignItems="center"
                   textAlign={["center", "initial"]}
                   fontFamily="'DM Sans',sans-serif "
-                  
                 >
                  A graph that shows your spending data will be provided to you so you can take note of any spike or decrease in expenses.
                 </Text>
               </Flex>
-              
-
-              {/* <Flex
-              >
-                <Button
-                  size="lg"
-                  h="3.5rem"
-                  variant='solid'
-                  bg='black'
-                  color="white"
-                  mt={["2rem", "1.3rem", "1.3rem", "-1.3rem"]}
-                  borderRadius="0.6rem"
-                  _hover={{
-                    bg: '#308DFF',
-                  }}
-                >
-                  Create free account
-                </Button>
-              </Flex> */}
             </VStack>
 
           </Flex>
@@ -255,10 +218,8 @@ export default function Home() {
             alignItems="center"
             flexDir={["column","column","column","row"]}
           >
-            
             <Flex
               mr={["","","","10rem"]}
-              // w={["","","","20rem"]}
               flexDir={["column","column","column","column"]}
             >
               <Heading
@@ -298,7 +259,6 @@ export default function Home() {
                 bg='black'
                 color="white"
                 mt={["1rem","","","0.1rem"]}
-                // mt={["2rem", "1.3rem", "1.3rem", "-1.3rem"]}
                 borderRadius="0.6rem"
                 _hover={{
                   bg: '#308DFF',
