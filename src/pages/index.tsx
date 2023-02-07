@@ -39,7 +39,7 @@ export default function Home() {
                 w={["20rem", "30rem", "30rem", "30rem"]}
                 lineHeight={["3.9rem", "4.5rem", "4.5rem", "4.5rem"]}
                 mb="0.6rem"
-                mt={["6rem", "10rem", "10rem", "15rem"]}
+                mt={["6rem", "10rem", "10rem", "12rem"]}
                 ml={["", "", "", "6rem"]}
                 textAlign={["center", "initial"]}
                 fontFamily="'Roboto', sans-serif"
@@ -85,7 +85,7 @@ export default function Home() {
             <Box
               ml={["0.2rem", "4rem", "3rem", "4.8rem"]}
               w={["27rem", "40rem", "40rem", "51rem"]}
-              mt={["2rem", "", "3rem", "7rem"]}
+              mt={["2rem", "", "3rem", "4rem"]}
             >
               <Image
                 src={SavingImage}
