@@ -107,7 +107,7 @@ export default function Home() {
             >
               <VscGraph
                 fontSize="5rem"
-                color='#2385af'
+                color='#2469be'
               />
             </Flex>
             <VStack
@@ -173,12 +173,12 @@ export default function Home() {
               w={["","","",""]}
               h={["18rem","","","25rem"]}
               borderRadius="1.2rem"
-              mt={["0.1rem", "5rem", "2rem", "-4rem"]}
+              mt={["0.1rem", "5rem", "2rem", "-2rem"]}
             >
               <Heading
                 size="2xl"
                 w={["20rem", "30rem", "30rem", "30rem"]}
-                lineHeight={["2rem", "4.5rem", "4.5rem", "4rem"]}
+                lineHeight={["2rem", "4.5rem", "4.5rem", "3rem"]}
                 mb="0.6rem"
                 ml={["", "", "", "6rem"]}
                 textAlign={["center", "initial"]}
