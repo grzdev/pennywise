@@ -2,6 +2,7 @@ import React from 'react'
 import Head from 'next/head'
 import Navbar from './Navbar'
 import Footer from './Footer'
+import { Flex } from '@chakra-ui/react'
 
 interface Props {
     children?: React.ReactNode
@@ -23,7 +24,12 @@ const Layout = ({ children }: Props) => {
             {children}    
         </main>
         <footer>
-            <Footer/>
+            <Flex
+                justifyContent="center"
+                alignItems="center"
+            >
+                <Footer/>
+            </Flex>   
         </footer>
     </div>
   )

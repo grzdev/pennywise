@@ -182,7 +182,7 @@ const Footer = () => {
      gap={["","","","14rem"]}
      flexDir={["column","column","column","row"]}
      mb='4rem'
-      mt={["","","","5rem"]}
+      mt="5rem"
     >
         <Flex
         // ml={["3rem","0.1rem","0.1rem","1rem"]}
