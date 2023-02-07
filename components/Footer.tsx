@@ -26,6 +26,10 @@ const Footer = () => {
       fontFamily="'Fira Sans', sans-serif"
       // fontWeight={600}
       color="black"
+      bg="#eceaea"
+      borderRadius="1.2rem"
+      mt="4rem"
+      mb="1rem"
     >
       <Flex
         w={["20rem","30rem","40rem","90rem"]}
@@ -35,6 +39,7 @@ const Footer = () => {
         flexDir={["column","column","column","row"]}
         mb='4rem'
         mt="5rem"
+        
       >
         <Flex>
           <Flex
