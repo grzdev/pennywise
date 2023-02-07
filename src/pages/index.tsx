@@ -106,7 +106,7 @@ export default function Home() {
               mt={["","","","-7rem"]}
             >
               <VscGraph
-                fontSize="8rem"
+                fontSize="5rem"
                 color='#2385af'
               />
             </Flex>
@@ -116,9 +116,9 @@ export default function Home() {
                 size="xl"
                 w={["20rem", "30rem", "30rem", "45rem"]}
                 noOfLines={[3,3,3,1]}
-                mt={["1.8rem","","",""]}
+                mt={["1rem","","",""]}
                 lineHeight={["2rem", "4.5rem", "2rem", "2.3rem"]}
-                mb={["0.2rem", "-0.4rem", "-0.4rem", "1.1rem"]}
+                mb={["0.2rem", "-0.4rem", "-0.4rem", "0.2rem"]}
                 ml={["", "", "", "-15rem"]}
                 textAlign={["center", "initial"]}
                 fontFamily="'poppins', sans-serif"
@@ -147,7 +147,7 @@ export default function Home() {
                   color="#2385af"
                   fontWeight={500}
                   fontSize="1.1rem"
-                  mt={["1.5rem", "-0.4rem", "-0.4rem", "1rem"]}
+                  mt={["1rem", "-0.4rem", "-0.4rem", "0.1rem"]}
                   mb={["10rem","","",""]}
                 >
                   Learn more <ChevronRightIcon/>
@@ -173,7 +173,7 @@ export default function Home() {
               w={["","","",""]}
               h={["18rem","","","25rem"]}
               borderRadius="1.2rem"
-              mt={["1rem", "5rem", "2rem", "-4rem"]}
+              mt={["0.1rem", "5rem", "2rem", "-4rem"]}
             >
               <Heading
                 size="2xl"
