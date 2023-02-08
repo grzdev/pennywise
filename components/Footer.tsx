@@ -18,15 +18,17 @@ import {
   AiFillInstagram,
   AiFillTwitterSquare
 } from 'react-icons/ai'
+import { useColorModeValue } from '@chakra-ui/react'
 
 const Footer = () => {
+  const textColor = useColorModeValue("black","#b6b6b6")
+  const footer = useColorModeValue("#eceaea","black")
+  const tradeMark = useColorModeValue("#3d99ff","white")
   return (
     <Flex
       flexDir={["column","column","column","column"]}
       fontFamily="'Fira Sans', sans-serif"
-      // fontWeight={600}
-      color="black"
-      bg="#eceaea"
+      bg={footer}
       borderRadius="1.2rem"
       mt="4rem"
       mb="1rem"
@@ -48,7 +50,7 @@ const Footer = () => {
           >
             <BsPiggyBank 
               fontSize="2rem"
-              color='black'
+              // color='black'
 
             />
           </Flex>
@@ -56,7 +58,7 @@ const Footer = () => {
           <Heading
             size="md"
             ml="0.2rem"
-            color='black'
+            // color='black'
           >
             trackdaily
           </Heading>
@@ -79,19 +81,19 @@ const Footer = () => {
             >
               <ListItem 
                mb="1rem"
-               color="grey"
+               color={textColor}
               >
                 About 
               </ListItem>
               <ListItem
                mb="1rem"
-               color="grey"
+               color={textColor}
               >
                 FAQs 
               </ListItem>
               <ListItem
                mb="1rem"
-               color="grey"
+               color={textColor}
                >
                 Blog 
               </ListItem>
@@ -111,19 +113,19 @@ const Footer = () => {
             >
               <ListItem
               mb="1rem"
-              color="grey"
+              color={textColor}
               >
                 Terms 
               </ListItem>
               <ListItem
               mb="1rem"
-              color="grey"
+              color={textColor}
               >
                 Privacy 
               </ListItem>
               <ListItem
               mb="1rem"
-              color="grey"
+              color={textColor}
               >
                 Security 
               </ListItem>
@@ -140,9 +142,9 @@ const Footer = () => {
           <Flex
             gap="0.3rem"
           >
-           <AiFillFacebook fontSize="2rem"/>
-           <AiFillInstagram fontSize="2rem"/>
-           <AiFillTwitterSquare fontSize="2rem"/>
+           <AiFillFacebook fontSize="2rem" color={textColor}/>
+           <AiFillInstagram fontSize="2rem" color={textColor}/>
+           <AiFillTwitterSquare fontSize="2rem" color={textColor}/>
           </Flex>
 
           <Flex
@@ -151,13 +153,13 @@ const Footer = () => {
             justifyContent={["center","","","center"]}
             alignItems={["center","","","center"]}
           >
-            <Text mb="0.5rem">
+            <Text mb="0.5rem" color={textColor}>
               Oko-oba Tanke, Ilorin, Nigeria
             </Text>
-            <Text mb="0.5rem">
+            <Text mb="0.5rem" color={textColor}>
               damilolaoyeniyi13@gmail.com
             </Text>
-            <Text >
+            <Text color={textColor}>
               09036818841
             </Text>
           </Flex>
@@ -172,7 +174,7 @@ const Footer = () => {
       >
       <Text
         fontWeight={600}
-        color="blue"
+        color={tradeMark}
         fontSize="0.8rem"
       >
         2023 TrackTech and co.

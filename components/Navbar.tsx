@@ -22,13 +22,17 @@ import {
   CloseIcon,
   ChevronDownIcon,
   ChevronRightIcon,
+  MoonIcon,
+  SunIcon
 } from '@chakra-ui/icons';
+import { useColorMode } from "@chakra-ui/react";
 
 
 
 const Navbar = () => {
   const { isOpen, onToggle } = useDisclosure();
-
+  const { colorMode, toggleColorMode } = useColorMode()
+  const buttonColor = useColorModeValue("black","#3d99ff")
   return (
     <Box>
     <Flex
@@ -74,14 +78,14 @@ const Navbar = () => {
           >
             <BsPiggyBank
               fontSize="2rem"
-              color='black'
+              // color='black'
             />
           </Flex>
 
           <Heading
             size="md"
             ml="0.2rem"
-            color='black'
+            // color='black'
           >
             trackdaily
           </Heading>
@@ -114,7 +118,7 @@ const Navbar = () => {
           fontSize={'sm'}
           fontWeight={700}
           color={'white'}
-          bg={'black'}
+          bg={buttonColor}
           // href={'#'}
           _hover={{
             bg: '#308DFF',
@@ -122,6 +126,13 @@ const Navbar = () => {
           borderRadius="0.6rem"
           >
           Create free account
+        </Button>
+
+        <Button 
+          onClick={toggleColorMode}
+          display={{ base: 'none', md: 'inline-flex' }}
+        >
+          {colorMode === 'light' ? <MoonIcon/> : <SunIcon/>}
         </Button>
       </Stack>
     </Flex>
@@ -220,6 +231,7 @@ const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
 };
 
 const MobileNav = () => {
+  const { colorMode, toggleColorMode } = useColorMode()
   return (
     <Stack
       bg={useColorModeValue('white', 'gray.800')}
@@ -228,6 +240,9 @@ const MobileNav = () => {
       {NAV_ITEMS.map((navItem) => (
         <MobileNavItem key={navItem.label} {...navItem} />
       ))}
+      <Button onClick={toggleColorMode}>
+       {colorMode === 'light' ? <MoonIcon/> : <SunIcon/>}
+      </Button>
     </Stack>
   );
 };
