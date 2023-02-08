@@ -23,7 +23,7 @@ const LandingPage = () => {
   const buttonColor = useColorModeValue("black","#3d99ff")
   const textColor = useColorModeValue("grey","#b6b6b6")
   const divColor = useColorModeValue("#2469BE","#3d99ff")
-  const divColor2 = useColorModeValue("#308DFF","#226fc7")
+  const divColor2 = useColorModeValue("#308DFF","#3091ff")
   return (
     <>
     <main>
