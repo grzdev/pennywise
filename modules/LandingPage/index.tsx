@@ -23,6 +23,7 @@ const LandingPage = () => {
   const buttonColor = useColorModeValue("black","#3d99ff")
   const textColor = useColorModeValue("grey","#b6b6b6")
   const divColor = useColorModeValue("#2469BE","#3d99ff")
+  const divColor2 = useColorModeValue("#308DFF","#226fc7")
   return (
     <>
     <main>
@@ -111,7 +112,7 @@ const LandingPage = () => {
           >
             <VscGraph
               fontSize="5rem"
-              color='#2469be'
+              color={divColor}
             />
           </Flex>
           <VStack
@@ -148,7 +149,7 @@ const LandingPage = () => {
             <Link href={""}>
               <Text
                 ml={["","","","-30rem"]}
-                color="#2385af"
+                color="#3d99ff"
                 fontWeight={500}
                 fontSize="1.1rem"
                 mt={["1rem", "-0.4rem", "-0.4rem", "0.1rem"]}
@@ -214,7 +215,7 @@ const LandingPage = () => {
         <Flex
           w={["20rem","30rem","40rem","90rem"]}
           h={["20rem","20rem","20rem","15rem"]}
-          bg={divColor}
+          bg={divColor2}
           mt={["7rem","7rem","7rem","7rem"]}
           mb={["7rem","7rem","7rem","7rem"]}
           borderRadius="1.1rem"
