@@ -22,7 +22,7 @@ const LoginModule = () => {
       justifyContent="center"
       alignItems="center"
       flexDir="column"
-      mt="3rem"
+      mt={["2rem", "2rem", "2rem", "3rem"]}
       mb="3rem"
     >
        <Flex
@@ -50,7 +50,7 @@ const LoginModule = () => {
           w={["22rem","22rem","22rem","27rem"]}
           h={["43rem","35rem","35rem","43rem"]}
           bg={divColor}
-          mt={["3rem","3rem","3rem","2rem"]}
+          mt={["2rem","3rem","3rem","2rem"]}
           borderRadius="1rem"
           // justifyContent="center"
           // alignItems="center"
