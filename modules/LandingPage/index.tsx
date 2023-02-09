@@ -20,10 +20,10 @@ import {
   import { useColorModeValue } from '@chakra-ui/react'
 
 const LandingPage = () => {
-  const buttonColor = useColorModeValue("black","#3d99ff")
+  const buttonColor = useColorModeValue("black","#256ec1")
   const textColor = useColorModeValue("grey","#b6b6b6")
   const divColor = useColorModeValue("#2469BE","#3d99ff")
-  const divColor2 = useColorModeValue("#308DFF","#3091ff")
+  const divColor2 = useColorModeValue("#308DFF","#256ec1")
   return (
     <>
     <main>

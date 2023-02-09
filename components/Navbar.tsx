@@ -32,7 +32,7 @@ import { useColorMode } from "@chakra-ui/react";
 const Navbar = () => {
   const { isOpen, onToggle } = useDisclosure();
   const { colorMode, toggleColorMode } = useColorMode()
-  const buttonColor = useColorModeValue("black","#3d99ff")
+  const buttonColor = useColorModeValue("black","#256ec1")
   return (
     <Box>
     <Flex
@@ -101,8 +101,9 @@ const Navbar = () => {
         justify={'flex-end'}
         direction={'row'}
         spacing={6}
-        mr={["", "", "1rem", "8.5rem"]}
+        mr={["-1.5rem", "-1.5rem", "-1.5rem", "8.5rem"]}
         mt={["0.6rem", "0.1rem", "0.1rem", "0.1rem"]}
+        ml={["1.4rem","1.4rem","",""]}
         >
         <Button
           as={'a'}
@@ -134,6 +135,7 @@ const Navbar = () => {
         <Button 
           onClick={toggleColorMode}
           display={{ base: 'none', md: 'inline-flex' }}
+          
         >
           {colorMode === 'light' ? <MoonIcon/> : <SunIcon/>}
         </Button>
@@ -243,7 +245,9 @@ const MobileNav = () => {
       {NAV_ITEMS.map((navItem) => (
         <MobileNavItem key={navItem.label} {...navItem} />
       ))}
-      <Button onClick={toggleColorMode}>
+      <Button 
+       onClick={toggleColorMode}
+      >
        {colorMode === 'light' ? <MoonIcon/> : <SunIcon/>}
       </Button>
     </Stack>
