@@ -1,11 +1,189 @@
-import { Box, Container } from '@chakra-ui/react'
+import { 
+  Box,
+  Button,
+  Container,
+  Flex,
+  Heading,
+  Input,
+  Text, 
+} from '@chakra-ui/react'
 import React from 'react'
+import { BsPiggyBank } from 'react-icons/bs'
+import { useColorModeValue } from '@chakra-ui/react'
 
 const LoginModule = () => {
+  const divColor = useColorModeValue("#2a53b8","white")
+  const TextColor = useColorModeValue("white","#084DA1")
+  const TextColor2 = useColorModeValue("white","#4A5568")
+  const TextColor3 = useColorModeValue("white","black")
+  const button = useColorModeValue("#5082ff","#084DA1")
   return (
-    <Box>
-      
-    </Box>
+    <Flex
+      justifyContent="center"
+      alignItems="center"
+      flexDir="column"
+      mt="3rem"
+      mb="3rem"
+    >
+       <Flex
+          mt="0.4rem"
+        >
+          <Flex
+            mt={["-0.5rem", "0.2rem", "0.2rem", "-0.3rem"]}
+          >
+            <BsPiggyBank
+              fontSize="3rem"
+              // color='black'
+            />
+          </Flex>
+
+          <Heading
+            size="lg"
+            ml="0.2rem"
+            // color='black'
+          >
+            trackdaily
+          </Heading>
+        </Flex>
+
+        <Flex
+          w={["22rem","22rem","22rem","27rem"]}
+          h={["43rem","35rem","35rem","43rem"]}
+          bg={divColor}
+          mt={["3rem","3rem","3rem","2rem"]}
+          borderRadius="1rem"
+          // justifyContent="center"
+          // alignItems="center"
+          flexDir="column"
+        >
+          <Flex
+            flexDir="column"
+            // justifyContent="center"
+            alignItems="center"
+            mt="3rem"
+          >
+            <Heading
+              color={TextColor}
+              size="md"
+            >
+              Create a Secure Account
+            </Heading>
+            <Text
+              color={TextColor3}
+            >
+              Welcome to the future of budgeting.
+            </Text>
+          </Flex>
+
+          <Flex
+            flexDir="column"
+            // w={["","","","20rem"]}
+            justifyContent="center"
+            alignItems="center"
+            mt="2rem"
+          >
+            <Flex
+              flexDir="column"
+            >
+              <Text
+                color={TextColor2}
+                fontWeight={600}
+              >
+                Full Name
+              </Text>
+              <Input
+                variant="filled"
+                bg="#EDF2F7"
+                size="lg"
+                mt="0.5rem"
+                placeholder="Full name"
+                _placeholder={{ color: "grey", fontSize: "0.8rem" }}
+              />
+            </Flex>
+
+            <Flex
+              flexDir="column"
+              mt="2rem"
+            >
+              <Text
+                color={TextColor2}
+                fontWeight={600}
+              >
+                Email Address
+              </Text>
+              <Input
+                variant="filled"
+                bg="#EDF2F7"
+                size="lg"
+                mt="0.5rem"
+                placeholder="Email Address"
+                _placeholder={{ color: "grey", fontSize: "0.8rem"  }}
+              />
+            </Flex>
+
+            <Flex
+              flexDir="column"
+              mt="2rem"
+            >
+              <Text
+                color={TextColor2}
+                fontWeight={600}
+              >
+                Username
+              </Text>
+              <Input
+                variant="filled"
+                bg="#EDF2F7"
+                size="lg"
+                mt="0.5rem"
+                placeholder="Username"
+                _placeholder={{ color: "grey", fontSize: "0.8rem"  }}
+              />
+            </Flex>
+
+            <Flex
+              flexDir="column"
+              mt="2rem"
+            >
+              <Text
+                color={TextColor2}
+                fontWeight={600}
+              >
+                Password
+              </Text>
+              <Input
+                variant="filled"
+                bg="#EDF2F7"
+                size="lg"
+                mt="0.5rem"
+                placeholder="Password"
+                _placeholder={{ color: "grey", fontSize: "0.8rem"  }}
+              />
+            </Flex>
+
+            <Flex
+              mt="3rem"
+            >
+              <Button
+                bg={button}
+                size="lg"
+                color="white"
+              >
+                CREATE ACCOUNT
+              </Button>
+            </Flex>
+          </Flex>
+         
+        </Flex>
+
+        <Flex
+          mt="2rem"
+        >
+          <Text>
+            Already have an account? Log in
+          </Text>
+        </Flex>
+    </Flex>
   )
 }
 

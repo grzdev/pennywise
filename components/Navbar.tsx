@@ -113,20 +113,23 @@ const Navbar = () => {
           >
           Sign In
         </Button>
-        <Button
-          display={{ base: 'none', md: 'inline-flex' }}
-          fontSize={'sm'}
-          fontWeight={700}
-          color={'white'}
-          bg={buttonColor}
-          // href={'#'}
-          _hover={{
-            bg: '#308DFF',
-          }}
-          borderRadius="0.6rem"
-          >
-          Create free account
-        </Button>
+
+        <Link href="/login">
+          <Button
+            display={{ base: 'none', md: 'inline-flex' }}
+            fontSize={'sm'}
+            fontWeight={700}
+            color={'white'}
+            bg={buttonColor}
+            // href={'#'}
+            _hover={{
+              bg: '#308DFF',
+            }}
+            borderRadius="0.6rem"
+            >
+            Create free account
+          </Button>
+        </Link>
 
         <Button 
           onClick={toggleColorMode}

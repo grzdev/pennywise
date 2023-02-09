@@ -8,10 +8,7 @@ import BackgroundImage from '../../images/background1.png'
 
 const SignIn = () => {
   return (
-    <Container
-      maxW="container.xl"
-      bg="#062763"
-    >
+    <Container>
       <LoginModule/>
     </Container>
   )
