@@ -1,17 +1,13 @@
-import { 
-  Box, 
-  Container,
- } from '@chakra-ui/react'
 import React from 'react'
-import LoginModule from 'modules/LoginModule'
-import BackgroundImage from '../../images/background1.png'
+import LogInModule from 'modules/LoginModule'
+import { Container } from '@chakra-ui/react'
 
-const SignIn = () => {
+const LogIn = () => {
   return (
     <Container>
-      <LoginModule/>
+        <LogInModule/>
     </Container>
   )
 }
 
-export default SignIn
+export default LogIn

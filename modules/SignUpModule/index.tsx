@@ -1,5 +1,3 @@
-/* eslint-disable react/no-unescaped-entities */
-import React from 'react'
 import { 
   Box,
   Button,
@@ -9,11 +7,12 @@ import {
   Input,
   Text, 
 } from '@chakra-ui/react'
+import React from 'react'
 import { BsPiggyBank } from 'react-icons/bs'
 import { useColorModeValue } from '@chakra-ui/react'
 import Link from 'next/link'
 
-const LogInModule = () => {
+const SignUpModule = () => {
   const divColor = useColorModeValue("#2a53b8","white")
   const TextColor = useColorModeValue("white","#084DA1")
   const TextColor2 = useColorModeValue("white","#4A5568")
@@ -21,17 +20,15 @@ const LogInModule = () => {
   const button = useColorModeValue("#608dff","#084DA1")
 
   return (
-     <Flex
+    <Flex
       justifyContent="center"
       alignItems="center"
       flexDir="column"
       mt={["3rem", "2rem", "2rem", "3rem"]}
       mb="3rem"
-      
     >
        <Flex
           mt="0.4rem"
-          
         >
           <Flex
             mt={["-0.5rem", "0.2rem", "0.2rem", "-0.3rem"]}
@@ -53,7 +50,7 @@ const LogInModule = () => {
 
         <Flex
           w={["22rem","22rem","22rem","27rem"]}
-          h="29rem"
+          h={["43rem","35rem","35rem","43rem"]}
           bg={divColor}
           mt={["1rem","3rem","3rem","2rem"]}
           borderRadius="1.3rem"
@@ -72,14 +69,14 @@ const LogInModule = () => {
               color={TextColor}
               size="md"
             >
-              Login to Your Account
+              Create a Secure Account
             </Heading>
             <Text
               color={TextColor3}
               mt="0.2rem"
               fontSize="0.9rem"
             >
-              Securly login to your trackdaily
+              Welcome to the future of budgeting.
             </Text>
           </Flex>
 
@@ -97,13 +94,55 @@ const LogInModule = () => {
                 color={TextColor2}
                 fontWeight={600}
               >
-                Email or Username
+                Full Name
               </Text>
               <Input
                 variant="filled"
                 bg="#EDF2F7"
                 size="lg"
                 mt="0.5rem"
+                placeholder="Full name"
+                _placeholder={{ color: "grey", fontSize: "0.8rem" }}
+              />
+            </Flex>
+
+            <Flex
+              flexDir="column"
+              mt="2rem"
+            >
+              <Text
+                color={TextColor2}
+                fontWeight={600}
+              >
+                Email Address
+              </Text>
+              <Input
+                variant="filled"
+                bg="#EDF2F7"
+                size="lg"
+                mt="0.5rem"
+                placeholder="Email Address"
+                _placeholder={{ color: "grey", fontSize: "0.8rem"  }}
+              />
+            </Flex>
+
+            <Flex
+              flexDir="column"
+              mt="2rem"
+            >
+              <Text
+                color={TextColor2}
+                fontWeight={600}
+              >
+                Username
+              </Text>
+              <Input
+                variant="filled"
+                bg="#EDF2F7"
+                size="lg"
+                mt="0.5rem"
+                placeholder="Username"
+                _placeholder={{ color: "grey", fontSize: "0.8rem"  }}
               />
             </Flex>
 
@@ -122,9 +161,10 @@ const LogInModule = () => {
                 bg="#EDF2F7"
                 size="lg"
                 mt="0.5rem"
+                placeholder="Password"
+                _placeholder={{ color: "grey", fontSize: "0.8rem"  }}
               />
             </Flex>
-
 
             <Flex
               mt="3rem"
@@ -134,7 +174,7 @@ const LogInModule = () => {
                 size="lg"
                 color="white"
               >
-                LOG IN
+                CREATE ACCOUNT
               </Button>
             </Flex>
           </Flex>
@@ -143,23 +183,15 @@ const LogInModule = () => {
 
         <Flex
           mt="2rem"
-          flexDir="column"
-          alignItems="center"
         >
-          <Link href="/signup">
+          <Link href="/login">
             <Text>
-              Don't have an account? Register
+              Already have an account? Log in
             </Text>
           </Link>
-
-          <Text
-            mt="0.6rem"
-          >
-            Forgot Password?
-          </Text>
         </Flex>
-    </Flex> 
+    </Flex>
   )
 }
 
-export default LogInModule
+export default SignUpModule

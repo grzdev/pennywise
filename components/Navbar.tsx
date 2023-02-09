@@ -105,17 +105,17 @@ const Navbar = () => {
         mt={["0.6rem", "0.1rem", "0.1rem", "0.1rem"]}
         ml={["1.4rem","1.4rem","",""]}
         >
-        <Button
-          as={'a'}
-          fontSize={'sm'}
-          fontWeight={600}
-          variant={'outlne'}
-          href={'#'}
-          >
-          Sign In
-        </Button>
-
         <Link href="/login">
+          <Button
+            fontSize={'sm'}
+            fontWeight={600}
+            variant={'outlne'}
+            >
+            Sign In
+          </Button>
+        </Link>
+
+        <Link href="/signup">
           <Button
             display={{ base: 'none', md: 'inline-flex' }}
             fontSize={'sm'}
