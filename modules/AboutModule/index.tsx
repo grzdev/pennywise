@@ -85,7 +85,7 @@ const About = () => {
           <Box
             // ml={["0.2rem", "4rem", "4rem", "-5rem"]}
             w={["27rem", "40rem", "40rem", "51rem"]}
-            mt={["14rem", "8rem", "8rem", "-16rem"]}
+            mt={["17rem", "8rem", "8rem", "-16rem"]}
           >
             <Image
               src={AboutImg2}
