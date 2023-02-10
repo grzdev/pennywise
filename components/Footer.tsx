@@ -94,12 +94,12 @@ const Footer = () => {
               >
                 FAQs 
               </ListItem>
-              <ListItem
+              {/* <ListItem
                mb="1rem"
                color={textColor}
                >
                 Blog 
-              </ListItem>
+              </ListItem> */}
             </List>
           </Flex>
 

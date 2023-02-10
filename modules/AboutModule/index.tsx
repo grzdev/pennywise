@@ -11,7 +11,7 @@ import {
 import React from 'react'
 import Image from 'next/image'
 import AboutImg from "../../images/about1.png"
-import AboutImg2 from "../../images/about5.png"
+import AboutImg2 from "../../images/about6.png"
 
 const About = () => {
   const headerBg = useColorModeValue("#EEF4FC","#256EC1")
@@ -83,9 +83,9 @@ const About = () => {
           mb={["6rem","6rem","6rem","10rem"]}
         >
           <Box
-            ml={["0.2rem", "4rem", "4rem", "-5rem"]}
+            // ml={["0.2rem", "4rem", "4rem", "-5rem"]}
             w={["27rem", "40rem", "40rem", "51rem"]}
-            mt={["19rem", "10rem", "10rem", "-9rem"]}
+            mt={["14rem", "8rem", "8rem", "-16rem"]}
           >
             <Image
               src={AboutImg2}
