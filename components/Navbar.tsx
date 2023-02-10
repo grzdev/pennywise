@@ -73,22 +73,25 @@ const Navbar = () => {
           flexDir="initial"
           mt="0.4rem"
         >
-          <Flex
-            mt={["-0.1rem", "0.2rem", "0.2rem", "-0.1rem"]}
-          >
-            <BsPiggyBank
-              fontSize="2rem"
+          <Link href="/">
+            <Flex
+              mt={["0.1rem", "0.1rem", "0.1rem", "0.1rem"]}
+            >
+              <BsPiggyBank
+                fontSize="2rem"
+                // color='black'
+              />
+            </Flex>
+          </Link>
+          <Link href="/">         
+            <Heading
+              size="md"
+              ml="0.2rem"
               // color='black'
-            />
-          </Flex>
-
-          <Heading
-            size="md"
-            ml="0.2rem"
-            // color='black'
-          >
-            trackdaily
-          </Heading>
+            >
+              trackdaily
+            </Heading>
+          </Link>
         </Flex>
 
         <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
@@ -161,7 +164,7 @@ const DesktopNav = () => {
      ml={["0.1rem","4rem", "5rem", "16rem"]}
      mt="0.8rem"
     >
-      {NAV_ITEMS.map((navItem) => (
+      {/* {NAV_ITEMS.map((navItem) => (
         <Box key={navItem.label}>
           <Popover trigger={'hover'} placement={'bottom-start'}>
             <PopoverTrigger>
@@ -196,7 +199,23 @@ const DesktopNav = () => {
             )}
           </Popover>
         </Box>
-      ))}
+      ))} */}
+      <Flex>
+        <Link href="/about">
+          <Text
+            fontWeight={600}
+            color={linkColor}
+          >
+            About
+          </Text>
+        </Link>
+
+        {/* <Link href="/about">
+          <Text>
+            About
+          </Text>
+        </Link> */}
+      </Flex>
     </Stack>
   );
 };
@@ -237,14 +256,34 @@ const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
 
 const MobileNav = () => {
   const { colorMode, toggleColorMode } = useColorMode()
+  const linkColor = useColorModeValue('gray.600', 'gray.200');
+
   return (
     <Stack
       bg={useColorModeValue('white', 'gray.800')}
       p={4}
       display={{ md: 'none' }}>
-      {NAV_ITEMS.map((navItem) => (
+      {/* {NAV_ITEMS.map((navItem) => (
         <MobileNavItem key={navItem.label} {...navItem} />
-      ))}
+      ))} */}
+
+      <Flex>
+        <Link href="/about">
+          <Text
+            fontWeight={600}
+            color={linkColor}
+          >
+            About
+          </Text>
+        </Link>
+
+        {/* <Link href="/about">
+          <Text>
+            About
+          </Text>
+        </Link> */}
+      </Flex>
+
       <Button 
        onClick={toggleColorMode}
       >
@@ -312,19 +351,19 @@ interface NavItem {
 
 const NAV_ITEMS: Array<NavItem> = [
   {
-    label: 'Save',
-    // children: [
-    //   {
-    //     label: 'Explore Design Work',
-    //     subLabel: 'Trending Design to inspire you',
-    //     href: '#',
-    //   },
-    //   {
-    //     label: 'New & Noteworthy',
-    //     subLabel: 'Up-and-coming Designers',
-    //     href: '#',
-    //   },
-    // ],
+    label: 'About',
+    children: [
+      {
+        label: 'Explore Design Work',
+        subLabel: 'Trending Design to inspire you',
+        href: '#',
+      },
+      {
+        label: 'New & Noteworthy',
+        subLabel: 'Up-and-coming Designers',
+        href: '#',
+      },
+    ],
   },
   {
     label: 'Invest',

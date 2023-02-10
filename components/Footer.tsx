@@ -19,6 +19,7 @@ import {
   AiFillTwitterSquare
 } from 'react-icons/ai'
 import { useColorModeValue } from '@chakra-ui/react'
+import Link from 'next/link'
 
 const Footer = () => {
   const textColor = useColorModeValue("black","#b6b6b6")
@@ -79,12 +80,14 @@ const Footer = () => {
             <List
              mt={["2rem","","","1.5rem"]}
             >
-              <ListItem 
-               mb="1rem"
-               color={textColor}
-              >
-                About 
-              </ListItem>
+              <Link href={'/about'}>
+                <ListItem 
+                mb="1rem"
+                color={textColor}
+                >
+                  About 
+                </ListItem>
+              </Link>
               <ListItem
                mb="1rem"
                color={textColor}

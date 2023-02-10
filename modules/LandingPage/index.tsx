@@ -146,7 +146,7 @@ const LandingPage = () => {
               It is hard to keep track of how much we spend in a day, this may result to people spending more than their budget.
               TrackDaily helps to keep tabs on what we spend on and the total amount spent.
             </Text>
-            <Link href={""}>
+            <Link href={"/about"}>
               <Text
                 ml={["","","","-30rem"]}
                 color="#3d99ff"
