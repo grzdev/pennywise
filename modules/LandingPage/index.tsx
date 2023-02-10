@@ -24,6 +24,8 @@ const LandingPage = () => {
   const textColor = useColorModeValue("grey","#b6b6b6")
   const divColor = useColorModeValue("#2469BE","#3d99ff")
   const divColor2 = useColorModeValue("#308DFF","#256ec1")
+  const signUp = useColorModeValue("#256EC1","#308DFF")
+
   return (
     <>
     <main>
@@ -253,7 +255,7 @@ const LandingPage = () => {
           >
             <Input
               placeholder='Your email...'
-              _placeholder={{color: 'black' }}
+              _placeholder={{color: 'lightgrey' }}
               size={["md","lg","lg","lg"]}
               variant='filled'
               mr="0.4rem"
@@ -262,7 +264,7 @@ const LandingPage = () => {
               size={["md","lg","lg","lg"]}
               h="3.5rem"
               variant='solid'
-              bg='black'
+              bg={signUp}
               color="white"
               mt={["1rem","","","0.1rem"]}
               borderRadius="0.6rem"
@@ -270,7 +272,7 @@ const LandingPage = () => {
                 bg: '#308DFF',
               }}
             >
-              Sign up
+              Get started
             </Button>
           </Flex>
         </Flex>

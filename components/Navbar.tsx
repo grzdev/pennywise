@@ -200,7 +200,9 @@ const DesktopNav = () => {
           </Popover>
         </Box>
       ))} */}
-      <Flex>
+      <Flex
+        gap="5rem"
+      >
         <Link href="/about">
           <Text
             fontWeight={600}
@@ -210,11 +212,23 @@ const DesktopNav = () => {
           </Text>
         </Link>
 
-        {/* <Link href="/about">
-          <Text>
-            About
+        <Link href="/privacy">
+          <Text
+            fontWeight={600}
+            color={linkColor}
+          >
+            Privacy
           </Text>
-        </Link> */}
+        </Link>
+
+        <Link href="/terms">
+          <Text
+            fontWeight={600}
+            color={linkColor}
+          >
+            Terms
+          </Text>
+        </Link>
       </Flex>
     </Stack>
   );
@@ -267,7 +281,11 @@ const MobileNav = () => {
         <MobileNavItem key={navItem.label} {...navItem} />
       ))} */}
 
-      <Flex>
+      <Flex
+        flexDir="column"
+        gap="1rem"
+        mb="1rem"
+      >
         <Link href="/about">
           <Text
             fontWeight={600}
@@ -277,11 +295,23 @@ const MobileNav = () => {
           </Text>
         </Link>
 
-        {/* <Link href="/about">
-          <Text>
-            About
+        <Link href="/privacy">
+          <Text
+            fontWeight={600}
+            color={linkColor}
+          >
+            Privacy
           </Text>
-        </Link> */}
+        </Link>
+
+        <Link href="/terms">
+          <Text
+            fontWeight={600}
+            color={linkColor}
+          >
+            Terms
+          </Text>
+        </Link>
       </Flex>
 
       <Button 

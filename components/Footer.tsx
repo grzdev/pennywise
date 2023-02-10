@@ -67,7 +67,7 @@ const Footer = () => {
 
         <Flex
           gap={["4rem","4rem","4rem","17rem"]}
-          mt={["","","","3rem"]}
+          mt={["","","","1.7rem"]}
         >
           <Flex
             flexDir="column"
@@ -88,12 +88,12 @@ const Footer = () => {
                   About 
                 </ListItem>
               </Link>
-              <ListItem
+              {/* <ListItem
                mb="1rem"
                color={textColor}
               >
                 FAQs 
-              </ListItem>
+              </ListItem> */}
               {/* <ListItem
                mb="1rem"
                color={textColor}
@@ -114,24 +114,29 @@ const Footer = () => {
             <List
              mt={["2rem","","","1.5rem"]}
             >
-              <ListItem
-              mb="1rem"
-              color={textColor}
-              >
-                Terms 
-              </ListItem>
-              <ListItem
-              mb="1rem"
-              color={textColor}
-              >
-                Privacy 
-              </ListItem>
-              <ListItem
+              <Link href={'/terms'}>
+                <ListItem
+                mb="1rem"
+                color={textColor}
+                >
+                  Terms 
+                </ListItem>
+              </Link>
+
+              <Link href={'/privacy'}>
+                <ListItem
+                mb="1rem"
+                color={textColor}
+                >
+                  Privacy 
+                </ListItem>
+              </Link>
+              {/* <ListItem
               mb="1rem"
               color={textColor}
               >
                 Security 
-              </ListItem>
+              </ListItem> */}
             </List>
           </Flex>
         </Flex>
