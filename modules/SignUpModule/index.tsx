@@ -13,7 +13,7 @@ import { useColorModeValue } from '@chakra-ui/react'
 import Link from 'next/link'
 
 const SignUpModule = () => {
-  const divColor = useColorModeValue("#2a53b8","white")
+  const divColor = useColorModeValue("#084DA1","white")
   const TextColor = useColorModeValue("white","#084DA1")
   const TextColor2 = useColorModeValue("white","#4A5568")
   const TextColor3 = useColorModeValue("white","black")
