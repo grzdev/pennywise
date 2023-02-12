@@ -11,7 +11,7 @@ import {
   } from '@chakra-ui/react'
   import { Inter } from '@next/font/google'
   import Image from 'next/image'
-  import SavingImage from '../../images/image6.png'
+  import SavingImage from '../../images/div4.png'
   import GrapgImage from '../../images/image8.png'
   import React from 'react'
   import { VscGraph } from 'react-icons/vsc'
@@ -25,6 +25,7 @@ const LandingPage = () => {
   const divColor = useColorModeValue("#2469BE","#3d99ff")
   const divColor2 = useColorModeValue("#308DFF","#256ec1")
   const signUp = useColorModeValue("#256EC1","#308DFF")
+  const secondDivCOlor = useColorModeValue("#e6f1ff","")
 
   return (
     <>
@@ -104,63 +105,65 @@ const LandingPage = () => {
           justifyContent={["center","center","center","center"]}
           alignItems={["center","center","center","center"]}
           mt={["9rem", "9rem", "6rem","6rem"]}
-          ml={["","","","20rem"]}
           mb={["","","","8rem"]}
           flexDir={["column", "column", "column", "row"]}
+          bg={secondDivCOlor}
+          w={["30rem","","","100rem"]}
         >
           <Flex
             mr={["","","","2.7rem"]}
-            mt={["","","","-7rem"]}
+            mt={["9rem","","","1rem"]}
+            ml={["","","","10rem"]}
           >
             <VscGraph
               fontSize="5rem"
               color={divColor}
             />
           </Flex>
-          <VStack
-          >
-            <Heading
-              size="xl"
-              w={["20rem", "30rem", "30rem", "45rem"]}
-              noOfLines={[3,3,3,1]}
-              mt={["1rem","","",""]}
-              lineHeight={["2rem", "4.5rem", "2rem", "2.3rem"]}
-              mb={["0.2rem", "-0.4rem", "-0.4rem", "0.2rem"]}
-              ml={["", "", "", "-15rem"]}
-              textAlign={["center", "initial"]}
-              fontFamily="'poppins', sans-serif"
+            <VStack
             >
-              We will help you economize efficiently
-            </Heading>
-            <Text
-              fontWeight={500}
-              color={textColor}
-              fontSize={["1.1rem", "1.1rem", "1.1rem", "1.2rem"]}
-              mb={["0.4rem", "0.4rem", "0.4rem", "3rem"]}
-              w={["18rem", "30rem", "30rem", "60rem"]}
-              noOfLines={[6,6,6,2]}
-              justifyContent="center"
-              alignItems="center"
-              textAlign={["center", "initial"]}
-              ml={["", "", "", "16rem"]}
-              fontFamily="'poppins',sans-serif "
-            >
-              It is hard to keep track of how much we spend in a day, this may result to people spending more than their budget.
-              TrackDaily helps to keep tabs on what we spend on and the total amount spent.
-            </Text>
-            <Link href={"/about"}>
-              <Text
-                ml={["","","","-30rem"]}
-                color="#3d99ff"
-                fontWeight={500}
-                fontSize="1.1rem"
-                mt={["1rem", "-0.4rem", "-0.4rem", "0.1rem"]}
-                mb={["10rem","","",""]}
+              <Heading
+                size="xl"
+                w={["20rem", "30rem", "30rem", "45rem"]}
+                noOfLines={[3,3,3,1]}
+                mt={["1rem","","","10rem"]}
+                lineHeight={["2rem", "4.5rem", "2rem", "2.3rem"]}
+                mb={["0.2rem", "-0.4rem", "-0.4rem", "0.2rem"]}
+                ml={["", "", "", "-15rem"]}
+                textAlign={["center", "initial"]}
+                fontFamily="'poppins', sans-serif"
               >
-                Learn more <ChevronRightIcon/>
+                We will help you economize efficiently
+              </Heading>
+              <Text
+                fontWeight={500}
+                color={textColor}
+                fontSize={["1.1rem", "1.1rem", "1.1rem", "1.2rem"]}
+                mb={["0.4rem", "0.4rem", "0.4rem", "3rem"]}
+                w={["18rem", "30rem", "30rem", "60rem"]}
+                noOfLines={[6,6,6,2]}
+                justifyContent="center"
+                alignItems="center"
+                textAlign={["center", "initial"]}
+                ml={["", "", "", "16rem"]}
+                fontFamily="'poppins',sans-serif "
+              >
+                It is hard to keep track of how much we spend in a day, this may result to people spending more than their budget.
+                TrackDaily helps to keep tabs on what we spend on and the total amount spent.
               </Text>
-            </Link>
-          </VStack>
+              <Link href={"/about"}>
+                <Text
+                  ml={["","","","-30rem"]}
+                  color="#3d99ff"
+                  fontWeight={500}
+                  fontSize="1.1rem"
+                  mt={["1rem", "-0.4rem", "-0.4rem", "0.1rem"]}
+                  mb={["10rem","","",""]}
+                >
+                  Learn more <ChevronRightIcon/>
+                </Text>
+              </Link>
+            </VStack>
         </Flex>
         <Flex
           flexDir={["column", "column", "column", "row"]}
@@ -168,7 +171,7 @@ const LandingPage = () => {
           <Box
             ml={["0.2rem", "4rem", "4rem", "-5rem"]}
             w={["27rem", "40rem", "40rem", "51rem"]}
-            mt={["-0.8rem", "", "3rem", "-12rem"]}
+            mt={["8rem", "", "3rem", "-3rem"]}
           >
             <Image
               src={GrapgImage}
@@ -180,7 +183,7 @@ const LandingPage = () => {
             w={["","","",""]}
             h={["18rem","","","25rem"]}
             borderRadius="1.2rem"
-            mt={["0.1rem", "5rem", "2rem", "-2rem"]}
+            mt={["0.1rem", "5rem", "2rem", "7rem"]}
           >
             <Heading
               size="2xl"
@@ -218,7 +221,7 @@ const LandingPage = () => {
           w={["20rem","30rem","40rem","90rem"]}
           h={["20rem","20rem","20rem","15rem"]}
           bg={divColor2}
-          mt={["7rem","7rem","7rem","7rem"]}
+          mt={["5rem","7rem","7rem","7rem"]}
           mb={["7rem","7rem","7rem","7rem"]}
           borderRadius="1.1rem"
           justifyContent="center"
