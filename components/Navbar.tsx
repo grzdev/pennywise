@@ -1,4 +1,4 @@
-import { BsPiggyBank } from "react-icons/bs"
+import { MdTrackChanges } from "react-icons/md"
 import {
   Box,
   Flex,
@@ -77,7 +77,7 @@ const Navbar = () => {
             <Flex
               mt={["0.1rem", "0.1rem", "0.1rem", "0.1rem"]}
             >
-              <BsPiggyBank
+              <MdTrackChanges
                 fontSize="2rem"
                 // color='black'
               />

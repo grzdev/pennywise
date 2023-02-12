@@ -12,7 +12,7 @@ import {
   HStack
 } from '@chakra-ui/react'
 import React from 'react'
-import { BsPiggyBank } from 'react-icons/bs'
+import { MdTrackChanges } from 'react-icons/md'
 import {
   AiFillFacebook,
   AiFillInstagram,
@@ -49,7 +49,7 @@ const Footer = () => {
             mt={["-0.1rem", "0.2rem", "0.2rem", "-0.2rem"]}
             mb={["6rem","","",""]}
           >
-            <BsPiggyBank 
+            <MdTrackChanges 
               fontSize="2rem"
               // color='black'
 
