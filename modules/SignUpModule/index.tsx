@@ -169,13 +169,15 @@ const SignUpModule = () => {
             <Flex
               mt="3rem"
             >
-              <Button
-                bg={button}
-                size="lg"
-                color="white"
-              >
-                CREATE ACCOUNT
-              </Button>
+              <Link href="/dashboard">
+                <Button
+                  bg={button}
+                  size="lg"
+                  color="white"
+                >
+                  CREATE ACCOUNT
+                </Button>
+              </Link>
             </Flex>
           </Flex>
          

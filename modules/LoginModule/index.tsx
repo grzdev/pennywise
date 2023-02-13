@@ -129,13 +129,15 @@ const LogInModule = () => {
             <Flex
               mt="3rem"
             >
-              <Button
-                bg={button}
-                size="lg"
-                color="white"
-              >
-                LOG IN
-              </Button>
+              <Link href="/dashboard">
+                <Button
+                  bg={button}
+                  size="lg"
+                  color="white"
+                >
+                  LOG IN
+                </Button>
+              </Link>
             </Flex>
           </Flex>
          
