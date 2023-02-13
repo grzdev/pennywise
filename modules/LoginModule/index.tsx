@@ -9,88 +9,217 @@ import {
   Input,
   Text, 
 } from '@chakra-ui/react'
-import { BsPiggyBank } from 'react-icons/bs'
+import { MdTrackChanges } from 'react-icons/md'
+import { FcGoogle } from "react-icons/fc"
 import { useColorModeValue } from '@chakra-ui/react'
 import Link from 'next/link'
 
 const LogInModule = () => {
-  const divColor = useColorModeValue("#084DA1","white")
-  const TextColor = useColorModeValue("white","#084DA1")
-  const TextColor2 = useColorModeValue("white","#4A5568")
-  const TextColor3 = useColorModeValue("white","black")
+  const divColor = useColorModeValue("white","")
+  const headerColor = useColorModeValue("#0059ec","white")
+  const TextColor2 = useColorModeValue("black","")
+  const signUp = useColorModeValue("0059ec","#5088e4")
   const button = useColorModeValue("#608dff","#084DA1")
 
   return (
-     <Flex
-      justifyContent="center"
-      alignItems="center"
-      flexDir="column"
-      mt={["3rem", "2rem", "2rem", "3rem"]}
-      mb="3rem"
+    //  <Flex
+    //   justifyContent="center"
+    //   alignItems="center"
+    //   flexDir="column"
+    //   mt={["3rem", "2rem", "2rem", "3rem"]}
+    //   mb="3rem"
       
-    >
-       <Flex
-          mt="0.4rem"
+    // >
+    //    <Flex
+    //       mt="0.4rem"
           
+    //     >
+    //       <Flex
+    //         mt={["-0.5rem", "0.2rem", "0.2rem", "-0.3rem"]}
+    //       >
+    //         <MdTrackChanges
+    //           fontSize="3rem"
+    //           // color='black'
+    //         />
+    //       </Flex>
+
+    //       <Heading
+    //         size="lg"
+    //         ml="0.2rem"
+    //         // color='black'
+    //       >
+    //         trackdaily
+    //       </Heading>
+    //     </Flex>
+
+    //     <Flex
+    //       w={["22rem","22rem","22rem","27rem"]}
+    //       h="29rem"
+    //       bg={divColor}
+    //       mt={["1rem","3rem","3rem","2rem"]}
+    //       borderRadius="1.3rem"
+    //       // justifyContent="center"
+    //       // alignItems="center"
+    //       flexDir="column"
+    //       boxShadow=" rgba(0, 0, 0, 0.1) 0px 10px 50px;"
+    //     >
+    //       <Flex
+    //         flexDir="column"
+    //         // justifyContent="center"
+    //         alignItems="center"
+    //         mt="3rem"
+    //       >
+    //         <Heading
+    //           color={TextColor}
+    //           size="md"
+    //         >
+    //           Login to Your Account
+    //         </Heading>
+    //         <Text
+    //           color={TextColor3}
+    //           mt="0.2rem"
+    //           fontSize="0.9rem"
+    //         >
+    //           Securly login to your trackdaily
+    //         </Text>
+    //       </Flex>
+
+    //       <Flex
+    //         flexDir="column"
+    //         // w={["","","","20rem"]}
+    //         justifyContent="center"
+    //         alignItems="center"
+    //         mt="2rem"
+    //       >
+    //         <Flex
+    //           flexDir="column"
+    //         >
+    //           <Text
+    //             color={TextColor2}
+    //             fontWeight={600}
+    //           >
+    //             Email or Username
+    //           </Text>
+    //           <Input
+    //             variant="filled"
+    //             bg="#EDF2F7"
+    //             size="lg"
+    //             mt="0.5rem"
+    //           />
+    //         </Flex>
+
+    //         <Flex
+    //           flexDir="column"
+    //           mt="2rem"
+    //         >
+    //           <Text
+    //             color={TextColor2}
+    //             fontWeight={600}
+    //           >
+    //             Password
+    //           </Text>
+    //           <Input
+    //             variant="filled"
+    //             bg="#EDF2F7"
+    //             size="lg"
+    //             mt="0.5rem"
+    //           />
+    //         </Flex>
+
+
+    //         <Flex
+    //           mt="3rem"
+    //         >
+    //           <Link href="/dashboard">
+    //             <Button
+    //               bg={button} 
+    //               size="lg"
+    //               color="white"
+    //             >
+    //               LOG IN
+    //             </Button>
+    //           </Link>
+    //         </Flex>
+    //       </Flex>
+         
+    //     </Flex>
+
+    //     <Flex
+    //       mt="2rem"
+    //       flexDir="column"
+    //       alignItems="center"
+    //     >
+    //       <Link href="/signup">
+    //         <Text>
+    //           Don't have an account? Register
+    //         </Text>
+    //       </Link>
+
+    //       <Text
+    //         mt="0.6rem"
+    //       >
+    //         Forgot Password?
+    //       </Text>
+    //     </Flex>
+    // </Flex> 
+    <Container centerContent>
+       <Flex
+          mt="4rem"
+          w={["","","","30rem"]}
+          bg={divColor}
+          // h={["","","","30rem"]}
+          justifyContent="center"
+          alignContent="center"
+          borderRadius="1rem"
+          flexDir="column"
         >
           <Flex
-            mt={["-0.5rem", "0.2rem", "0.2rem", "-0.3rem"]}
+            // justifyContent="center"
+            // alignItems="center"
+            mt={["","","","2rem"]}
+            ml={["","","","1.5rem"]}
           >
-            <BsPiggyBank
-              fontSize="3rem"
-              // color='black'
-            />
+            <Flex
+              mt={["-0.5rem", "0.2rem", "0.2rem", "-0.3rem"]}
+            >
+              <Link href="/">
+                <MdTrackChanges
+                  fontSize="3rem"
+                  color='#0059ec'
+                />
+              </Link>
+            </Flex>
+
+            <Link href="/">
+              <Heading
+                size="lg"
+                ml="0.2rem"
+                color={headerColor}
+              >
+                trackdaily
+              </Heading>
+            </Link>
           </Flex>
 
-          <Heading
-            size="lg"
-            ml="0.2rem"
-            // color='black'
-          >
-            trackdaily
-          </Heading>
-        </Flex>
-
-        <Flex
-          w={["22rem","22rem","22rem","27rem"]}
-          h="29rem"
-          bg={divColor}
-          mt={["1rem","3rem","3rem","2rem"]}
-          borderRadius="1.3rem"
-          // justifyContent="center"
-          // alignItems="center"
-          flexDir="column"
-          boxShadow=" rgba(0, 0, 0, 0.1) 0px 10px 50px;"
-        >
           <Flex
             flexDir="column"
-            // justifyContent="center"
-            alignItems="center"
-            mt="3rem"
+            ml={["0.1rem","0.1rem","0.1rem","2rem"]}
+            mt="1.5rem"
           >
-            <Heading
-              color={TextColor}
-              size="md"
-            >
-              Login to Your Account
+            <Heading>
+              Welcome back
             </Heading>
-            <Text
-              color={TextColor3}
-              mt="0.2rem"
-              fontSize="0.9rem"
-            >
-              Securly login to your trackdaily
+            <Text>
+             Securly login to your Trackdaily account.
             </Text>
           </Flex>
 
           <Flex
+            ml={["0.1rem","0.1rem","0.1rem","2rem"]}
+            mt="3rem"
             flexDir="column"
-            // w={["","","","20rem"]}
-            justifyContent="center"
-            alignItems="center"
-            mt="2rem"
           >
-            <Flex
+          <Flex
               flexDir="column"
             >
               <Text
@@ -109,7 +238,7 @@ const LogInModule = () => {
 
             <Flex
               flexDir="column"
-              mt="2rem"
+              mt="1rem"
             >
               <Text
                 color={TextColor2}
@@ -124,43 +253,61 @@ const LogInModule = () => {
                 mt="0.5rem"
               />
             </Flex>
-
+          </Flex>
 
             <Flex
-              mt="3rem"
+              ml={["10rem","10rem","10rem","22rem"]}
+              mt="1.5rem"
+              mb="1.5rem"
+
             >
-              <Link href="/dashboard">
-                <Button
-                  bg={button}
-                  size="lg"
-                  color="white"
-                >
-                  LOG IN
-                </Button>
-              </Link>
+              <Text
+              >
+                Forgot Password?
+              </Text>
             </Flex>
-          </Flex>
-         
-        </Flex>
 
-        <Flex
-          mt="2rem"
-          flexDir="column"
-          alignItems="center"
-        >
-          <Link href="/signup">
-            <Text>
-              Don't have an account? Register
-            </Text>
-          </Link>
+            <Flex
+              flexDir="column"
+              ml={["0.1rem","0.1rem","0.1rem","2rem"]}
+              gap="1rem"
+            >
+              <Button
+                bg={"#0059ec"}
+                color="white"
+              >
+                Sign in
+              </Button>
+              <Button>
+                {/* Put a logo here */}
 
-          <Text
-            mt="0.6rem"
-          >
-            Forgot Password?
-          </Text>
+               <FcGoogle fontSize="1.5rem"/> <Text ml="0.3rem">Sign in with google</Text>
+              </Button>
+            </Flex>
+
+            <Flex
+              // ml={["","","","22rem"]}
+              justifyContent="center"
+              alignItems="center"
+              mt="2rem"
+              flexDir="row"
+            >
+              <Text>
+               Don't have an account? 
+              </Text>
+               <Text
+                color={signUp}
+                ml="0.4rem"
+             fontWeight={700}
+
+               >
+                <Link href="/signup" >
+                  Sign up
+                </Link>
+               </Text>
+            </Flex>
         </Flex>
-    </Flex> 
+    </Container>
   )
 }
 

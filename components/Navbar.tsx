@@ -33,6 +33,7 @@ const Navbar = () => {
   const { isOpen, onToggle } = useDisclosure();
   const { colorMode, toggleColorMode } = useColorMode()
   const buttonColor = useColorModeValue("black","#256ec1")
+  const headerColor = useColorModeValue("#0059ec","white")
   return (
     <Box>
     <Flex
@@ -79,7 +80,7 @@ const Navbar = () => {
             >
               <MdTrackChanges
                 fontSize="2rem"
-                // color='black'
+                color='#0059ec'
               />
             </Flex>
           </Link>
@@ -87,7 +88,7 @@ const Navbar = () => {
             <Heading
               size="md"
               ml="0.2rem"
-              // color='black'
+              color={headerColor}
             >
               trackdaily
             </Heading>
