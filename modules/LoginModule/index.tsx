@@ -16,10 +16,10 @@ import Link from 'next/link'
 
 const LogInModule = () => {
   const divColor = useColorModeValue("white","")
-  const headerColor = useColorModeValue("#0059ec","white")
+  const headerColor = useColorModeValue("#4f89e8","#c6dbfb")
   const TextColor2 = useColorModeValue("black","")
   const signUp = useColorModeValue("#0059ec","#5088e4")
-  const button = useColorModeValue("#608dff","#084DA1")
+  const signIn = useColorModeValue("#0059ec","#4f89e8")
 
   return (
     //  <Flex
@@ -279,7 +279,7 @@ const LogInModule = () => {
               gap="1rem"
             >
               <Button
-                bg={"#0059ec"}
+                bg={signIn}
                 color="white"
               >
                 Sign in

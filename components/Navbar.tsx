@@ -33,7 +33,7 @@ const Navbar = () => {
   const { isOpen, onToggle } = useDisclosure();
   const { colorMode, toggleColorMode } = useColorMode()
   const buttonColor = useColorModeValue("black","#256ec1")
-  const headerColor = useColorModeValue("#0059ec","white")
+  const headerColor = useColorModeValue("#4f89e8","#c6dbfb")
   return (
     <Box>
     <Flex

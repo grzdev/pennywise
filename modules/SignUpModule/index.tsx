@@ -17,10 +17,11 @@ import { FcGoogle } from "react-icons/fc"
 
 const SignUpModule = () => {
   const divColor = useColorModeValue("white","")
-  const headerColor = useColorModeValue("#0059ec","white")
+  const headerColor = useColorModeValue("#4f89e8","#c6dbfb")
   const TextColor2 = useColorModeValue("black","")
   const signUp = useColorModeValue("#0059ec","#5088e4")
   const TextColor3 = useColorModeValue("white","black")
+  const signIn = useColorModeValue("#0059ec","#4f89e8")
   const button = useColorModeValue("#608dff","#084DA1")
 
   return (
@@ -342,7 +343,7 @@ const SignUpModule = () => {
            mt="2rem"
          >
            <Button
-             bg="#0059ec"
+             bg={signIn}
              color="white"
            >
               Create account
