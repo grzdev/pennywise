@@ -80,7 +80,7 @@ const Navbar = () => {
             >
               <MdTrackChanges
                 fontSize="2rem"
-                color='#0059ec'
+                color={headerColor}
               />
             </Flex>
           </Link>

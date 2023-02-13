@@ -19,7 +19,7 @@ const SignUpModule = () => {
   const divColor = useColorModeValue("white","")
   const headerColor = useColorModeValue("#0059ec","white")
   const TextColor2 = useColorModeValue("black","")
-  const signUp = useColorModeValue("0059ec","#5088e4")
+  const signUp = useColorModeValue("#0059ec","#5088e4")
   const TextColor3 = useColorModeValue("white","black")
   const button = useColorModeValue("#608dff","#084DA1")
 
@@ -216,19 +216,19 @@ const SignUpModule = () => {
          ml={["","","","1.5rem"]}
        >
          <Flex
-           mt={["-0.5rem", "0.2rem", "0.2rem", "-0.3rem"]}
+           mt={["-0.2rem", "0.2rem", "0.2rem", "-0.1rem"]}
          >
            <Link href="/">
              <MdTrackChanges
-               fontSize="3rem"
-               color='#0059ec'
+               fontSize="2rem"
+               color={headerColor}
              />
            </Link>
          </Flex>
 
          <Link href="/">
            <Heading
-             size="lg"
+             size="md"
              ml="0.2rem"
              color={headerColor}
            >
@@ -242,17 +242,22 @@ const SignUpModule = () => {
          ml={["0.1rem","0.1rem","0.1rem","2rem"]}
          mt="1.5rem"
        >
-         <Heading>
+         <Heading
+          size={["lg","lg","lg","lg"]}
+         >
           Create a Secure Account
          </Heading>
-         <Text>
+         <Text
+              fontSize={["0.8rem","","",""]}
+
+         >
           Welcome to the future of budgeting
          </Text>
        </Flex>
 
        <Flex
          ml={["0.1rem","0.1rem","0.1rem","2rem"]}
-         mt="3rem"
+         mt={["1.6rem","2rem","2rem","2rem"]}
          flexDir="column"
        >
        <Flex
@@ -317,9 +322,9 @@ const SignUpModule = () => {
 
          
        </Flex>
-
+{/* 
          <Flex
-           ml={["14rem","10rem","10rem","22rem"]}
+           ml={["12rem","10rem","10rem","22rem"]}
            mt="1.5rem"
            mb="1.5rem"
 
@@ -328,12 +333,13 @@ const SignUpModule = () => {
            >
              Forgot Password?
            </Text>
-         </Flex>
+         </Flex> */}
 
          <Flex
            flexDir="column"
            ml={["0.1rem","0.1rem","0.1rem","2rem"]}
            gap="1rem"
+           mt="2rem"
          >
            <Button
              bg="#0059ec"
