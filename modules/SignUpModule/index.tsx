@@ -216,7 +216,7 @@ const SignUpModule = () => {
          ml={["","","","1.5rem"]}
        >
          <Flex
-           mt={["-0.2rem", "0.2rem", "0.2rem", "-0.1rem"]}
+           mt={["-0.3rem", "-0.3rem", "-0.3rem", "-0.3rem"]}
          >
            <Link href="/">
              <MdTrackChanges
@@ -229,7 +229,7 @@ const SignUpModule = () => {
          <Link href="/">
            <Heading
              size="md"
-             ml="0.2rem"
+            //  ml="0.2rem"
              color={headerColor}
            >
              trackdaily
@@ -359,6 +359,7 @@ const SignUpModule = () => {
            justifyContent="center"
            alignItems="center"
            mt="2rem"
+           mb="3rem"
            flexDir="row"
          >
            <Text>

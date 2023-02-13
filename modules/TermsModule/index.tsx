@@ -16,6 +16,8 @@ const Terms = () => {
   const headerBg = useColorModeValue("#EEF4FC","#256EC1")
   const header = useColorModeValue("#0F60D6","whitre")
   const textColor = useColorModeValue("grey","#b6b6b6")
+  const secondDivCOlor = useColorModeValue("#e6f1ff","")  
+
 
   return (
      <Container
@@ -87,15 +89,24 @@ const Terms = () => {
       </Flex>
 
       <Flex
-        mt="7rem"
+        // mt="7rem"
+        mt={["4rem","4rem","6rem","7rem"]}
+        flexDir="column"
+        bg={secondDivCOlor}
+        w={["30rem","50rem","70rem ","96rem"]}
+        h={["","","","47rem"]}
+        justifyContent={["center","center","center","center"]}
+        alignItems={["center","center","center","center"]}
+        mb={["4rem","5rem","5rem","7rem"]}
       >
         <Text
           fontWeight={600}
           // color={textColor}
+          bg={secondDivCOlor}
           fontSize={["1.1rem", "1.1rem", "1.1rem", "1.2rem"]}
           mb={["5rem", "5rem", "5rem", "8rem"]}
           w={["21rem", "23rem", "30rem", "80rem"]}
-          mt="1rem"
+          mt={["4rem","4rem","6rem","0.1rem"]}
           justifyContent="center"
           lineHeight="2rem"
           alignItems="center"

@@ -180,7 +180,7 @@ const LogInModule = () => {
             ml={["","","","1.5rem"]}
           >
             <Flex
-              mt={["-0.2rem", "0.2rem", "0.2rem", "-0.1rem"]}
+              mt={["-0.3rem", "-0.3rem", "-0.3rem", "-0.3rem"]}
             >
               <Link href="/">
                 <MdTrackChanges
@@ -193,7 +193,7 @@ const LogInModule = () => {
             <Link href="/">
               <Heading
                 size="md"
-                ml="0.2rem"
+                // ml="0.1rem"
                 color={headerColor}
               >
                 trackdaily
@@ -266,6 +266,8 @@ const LogInModule = () => {
 
             >
               <Text
+                fontSize="0.8rem"
+                fontWeight={600}
               >
                 Forgot Password?
               </Text>
@@ -294,6 +296,7 @@ const LogInModule = () => {
               justifyContent="center"
               alignItems="center"
               mt="2rem"
+              mb="2rem"
               flexDir="row"
             >
               <Text>

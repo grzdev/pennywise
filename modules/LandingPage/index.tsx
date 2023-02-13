@@ -108,7 +108,7 @@ const LandingPage = () => {
           mb={["","","","8rem"]}
           flexDir={["column", "column", "column", "row"]}
           bg={secondDivCOlor}
-          w={["30rem","","","100rem"]}
+          w={["30rem","50rem","70rem ","100rem"]}
         >
           <Flex
             mr={["","","","2.7rem"]}

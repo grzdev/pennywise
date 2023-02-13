@@ -162,9 +162,6 @@ const Footer = () => {
             alignItems={["center","","","center"]}
           >
             <Text mb="0.5rem" color={textColor}>
-              Oko-oba Tanke, Ilorin, Nigeria
-            </Text>
-            <Text mb="0.5rem" color={textColor}>
               damilolaoyeniyi13@gmail.com
             </Text>
             <Text color={textColor}>

@@ -17,6 +17,8 @@ const About = () => {
   const headerBg = useColorModeValue("#EEF4FC","#256EC1")
   const header = useColorModeValue("#0F60D6","whitre")
   const textColor = useColorModeValue("grey","#b6b6b6")
+  const secondDivCOlor = useColorModeValue("#e6f1ff","")
+
 
   return (
     <Container
@@ -79,13 +81,19 @@ const About = () => {
 
       <Flex
           flexDir={["column-reverse", "column-reverse", "column-reverse", "row"]}
-          mt={["8rem","8rem","8rem","20rem"]}
-          mb={["6rem","6rem","6rem","10rem"]}
+          mt={["4rem","4rem","6rem","5rem"]}
+          mb={["6rem","6rem","6rem","6rem"]}
+          bg={secondDivCOlor}
+          w={["30rem","50rem","70rem ","96rem"]}
+          h={["","","","47rem"]}
+          justifyContent={["center","center","center","center"]}
+          alignItems={["center","center","center","center"]}
         >
           <Box
             // ml={["0.2rem", "4rem", "4rem", "-5rem"]}
             w={["27rem", "40rem", "40rem", "51rem"]}
-            mt={["17rem", "8rem", "8rem", "-16rem"]}
+            mt={["17rem", "8rem", "8rem", "2rem"]}
+            mb={["6rem","6rem","7rem","0.1rem"]}
           >
             <Image
               src={AboutImg2}
@@ -97,7 +105,7 @@ const About = () => {
             w={["","","",""]}
             h={["18rem","","","25rem"]}
             borderRadius="1.2rem"
-            mt={["0.1rem", "5rem", "2rem", "-10rem"]}
+            mt={["8rem", "2rem", "5rem", "-3rem"]}
           >
             <Heading
               size="2xl"

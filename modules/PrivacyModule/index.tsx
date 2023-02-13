@@ -2,7 +2,7 @@
 import { 
   Flex,
   Heading,
-  Container,
+  Container, 
   useColorModeValue,
   Box,
   VStack,
@@ -16,6 +16,7 @@ const Privacy = () => {
   const headerBg = useColorModeValue("#EEF4FC","#256EC1")
   const header = useColorModeValue("#0F60D6","whitre")
   const textColor = useColorModeValue("grey","#b6b6b6")
+  const secondDivCOlor = useColorModeValue("#e6f1ff","")  
 
   return (
     <Container
@@ -90,19 +91,25 @@ const Privacy = () => {
     </Flex>
 
     <Flex
-      mt="7rem"
+      mt={["4rem","4rem","6rem","7rem"]}
       flexDir="column"
+      bg={secondDivCOlor}
+      w={["30rem","50rem","70rem ","96rem"]}
+      h={["","","","47rem"]}
+      justifyContent={["center","center","center","center"]}
+      alignItems={["center","center","center","center"]}
+      mb={["4rem","5rem","5rem","7rem"]}
     >
       <Box
          w={["20rem", "30rem", "30rem", "100%"]}
+         mt={["6rem","","","7rem"]}
       >
         <Heading
           size={["lg","lg","lg","xl"]}
-         
             lineHeight={["3rem", "3rem", "3.6rem", "3.9rem"]}
             // mt={["4rem","2rem","2rem","10rem"]}
             // ml={["", "", "", "2rem"]}
-            textAlign={["center", "initial"]}
+            textAlign={["center", "center"]}
             fontFamily="'Roboto', sans-serif"
         >
           Application of this Privacy Policy
