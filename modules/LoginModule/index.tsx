@@ -3,6 +3,7 @@ import React from 'react'
 import { 
   Box,
   Button,
+  Checkbox,
   Container,
   Flex,
   Heading,
@@ -260,14 +261,27 @@ const LogInModule = () => {
           </Flex>
 
             <Flex
-              ml={["10rem","10rem","10rem","22rem"]}
+              ml={["0.1rem","0.1rem","0.1rem","2rem"]}
               mt="1.5rem"
               mb="1.5rem"
-
+              // flexDir="column"
             >
+                <Checkbox
+                >
+                  <Text
+                    fontSize={["0.7rem","0.7rem","0.7rem","0.9rem"]}
+                    fontWeight={600}
+                    mr={["5rem","10rem","10rem","12rem"]}
+                  >
+                   Remember me 
+                  </Text>
+                </Checkbox>
+              
               <Text
-                fontSize="0.8rem"
+                fontSize={["0.7rem","0.7rem","0.7rem","0.9rem"]}
                 fontWeight={600}
+                ml="1rem"
+                // mt="0.6rem"
               >
                 Forgot Password?
               </Text>

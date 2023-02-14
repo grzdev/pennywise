@@ -24,6 +24,7 @@ import Link from 'next/link'
 const Footer = () => {
   const textColor = useColorModeValue("black","#b6b6b6")
   const footer = useColorModeValue("#eceaea","black")
+  const headerColor = useColorModeValue("#4f89e8","#c6dbfb")
   const tradeMark = useColorModeValue("#3d99ff","white")
   return (
     <Flex
@@ -46,20 +47,22 @@ const Footer = () => {
       >
         <Flex>
           <Flex
-            mt={["-0.1rem", "0.2rem", "0.2rem", "-0.2rem"]}
+            mt={["-0.1rem", "-0.2rem", "-0.1rem", "-0.1rem"]}
             mb={["6rem","","",""]}
           >
             <MdTrackChanges 
               fontSize="2rem"
               // color='black'
-
+              color={headerColor}
             />
           </Flex>
 
           <Heading
             size="md"
-            ml="0.2rem"
+            // ml="0.2rem"
             // color='black'
+              color={headerColor}
+
           >
             trackdaily
           </Heading>

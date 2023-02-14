@@ -66,7 +66,8 @@ const LandingPage = () => {
                 textAlign={["center", "initial"]}
                 fontFamily="'DM Sans',sans-serif "
               >
-                TrackDaily helps users budget their income by tracking the amount they spend on a daily basis.
+                TrackDaily helps customers achieve their budget goals by storing the 
+                amount they spend on a daily basis,
               </Text>
             </Flex>
             <Flex
@@ -133,7 +134,7 @@ const LandingPage = () => {
                 textAlign={["center", "initial"]}
                 fontFamily="'poppins', sans-serif"
               >
-                We will help you economize efficiently
+                We will help you economize efficiently.
               </Heading>
               <Text
                 fontWeight={500}
@@ -148,7 +149,7 @@ const LandingPage = () => {
                 ml={["", "", "", "16rem"]}
                 fontFamily="'poppins',sans-serif "
               >
-                It is hard to keep track of how much we spend in a day, this may result to people spending more than their budget.
+                It is hard to keep track of how much we spend in a day, this may result to people spending more than they plan to.
                 TrackDaily helps to keep tabs on what we spend on and the total amount spent.
               </Text>
               <Link href={"/about"}>

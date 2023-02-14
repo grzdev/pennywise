@@ -132,9 +132,9 @@ const About = () => {
                 textAlign={["center", "initial"]}
                 fontFamily="'DM Sans',sans-serif "
               >
-               TrackDaily is the first online "Money tracking" app in Nigeria.
-               It first came about when the team noticed that they didn't have
-               an idea on how much they spend on a daily basis.<br/><br/>
+               TrackDaily is the first online "Money tracking" app in West-Africa.
+               It first came about when the team noticed that they don't have
+               an idea of how much they spend on a daily basis.<br/><br/>
 
                This was a problem because when calculated, they spent more than
                their income.

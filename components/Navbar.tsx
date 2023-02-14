@@ -87,7 +87,7 @@ const Navbar = () => {
           <Link href="/">         
             <Heading
               size="md"
-              // ml="0.2rem"
+              ml="0.1rem"
               color={headerColor}
             >
               trackdaily
