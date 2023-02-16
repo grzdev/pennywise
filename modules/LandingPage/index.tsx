@@ -72,7 +72,7 @@ const LandingPage = () => {
             </Flex>
             <Flex
             >
-              <Link href='/signup'>
+              <Link href="/api/auth/login">
                 <Button
                   size="lg"
                   h="3.5rem"
@@ -85,7 +85,7 @@ const LandingPage = () => {
                     bg: '#308DFF',
                   }}
                 >
-                  Create free account
+                  Sign up for free
                 </Button>
               </Link>
             </Flex>
@@ -257,27 +257,29 @@ const LandingPage = () => {
             alignItems="center"
             mt={["2rem","","",""]}
           >
-            <Input
+            {/* <Input
               placeholder='Your email...'
               _placeholder={{color: 'lightgrey' }}
               size={["md","lg","lg","lg"]}
               variant='filled'
               mr="0.4rem"
-            />
-            <Button
-              size={["md","lg","lg","lg"]}
-              h="3.5rem"
-              variant='solid'
-              bg={signUp}
-              color="white"
-              mt={["1rem","","","0.1rem"]}
-              borderRadius="0.6rem"
-              _hover={{
-                bg: '#308DFF',
-              }}
-            >
-              Get started
-            </Button>
+            /> */}
+            <Link href="/api/auth/login">
+              <Button
+                size={["md","lg","lg","lg"]}
+                h="3.5rem"
+                variant='solid'
+                bg={signUp}
+                color="white"
+                mt={["0.1rem","","","-2rem"]}
+                borderRadius="0.6rem"
+                _hover={{
+                  bg: '#308DFF',
+                }}
+              >
+                Get started
+              </Button>
+            </Link>
           </Flex>
         </Flex>
       </Container>

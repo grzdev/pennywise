@@ -7,12 +7,15 @@ import {
   Heading,
   Input,
   Text, 
+  FormControl,
+  FormLabel
 } from '@chakra-ui/react'
-import React from 'react'
+import React,{ useState } from 'react'
 import { MdTrackChanges } from 'react-icons/md'
 import { useColorModeValue } from '@chakra-ui/react'
 import Link from 'next/link'
 import { FcGoogle } from "react-icons/fc"
+import { useAuth } from 'context/AuthContext'
 
 
 const SignUpModule = () => {
@@ -24,6 +27,24 @@ const SignUpModule = () => {
   const signIn = useColorModeValue("#0059ec","#4f89e8")
   const button = useColorModeValue("#608dff","#084DA1")
 
+  const { user, signup } = useAuth()
+  console.log(user)
+
+  const [ data, setData ] = useState({
+    email:'',
+    password:'',
+    username: ''
+  })
+
+  const handleSignup = async (e: any) => {
+    e.preventDefault()
+  
+    try {
+      await signup(data.email, data.password)
+    } catch (err) {
+      console.log(err)
+    }
+  }
   return (
     <Container centerContent>
     <Flex
@@ -88,80 +109,65 @@ const SignUpModule = () => {
          mt={["1.6rem","2rem","2rem","2rem"]}
          flexDir="column"
        >
-       <Flex
-           flexDir="column"
-         >
-           <Text
-             color={TextColor2}
-             fontWeight={600}
-           >
-             Fullname
-           </Text>
-           <Input
-             variant="filled"
-             bg="#EDF2F7"
-             size="lg"
-             mt="0.5rem"
-             placeholder="Fullname"
-             _placeholder={{ color: "grey", fontSize: "0.8rem" }}
-           />
-         </Flex>
-
-         <Flex
-           flexDir="column"
-           mt="1rem"
-         >
-           <Text
-             color={TextColor2}
-             fontWeight={600}
-           >
-             Email Address
-           </Text>
-           <Input
-             variant="filled"
-             bg="#EDF2F7"
-             size="lg"
-             mt="0.5rem"
-             placeholder="Email Address"
-             _placeholder={{ color: "grey", fontSize: "0.8rem" }}
-           />
-         </Flex>
-
-         
-         <Flex
-           flexDir="column"
-           mt="1rem"
-         >
-           <Text
-             color={TextColor2}
-             fontWeight={600}
-           >
-             Password
-           </Text>
-           <Input
-             variant="filled"
-             bg="#EDF2F7"
-             size="lg"
-             mt="0.5rem"
-             placeholder="Password"
-             _placeholder={{ color: "grey", fontSize: "0.8rem" }}
-           />
-         </Flex>
+           <FormControl>
+                  <Flex
+                    flexDir="column"
+                    mt="1rem"
+                  >
+                    <FormLabel
+                      color={TextColor2}
+                      fontWeight={600}
+                    >
+                      Email Address
+                    </FormLabel>
+                    <Input
+                      variant="filled"
+                      // bg="#EDF2F7"
+                      size="lg"
+                      mt="0.5rem"
+                      id="email"
+                      onChange={(e: any)=>
+                        setData({
+                          ...data,
+                          email: e.target.value
+                        })
+                      }
+                      value={data.email}
+                      type="email"
+                      placeholder='Email'
+                    />
+                  </Flex>
+                  <Flex
+                    flexDir="column"
+                    mt="1rem"
+                  >
+                    <FormLabel
+                      color={TextColor2}
+                      fontWeight={600}
+                    >
+                      Password
+                    </FormLabel>
+                    <Input
+                      variant="filled"
+                      // bg="#EDF2F7"
+                      size="lg"
+                      mt="0.5rem"
+                      id="password"
+                      onChange={(e:any)=>
+                        setData({
+                          ...data,
+                          password:e.target.value
+                        })
+                      }
+                      value={data.password}
+                      type="password"
+                      placeholder='Password'
+                    />
+                  </Flex>
+                </FormControl>
 
          
        </Flex>
-{/* 
-         <Flex
-           ml={["12rem","10rem","10rem","22rem"]}
-           mt="1.5rem"
-           mb="1.5rem"
-
-         >
-           <Text
-           >
-             Forgot Password?
-           </Text>
-         </Flex> */}
 
          <Flex
            flexDir="column"
@@ -172,6 +178,7 @@ const SignUpModule = () => {
            <Button
              bg={signIn}
              color="white"
+             onClick={handleSignup}
            >
               Create account
            </Button>

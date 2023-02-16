@@ -26,6 +26,8 @@ import {
   SunIcon
 } from '@chakra-ui/icons';
 import { useColorMode } from "@chakra-ui/react";
+import { useAuth } from "context/AuthContext";
+import router from "next/router";
 
 
 
@@ -34,6 +36,9 @@ const Navbar = () => {
   const { colorMode, toggleColorMode } = useColorMode()
   const buttonColor = useColorModeValue("black","#256ec1")
   const headerColor = useColorModeValue("#4f89e8","#c6dbfb")
+
+  const { user, logout } = useAuth()
+
   return (
     <Box>
     <Flex
@@ -109,32 +114,51 @@ const Navbar = () => {
         mt={["0.6rem", "0.1rem", "0.1rem", "0.1rem"]}
         ml={["1.9rem","1.4rem","",""]}
         >
-        <Link href="/login">
-          <Button
-            fontSize={'sm'}
-            fontWeight={600}
-            variant={'outlne'}
-            >
-            Sign In
-          </Button>
-        </Link>
+          {user ? (
+            <Flex>
+              <Button
+              fontSize={'sm'}
+              fontWeight={600}
+              variant={'outlne'}
+              onClick={()=>{
+                logout(),
+                router.push("/login")
+              }}
+              >
+              Logout
+            </Button>
+            </Flex>
+          ) : (
+          <Flex>
+            <Link href="/login">
+              <Button
+                fontSize={'sm'}
+                fontWeight={600}
+                variant={'outlne'}
+                display={{ base: 'none', md: 'inline-flex' }}
+                >
+                Sign In
+              </Button>
+            </Link>
 
-        <Link href="/signup">
-          <Button
-            display={{ base: 'none', md: 'inline-flex' }}
-            fontSize={'sm'}
-            fontWeight={700}
-            color={'white'}
-            bg={buttonColor}
-            // href={'#'}
-            _hover={{
-              bg: '#308DFF',
-            }}
-            borderRadius="0.6rem"
-            >
-            Create free account
-          </Button>
-        </Link>
+            <Link href="/signup">
+              <Button
+                
+                fontSize={'sm'}
+                fontWeight={700}
+                color={'white'}
+                bg={buttonColor}
+                // href={'#'}
+                _hover={{
+                  bg: '#308DFF',
+                }}
+                borderRadius="0.6rem"
+                >
+                Create free account
+              </Button>
+            </Link>
+          </Flex>
+          )}
 
         <Button 
           onClick={toggleColorMode}

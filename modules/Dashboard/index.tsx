@@ -1,8 +1,12 @@
 import React from 'react'
+import { Button, Flex } from '@chakra-ui/react'
+import Link from 'next/link'
 
 const DashboardModule = () => {
   return (
-    <div>DashboardModule</div>
+    <Flex>
+      Hiyya
+    </Flex>
   )
 }
 
