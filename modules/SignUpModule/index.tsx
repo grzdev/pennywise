@@ -29,6 +29,8 @@ const SignUpModule = () => {
   const signIn = useColorModeValue("#0059ec","#4f89e8")
   const button = useColorModeValue("#608dff","#084DA1")
 
+  const { signIWithGoogle } = useAuth()
+
   const [loading, setLoading] = useState(false)
 
   const { user, signup } = useAuth()
@@ -39,6 +41,15 @@ const SignUpModule = () => {
     password:'',
     username: ''
   })
+
+  const handleGoogleClick = async () => {
+    try {
+      await signIWithGoogle()
+      Router.push("/dashboard")
+    } catch (error) {
+      console.log(error)
+    }
+  }
 
   const handleSignup = async (e: any) => {
     e.preventDefault()
@@ -195,9 +206,9 @@ const SignUpModule = () => {
            >
               Create account
            </Button>
-           <Button>
-             {/* Put a logo here */}
-
+           <Button
+            onClick={handleGoogleClick}
+           >
             <FcGoogle fontSize="1.5rem"/> <Text ml="0.3rem">Continue with google</Text>
            </Button>
          </Flex>

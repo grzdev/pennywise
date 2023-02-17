@@ -135,7 +135,7 @@ const Navbar = () => {
                 fontSize={'sm'}
                 fontWeight={600}
                 variant={'outlne'}
-                mr={["1.7rem","","",""]}
+                mr={["1.5rem","","",""]}
                 >
                 Sign In
               </Button>

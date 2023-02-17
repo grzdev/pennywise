@@ -27,6 +27,8 @@ const LogInModule = () => {
   const signUp = useColorModeValue("#0059ec","#5088e4")
   const signIn = useColorModeValue("#0059ec","#4f89e8")
 
+  const { signIWithGoogle } = useAuth()
+
   const [loading, setLoading] = useState(false)
   
   const { user, login } = useAuth()
@@ -35,6 +37,16 @@ const LogInModule = () => {
     email:'',
     password:''
   })
+
+
+  const handleGoogleClick = async () => {
+    try {
+      await signIWithGoogle()
+      Router.push("/dashboard")
+    } catch (error) {
+      console.log(error)
+    }
+  }
 
   const handleLogin = async (e: any) =>{
     e.preventDefault()
@@ -46,11 +58,6 @@ const LogInModule = () => {
       console.log(err)
     }
 
-  //   if(loading){
-  //     return(
-  //       <CircularProgress isIndeterminate value={40}/>
-  //     )
-  // }
    setLoading(true)
 
   }
@@ -61,15 +68,12 @@ const LogInModule = () => {
           mt="4rem"
           w={["","","","30rem"]}
           bg={divColor}
-          // h={["","","","30rem"]}
           justifyContent="center"
           alignContent="center"
           borderRadius="1rem"
           flexDir="column"
         >
           <Flex
-            // justifyContent="center"
-            // alignItems="center"
             mt={["","","","2rem"]}
             ml={["","","","1.5rem"]}
           >
@@ -87,7 +91,6 @@ const LogInModule = () => {
             <Link href="/">
               <Heading
                 size="md"
-                // ml="0.1rem"
                 color={headerColor}
               >
                 trackdaily
@@ -131,7 +134,6 @@ const LogInModule = () => {
                     </FormLabel>
                     <Input
                       variant="filled"
-                      // bg="#EDF2F7"
                       size="lg"
                       mt="0.5rem"
                       id='email'
@@ -158,7 +160,6 @@ const LogInModule = () => {
                     </FormLabel>
                     <Input
                       variant="filled"
-                      // bg="#EDF2F7"
                       size="lg"
                       mt="0.5rem"
                       id='password'
@@ -178,30 +179,19 @@ const LogInModule = () => {
           </Flex>
 
             <Flex
-              ml={["0.1rem","0.1rem","0.1rem","2rem"]}
-              mt="1.5rem"
-              mb="1.5rem"
-              // flexDir="column"
+              ml={["8rem","7rem","8rem","21rem"]}
+              mt="1rem"
+              mb="1rem"
             >
-                <Checkbox
+              {/* <Link href="/resetpassword">
+                <Text
+                  fontSize={["0.7rem","0.7rem","0.7rem","0.9rem"]}
+                  fontWeight={600}
+                  ml="1rem"
                 >
-                  <Text
-                    fontSize={["0.7rem","0.7rem","0.7rem","0.9rem"]}
-                    fontWeight={600}
-                    mr={["5rem","10rem","10rem","12rem"]}
-                  >
-                   Remember me 
-                  </Text>
-                </Checkbox>
-              
-              <Text
-                fontSize={["0.7rem","0.7rem","0.7rem","0.9rem"]}
-                fontWeight={600}
-                ml="1rem"
-                // mt="0.6rem"
-              >
-                Forgot Password?
-              </Text>
+                  Forgot Password?
+                </Text>
+              </Link> */}
             </Flex>
 
             <Flex
@@ -220,20 +210,17 @@ const LogInModule = () => {
                 color="white"
                 onClick={handleLogin}
                 type="submit"
-                // isLoading
-                // spinner={<BeatLoader size={8} color='white' />}
               >
                 Sign in
               </Button>
-              <Button>
-                {/* Put a logo here */}
-
+              <Button
+                onClick={handleGoogleClick}
+              >
                <FcGoogle fontSize="1.5rem"/> <Text ml="0.3rem">Sign in with google</Text>
               </Button>
             </Flex>
 
             <Flex
-              // ml={["","","","22rem"]}
               justifyContent="center"
               alignItems="center"
               mt="2rem"
