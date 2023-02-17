@@ -48,7 +48,7 @@ const SignUpModule = () => {
   return (
     <Container centerContent>
     <Flex
-       mt={["2rem","4rem","4rem","4rem"]}
+       mt={["4rem","4rem","4rem","4rem"]}
        w={["","","","30rem"]}
        h={["","","","40rem"]}
        bg={divColor}
