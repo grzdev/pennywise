@@ -114,7 +114,7 @@ const Navbar = () => {
         mt={["0.6rem", "0.1rem", "0.1rem", "0.1rem"]}
         ml={["1.9rem","1.4rem","",""]}
         >
-          {user ? (
+          {/* {user ? (
             <Flex>
               <Button
               fontSize={'sm'}
@@ -128,14 +128,14 @@ const Navbar = () => {
               Logout
             </Button>
             </Flex>
-          ) : (
+          ) : ( */}
           <Flex>
             <Link href="/login">
               <Button
                 fontSize={'sm'}
                 fontWeight={600}
                 variant={'outlne'}
-                display={{ base: 'none', md: 'inline-flex' }}
+                mr={["1.7rem","","",""]}
                 >
                 Sign In
               </Button>
@@ -153,12 +153,13 @@ const Navbar = () => {
                   bg: '#308DFF',
                 }}
                 borderRadius="0.6rem"
+                display={{ base: 'none', md: 'inline-flex' }}
                 >
                 Sign up for free
               </Button>
             </Link>
           </Flex>
-          )}
+          {/* )} */}
 
         <Button 
           onClick={toggleColorMode}

@@ -18,6 +18,7 @@ import { useColorModeValue } from '@chakra-ui/react'
 import Link from 'next/link'
 import { useAuth } from 'context/AuthContext'
 import Router from 'next/router'
+import { CircularProgress, } from "@chakra-ui/react";
 
 const LogInModule = () => {
   const divColor = useColorModeValue("white","")
@@ -25,6 +26,8 @@ const LogInModule = () => {
   const TextColor2 = useColorModeValue("black","")
   const signUp = useColorModeValue("#0059ec","#5088e4")
   const signIn = useColorModeValue("#0059ec","#4f89e8")
+
+  const [loading, setLoading] = useState(false)
   
   const { user, login } = useAuth()
 
@@ -35,7 +38,6 @@ const LogInModule = () => {
 
   const handleLogin = async (e: any) =>{
     e.preventDefault()
-    console.log(data)
 
     try {
       await login(data.email, data.password)
@@ -43,6 +45,14 @@ const LogInModule = () => {
     } catch (err) {
       console.log(err)
     }
+
+  //   if(loading){
+  //     return(
+  //       <CircularProgress isIndeterminate value={40}/>
+  //     )
+  // }
+   setLoading(true)
+
   }
 
   return (
@@ -199,11 +209,19 @@ const LogInModule = () => {
               ml={["0.1rem","0.1rem","0.1rem","2rem"]}
               gap="1rem"
             >
+              <Flex
+                justifyContent="center"
+                alignItems="center"
+              >
+                {loading ? <CircularProgress isIndeterminate value={40} thickness='4px' size="2rem"/> : ''} 
+              </Flex>
               <Button
                 bg={signIn}
                 color="white"
                 onClick={handleLogin}
                 type="submit"
+                // isLoading
+                // spinner={<BeatLoader size={8} color='white' />}
               >
                 Sign in
               </Button>
