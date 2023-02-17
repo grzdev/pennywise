@@ -154,7 +154,7 @@ const Navbar = () => {
                 }}
                 borderRadius="0.6rem"
                 >
-                Create free account
+                Sign up for free
               </Button>
             </Link>
           </Flex>

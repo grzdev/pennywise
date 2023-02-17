@@ -165,10 +165,7 @@ const Footer = () => {
             alignItems={["center","","","center"]}
           >
             <Text mb="0.5rem" color={textColor}>
-              damilolaoyeniyi13@gmail.com
-            </Text>
-            <Text color={textColor}>
-              09036818841
+              trackdaily23@gmail.com
             </Text>
           </Flex>
         </Flex>
