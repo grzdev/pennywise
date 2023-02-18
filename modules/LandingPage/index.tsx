@@ -269,7 +269,7 @@ const LandingPage = () => {
               variant='filled'
               mr="0.4rem"
             /> */}
-            <Link href="/api/auth/login">
+            <Link href="/signup">
               <Button
                 size={["md","lg","lg","lg"]}
                 h="3.5rem"
