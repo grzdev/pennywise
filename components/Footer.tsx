@@ -174,7 +174,7 @@ const Footer = () => {
       <Flex
         justifyContent={["center","","","center"]}
         alignItems={["center","","","center"]}
-        mt={["3rem","","","6rem"]}
+        mt={["3rem","3rem","3rem","6rem"]}
         mb="3rem"
       >
       <Text
@@ -182,7 +182,7 @@ const Footer = () => {
         color={tradeMark}
         fontSize="0.8rem"
       >
-        2023 TrackTech and co.
+        Proudly made in NG by Oyeniyi Damilola
       </Text>
     </Flex>
   </Flex>

@@ -113,7 +113,7 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
             flexDir="initial"
             mt={["0.6rem","0.4rem","0.4rem","0.4rem"]}
           >
-            <Link href="/">
+            {/* <Link href="/"> */}
               <Flex
                 mt={["-0.1rem", "-0.2rem", "-0.1rem", "-0.1rem"]}
               >
@@ -122,8 +122,8 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
                   color={headerColor}
                 />
               </Flex>
-            </Link>
-            <Link href="/">         
+            {/* </Link> */}
+            {/* <Link href="/">          */}
               <Heading
                 size="md"
                 ml="0.1rem"
@@ -131,7 +131,7 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
               >
                 trackdaily
               </Heading>
-            </Link>
+            {/* </Link> */}
           </Flex>
         <CloseButton display={{ base: 'flex', md: 'none' }} onClick={onClose} />
       </Flex>
@@ -212,7 +212,7 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
           // mt={["0.6rem","0.4rem","0.4rem","0.4rem"]}
          display={{ base: 'flex', md: 'none' }}
         >
-          <Link href="/">
+          {/* <Link href="/"> */}
             <Flex
               mt={["-0.1rem", "-0.2rem", "-0.1rem", "-0.1rem"]}
             >
@@ -221,8 +221,8 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
                 color={headerColor}
               />
             </Flex>
-          </Link>
-          <Link href="/">         
+          {/* </Link> */}
+          {/* <Link href="/">          */}
             <Heading
               size="md"
               ml="0.1rem"
@@ -230,7 +230,7 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
             >
               trackdaily
             </Heading>
-          </Link>
+          {/* </Link> */}
         </Flex>
 
       <HStack spacing={{ base: '0', md: '6' }}>
