@@ -23,9 +23,12 @@ const LandingPage = () => {
   const buttonColor = useColorModeValue("black","#256ec1")
   const textColor = useColorModeValue("grey","#b6b6b6")
   const divColor = useColorModeValue("#2469BE","#3d99ff")
+  const vsgraph = useColorModeValue("#7AA7FF","white")
   const divColor2 = useColorModeValue("#308DFF","#256ec1")
   const signUp = useColorModeValue("#256EC1","#308DFF")
-  const secondDivCOlor = useColorModeValue("#e6f1ff","")
+  // const secondDivCOlor = useColorModeValue("#e6f1ff","")
+  const headerBg = useColorModeValue("#EEF4FC","#1f1c1c")
+  const secondDivCOlor = useColorModeValue("#1A202C","#7aa7ff")
 
   return (
     <>
@@ -110,6 +113,7 @@ const LandingPage = () => {
           flexDir={["column", "column", "column", "row"]}
           bg={secondDivCOlor}
           w={["30rem","50rem","70rem ","100rem"]}
+          h={["35rem","30rem","35rem","40rem"]}
         >
           <Flex
             mr={["","","","2.7rem"]}
@@ -118,7 +122,7 @@ const LandingPage = () => {
           >
             <VscGraph
               fontSize="5rem"
-              color={divColor}
+              color={vsgraph}
             />
           </Flex>
             <VStack
@@ -133,12 +137,13 @@ const LandingPage = () => {
                 ml={["", "", "", "-15rem"]}
                 textAlign={["center", "initial"]}
                 fontFamily="'poppins', sans-serif"
+                color={headerBg}
               >
                 We will help you economize efficiently.
               </Heading>
               <Text
                 fontWeight={500}
-                color={textColor}
+                color={headerBg}
                 fontSize={["1.1rem", "1.1rem", "1.1rem", "1.2rem"]}
                 mb={["0.4rem", "0.4rem", "0.4rem", "3rem"]}
                 w={["18rem", "30rem", "30rem", "60rem"]}
@@ -155,7 +160,7 @@ const LandingPage = () => {
               <Link href={"/about"}>
                 <Text
                   ml={["","","","-30rem"]}
-                  color="#3d99ff"
+                  color={vsgraph}
                   fontWeight={500}
                   fontSize="1.1rem"
                   mt={["1rem", "-0.4rem", "-0.4rem", "0.1rem"]}

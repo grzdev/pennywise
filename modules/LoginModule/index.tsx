@@ -27,7 +27,7 @@ const LogInModule = () => {
   const signUp = useColorModeValue("#0059ec","#5088e4")
   const signIn = useColorModeValue("#0059ec","#4f89e8")
 
-  const { signIWithGoogle } = useAuth()
+  const { signIWithGoogle, forgotPassword } = useAuth()
 
   const [loading, setLoading] = useState(false)
   
@@ -37,6 +37,16 @@ const LogInModule = () => {
     email:'',
     password:''
   })
+
+  const handleForgotPassword = async (e: any) => {
+    e.preventDefault()
+
+    try {
+      await forgotPassword()
+    } catch (error) {
+      console.log(error)
+    }
+  }
 
 
   const handleGoogleClick = async (e: any) => {
@@ -180,12 +190,12 @@ const LogInModule = () => {
             </Flex>
           </Flex>
 
-            <Flex
+            {/* <Flex
               ml={["8rem","7rem","8rem","21rem"]}
               mt="1rem"
               mb="1rem"
             >
-              {/* <Link href="/resetpassword">
+              <Link href="/reset">
                 <Text
                   fontSize={["0.7rem","0.7rem","0.7rem","0.9rem"]}
                   fontWeight={600}
@@ -193,8 +203,8 @@ const LogInModule = () => {
                 >
                   Forgot Password?
                 </Text>
-              </Link> */}
-            </Flex>
+              </Link>
+            </Flex> */}
 
             <Flex
               flexDir="column"
@@ -212,14 +222,16 @@ const LogInModule = () => {
                 color="white"
                 onClick={handleLogin}
                 type="submit"
+                mt="2rem"
               >
                 Sign in
               </Button>
-              <Button
+              {/* <Button
                 onClick={handleGoogleClick}
+                type="submit"
               >
                <FcGoogle fontSize="1.5rem"/> <Text ml="0.3rem">Sign in with google</Text>
-              </Button>
+              </Button> */}
             </Flex>
 
             <Flex
