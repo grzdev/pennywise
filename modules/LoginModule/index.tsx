@@ -39,7 +39,9 @@ const LogInModule = () => {
   })
 
 
-  const handleGoogleClick = async () => {
+  const handleGoogleClick = async (e: any) => {
+    e.preventDefault()
+
     try {
       await signIWithGoogle()
       Router.push("/dashboard")
@@ -117,7 +119,7 @@ const LogInModule = () => {
 
           <Flex
             ml={["0.1rem","0.1rem","0.1rem","2rem"]}
-            mt={["1.6rem","2rem","2rem","2rem"]}
+            mt={["1rem","1.4rem","1.5rem","1.6rem"]}
             flexDir="column"
           >
             <Flex>

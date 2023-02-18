@@ -42,7 +42,9 @@ const SignUpModule = () => {
     username: ''
   })
 
-  const handleGoogleClick = async () => {
+  const handleGoogleClick = async (e: any) => {
+    e.preventDefault()
+
     try {
       await signIWithGoogle()
       Router.push("/dashboard")
