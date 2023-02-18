@@ -34,9 +34,9 @@ export const AuthContextProvider = ({
         })
     },[])
 
-    const forgotPassword = (email: string) => {
-        sendPasswordResetEmail(auth, email)
-    }
+    // const forgotPassword = (email: string) => {
+    //     sendPasswordResetEmail(auth, email)
+    // }
 
     const signup = (email: string, password: string) =>{
         return createUserWithEmailAndPassword(auth, email, password)
@@ -56,7 +56,15 @@ export const AuthContextProvider = ({
     }
 
      return (
-        <AuthContext.Provider value={{ user, signup, login, logout, signIWithGoogle, forgotPassword }}>
+        <AuthContext.Provider 
+            value={{ 
+                user,
+                signup, 
+                login, 
+                logout, 
+                signIWithGoogle, 
+                // forgotPassword 
+            }}>
             {loading ? null : children} 
         </AuthContext.Provider>
      )

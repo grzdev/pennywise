@@ -38,27 +38,27 @@ const LogInModule = () => {
     password:''
   })
 
-  const handleForgotPassword = async (e: any) => {
-    e.preventDefault()
+  // const handleForgotPassword = async (e: any) => {
+  //   e.preventDefault()
 
-    try {
-      await forgotPassword()
-    } catch (error) {
-      console.log(error)
-    }
-  }
+  //   try {
+  //     await forgotPassword()
+  //   } catch (error) {
+  //     console.log(error)
+  //   }
+  // }
 
 
-  const handleGoogleClick = async (e: any) => {
-    e.preventDefault()
+  // const handleGoogleClick = async (e: any) => {
+  //   e.preventDefault()
 
-    try {
-      await signIWithGoogle()
-      Router.push("/dashboard")
-    } catch (error) {
-      console.log(error)
-    }
-  }
+  //   try {
+  //     await signIWithGoogle()
+  //     Router.push("/dashboard")
+  //   } catch (error) {
+  //     console.log(error)
+  //   }
+  // }
 
   const handleLogin = async (e: any) =>{
     e.preventDefault()
