@@ -17,7 +17,7 @@ import { FcGoogle } from "react-icons/fc"
 import { useColorModeValue } from '@chakra-ui/react'
 import Link from 'next/link'
 import { useAuth } from 'context/AuthContext'
-import Router from 'next/router'
+import { useRouter} from 'next/router'
 import { CircularProgress, } from "@chakra-ui/react";
 
 const LogInModule = () => {
@@ -26,6 +26,8 @@ const LogInModule = () => {
   const TextColor2 = useColorModeValue("black","")
   const signUp = useColorModeValue("#0059ec","#5088e4")
   const signIn = useColorModeValue("#0059ec","#4f89e8")
+
+  const router = useRouter()
 
   const { signIWithGoogle, forgotPassword } = useAuth()
 
@@ -54,7 +56,7 @@ const LogInModule = () => {
 
     try {
       await signIWithGoogle()
-      Router.push("/dashboard")
+      router.push("/dashboard")
     } catch (error) {
       console.log(error)
     }
@@ -65,7 +67,7 @@ const LogInModule = () => {
 
     try {
       await login(data.email, data.password)
-      Router.push("/dashboard")
+      router.push("/dashboard")
     } catch (err) {
       console.log(err)
     }

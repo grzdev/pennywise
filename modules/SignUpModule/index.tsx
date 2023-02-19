@@ -15,7 +15,7 @@ import { MdTrackChanges } from 'react-icons/md'
 import { useColorModeValue } from '@chakra-ui/react'
 import Link from 'next/link'
 import { FcGoogle } from "react-icons/fc"
-import Router from 'next/router'
+import { useRouter} from 'next/router'
 import { useAuth } from 'context/AuthContext'
 import { CircularProgress, } from "@chakra-ui/react";
 
@@ -28,6 +28,7 @@ const SignUpModule = () => {
   const TextColor3 = useColorModeValue("white","black")
   const signIn = useColorModeValue("#0059ec","#4f89e8")
   const button = useColorModeValue("#608dff","#084DA1")
+  const router = useRouter()
 
   const { signIWithGoogle } = useAuth()
 
@@ -47,7 +48,7 @@ const SignUpModule = () => {
 
     try {
       await signIWithGoogle()
-      Router.push("/dashboard")
+      router.push("/dashboard")
     } catch (error) {
       console.log(error)
     }
@@ -58,7 +59,7 @@ const SignUpModule = () => {
   
     try {
       await signup(data.email, data.password)
-      Router.push("/dashboard")
+      router.push("/dashboard")
     } catch (err) {
       console.log(err)
     }
@@ -205,15 +206,15 @@ const SignUpModule = () => {
              bg={signIn}
              color="white"
              onClick={handleSignup}
-             mt="2rem"
+             mt="1rem"
            >
               Create account
            </Button>
-           {/* <Button
+           <Button
             onClick={handleGoogleClick}
            >
             <FcGoogle fontSize="1.5rem"/> <Text ml="0.3rem">Continue with google</Text>
-           </Button> */}
+           </Button>
          </Flex>
 
          <Flex
