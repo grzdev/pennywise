@@ -1,14 +1,14 @@
 /* eslint-disable react/no-children-prop */
 import React from 'react'
 import Head from 'next/head'
-import SidebarWithHeader from '../DashboardNavbar'
 import { Flex } from '@chakra-ui/react'
+import DashboardNavbar from './DashboardNavbar'
 
 interface Props {
     children?: React.ReactNode
 }
 
-const DashboardLayout = ({children}: {children : React.ReactNode}) => {
+const DashboardLayout = ({ children }: Props) => {
   return (
     <div>
     <Head>
@@ -18,7 +18,7 @@ const DashboardLayout = ({children}: {children : React.ReactNode}) => {
         <link rel="icon" href="/favicon.ico" />
     </Head>
     <header>
-        <SidebarWithHeader children={undefined}/>
+        <DashboardNavbar children={undefined}/>
     </header>
     <main>
         {children}    
@@ -28,7 +28,7 @@ const DashboardLayout = ({children}: {children : React.ReactNode}) => {
             justifyContent="center"
             alignItems="center"
         >
-            {/* <Footer/> */}
+            
         </Flex>   
     </footer>
 </div>
