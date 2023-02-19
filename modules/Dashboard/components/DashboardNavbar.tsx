@@ -1,4 +1,5 @@
 import React, { ReactNode } from 'react';
+import { MdTrackChanges } from "react-icons/md"
 import {
   IconButton,
   Avatar,
@@ -21,6 +22,7 @@ import {
   MenuDivider,
   MenuItem,
   MenuList,
+  Heading
 } from '@chakra-ui/react';
 import {
   FiHome,
@@ -34,6 +36,9 @@ import {
 } from 'react-icons/fi';
 import { IconType } from 'react-icons';
 import { ReactText } from 'react';
+import { AiFillHome } from 'react-icons/ai';
+import { SiGoogleanalytics } from "react-icons/si"
+import { BsFillPersonFill } from "react-icons/bs"
 
 interface LinkItemProps {
   name: string;
@@ -57,7 +62,7 @@ export default function SidebarWithHeader({
     <Box minH="100vh" bg={useColorModeValue('gray.100', 'gray.900')}>
       <SidebarContent
         onClose={() => onClose}
-        display={{ base: 'none', md: 'block' }}
+        display={{ base: 'none', md: 'block' }} 
       />
       <Drawer
         autoFocus={false}
@@ -85,20 +90,43 @@ interface SidebarProps extends BoxProps {
 }
 
 const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
+  const headerColor = useColorModeValue("#4f89e8","#c6dbfb")
+
   return (
     <Box
       transition="3s ease"
       bg={useColorModeValue('white', 'gray.900')}
       borderRight="1px"
       borderRightColor={useColorModeValue('gray.200', 'gray.700')}
-      w={{ base: 'full', md: 60 }}
+      // w={{ base: 'full', md: 60 }}
       pos="fixed"
       h="full"
       {...rest}>
       <Flex h="20" alignItems="center" mx="8" justifyContent="space-between">
-        <Text fontSize="2xl" fontFamily="monospace" fontWeight="bold">
-          Logo
-        </Text>
+        <Flex
+          justifyContent="center"
+          alignItems="center"
+          // ml={["0.rem", "1rem", "1rem", "8.4rem"]}
+          flexDir="initial"
+          mt={["0.6rem","0.4rem","0.4rem","0.4rem"]}
+          
+        >
+            <Flex
+              mt={["-0.1rem", "-0.2rem", "-0.1rem", "-0.1rem"]}
+            >
+              <MdTrackChanges
+                fontSize="2rem"
+                color={headerColor}
+              />
+            </Flex>
+            <Heading
+              size="md"
+              ml="0.1rem"
+              color={headerColor}
+            >
+              trackdaily
+            </Heading>
+        </Flex>
         <CloseButton display={{ base: 'flex', md: 'none' }} onClick={onClose} />
       </Flex>
       {LinkItems.map((link) => (
@@ -149,80 +177,103 @@ interface MobileProps extends FlexProps {
   onOpen: () => void;
 }
 const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
+  const icon = useColorModeValue("black","lightgrey")
+  const footer = useColorModeValue("#d0e7ff","#12141c")
+  const headerColor = useColorModeValue("#4f89e8","#c6dbfb")
+
   return (
-    <Flex
-      ml={{ base: 0, md: 60 }}
-      px={{ base: 4, md: 4 }}
-      height="20"
-      alignItems="center"
-      bg={useColorModeValue('white', 'gray.900')}
-      borderBottomWidth="1px"
-      borderBottomColor={useColorModeValue('gray.200', 'gray.700')}
-      justifyContent={{ base: 'space-between', md: 'flex-end' }}
-      {...rest}>
-      <IconButton
-        display={{ base: 'flex', md: 'none' }}
-        onClick={onOpen}
-        variant="outline"
-        aria-label="open menu"
-        icon={<FiMenu />}
-      />
-
-      <Text
-        display={{ base: 'flex', md: 'none' }}
-        fontSize="2xl"
-        fontFamily="monospace"
-        fontWeight="bold">
-        Logo
-      </Text>
-
-      <HStack spacing={{ base: '0', md: '6' }}>
-        <IconButton
-          size="lg"
-          variant="ghost"
-          aria-label="open menu"
-          icon={<FiBell />}
-        />
-        <Flex alignItems={'center'}>
-          <Menu>
-            <MenuButton
-              py={2}
-              transition="all 0.3s"
-              _focus={{ boxShadow: 'none' }}>
-              <HStack>
-                <Avatar
-                  size={'sm'}
-                  src={
-                    'https://images.unsplash.com/photo-1619946794135-5bc917a27793?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=b616b2c5b373a80ffc9636ba24f7a4a9'
-                  }
-                />
-                <VStack
-                  display={{ base: 'none', md: 'flex' }}
-                  alignItems="flex-start"
-                  spacing="1px"
-                  ml="2">
-                  <Text fontSize="sm">Justina Clark</Text>
-                  <Text fontSize="xs" color="gray.600">
-                    Admin
-                  </Text>
-                </VStack>
-                <Box display={{ base: 'none', md: 'flex' }}>
-                  <FiChevronDown />
-                </Box>
-              </HStack>
-            </MenuButton>
-            <MenuList
-              bg={useColorModeValue('white', 'gray.900')}
-              borderColor={useColorModeValue('gray.200', 'gray.700')}>
-              <MenuItem>Profile</MenuItem>
-              <MenuItem>Settings</MenuItem>
-              <MenuItem>Billing</MenuItem>
-              <MenuDivider />
-              <MenuItem>Sign out</MenuItem>
-            </MenuList>
-          </Menu>
+    <Flex>
+      <Flex
+        justifyContent="center"
+        alignItems="center"
+      >
+        <Flex
+          justifyContent="center"
+          alignItems="center"
+          ml={["8.5rem"]}
+          // flexDir="initial"
+          mt={["1rem"]}
+          
+        >
+            <Flex
+              mt={["-0.1rem", "-0.2rem", "-0.1rem", "-0.1rem"]}
+            >
+              <MdTrackChanges
+                fontSize="2rem"
+                color={headerColor}
+              />
+            </Flex>
+            <Heading
+              size="md"
+              ml="0.1rem"
+              color={headerColor}
+            >
+              trackdaily
+            </Heading>
         </Flex>
-      </HStack>
+      </Flex>
+      <Flex
+        bottom={0}
+        w="100%"
+        position="fixed"
+        overflow="hidden"
+        bg={footer}
+        // borderTop="1px solid grey"
+        h="5rem"
+        display={{ base: 'flex', md: 'none' }}
+        justifyContent="center"
+        alignItems="center"
+      >
+        <HStack
+          gap="3rem"
+        >
+          <Flex
+            flexDir="column"
+            alignItems="center"
+          >
+          <AiFillHome
+            fontSize="1.6rem"
+            color={icon}
+          /> 
+          <Text
+            fontSize="0.6rem"
+          >
+            Home
+          </Text>
+          </Flex>
+
+          <Flex
+            alignItems="center"
+            flexDir="column"
+          >
+          <SiGoogleanalytics
+            color={icon}
+            fontSize="1.6rem"
+          />
+          <Text
+            fontSize="0.6rem"
+          >
+            Analytics
+          </Text>
+          </Flex>
+
+          <Flex
+            alignItems="center"
+            flexDir="column"
+          >
+          <BsFillPersonFill
+            color={icon}
+            fontSize="1.6rem"
+          /> 
+          <Text
+            fontSize="0.6rem"
+          >
+            Account
+          </Text>
+          </Flex>
+        </HStack>
+      </Flex>
     </Flex>
+
   );
 };
