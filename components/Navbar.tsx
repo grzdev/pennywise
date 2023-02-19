@@ -153,7 +153,7 @@ const Navbar = () => {
                   bg: '#308DFF',
                 }}
                 borderRadius="0.6rem"
-                display={{ base: 'none', md: 'inline-flex' }}
+                display={{ base: 'none', md: 'none', lg: "inline-flex" }}
                 >
                 Sign up for free
               </Button>
@@ -187,7 +187,7 @@ const DesktopNav = () => {
     <Stack
      direction={'row'}
      spacing={12}
-     ml={["0.1rem","4rem", "5rem", "16rem"]}
+     ml={["0.1rem","4rem", "8rem", "16rem"]}
      mt="0.8rem"
     >
       {/* {NAV_ITEMS.map((navItem) => (

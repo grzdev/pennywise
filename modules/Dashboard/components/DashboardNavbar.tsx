@@ -182,15 +182,17 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
   const headerColor = useColorModeValue("#4f89e8","#c6dbfb")
 
   return (
-    <Flex>
+    <Flex
+      justifyContent="center"
+      display={{ base: 'flex', md: 'none' }}
+      alignItems="center"
+    >
       <Flex
-        justifyContent="center"
-        alignItems="center"
       >
         <Flex
           justifyContent="center"
           alignItems="center"
-          ml={["8.5rem"]}
+          // ml={["8rem"]}
           // flexDir="initial"
           mt={["1rem"]}
           
@@ -219,7 +221,7 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
         overflow="hidden"
         bg={footer}
         // borderTop="1px solid grey"
-        h="5rem"
+        h="4rem"
         display={{ base: 'flex', md: 'none' }}
         justifyContent="center"
         alignItems="center"
@@ -232,7 +234,7 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
             alignItems="center"
           >
           <AiFillHome
-            fontSize="1.6rem"
+            fontSize="1.3rem"
             color={icon}
           /> 
           <Text
@@ -248,7 +250,7 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
           >
           <SiGoogleanalytics
             color={icon}
-            fontSize="1.6rem"
+            fontSize="1.3rem"
           />
           <Text
             fontSize="0.6rem"
@@ -263,7 +265,7 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
           >
           <BsFillPersonFill
             color={icon}
-            fontSize="1.6rem"
+            fontSize="1.3rem"
           /> 
           <Text
             fontSize="0.6rem"
