@@ -49,16 +49,16 @@ const LogInModule = () => {
   // }
 
 
-  // const handleGoogleClick = async (e: any) => {
-  //   e.preventDefault()
+  const handleGoogleClick = async (e: any) => {
+    e.preventDefault()
 
-  //   try {
-  //     await signIWithGoogle()
-  //     Router.push("/dashboard")
-  //   } catch (error) {
-  //     console.log(error)
-  //   }
-  // }
+    try {
+      await signIWithGoogle()
+      Router.push("/dashboard")
+    } catch (error) {
+      console.log(error)
+    }
+  }
 
   const handleLogin = async (e: any) =>{
     e.preventDefault()
@@ -226,12 +226,12 @@ const LogInModule = () => {
               >
                 Sign in
               </Button>
-              {/* <Button
+              <Button
                 onClick={handleGoogleClick}
                 type="submit"
               >
                <FcGoogle fontSize="1.5rem"/> <Text ml="0.3rem">Sign in with google</Text>
-              </Button> */}
+              </Button>
             </Flex>
 
             <Flex
