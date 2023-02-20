@@ -190,6 +190,7 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
       <Flex
         position="fixed"
         mt={["4rem"]}
+        overflow="hidden"
       >
         <Flex
           justifyContent="center"
