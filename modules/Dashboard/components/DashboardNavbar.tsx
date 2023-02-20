@@ -182,22 +182,22 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
   const headerColor = useColorModeValue("#4f89e8","#c6dbfb")
 
   return (
-    <Flex
+    <Box
       justifyContent="center"
       display={{ base: 'flex', md: 'none' }}
       alignItems="center"
-    >
+      h="full"
+      >
       <Flex
-        position="fixed"
-        mt={["4rem"]}
-        overflow="hidden"
+        mt={["2rem"]}
+        // overflow="hidden"
+        // position="fixed"
       >
         <Flex
           justifyContent="center"
           alignItems="center"
           // ml={["8rem"]}
-          // flexDir="initial"
-          
+          // flexDir="initial" 
         >
             <Flex
               mt={["-0.1rem", "-0.2rem", "-0.1rem", "-0.1rem"]}
@@ -277,7 +277,7 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
           </Flex>
         </HStack>
       </Flex>
-    </Flex>
+    </Box>
 
   );
 };
