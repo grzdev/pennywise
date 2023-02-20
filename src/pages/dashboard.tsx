@@ -7,7 +7,6 @@ const Dashboard = () => {
   return (
     // <Layout>
       <Box>
-
         <DashboardModule/>
       </Box>
     // </Layout>

@@ -91,6 +91,7 @@ interface SidebarProps extends BoxProps {
 
 const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
   const headerColor = useColorModeValue("#4f89e8","#c6dbfb")
+  const icon = useColorModeValue("black","lightgrey")
 
   return (
     <Box
@@ -129,11 +130,91 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
         </Flex>
         <CloseButton display={{ base: 'flex', md: 'none' }} onClick={onClose} />
       </Flex>
-      {LinkItems.map((link) => (
+      {/* {LinkItems.map((link) => (
         <NavItem key={link.name} icon={link.icon}>
           {link.name}
         </NavItem>
-      ))}
+      ))} */}
+      <Flex
+        flexDir="column"
+        mt="1rem"
+        align="center"
+        p="4"
+        mx="4"
+        borderRadius="lg"
+        role="group"
+        cursor="pointer"
+      >
+       <VStack
+          gap="2rem"
+        >
+          <Flex
+            flexDir="row"
+            alignItems="center"
+            gap="1rem"
+          >
+          <Link href='/dashboard'>
+            <AiFillHome
+              fontSize="1.2rem"
+              color={icon}
+              fontWeight={700}
+            /> 
+          </Link>
+          <Link href='/dashboard'>
+            <Text
+              fontSize="1rem"
+              fontWeight={700}
+            >
+              Home
+            </Text>
+          </Link>
+          </Flex>
+
+          <Flex
+            alignItems="center"
+            gap="1rem"
+            flexDir="row"
+          >
+            <Link href='/analytics'>
+              <SiGoogleanalytics
+                color={icon}
+                fontSize="1.2rem"
+                fontWeight={700}
+              />
+            </Link>
+            <Link href='/analytics'>
+              <Text
+                fontWeight={700}
+                fontSize="1rem"
+              >
+                Analytics
+              </Text>
+            </Link>
+          </Flex>
+
+          <Flex
+            alignItems="center"
+            gap="1rem"
+            flexDir="row"
+          >
+            <Link href='/account'>
+              <BsFillPersonFill
+                color={icon}
+                fontWeight={700}
+                fontSize="1.2rem"
+              /> 
+            </Link>
+            <Link href='/account'>
+              <Text
+                fontWeight={700}
+                fontSize="1rem"
+              >
+                Account
+              </Text>
+            </Link>
+          </Flex>
+        </VStack>
+      </Flex>
     </Box>
   );
 };
@@ -189,7 +270,7 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
       h="full"
       >
       <Flex
-        mt={["2rem"]}
+        mt={["1rem"]}
         // overflow="hidden"
         // position="fixed"
       >
@@ -235,45 +316,57 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
             flexDir="column"
             alignItems="center"
           >
-          <AiFillHome
-            fontSize="1.1rem"
-            color={icon}
-          /> 
-          <Text
-            fontSize="0.5rem"
-          >
-            Home
-          </Text>
+          <Link href='/dashboard'>
+            <AiFillHome
+              fontSize="1.1rem"
+              color={icon}
+            /> 
+          </Link>
+          <Link href='/dashboard'>
+            <Text
+              fontSize="0.5rem"
+            >
+              Home
+            </Text>
+          </Link>
           </Flex>
 
           <Flex
             alignItems="center"
             flexDir="column"
           >
-          <SiGoogleanalytics
-            color={icon}
-            fontSize="1.1rem"
-          />
-          <Text
-            fontSize="0.5rem"
-          >
-            Analytics
-          </Text>
+            <Link href='/analytics'>
+              <SiGoogleanalytics
+                color={icon}
+                fontSize="1.1rem"
+              />
+            </Link>
+            <Link href='/analytics'>
+              <Text
+                fontSize="0.5rem"
+              >
+                Analytics
+              </Text>
+            </Link>
           </Flex>
 
           <Flex
             alignItems="center"
             flexDir="column"
           >
-          <BsFillPersonFill
-            color={icon}
-            fontSize="1.1rem"
-          /> 
-          <Text
-            fontSize="0.5rem"
-          >
-            Account
-          </Text>
+            <Link href='/account'>
+              <BsFillPersonFill
+                color={icon}
+                fontSize="1.1rem"
+              /> 
+            </Link>
+            <Link href='/account'>
+              <Text
+                fontSize="0.5rem"
+              >
+                Account
+              </Text>
+            </Link>
           </Flex>
         </HStack>
       </Flex>

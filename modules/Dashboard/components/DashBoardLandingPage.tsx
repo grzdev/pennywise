@@ -14,29 +14,8 @@ const DashBoardLandingPage = () => {
   const { user, logout } = useAuth()
 
   return (
-    <Flex
-      justifyContent="center"
-      alignItems="center"
-      mt="4rem"
-    >
-      <Button
-        fontSize={'sm'}
-        fontWeight={600}
-        // variant={'outlne'}
-        onClick={()=>{
-        logout(),
-        router.push("/login")
-        }}
-      >
-        Logout
-      </Button>
-      <Button 
-          onClick={toggleColorMode}
-          // display={{ base: 'none', md: 'inline-flex' }}
-          
-        >
-          {colorMode === 'light' ? <MoonIcon/> : <SunIcon/>}
-        </Button>
+    <Flex>
+      
     </Flex>
   )
 }
