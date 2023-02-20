@@ -178,7 +178,7 @@ interface MobileProps extends FlexProps {
 }
 const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
   const icon = useColorModeValue("black","lightgrey")
-  const footer = useColorModeValue("qhitw","#12141c")
+  const footer = useColorModeValue("white","#12141c")
   const headerColor = useColorModeValue("#4f89e8","#c6dbfb")
 
   return (
@@ -221,7 +221,7 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
         position="fixed"
         overflow="hidden"
         bg={footer}
-        borderTop="0.1rem solid grey"
+        // borderTop="0.0000000001rem solid {headercolor}"
         h="3rem"
         display={{ base: 'flex', md: 'none' }}
         justifyContent="center"
