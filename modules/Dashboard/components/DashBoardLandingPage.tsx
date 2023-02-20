@@ -17,6 +17,7 @@ const DashBoardLandingPage = () => {
     <Flex
       justifyContent="center"
       alignItems="center"
+      mt="4rem"
     >
       <Button
         fontSize={'sm'}

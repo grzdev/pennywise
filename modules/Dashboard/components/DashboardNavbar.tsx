@@ -45,11 +45,11 @@ interface LinkItemProps {
   icon: IconType;
 }
 const LinkItems: Array<LinkItemProps> = [
-  { name: 'Home', icon: FiHome },
-  { name: 'Trending', icon: FiTrendingUp },
-  { name: 'Explore', icon: FiCompass },
-  { name: 'Favourites', icon: FiStar },
-  { name: 'Settings', icon: FiSettings },
+  { name: 'Home', icon: AiFillHome },
+  { name: 'Analytics', icon: SiGoogleanalytics },
+  { name: 'Account', icon: BsFillPersonFill },
+  // { name: 'Favourites', icon: FiStar },
+  // { name: 'Settings', icon: FiSettings },
 ];
 
 export default function SidebarWithHeader({
@@ -178,7 +178,7 @@ interface MobileProps extends FlexProps {
 }
 const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
   const icon = useColorModeValue("black","lightgrey")
-  const footer = useColorModeValue("#d0e7ff","#12141c")
+  const footer = useColorModeValue("qhitw","#12141c")
   const headerColor = useColorModeValue("#4f89e8","#c6dbfb")
 
   return (
@@ -188,13 +188,14 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
       alignItems="center"
     >
       <Flex
+        position="fixed"
+        mt={["4rem"]}
       >
         <Flex
           justifyContent="center"
           alignItems="center"
           // ml={["8rem"]}
           // flexDir="initial"
-          mt={["1rem"]}
           
         >
             <Flex
@@ -220,8 +221,8 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
         position="fixed"
         overflow="hidden"
         bg={footer}
-        // borderTop="1px solid grey"
-        h="4rem"
+        borderTop="0.1rem solid grey"
+        h="3rem"
         display={{ base: 'flex', md: 'none' }}
         justifyContent="center"
         alignItems="center"
@@ -234,11 +235,11 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
             alignItems="center"
           >
           <AiFillHome
-            fontSize="1.3rem"
+            fontSize="1.1rem"
             color={icon}
           /> 
           <Text
-            fontSize="0.6rem"
+            fontSize="0.5rem"
           >
             Home
           </Text>
@@ -250,10 +251,10 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
           >
           <SiGoogleanalytics
             color={icon}
-            fontSize="1.3rem"
+            fontSize="1.1rem"
           />
           <Text
-            fontSize="0.6rem"
+            fontSize="0.5rem"
           >
             Analytics
           </Text>
@@ -265,10 +266,10 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
           >
           <BsFillPersonFill
             color={icon}
-            fontSize="1.3rem"
+            fontSize="1.1rem"
           /> 
           <Text
-            fontSize="0.6rem"
+            fontSize="0.5rem"
           >
             Account
           </Text>
