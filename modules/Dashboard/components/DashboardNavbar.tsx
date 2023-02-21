@@ -91,6 +91,7 @@ interface SidebarProps extends BoxProps {
 
 const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
   const headerColor = useColorModeValue("#4f89e8","#c6dbfb")
+  const hover = useColorModeValue("","#171923")
   const icon = useColorModeValue("black","lightgrey")
 
   return (
@@ -146,21 +147,30 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
         cursor="pointer"
       >
        <VStack
-          gap="2rem"
+          gap="1rem"
         >
           <Flex
             flexDir="row"
             alignItems="center"
-            gap="1rem"
+            gap="1rem" 
+            _hover={{
+              bg: "#4f6382",
+              color: 'white',
+            }}
+            p="4"
+            mx="4"
+            borderRadius="0.7rem"
           >
-          <Link href='/dashboard'>
+          <Link href='/dashboard' >
             <AiFillHome
               fontSize="1.2rem"
-              color={icon}
               fontWeight={700}
             /> 
           </Link>
-          <Link href='/dashboard'>
+          <Link 
+            href='/dashboard' 
+            _hover={{textDecoration: "none"}}
+            >
             <Text
               fontSize="1rem"
               fontWeight={700}
@@ -173,16 +183,27 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
           <Flex
             alignItems="center"
             gap="1rem"
-            flexDir="row"
+            flexDir="row"_hover={{
+              bg: "#4f6382",
+              color: 'white',
+            }}
+            p="4"
+            mx="4"
+            borderRadius="0.7rem"
           >
-            <Link href='/analytics'>
+            <Link 
+              _hover={{textDecoration: "none"}}
+              href='/analytics'
+            >
               <SiGoogleanalytics
-                color={icon}
                 fontSize="1.2rem"
                 fontWeight={700}
               />
             </Link>
-            <Link href='/analytics'>
+            <Link 
+              href='/analytics'
+              _hover={{textDecoration: "none"}}
+              >
               <Text
                 fontWeight={700}
                 fontSize="1rem"
@@ -195,16 +216,24 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
           <Flex
             alignItems="center"
             gap="1rem"
-            flexDir="row"
+            flexDir="row"_hover={{
+              bg: "#4f6382",
+              color: 'white',
+            }}
+            p="4"
+            mx="4"
+            borderRadius="0.7rem"
           >
             <Link href='/account'>
               <BsFillPersonFill
-                color={icon}
                 fontWeight={700}
                 fontSize="1.2rem"
               /> 
             </Link>
-            <Link href='/account'>
+            <Link 
+              href='/account'
+             _hover={{textDecoration: "none"}}
+            >
               <Text
                 fontWeight={700}
                 fontSize="1rem"
@@ -261,6 +290,7 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
   const icon = useColorModeValue("black","lightgrey")
   const footer = useColorModeValue("white","#12141c")
   const headerColor = useColorModeValue("#4f89e8","#c6dbfb")
+  const _hover = useColorModeValue("","#171923")
 
   return (
     <Box
@@ -315,6 +345,10 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
           <Flex
             flexDir="column"
             alignItems="center"
+            _hover={{
+              bg: 'cyan.400',
+              color: 'white',
+            }}
           >
           <Link href='/dashboard'>
             <AiFillHome

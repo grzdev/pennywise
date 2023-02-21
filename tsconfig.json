@@ -19,6 +19,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "modules/UserProfile/index.jsx", "context/AuthContext.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "modules/UserProfile/index.jsx", "context/AuthContext.js", "modules/Dashboard/components/DashBoardLandingPage.tsx"],
   "exclude": ["node_modules"]
 }
