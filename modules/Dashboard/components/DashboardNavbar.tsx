@@ -332,8 +332,8 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
         w="100%"
         position="fixed"
         overflow="hidden"
+        zIndex="1"
         bg={footer}
-        // borderTop="0.0000000001rem solid {headercolor}"
         h="3rem"
         display={{ base: 'flex', md: 'none' }}
         justifyContent="center"
