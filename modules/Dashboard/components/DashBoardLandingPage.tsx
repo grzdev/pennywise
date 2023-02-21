@@ -104,10 +104,11 @@ const DashBoardLandingPage = () => {
         ml={["1rem","2rem","2rem","2rem"]}
       >
         <Heading>
-          Dami👋
+          Dami👋,
         </Heading>
         <Text
           fontWeight={600}
+          mt="-0.4rem"
         >
           What did you spend on today?
         </Text>
@@ -115,7 +116,7 @@ const DashBoardLandingPage = () => {
       <Flex
         alignItems="center"
         justifyContent="center"
-        mt={["3rem","2rem","4rem","5rem"]}
+        mt={["2rem","2rem","4rem","5rem"]}
         ml={["0.1rem","","-10rem","-2rem"]}
       >  
         <SimpleGrid
@@ -133,7 +134,7 @@ const DashBoardLandingPage = () => {
               justifyContent="center"        
             >
               <Flex
-                w={["9rem","9rem","10rem","10rem"]}
+                w={["7.5rem","9rem","10rem","10rem"]}
                 h={["7rem","9rem","10rem","10rem"]}
                 color="white"
                 bg={firstBox}
@@ -152,7 +153,7 @@ const DashBoardLandingPage = () => {
               </Flex>
               <Box
                 color="black"
-                w={["10rem","15rem","20rem","20rem"]}
+                w={["11.5rem","15rem","20rem","20rem"]}
                 bg={SecondBox}
                 h={["7rem","15rem","10rem","10rem"]}
                 borderRadius="0 0.7rem 0.7rem 0"
@@ -168,7 +169,7 @@ const DashBoardLandingPage = () => {
               justifyContent="center"        
             >
               <Flex
-                w={["9rem","9rem","10rem","10rem"]}
+                w={["7.5rem","9rem","10rem","10rem"]}
                 h={["7rem","9rem","10rem","10rem"]}
                 color="white"
                 bg={firstBox}
@@ -187,7 +188,7 @@ const DashBoardLandingPage = () => {
               </Flex>
               <Box
                 color="black"
-                w={["10rem","15rem","20rem","20rem"]}
+                w={["11.5rem","15rem","20rem","20rem"]}
                 bg={SecondBox}
                 h={["7rem","15rem","10rem","10rem"]}
                 borderRadius="0 0.7rem 0.7rem 0"
@@ -204,7 +205,7 @@ const DashBoardLandingPage = () => {
         
             >
               <Flex
-                w={["9rem","9rem","10rem","10rem"]}
+                w={["7.5rem","9rem","10rem","10rem"]}
                 h={["7rem","9rem","10rem","10rem"]}
                 bg={firstBox}
                 color="white"
@@ -222,7 +223,7 @@ const DashBoardLandingPage = () => {
               </Flex>
               <Box
                 color="black"
-                w={["10rem","15rem","20rem","20rem"]}
+                w={["11.5rem","15rem","20rem","20rem"]}
                 bg={SecondBox}
                 h={["7rem","15rem","10rem","10rem"]}
                 borderRadius="0 0.7rem 0.7rem 0"

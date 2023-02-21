@@ -300,7 +300,7 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
       h="full"
       >
       <Flex
-        mt={["1rem"]}
+        mt={["2rem"]}
         // overflow="hidden"
         // position="fixed"
       >
