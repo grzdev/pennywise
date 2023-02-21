@@ -11,6 +11,8 @@ import React from 'react'
 import router from "next/router";
 import { useAuth } from 'context/AuthContext';
 import { AddIcon } from "@chakra-ui/icons"
+import { HiCash } from "react-icons/hi"
+import { TbCurrencyNaira } from "react-icons/tb"
 import { 
   ChevronLeftIcon, 
   ChevronRightIcon, 
@@ -35,7 +37,7 @@ const DashBoardLandingPage = () => {
   const { user, logout } = useAuth()
   const firstBox = useColorModeValue("white","white")
   const SecondBox = useColorModeValue("#3361b1","#757eb0")
-  const pieColor = useColorModeValue("#4a80b8","#757eb0")
+  const pieColor = useColorModeValue("#3361b1","#757eb0")
   const addButton = useColorModeValue("#0050d6","#1c5dd0")
   const color = useColorModeValue("white","white")
 
@@ -151,15 +153,77 @@ const DashBoardLandingPage = () => {
               </PieChart>
 
               </Flex>
-              <Box
-                color="black"
+              <Flex
                 w={["11.5rem","15rem","20rem","20rem"]}
                 bg={SecondBox}
                 h={["7rem","15rem","10rem","10rem"]}
                 borderRadius="0 0.7rem 0.7rem 0"
+                justifyContent="center"
+                // alignItems="center"
+                // flexDir="row"
               >
+                <Flex
+                  mt={["0.7rem","0.7rem","1rem","1rem"]}
+                  ml={["0.2rem","0.2","1rem","1rem"]}
+                  mr={["0.5rem","0.5rem","1rem","2rem"]}
+                >
+                  <HiCash color="white" fontSize="2.4rem"/>
+                </Flex>
+                <Flex
+                  mt={["1.4rem","1.4rem","2rem","2rem"]}
+                  flexDir="column"
+                >
+                  <Flex
+                    flexDir="row"
+                  >
+                    <Text
+                      fontWeight={600}
+                      fontSize={["0.8rem","0.8rem","1.1rem","1.2rem"]}
+                      color="white"
+                      textAlign="center"
+                    >
+                      You spent
+                    </Text>
+                  </Flex>
 
-              </Box>
+                  <Flex
+                    flexDir="row"
+                    alignItems="center"
+                    justifyContent="center"
+                  >
+                    <TbCurrencyNaira 
+                      color="#41ff00" 
+                      fontSize="1.2rem" 
+                      fontWeight={600}
+                    />
+                    <Text
+                      fontWeight={700}
+                      fontSize={["0.8rem","0.8rem","1.1rem","1.1rem"]}
+                      color="white"
+                      textAlign="center"
+                    >
+                      5000
+                    </Text>
+                  </Flex>
+                  <Text
+                    fontWeight={600}
+                    fontSize={["0.8rem","0.8rem","0.8rem","1.1rem"]}
+                    color="white"
+                    textAlign="center"
+                  >
+                    Today
+                  </Text>    
+                </Flex>
+
+                <Flex
+                  mt={["5rem","5rem","7rem","7rem"]}
+                  ml={["lrem","2rem","2rem","2rem"]}
+                >
+                  <Text>
+                    <ChevronRightIcon fontSize="1.4rem" color="white"/>
+                  </Text>
+                </Flex>
+              </Flex>
             </Flex>
 
             <Flex
@@ -186,15 +250,75 @@ const DashBoardLandingPage = () => {
               </PieChart>
 
               </Flex>
-              <Box
-                color="black"
+              <Flex
                 w={["11.5rem","15rem","20rem","20rem"]}
                 bg={SecondBox}
                 h={["7rem","15rem","10rem","10rem"]}
                 borderRadius="0 0.7rem 0.7rem 0"
+                justifyContent="center"
               >
+                <Flex
+                  mt={["0.7rem","0.7rem","1rem","1rem"]}
+                  ml={["0.2rem","0.2","1rem","1rem"]}
+                  mr={["0.5rem","0.5rem","1rem","2rem"]}
+                >
+                  <HiCash color="white" fontSize="2.4rem"/>
+                </Flex>
+                <Flex
+                  mt={["1.4rem","1.4rem","2rem","2rem"]}
+                  flexDir="column"
+                >
+                  <Flex
+                    flexDir="row"
+                  >
+                    <Text
+                      fontWeight={600}
+                      fontSize={["0.8rem","0.8rem","1.1rem","1.2rem"]}
+                      color="white"
+                      textAlign="center"
+                    >
+                      You spent
+                    </Text>
+                  </Flex>
 
-              </Box>
+                  <Flex
+                    flexDir="row"
+                    alignItems="center"
+                    justifyContent="center"
+                  >
+                    <TbCurrencyNaira 
+                      color="#41ff00" 
+                      fontSize="1.2rem" 
+                      fontWeight={600}
+                    />
+                    <Text
+                      fontWeight={700}
+                      fontSize={["0.8rem","0.8rem","1.1rem","1.1rem"]}
+                      color="white"
+                      textAlign="center"
+                    >
+                      8,000
+                    </Text>
+                  </Flex>
+                  <Text
+                    fontWeight={600}
+                    fontSize={["0.8rem","0.8rem","0.8rem","1.1rem"]}
+                    color="white"
+                    textAlign="center"
+                  >
+                    Yesterday
+                  </Text>    
+                </Flex>
+
+                <Flex
+                  mt={["5rem","5rem","7rem","7rem"]}
+                  ml={["lrem","2rem","2rem","2rem"]}
+                >
+                  <Text>
+                    <ChevronRightIcon fontSize="1.4rem" color="white"/>
+                  </Text>
+                </Flex>
+              </Flex>
             </Flex>
             
 
@@ -221,15 +345,76 @@ const DashBoardLandingPage = () => {
                   {/* <Pie data={data02} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={60} outerRadius={80} fill="#82ca9d" label /> */}
                 </PieChart>
               </Flex>
-              <Box
-                color="black"
+              <Flex
                 w={["11.5rem","15rem","20rem","20rem"]}
                 bg={SecondBox}
                 h={["7rem","15rem","10rem","10rem"]}
                 borderRadius="0 0.7rem 0.7rem 0"
+                justifyContent="center"
               >
+                <Flex
+                  mt={["0.7rem","0.7rem","1rem","1rem"]}
+                  ml={["0.2rem","0.2","1rem","1rem"]}
+                  mr={["0.5rem","0.5rem","1rem","2rem"]}
+                >
+                  <HiCash color="white" fontSize="2.4rem"/>
+                </Flex>
+                <Flex
+                  mt={["1.4rem","1.4rem","2rem","2rem"]}
+                  flexDir="column"
+                >
+                  <Flex
+                    flexDir="row"
+                  >
+                    <Text
+                      fontWeight={600}
+                      fontSize={["0.8rem","0.8rem","1.1rem","1.2rem"]}
+                      color="white"
+                      textAlign="center"
+                    >
+                      You spent
+                    </Text>
+                  </Flex>
 
-              </Box>
+                  <Flex
+                    flexDir="row"
+                    alignItems="center"
+                    justifyContent="center"
+                  >
+                    <TbCurrencyNaira 
+                      color="#41ff00" 
+                      fontSize="1.2rem" 
+                      fontWeight={600}
+                    />
+                    <Text
+                      fontWeight={700}
+                      fontSize={["0.8rem","0.8rem","1.1rem","1.1rem"]}
+                      color="white"
+                      textAlign="center"
+                    >
+                      10,000
+                    </Text>
+                  </Flex>
+                  <Text
+                    fontWeight={600}
+                    fontSize={["0.8rem","0.8rem","0.8rem","1.1rem"]}
+                    color="white"
+                    textAlign="center"
+                  >
+                    Last week
+                  </Text>    
+                </Flex>
+
+                <Flex
+                  mt={["5rem","5rem","7rem","7rem"]}
+                  ml={["lrem","2rem","2rem","2rem"]}
+                >
+                  <Text>
+                    <ChevronRightIcon fontSize="1.4rem" color="white"/>
+                  </Text>
+                </Flex>
+
+              </Flex>
             </Flex>
           </Flex>
         </SimpleGrid>
@@ -241,11 +426,8 @@ const DashBoardLandingPage = () => {
         h={["4rem","5rem","5rem","6rem"]}
         bg={addButton}
         borderRadius="full"
-        ml={["21rem","","36rem","70rem"]}
-        mt={["37rem","","38rem","35rem"]}
         justifyContent="center"
         alignItems="center"
-        position="fixed"
       >
         <AddIcon color={color} fontSize="2rem"/>
       </Flex>

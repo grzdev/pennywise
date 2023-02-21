@@ -216,7 +216,8 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
           <Flex
             alignItems="center"
             gap="1rem"
-            flexDir="row"_hover={{
+            flexDir="row"
+            _hover={{
               bg: "#4f6382",
               color: 'white',
             }}
@@ -346,7 +347,7 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
             flexDir="column"
             alignItems="center"
             _hover={{
-              bg: 'cyan.400',
+              bg: "#4f6382",
               color: 'white',
             }}
           >
@@ -368,6 +369,10 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
           <Flex
             alignItems="center"
             flexDir="column"
+            _hover={{
+              bg: "#4f6382",
+              color: 'white',
+            }}
           >
             <Link href='/analytics'>
               <SiGoogleanalytics
@@ -387,6 +392,10 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
           <Flex
             alignItems="center"
             flexDir="column"
+            _hover={{
+              bg: "#4f6382",
+              color: 'white',
+            }}
           >
             <Link href='/account'>
               <BsFillPersonFill
