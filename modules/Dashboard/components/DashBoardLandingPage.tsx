@@ -134,7 +134,7 @@ const DashBoardLandingPage = () => {
             >
               <Flex
                 w={["9rem","9rem","10rem","10rem"]}
-                h={["9rem","9rem","10rem","10rem"]}
+                h={["7rem","9rem","10rem","10rem"]}
                 color="white"
                 bg={firstBox}
                 borderRadius="0.7rem 0 0 0"
@@ -145,16 +145,16 @@ const DashBoardLandingPage = () => {
                   width={100} 
                   height={100}
                 >
-                <Pie data={data01} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={50} fill={pieColor} />
+                <Pie data={data01} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={39} fill={pieColor} />
                 {/* <Pie data={data02} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={60} outerRadius={80} fill="#82ca9d" label /> */}
               </PieChart>
 
               </Flex>
               <Box
                 color="black"
-                w={["15rem","15rem","20rem","20rem"]}
+                w={["10rem","15rem","20rem","20rem"]}
                 bg={SecondBox}
-                h={["9rem","15rem","10rem","10rem"]}
+                h={["7rem","15rem","10rem","10rem"]}
                 borderRadius="0 0.7rem 0.7rem 0"
               >
 
@@ -169,7 +169,7 @@ const DashBoardLandingPage = () => {
             >
               <Flex
                 w={["9rem","9rem","10rem","10rem"]}
-                h={["9rem","9rem","10rem","10rem"]}
+                h={["7rem","9rem","10rem","10rem"]}
                 color="white"
                 bg={firstBox}
                 borderRadius="0.7rem 0 0 0"
@@ -180,16 +180,16 @@ const DashBoardLandingPage = () => {
                   width={100} 
                   height={100}
                 >
-                <Pie data={data01} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={50} fill={pieColor} />
+                <Pie data={data01} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={39} fill={pieColor} />
                 {/* <Pie data={data02} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={60} outerRadius={80} fill="#82ca9d" label /> */}
               </PieChart>
 
               </Flex>
               <Box
                 color="black"
-                w={["15rem","15rem","20rem","20rem"]}
+                w={["10rem","15rem","20rem","20rem"]}
                 bg={SecondBox}
-                h={["9rem","15rem","10rem","10rem"]}
+                h={["7rem","15rem","10rem","10rem"]}
                 borderRadius="0 0.7rem 0.7rem 0"
               >
 
@@ -205,7 +205,7 @@ const DashBoardLandingPage = () => {
             >
               <Flex
                 w={["9rem","9rem","10rem","10rem"]}
-                h={["9rem","9rem","10rem","10rem"]}
+                h={["7rem","9rem","10rem","10rem"]}
                 bg={firstBox}
                 color="white"
                 borderRadius="0.7rem 0 0 0"
@@ -216,15 +216,15 @@ const DashBoardLandingPage = () => {
                   width={100} 
                   height={100}
                 >
-                  <Pie data={data01} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={50} fill={pieColor} />
+                  <Pie data={data01} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={39} fill={pieColor} />
                   {/* <Pie data={data02} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={60} outerRadius={80} fill="#82ca9d" label /> */}
                 </PieChart>
               </Flex>
               <Box
                 color="black"
-                w={["15rem","15rem","20rem","20rem"]}
+                w={["10rem","15rem","20rem","20rem"]}
                 bg={SecondBox}
-                h={["9rem","15rem","10rem","10rem"]}
+                h={["7rem","15rem","10rem","10rem"]}
                 borderRadius="0 0.7rem 0.7rem 0"
               >
 
