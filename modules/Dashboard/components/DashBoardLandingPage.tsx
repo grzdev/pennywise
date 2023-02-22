@@ -201,7 +201,8 @@ const DashBoardLandingPage = () => {
               color={header} 
               fontWeight={700}
               mr={["10rem","11rem","21rem","48rem"]}
-              mt={["1rem","1rem","2rem",""]}
+              mt={["1.2rem","1rem","2rem",""]}
+              fontSize="0.9rem"
             >
               13th Feb
             </Text>
@@ -210,7 +211,7 @@ const DashBoardLandingPage = () => {
               w={["3rem","3rem","5rem","5rem"]}
               h={["3rem","3rem","5rem","5rem"]}
               bg="#ff003d"
-              mt={["-0.2rem","","","-0.7rem"]}
+              mt={["","","","-0.7rem"]}
               justifyContent="center"
               alignItems="center"
             >
