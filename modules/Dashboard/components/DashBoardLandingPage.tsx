@@ -5,7 +5,8 @@ import {
   Text, 
   SimpleGrid, 
   useColorModeValue, 
-  Heading
+  Heading,
+  Divider
 } from '@chakra-ui/react'
 import React from 'react'
 import router from "next/router";
@@ -211,7 +212,7 @@ const DashBoardLandingPage = () => {
               w={["3rem","3rem","5rem","5rem"]}
               h={["3rem","3rem","5rem","5rem"]}
               bg="#ff003d"
-              mt={["0.4rem","","","-0.7rem"]}
+              mt={["0.4rem","-0.6rem","-0.4rem","-0.7rem"]}
               justifyContent="center"
               alignItems="center"
             >
@@ -224,312 +225,18 @@ const DashBoardLandingPage = () => {
 
         </Flex>
 
-
-
-        {/* <SimpleGrid
-          // columns={6}
-        >
-          <Flex
-            flexDir={["column","column", "column" , "column"]}
-            gap={["2rem","3rem","4rem","4rem"]}
-            // w={["","","","90rem"]}
-          >
-            <Flex
-              flexDir="row"
-              borderRadius="1rem"
-              alignItems="center"
-              justifyContent="center"        
-            >
-              <Flex
-                w={["7.5rem","9rem","10rem","10rem"]}
-                h={["7rem","9rem","10rem","10rem"]}
-                color="white"
-                bg={firstBox}
-                borderRadius="0.7rem 0 0 0"
-                justifyContent="center"
-                alignItems="center"
-              >
-                <PieChart 
-                  width={100} 
-                  height={100}
-                >
-                <Pie data={data01} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={39} fill={pieColor} />
-                </PieChart>
-
-              </Flex>
-              <Flex
-                w={["11.5rem","15rem","20rem","20rem"]}
-                bg={SecondBox}
-                h={["7rem","15rem","10rem","10rem"]}
-                borderRadius="0 0.7rem 0.7rem 0"
-                justifyContent="center"
-              >
-                <Flex
-                  mt={["0.7rem","0.7rem","1rem","1rem"]}
-                  ml={["0.2rem","0.2","1rem","1rem"]}
-                  mr={["0.5rem","0.5rem","1rem","2rem"]}
-                >
-                  <HiCash color="white" fontSize="2.4rem"/>
-                </Flex>
-                <Flex
-                  mt={["1.4rem","1.4rem","2rem","2rem"]}
-                  flexDir="column"
-                >
-                  <Flex
-                    flexDir="row"
-                  >
-                    <Text
-                      fontWeight={600}
-                      fontSize={["0.8rem","0.8rem","1.1rem","1.2rem"]}
-                      color="white"
-                      textAlign="center"
-                    >
-                      You spent
-                    </Text>
-                  </Flex>
-
-                  <Flex
-                    flexDir="row"
-                    alignItems="center"
-                    justifyContent="center"
-                  >
-                    <TbCurrencyNaira 
-                      color="#41ff00" 
-                      fontSize="1.2rem" 
-                      fontWeight={600}
-                    />
-                    <Text
-                      fontWeight={700}
-                      fontSize={["0.8rem","0.8rem","1.1rem","1.1rem"]}
-                      color="white"
-                      textAlign="center"
-                    >
-                      5000
-                    </Text>
-                  </Flex>
-                  <Text
-                    fontWeight={600}
-                    fontSize={["0.8rem","0.8rem","0.8rem","1.1rem"]}
-                    color="white"
-                    textAlign="center"
-                  >
-                    Today
-                  </Text>    
-                </Flex>
-
-                <Flex
-                  mt={["5rem","5rem","7rem","7rem"]}
-                  ml={["lrem","2rem","2rem","2rem"]}
-                >
-                  <Text>
-                    <ChevronRightIcon fontSize="1.4rem" color="white"/>
-                  </Text>
-                </Flex>
-              </Flex>
-            </Flex>
-
-            <Flex
-              flexDir="row"
-              borderRadius="1rem"
-              alignItems="center"
-              justifyContent="center"        
-            >
-              <Flex
-                w={["7.5rem","9rem","10rem","10rem"]}
-                h={["7rem","9rem","10rem","10rem"]}
-                color="white"
-                bg={firstBox}
-                borderRadius="0.7rem 0 0 0"
-                justifyContent="center"
-                alignItems="center"
-              >
-                <PieChart 
-                  width={100} 
-                  height={100}
-                >
-                <Pie data={data01} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={39} fill={pieColor} />
-              </PieChart>
-
-              </Flex>
-              <Flex
-                w={["11.5rem","15rem","20rem","20rem"]}
-                bg={SecondBox}
-                h={["7rem","15rem","10rem","10rem"]}
-                borderRadius="0 0.7rem 0.7rem 0"
-                justifyContent="center"
-              >
-                <Flex
-                  mt={["0.7rem","0.7rem","1rem","1rem"]}
-                  ml={["0.2rem","0.2","1rem","1rem"]}
-                  mr={["0.5rem","0.5rem","1rem","2rem"]}
-                >
-                  <HiCash color="white" fontSize="2.4rem"/>
-                </Flex>
-                <Flex
-                  mt={["1.4rem","1.4rem","2rem","2rem"]}
-                  flexDir="column"
-                >
-                  <Flex
-                    flexDir="row"
-                  >
-                    <Text
-                      fontWeight={600}
-                      fontSize={["0.8rem","0.8rem","1.1rem","1.2rem"]}
-                      color="white"
-                      textAlign="center"
-                    >
-                      You spent
-                    </Text>
-                  </Flex>
-
-                  <Flex
-                    flexDir="row"
-                    alignItems="center"
-                    justifyContent="center"
-                  >
-                    <TbCurrencyNaira 
-                      color="#41ff00" 
-                      fontSize="1.2rem" 
-                      fontWeight={600}
-                    />
-                    <Text
-                      fontWeight={700}
-                      fontSize={["0.8rem","0.8rem","1.1rem","1.1rem"]}
-                      color="white"
-                      textAlign="center"
-                    >
-                      8,000
-                    </Text>
-                  </Flex>
-                  <Text
-                    fontWeight={600}
-                    fontSize={["0.8rem","0.8rem","0.8rem","1.1rem"]}
-                    color="white"
-                    textAlign="center"
-                  >
-                    Yesterday
-                  </Text>    
-                </Flex>
-
-                <Flex
-                  mt={["5rem","5rem","7rem","7rem"]}
-                  ml={["lrem","2rem","2rem","2rem"]}
-                >
-                  <Text>
-                    <ChevronRightIcon fontSize="1.4rem" color="white"/>
-                  </Text>
-                </Flex>
-              </Flex>
-            </Flex>
-            
-
-            <Flex
-              flexDir="row"
-              alignItems="center"
-              justifyContent="center"
-        
-            >
-              <Flex
-                w={["7.5rem","9rem","10rem","10rem"]}
-                h={["7rem","9rem","10rem","10rem"]}
-                bg={firstBox}
-                color="white"
-                borderRadius="0.7rem 0 0 0"
-                justifyContent="center"
-                alignItems="center"
-              >
-                <PieChart 
-                  width={100} 
-                  height={100}
-                >
-                  <Pie data={data01} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={39} fill={pieColor} />
-                </PieChart>
-              </Flex>
-              <Flex
-                w={["11.5rem","15rem","20rem","20rem"]}
-                bg={SecondBox}
-                h={["7rem","15rem","10rem","10rem"]}
-                borderRadius="0 0.7rem 0.7rem 0"
-                justifyContent="center"
-              >
-                <Flex
-                  mt={["0.7rem","0.7rem","1rem","1rem"]}
-                  ml={["0.2rem","0.2","1rem","1rem"]}
-                  mr={["0.5rem","0.5rem","1rem","2rem"]}
-                >
-                  <HiCash color="white" fontSize="2.4rem"/>
-                </Flex>
-                <Flex
-                  mt={["1.4rem","1.4rem","2rem","2rem"]}
-                  flexDir="column"
-                >
-                  <Flex
-                    flexDir="row"
-                  >
-                    <Text
-                      fontWeight={600}
-                      fontSize={["0.8rem","0.8rem","1.1rem","1.2rem"]}
-                      color="white"
-                      textAlign="center"
-                    >
-                      You spent
-                    </Text>
-                  </Flex>
-
-                  <Flex
-                    flexDir="row"
-                    alignItems="center"
-                    justifyContent="center"
-                  >
-                    <TbCurrencyNaira 
-                      color="#41ff00" 
-                      fontSize="1.2rem" 
-                      fontWeight={600}
-                    />
-                    <Text
-                      fontWeight={700}
-                      fontSize={["0.8rem","0.8rem","1.1rem","1.1rem"]}
-                      color="white"
-                      textAlign="center"
-                    >
-                      10,000
-                    </Text>
-                  </Flex>
-                  <Text
-                    fontWeight={600}
-                    fontSize={["0.8rem","0.8rem","0.8rem","1.1rem"]}
-                    color="white"
-                    textAlign="center"
-                  >
-                    Last week
-                  </Text>    
-                </Flex>
-
-                <Flex
-                  mt={["5rem","5rem","7rem","7rem"]}
-                  ml={["lrem","2rem","2rem","2rem"]}
-                >
-                  <Text>
-                    <ChevronRightIcon fontSize="1.4rem" color="white"/>
-                  </Text>
-                </Flex>
-
-              </Flex>
-            </Flex>
-          </Flex>
-        </SimpleGrid> */}
-
       </Flex>
 
+      <Divider
+        orientation='horizontal'
+        w="100%"
+        mt={["2rem","2rem","2rem","2rem"]}
+      />
+
       {/* <Flex
-        w={["4rem","5rem","5rem","6rem"]}
-        h={["4rem","5rem","5rem","6rem"]}
-        bg={addButton}
-        borderRadius="full"
-        justifyContent="center"
-        alignItems="center"
+        mt={["","","","5rem"]}
       >
-        <AddIcon color={color} fontSize="2rem"/>
+
       </Flex> */}
     </Flex>
   )
