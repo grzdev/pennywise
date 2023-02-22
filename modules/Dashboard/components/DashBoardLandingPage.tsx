@@ -76,7 +76,7 @@ const DashBoardLandingPage = () => {
     >
       <Flex
         flexDir="column"
-        mt={["3rem","2rem","3rem","4rem"]}
+        mt={["1.5rem","2rem","3rem","4rem"]}
         ml={["1rem","2rem","2rem","2rem"]}
       >
         <Heading>
@@ -94,11 +94,12 @@ const DashBoardLandingPage = () => {
         justifyContent="center"
         mt={["1rem","2rem","1.5rem","2rem"]}
         // ml={["0.1rem","","-10rem","-2rem"]}
+        mb="3rem"
       >  
 
         <Flex
-          w={["22rem","","33rem","60rem"]}
-          h={["30rem","","35rem","30rem"]}
+          w={["20rem","","33rem","60rem"]}
+          h={["25rem","","35rem","30rem"]}
           bg={SecondBox}
           borderRadius="1rem 1rem 0 1rem "
           // boxShadow= "rgba(17, 12, 46, 0.15) 0px 48px 100px 0px"
