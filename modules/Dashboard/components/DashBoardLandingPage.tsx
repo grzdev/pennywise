@@ -39,7 +39,7 @@ const DashBoardLandingPage = () => {
   const SecondBox = useColorModeValue("#407adf","#70a1c8")
   const pieColor = useColorModeValue("#3361b1","#757eb0")
   const addButton = useColorModeValue("#0050d6","#1c5dd0")
-  const color = useColorModeValue("#ff003d","white")
+  const color = useColorModeValue("#ff003d","#ff003d")
 
   const data01 = [
     {
@@ -112,7 +112,7 @@ const DashBoardLandingPage = () => {
             h={["3rem","3rem","5rem","5rem"]}
             ml={["16rem","16rem","27rem","54rem"]}
             mt={["21rem","21rem","29rem","24rem"]}
-            bg={color}
+            bg="#ff003d"
             justifyContent="center"
             alignItems="center"
           >
