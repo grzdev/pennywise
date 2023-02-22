@@ -39,7 +39,7 @@ const DashBoardLandingPage = () => {
   const SecondBox = useColorModeValue("#407adf","#70a1c8")
   const pieColor = useColorModeValue("#3361b1","#757eb0")
   const addButton = useColorModeValue("#0050d6","#1c5dd0")
-  const color = useColorModeValue("white","white")
+  const color = useColorModeValue("#ff003d","white")
 
   const data01 = [
     {
@@ -101,11 +101,25 @@ const DashBoardLandingPage = () => {
           w={["20rem","","33rem","60rem"]}
           h={["25rem","","35rem","30rem"]}
           bg={SecondBox}
-          borderRadius="1rem 1rem 0 1rem "
+          borderRadius="1rem 1rem 0 1rem"
           // boxShadow= "rgba(17, 12, 46, 0.15) 0px 48px 100px 0px"
           // boxShadow= "rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px"
           boxShadow= "rgba(0, 0, 0, 0.25) 0px 25px 50px -12px"
         >
+          <Flex
+            borderRadius="4rem 4rem 0 4rem"
+            w={["3rem","3rem","5rem","5rem"]}
+            h={["3rem","3rem","5rem","5rem"]}
+            ml={["16rem","16rem","27rem","54rem"]}
+            mt={["21rem","21rem","29rem","24rem"]}
+            bg={color}
+            justifyContent="center"
+            alignItems="center"
+          >
+            <Text>
+              <AddIcon color="white" fontSize="1.3rem"/>
+            </Text>
+          </Flex>
 
         </Flex>
 

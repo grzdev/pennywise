@@ -379,9 +379,8 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
           <Flex
             flexDir="column"
             alignItems="center"
-            _hover={{
-              bg: "#4f6382",
-              color: 'white',
+            _visited={{
+              color: 'lightgrey',
             }}
           >
           <Link href='/dashboard'>
@@ -402,9 +401,8 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
           <Flex
             alignItems="center"
             flexDir="column"
-            _hover={{
-              bg: "#4f6382",
-              color: 'white',
+            _visited={{
+              color: 'lightgrey',
             }}
           >
             <Link href='/analytics'>
@@ -425,9 +423,8 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
           <Flex
             alignItems="center"
             flexDir="column"
-            _hover={{
-              bg: "#4f6382",
-              color: 'white',
+            _visited={{
+              color: 'lightgrey',
             }}
           >
             <Link href='/budget'>
@@ -448,9 +445,8 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
           <Flex
             alignItems="center"
             flexDir="column"
-            _hover={{
-              bg: "#4f6382",
-              color: 'white',
+            _visited={{
+              color: 'lightgrey',
             }}
           >
             <Link href='/account'>
