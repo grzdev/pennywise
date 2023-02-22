@@ -154,7 +154,7 @@ const DashBoardLandingPage = () => {
             flexDir="column"
             alignItems="center"
             justifyContent="center"
-            mt={["-2rem","-2rem","0.2rem","-3rem"]}
+            mt={["-1rem","-2rem","0.2rem","-3rem"]}
             color={header}
             >
             <Heading
