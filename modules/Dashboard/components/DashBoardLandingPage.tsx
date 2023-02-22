@@ -200,7 +200,7 @@ const DashBoardLandingPage = () => {
             <Text
               color={header} 
               fontWeight={700}
-              mr={["11.5rem","11rem","21rem","48rem"]}
+              mr={["10rem","11rem","21rem","48rem"]}
               mt={["1rem","1rem","2rem",""]}
             >
               13th Feb
