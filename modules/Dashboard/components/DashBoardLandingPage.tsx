@@ -170,7 +170,7 @@ const DashBoardLandingPage = () => {
                 textAlign="center"
                 color="#41ff00" 
                 size={["sm","sm","lg","xl"]}
-                mt={["0.1rem","0.1rem","-0.1rem","0.1rem"]}
+                mt={["0.1rem","0.1rem","-0.1rem","0.2rem"]}
               >
               <TbCurrencyNaira/>
               </Heading>
@@ -200,7 +200,7 @@ const DashBoardLandingPage = () => {
             <Text
               color={header} 
               fontWeight={700}
-              mr={["10rem","11rem","21rem","48rem"]}
+              mr={["10.3rem","11rem","21rem","48rem"]}
               mt={["1.2rem","1rem","2rem",""]}
               fontSize="0.9rem"
             >
@@ -211,7 +211,7 @@ const DashBoardLandingPage = () => {
               w={["3rem","3rem","5rem","5rem"]}
               h={["3rem","3rem","5rem","5rem"]}
               bg="#ff003d"
-              mt={["","","","-0.7rem"]}
+              mt={["0.4rem","","","-0.7rem"]}
               justifyContent="center"
               alignItems="center"
             >
