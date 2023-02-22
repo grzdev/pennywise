@@ -36,7 +36,7 @@ const DashBoardLandingPage = () => {
   const { colorMode, toggleColorMode } = useColorMode()
   const { user, logout } = useAuth()
   const firstBox = useColorModeValue("white","white")
-  const SecondBox = useColorModeValue("#3361b1","#757eb0")
+  const SecondBox = useColorModeValue("#407adf","#70a1c8")
   const pieColor = useColorModeValue("#3361b1","#757eb0")
   const addButton = useColorModeValue("#0050d6","#1c5dd0")
   const color = useColorModeValue("white","white")
@@ -67,32 +67,6 @@ const DashBoardLandingPage = () => {
       "value": 189
     }
   ];
-  const data02 = [
-    {
-      "name": "Group A",
-      "value": 2400
-    },
-    {
-      "name": "Group B",
-      "value": 4567
-    },
-    {
-      "name": "Group C",
-      "value": 1398
-    },
-    {
-      "name": "Group D",
-      "value": 9800
-    },
-    {
-      "name": "Group E",
-      "value": 3908
-    },
-    {
-      "name": "Group F",
-      "value": 4800
-    }
-  ];
       
   
 
@@ -102,7 +76,7 @@ const DashBoardLandingPage = () => {
     >
       <Flex
         flexDir="column"
-        mt={["1rem","2rem","2rem","2rem"]}
+        mt={["3rem","2rem","3rem","4rem"]}
         ml={["1rem","2rem","2rem","2rem"]}
       >
         <Heading>
@@ -118,10 +92,25 @@ const DashBoardLandingPage = () => {
       <Flex
         alignItems="center"
         justifyContent="center"
-        mt={["2rem","2rem","4rem","5rem"]}
-        ml={["0.1rem","","-10rem","-2rem"]}
+        mt={["1rem","2rem","1.5rem","2rem"]}
+        // ml={["0.1rem","","-10rem","-2rem"]}
       >  
-        <SimpleGrid
+
+        <Flex
+          w={["22rem","","33rem","60rem"]}
+          h={["30rem","","35rem","30rem"]}
+          bg={SecondBox}
+          borderRadius="1rem 1rem 0 1rem "
+          // boxShadow= "rgba(17, 12, 46, 0.15) 0px 48px 100px 0px"
+          // boxShadow= "rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px"
+          boxShadow= "rgba(0, 0, 0, 0.25) 0px 25px 50px -12px"
+        >
+
+        </Flex>
+
+
+
+        {/* <SimpleGrid
           // columns={6}
         >
           <Flex
@@ -149,8 +138,7 @@ const DashBoardLandingPage = () => {
                   height={100}
                 >
                 <Pie data={data01} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={39} fill={pieColor} />
-                {/* <Pie data={data02} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={60} outerRadius={80} fill="#82ca9d" label /> */}
-              </PieChart>
+                </PieChart>
 
               </Flex>
               <Flex
@@ -159,8 +147,6 @@ const DashBoardLandingPage = () => {
                 h={["7rem","15rem","10rem","10rem"]}
                 borderRadius="0 0.7rem 0.7rem 0"
                 justifyContent="center"
-                // alignItems="center"
-                // flexDir="row"
               >
                 <Flex
                   mt={["0.7rem","0.7rem","1rem","1rem"]}
@@ -246,7 +232,6 @@ const DashBoardLandingPage = () => {
                   height={100}
                 >
                 <Pie data={data01} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={39} fill={pieColor} />
-                {/* <Pie data={data02} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={60} outerRadius={80} fill="#82ca9d" label /> */}
               </PieChart>
 
               </Flex>
@@ -342,7 +327,6 @@ const DashBoardLandingPage = () => {
                   height={100}
                 >
                   <Pie data={data01} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={39} fill={pieColor} />
-                  {/* <Pie data={data02} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={60} outerRadius={80} fill="#82ca9d" label /> */}
                 </PieChart>
               </Flex>
               <Flex
@@ -417,11 +401,11 @@ const DashBoardLandingPage = () => {
               </Flex>
             </Flex>
           </Flex>
-        </SimpleGrid>
+        </SimpleGrid> */}
 
       </Flex>
 
-      <Flex
+      {/* <Flex
         w={["4rem","5rem","5rem","6rem"]}
         h={["4rem","5rem","5rem","6rem"]}
         bg={addButton}
@@ -430,7 +414,7 @@ const DashBoardLandingPage = () => {
         alignItems="center"
       >
         <AddIcon color={color} fontSize="2rem"/>
-      </Flex>
+      </Flex> */}
     </Flex>
   )
 }
