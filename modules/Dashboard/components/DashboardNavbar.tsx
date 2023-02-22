@@ -39,6 +39,7 @@ import { ReactText } from 'react';
 import { AiFillHome } from 'react-icons/ai';
 import { SiGoogleanalytics } from "react-icons/si"
 import { BsFillPersonFill } from "react-icons/bs"
+import { FaWallet } from "react-icons/fa"
 
 interface LinkItemProps {
   name: string;
@@ -225,6 +226,37 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
             mx="4"
             borderRadius="0.7rem"
           >
+            <Link href='/budget'>
+              <FaWallet
+                fontWeight={700}
+                fontSize="1.2rem"
+              /> 
+            </Link>
+            <Link 
+              href='/budget'
+             _hover={{textDecoration: "none"}}
+            >
+              <Text
+                fontWeight={700}
+                fontSize="1rem"
+              >
+                Budget
+              </Text>
+            </Link>
+          </Flex>
+
+          <Flex
+            alignItems="center"
+            gap="1rem"
+            flexDir="row"
+            _hover={{
+              bg: "#4f6382",
+              color: 'white',
+            }}
+            p="4"
+            mx="4"
+            borderRadius="0.7rem"
+          >
             <Link href='/account'>
               <BsFillPersonFill
                 fontWeight={700}
@@ -243,6 +275,7 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
               </Text>
             </Link>
           </Flex>
+
         </VStack>
       </Flex>
     </Box>
@@ -385,6 +418,29 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
                 fontSize="0.5rem"
               >
                 Analytics
+              </Text>
+            </Link>
+          </Flex>
+
+          <Flex
+            alignItems="center"
+            flexDir="column"
+            _hover={{
+              bg: "#4f6382",
+              color: 'white',
+            }}
+          >
+            <Link href='/budget'>
+              <FaWallet
+                color={icon}
+                fontSize="1.1rem"
+              />
+            </Link>
+            <Link href='/budget'>
+              <Text
+                fontSize="0.5rem"
+              >
+                Budget
               </Text>
             </Link>
           </Flex>
