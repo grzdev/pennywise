@@ -210,7 +210,7 @@ const DashBoardLandingPage = () => {
               w={["3rem","3rem","5rem","5rem"]}
               h={["3rem","3rem","5rem","5rem"]}
               bg="#ff003d"
-              mt={["-0.5rem","","","-0.7rem"]}
+              mt={["-0.2rem","","","-0.7rem"]}
               justifyContent="center"
               alignItems="center"
             >
