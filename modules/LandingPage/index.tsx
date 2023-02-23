@@ -8,7 +8,8 @@ import {
     Box, 
     Button,
     Input,
-    ScaleFade, 
+    ScaleFade,
+    Fade, 
   } from '@chakra-ui/react'
   import { Inter } from '@next/font/google'
   import Image from 'next/image'
@@ -44,8 +45,7 @@ const LandingPage = () => {
         >
           <VStack
           >
-            <ScaleFade
-              initialScale={2}
+            <Fade
               in={true}
             >
               <Heading
@@ -60,24 +60,29 @@ const LandingPage = () => {
               >
                 Keep Tabs On Your Daily Spendings.
               </Heading>
-            </ScaleFade>
+            </Fade>
 
             <Flex
             >
-              <Text
-                fontWeight={500}
-                color={textColor}
-                fontSize={["1.1rem", "1.1rem", "1.1rem", "1.2rem"]}
-                mb={["0.4rem", "0.4rem", "0.4rem", "2rem"]}
-                w={["18rem", "30rem", "30rem", "23.6rem"]}
-                justifyContent="center"
-                alignItems="center"
-                textAlign={["center", "initial"]}
-                fontFamily="'DM Sans',sans-serif "
+              <ScaleFade
+                initialScale={2}
+                in={true}
               >
-                TrackDaily helps customers achieve their budget goals by storing the 
-                amount they spend on a daily basis,
-              </Text>
+                <Text
+                  fontWeight={500}
+                  color={textColor}
+                  fontSize={["1.1rem", "1.1rem", "1.1rem", "1.2rem"]}
+                  mb={["0.4rem", "0.4rem", "0.4rem", "2rem"]}
+                  w={["18rem", "30rem", "30rem", "23.6rem"]}
+                  justifyContent="center"
+                  alignItems="center"
+                  textAlign={["center", "initial"]}
+                  fontFamily="'DM Sans',sans-serif "
+                >
+                  TrackDaily helps customers achieve their budget goals by storing the 
+                  amount they spend on a daily basis,
+                </Text>
+              </ScaleFade>
             </Flex>
             <Flex
             >
