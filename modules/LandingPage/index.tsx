@@ -7,7 +7,8 @@ import {
     VStack, 
     Box, 
     Button,
-    Input, 
+    Input,
+    ScaleFade, 
   } from '@chakra-ui/react'
   import { Inter } from '@next/font/google'
   import Image from 'next/image'
@@ -43,18 +44,23 @@ const LandingPage = () => {
         >
           <VStack
           >
-            <Heading
-              size="3xl"
-              w={["20rem", "30rem", "30rem", "30rem"]}
-              lineHeight={["3.9rem", "4.5rem", "4.5rem", "4.5rem"]}
-              mb="0.6rem"
-              mt={["6rem", "10rem", "10rem", "12rem"]}
-              ml={["", "", "", "6rem"]}
-              textAlign={["center", "initial"]}
-              fontFamily="'Roboto', sans-serif"
+            <ScaleFade
+              initialScale={2}
+              in={true}
             >
-              Keep Tabs On Your Daily Spendings.
-            </Heading>
+              <Heading
+                size="3xl"
+                w={["20rem", "30rem", "30rem", "30rem"]}
+                lineHeight={["3.9rem", "4.5rem", "4.5rem", "4.5rem"]}
+                mb="0.6rem"
+                mt={["6rem", "10rem", "10rem", "12rem"]}
+                ml={["", "", "", "6rem"]}
+                textAlign={["center", "initial"]}
+                fontFamily="'Roboto', sans-serif"
+              >
+                Keep Tabs On Your Daily Spendings.
+              </Heading>
+            </ScaleFade>
 
             <Flex
             >
@@ -93,7 +99,7 @@ const LandingPage = () => {
               </Link>
             </Flex>
           </VStack>
-
+          
           <Box
             ml={["0.2rem", "4rem", "3rem", "4.8rem"]}
             w={["27rem", "40rem", "40rem", "51rem"]}
