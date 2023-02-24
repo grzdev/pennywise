@@ -40,8 +40,10 @@ const DashBoardLandingPage = () => {
   const header = useColorModeValue("#dedede","white")
   const SecondBox = useColorModeValue("#407adf","#70a1c8")
   const pieColor = useColorModeValue("#3361b1","#757eb0")
+  const pieColor2 = useColorModeValue("#0c3483","#0c3483")
   const addButton = useColorModeValue("#0050d6","#1c5dd0")
   const color = useColorModeValue("#ff003d","#ff003d")
+  
 
   const data01 = [
     {
@@ -173,7 +175,8 @@ const DashBoardLandingPage = () => {
                 textAlign="center"
                 color="#41ff00" 
                 size={["sm","sm","lg","xl"]}
-                mt={["0.1rem","0.1rem","-0.1rem","0.2rem"]}
+                // mt={["0.1rem","0.1rem","-0.1rem","-1rem"]}
+                mt={["0.1rem","0.1rem","-0.1rem","0.1rem"]}
               >
               <TbCurrencyNaira/>
               </Heading>
@@ -193,11 +196,11 @@ const DashBoardLandingPage = () => {
               height={250}
             >
               <Pie data={data01} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={50} fill={pieColor} />
-              <Pie data={data02} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={60} outerRadius={80} fill="#82ca9d" label />
+              <Pie data={data02} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={60} outerRadius={80} fill={pieColor2} label />
             </PieChart>
           </Flex>
           <Flex
-            mt={["","","2.6rem","-2rem"]}
+            mt={["2rem","","2.6rem","-2rem"]}
             >
             <Text
               color={header} 
