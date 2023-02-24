@@ -64,8 +64,7 @@ const LandingPage = () => {
 
             <Flex
             >
-              <ScaleFade
-                initialScale={2}
+              <Fade
                 in={true}
               >
                 <Text
@@ -82,7 +81,7 @@ const LandingPage = () => {
                   TrackDaily helps customers achieve their budget goals by storing the 
                   amount they spend on a daily basis,
                 </Text>
-              </ScaleFade>
+              </Fade>
             </Flex>
             <Flex
             >
@@ -138,48 +137,60 @@ const LandingPage = () => {
           </Flex>
             <VStack
             >
-              <Heading
-                size="xl"
-                w={["20rem", "30rem", "30rem", "45rem"]}
-                noOfLines={[3,3,3,1]}
-                mt={["1rem","","","10rem"]}
-                lineHeight={["2rem", "4.5rem", "2rem", "2.3rem"]}
-                mb={["0.2rem", "-0.4rem", "-0.4rem", "0.2rem"]}
-                ml={["", "", "", "-15rem"]}
-                textAlign={["center", "initial"]}
-                fontFamily="'poppins', sans-serif"
-                color={headerBg}
+              <Fade
+                in={true}
               >
-                We will help you economize efficiently.
-              </Heading>
-              <Text
-                fontWeight={500}
-                color={headerBg}
-                fontSize={["1.1rem", "1.1rem", "1.1rem", "1.2rem"]}
-                mb={["0.4rem", "0.4rem", "0.4rem", "3rem"]}
-                w={["18rem", "30rem", "30rem", "60rem"]}
-                noOfLines={[6,6,6,2]}
-                justifyContent="center"
-                alignItems="center"
-                textAlign={["center", "initial"]}
-                ml={["", "", "", "16rem"]}
-                fontFamily="'poppins',sans-serif "
-              >
-                It is hard to keep track of how much we spend in a day, this may result to people spending more than they plan to.
-                TrackDaily helps to keep tabs on what we spend on and the total amount spent.
-              </Text>
-              <Link href={"/about"}>
-                <Text
-                  ml={["","","","-30rem"]}
-                  color={vsgraph}
-                  fontWeight={500}
-                  fontSize="1.1rem"
-                  mt={["1rem", "-0.4rem", "-0.4rem", "0.1rem"]}
-                  mb={["10rem","","",""]}
+                <Heading
+                  size="xl"
+                  w={["20rem", "30rem", "30rem", "45rem"]}
+                  noOfLines={[3,3,3,1]}
+                  mt={["1rem","","","10rem"]}
+                  lineHeight={["2rem", "4.5rem", "2rem", "2.3rem"]}
+                  mb={["0.2rem", "-0.4rem", "-0.4rem", "0.2rem"]}
+                  ml={["", "", "", "-15rem"]}
+                  textAlign={["center", "initial"]}
+                  fontFamily="'poppins', sans-serif"
+                  color={headerBg}
                 >
-                  Learn more <ChevronRightIcon/>
+                  We will help you economize efficiently.
+                </Heading>
+              </Fade>
+              <Fade
+                in={true}
+              >
+                <Text
+                  fontWeight={500}
+                  color={headerBg}
+                  fontSize={["1.1rem", "1.1rem", "1.1rem", "1.2rem"]}
+                  mb={["0.4rem", "0.4rem", "0.4rem", "3rem"]}
+                  w={["18rem", "30rem", "30rem", "60rem"]}
+                  noOfLines={[6,6,6,2]}
+                  justifyContent="center"
+                  alignItems="center"
+                  textAlign={["center", "initial"]}
+                  ml={["", "", "", "16rem"]}
+                  fontFamily="'poppins',sans-serif "
+                >
+                  It is hard to keep track of how much we spend in a day, this may result to people spending more than they plan to.
+                  TrackDaily helps to keep tabs on what we spend on and the total amount spent.
                 </Text>
-              </Link>
+              </Fade>
+              <Fade
+                in={true}
+              >
+                <Link href={"/about"}>
+                  <Text
+                    ml={["","","","-30rem"]}
+                    color={vsgraph}
+                    fontWeight={500}
+                    fontSize="1.1rem"
+                    mt={["1rem", "-0.4rem", "-0.4rem", "0.1rem"]}
+                    mb={["10rem","","",""]}
+                  >
+                    Learn more <ChevronRightIcon/>
+                  </Text>
+                </Link>
+              </Fade>
             </VStack>
         </Flex>
         <Flex
@@ -202,33 +213,41 @@ const LandingPage = () => {
             borderRadius="1.2rem"
             mt={["0.1rem", "5rem", "2rem", "7rem"]}
           >
-            <Heading
-              size="2xl"
-              w={["20rem", "30rem", "30rem", "30rem"]}
-              lineHeight={["2rem", "4.5rem", "4.5rem", "3rem"]}
-              mb="0.6rem"
-              ml={["", "", "", "6rem"]}
-              textAlign={["center", "initial"]}
-              fontFamily="'Roboto', sans-serif"
+            <Fade
+              in={true}
             >
-              Visualize your daily and weekly expenses.
-            </Heading>
+              <Heading
+                size="2xl"
+                w={["20rem", "30rem", "30rem", "30rem"]}
+                lineHeight={["2rem", "4.5rem", "4.5rem", "3rem"]}
+                mb="0.6rem"
+                ml={["", "", "", "6rem"]}
+                textAlign={["center", "initial"]}
+                fontFamily="'Roboto', sans-serif"
+              >
+                Visualize your daily and weekly expenses.
+              </Heading>
+            </Fade>
 
             <Flex
             >
-              <Text
-                fontWeight={500}
-                color={textColor}
-                fontSize={["1.1rem", "1.1rem", "1.1rem", "1.2rem"]}
-                mb={["0.4rem", "0.4rem", "0.4rem", "2rem"]}
-                w={["18rem", "30rem", "30rem", "23.6rem"]}
-                justifyContent="center"
-                alignItems="center"
-                textAlign={["center", "initial"]}
-                fontFamily="'DM Sans',sans-serif "
+              <Fade
+                in={true}
               >
-               A graph that shows your spending data will be provided to you so you can take note of any spike or decrease in expenses.
-              </Text>
+                <Text
+                  fontWeight={500}
+                  color={textColor}
+                  fontSize={["1.1rem", "1.1rem", "1.1rem", "1.2rem"]}
+                  mb={["0.4rem", "0.4rem", "0.4rem", "2rem"]}
+                  w={["18rem", "30rem", "30rem", "23.6rem"]}
+                  justifyContent="center"
+                  alignItems="center"
+                  textAlign={["center", "initial"]}
+                  fontFamily="'DM Sans',sans-serif "
+                >
+                A graph that shows your spending data will be provided to you so you can take note of any spike or decrease in expenses.
+                </Text>
+              </Fade>
             </Flex>
           </VStack>
 
