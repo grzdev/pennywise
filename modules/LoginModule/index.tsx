@@ -228,12 +228,12 @@ const LogInModule = () => {
               >
                 Sign in
               </Button>
-              <Button
+              {/* <Button
                 onClick={handleGoogleClick}
                 type="submit"
               >
                <FcGoogle fontSize="1.5rem"/> <Text ml="0.3rem">Sign in with google</Text>
-              </Button>
+              </Button> */}
             </Flex>
 
             <Flex

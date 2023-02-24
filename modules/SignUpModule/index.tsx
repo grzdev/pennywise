@@ -210,11 +210,11 @@ const SignUpModule = () => {
            >
               Create account
            </Button>
-           <Button
+           {/* <Button
             onClick={handleGoogleClick}
            >
             <FcGoogle fontSize="1.5rem"/> <Text ml="0.3rem">Continue with google</Text>
-           </Button>
+           </Button> */}
          </Flex>
 
          <Flex
