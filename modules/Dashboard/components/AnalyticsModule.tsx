@@ -95,7 +95,7 @@ const AnalyticsModule = () => {
       <Flex
         justifyContent="center"
         alignItems="center"
-      >
+        >
         <Flex
           w={["21rem","20rem","34rem","60rem"]}
           h={["35rem","30rem","39rem","34rem"]}
@@ -103,6 +103,7 @@ const AnalyticsModule = () => {
           bg= {divColor}
           // bgGradient= {divGradient}
           mt={["3rem","3rem","4rem","4rem"]}
+          mb="1 0rem"
           boxShadow="2xl"
           justifyContent="center"
           alignItems="center"
@@ -117,7 +118,7 @@ const AnalyticsModule = () => {
               mr={["1.2rem","1rem","7rem","12rem"]}
             >
               <Heading
-                size={["sm","sm","md","lg"]}
+                size={["xs","xs","md","lg"]}
                 color={header}
               >
                 Last week's expense
@@ -141,7 +142,7 @@ const AnalyticsModule = () => {
             </Flex>
           </Flex>
           <Flex
-            w={["20rem","20rem","30rem","50rem"]}
+            w={["19rem","20rem","30rem","50rem"]}
             h={["21rem","21rem","25rem","20rem"]}
             // mt={["","","","2rem"]}
             // mr={["","","","-2rem"]}
@@ -188,8 +189,8 @@ const AnalyticsModule = () => {
             color={header}
           >
             <Heading
-              size={["","","md","lg"]}
-              mr={["","","11rem","13rem"]}
+              size={["sm","sm","md","lg"]}
+              mr={["2.5rem","2.5rem ","11rem","13rem"]}
             >
               Total Amount Spent
             </Heading>
@@ -197,14 +198,14 @@ const AnalyticsModule = () => {
               alignItems="center"
             >
               <Heading
-                size={["","","md","lg"]}
-                mt={["","","-0.1rem","0.2rem"]}
+                size={["xs","xs","md","lg"]}
+                mt={["0.1rem","0.1rem","-0.1rem","0.2rem"]}
                 color="#21c902" 
               >
                 <TbCurrencyNaira/>
               </Heading>
               <Heading
-               size={["","","sm","lg"]}
+               size={["xs","xs","sm","lg"]}
               >
                 20,000
               </Heading>
