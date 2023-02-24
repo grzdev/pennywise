@@ -39,8 +39,8 @@ const DashBoardLandingPage = () => {
   const { user, logout } = useAuth()
   const header = useColorModeValue("#dedede","white")
   const SecondBox = useColorModeValue("#407adf","#70a1c8")
-  const pieColor = useColorModeValue("#3361b1","#757eb0")
-  const pieColor2 = useColorModeValue("#0c3483","#0c3483")
+  const pieColor = useColorModeValue("#3361b1","#c42abe")
+  const pieColor2 = useColorModeValue("#2fa3e6","#2fa3e6")
   const addButton = useColorModeValue("#0050d6","#1c5dd0")
   const color = useColorModeValue("#ff003d","#ff003d")
   
@@ -173,7 +173,7 @@ const DashBoardLandingPage = () => {
             >
               <Heading
                 textAlign="center"
-                color="#41ff00" 
+                color="#25f000" 
                 size={["sm","sm","lg","xl"]}
                 // mt={["0.1rem","0.1rem","-0.1rem","-1rem"]}
                 mt={["0.1rem","0.1rem","-0.1rem","0.1rem"]}
@@ -189,7 +189,7 @@ const DashBoardLandingPage = () => {
           </Flex>
 
           <Flex
-            mt={["1.5rem","0.2rem","0.1rem","1rem"]}
+            mt={["1.8rem","1.8rem","1.5rem","1rem"]}
           >
             <PieChart 
               width={250} 
@@ -200,7 +200,7 @@ const DashBoardLandingPage = () => {
             </PieChart>
           </Flex>
           <Flex
-            mt={["2rem","","2.6rem","-2rem"]}
+            mt={["2rem","2rem","1rem","-2rem"]}
             >
             <Text
               color={header} 
