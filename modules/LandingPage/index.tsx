@@ -126,7 +126,7 @@ const LandingPage = () => {
           h={["35rem","30rem","35rem","40rem"]}
         >
           <Flex
-            mr={["","","","2.7rem"]}
+            mr={["","","","1.7rem"]}
             mt={["9rem","","","1rem"]}
             ml={["","","","10rem"]}
           >
@@ -168,7 +168,7 @@ const LandingPage = () => {
                   justifyContent="center"
                   alignItems="center"
                   textAlign={["center", "initial"]}
-                  ml={["", "", "", "16rem"]}
+                  // ml={["", "", "", "14rem"]}
                   fontFamily="'poppins',sans-serif "
                 >
                   It is hard to keep track of how much we spend in a day, this may result to people spending more than they plan to.
@@ -184,7 +184,7 @@ const LandingPage = () => {
                     color={vsgraph}
                     fontWeight={500}
                     fontSize="1.1rem"
-                    mt={["1rem", "-0.4rem", "-0.4rem", "0.1rem"]}
+                    mt={["1rem", "-0.4rem", "-0.4rem", "-2rem"]}
                     mb={["10rem","","",""]}
                   >
                     Learn more <ChevronRightIcon/>
