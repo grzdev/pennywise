@@ -103,7 +103,7 @@ const AnalyticsModule = () => {
           bg= {divColor}
           // bgGradient= {divGradient}
           mt={["1.5rem","1.5rem","4rem","4rem"]}
-          mb="1 0rem"
+          mb="10rem"
           boxShadow="2xl"
           justifyContent="center"
           alignItems="center"
