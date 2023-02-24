@@ -87,8 +87,9 @@ const DashBoardLandingPage = () => {
       "value": 500
     },
   ];
-      
-  
+
+  const bg = useColorModeValue("#FF3CAC","#667eea")
+  const bgGradient = useColorModeValue("linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);","linear-gradient(135deg, #667eea 0%, #764ba2 100%)")
 
   return (
     <Flex
@@ -119,8 +120,9 @@ const DashBoardLandingPage = () => {
 
         <Flex
           w={["20rem","20rem","33rem","60rem"]}
-          h={["25rem","25rem","35rem","30rem"]}
-          bg={SecondBox}
+          h={["30rem","25rem","35rem","30rem"]}
+          background= {bg}
+          bgGradient= {bgGradient}
           borderRadius="1rem 1rem 0 1rem"
           // boxShadow= "rgba(17, 12, 46, 0.15) 0px 48px 100px 0px"
           // boxShadow= "rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px"
@@ -155,7 +157,7 @@ const DashBoardLandingPage = () => {
             flexDir="column"
             alignItems="center"
             justifyContent="center"
-            mt={["-1rem","-2rem","0.2rem","-3rem"]}
+            mt={["0.5rem","-2rem","0.2rem","-3rem"]}
             color={header}
             >
             <Heading
@@ -184,7 +186,7 @@ const DashBoardLandingPage = () => {
           </Flex>
 
           <Flex
-            mt={["0.2rem","0.2rem","0.1rem","1rem"]}
+            mt={["1.5rem","0.2rem","0.1rem","1rem"]}
           >
             <PieChart 
               width={250} 
@@ -200,7 +202,7 @@ const DashBoardLandingPage = () => {
             <Text
               color={header} 
               fontWeight={700}
-              mr={["10.6rem","11rem","21rem","48rem"]}
+              mr={["11.4rem","11rem","21rem","48rem"]}
               mt={["1.2rem","1rem","2rem",""]}
               fontSize="0.9rem"
             >

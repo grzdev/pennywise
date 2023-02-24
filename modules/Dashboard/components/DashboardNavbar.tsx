@@ -22,7 +22,9 @@ import {
   MenuDivider,
   MenuItem,
   MenuList,
-  Heading
+  Heading,
+  Button,
+  useColorMode
 } from '@chakra-ui/react';
 import {
   FiHome,
@@ -40,6 +42,7 @@ import { AiFillHome } from 'react-icons/ai';
 import { SiGoogleanalytics } from "react-icons/si"
 import { BsFillPersonFill } from "react-icons/bs"
 import { FaWallet } from "react-icons/fa"
+import { MoonIcon, SunIcon } from '@chakra-ui/icons';
 
 interface LinkItemProps {
   name: string;
@@ -93,6 +96,7 @@ interface SidebarProps extends BoxProps {
 const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
   const headerColor = useColorModeValue("#4f89e8","#c6dbfb")
   const hover = useColorModeValue("","#171923")
+  const { colorMode, toggleColorMode } = useColorMode()
   const icon = useColorModeValue("black","lightgrey")
 
   return (
@@ -276,6 +280,15 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
             </Link>
           </Flex>
 
+          <Flex>
+          <Button 
+          onClick={toggleColorMode}
+          // display={{ base: 'none', md: 'inline-flex' }}
+          
+          >
+            {colorMode === 'light' ? <MoonIcon/> : <SunIcon/>}
+          </Button>
+          </Flex>
         </VStack>
       </Flex>
     </Box>
