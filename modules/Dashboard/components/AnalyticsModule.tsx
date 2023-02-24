@@ -113,7 +113,7 @@ const AnalyticsModule = () => {
           bg= {divColor}
           // bgGradient= {divGradient}
           mt={["1.5rem","1.5rem","4rem","4rem"]}
-          mb="10rem"
+          mb="5rem"
           boxShadow="2xl"
           justifyContent="center"
           alignItems="center"
@@ -234,7 +234,7 @@ const AnalyticsModule = () => {
           <Heading
             color={header}
             mt={["2.4rem","2.4rem","3rem","2rem"]}
-            size={["md","md","lg","xl"]}
+            size={["md","md","lg","lg"]}
           >
             Most spent on categories
           </Heading>
@@ -246,6 +246,7 @@ const AnalyticsModule = () => {
 
             <Flex
               flexDir="column"
+              mr={["-1.7rem","-1.7rem","-3rem","8rem"]}
               mt={["2.5rem","2.5rem","3rem","2rem"]}
             >
               <Flex
