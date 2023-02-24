@@ -14,12 +14,12 @@ const AnalyticsModule = () => {
         alignItems="center"
       >
         <Flex
-          w={["","","","60rem"]}
-          h={["","","","34rem"]}
+          w={["20rem","20rem","34rem","60rem"]}
+          h={["30rem","30rem","39rem","34rem"]}
           borderRadius="1rem 1rem 0 1rem"
           bg= {divColor}
           bgGradient= {divGradient}
-          mt={["","","","4rem"]}
+          mt={["3rem","","4rem","4rem"]}
           boxShadow="2xl"
         >
 
