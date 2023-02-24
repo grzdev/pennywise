@@ -40,7 +40,7 @@ const DashBoardLandingPage = () => {
   const header = useColorModeValue("#dedede","white")
   const SecondBox = useColorModeValue("#407adf","#70a1c8")
   const pieColor = useColorModeValue("#3361b1","#c42abe")
-  const pieColor2 = useColorModeValue("#2fa3e6","#2fa3e6")
+  const pieColor2 = useColorModeValue("#4bbdff","#4bbdff")
   const addButton = useColorModeValue("#0050d6","#1c5dd0")
   const color = useColorModeValue("#ff003d","#ff003d")
   
@@ -196,7 +196,7 @@ const DashBoardLandingPage = () => {
               height={250}
             >
               <Pie data={data01} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={50} fill={pieColor} />
-              <Pie data={data02} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={60} outerRadius={80} fill={pieColor2} label />
+              <Pie data={data02} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={60} outerRadius={75} fill={pieColor2} label />
             </PieChart>
           </Flex>
           <Flex
