@@ -99,7 +99,7 @@ const DashBoardLandingPage = () => {
     >
       <Flex
         flexDir="column"
-        mt={["1.5rem","2rem","3rem","4rem"]}
+        mt={["0.8rem","2rem","3rem","4rem"]}
         ml={["1rem","2rem","2rem","2rem"]}
       >
         <Heading

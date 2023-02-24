@@ -20,6 +20,7 @@ import {
   ResponsiveContainer 
 } from 'recharts';
 import { TriangleUpIcon } from "@chakra-ui/icons"
+import { TbCurrencyNaira } from "react-icons/tb"
 
 
 const AnalyticsModule = () => {
@@ -96,12 +97,12 @@ const AnalyticsModule = () => {
         alignItems="center"
       >
         <Flex
-          w={["20rem","20rem","34rem","60rem"]}
-          h={["30rem","30rem","39rem","34rem"]}
+          w={["21rem","20rem","34rem","60rem"]}
+          h={["35rem","30rem","39rem","34rem"]}
           borderRadius="1rem 1rem 0 1rem"
           bg= {divColor}
           // bgGradient= {divGradient}
-          mt={["3rem","","4rem","4rem"]}
+          mt={["3rem","3rem","4rem","4rem"]}
           boxShadow="2xl"
           justifyContent="center"
           alignItems="center"
@@ -109,14 +110,14 @@ const AnalyticsModule = () => {
         >
           <Flex
             flexDir="row"
-            mb={["","","","1rem"]}
+            mb={["2rem","1rem","2rem","1rem"]}
             
             >
             <Flex
-              mr={["","","","12rem"]}
+              mr={["1.2rem","1rem","7rem","12rem"]}
             >
               <Heading
-                size={["","","","lg"]}
+                size={["sm","sm","md","lg"]}
                 color={header}
               >
                 Last week's expense
@@ -127,18 +128,25 @@ const AnalyticsModule = () => {
               color={header}
               fontWeight={500}
             >
-              <Text>
+              <Text
+                mt="-0.3rem"
+              >
                 <TriangleUpIcon/>
               </Text>
-              <Text>
+              <Text
+                fontSize={["0.7rem","1rem","1rem","1rem"]}
+              >
                 10% from last week
               </Text>
             </Flex>
           </Flex>
           <Flex
-            w={["","","","50rem"]}
-            h={["","","","20rem"]}
+            w={["20rem","20rem","30rem","50rem"]}
+            h={["21rem","21rem","25rem","20rem"]}
             // mt={["","","","2rem"]}
+            // mr={["","","","-2rem"]}
+            // justifyContent="center"
+            // alignItems="center"
           >
             <ResponsiveContainer 
               width="100%" 
@@ -171,13 +179,36 @@ const AnalyticsModule = () => {
           </Flex>
 
           <Divider
-            mt={["","","","2rem"]}
+            mt={["2rem","2rem","2rem","2rem"]}
           />
 
-          <Flex>
-            <Heading>
-
+          <Flex
+            alignItems="center"
+            mt={["1.9rem","1.9rem","2rem","2rem"]}
+            color={header}
+          >
+            <Heading
+              size={["","","md","lg"]}
+              mr={["","","11rem","13rem"]}
+            >
+              Total Amount Spent
             </Heading>
+            <Flex
+              alignItems="center"
+            >
+              <Heading
+                size={["","","md","lg"]}
+                mt={["","","-0.1rem","0.2rem"]}
+                color="#21c902" 
+              >
+                <TbCurrencyNaira/>
+              </Heading>
+              <Heading
+               size={["","","sm","lg"]}
+              >
+                20,000
+              </Heading>
+            </Flex>
           </Flex>
         </Flex>
       </Flex>
