@@ -355,7 +355,7 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
           alignItems="center"
           // ml={["8rem"]}
           // flexDir="initial" 
-          mr="8.5rem"
+          mr="10rem"
         >
             <Flex
               mt={["-0.1rem", "-0.2rem", "-0.1rem", "-0.1rem"]}

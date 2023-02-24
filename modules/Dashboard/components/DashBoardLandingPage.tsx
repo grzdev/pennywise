@@ -102,12 +102,15 @@ const DashBoardLandingPage = () => {
         mt={["1.5rem","2rem","3rem","4rem"]}
         ml={["1rem","2rem","2rem","2rem"]}
       >
-        <Heading>
+        <Heading
+          size={["lg","lg","xl","xl"]}
+        >
           Dami👋,
         </Heading>
         <Text
-          fontWeight={600}
-          mt="-0.4rem"
+          fontWeight={500}
+          mt="-0.2rem"
+          fontSize={["0.8rem","0.8rem","1rem","1rem"]}
         >
           What did you spend on today?
         </Text>

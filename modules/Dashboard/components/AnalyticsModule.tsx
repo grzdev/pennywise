@@ -1,6 +1,10 @@
+/* eslint-disable react/no-unescaped-entities */
 import { 
   Container, 
+  Divider, 
   Flex, 
+  Heading, 
+  Text, 
   useColorModeValue 
 } from '@chakra-ui/react'
 import React from 'react'
@@ -15,54 +19,70 @@ import {
   Legend, 
   ResponsiveContainer 
 } from 'recharts';
+import { TriangleUpIcon } from "@chakra-ui/icons"
 
 
 const AnalyticsModule = () => {
-  const divColor = useColorModeValue("#6a11cb","#0c3483")
+  const divColor = useColorModeValue("white","#171923")
   const divGradient = useColorModeValue("linear-gradient(to top, #505285 0%, #585e92 12%, #65689f 25%, #7474b0 37%, #7e7ebb 50%, #8389c7 62%, #9795d4 75%, #a2a1dc 87%, #b5aee4 100%);","linear-gradient(to top, #6a85b6 0%, #bac8e0 100%);")
+  const header = useColorModeValue("#777777", "white")
 
   const data = [
     {
       name: 'M',
-      uv: 4000,
-      pv: 2400,
-      amt: 2400,
+      Food: 2000,
+      Transportation: 500,
+      Data: 250,
+      Transfers: 1000,
+      Others: 750,
     },
     {
       name: 'T',
-      uv: 3000,
-      pv: 1398,
-      amt: 2210,
+      Food: 2500,
+      Transportation: 500,
+      Data: 550,
+      Transfers: 1500,
+      Others: 900,
     },
     {
       name: 'W',
-      uv: 2000,
-      pv: 9800,
-      amt: 2290,
+      Food: 1500,
+      Transportation: 400,
+      Data: 500,
+      Transfers: 500,
+      Others: 300,
     },
     {
       name: 'T',
-      uv: 2780,
-      pv: 3908,
-      amt: 2000,
+      Food: 500,
+      Transportation: 500,
+      Data: 1000,
+      Transfers: 2000,
+      Others: 750,
     },
     {
       name: 'F',
-      uv: 1890,
-      pv: 4800,
-      amt: 2181,
+      Food: 2000,
+      Transportation: 1000,
+      Data: 2000,
+      Transfers: 1000,
+      Others: 3500,
     },
     {
       name: 'S',
-      uv: 2390,
-      pv: 3800,
-      amt: 2500,
+      Food: 3000,
+      Transportation: 100,
+      Data: 3050,
+      Transfers: 1500,
+      Others: 150,
     },
     {
       name: 'S',
-      uv: 3490,
-      pv: 4300,
-      amt: 2100,
+      Food: 1000,
+      Transportation: 100,
+      Data: 1050,
+      Transfers: 1000,
+      Others: 750,
     },
   ];
 
@@ -80,12 +100,41 @@ const AnalyticsModule = () => {
           h={["30rem","30rem","39rem","34rem"]}
           borderRadius="1rem 1rem 0 1rem"
           bg= {divColor}
-          bgGradient= {divGradient}
+          // bgGradient= {divGradient}
           mt={["3rem","","4rem","4rem"]}
           boxShadow="2xl"
           justifyContent="center"
           alignItems="center"
+          flexDir="column"
         >
+          <Flex
+            flexDir="row"
+            mb={["","","","1rem"]}
+            
+            >
+            <Flex
+              mr={["","","","12rem"]}
+            >
+              <Heading
+                size={["","","","lg"]}
+                color={header}
+              >
+                Last week's expense
+              </Heading>
+            </Flex>
+            <Flex
+              alignItems="center"
+              color={header}
+              fontWeight={500}
+            >
+              <Text>
+                <TriangleUpIcon/>
+              </Text>
+              <Text>
+                10% from last week
+              </Text>
+            </Flex>
+          </Flex>
           <Flex
             w={["","","","50rem"]}
             h={["","","","20rem"]}
@@ -100,21 +149,35 @@ const AnalyticsModule = () => {
                 height={300}
                 data={data}
                 margin={{
-                  top: 20,
+                  top: 10,
                   right: 30,
                   left: 20,
                   bottom: 5,
                 }}
+                
               >
-                <CartesianGrid strokeDasharray="3 3" />
+                <CartesianGrid strokeDasharray="2 2" />
                 <XAxis dataKey="name" />
                 <YAxis />
                 <Tooltip />
                 <Legend />
-                <Bar dataKey="pv" stackId="a" fill="#8884d8" />
-                <Bar dataKey="uv" stackId="a" fill="#82ca9d" />
+                <Bar dataKey="Food" stackId="a" fill="#2897e4" />
+                <Bar dataKey="Transportation" stackId="a" fill="#ff9232" />
+                <Bar dataKey="Data" stackId="a" fill="#36cf36" />
+                <Bar dataKey="Transfers" stackId="a" fill="#e4292a" />
+                <Bar dataKey="Others" stackId="a" fill="#1e21a8" />
               </BarChart>
-             </ResponsiveContainer>
+            </ResponsiveContainer>
+          </Flex>
+
+          <Divider
+            mt={["","","","2rem"]}
+          />
+
+          <Flex>
+            <Heading>
+
+            </Heading>
           </Flex>
         </Flex>
       </Flex>
