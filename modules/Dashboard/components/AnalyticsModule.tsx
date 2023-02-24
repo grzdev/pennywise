@@ -102,7 +102,7 @@ const AnalyticsModule = () => {
           borderRadius="1rem 1rem 0 1rem"
           bg= {divColor}
           // bgGradient= {divGradient}
-          mt={["3rem","3rem","4rem","4rem"]}
+          mt={["1.5rem","1.5rem","4rem","4rem"]}
           mb="1 0rem"
           boxShadow="2xl"
           justifyContent="center"
@@ -111,7 +111,7 @@ const AnalyticsModule = () => {
         >
           <Flex
             flexDir="row"
-            mb={["2rem","1rem","2rem","1rem"]}
+            mb={["2rem","0.3rem","2rem","1rem"]}
             
             >
             <Flex
