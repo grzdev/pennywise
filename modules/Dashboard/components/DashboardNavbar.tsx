@@ -282,9 +282,7 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
 
           <Flex>
           <Button 
-          onClick={toggleColorMode}
-          // display={{ base: 'none', md: 'inline-flex' }}
-          
+           onClick={toggleColorMode}
           >
             {colorMode === 'light' ? <MoonIcon/> : <SunIcon/>}
           </Button>
@@ -337,6 +335,7 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
   const icon = useColorModeValue("black","lightgrey")
   const footer = useColorModeValue("white","#12141c")
   const headerColor = useColorModeValue("#4f89e8","#c6dbfb")
+  const { colorMode, toggleColorMode } = useColorMode()
   const _hover = useColorModeValue("","#171923")
 
   return (
@@ -356,6 +355,7 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
           alignItems="center"
           // ml={["8rem"]}
           // flexDir="initial" 
+          mr="12rem"
         >
             <Flex
               mt={["-0.1rem", "-0.2rem", "-0.1rem", "-0.1rem"]}
@@ -373,6 +373,14 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
               trackdaily
             </Heading>
         </Flex>
+
+        <Flex>
+          <Button 
+           onClick={toggleColorMode}
+          >
+            {colorMode === 'light' ? <MoonIcon/> : <SunIcon/>}
+          </Button>
+          </Flex>
       </Flex>
       <Flex
         bottom={0}
