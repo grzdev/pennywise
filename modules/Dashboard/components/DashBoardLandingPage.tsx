@@ -235,6 +235,7 @@ const DashBoardLandingPage = () => {
         orientation='horizontal'
         w="100%"
         mt={["2rem","2rem","2rem","2rem"]}
+        mb={["7rem","7rem","8rem","9rem"]}
       />
 
       {/* <Flex
