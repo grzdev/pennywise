@@ -56,7 +56,7 @@ const DashBoardLandingPage = () => {
   const pieColor2 = useColorModeValue("#4bbdff","#4bbdff")
   const addButton = useColorModeValue("#0050d6","#1c5dd0")
   const color = useColorModeValue("#ff003d","#ff003d")
-  
+  const button = useColorModeValue("#2F83C4","#e3379b")
 
   const data01 = [
     {
@@ -192,7 +192,7 @@ const DashBoardLandingPage = () => {
                 color="#25f000" 
                 size={["sm","sm","lg","xl"]}
                 // mt={["0.1rem","0.1rem","-0.1rem","-1rem"]}
-                mt={["0.1rem","0.1rem","-0.1rem","0.1rem"]}
+                mt={["0.1rem","0.1rem","-0.1rem","0.2rem"]}
               >
               <TbCurrencyNaira/>
               </Heading>
@@ -222,7 +222,7 @@ const DashBoardLandingPage = () => {
               color={header} 
               fontWeight={700}
               mr={["13.4rem","11rem","24.7rem","52rem"]}
-              mt={["1.2rem","1rem","2rem",""]}
+              mt={["1.5rem","1rem","2rem",""]}
               fontSize={["0.8rem","0.8rem","0.9rem","0.9rem"]}
               ml={["","","","1rem"]}
             >
@@ -245,14 +245,14 @@ const DashBoardLandingPage = () => {
             >
               <PopoverTrigger>
                 <Flex
-                  mt={["-1.6rem","-2.1rem","-1.7rem","-2rem"]}
+                  mt={["-1.3rem","-2.1rem","-1.7rem","-2rem"]}
                   ml={["15rem","15rem","26.3rem","53rem"]}
                 >
                   <Button
                     size={["md","md","lg","lg"]}
                     borderRadius="4rem 4rem 0 4rem"
                     // bg="#f6012b"
-                    bg="#f00029"
+                    bg={button}
                     _hover={{
                       bg: "#ff002c"
                     }}
