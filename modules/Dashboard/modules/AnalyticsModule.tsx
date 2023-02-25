@@ -175,7 +175,7 @@ const AnalyticsModule = () => {
                 <YAxis />
                 <Tooltip />
                 <Legend />
-                <Bar dataKey="Food" stackId="a" fill="#2897e4" />
+                <Bar dataKey="Food" stackId="a" fill="#2897e4"/>
                 <Bar dataKey="Transit" stackId="a" fill="#ff9232" />
                 <Bar dataKey="Data" stackId="a" fill="#36cf36" />
                 <Bar dataKey="Transfers" stackId="a" fill="#f00096" />

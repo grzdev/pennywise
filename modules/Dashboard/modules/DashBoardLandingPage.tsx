@@ -38,6 +38,7 @@ import {
   Tooltip,
   Legend
  } from "recharts"
+ import InputModal from '../components/input-modal';
 
 // interface Props {
 //     children?: React.ReactNode
@@ -229,56 +230,12 @@ const DashBoardLandingPage = () => {
               13th Feb
             </Text>
           </Flex>
-
-          {/* <Flex
-            
-            justifyContent="center"
-            alignItems="center"
-          > */}
-            <Popover
-              isOpen={isOpen}
-              initialFocusRef={firstFieldRef}
-              onOpen={onOpen}
-              onClose={onClose}
-              placement='right'
-              closeOnBlur={false}
+            <Flex
+              mt={["-2.1rem","-2.1rem","-1.7rem","-2rem"]}
+              ml={["14.7rem","15rem","26.3rem","53rem"]}
             >
-              <PopoverTrigger>
-                <Flex
-                  mt={["-2.1rem","-2.1rem","-1.7rem","-2rem"]}
-                  ml={["14.7rem","15rem","26.3rem","53rem"]}
-                >
-                  <Button
-                    size={["md","md","lg","lg"]}
-                    borderRadius="4rem 4rem 0 4rem"
-                    // bg="#f6012b"
-                    bg={button}
-                    _hover={{
-                      bg: "#ff002c"
-                    }}
-                  >
-                  <AddIcon color="white" fontSize="1.2rem" fontWeight={900}/>
-                  </Button>
-                </Flex>
-              </PopoverTrigger>
-              <PopoverContent>
-                <PopoverHeader>
-                  Food
-                </PopoverHeader>
-                <PopoverArrow/>
-                <PopoverCloseButton/>
-                <PopoverBody>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                  eiusmod tempor incididunt ut labore et dolore.
-                </PopoverBody>
-                <PopoverFooter>
-                  <Button colorScheme='blue'>
-                  Next
-                  </Button>
-                </PopoverFooter>
-              </PopoverContent>
-            </Popover>
-          {/* </Flex> */}
+              <InputModal/>
+            </Flex>
         </Flex>
 
       </Flex>
