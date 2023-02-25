@@ -203,33 +203,42 @@ const DashBoardLandingPage = () => {
             </PieChart>
           </Flex>
           <Flex
-            mt={["2rem","2rem","1rem","-2rem"]}
+            mt={["2rem","2rem","1.4rem","-2rem"]}
             >
             <Text
               color={header} 
               fontWeight={700}
-              mr={["11.4rem","11rem","21rem","48rem"]}
+              mr={["11.4rem","11rem","21.8rem","48rem"]}
               mt={["1.2rem","1rem","2rem",""]}
               fontSize="0.9rem"
+              ml={["","","","1rem"]}
             >
               13th Feb
             </Text>
             <Flex
-              borderRadius="4rem 4rem 0 4rem"
-              w={["3rem","3rem","5rem","5rem"]}
-              h={["3rem","3rem","5rem","5rem"]}
-              bg="#ff003d"
-              mt={["0.4rem","-0.6rem","-0.4rem","-0.7rem"]}
+              // w={["3rem","3rem","5rem","5rem"]}
+              // h={["3rem","3rem","5rem","5rem"]}
+              mt={["0.4rem","-0.6rem","1.4rem","1.1rem"]}
               justifyContent="center"
               alignItems="center"
-            >
-              <Text>
+              // bg="#f00029"
+              >
+              {/* <Text>
                 <AddIcon color="white" fontSize="1.3rem"/>
-              </Text>
+              </Text> */}
+              <Button
+                size={["md","md","lg","lg"]}
+                borderRadius="4rem 4rem 0 4rem"
+                // bg="#f6012b"
+                bg="#f00029"
+                _hover={{
+                  bg: "#ff002c"
+                }}
+              >
+               <AddIcon color="white" fontSize="1.2rem" fontWeight={900}/>
+              </Button>
             </Flex>
           </Flex>
-
-
         </Flex>
 
       </Flex>
