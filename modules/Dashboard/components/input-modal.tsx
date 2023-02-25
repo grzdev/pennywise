@@ -60,6 +60,7 @@ const InputModal = () => {
                 mt={["1.5rem","1.5rem","1.5rem","2rem"]}
             >
                 <Text 
+                 mt={["-0.2rem","","",""]}
                  fontSize={["1.3rem","1.3rem","1.7rem","2rem"]} 
                  color={header}
                  mr="0.1rem"
