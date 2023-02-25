@@ -208,24 +208,23 @@ const DashBoardLandingPage = () => {
             <Text
               color={header} 
               fontWeight={700}
-              mr={["11.4rem","11rem","21.8rem","48rem"]}
+              mr={["13.4rem","11rem","24.7rem","52rem"]}
               mt={["1.2rem","1rem","2rem",""]}
-              fontSize="0.9rem"
+              fontSize={["0.8rem","0.8rem","0.9rem","0.9rem"]}
               ml={["","","","1rem"]}
             >
               13th Feb
             </Text>
+          </Flex>
+
+          <Flex
+            mt={["-2.1rem","-2.1rem","-1.7rem","-2rem"]}
+            ml={["15rem","15rem","26.3rem","53rem"]}
+          >
             <Flex
-              // w={["3rem","3rem","5rem","5rem"]}
-              // h={["3rem","3rem","5rem","5rem"]}
-              mt={["0.4rem","-0.6rem","1.4rem","1.1rem"]}
               justifyContent="center"
               alignItems="center"
-              // bg="#f00029"
               >
-              {/* <Text>
-                <AddIcon color="white" fontSize="1.3rem"/>
-              </Text> */}
               <Button
                 size={["md","md","lg","lg"]}
                 borderRadius="4rem 4rem 0 4rem"
