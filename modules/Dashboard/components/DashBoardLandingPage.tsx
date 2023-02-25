@@ -6,7 +6,16 @@ import {
   SimpleGrid, 
   useColorModeValue, 
   Heading,
-  Divider
+  Divider,
+  Popover,
+  PopoverTrigger,
+  useDisclosure,
+  PopoverContent,
+  PopoverHeader,
+  PopoverArrow,
+  PopoverCloseButton,
+  PopoverBody,
+  PopoverFooter
 } from '@chakra-ui/react'
 import React from 'react'
 import router from "next/router";
@@ -37,6 +46,10 @@ import {
 const DashBoardLandingPage = () => {
   const { colorMode, toggleColorMode } = useColorMode()
   const { user, logout } = useAuth()
+
+  const { onOpen, onClose, isOpen } = useDisclosure()
+  const firstFieldRef = React.useRef(null)
+
   const header = useColorModeValue("#dedede","white")
   const SecondBox = useColorModeValue("#407adf","#70a1c8")
   const pieColor = useColorModeValue("#3361b1","#c42abe")
@@ -217,27 +230,55 @@ const DashBoardLandingPage = () => {
             </Text>
           </Flex>
 
-          <Flex
-            mt={["-2.1rem","-2.1rem","-1.7rem","-2rem"]}
-            ml={["15rem","15rem","26.3rem","53rem"]}
-          >
-            <Flex
-              justifyContent="center"
-              alignItems="center"
-              >
-              <Button
-                size={["md","md","lg","lg"]}
-                borderRadius="4rem 4rem 0 4rem"
-                // bg="#f6012b"
-                bg="#f00029"
-                _hover={{
-                  bg: "#ff002c"
-                }}
-              >
-               <AddIcon color="white" fontSize="1.2rem" fontWeight={900}/>
-              </Button>
-            </Flex>
-          </Flex>
+          {/* <Flex
+            
+            justifyContent="center"
+            alignItems="center"
+          > */}
+            <Popover
+              isOpen={isOpen}
+              initialFocusRef={firstFieldRef}
+              onOpen={onOpen}
+              onClose={onClose}
+              placement='right'
+              closeOnBlur={false}
+            >
+              <PopoverTrigger>
+                <Flex
+                  mt={["-1.6rem","-2.1rem","-1.7rem","-2rem"]}
+                  ml={["15rem","15rem","26.3rem","53rem"]}
+                >
+                  <Button
+                    size={["md","md","lg","lg"]}
+                    borderRadius="4rem 4rem 0 4rem"
+                    // bg="#f6012b"
+                    bg="#f00029"
+                    _hover={{
+                      bg: "#ff002c"
+                    }}
+                  >
+                  <AddIcon color="white" fontSize="1.2rem" fontWeight={900}/>
+                  </Button>
+                </Flex>
+              </PopoverTrigger>
+              <PopoverContent>
+                <PopoverHeader>
+                  Food
+                </PopoverHeader>
+                <PopoverArrow/>
+                <PopoverCloseButton/>
+                <PopoverBody>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                  eiusmod tempor incididunt ut labore et dolore.
+                </PopoverBody>
+                <PopoverFooter>
+                  <Button colorScheme='blue'>
+                  Next
+                  </Button>
+                </PopoverFooter>
+              </PopoverContent>
+            </Popover>
+          {/* </Flex> */}
         </Flex>
 
       </Flex>
