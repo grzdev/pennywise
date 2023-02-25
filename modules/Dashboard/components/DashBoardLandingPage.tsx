@@ -216,7 +216,7 @@ const DashBoardLandingPage = () => {
             </PieChart>
           </Flex>
           <Flex
-            mt={["2.3rem","2rem","1.4rem","-2rem"]}
+            mt={["2.6rem","2rem","1.4rem","-2rem"]}
             >
             <Text
               color={header} 
@@ -245,7 +245,7 @@ const DashBoardLandingPage = () => {
             >
               <PopoverTrigger>
                 <Flex
-                  mt={["-1.7rem","-2.1rem","-1.7rem","-2rem"]}
+                  mt={["-2.1rem","-2.1rem","-1.7rem","-2rem"]}
                   ml={["14.7rem","15rem","26.3rem","53rem"]}
                 >
                   <Button
