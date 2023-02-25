@@ -49,6 +49,7 @@ const InputModal = () => {
          onClose={onClose}
          isCentered
          size={["xs","xs","md","lg"]}
+         blockScrollOnMount={false}
         >
         <ModalOverlay />
         <ModalContent>
