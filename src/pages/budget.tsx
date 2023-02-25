@@ -1,5 +1,5 @@
-import BudgetModule from 'modules/Dashboard/components/BudgetModule'
-import SidebarWithHeader from 'modules/Dashboard/components/DashboardNavbar'
+import BudgetModule from 'modules/Dashboard/modules/BudgetModule'
+import SidebarWithHeader from 'modules/Dashboard/modules/DashboardNavbar'
 import React from 'react'
 
 const BudgetPage = () => {

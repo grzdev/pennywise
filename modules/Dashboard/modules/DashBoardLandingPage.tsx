@@ -222,7 +222,7 @@ const DashBoardLandingPage = () => {
               color={header} 
               fontWeight={700}
               mr={["13.4rem","11rem","24.7rem","52rem"]}
-              mt={["1.5rem","1rem","2rem",""]}
+              mt={["1.35rem","1rem","2rem",""]}
               fontSize={["0.8rem","0.8rem","0.9rem","0.9rem"]}
               ml={["","","","1rem"]}
             >

@@ -1,6 +1,6 @@
 import { Flex } from '@chakra-ui/react'
-import AccountModule from 'modules/Dashboard/components/AccountModule'
-import SidebarWithHeader from 'modules/Dashboard/components/DashboardNavbar'
+import AccountModule from 'modules/Dashboard/modules/AccountModule'
+import SidebarWithHeader from 'modules/Dashboard/modules/DashboardNavbar'
 import React from 'react'
 
 const AccountPage = () => {
