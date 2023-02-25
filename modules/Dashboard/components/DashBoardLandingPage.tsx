@@ -56,7 +56,7 @@ const DashBoardLandingPage = () => {
   const pieColor2 = useColorModeValue("#4bbdff","#4bbdff")
   const addButton = useColorModeValue("#0050d6","#1c5dd0")
   const color = useColorModeValue("#ff003d","#ff003d")
-  const button = useColorModeValue("#2F83C4","#e3379b")
+  const button = useColorModeValue("#4aafe9","#e3379b")
 
   const data01 = [
     {
@@ -245,7 +245,7 @@ const DashBoardLandingPage = () => {
             >
               <PopoverTrigger>
                 <Flex
-                  mt={["-1.3rem","-2.1rem","-1.7rem","-2rem"]}
+                  mt={["-1.5rem","-2.1rem","-1.7rem","-2rem"]}
                   ml={["15rem","15rem","26.3rem","53rem"]}
                 >
                   <Button

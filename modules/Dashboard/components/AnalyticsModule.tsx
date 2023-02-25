@@ -114,7 +114,7 @@ const AnalyticsModule = () => {
           // bgGradient= {divGradient}
           mt={["1.5rem","1.5rem","4rem","4rem"]}
           mb="5rem"
-          boxShadow="2xl"
+          boxShadow="xl"
           justifyContent="center"
           alignItems="center"
           flexDir="column"
@@ -178,7 +178,7 @@ const AnalyticsModule = () => {
                 <Bar dataKey="Food" stackId="a" fill="#2897e4" />
                 <Bar dataKey="Transit" stackId="a" fill="#ff9232" />
                 <Bar dataKey="Data" stackId="a" fill="#36cf36" />
-                <Bar dataKey="Transfers" stackId="a" fill="#e4292a" />
+                <Bar dataKey="Transfers" stackId="a" fill="#f00096" />
                 <Bar dataKey="Others" stackId="a" fill="#1e21a8" />
               </BarChart>
             </ResponsiveContainer>
@@ -224,7 +224,7 @@ const AnalyticsModule = () => {
           // bgGradient= {divGradient}
           bg={divColor}
           borderRadius="1rem 1rem 0 1rem"
-          boxShadow="2xl"
+          boxShadow="xl"
           // justifyContent="center"
           alignItems="center"
           flexDir="column"
@@ -312,7 +312,7 @@ const AnalyticsModule = () => {
                   <Text
                     fontSize={["1.5rem","1.5rem","1.8rem","1.8rem"]}
                     mr={["0.5rem","0.5rem","1rem","1rem"]}
-                    color="#E4292A"
+                    color="#f00096"
                   >
                     <BiTransferAlt/>
                   </Text>
