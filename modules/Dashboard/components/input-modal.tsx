@@ -88,11 +88,11 @@ const InputModal = () => {
                 gap="1rem"
             >
                 <HStack
-                    gap="1rem"
+                    gap={["0.5rem","0.6rem","1rem","1rem"]}
                     // w={["","","","26rem"]}
                     // noOfLines={2}
-                    justifyContent="center"
-                    alignItems="center"
+                    // justifyContent="center"
+                    // alignItems="center"
                 >
                     <Button
                         colorScheme="blue"
@@ -116,7 +116,9 @@ const InputModal = () => {
                        <TbCurrencyNaira/> 3,000
                     </Button>
                 </HStack>
-                <HStack>
+                <HStack
+                    gap={["0.5rem","0.6rem","1rem","1rem"]}
+                >
                     <Button
                         size={["sm","sm","md","md"]}
                         colorScheme="blue"
