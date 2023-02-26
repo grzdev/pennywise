@@ -114,7 +114,7 @@ const AnalyticsModule = () => {
           // bgGradient= {divGradient}
           mt={["1.5rem","1.5rem","4rem","4rem"]}
           mb="5rem"
-          boxShadow="xl"
+          boxShadow="lg"
           justifyContent="center"
           alignItems="center"
           flexDir="column"
@@ -224,7 +224,7 @@ const AnalyticsModule = () => {
           // bgGradient= {divGradient}
           bg={divColor}
           borderRadius="1rem 1rem 0 1rem"
-          boxShadow="xl"
+          boxShadow="lg"
           // justifyContent="center"
           alignItems="center"
           flexDir="column"
