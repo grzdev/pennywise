@@ -34,8 +34,10 @@ import {
 
 const AnalyticsModule = () => {
   const divColor = useColorModeValue("white","#292c3d")
+  const secondDivColor = useColorModeValue("linear-gradient(to right, #536976, #292e49)","#292c3d")
   const divGradient = useColorModeValue("linear-gradient(to bottom, #505285 0%, #585e92 12%, #65689f 25%, #7474b0 37%, #7e7ebb 50%, #8389c7 62%, #9795d4 75%, #a2a1dc 87%, #b5aee4 100%);","linear-gradient(to right, #6a85b6 0%, #bac8e0 100%);")
   const header = useColorModeValue("#777777", "white")
+  const header2 = useColorModeValue("white", "white")
 
   const data = [
     {
@@ -104,16 +106,17 @@ const AnalyticsModule = () => {
       <Flex
         justifyContent="center"
         alignItems="center"
-        flexDir="column"
+        flexDir={["column","column","column","row"]}
+        gap="5rem"
+        mt={["1.5rem","1.5rem","4rem","4rem"]}
         >
         <Flex
-          w={["21rem","20rem","34rem","60rem"]}
+          w={["21rem","20rem","34rem","40rem"]}
           h={["35rem","30rem","39rem","34rem"]}
-          borderRadius="1rem 1rem 0 1rem"
+          borderRadius="1rem 0 1rem 0"
           bg= {divColor}
           // bgGradient= {divGradient}
-          mt={["1.5rem","1.5rem","4rem","4rem"]}
-          mb="5rem"
+          // mb="5rem"
           boxShadow="lg"
           justifyContent="center"
           alignItems="center"
@@ -128,7 +131,7 @@ const AnalyticsModule = () => {
               mr={["1.2rem","1rem","7rem","12rem"]}
             >
               <Heading
-                size={["xs","xs","md","lg"]}
+                size={["xs","xs","md","md"]}
                 color={header}
               >
                 Last week's expense
@@ -152,7 +155,7 @@ const AnalyticsModule = () => {
             </Flex>
           </Flex>
           <Flex
-            w={["19rem","20rem","30rem","50rem"]}
+            w={["19rem","20rem","30rem","35rem"]}
             h={["21rem","21rem","25rem","20rem"]}
           >
             <ResponsiveContainer 
@@ -177,9 +180,9 @@ const AnalyticsModule = () => {
                 <Legend />
                 <Bar dataKey="Food" stackId="a" fill="#2897e4"/>
                 <Bar dataKey="Transit" stackId="a" fill="#ff9232" />
-                <Bar dataKey="Data" stackId="a" fill="#36cf36" />
-                <Bar dataKey="Transfers" stackId="a" fill="#f00096" />
-                <Bar dataKey="Others" stackId="a" fill="#1e21a8" />
+                <Bar dataKey="Data" stackId="a" fill="#27ddff" />
+                <Bar dataKey="Transfers" stackId="a" fill="#1e21a8" />
+                <Bar dataKey="Others" stackId="a" fill="#9539ff" />
               </BarChart>
             </ResponsiveContainer>
           </Flex>
@@ -188,13 +191,13 @@ const AnalyticsModule = () => {
             mt={["2rem","2rem","2rem","2rem"]}
           />
 
-          <Flex
+          <Flex 
             alignItems="center"
             mt={["1.9rem","1.9rem","2rem","2rem"]}
             color={header}
           >
             <Heading
-              size={["sm","sm","md","lg"]}
+              size={["sm","sm","md","md"]}
               mr={["2.5rem","2.5rem ","11rem","13rem"]}
             >
               Total Amount Spent
@@ -203,14 +206,14 @@ const AnalyticsModule = () => {
               alignItems="center"
             >
               <Heading
-                size={["xs","xs","md","lg"]}
-                mt={["0.1rem","0.1rem","-0.1rem","0.2rem"]}
+                size={["xs","xs","md","md"]}
+                mt={["0.1rem","0.1rem","-0.1rem","0.3rem"]}
                 color="#21c902" 
               >
                 <TbCurrencyNaira/>
               </Heading>
               <Heading
-               size={["xs","xs","sm","lg"]}
+               size={["xs","xs","sm","md"]}
               >
                 20,000
               </Heading>
@@ -219,22 +222,23 @@ const AnalyticsModule = () => {
         </Flex>
 
         <Flex
-          w={["21rem","21rem","34rem","60rem"]}
-          h={["25rem","25rem","30rem","30rem"]}
+          w={["21rem","21rem","34rem","30rem"]}
+          h={["25rem","25rem","30rem","34rem"]}
           // bgGradient= {divGradient}
-          bg={divColor}
-          borderRadius="1rem 1rem 0 1rem"
+          // ml={["","","","2rem"]}
+          bg={secondDivColor}
+          borderRadius="1rem 0 1rem 0"
           boxShadow="lg"
           // justifyContent="center"
           alignItems="center"
           flexDir="column"
-          mb="20rem"
-          color={header}
+          mb={["20rem","20rem","20rem","0.1rem"]}
+          color={header2}
         >
           <Heading
-            color={header}
+            color={header2}
             mt={["2.4rem","2.4rem","3rem","2rem"]}
-            size={["md","md","lg","lg"]}
+            size={["md","md","md","md"]}
           >
             Most spent on categories
           </Heading>
@@ -246,8 +250,8 @@ const AnalyticsModule = () => {
 
             <Flex
               flexDir="column"
-              mr={["-1.7rem","-1.7rem","-3rem","8rem"]}
-              mt={["2.5rem","2.5rem","3rem","2rem"]}
+              mr={["-1.7rem","-1.7rem","-3rem","-5rem"]}
+              mt={["2.5rem","2.5rem","3rem","4rem"]}
             >
               <Flex
                 alignItems="center"
@@ -261,7 +265,7 @@ const AnalyticsModule = () => {
                 </Text>
                 <Heading
                   mr={["7rem","7rem","14rem","30rem"]}
-                  size={["sm","sm","md","lg"]}
+                  size={["sm","sm","md","md"]}
                 >
                   Food
                 </Heading>
@@ -269,7 +273,7 @@ const AnalyticsModule = () => {
 
               <Flex
                   alignItems="center"
-                  mt={["1.6rem","1.6rem","2rem","1rem"]}
+                  mt={["1.6rem","1.6rem","2rem","2rem"]}
               >
                   <Text
                     fontSize={["1.5rem","1.5rem","1.8rem","1.8rem"]}
@@ -280,7 +284,7 @@ const AnalyticsModule = () => {
                   </Text>
                   <Heading
                     mr={["7rem","7rem","14rem","30rem"]}
-                    size={["sm","sm","md","lg"]}
+                    size={["sm","sm","md","md"]}
                   >
                     Transit
                   </Heading>
@@ -288,18 +292,18 @@ const AnalyticsModule = () => {
 
                 <Flex
                   alignItems="center"
-                  mt={["1.6rem","1.6rem","2rem","1rem"]}
+                  mt={["1.6rem","1.6rem","2rem","2rem"]}
                 >
                   <Text
                     fontSize={["1.5rem","1.5rem","1.8rem","1.8rem"]}
                     mr={["0.5rem","0.5rem","1rem","1rem"]}
-                    color="#36CF36"
+                    color="#0de90d"
                   >
                     <IoWifi/>
                   </Text>
                   <Heading
                     mr={["7rem","7rem","14rem","30rem"]}
-                    size={["sm","sm","md","lg"]}
+                    size={["sm","sm","md","md"]}
                   >
                     Data
                   </Heading>
@@ -307,18 +311,18 @@ const AnalyticsModule = () => {
 
                 <Flex
                   alignItems="center"
-                  mt={["1.6rem","1.6rem","2rem","1rem"]}
+                  mt={["1.6rem","1.6rem","2rem","2rem"]}
                 >
                   <Text
                     fontSize={["1.5rem","1.5rem","1.8rem","1.8rem"]}
                     mr={["0.5rem","0.5rem","1rem","1rem"]}
-                    color="#f00096"
+                    color="#ff3fb7"
                   >
                     <BiTransferAlt/>
                   </Text>
                   <Heading
                     mr={["7rem","7rem","14rem","30rem"]}
-                    size={["sm","sm","md","lg"]}
+                    size={["sm","sm","md","md"]}
                   >
                     Transfers
                   </Heading>
@@ -326,18 +330,18 @@ const AnalyticsModule = () => {
 
                 <Flex
                   alignItems="center"
-                  mt={["1.6rem","1.6rem","2rem","1rem"]}
+                  mt={["1.6rem","1.6rem","2rem","2rem"]}
                 >
                   <Text
                     fontSize={["1.5rem","1.5rem","1.8rem","1.8rem"]}
                     mr={["0.5rem","0.5rem","1rem","1rem"]}
-                    color="#2f33ff"
+                    color="#5a5eff"
                   >
                     <BiDotsHorizontalRounded/>
                   </Text>
                   <Heading
                     mr={["7rem","7rem","14rem","30rem"]}
-                    size={["sm","sm","md","lg"]}
+                    size={["sm","sm","md","md"]}
                   >
                     Others
                   </Heading>
@@ -347,19 +351,19 @@ const AnalyticsModule = () => {
             <Flex
               alignItems="center"
               flexDir="column"
-              mt={["1rem","1rem","1rem","1.5rem"]}
+              mt={["1rem","1rem","1rem","3rem"]}
             >
               <Flex
                 mt={["1.6rem","1.6rem","2rem","1rem"]}
               >
                 <Text
                 mt={["0.2rem","0.1rem","0.1rem","0.3rem"]}
-                fontSize={['1.1rem','1.1rem','1.5rem','1.7rem']}
+                fontSize={['1.1rem','1.1rem','1.5rem','1.1rem']}
                 >
                   <TbCurrencyNaira/>
                 </Text>
                 <Text
-                  fontSize={["1rem","1rem","1.2rem","1.6rem"]}
+                  fontSize={["1rem","1rem","1.2rem","1.1rem"]}
                   fontWeight={600}
                 >
                   20,000
@@ -367,16 +371,16 @@ const AnalyticsModule = () => {
               </Flex>
 
               <Flex
-               mt={["1.6rem","1.6rem","2rem","1rem"]}
+               mt={["1.6rem","1.6rem","2rem","2.3rem"]}
               >
                 <Text
                 mt={["0.2rem","0.1rem","0.1rem","0.3rem"]}
-                fontSize={['1.1rem','1.1rem','1.5rem','1.7rem']}
+                fontSize={['1.1rem','1.1rem','1.5rem','1.1rem']}
                 >
                   <TbCurrencyNaira/>
                 </Text>
                 <Text
-                  fontSize={["1rem","1rem","1.2rem","1.6rem"]}
+                  fontSize={["1rem","1rem","1.2rem","1.1rem"]}
                   fontWeight={600}
                 >
                   10,000
@@ -384,16 +388,16 @@ const AnalyticsModule = () => {
               </Flex>
 
               <Flex
-                mt={["1.6rem","1.6rem","2rem","1rem"]}
+                mt={["1.6rem","1.6rem","2rem","2.3rem"]}
               >
                 <Text
                 mt={["0.2rem","0.1rem","0.1rem","0.3rem"]}
-                fontSize={['1.1rem','1.1rem','1.5rem','1.7rem']}
+                fontSize={['1.1rem','1.1rem','1.5rem','1.1rem']}
                 >
                   <TbCurrencyNaira/>
                 </Text>
                 <Text
-                  fontSize={["1rem","1rem","1.2rem","1.6rem"]}
+                  fontSize={["1rem","1rem","1.2rem","1.1rem"]}
                   fontWeight={600}
                 >
                   5,000
@@ -401,16 +405,16 @@ const AnalyticsModule = () => {
               </Flex>
 
               <Flex
-                mt={["1.6rem","1.6rem","2rem","1rem"]}
+                mt={["1.6rem","1.6rem","2rem","2.3rem"]}
               >
                 <Text
                 mt={["0.2rem","0.1rem","0.1rem","0.3rem"]}
-                fontSize={['1.1rem','1.1rem','1.5rem','1.7rem']}
+                fontSize={['1.1rem','1.1rem','1.5rem','1.1rem']}
                 >
                   <TbCurrencyNaira/>
                 </Text>
                 <Text
-                  fontSize={["1rem","1rem","1.2rem","1.6rem"]}
+                  fontSize={["1rem","1rem","1.2rem","1.1rem"]}
                   fontWeight={600}
                 >
                   6,000
@@ -418,16 +422,16 @@ const AnalyticsModule = () => {
               </Flex>
 
               <Flex
-                mt={["1.6rem","1.6rem","2rem","1rem"]}
+                mt={["1.6rem","1.6rem","2rem","2rem"]}
               >
                 <Text
                 mt={["0.2rem","0.1rem","0.1rem","0.3rem"]}
-                fontSize={['1.1rem','1.1rem','1.5rem','1.7rem']}
+                fontSize={['1.1rem','1.1rem','1.5rem','1.1rem']}
                 >
                   <TbCurrencyNaira/>
                 </Text>
                 <Text
-                  fontSize={["1rem","1rem","1.2rem","1.6rem"]}
+                  fontSize={["1rem","1rem","1.2rem","1.1rem"]}
                   fontWeight={600}
                 >
                   9,000
@@ -435,7 +439,7 @@ const AnalyticsModule = () => {
               </Flex>
             </Flex>
           </Flex>
-        </Flex>
+        </Flex> 
       </Flex>
     </Container>
   )
