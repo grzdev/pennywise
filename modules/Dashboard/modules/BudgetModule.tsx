@@ -30,7 +30,7 @@ const BudgetModule = () => {
       alignItems="center"
       flexDir={["column","column","column","row"]}
       justifyContent="center"
-      gap="5rem"
+      gap={["3rem","3rem","4.5rem","5rem"]}
       mt={["1rem","1rem","0.1rem","2rem"]}
     >
       <Flex
