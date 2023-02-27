@@ -53,8 +53,8 @@ const DashBoardLandingPage = () => {
   
   const header = useColorModeValue("white","white")
   const SecondBox = useColorModeValue("#407adf","#70a1c8")
-  const pieColor = useColorModeValue("#4AAFE9","#c42abe")
-  const pieColor2 = useColorModeValue("#913dcd","#4bbdff")
+  const pieColor = useColorModeValue("#913DCD","#c42abe")
+  const pieColor2 = useColorModeValue("#c1e9ff","#4bbdff")
   const addButton = useColorModeValue("#0050d6","#1c5dd0")
   const color = useColorModeValue("#ff003d","#ff003d")
   const button = useColorModeValue("#4aafe9","#e3379b")
