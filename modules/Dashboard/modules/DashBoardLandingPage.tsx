@@ -50,15 +50,26 @@ const DashBoardLandingPage = () => {
 
   const { onOpen, onClose, isOpen } = useDisclosure()
   const firstFieldRef = React.useRef(null)
-
-  const header = useColorModeValue("#dedede","white")
+  
+  const header = useColorModeValue("white","white")
   const SecondBox = useColorModeValue("#407adf","#70a1c8")
-  const pieColor = useColorModeValue("#3361b1","#c42abe")
-  const pieColor2 = useColorModeValue("#4bbdff","#4bbdff")
+  const pieColor = useColorModeValue("#4AAFE9","#c42abe")
+  const pieColor2 = useColorModeValue("#7b32af","#4bbdff")
   const addButton = useColorModeValue("#0050d6","#1c5dd0")
   const color = useColorModeValue("#ff003d","#ff003d")
   const button = useColorModeValue("#4aafe9","#e3379b")
+  const bg = useColorModeValue("#FF3CAC","#667eea")
+  const bgGradient = useColorModeValue("linear-gradient(19deg, #21D4FD 0%, #B721FF 100%)","linear-gradient(135deg, #667eea 0%, #764ba2 100%)")
+  // linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%) BLUE TO PURPLE
+// background-image: linear-gradient(90deg, #00DBDE 0%, #FC00FF 100%);
+// background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);background-color: #8BC6EC;
+// background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);background-color: #21D4FD;
+// background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
 
+
+
+
+  
   const data01 = [
     {
       "name": "Food",
@@ -104,8 +115,6 @@ const DashBoardLandingPage = () => {
     },
   ];
 
-  const bg = useColorModeValue("#FF3CAC","#667eea")
-  const bgGradient = useColorModeValue("linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);","linear-gradient(135deg, #667eea 0%, #764ba2 100%)")
 
   return (
     <Flex
@@ -140,9 +149,9 @@ const DashBoardLandingPage = () => {
         <Flex
           w={["20rem","20rem","33rem","60rem"]}
           h={["30rem","25rem","35rem","30rem"]}
-          background= {bg}
-          bgGradient= {bgGradient}
-          borderRadius="1rem 1rem 0 1rem"
+          // background= {bg}
+          bg= {bgGradient}
+          borderRadius="1rem 0 1rem 0"
           // boxShadow= "rgba(17, 12, 46, 0.15) 0px 48px 100px 0px"
           // boxShadow= "rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px"
           boxShadow= "rgba(0, 0, 0, 0.25) 0px 25px 50px -12px"

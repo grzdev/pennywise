@@ -107,7 +107,7 @@ const AnalyticsModule = () => {
         justifyContent="center"
         alignItems="center"
         flexDir={["column","column","column","row"]}
-        gap="5rem"
+        gap={["3rem","3rem","4rem","5rem"]}
         mt={["1.5rem","1.5rem","4rem","4rem"]}
         >
         <Flex
