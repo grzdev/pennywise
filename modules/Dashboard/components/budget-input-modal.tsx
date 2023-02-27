@@ -15,7 +15,7 @@ import React from 'react'
 import { AddIcon } from "@chakra-ui/icons"
 
 const BudgetModal = () => {
-  const bg = useColorModeValue("linear-gradient(to right, #457fca 0%, #5691c8 100%)","")
+  const bg = useColorModeValue("#437ecb","")
   const { isOpen, onOpen, onClose } = useDisclosure()
 
   return (
@@ -27,6 +27,9 @@ const BudgetModal = () => {
             borderRadius="1rem 0 1rem 0"
             bg={bg}
             onClick={onOpen}
+            _hover={{
+              bg: "#4e93ec"
+            }}
           >
             <AddIcon color="white" fontSize="1.2rem" fontWeight={900}/>
         </Button>

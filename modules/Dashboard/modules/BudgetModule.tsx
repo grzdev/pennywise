@@ -18,12 +18,12 @@ import BudgetModal from '../components/budget-input-modal'
 const BudgetModule = () => {
   const bgGradient = useColorModeValue("linear-gradient(to right, #536976, #292e49)","")
   const bg = useColorModeValue("linear-gradient(to right, #457fca 0%, #5691c8 100%)","")  
-  const secondBg = useColorModeValue("white","")
-  const thirdBg = useColorModeValue("white","")
-  const food = useColorModeValue("#d61212","")
-  const transit = useColorModeValue("#d77000","")
-  const data = useColorModeValue("#008eff","")
-  const transfers = useColorModeValue("#03af00","")
+  const secondBg = useColorModeValue("white","#222636")
+  const thirdBg = useColorModeValue("white","#32384f")
+  const food = useColorModeValue("#d61212","#d61212")
+  const transit = useColorModeValue("#d77000","#d77000")
+  const data = useColorModeValue("#008eff","#008eff")
+  const transfers = useColorModeValue("#03af00","#03af00")
 
   return (
     <Flex
@@ -113,7 +113,7 @@ const BudgetModule = () => {
             size={["sm","sm","md","md"]}
             mt={["1rem","1rem","1rem","1rem"]}
             ml={["1rem","1rem","1rem","1rem"]}
-            color={food}
+            // color={food}
           >
             Food
           </Heading>
@@ -188,7 +188,7 @@ const BudgetModule = () => {
             size={["sm","sm","md","md"]}
             mt={["1rem","1rem","1rem","1rem"]}
             ml={["1rem","1rem","1rem","1rem"]}
-            color={data}
+            // color={data}
           >
             Data
           </Heading>
@@ -254,7 +254,7 @@ const BudgetModule = () => {
           boxShadow="lg" 
           borderRadius="1rem 0 1rem 0"
           bg={thirdBg}
-          ml={["1.5rem","1.5rem","2rem","0.1rem"]}
+          // ml={["1.5rem","1.5rem","2rem","0.1rem"]}
           mr={["1.5rem","1.5rem","2rem","0.1rem"]}
           mt={["","","","2rem"]}
           flexDir="column"
@@ -263,7 +263,7 @@ const BudgetModule = () => {
             size={["sm","sm","md","md"]}
             mt={["1rem","1rem","1rem","1rem"]}
             ml={["1rem","1rem","1rem","1rem"]}
-            color={transit}
+            // color={transit}
           >
             Transit
           </Heading>
@@ -329,7 +329,7 @@ const BudgetModule = () => {
           boxShadow="lg" 
           borderRadius="1rem 0 1rem 0"
           bg={thirdBg}
-          ml={["1.5rem","1.5rem","2rem","0.1rem"]}
+          // ml={["1.5rem","1.5rem","2rem","0.1rem"]}
           mr={["1.5rem","1.5rem","2rem","0.1rem"]}
           mt={["","","","2rem"]}
           mb={["","","","2rem"]}
@@ -339,7 +339,7 @@ const BudgetModule = () => {
             size={["sm","sm","md","md"]}
             mt={["1rem","1rem","1rem","1rem"]}
             ml={["1rem","1rem","1rem","1rem"]}
-            color={transfers}
+            // color={transfers}
           >
             Transfers
           </Heading>
