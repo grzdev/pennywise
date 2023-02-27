@@ -15,7 +15,7 @@ import React from 'react'
 import { AddIcon } from "@chakra-ui/icons"
 
 const BudgetModal = () => {
-  const bg = useColorModeValue("#437ecb","")
+  const bg = useColorModeValue("#437ecb","#4581ff")
   const { isOpen, onOpen, onClose } = useDisclosure()
 
   return (

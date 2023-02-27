@@ -16,7 +16,7 @@ import { TbCurrencyNaira } from 'react-icons/tb'
 import BudgetModal from '../components/budget-input-modal'
 
 const BudgetModule = () => {
-  const bgGradient = useColorModeValue("linear-gradient(to right, #536976, #292e49)","")
+  const bgGradient = useColorModeValue("linear-gradient(to right, #536976, #292e49)","linear-gradient(to right, #4b79a1, #283e51);")
   const bg = useColorModeValue("linear-gradient(to right, #457fca 0%, #5691c8 100%)","")  
   const secondBg = useColorModeValue("white","#222636")
   const thirdBg = useColorModeValue("white","#32384f")
@@ -24,6 +24,8 @@ const BudgetModule = () => {
   const transit = useColorModeValue("#d77000","#d77000")
   const data = useColorModeValue("#008eff","#008eff")
   const transfers = useColorModeValue("#03af00","#03af00")
+// background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
+
 
   return (
     <Flex
