@@ -68,7 +68,7 @@ const InputModal = () => {
                     <IoFastFoodSharp/>
                 </Text>
                 <Text 
-                 fontSize={["1.3rem","1.3rem","1.7rem","2rem"]} 
+                 fontSize={["1.7rem","1.7rem","2rem","2.4rem"]} 
                  fontWeight={700}
                  color={header}
                  >

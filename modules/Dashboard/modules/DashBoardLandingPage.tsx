@@ -199,7 +199,7 @@ const DashBoardLandingPage = () => {
             >
               <Heading
                 textAlign="center"
-                color="#25f000" 
+                color={header} 
                 size={["sm","sm","lg","xl"]}
                 // mt={["0.1rem","0.1rem","-0.1rem","-1rem"]}
                 mt={["0.1rem","0.1rem","-0.1rem","0.2rem"]}
