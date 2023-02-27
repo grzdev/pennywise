@@ -54,7 +54,7 @@ const DashBoardLandingPage = () => {
   const header = useColorModeValue("white","white")
   const SecondBox = useColorModeValue("#407adf","#70a1c8")
   const pieColor = useColorModeValue("#4AAFE9","#c42abe")
-  const pieColor2 = useColorModeValue("#7b32af","#4bbdff")
+  const pieColor2 = useColorModeValue("#913dcd","#4bbdff")
   const addButton = useColorModeValue("#0050d6","#1c5dd0")
   const color = useColorModeValue("#ff003d","#ff003d")
   const button = useColorModeValue("#4aafe9","#e3379b")
@@ -253,7 +253,7 @@ const DashBoardLandingPage = () => {
         orientation='horizontal'
         w="100%"
         mt={["2rem","2rem","2rem","2rem"]}
-        mb={["7rem","7rem","8rem","9rem"]}
+        // mb={["7rem","7rem","8rem","9rem"]}
       />
 
       {/* <Flex
