@@ -232,7 +232,7 @@ const AnalyticsModule = () => {
           // justifyContent="center"
           alignItems="center"
           flexDir="column"
-          mb={["20rem","20rem","20rem","0.1rem"]}
+          mb={["4rem","4rem","4rem","0.1rem"]}
           color={header2}
         >
           <Heading

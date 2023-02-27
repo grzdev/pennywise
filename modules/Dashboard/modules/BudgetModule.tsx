@@ -13,21 +13,17 @@ import {
 import React from 'react'
 import { AddIcon } from "@chakra-ui/icons"
 import { TbCurrencyNaira } from 'react-icons/tb'
+import BudgetModal from '../components/budget-input-modal'
 
 const BudgetModule = () => {
   const bgGradient = useColorModeValue("linear-gradient(to right, #536976, #292e49)","")
-  const bg = useColorModeValue("linear-gradient(to right, #457fca 0%, #5691c8 100%)","")
+  const bg = useColorModeValue("linear-gradient(to right, #457fca 0%, #5691c8 100%)","")  
   const secondBg = useColorModeValue("white","")
   const thirdBg = useColorModeValue("white","")
   const food = useColorModeValue("#d61212","")
   const transit = useColorModeValue("#d77000","")
   const data = useColorModeValue("#008eff","")
   const transfers = useColorModeValue("#03af00","")
-  // background: linear-gradient(to right, #536976, #292e49); BLACK
-  // background: linear-gradient(to right, #0052d4, #4364f7, #6fb1fc) BLUE
-  // background-image: linear-gradient( 83.2deg,  rgba(150,93,233,1) 10.8%, rgba(99,88,238,1) 94.3% );
-  // background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(97,186,255,1) 0%, rgba(166,239,253,1) 90.1% );
-  
 
   return (
     <Flex
@@ -54,24 +50,26 @@ const BudgetModule = () => {
         <Heading
           mt={["3rem","3rem","2.5rem","5rem"]}
           size={["md","md","lg","xl"]}
+          mb={["","","","3.5rem"]}
         >
           My Budget
         </Heading>
         <Heading
-          mt={["2.4rem","2.4rem","3rem","5rem"]}
+          mt={["4rem","4rem","4.5rem","9rem"]}
+          // mt={["","","","8rem"]}
           size={["xs","xs","sm","sm"]}
           ml={["0.2rem","0.2rem","0.4rem","0.5rem"]}
         >
           Total
         </Heading>
         <Flex
-          mt={["0.2rem","0.2rem","0.4rem","1rem"]}
+          mt={["0.2rem","0.2rem","0.4rem","0.1rem"]}
         >
           <Heading
             mt={["0.13rem","0.2rem","0.2rem","0.3rem"]}
             size={["md","md","lg","xl"]}
           >
-            <TbCurrencyNaira color="#21c902" />
+            <TbCurrencyNaira color="#d1d1d1" />
           </Heading>
           <Heading
             size={["md","md","lg","xl"]}
@@ -82,15 +80,7 @@ const BudgetModule = () => {
         <Flex
           mt={["5rem","5rem","6rem","8rem"]}
         >
-          <Button
-            // size={["","","","lg"]}
-            width={["5rem","5rem","6.5rem","9rem"]}
-            height={["2rem","5rem","2.5rem","3rem"]}
-            borderRadius="1rem 0 1rem 0"
-            bg={bg}
-          >
-            <AddIcon color="white" fontSize="1.2rem" fontWeight={900}/>
-          </Button>
+         <BudgetModal/>
         </Flex>
       </Flex>
 
@@ -98,7 +88,7 @@ const BudgetModule = () => {
        w={["20rem","20rem","40rem","20rem"]}
        h={["12rem","12rem","15rem","34rem"]}
        mt={["-1.5rem","-1.5rem","-1rem","4rem"]}
-       mb={["0.1rem","0.1rem","5rem","0.1rem"]}
+       mb={["5rem","5rem","5rem","0.1rem"]}
        boxShadow="lg" 
        borderRadius="1rem 0 1rem 0"
        bg={secondBg}
@@ -133,7 +123,7 @@ const BudgetModule = () => {
             ml={["0.7rem","0.7rem","1rem","1rem"]}
           >
             <Flex
-              mr="auto"
+              mr={["3rem","3rem","6.5rem","8.5rem"]}
             >
               <Flex
                 mt={["0.15rem","0.15rem","0.3rem","0.21rem"]}
@@ -166,7 +156,7 @@ const BudgetModule = () => {
             <Flex
               ml={["1.2rem","1.2rem","1.3rem","1.6rem"]}
               mt="0.4rem"
-              w={["9.7rem","9.7rem","11.5rem","13rem"]}
+              w={["7.6rem","7.6rem","11.5rem","13rem"]}
               alignItems="center"
               align="center"
             >
@@ -190,6 +180,7 @@ const BudgetModule = () => {
           borderRadius="1rem 0 1rem 0"
           bg={thirdBg}
           ml={["1.5rem","1.5rem","2rem","0.1rem"]}
+          mr={["1.5rem","1.5rem","2rem","0.1rem"]}
           mt={["","","","2rem"]}
           flexDir="column"
           >
@@ -197,9 +188,9 @@ const BudgetModule = () => {
             size={["sm","sm","md","md"]}
             mt={["1rem","1rem","1rem","1rem"]}
             ml={["1rem","1rem","1rem","1rem"]}
-            color={food}
+            color={data}
           >
-            Food
+            Data
           </Heading>
 
           <Flex
@@ -207,7 +198,7 @@ const BudgetModule = () => {
             ml={["0.7rem","0.7rem","1rem","1rem"]}
           >
             <Flex
-              mr="auto"
+              mr={["3rem","3rem","6.5rem","8.5rem"]}
             >
               <Flex
                 mt={["0.15rem","0.15rem","0.3rem","0.21rem"]}
@@ -217,7 +208,7 @@ const BudgetModule = () => {
               <Text
                 fontWeight={600}
               >
-                500
+                250
               </Text>
             </Flex>
 
@@ -232,7 +223,7 @@ const BudgetModule = () => {
               <Text
                 fontWeight={600}
               >
-                200
+                800
               </Text>
             </Flex>
 
@@ -240,7 +231,7 @@ const BudgetModule = () => {
             <Flex
               ml={["1.2rem","1.2rem","1.3rem","1.6rem"]}
               mt="0.4rem"
-              w={["9.7rem","9.7rem","11.5rem","13rem"]}
+              w={["7.6rem","7.6rem","11.5rem","13rem"]}
               alignItems="center"
               align="center"
             >
@@ -249,7 +240,158 @@ const BudgetModule = () => {
               >
                 <SliderTrack>
                   <SliderFilledTrack
-                   bg={food}
+                   bg={data}
+                  />
+                </SliderTrack>
+                <SliderThumb/>
+              </Slider>
+            </Flex>
+        </Flex>
+
+        <Flex
+          width={["12rem","12rem","14rem","16rem"]}
+          h={["8rem","8rem","10rem","8rem"]}
+          boxShadow="lg" 
+          borderRadius="1rem 0 1rem 0"
+          bg={thirdBg}
+          ml={["1.5rem","1.5rem","2rem","0.1rem"]}
+          mr={["1.5rem","1.5rem","2rem","0.1rem"]}
+          mt={["","","","2rem"]}
+          flexDir="column"
+          >
+          <Heading
+            size={["sm","sm","md","md"]}
+            mt={["1rem","1rem","1rem","1rem"]}
+            ml={["1rem","1rem","1rem","1rem"]}
+            color={transit}
+          >
+            Transit
+          </Heading>
+
+          <Flex
+            mt={["2rem","2rem","3rem","1.5rem"]}
+            ml={["0.7rem","0.7rem","1rem","1rem"]}
+          >
+            <Flex
+              mr={["3rem","3rem","6.5rem","8.5rem"]}
+            >
+              <Flex
+                mt={["0.15rem","0.15rem","0.3rem","0.21rem"]}
+                >
+                <TbCurrencyNaira/>
+              </Flex>
+              <Text
+                fontWeight={600}
+              >
+                400
+              </Text>
+            </Flex>
+
+            <Flex
+              mr={["0.7rem","0.7rem","1rem","1rem"]}
+            >
+              <Flex
+                mt={["0.15rem","0.15rem","0.3rem","0.21rem"]}
+              >
+                <TbCurrencyNaira/>
+              </Flex>
+              <Text
+                fontWeight={600}
+              >
+                1000
+              </Text>
+            </Flex>
+
+          </Flex>
+            <Flex
+              ml={["1.2rem","1.2rem","1.3rem","1.6rem"]}
+              mt="0.4rem"
+              w={["7.6rem","7.6rem","11.5rem","13rem"]}
+              alignItems="center"
+              align="center"
+            >
+              <Slider
+                mb="1rem"
+              >
+                <SliderTrack>
+                  <SliderFilledTrack
+                   bg={transit}
+                  />
+                </SliderTrack>
+                <SliderThumb/>
+              </Slider>
+            </Flex>
+        </Flex>
+
+        <Flex
+          width={["12rem","12rem","14rem","16rem"]}
+          h={["8rem","8rem","10rem","8rem"]}
+          boxShadow="lg" 
+          borderRadius="1rem 0 1rem 0"
+          bg={thirdBg}
+          ml={["1.5rem","1.5rem","2rem","0.1rem"]}
+          mr={["1.5rem","1.5rem","2rem","0.1rem"]}
+          mt={["","","","2rem"]}
+          mb={["","","","2rem"]}
+          flexDir="column"
+          >
+          <Heading
+            size={["sm","sm","md","md"]}
+            mt={["1rem","1rem","1rem","1rem"]}
+            ml={["1rem","1rem","1rem","1rem"]}
+            color={transfers}
+          >
+            Transfers
+          </Heading>
+
+          <Flex
+            mt={["2rem","2rem","3rem","1.5rem"]}
+            ml={["0.7rem","0.7rem","1rem","1rem"]}
+          >
+            <Flex
+              mr={["3rem","3rem","6.5rem","8.5rem"]}
+            >
+              <Flex
+                mt={["0.15rem","0.15rem","0.3rem","0.21rem"]}
+                >
+                <TbCurrencyNaira/>
+              </Flex>
+              <Text
+                fontWeight={600}
+              >
+                900
+              </Text>
+            </Flex>
+
+            <Flex
+              mr={["0.7rem","0.7rem","1rem","1rem"]}
+            >
+              <Flex
+                mt={["0.15rem","0.15rem","0.3rem","0.21rem"]}
+              >
+                <TbCurrencyNaira/>
+              </Flex>
+              <Text
+                fontWeight={600}
+              >
+                2000
+              </Text>
+            </Flex>
+
+          </Flex>
+            <Flex
+              ml={["1.2rem","1.2rem","1.3rem","1.6rem"]}
+              mt="0.4rem"
+              w={["7.6rem","7.6rem","11.5rem","13rem"]}
+              alignItems="center"
+              align="center"
+            >
+              <Slider
+                mb="1rem"
+              >
+                <SliderTrack>
+                  <SliderFilledTrack
+                   bg={transfers}
                   />
                 </SliderTrack>
                 <SliderThumb/>
