@@ -14,7 +14,7 @@ import {
   import { Inter } from '@next/font/google'
   import Image from 'next/image'
   import SavingImage from '../../images/div4.png'
-  import GrapgImage from '../../images/image8.png'
+  import GrapgImage from '../../images/pic2.png'
   import React from 'react'
   import { VscGraph } from 'react-icons/vsc'
   import Link from 'next/link'
@@ -22,15 +22,31 @@ import {
   import { useColorModeValue } from '@chakra-ui/react'
 
 const LandingPage = () => {
-  const buttonColor = useColorModeValue("black","#256ec1")
+  const buttonColor = useColorModeValue("linear-gradient( 135deg, #FFA6B7 10%, #1E2AD2 100%)","linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%)")
   const textColor = useColorModeValue("grey","#b6b6b6")
+  const buttonTextColor = useColorModeValue("white","white")
   const divColor = useColorModeValue("#2469BE","#3d99ff")
-  const vsgraph = useColorModeValue("#7AA7FF","white")
-  const divColor2 = useColorModeValue("#308DFF","#256ec1")
-  const signUp = useColorModeValue("#256EC1","#308DFF")
+  const vsgraph = useColorModeValue("#b1d2ff","#90b9ff")
+  const learnmore = useColorModeValue("#97c3ff","#32384f")
+  const divColor2 = useColorModeValue("linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%)","linear-gradient(90deg, #00DBDE 0%, #FC00FF 100%)")
+  const signUp = useColorModeValue("#4e99ff","#73aeff")
   // const secondDivCOlor = useColorModeValue("#e6f1ff","")
-  const headerBg = useColorModeValue("#EEF4FC","#1f1c1c")
-  const secondDivCOlor = useColorModeValue("#1A202C","#7aa7ff")
+  const headerBg = useColorModeValue("#EEF4FC","white")
+  const pgBg = useColorModeValue("#EEF4FC","black")
+
+  const secondDivCOlor = useColorModeValue("linear-gradient( 135deg, #6B73FF 10%, #000DFF 100%)","linear-gradient(19deg, #21D4FD 0%, #B721FF 100%)")
+// background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
+// background-image: linear-gradient(90deg, #00DBDE 0%, #FC00FF 100%); 
+// background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
+// background-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);
+// background-image: linear-gradient(180deg, #A9C9FF 0%, #FFBBEC 100%);
+// background-image: linear-gradient( 135deg, #FFA6B7 10%, #1E2AD2 100%);
+// background-image: linear-gradient( 135deg, #6B73FF 10%, #000DFF 100%);
+// background-image: linear-gradient( 135deg, #97ABFF 10%, #123597 100%);
+
+
+
+
 
   return (
     <>
@@ -91,9 +107,9 @@ const LandingPage = () => {
                   h="3.5rem"
                   variant='solid'
                   bg={buttonColor}
-                  color="white"
+                  color={buttonTextColor}
                   mt={["2rem", "1.3rem", "1.3rem", "-1.3rem"]}
-                  borderRadius="0.6rem"
+                  borderRadius="1rem 0 1rem 0"
                   _hover={{
                     bg: '#308DFF',
                   }}
@@ -160,7 +176,7 @@ const LandingPage = () => {
               >
                 <Text
                   fontWeight={500}
-                  color={headerBg}
+                  color={pgBg}
                   fontSize={["1.1rem", "1.1rem", "1.1rem", "1.2rem"]}
                   mb={["0.4rem", "0.4rem", "0.4rem", "3rem"]}
                   w={["18rem", "30rem", "30rem", "60rem"]}
@@ -181,7 +197,7 @@ const LandingPage = () => {
                 <Link href={"/about"}>
                   <Text
                     ml={["","","","-30rem"]}
-                    color={vsgraph}
+                    color={learnmore}
                     fontWeight={500}
                     fontSize="1.1rem"
                     mt={["1rem", "-0.4rem", "-0.4rem", "-2rem"]}
@@ -259,7 +275,7 @@ const LandingPage = () => {
           bg={divColor2}
           mt={["5rem","7rem","7rem","7rem"]}
           mb={["7rem","7rem","7rem","7rem"]}
-          borderRadius="1.1rem"
+          borderRadius="1rem 0 1rem 0"
           justifyContent="center"
           alignItems="center"
           flexDir={["column","column","column","row"]}
@@ -307,7 +323,7 @@ const LandingPage = () => {
                 bg={signUp}
                 color="white"
                 mt={["0.1rem","","","-2rem"]}
-                borderRadius="0.6rem"
+                borderRadius="1rem 0 1rem 0"
                 _hover={{
                   bg: '#308DFF',
                 }}

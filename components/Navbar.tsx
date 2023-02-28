@@ -34,7 +34,7 @@ import router from "next/router";
 const Navbar = () => {
   const { isOpen, onToggle } = useDisclosure();
   const { colorMode, toggleColorMode } = useColorMode()
-  const buttonColor = useColorModeValue("black","#256ec1")
+  const buttonColor = useColorModeValue("linear-gradient( 135deg, #FFA6B7 10%, #1E2AD2 100%)","linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%)")
   const headerColor = useColorModeValue("#4f89e8","#c6dbfb")
 
   const { user, logout } = useAuth()
@@ -152,7 +152,7 @@ const Navbar = () => {
                 _hover={{
                   bg: '#308DFF',
                 }}
-                borderRadius="0.6rem"
+                borderRadius="1rem 0 1rem 0"
                 display={{ base: 'none', md: 'none', lg: "inline-flex" }}
                 >
                 Sign up for free
