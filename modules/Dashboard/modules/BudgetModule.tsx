@@ -33,12 +33,14 @@ const BudgetModule = () => {
       flexDir={["column","column","column","row"]}
       justifyContent="center"
       gap={["3rem","3rem","4.5rem","5rem"]}
-      mt={["1rem","1rem","0.1rem","2rem"]}
+      mt={["1rem","1rem","0.1rem","1rem"]}
     >
       <Flex
-        // w={["21rem","20rem","34rem","0rem"]}
-        w={["20rem","20rem","30rem","40rem"]}
+        // w={["20rem","20rem","30rem","40rem"]}
         h={["22rem","22rem","25rem","34rem"]}
+
+        w={["21rem","21rem","34rem","40rem"]}
+        // h={["35rem","30rem","39rem","34rem"]}
         mt={["","","3rem","4rem"]}
         boxShadow="lg"
         // justifyContent="center"
@@ -87,8 +89,10 @@ const BudgetModule = () => {
       </Flex>
 
       <Flex
-       w={["20rem","20rem","40rem","20rem"]}
+      //  w={["20rem","20rem","40rem","20rem"]}
        h={["12rem","12rem","15rem","34rem"]}
+       w={["21rem","21rem","34rem","30rem"]}
+      //  h={["25rem","25rem","30rem","34rem"]} 
        mt={["-1.5rem","-1.5rem","-1rem","4rem"]}
        mb={["10rem","5rem","5rem","0.1rem"]}
        boxShadow="lg" 
@@ -103,7 +107,7 @@ const BudgetModule = () => {
       >
         <Flex
           width={["12rem","12rem","14rem","16rem"]}
-          h={["8rem","8rem","10rem","8rem"]}
+          h={["8rem","8rem","10rem","10rem"]}
           boxShadow="lg" 
           borderRadius="1rem 0 1rem 0"
           bg={thirdBg}

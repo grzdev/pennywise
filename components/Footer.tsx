@@ -15,17 +15,25 @@ import React from 'react'
 import { MdTrackChanges } from 'react-icons/md'
 import {
   AiFillFacebook,
+  AiFillGithub,
   AiFillInstagram,
+  AiFillLinkedin,
+  AiFillMail,
+  AiFillTwitterCircle,
   AiFillTwitterSquare
 } from 'react-icons/ai'
 import { useColorModeValue } from '@chakra-ui/react'
 import Link from 'next/link'
+import { SiGmail, SiNetlify } from 'react-icons/si'
 
 const Footer = () => {
   const textColor = useColorModeValue("black","#b6b6b6")
+  const gmail = useColorModeValue("#F04235","#b6b6b6")
   const footer = useColorModeValue("#eceaea","black")
   const headerColor = useColorModeValue("#4f89e8","#c6dbfb")
-  const tradeMark = useColorModeValue("#3d99ff","white")
+  const tradeMark = useColorModeValue("black","white")
+  const dami = useColorModeValue("#4F89E8","#C6DBFB")
+  const icons = useColorModeValue("#7a7a7a","#b9b9b9")
   return (
     <Flex
       flexDir={["column","column","column","column"]}
@@ -146,25 +154,35 @@ const Footer = () => {
 
         <Flex
           flexDir="column"
-          mt={["3rem","","","0.1rem"]}
+          mt={["3rem","","","-2rem"]}
           justifyContent={["center","","","center"]}
           alignItems={["center","","","center"]}
         >
           <Flex
             gap="0.3rem"
           >
-           <AiFillFacebook fontSize="2rem" color={textColor}/>
+           {/* <AiFillFacebook fontSize="2rem" color={textColor}/>
            <AiFillInstagram fontSize="2rem" color={textColor}/>
-           <AiFillTwitterSquare fontSize="2rem" color={textColor}/>
+           <AiFillTwitterSquare fontSize="2rem" color={textColor}/> */}
+           <Text
+            fontSize={["0.7rem","0.7","0.7rem","1.2rem" ]}
+            color={gmail}
+           >
+            <SiGmail />
+           </Text>
           </Flex>
 
           <Flex
             flexDir="column"
-            mt="1rem"
+            mt="0.3rem"
             justifyContent={["center","","","center"]}
             alignItems={["center","","","center"]}
           >
-            <Text mb="0.5rem" color={textColor}>
+            <Text 
+              mb="0.5rem" 
+              fontSize={["0.7rem","0.7rem","0.8rem","0.8rem" ]}  
+              color={textColor}
+              >
               trackdaily23@gmail.com
             </Text>
           </Flex>
@@ -176,14 +194,74 @@ const Footer = () => {
         alignItems={["center","","","center"]}
         mt={["3rem","3rem","3rem","6rem"]}
         mb="3rem"
+        flexDir="column"
+        gap={["0.4rem","0.4rem","0.5rem","0.5rem"]}
       >
-      <Text
-        fontWeight={600}
-        color={tradeMark}
-        fontSize="0.8rem"
+      <Flex
+        flexDir= "row"
+        alignItems="center"
       >
-        Proudly made in NG by Oyeniyi Damilola
-      </Text>
+        <Text
+          fontWeight={600}
+          color={tradeMark}
+          fontSize={["0.7rem","0.7rem","0.8rem","0.8rem" ]}
+          mr="0.3rem"
+        >
+          Proudly made in NG by
+        </Text>
+        <Text 
+          fontWeight={600}
+          color={dami}
+          fontSize={["0.7rem","0.7rem","0.8rem","0.8rem" ]}
+        >
+        Oyeniyi Damilola
+        </Text>
+      </Flex>
+      <Flex
+        flexDir="row"
+        gap="0.3rem"
+      >
+        <Link href="https://github.com/19zay?tab=repositories">
+          <Text
+            fontSize={["1rem","1rem","1.2rem","1.4rem" ]}
+            color={icons}
+          >
+            <AiFillGithub/>
+          </Text>
+        </Link>
+        <Link href="https://twitter.com/grzdev_">
+          <Text
+            fontSize={["1rem","1rem","1.2rem","1.4rem" ]}
+            color={icons}
+          >
+            <AiFillTwitterCircle/>
+          </Text>
+        </Link>
+        <Link href="https://www.linkedin.com/in/damilola-oyeniyi-97805b23a/">
+          <Text
+            fontSize={["1rem","1rem","1.2rem","1.4rem" ]}
+            color={icons}
+          >
+            <AiFillLinkedin/>
+          </Text>
+        </Link>
+        <Link href="https://app.netlify.com/teams/19zay/overview">
+          <Text
+            fontSize={["1rem","1rem","1.2rem","1.4rem" ]}
+            color={icons}
+          >
+            <SiNetlify/>
+          </Text>
+        </Link>
+        <Link href="https://www.instagram.com/grzdev_/">
+          <Text
+            fontSize={["1rem","1rem","1.2rem","1.4rem" ]}
+            color={icons}
+          >
+            <AiFillInstagram/>
+          </Text>
+        </Link>
+      </Flex>
     </Flex>
   </Flex>
 )

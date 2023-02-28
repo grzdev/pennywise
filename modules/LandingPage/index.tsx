@@ -26,7 +26,7 @@ const LandingPage = () => {
   const textColor = useColorModeValue("grey","#b6b6b6")
   const buttonTextColor = useColorModeValue("white","white")
   const divColor = useColorModeValue("#2469BE","#3d99ff")
-  const vsgraph = useColorModeValue("#b1d2ff","#90b9ff")
+  const vsgraph = useColorModeValue("#b1d2ff","#b1d2ff")
   const learnmore = useColorModeValue("#97c3ff","#32384f")
   const divColor2 = useColorModeValue("linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%)","linear-gradient(90deg, #00DBDE 0%, #FC00FF 100%)")
   const signUp = useColorModeValue("#4e99ff","#73aeff")

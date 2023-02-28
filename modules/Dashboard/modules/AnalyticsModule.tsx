@@ -4,6 +4,9 @@ import {
   Divider, 
   Flex, 
   Heading, 
+  Stat, 
+  StatArrow, 
+  StatHelpText, 
   Text, 
   useColorModeValue 
 } from '@chakra-ui/react'
@@ -33,11 +36,12 @@ import {
 
 
 const AnalyticsModule = () => {
-  const divColor = useColorModeValue("white","#292c3d")
+  const divColor = useColorModeValue("white","#222636")
   const secondDivColor = useColorModeValue("linear-gradient(to right, #536976, #292e49)","#292c3d")
   const divGradient = useColorModeValue("linear-gradient(to bottom, #505285 0%, #585e92 12%, #65689f 25%, #7474b0 37%, #7e7ebb 50%, #8389c7 62%, #9795d4 75%, #a2a1dc 87%, #b5aee4 100%);","linear-gradient(to right, #6a85b6 0%, #bac8e0 100%);")
   const header = useColorModeValue("#777777", "white")
   const header2 = useColorModeValue("white", "white")
+  const bgGradient = useColorModeValue("linear-gradient(to right, #536976, #292e49)","linear-gradient(to right, #4b79a1, #283e51);")
 
   const data = [
     {
@@ -108,10 +112,10 @@ const AnalyticsModule = () => {
         alignItems="center"
         flexDir={["column","column","column","row"]}
         gap={["3rem","3rem","4rem","5rem"]}
-        mt={["1.5rem","1.5rem","4rem","4rem"]}
+        mt={["1.5rem","1.5rem","4rem","5rem"]}
         >
         <Flex
-          w={["21rem","20rem","34rem","40rem"]}
+          w={["22rem","22rem","34rem","40rem"]}
           h={["35rem","30rem","39rem","34rem"]}
           borderRadius="1rem 0 1rem 0"
           bg= {divColor}
@@ -142,16 +146,22 @@ const AnalyticsModule = () => {
               color={header}
               fontWeight={500}
             >
-              <Text
+              <Stat>
+                <StatHelpText>
+                  <StatArrow type='increase' />
+                  23.36% last week
+                </StatHelpText>
+              </Stat>
+              {/* <Text
                 mt="-0.3rem"
               >
                 <TriangleUpIcon/>
-              </Text>
-              <Text
+              </Text> */}
+              {/* <Text
                 fontSize={["0.7rem","1rem","1rem","1rem"]}
               >
                 10% from last week
-              </Text>
+              </Text> */}
             </Flex>
           </Flex>
           <Flex
@@ -222,11 +232,11 @@ const AnalyticsModule = () => {
         </Flex>
 
         <Flex
-          w={["21rem","21rem","34rem","30rem"]}
+          w={["22rem","22rem","34rem","30rem"]}
           h={["25rem","25rem","30rem","34rem"]}
           // bgGradient= {divGradient}
           // ml={["","","","2rem"]}
-          bg={secondDivColor}
+          bg={bgGradient}
           borderRadius="1rem 0 1rem 0"
           boxShadow="lg"
           // justifyContent="center"

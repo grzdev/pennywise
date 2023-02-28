@@ -59,7 +59,7 @@ const BudgetModal = () => {
               mt={["1.5rem","1.5rem","1.5rem","2rem"]}
             >
              <Heading
-              size={["sm","sm","md","lg"]}
+              size={["md","md","md","lg"]}
              >
               Create New Budget
              </Heading>
@@ -74,14 +74,20 @@ const BudgetModal = () => {
             >
               <Flex
                 mt={["1.5rem","1.5rem","1.8rem","2rem"]}
+                flexDir="column"
+                alignItems="center"
               >
+                <Heading
+                  size={["","","",""]}
+                >
+                  Pick Category
+                </Heading>
                 <Select
-                  placeholder='Pick Category'
                   variant="filled"
                   bg={selectBg}
                   color="white"
+                  mt="0.7rem"
                   size={["sm","sm","md","md"]}
-                  // size={["","","",""]}
                 >
                   <option value="option1">
                     Food
@@ -102,7 +108,14 @@ const BudgetModal = () => {
               </Flex>
               <Flex
                 mt={["1.5rem","1.5rem","1.8rem","2rem"]}
+                flexDir="column"
+                alignItems="center"
               >
+                <Heading
+                  size={["","","",""]}
+                >
+                  Amount
+                </Heading>
                 <InputGroup>
                   <InputLeftElement
                     pointerEvents='none'
@@ -111,7 +124,7 @@ const BudgetModal = () => {
                     mt={["0.2rem","0.2rem","0.2rem","0.3rem"]}
                     />
                   <Input
-                    mt={["0.2rem","0.2rem","0.3rem","0.3rem"]}
+                    mt="0.7rem"
                     htmlSize={5} 
                     width="8rem"
                     type='number'
@@ -127,7 +140,7 @@ const BudgetModal = () => {
               >
                 <Heading
                   size={["xs","xs","xs","sm"]}
-                  mb="0.5rem"
+                  mb="0.7rem"
                 >
                   Target Date
                 </Heading>
