@@ -11,6 +11,7 @@ import {
   useColorModeValue
 } from '@chakra-ui/react'
 import React from 'react'
+import Head from "next/head"
 import { AddIcon } from "@chakra-ui/icons"
 import { TbCurrencyNaira } from 'react-icons/tb'
 import BudgetModal from '../components/budget-input-modal'
@@ -28,6 +29,13 @@ const BudgetModule = () => {
 
 
   return (
+    <>
+    <Head>
+            <title>Your Budget</title>
+            <meta name="description" content="" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <link rel="icon" href="/favicon.ico" />
+        </Head>
     <Flex
       alignItems="center"
       flexDir={["column","column","column","row"]}
@@ -132,7 +140,7 @@ const BudgetModule = () => {
               mr={["3rem","3rem","6.5rem","8.5rem"]}
             >
               <Flex
-                mt={["0.15rem","0.15rem","0.3rem","0.21rem"]}
+                mt={["0.3rem","0.15rem","0.3rem","0.21rem"]}
                 >
                 <TbCurrencyNaira/>
               </Flex>
@@ -147,7 +155,7 @@ const BudgetModule = () => {
               mr={["0.7rem","0.7rem","1rem","1rem"]}
             >
               <Flex
-                mt={["0.15rem","0.15rem","0.3rem","0.21rem"]}
+                mt={["0.3rem","0.15rem","0.3rem","0.21rem"]}
               >
                 <TbCurrencyNaira/>
               </Flex>
@@ -207,7 +215,7 @@ const BudgetModule = () => {
               mr={["3rem","3rem","6.5rem","8.5rem"]}
             >
               <Flex
-                mt={["0.15rem","0.15rem","0.3rem","0.21rem"]}
+                mt={["0.3rem","0.3rem","0.3rem","0.21rem"]}
                 >
                 <TbCurrencyNaira/>
               </Flex>
@@ -222,7 +230,7 @@ const BudgetModule = () => {
               mr={["0.7rem","0.7rem","1rem","1rem"]}
             >
               <Flex
-                mt={["0.15rem","0.15rem","0.3rem","0.21rem"]}
+                mt={["0.3rem","0.3rem","0.3rem","0.21rem"]}
               >
                 <TbCurrencyNaira/>
               </Flex>
@@ -282,7 +290,7 @@ const BudgetModule = () => {
               mr={["3rem","3rem","6.5rem","8.5rem"]}
             >
               <Flex
-                mt={["0.15rem","0.15rem","0.3rem","0.21rem"]}
+                mt={["0.3rem","0.3rem","0.3rem","0.21rem"]}
                 >
                 <TbCurrencyNaira/>
               </Flex>
@@ -297,7 +305,7 @@ const BudgetModule = () => {
               mr={["0.7rem","0.7rem","1rem","1rem"]}
             >
               <Flex
-                mt={["0.15rem","0.15rem","0.3rem","0.21rem"]}
+                mt={["0.3rem","0.3rem","0.3rem","0.21rem"]}
               >
                 <TbCurrencyNaira/>
               </Flex>
@@ -358,7 +366,7 @@ const BudgetModule = () => {
               mr={["3rem","3rem","6.5rem","8.5rem"]}
             >
               <Flex
-                mt={["0.15rem","0.15rem","0.3rem","0.21rem"]}
+                mt={["0.3rem","0.3rem","0.3rem","0.21rem"]}
                 >
                 <TbCurrencyNaira/>
               </Flex>
@@ -373,7 +381,7 @@ const BudgetModule = () => {
               mr={["0.7rem","0.7rem","1rem","1rem"]}
             >
               <Flex
-                mt={["0.15rem","0.15rem","0.3rem","0.21rem"]}
+                mt={["0.3rem","0.3rem","0.3rem","0.21rem"]}
               >
                 <TbCurrencyNaira/>
               </Flex>
@@ -406,6 +414,7 @@ const BudgetModule = () => {
         </Flex>
       </Flex>
     </Flex>
+    </>
   )
 }
 

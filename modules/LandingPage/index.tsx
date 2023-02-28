@@ -101,7 +101,7 @@ const LandingPage = () => {
             </Flex>
             <Flex
             >
-              <Link href="/api/auth/login">
+              <Link href="signup">
                 <Button
                   size="lg"
                   h="3.5rem"

@@ -146,7 +146,6 @@ const BudgetModal = () => {
                 </Heading>
                 <Input
                   placeholder="Select Date"
-                  size="md"
                   type="date"
                 />
               </Flex>

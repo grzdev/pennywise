@@ -95,22 +95,12 @@ const Footer = () => {
                 <ListItem 
                 mb="1rem"
                 color={textColor}
+                fontWeight={600}
+                fontSize={["0.7rem","0.7rem","0.8rem","0.8rem" ]}
                 >
                   About 
                 </ListItem>
               </Link>
-              {/* <ListItem
-               mb="1rem"
-               color={textColor}
-              >
-                FAQs 
-              </ListItem> */}
-              {/* <ListItem
-               mb="1rem"
-               color={textColor}
-               >
-                Blog 
-              </ListItem> */}
             </List>
           </Flex>
 
@@ -128,7 +118,9 @@ const Footer = () => {
               <Link href={'/terms'}>
                 <ListItem
                 mb="1rem"
+                fontWeight={600}
                 color={textColor}
+                fontSize={["0.7rem","0.7rem","0.8rem","0.8rem" ]}
                 >
                   Terms 
                 </ListItem>
@@ -137,7 +129,9 @@ const Footer = () => {
               <Link href={'/privacy'}>
                 <ListItem
                 mb="1rem"
+                fontWeight={600}
                 color={textColor}
+                fontSize={["0.7rem","0.7rem","0.8rem","0.8rem" ]}
                 >
                   Privacy 
                 </ListItem>

@@ -22,6 +22,7 @@ import {
   Legend, 
   ResponsiveContainer 
 } from 'recharts';
+import Head from "next/head"
 import { TriangleUpIcon } from "@chakra-ui/icons"
 import { TbCurrencyNaira } from "react-icons/tb"
 import { 
@@ -107,6 +108,12 @@ const AnalyticsModule = () => {
     <Container
       centerContent
     >
+       <Head>
+            <title>Analytics</title>
+            <meta name="description" content="" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <link rel="icon" href="/favicon.ico" />
+        </Head>
       <Flex
         justifyContent="center"
         alignItems="center"
@@ -233,7 +240,7 @@ const AnalyticsModule = () => {
 
         <Flex
           w={["22rem","22rem","34rem","30rem"]}
-          h={["25rem","25rem","30rem","34rem"]}
+          h={["24.5rem","24.5rem","29rem","34rem"]}
           // bgGradient= {divGradient}
           // ml={["","","","2rem"]}
           bg={bgGradient}
@@ -260,7 +267,7 @@ const AnalyticsModule = () => {
 
             <Flex
               flexDir="column"
-              mr={["-1.7rem","-1.7rem","-3rem","-5rem"]}
+              mr={["-4rem","-4rem","-7rem","-8rem"]}
               mt={["2.5rem","2.5rem","3rem","4rem"]}
             >
               <Flex

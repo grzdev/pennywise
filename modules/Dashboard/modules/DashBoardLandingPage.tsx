@@ -31,6 +31,7 @@ import {
   SunIcon 
 } from '@chakra-ui/icons';
 import { useColorMode } from '@chakra-ui/react';
+import Head from 'next/head'
 import { 
   PieChart,
   Pie,
@@ -53,8 +54,8 @@ const DashBoardLandingPage = () => {
   
   const header = useColorModeValue("white","white")
   const SecondBox = useColorModeValue("#407adf","#70a1c8")
-  const pieColor = useColorModeValue("#3e4ce2","#c42abe")
-  const pieColor2 = useColorModeValue("#6ea4ff","#4bbdff")
+  const pieColor = useColorModeValue("#4252fa","#c42abe")
+  const pieColor2 = useColorModeValue("#699aec","#6aa2ff")
   const addButton = useColorModeValue("#0050d6","#1c5dd0")
   const color = useColorModeValue("#ff003d","#ff003d")
   const button = useColorModeValue("#4aafe9","#e3379b")
@@ -121,151 +122,159 @@ const DashBoardLandingPage = () => {
 
 
   return (
-    <Flex
-      flexDir="column"
-    >
+    <>
+       <Head>
+            <title>Dashboard</title>
+            <meta name="description" content="" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <link rel="icon" href="/favicon.ico" />
+        </Head>
       <Flex
         flexDir="column"
-        mt={["0.8rem","2rem","3rem","4rem"]}
-        ml={["1rem","2rem","2rem","2rem"]}
       >
-        <Heading
-          size={["lg","lg","xl","xl"]}
-        >
-          Dami👋,
-        </Heading>
-        <Text
-          fontWeight={500}
-          mt="-0.2rem"
-          fontSize={["0.8rem","0.8rem","1rem","1rem"]}
-        >
-          What did you spend on today?
-        </Text>
-      </Flex>
-      <Flex
-        alignItems="center"
-        justifyContent="center"
-        mt={["1rem","2rem","1.5rem","2rem"]}
-        // ml={["0.1rem","","-10rem","-2rem"]}
-        mb="7rem"
-       >  
-
         <Flex
-          w={["20rem","20rem","33rem","60rem"]}
-          h={["30rem","25rem","35rem","30rem"]}
-          // background= {bg}
-          bg= {bgGradient}
-          borderRadius="1rem 0 1rem 0"
-          // boxShadow= "rgba(17, 12, 46, 0.15) 0px 48px 100px 0px"
-          // boxShadow= "rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px"
-          boxShadow= "rgba(0, 0, 0, 0.25) 0px 25px 50px -12px"
           flexDir="column"
-          // justifyContent="center"
-          alignItems="center"
-         >
-          <Flex
-            p={["3","3","4","5"]}
-            color={header}
-           >
-            <Flex
-             mr={["15rem","15rem","25rem","51rem"]}
-            >
-              <Text 
-                fontSize={["1.7rem","1.7rem","2rem","3rem"]
-              }>
-                <HiCash/>
-              </Text>
-            </Flex>
-            <Flex>
-              <Text
-                fontSize={["1.6rem","1.6rem","2rem","3rem"]}
-              >
-                <MdTrackChanges/>
-              </Text>
-            </Flex>
-          </Flex>
-
-          <Flex
-            flexDir="column"
-            alignItems="center"
-            justifyContent="center"
-            mt={["0.5rem","-2rem","0.2rem","-3rem"]}
-            color={header}
-            >
-            <Heading
-              size={["sm","sm","lg","xl"]}
-            >
-              Total amount spent:
-            </Heading>
-
-            <Flex
-              flexDir="row"
-            >
-              <Heading
-                textAlign="center"
-                color={header} 
-                size={["sm","sm","lg","xl"]}
-                // mt={["0.1rem","0.1rem","-0.1rem","-1rem"]}
-                mt={["0.1rem","0.1rem","-0.1rem","0.2rem"]}
-              >
-              <TbCurrencyNaira/>
-              </Heading>
-              <Heading
-               size={["sm","sm","md","lg"]}
-              >
-                5,000
-              </Heading>
-            </Flex>
-          </Flex>
-
-          <Flex
-            mt={["1.8rem","1.8rem","1.5rem","1rem"]}
+          mt={["0.8rem","2rem","3rem","4rem"]}
+          ml={["1rem","2rem","2rem","2rem"]}
+        >
+          <Heading
+            size={["lg","lg","xl","xl"]}
           >
-            <PieChart 
-              width={250} 
-              height={250}
-            >
-              <Pie data={data01} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={32} fill={pieColor} />
-              <Pie data={data02} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={42} outerRadius={75} fill={pieColor2} label />
-            </PieChart>
-          </Flex>
+            Dami👋,
+          </Heading>
+          <Text
+            fontWeight={500}
+            mt="-0.2rem"
+            fontSize={["0.8rem","0.8rem","1rem","1rem"]}
+          >
+            What did you spend on today?
+          </Text>
+        </Flex>
+        <Flex
+          alignItems="center"
+          justifyContent="center"
+          mt={["1rem","2rem","1.5rem","2rem"]}
+          // ml={["0.1rem","","-10rem","-2rem"]}
+          mb="7rem"
+        >  
+
           <Flex
-            mt={["2.6rem","2rem","1.4rem","-2rem"]}
-            >
-            <Text
-              color={header} 
-              fontWeight={700}
-              mr={["13.4rem","11rem","24.7rem","52rem"]}
-              mt={["1.35rem","1rem","2rem",""]}
-              fontSize={["0.8rem","0.8rem","0.9rem","0.9rem"]}
-              ml={["","","","1rem"]}
-            >
-              13th Feb
-            </Text>
-          </Flex>
+            w={["20rem","20rem","33rem","60rem"]}
+            h={["30rem","25rem","35rem","30rem"]}
+            // background= {bg}
+            bg= {bgGradient}
+            borderRadius="1rem 0 1rem 0"
+            // boxShadow= "rgba(17, 12, 46, 0.15) 0px 48px 100px 0px"
+            // boxShadow= "rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px"
+            boxShadow= "rgba(0, 0, 0, 0.25) 0px 25px 50px -12px"
+            flexDir="column"
+            // justifyContent="center"
+            alignItems="center"
+          >
             <Flex
-              mt={["-2.1rem","-2.1rem","-1.7rem","-2rem"]}
-              ml={["14.7rem","15rem","26.3rem","53rem"]}
+              p={["3","3","4","5"]}
+              color={header}
             >
-              <InputModal/>
+              <Flex
+              mr={["15rem","15rem","25rem","51rem"]}
+              >
+                <Text 
+                  fontSize={["1.7rem","1.7rem","2rem","3rem"]
+                }>
+                  <HiCash/>
+                </Text>
+              </Flex>
+              <Flex>
+                <Text
+                  fontSize={["1.6rem","1.6rem","2rem","3rem"]}
+                >
+                  <MdTrackChanges/>
+                </Text>
+              </Flex>
             </Flex>
+
+            <Flex
+              flexDir="column"
+              alignItems="center"
+              justifyContent="center"
+              mt={["0.5rem","-2rem","0.2rem","-3rem"]}
+              color={header}
+              >
+              <Heading
+                size={["sm","sm","lg","xl"]}
+              >
+                Total amount spent:
+              </Heading>
+
+              <Flex
+                flexDir="row"
+              >
+                <Heading
+                  textAlign="center"
+                  color={header} 
+                  size={["sm","sm","lg","xl"]}
+                  // mt={["0.1rem","0.1rem","-0.1rem","-1rem"]}
+                  mt={["0.1rem","0.1rem","-0.1rem","0.2rem"]}
+                >
+                <TbCurrencyNaira/>
+                </Heading>
+                <Heading
+                size={["sm","sm","md","lg"]}
+                >
+                  5,000
+                </Heading>
+              </Flex>
+            </Flex>
+
+            <Flex
+              mt={["1.8rem","1.8rem","1.5rem","1rem"]}
+            >
+              <PieChart 
+                width={250} 
+                height={250}
+              >
+                <Pie data={data01} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={32} fill={pieColor} />
+                <Pie data={data02} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={42} outerRadius={75} fill={pieColor2} label />
+              </PieChart>
+            </Flex>
+            <Flex
+              mt={["2.6rem","2rem","1.4rem","-2rem"]}
+              >
+              <Text
+                color={header} 
+                fontWeight={700}
+                mr={["13.4rem","11rem","24.7rem","52rem"]}
+                mt={["1.35rem","1rem","2rem",""]}
+                fontSize={["0.8rem","0.8rem","0.9rem","0.9rem"]}
+                ml={["","","","1rem"]}
+              >
+                13th Feb
+              </Text>
+            </Flex>
+              <Flex
+                mt={["-2.1rem","-2.1rem","-1.7rem","-2rem"]}
+                ml={["14.7rem","15rem","26.3rem","53rem"]}
+              >
+                <InputModal/>
+              </Flex>
+          </Flex>
+
         </Flex>
 
+        <Divider
+          orientation='horizontal'
+          w="100%"
+          mt={["2rem","2rem","2rem","2rem"]}
+          // mb={["7rem","7rem","8rem","9rem"]}
+        />
+
+        {/* <Flex
+          mt={["","","","5rem"]}
+        >
+
+        </Flex> */}
       </Flex>
-
-      <Divider
-        orientation='horizontal'
-        w="100%"
-        mt={["2rem","2rem","2rem","2rem"]}
-        // mb={["7rem","7rem","8rem","9rem"]}
-      />
-
-      {/* <Flex
-        mt={["","","","5rem"]}
-      >
-
-      </Flex> */}
-    </Flex>
+    </>
   )
 }
 
