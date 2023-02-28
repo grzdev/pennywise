@@ -90,7 +90,7 @@ const BudgetModule = () => {
        w={["20rem","20rem","40rem","20rem"]}
        h={["12rem","12rem","15rem","34rem"]}
        mt={["-1.5rem","-1.5rem","-1rem","4rem"]}
-       mb={["5rem","5rem","5rem","0.1rem"]}
+       mb={["10rem","5rem","5rem","0.1rem"]}
        boxShadow="lg" 
        borderRadius="1rem 0 1rem 0"
        bg={secondBg}

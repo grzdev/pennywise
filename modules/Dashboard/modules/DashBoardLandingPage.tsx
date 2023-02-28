@@ -54,7 +54,7 @@ const DashBoardLandingPage = () => {
   const header = useColorModeValue("white","white")
   const SecondBox = useColorModeValue("#407adf","#70a1c8")
   const pieColor = useColorModeValue("#3e4ce2","#c42abe")
-  const pieColor2 = useColorModeValue("#80c1ff","#4bbdff")
+  const pieColor2 = useColorModeValue("#6ea4ff","#4bbdff")
   const addButton = useColorModeValue("#0050d6","#1c5dd0")
   const color = useColorModeValue("#ff003d","#ff003d")
   const button = useColorModeValue("#4aafe9","#e3379b")
@@ -147,7 +147,7 @@ const DashBoardLandingPage = () => {
         justifyContent="center"
         mt={["1rem","2rem","1.5rem","2rem"]}
         // ml={["0.1rem","","-10rem","-2rem"]}
-        mb="3rem"
+        mb="7rem"
        >  
 
         <Flex
