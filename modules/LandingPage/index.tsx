@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import { 
     Container, 
     Flex, 
@@ -13,7 +14,7 @@ import {
   } from '@chakra-ui/react'
   import { Inter } from '@next/font/google'
   import Image from 'next/image'
-  import SavingImage from '../../images/div4.png'
+  import SavingImage from '../../images/mainpic4.png'
   import GrapgImage from '../../images/pic2.png'
   import React from 'react'
   import { VscGraph } from 'react-icons/vsc'
@@ -28,11 +29,11 @@ const LandingPage = () => {
   const divColor = useColorModeValue("#2469BE","#3d99ff")
   const vsgraph = useColorModeValue("#b1d2ff","#b1d2ff")
   const learnmore = useColorModeValue("#97c3ff","#32384f")
-  const divColor2 = useColorModeValue("linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%)","linear-gradient(90deg, #00DBDE 0%, #FC00FF 100%)")
+  const divColor2 = useColorModeValue("linear-gradient( 135deg, #FFA6B7 10%, #1E2AD2 100%)","linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%)")
   const signUp = useColorModeValue("#4e99ff","#73aeff")
   // const secondDivCOlor = useColorModeValue("#e6f1ff","")
   const headerBg = useColorModeValue("#EEF4FC","white")
-  const pgBg = useColorModeValue("#EEF4FC","black")
+  const pgBg = useColorModeValue("#EEF4FC","#4b4b4b")
 
   const secondDivCOlor = useColorModeValue("linear-gradient( 135deg, #6B73FF 10%, #000DFF 100%)","linear-gradient(19deg, #21D4FD 0%, #B721FF 100%)")
 // background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
@@ -58,6 +59,7 @@ const LandingPage = () => {
         <Flex
           mt={["3rem", "1rem"]}
           flexDir={["column", "column", "column", "row"]}
+          ml={["","","","7rem"]}
         >
           <VStack
           >
@@ -107,6 +109,7 @@ const LandingPage = () => {
                   h="3.5rem"
                   variant='solid'
                   bg={buttonColor}
+                  boxShadow="2xl"
                   color={buttonTextColor}
                   mt={["2rem", "1.3rem", "1.3rem", "-1.3rem"]}
                   borderRadius="1rem 0 1rem 0"
@@ -121,7 +124,7 @@ const LandingPage = () => {
           </VStack>
           
           <Box
-            ml={["0.2rem", "4rem", "3rem", "4.8rem"]}
+            ml={["0.2rem", "4rem", "3rem", "1rem"]}
             w={["27rem", "40rem", "40rem", "51rem"]}
             mt={["2rem", "", "3rem", "4rem"]}
           >
@@ -177,17 +180,16 @@ const LandingPage = () => {
                 <Text
                   fontWeight={500}
                   color={pgBg}
-                  fontSize={["1.1rem", "1.1rem", "1.1rem", "1.2rem"]}
+                  fontSize={["1.1rem", "1.1rem", "1.1rem", "1.3rem"]}
                   mb={["0.4rem", "0.4rem", "0.4rem", "3rem"]}
                   w={["18rem", "30rem", "30rem", "60rem"]}
                   noOfLines={[6,6,6,2]}
                   justifyContent="center"
                   alignItems="center"
                   textAlign={["center", "initial"]}
-                  // ml={["", "", "", "14rem"]}
                   fontFamily="'poppins',sans-serif "
                 >
-                  It is hard to keep track of how much we spend in a day, this may result to people spending more than they plan to.
+                  It's hard to keep track of how much we spend in a day, this may result to people spending more than they plan to.
                   TrackDaily helps to keep tabs on what we spend on and the total amount spent.
                 </Text>
               </Fade>
@@ -276,6 +278,7 @@ const LandingPage = () => {
           mt={["5rem","7rem","7rem","7rem"]}
           mb={["7rem","7rem","7rem","7rem"]}
           borderRadius="1rem 0 1rem 0"
+          boxShadow="2xl"
           justifyContent="center"
           alignItems="center"
           flexDir={["column","column","column","row"]}

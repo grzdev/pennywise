@@ -205,7 +205,7 @@ const SignUpModule = () => {
            <Button
              bg={signIn}
              color="white"
-             onClick={handleSignup}
+            //  onClick={handleSignup}
              mt="1rem"
            >
               Create account

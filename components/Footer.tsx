@@ -27,7 +27,7 @@ import Link from 'next/link'
 import { SiGmail, SiNetlify } from 'react-icons/si'
 
 const Footer = () => {
-  const textColor = useColorModeValue("black","#b6b6b6")
+  const textColor = useColorModeValue("#7a7a7a","#b9b9b9")
   const gmail = useColorModeValue("#F04235","#b6b6b6")
   const footer = useColorModeValue("#eceaea","black")
   const headerColor = useColorModeValue("#4f89e8","#c6dbfb")
@@ -213,11 +213,11 @@ const Footer = () => {
       </Flex>
       <Flex
         flexDir="row"
-        gap="0.3rem"
+        gap="0.6rem"
       >
         <Link href="https://github.com/19zay?tab=repositories">
           <Text
-            fontSize={["1rem","1rem","1.2rem","1.4rem" ]}
+            fontSize={["1.1rem","1.1rem","1.3rem","1.5rem" ]}
             color={icons}
           >
             <AiFillGithub/>
@@ -225,7 +225,7 @@ const Footer = () => {
         </Link>
         <Link href="https://twitter.com/grzdev_">
           <Text
-            fontSize={["1rem","1rem","1.2rem","1.4rem" ]}
+            fontSize={["1.1rem","1.1rem","1.3rem","1.5rem" ]}
             color={icons}
           >
             <AiFillTwitterCircle/>
@@ -233,7 +233,7 @@ const Footer = () => {
         </Link>
         <Link href="https://www.linkedin.com/in/damilola-oyeniyi-97805b23a/">
           <Text
-            fontSize={["1rem","1rem","1.2rem","1.4rem" ]}
+            fontSize={["1.1rem","1.1rem","1.3rem","1.5rem" ]}
             color={icons}
           >
             <AiFillLinkedin/>
@@ -241,7 +241,7 @@ const Footer = () => {
         </Link>
         <Link href="https://app.netlify.com/teams/19zay/overview">
           <Text
-            fontSize={["1rem","1rem","1.2rem","1.4rem" ]}
+            fontSize={["1.1rem","1.1rem","1.3rem","1.5rem" ]}
             color={icons}
           >
             <SiNetlify/>
@@ -249,7 +249,7 @@ const Footer = () => {
         </Link>
         <Link href="https://www.instagram.com/grzdev_/">
           <Text
-            fontSize={["1rem","1rem","1.2rem","1.4rem" ]}
+            fontSize={["1.1rem","1.1rem","1.3rem","1.5rem" ]}
             color={icons}
           >
             <AiFillInstagram/>

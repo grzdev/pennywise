@@ -122,7 +122,7 @@ const AnalyticsModule = () => {
         mt={["1.5rem","1.5rem","4rem","5rem"]}
         >
         <Flex
-          w={["22rem","22rem","34rem","40rem"]}
+          w={["21rem","21rem","34rem","40rem"]}
           h={["35rem","30rem","39rem","34rem"]}
           borderRadius="1rem 0 1rem 0"
           bg= {divColor}
@@ -239,7 +239,7 @@ const AnalyticsModule = () => {
         </Flex>
 
         <Flex
-          w={["22rem","22rem","34rem","30rem"]}
+          w={["21rem","21rem","34rem","30rem"]}
           h={["24.5rem","24.5rem","29rem","34rem"]}
           // bgGradient= {divGradient}
           // ml={["","","","2rem"]}
