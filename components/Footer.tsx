@@ -201,7 +201,7 @@ const Footer = () => {
           fontSize={["0.7rem","0.7rem","0.8rem","0.8rem" ]}
           mr="0.3rem"
         >
-          Proudly made in NG by
+          Made in NG by
         </Text>
         <Text 
           fontWeight={600}

@@ -21,11 +21,15 @@ import { useRouter} from 'next/router'
 import { CircularProgress, } from "@chakra-ui/react";
 
 const LogInModule = () => {
-  const divColor = useColorModeValue("white","")
-  const headerColor = useColorModeValue("#4f89e8","#c6dbfb")
-  const TextColor2 = useColorModeValue("black","")
-  const signUp = useColorModeValue("#0059ec","#5088e4")
-  const signIn = useColorModeValue("#0059ec","#4f89e8")
+  const divColor = useColorModeValue("linear-gradient( 135deg, #FFA6B7 10%, #1E2AD2 100%)","linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%)")
+  const headerColor = useColorModeValue("white","#c6dbfb")
+  const header2Color = useColorModeValue("#f1f1f1","white")
+  const TextColor2 = useColorModeValue("white","")
+  const signUp = useColorModeValue("white","white")
+  const signUpBg = useColorModeValue("#e6e6e6","#cadeff")
+  const signIn = useColorModeValue("#5092ff","#4f89e8")
+  
+
 
   const router = useRouter()
 
@@ -79,17 +83,18 @@ const LogInModule = () => {
   return (
     <Container centerContent>
        <Flex
-          mt="4rem"
-          w={["","","","30rem"]}
+          mt={["5rem","5rem","6rem","4rem"]}
+          w={["21rem","21rem","24rem","28rem"]}
+          h={["31rem","31rem","32rem","35rem"]}
           bg={divColor}
           justifyContent="center"
           alignContent="center"
-          borderRadius="1rem"
+          borderRadius="1rem 0 1rem 0"
           flexDir="column"
         >
           <Flex
-            mt={["","","","2rem"]}
-            ml={["","","","1.5rem"]}
+            mt={["2rem","2rem","2.4rem","2rem"]}
+            ml={["1.1rem","1.1rem","1rem","1.5rem"]}
           >
             <Flex
               mt={["-0.3rem", "-0.3rem", "-0.3rem", "-0.3rem"]}
@@ -114,23 +119,26 @@ const LogInModule = () => {
 
           <Flex
             flexDir="column"
-            ml={["0.1rem","0.1rem","0.1rem","2rem"]}
+            ml={["1.3rem","1.3rem","1.5rem","2rem"]}
             mt="1.5rem"
           >
             <Heading
-              size={["lg","lg","lg","lg"]}
+              size={["lg","lg","md","lg"]}
+              color={headerColor}
+
             >
               Welcome back
             </Heading>
             <Text
-              fontSize={["0.8rem","","",""]}
+              color={header2Color}
+              fontSize={["0.8rem","","0.9rem","1rem"]}
             >
              Securly login to your Trackdaily account.
             </Text>
           </Flex>
 
           <Flex
-            ml={["0.1rem","0.1rem","0.1rem","2rem"]}
+            ml={["1.4rem","1.4rem","1.7rem","2rem"]}
             mt={["1rem","1.4rem","1.5rem","1.6rem"]}
             flexDir="column"
           >
@@ -138,7 +146,7 @@ const LogInModule = () => {
                 <FormControl>
                   <Flex
                     flexDir="column"
-                    mt="1rem"
+                    mt={["0.8rem","1rem","1rem","1rem"]}
                   >
                     <FormLabel
                       color={TextColor2}
@@ -149,8 +157,11 @@ const LogInModule = () => {
                     <Input
                       variant="filled"
                       size="lg"
+                      w={["18.2rem","18.2rem","20.7rem","24rem"]}
+                      color="white"
                       mt="0.5rem"
                       id='email'
+                      bg={signUpBg}
                       onChange={(e: any)=>
                         setData({
                           ...data,
@@ -164,7 +175,7 @@ const LogInModule = () => {
                   </Flex>
                   <Flex
                     flexDir="column"
-                    mt="1rem"
+                    mt={["0.8rem","1rem","1rem","1rem"]}
                   >
                     <FormLabel
                       color={TextColor2}
@@ -174,6 +185,8 @@ const LogInModule = () => {
                     </FormLabel>
                     <Input
                       variant="filled"
+                      color="white"
+                      bg={signUpBg}
                       size="lg"
                       mt="0.5rem"
                       id='password'
@@ -186,6 +199,7 @@ const LogInModule = () => {
                       value={data.password}
                       type="password"
                       placeholder='Password'
+                      w={["18.2rem","18.2rem","20.7rem","24rem"]}
                     />
                   </Flex>
                 </FormControl>
@@ -208,23 +222,27 @@ const LogInModule = () => {
               </Link>
             </Flex> */}
 
-            <Flex
-              flexDir="column"
-              ml={["0.1rem","0.1rem","0.1rem","2rem"]}
-              gap="1rem"
-            >
               <Flex
                 justifyContent="center"
                 alignItems="center"
               >
                 {loading ? <CircularProgress isIndeterminate value={40} thickness='4px' size="2rem"/> : ''} 
               </Flex>
+
+            <Flex
+              flexDir="column"
+              ml={["1.4rem","1.4rem","1.7rem","2rem"]}
+              gap="1rem"
+            >
+              
               <Button
                 bg={signIn}
                 color="white"
                 // onClick={handleLogin}
                 type="submit"
-                mt="2rem"
+                mt={["2.3rem","2rem","1.5rem","2rem"]}
+                borderRadius="1rem 0 1rem 0"
+                w={["18.2rem","18.2rem","20.7rem","24rem"]}
               >
                 Sign in
               </Button>
@@ -239,11 +257,13 @@ const LogInModule = () => {
             <Flex
               justifyContent="center"
               alignItems="center"
-              mt="2rem"
+              mt={["2rem","2rem","1rem","2rem"]}
               mb="2rem"
               flexDir="row"
             >
-              <Text>
+              <Text
+                color="white"
+                >
                Don't have an account? 
               </Text>
                <Text
