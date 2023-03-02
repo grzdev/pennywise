@@ -22,7 +22,7 @@ import { IoFastFoodOutline, IoFastFoodSharp } from "react-icons/io5"
 import { TbCurrency, TbCurrencyNaira } from 'react-icons/tb'
 
 const InputModal = () => {
-  const button = useColorModeValue("#3e97ec","#e3379b")
+  const button = useColorModeValue("#4F89E8","#4F89E8")
   const header = useColorModeValue("#2c4658","")
   const text = useColorModeValue("#0081e7","")
 

@@ -83,16 +83,19 @@ const Navbar = () => {
             <Flex
               mt={["-0.1rem", "-0.2rem", "-0.1rem", "-0.1rem"]}
             >
-              <MdTrackChanges
-                fontSize="2rem"
+              <Text
+                fontSize={["1.7rem","1.7rem","2rem","2rem"]}
                 color={headerColor}
-              />
+              >
+                <MdTrackChanges
+                />
+              </Text>
             </Flex>
           </Link>
           <Link href="/">         
             <Heading
-              size="md"
-              ml="0.1rem"
+              size={["sm","sm","md","md"]}
+              ml={["-0.05rem","-0.05rem","-0.05rem","0.1rem"]}
               color={headerColor}
             >
               trackdaily

@@ -55,21 +55,22 @@ const Footer = () => {
       >
         <Flex>
           <Flex
-            mt={["-0.1rem", "-0.2rem", "-0.1rem", "-0.1rem"]}
+            mt={["-0.4rem", "-0.4rem", "-0.2rem", "-0.3rem"]}
             mb={["6rem","","",""]}
           >
-            <MdTrackChanges 
-              fontSize="2rem"
-              // color='black'
+            <Text
+              fontSize={["1.7rem","1.7rem","2rem","2rem"]}
               color={headerColor}
-            />
+            >
+              <MdTrackChanges 
+              />
+            </Text>
           </Flex>
 
           <Heading
-            size="md"
-            // ml="0.2rem"
-            // color='black'
-              color={headerColor}
+            size={["sm","sm","md","md"]}
+            ml={["-0.05rem","-0.1rem","-0.1rem","0.1rem"]}
+            color={headerColor}
 
           >
             trackdaily

@@ -121,14 +121,16 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
             <Flex
               mt={["-0.1rem", "-0.2rem", "-0.1rem", "-0.1rem"]}
             >
-              <MdTrackChanges
-                fontSize="2rem"
-                color={headerColor}
-              />
+              <Text>
+                <MdTrackChanges
+                  fontSize="2rem"
+                  color={headerColor}
+                />
+              </Text>
             </Flex>
             <Heading
               size="md"
-              ml="0.1rem"
+              ml="-0.05rem"
               color={headerColor}
             >
               trackdaily
@@ -351,19 +353,23 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
         <Flex
           justifyContent="center"
           alignItems="center"
-          mr="9rem"
+          mr="9.5rem"
         >
             <Flex
               mt={["-0.1rem", "-0.2rem", "-0.1rem", "-0.1rem"]}
             >
-              <MdTrackChanges
-                fontSize="2rem"
-                color={headerColor}
-              />
+              <Text
+                fontSize={["1.7rem","1.7rem","2rem","2rem"]}
+              >
+                <MdTrackChanges
+                  fontSize="2rem"
+                  color={headerColor}
+                />
+              </Text>
             </Flex>
             <Heading
-              size="md"
-              ml="0.1rem"
+              size={["sm","sm","md","md"]}
+              ml={["-0.05rem","0.1rem","0.1rem","0.1rem"]}
               color={headerColor}
             >
               trackdaily

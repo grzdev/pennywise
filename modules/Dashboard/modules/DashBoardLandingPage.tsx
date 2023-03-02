@@ -54,20 +54,14 @@ const DashBoardLandingPage = () => {
   
   const header = useColorModeValue("white","white")
   const SecondBox = useColorModeValue("#407adf","#70a1c8")
-  const pieColor = useColorModeValue("#4252fa","#c42abe")
-  const pieColor2 = useColorModeValue("#699aec","#6aa2ff")
+  const pieColor = useColorModeValue("#4F89E8","#4F89E8")
+  const pieColor2 = useColorModeValue("#75a9ff","#6aa2ff")
   const addButton = useColorModeValue("#0050d6","#1c5dd0")
   const color = useColorModeValue("#ff003d","#ff003d")
   const button = useColorModeValue("#4aafe9","#e3379b")
   const bg = useColorModeValue("#FF3CAC","#667eea")
-  const bgGradient = useColorModeValue("linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%)","linear-gradient(135deg, #667eea 0%, #764ba2 100%)")
-  // linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%) BLUE TO PURPLE
-// background-image: linear-gradient(90deg, #00DBDE 0%, #FC00FF 100%);
-// background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);background-color: #8BC6EC;
-// background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);background-color: #21D4FD;
-// background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
-// background-image: linear-gradient(180deg, #52ACFF 25%, #FFE32C 100%);
-// background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #2BFF88 90%);
+  const bgGradient = useColorModeValue("linear-gradient(to right, #536976, #292e49)","linear-gradient(to right, #4b79a1, #283e51);")
+
 
 
 
@@ -209,15 +203,19 @@ const DashBoardLandingPage = () => {
               <Flex
                 flexDir="row"
               >
-                <Heading
-                  textAlign="center"
-                  color={header} 
-                  size={["sm","sm","lg","xl"]}
-                  // mt={["0.1rem","0.1rem","-0.1rem","-1rem"]}
-                  mt={["0.1rem","0.1rem","-0.1rem","0.2rem"]}
+                <Flex
+                  mt={["","","","0.2rem"]}
                 >
-                <TbCurrencyNaira/>
-                </Heading>
+                  <Heading
+                    textAlign="center"
+                    color={header} 
+                    size={["sm","sm","lg","xl"]}
+                    // mt={["0.1rem","0.1rem","-0.1rem","-1rem"]}
+                    mt={["0.1rem","0.1rem","-0.1rem","0.2rem"]}
+                  >
+                  <TbCurrencyNaira/>
+                  </Heading>
+                </Flex>
                 <Heading
                 size={["sm","sm","md","lg"]}
                 >
