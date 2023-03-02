@@ -76,7 +76,7 @@ const Footer = () => {
           </Heading>
         </Flex>
 
-        <Flex
+        {/* <Flex
           gap={["4rem","4rem","4rem","17rem"]}
           mt={["","","","1.7rem"]}
         >
@@ -136,19 +136,21 @@ const Footer = () => {
                   Privacy 
                 </ListItem>
               </Link>
-              {/* <ListItem
+               <ListItem
               mb="1rem"
               color={textColor}
               >
                 Security 
-              </ListItem> */}
+              </ListItem> 
             </List>
           </Flex>
-        </Flex>
+        </Flex> */}
 
         <Flex
           flexDir="column"
-          mt={["3rem","","","-2rem"]}
+          mt={["3rem","","","-3rem"]}
+          ml={["","","","29rem"]}
+          mb={["4rem","4rem","4rem",""]}
           justifyContent={["center","","","center"]}
           alignItems={["center","","","center"]}
         >

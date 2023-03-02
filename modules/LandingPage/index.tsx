@@ -28,14 +28,14 @@ const LandingPage = () => {
   const buttonTextColor = useColorModeValue("white","white")
   const divColor = useColorModeValue("#2469BE","#3d99ff")
   const vsgraph = useColorModeValue("#b1d2ff","#b1d2ff")
-  const learnmore = useColorModeValue("#97c3ff","#32384f")
+  const learnmore = useColorModeValue("#97c3ff","#97c3ff")
   const divColor2 = useColorModeValue("linear-gradient( 135deg, #FFA6B7 10%, #1E2AD2 100%)","linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%)")
   const signUp = useColorModeValue("#4e99ff","#73aeff")
   // const secondDivCOlor = useColorModeValue("#e6f1ff","")
   const headerBg = useColorModeValue("#EEF4FC","white")
-  const pgBg = useColorModeValue("#EEF4FC","#4b4b4b")
+  const pgBg = useColorModeValue("#EEF4FC","#EEF4FC")
 
-  const secondDivCOlor = useColorModeValue("#262d45","#628BFF")
+  const secondDivCOlor = useColorModeValue("#262d45","#333f55")
 // background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
 // background-image: linear-gradient(90deg, #00DBDE 0%, #FC00FF 100%); 
 // background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
@@ -165,7 +165,7 @@ const LandingPage = () => {
                   noOfLines={[3,3,3,1]}
                   mt={["1rem","","","10rem"]}
                   lineHeight={["2rem", "4.5rem", "2rem", "2.3rem"]}
-                  mb={["0.2rem", "-0.4rem", "-0.4rem", "0.2rem"]}
+                  mb={["0.4rem", "0.4rem", "0.5rem", "0.2rem"]}
                   ml={["", "", "", "-15rem"]}
                   textAlign={["center", "initial"]}
                   fontFamily="'poppins', sans-serif"
@@ -237,7 +237,7 @@ const LandingPage = () => {
               <Heading
                 size="2xl"
                 w={["20rem", "30rem", "30rem", "30rem"]}
-                lineHeight={["2rem", "4.5rem", "4.5rem", "3rem"]}
+                lineHeight={["2rem", "4.5rem", "3.5rem", "3rem"]}
                 mb="0.6rem"
                 ml={["", "", "", "6rem"]}
                 textAlign={["center", "initial"]}

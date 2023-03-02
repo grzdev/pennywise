@@ -75,7 +75,7 @@ const Navbar = () => {
         <Flex
           justifyContent="center"
           alignItems="center"
-          ml={["0.rem", "1rem", "1rem", "8.4rem"]}
+          ml={["0.rem", "1rem", "7rem", "12.4rem"]}
           flexDir="initial"
           mt={["0.6rem","0.4rem","0.4rem","0.4rem"]}
         >
@@ -110,7 +110,7 @@ const Navbar = () => {
         justify={'flex-end'}
         direction={'row'}
         spacing={6}
-        mr={["-1.9rem", "-1.5rem", "-1.5rem", "8.5rem"]}
+        mr={["-1.9rem", "-1.5rem", "3.5rem", "10rem"]}
         mt={["0.6rem", "0.1rem", "0.1rem", "0.1rem"]}
         ml={["1.9rem","1.4rem","",""]}
         >
@@ -135,7 +135,7 @@ const Navbar = () => {
                 fontSize={'sm'}
                 fontWeight={600}
                 variant={'outlne'}
-                mr={["1.5rem","","",""]}
+                mr={["1.5rem","1.5rem","-1rem","0.1rem"]}
                 _hover={{
                   color: "#7d9eff"
                 }}
@@ -169,7 +169,6 @@ const Navbar = () => {
         <Button 
           onClick={toggleColorMode}
           display={{ base: 'none', md: 'inline-flex' }}
-          
         >
           {colorMode === 'light' ? <MoonIcon/> : <SunIcon/>}
         </Button>
@@ -198,7 +197,7 @@ const DesktopNav = () => {
       <Flex
         gap="5rem"
       >
-        <Link href="/about">
+        {/* <Link href="/about">
           <Text
             fontWeight={600}
             color={linkColor}
@@ -208,9 +207,9 @@ const DesktopNav = () => {
           >
             About
           </Text>
-        </Link>
+        </Link> */}
 
-        <Link href="/privacy">
+        {/* <Link href="/privacy">
           <Text
             fontWeight={600}
             color={linkColor}
@@ -232,7 +231,7 @@ const DesktopNav = () => {
           >
             Terms
           </Text>
-        </Link>
+        </Link> */}
       </Flex>
     </Stack>
   );
@@ -303,7 +302,7 @@ const MobileNav = () => {
           </Text>
         </Link>
 
-        <Link href="/privacy">
+        {/* <Link href="/privacy">
           <Text
             fontWeight={600}
             color={linkColor}
@@ -325,7 +324,7 @@ const MobileNav = () => {
           >
             Terms
           </Text>
-        </Link>
+        </Link> */}
       </Flex>
 
       <Button 
