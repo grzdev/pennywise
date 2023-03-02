@@ -26,7 +26,7 @@ const LogInModule = () => {
   const header2Color = useColorModeValue("#f1f1f1","white")
   const TextColor2 = useColorModeValue("white","")
   const signUp = useColorModeValue("white","white")
-  const signUpBg = useColorModeValue("#e6e6e6","#cadeff")
+  const signUpBg = useColorModeValue("#e6e6e6","white")
   const signIn = useColorModeValue("#5092ff","#4f89e8")
   
 
@@ -84,9 +84,10 @@ const LogInModule = () => {
     <Container centerContent>
        <Flex
           mt={["5rem","5rem","6rem","4rem"]}
-          w={["21rem","21rem","24rem","28rem"]}
-          h={["31rem","31rem","32rem","35rem"]}
+          w={["20rem","20rem","24rem","28rem"]}
+          h={["32rem","32rem","32rem","35rem"]}
           bg={divColor}
+          boxShadow="2xl"
           justifyContent="center"
           alignContent="center"
           borderRadius="1rem 0 1rem 0"
@@ -123,7 +124,7 @@ const LogInModule = () => {
             mt="1.5rem"
           >
             <Heading
-              size={["lg","lg","md","lg"]}
+              size={["lg","lg","lg","lg"]}
               color={headerColor}
 
             >
@@ -131,7 +132,7 @@ const LogInModule = () => {
             </Heading>
             <Text
               color={header2Color}
-              fontSize={["0.8rem","","0.9rem","1rem"]}
+              fontSize={["0.8rem","0.8rem","0.9rem","1rem"]}
             >
              Securly login to your Trackdaily account.
             </Text>
@@ -157,9 +158,10 @@ const LogInModule = () => {
                     <Input
                       variant="filled"
                       size="lg"
-                      w={["18.2rem","18.2rem","20.7rem","24rem"]}
+                      w={["17.2rem","17.2rem","20.7rem","24rem"]}
+                      // h={["2.4rem","","",""]}
                       color="white"
-                      mt="0.5rem"
+                      // mt="0.5rem"
                       id='email'
                       bg={signUpBg}
                       onChange={(e: any)=>
@@ -188,7 +190,7 @@ const LogInModule = () => {
                       color="white"
                       bg={signUpBg}
                       size="lg"
-                      mt="0.5rem"
+                      // mt="0.5rem"
                       id='password'
                       onChange={(e:any)=>
                         setData({
@@ -199,7 +201,8 @@ const LogInModule = () => {
                       value={data.password}
                       type="password"
                       placeholder='Password'
-                      w={["18.2rem","18.2rem","20.7rem","24rem"]}
+                      // h={["2.4rem","","",""]}
+                      w={["17.2rem","17.2rem","20.7rem","24rem"]}
                     />
                   </Flex>
                 </FormControl>
@@ -231,8 +234,10 @@ const LogInModule = () => {
 
             <Flex
               flexDir="column"
-              ml={["1.4rem","1.4rem","1.7rem","2rem"]}
+              // ml={["1.4rem","1.4rem","1.7rem","2rem"]}
               gap="1rem"
+              justifyContent="center"
+              alignItems="center"
             >
               
               <Button
@@ -240,9 +245,9 @@ const LogInModule = () => {
                 color="white"
                 // onClick={handleLogin}
                 type="submit"
-                mt={["2.3rem","2rem","1.5rem","2rem"]}
+                mt={["3.3rem","2rem","2.5rem","3rem"]}
                 borderRadius="1rem 0 1rem 0"
-                w={["18.2rem","18.2rem","20.7rem","24rem"]}
+                w={["13.2rem","14.2rem","16.7rem","20rem"]}
               >
                 Sign in
               </Button>

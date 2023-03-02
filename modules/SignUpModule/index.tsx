@@ -21,13 +21,13 @@ import { CircularProgress, } from "@chakra-ui/react";
 
 
 const SignUpModule = () => {
-  const divColor = useColorModeValue("white","")
-  const headerColor = useColorModeValue("#4f89e8","#c6dbfb")
-  const TextColor2 = useColorModeValue("black","")
-  const signUp = useColorModeValue("#0059ec","#5088e4")
-  const TextColor3 = useColorModeValue("white","black")
-  const signIn = useColorModeValue("#0059ec","#4f89e8")
-  const button = useColorModeValue("#608dff","#084DA1")
+  const divColor = useColorModeValue("linear-gradient( 135deg, #FFA6B7 10%, #1E2AD2 100%)","linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%)")
+  const headerColor = useColorModeValue("white","#c6dbfb")
+  const TextColor2 = useColorModeValue("white","")
+  const signUp = useColorModeValue("white","white")
+  const signUpBg = useColorModeValue("#e6e6e6","white")
+  const header2Color = useColorModeValue("#f1f1f1","white")
+  const signIn = useColorModeValue("#5092ff","#4f89e8")
   const router = useRouter()
 
   const { signIWithGoogle } = useAuth()
@@ -69,21 +69,19 @@ const SignUpModule = () => {
   return (
     <Container centerContent>
     <Flex
-       mt={["4rem","4rem","4rem","4rem"]}
-       w={["","","","30rem"]}
-       h={["","","","40rem"]}
+       mt={["5rem","5rem","6rem","4rem"]}
+       w={["20.5rem","20.5rem","24rem","28rem"]}
+       h={["33rem","33rem","32rem","35rem"]}
        bg={divColor}
        // h={["","","","30rem"]}
        justifyContent="center"
        alignContent="center"
-       borderRadius="1rem"
+       borderRadius="1rem 0 1rem 0"
        flexDir="column"
      >
        <Flex
-         // justifyContent="center"
-         // alignItems="center"
-         mt={["","","","2rem"]}
-         ml={["","","","1.5rem"]}
+        mt={["2rem","2rem","2.4rem","2rem"]}
+        ml={["1.1rem","1.1rem","1rem","1.5rem"]}
        >
          <Flex
            mt={["-0.3rem", "-0.3rem", "-0.3rem", "-0.3rem"]}
@@ -109,31 +107,32 @@ const SignUpModule = () => {
 
        <Flex
          flexDir="column"
-         ml={["0.1rem","0.1rem","0.1rem","2rem"]}
+         ml={["1.3rem","1.3rem","1.5rem","2rem"]}
          mt="1.5rem"
        >
          <Heading
           size={["lg","lg","lg","lg"]}
+          color={headerColor}
          >
           Create a Secure Account
          </Heading>
          <Text
-              fontSize={["0.8rem","","",""]}
-
+          color={header2Color}
+          fontSize={["0.8rem","0.8rem","0.9rem","1rem"]}
          >
           Welcome to the future of budgeting
          </Text>
        </Flex>
 
        <Flex
-         ml={["0.1rem","0.1rem","0.1rem","2rem"]}
-         mt={["1.6rem","2rem","2rem","2rem"]}
+         ml={["1.4rem","1.4rem","1.7rem","2rem"]}
+         mt={["1rem","1.4rem","1.5rem","1.6rem"]}
          flexDir="column"
        >
            <FormControl>
                   <Flex
                     flexDir="column"
-                    mt="1rem"
+                    mt={["0.8rem","1rem","1rem","1rem"]}
                   >
                     <FormLabel
                       color={TextColor2}
@@ -143,9 +142,10 @@ const SignUpModule = () => {
                     </FormLabel>
                     <Input
                       variant="filled"
-                      // bg="#EDF2F7"
+                      bg={signUpBg}
+                      w={["17.2rem","17.2rem","20.7rem","24rem"]}
                       size="lg"
-                      mt="0.5rem"
+                      
                       id="email"
                       onChange={(e: any)=>
                         setData({
@@ -160,7 +160,7 @@ const SignUpModule = () => {
                   </Flex>
                   <Flex
                     flexDir="column"
-                    mt="1rem"
+                    mt={["0.8rem","1rem","1rem","1rem"]}
                   >
                     <FormLabel
                       color={TextColor2}
@@ -170,9 +170,9 @@ const SignUpModule = () => {
                     </FormLabel>
                     <Input
                       variant="filled"
-                      // bg="#EDF2F7"
+                      bg={signUpBg}
                       size="lg"
-                      mt="0.5rem"
+                      
                       id="password"
                       onChange={(e:any)=>
                         setData({
@@ -183,10 +183,17 @@ const SignUpModule = () => {
                       value={data.password}
                       type="password"
                       placeholder='Password'
+                      w={["17.2rem","17.2rem","20.7rem","24rem"]}
                     />
                   </Flex>
                 </FormControl>
 
+          <Flex
+            justifyContent="center"
+            alignItems="center"
+          >
+            {loading ? <CircularProgress isIndeterminate value={40} thickness='4px' size="2rem"/> : ''} 
+          </Flex>
          
        </Flex>
 
@@ -194,19 +201,18 @@ const SignUpModule = () => {
            flexDir="column"
            ml={["0.1rem","0.1rem","0.1rem","2rem"]}
            gap="1rem"
-           mt="2rem"
+          //  mt="2rem"
+           justifyContent="center"
+          alignItems="center"
          >
-          <Flex
-            justifyContent="center"
-            alignItems="center"
-          >
-            {loading ? <CircularProgress isIndeterminate value={40} thickness='4px' size="2rem"/> : ''} 
-          </Flex>
            <Button
              bg={signIn}
              color="white"
             //  onClick={handleSignup}
-             mt="1rem"
+            type="submit"
+                mt={["3.3rem","2rem","2.5rem","3rem"]}
+                borderRadius="1rem 0 1rem 0"
+                w={["13.2rem","14.2rem","16.7rem","20rem"]}
            >
               Create account
            </Button>
@@ -225,7 +231,9 @@ const SignUpModule = () => {
            mb="3rem"
            flexDir="row"
          >
-           <Text>
+           <Text
+             color={signUp}
+           >
              Already have an account?  
            </Text>
             <Text

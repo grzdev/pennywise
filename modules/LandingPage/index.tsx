@@ -35,7 +35,7 @@ const LandingPage = () => {
   const headerBg = useColorModeValue("#EEF4FC","white")
   const pgBg = useColorModeValue("#EEF4FC","#4b4b4b")
 
-  const secondDivCOlor = useColorModeValue("#262d45","linear-gradient(19deg, #21D4FD 0%, #B721FF 100%)")
+  const secondDivCOlor = useColorModeValue("#262d45","#628BFF")
 // background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
 // background-image: linear-gradient(90deg, #00DBDE 0%, #FC00FF 100%); 
 // background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
@@ -71,7 +71,7 @@ const LandingPage = () => {
                 w={["20rem", "30rem", "30rem", "30rem"]}
                 lineHeight={["3.9rem", "4.5rem", "4.5rem", "4.5rem"]}
                 mb="0.6rem"
-                mt={["6rem", "10rem", "10rem", "12rem"]}
+                mt={["3rem", "10rem", "10rem", "12rem"]}
                 ml={["", "", "", "6rem"]}
                 textAlign={["center", "initial"]}
                 fontFamily="'Roboto', sans-serif"
@@ -126,7 +126,7 @@ const LandingPage = () => {
           <Box
             ml={["0.2rem", "4rem", "3rem", "1rem"]}
             w={["27rem", "40rem", "40rem", "51rem"]}
-            mt={["2rem", "", "3rem", "4rem"]}
+            mt={["5.5rem", "5.5rem", "3rem", "4rem"]}
           >
             <Image
               src={SavingImage}
