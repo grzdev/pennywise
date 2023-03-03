@@ -31,7 +31,7 @@ const InputModal = () => {
 
   const { isOpen, onOpen, onClose } = useDisclosure()
 
-  const dailyInput = useAppSelector((state)=> state.dailyInput)
+//   const dailyInput = useAppSelector((state)=> state.dailyInput)
   const dispatch = useAppDispatch()
 
   const [dailyNameInput, setDailyNameInput] = useState(0)
