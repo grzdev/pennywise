@@ -11,7 +11,7 @@ import {
 import React from 'react'
 import Image from 'next/image'
 import AboutImg from "../../images/about1.png"
-import AboutImg2 from "../../images/about6.png"
+import AboutImg2 from "../../images/aboutpic.png"
 
 const About = () => {
   const headerBg = useColorModeValue("#EEF4FC","#256EC1")
@@ -26,14 +26,14 @@ const About = () => {
       maxW="container.lg"
     >
       <Flex
-        mt={["6rem", "1rem"]}
+        mt={["3rem","3rem","1rem", "1rem"]}
         flexDir={["column", "column", "column", "row"]}
         justifyContent={["center","","","flex-start"]}
         alignItems={["center","","","flex-start"]}
-        ml={["", "", "", "6rem"]}
+        ml={["", "", "", "12rem"]}
       >
         <VStack
-          mt={["6rem", "10rem", "10rem", "10rem"]}
+          mt={["3rem", "3rem", "10rem", "10rem"]}
         >
           <Flex
             bg={headerBg}
@@ -51,7 +51,7 @@ const About = () => {
               mt="-0.25rem"
               
             >
-              Our Mission
+              Mission
             </Heading>
           </Flex>
           <Heading
@@ -59,18 +59,19 @@ const About = () => {
             w={["20rem", "30rem", "30rem", "30rem"]}
             lineHeight={["3rem", "3rem", "3.6rem", "3.9rem"]}
             // mt={["4rem","2rem","2rem","10rem"]}
+            fontWeight={600}
             ml={["", "", "", "6rem"]}
             textAlign={["center", "initial"]}
-            fontFamily="'Roboto', sans-serif"
+            fontFamily="'Rubik', sans-serif"
           >
             To give everyone the power to better manage and keep track of their finances.
           </Heading>
         </VStack>
 
         <Box
-            ml={["0.2rem", "4rem", "3rem", "4.8rem"]}
+            ml={["0.2rem", "4rem", "3rem", "1.8rem"]}
             w={["27rem", "40rem", "40rem", "51rem"]}
-            mt={["2rem", "", "3rem", "3rem"]}
+            mt={["3rem", "3rem", "3rem", "3rem"]}
           >
             <Image
               src={AboutImg}
@@ -90,9 +91,9 @@ const About = () => {
           alignItems={["center","center","center","center"]}
         >
           <Box
-            // ml={["0.2rem", "4rem", "4rem", "-5rem"]}
+            ml={["0.2rem", "4rem", "4rem", "5rem"]}
             w={["27rem", "40rem", "40rem", "51rem"]}
-            mt={["17rem", "8rem", "8rem", "2rem"]}
+            mt={["6rem", "2rem", "3rem", "-2rem"]}
             mb={["6rem","6rem","7rem","0.1rem"]}
           >
             <Image
@@ -111,7 +112,6 @@ const About = () => {
               size="2xl"
               w={["20rem", "30rem", "30rem", "30rem"]}
               lineHeight={["2rem", "4.5rem", "4.5rem", "3rem"]}
-              ml={["", "", "", "6rem"]}
               mb={["2rem","","",""]}
               textAlign={["center", "initial"]}
               fontFamily="'Roboto', sans-serif"
@@ -122,7 +122,8 @@ const About = () => {
             <Flex
             >
               <Text
-                fontWeight={500}
+              ml={["", "", "", "-6rem"]}
+                fontWeight={550}
                 color={textColor}
                 fontSize={["1.1rem", "1.1rem", "1.1rem", "1.2rem"]}
                 mb={["0.4rem", "0.4rem", "0.4rem", "2rem"]}
@@ -130,9 +131,9 @@ const About = () => {
                 justifyContent="center"
                 alignItems="center"
                 textAlign={["center", "initial"]}
-                fontFamily="'DM Sans',sans-serif "
+                fontFamily="'Ubuntu', sans-serif"
               >
-               TrackDaily is the first online "Money tracking" app in West-Africa.
+               {/* TrackDaily is the first online "Money tracking" app in West-Africa.
                It first came about when the team noticed that they don't have
                an idea of how much they spend on a daily basis.<br/><br/>
 
@@ -141,7 +142,11 @@ const About = () => {
                It drove the team to find a solution.<br/><br/>
 
                TrackDaily is on a mission to help everyone budget their income better,
-               and we tend to be the best at this. From all of us at TrackDaily, Thank you ❤️
+               and we tend to be the best at this. From all of us at TrackDaily, Thank you ❤️ */}
+
+               This idea came to me at Unilorin one afternoon,  I had just finished a plate of Item 7, then the post item clarity hit me. <br/><br/>
+               The amount of money I spent that day alone could feed a Nursery 2 student at King's college for a week<br/><br/> 
+               " This no be life ", I said to myself. That night, I picked up my laptop and started coding...
               </Text>
             </Flex>
           </VStack>

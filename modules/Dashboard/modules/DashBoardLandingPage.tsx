@@ -17,7 +17,7 @@ import {
   PopoverBody,
   PopoverFooter
 } from '@chakra-ui/react'
-import React from 'react'
+import React, { useState } from 'react'
 import router from "next/router";
 import { MdTrackChanges } from "react-icons/md"
 import { useAuth } from 'context/AuthContext';
@@ -46,6 +46,8 @@ import {
 // }
 
 const DashBoardLandingPage = () => {
+  const [input, setInput] = useState('')
+
   const { colorMode, toggleColorMode } = useColorMode()
   const { user, logout } = useAuth()
 

@@ -16,10 +16,13 @@ import {
     InputGroup,
     InputLeftElement,
 } from '@chakra-ui/react'
-import React from 'react'
+import React, { useState } from 'react'
 import { AddIcon } from "@chakra-ui/icons"
 import { IoFastFoodOutline, IoFastFoodSharp } from "react-icons/io5"
 import { TbCurrency, TbCurrencyNaira } from 'react-icons/tb'
+import { useAppSelector, useAppDispatch } from 'redux/hooks';
+import { addInput } from 'redux/slices/dailyInputSlice'
+
 
 const InputModal = () => {
   const button = useColorModeValue("#4F89E8","#4F89E8")
@@ -27,6 +30,17 @@ const InputModal = () => {
   const text = useColorModeValue("#0081e7","")
 
   const { isOpen, onOpen, onClose } = useDisclosure()
+
+  const dailyInput = useAppSelector((state)=> state.dailyInput)
+  const dispatch = useAppDispatch()
+
+  const [dailyNameInput, setDailyNameInput] = useState(0)
+
+   const handleAddInput = () => {
+    if(!dailyNameInput)return
+    dispatch(addInput(dailyNameInput))
+    setDailyNameInput(0)
+  }
   
 
   return (
@@ -156,6 +170,8 @@ const InputModal = () => {
                             width="8rem"
                             type='number'
                             variant="filled"
+                            value={dailyNameInput}
+                            // onChange={(e)=> dailyNameInput(e.target.value)}
                         />
                     </InputGroup>
                 </Flex>
@@ -177,8 +193,9 @@ const InputModal = () => {
                 colorScheme='blue'
                 borderRadius="full" mr={3}
                 size={["sm","sm","md","md"]}
+                onClick={()=> handleAddInput()}
             >
-              Next
+              Save
             </Button>
           </ModalFooter>
         </ModalContent>

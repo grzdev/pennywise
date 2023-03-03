@@ -94,7 +94,8 @@ const LandingPage = () => {
                   justifyContent="center"
                   alignItems="center"
                   textAlign={["center", "initial"]}
-                  fontFamily="'DM Sans',sans-serif "
+                 fontFamily="'Ubuntu', sans-serif"
+                  
                 >
                   TrackDaily helps customers achieve their budget goals by storing the 
                   amount they spend on a daily basis,
@@ -187,7 +188,8 @@ const LandingPage = () => {
                   justifyContent="center"
                   alignItems="center"
                   textAlign={["center", "initial"]}
-                  fontFamily="'poppins',sans-serif "
+                  fontFamily="'Ubuntu', sans-serif"
+                  
                 >
                   It's hard to keep track of how much we spend in a day, this may result to people spending more than they plan to.
                   TrackDaily helps to keep tabs on what we spend on and the total amount spent.
@@ -261,7 +263,8 @@ const LandingPage = () => {
                   justifyContent="center"
                   alignItems="center"
                   textAlign={["center", "initial"]}
-                  fontFamily="'DM Sans',sans-serif "
+                  // fontFamily="'DM Sans',sans-serif "
+                fontFamily="'Ubuntu', sans-serif"
                 >
                 A graph that shows your spending data will be provided to you so you can take note of any spike or decrease in expenses.
                 </Text>
