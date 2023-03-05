@@ -24,6 +24,6 @@ export const {
 
 } = dailyInputSlice.actions
 
-export const selectCount = (state: RootState) => state.dailyInput.input
+export const dailyInput = (state: RootState) => state.dailyInput.input
 
 export default dailyInputSlice.reducer 

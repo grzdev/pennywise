@@ -24,13 +24,13 @@ import {
 
 const LandingPage = () => {
   const buttonColor = useColorModeValue("linear-gradient( 135deg, #FFA6B7 10%, #1E2AD2 100%)","linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%)")
-  const textColor = useColorModeValue("grey","#b6b6b6")
+  const textColor = useColorModeValue("#6a6a6a","#b6b6b6")
   const buttonTextColor = useColorModeValue("white","white")
   const divColor = useColorModeValue("#2469BE","#3d99ff")
   const vsgraph = useColorModeValue("#b1d2ff","#b1d2ff")
   const learnmore = useColorModeValue("#97c3ff","#97c3ff")
   const divColor2 = useColorModeValue("linear-gradient( 135deg, #FFA6B7 10%, #1E2AD2 100%)","linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%)")
-  const signUp = useColorModeValue("#4e99ff","#73aeff")
+  const signUp = useColorModeValue("#3289ff","#4e99ff")
   // const secondDivCOlor = useColorModeValue("#e6f1ff","")
   const headerBg = useColorModeValue("#EEF4FC","white")
   const pgBg = useColorModeValue("#EEF4FC","#EEF4FC")
@@ -88,7 +88,7 @@ const LandingPage = () => {
                 <Text
                   fontWeight={500}
                   color={textColor}
-                  fontSize={["1.1rem", "1.1rem", "1.1rem", "1.2rem"]}
+                  fontSize={["1.1rem", "1.1rem", "1.1rem", "1.3rem"]}
                   mb={["0.4rem", "0.4rem", "0.4rem", "2rem"]}
                   w={["18rem", "30rem", "30rem", "23.6rem"]}
                   justifyContent="center"
@@ -132,6 +132,8 @@ const LandingPage = () => {
             <Image
               src={SavingImage}
               alt=""
+              priority
+              placeholder="blur"
             />
           </Box>
         </Flex>
@@ -224,6 +226,8 @@ const LandingPage = () => {
             <Image
               src={GrapgImage}
               alt=""
+              placeholder="blur"
+              priority
             />
           </Box>
 
@@ -257,7 +261,7 @@ const LandingPage = () => {
                 <Text
                   fontWeight={500}
                   color={textColor}
-                  fontSize={["1.1rem", "1.1rem", "1.1rem", "1.2rem"]}
+                  fontSize={["1.1rem", "1.1rem", "1.1rem", "1.3rem"]}
                   mb={["0.4rem", "0.4rem", "0.4rem", "2rem"]}
                   w={["18rem", "30rem", "30rem", "23.6rem"]}
                   justifyContent="center"

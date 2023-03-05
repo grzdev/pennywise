@@ -40,20 +40,25 @@ import {
   Legend
  } from "recharts"
  import InputModal from '../components/input-modal';
+ import { useDispatch, useSelector } from 'react-redux';
+ import { RootState } from 'redux/store';
 
 // interface Props {
 //     children?: React.ReactNode
 // }
 
 const DashBoardLandingPage = () => {
-  const [input, setInput] = useState('')
+  // const [input, setInput] = useState('')
 
-  const { colorMode, toggleColorMode } = useColorMode()
-  const { user, logout } = useAuth()
+  // const { colorMode, toggleColorMode } = useColorMode()
+  // const { user, logout } = useAuth()
 
-  const { onOpen, onClose, isOpen } = useDisclosure()
-  const firstFieldRef = React.useRef(null)
-  
+  // const { onOpen, onClose, isOpen } = useDisclosure()
+  // const firstFieldRef = React.useRef(null)
+  const dailyInput = useSelector(
+    (state: RootState)=> state.dailyInput.input
+  )
+
   const header = useColorModeValue("white","white")
   const SecondBox = useColorModeValue("#407adf","#70a1c8")
   const pieColor = useColorModeValue("#4F89E8","#4F89E8")
@@ -221,7 +226,7 @@ const DashBoardLandingPage = () => {
                 <Heading
                 size={["sm","sm","md","lg"]}
                 >
-                  5,000
+                 {dailyInput}
                 </Heading>
               </Flex>
             </Flex>

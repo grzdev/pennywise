@@ -31,8 +31,8 @@ const InputModal = () => {
 
   const { isOpen, onOpen, onClose } = useDisclosure()
 
-//   const dailyInput = useAppSelector((state)=> state.dailyInput)
   const dispatch = useAppDispatch()
+  
 
   const [dailyNameInput, setDailyNameInput] = useState(0)
 
@@ -40,6 +40,7 @@ const InputModal = () => {
     if(!dailyNameInput)return
     dispatch(addInput(dailyNameInput))
     setDailyNameInput(0)
+    onClose()
   }
   
 
@@ -171,7 +172,7 @@ const InputModal = () => {
                             type='number'
                             variant="filled"
                             value={dailyNameInput}
-                            // onChange={(e)=> dailyNameInput(e.target.value)}
+                            onChange={(e)=> setDailyNameInput(e.target.valueAsNumber)}
                         />
                     </InputGroup>
                 </Flex>

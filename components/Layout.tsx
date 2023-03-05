@@ -13,7 +13,7 @@ const Layout = ({ children }: Props) => {
     <div>
         <Head>
             <title>Track Daily</title>
-            <meta name="description" content="" />
+            <meta name="description" content="A site that tracks how much you spend daily." />
             <meta name="viewport" content="width=device-width, initial-scale=1" />
             <link rel="icon" href="/favicon.ico" />
         </Head>

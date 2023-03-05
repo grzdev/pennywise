@@ -17,7 +17,7 @@ const About = () => {
   const headerBg = useColorModeValue("#EEF4FC","#256EC1")
   const header = useColorModeValue("#0F60D6","whitre")
   const textColor = useColorModeValue("grey","#b6b6b6")
-  const secondDivCOlor = useColorModeValue("#e6f1ff","")
+  const secondDivCOlor = useColorModeValue("#e6f1ff","#333f55")
 
 
   return (
@@ -76,6 +76,8 @@ const About = () => {
             <Image
               src={AboutImg}
               alt=""
+              placeholder="blur"
+              priority
             />
           </Box>
       </Flex>
@@ -93,12 +95,14 @@ const About = () => {
           <Box
             ml={["0.2rem", "4rem", "4rem", "5rem"]}
             w={["27rem", "40rem", "40rem", "51rem"]}
-            mt={["6rem", "2rem", "3rem", "-2rem"]}
+            mt={["10rem", "10rem", "7rem", "-2rem"]}
             mb={["6rem","6rem","7rem","0.1rem"]}
           >
             <Image
               src={AboutImg2}
               alt=""
+              placeholder="blur"
+              priority
             />
           </Box>
 
@@ -145,7 +149,7 @@ const About = () => {
                and we tend to be the best at this. From all of us at TrackDaily, Thank you ❤️ */}
 
                This idea came to me at Unilorin one afternoon,  I had just finished a plate of Item 7, then the post item clarity hit me. <br/><br/>
-               The amount of money I spent that day alone could feed a Nursery 2 student at King's college for a week<br/><br/> 
+               The amount of money I spent that day could feed a Nursery 2 student at King's college for a week<br/><br/> 
                " This no be life ", I said to myself. That night, I picked up my laptop and started coding...
               </Text>
             </Flex>

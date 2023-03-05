@@ -20,20 +20,22 @@ import {
   AiFillLinkedin,
   AiFillMail,
   AiFillTwitterCircle,
+  AiOutlineTwitter,
   AiFillTwitterSquare
 } from 'react-icons/ai'
 import { useColorModeValue } from '@chakra-ui/react'
 import Link from 'next/link'
 import { SiGmail, SiNetlify } from 'react-icons/si'
+import { FaLinkedinIn } from "react-icons/fa"
 
 const Footer = () => {
-  const textColor = useColorModeValue("#7a7a7a","#b9b9b9")
+  const textColor = useColorModeValue("black","#b9b9b9")
   const gmail = useColorModeValue("#F04235","#b6b6b6")
-  const footer = useColorModeValue("#eceaea","black")
+  const footer = useColorModeValue("#d4d4d4","black")
   const headerColor = useColorModeValue("#4f89e8","#c6dbfb")
   const tradeMark = useColorModeValue("black","white")
   const dami = useColorModeValue("#4F89E8","#C6DBFB")
-  const icons = useColorModeValue("#7a7a7a","#b9b9b9")
+  const icons = useColorModeValue("#545454","#b9b9b9")
   return (
     <Flex
       flexDir={["column","column","column","column"]}
@@ -220,7 +222,7 @@ const Footer = () => {
       >
         <Link href="https://github.com/19zay?tab=repositories">
           <Text
-            fontSize={["1.1rem","1.1rem","1.3rem","1.5rem" ]}
+            fontSize={["1.2rem","1.2rem","1.3rem","1.5rem" ]}
             color={icons}
           >
             <AiFillGithub/>
@@ -228,15 +230,15 @@ const Footer = () => {
         </Link>
         <Link href="https://twitter.com/grzdev_">
           <Text
-            fontSize={["1.1rem","1.1rem","1.3rem","1.5rem" ]}
+            fontSize={["1.2rem","1.2rem","1.3rem","1.5rem" ]}
             color={icons}
           >
-            <AiFillTwitterCircle/>
+            <AiOutlineTwitter/>
           </Text>
         </Link>
         <Link href="https://www.linkedin.com/in/damilola-oyeniyi-97805b23a/">
           <Text
-            fontSize={["1.1rem","1.1rem","1.3rem","1.5rem" ]}
+            fontSize={["1.2rem","1.2rem","1.3rem","1.5rem" ]}
             color={icons}
           >
             <AiFillLinkedin/>
@@ -244,7 +246,7 @@ const Footer = () => {
         </Link>
         <Link href="https://app.netlify.com/teams/19zay/overview">
           <Text
-            fontSize={["1.1rem","1.1rem","1.3rem","1.5rem" ]}
+            fontSize={["1.2rem","1.2rem","1.3rem","1.5rem" ]}
             color={icons}
           >
             <SiNetlify/>
@@ -252,7 +254,7 @@ const Footer = () => {
         </Link>
         <Link href="https://www.instagram.com/grzdev_/">
           <Text
-            fontSize={["1.1rem","1.1rem","1.3rem","1.5rem" ]}
+            fontSize={["1.1rem","1.2rem","1.3rem","1.5rem" ]}
             color={icons}
           >
             <AiFillInstagram/>
