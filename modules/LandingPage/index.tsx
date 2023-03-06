@@ -30,7 +30,7 @@ const LandingPage = () => {
   const vsgraph = useColorModeValue("#b1d2ff","#b1d2ff")
   const learnmore = useColorModeValue("#97c3ff","#97c3ff")
   const divColor2 = useColorModeValue("linear-gradient( 135deg, #FFA6B7 10%, #1E2AD2 100%)","linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%)")
-  const signUp = useColorModeValue("#3289ff","#4e99ff")
+  const signUp = useColorModeValue("#3289ff","#3289ff")
   // const secondDivCOlor = useColorModeValue("#e6f1ff","")
   const headerBg = useColorModeValue("#EEF4FC","white")
   const pgBg = useColorModeValue("#EEF4FC","#EEF4FC")
@@ -277,6 +277,23 @@ const LandingPage = () => {
           </VStack>
 
         </Flex>
+        
+        {/* <Flex
+          justifyContent={["center","center","center","center"]}
+          alignItems={["center","center","center","center"]}
+          mt={["9rem", "9rem", "6rem","6rem"]}
+          mb={["","","","8rem"]}
+          flexDir={["column", "column", "column", "row"]}
+          bg={secondDivCOlor}
+          w={["30rem","50rem","70rem ","100rem"]}
+          h={["35rem","30rem","35rem","40rem"]}
+        >
+          <Heading
+            color="white"
+          >
+            Budget div
+          </Heading>
+        </Flex> */}
 
         <Flex
           w={["20rem","30rem","40rem","90rem"]}

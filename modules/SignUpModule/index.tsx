@@ -190,12 +190,7 @@ const SignUpModule = () => {
                   </Flex>
                 </FormControl>
 
-          <Flex
-            justifyContent="center"
-            alignItems="center"
-          >
-            {loading ? <CircularProgress isIndeterminate value={40} thickness='4px' size="2rem"/> : ''} 
-          </Flex>
+          
          
        </Flex>
 
@@ -210,7 +205,7 @@ const SignUpModule = () => {
            <Button
              bg={signIn}
              color="white"
-            //  onClick={handleSignup}
+             onClick={handleSignup}
             type="submit"
                 mt={["3.3rem","2rem","2.5rem","3rem"]}
                 borderRadius="1rem 0 1rem 0"
@@ -249,6 +244,13 @@ const SignUpModule = () => {
             </Text>
          </Flex>
      </Flex>
+
+     <Flex
+            justifyContent="center"
+            alignItems="center"
+          >
+            {loading ? <CircularProgress isIndeterminate value={40} thickness='4px' size="2rem"/> : ''} 
+          </Flex>
  </Container>
   )
 }

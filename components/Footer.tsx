@@ -31,10 +31,10 @@ import { FaLinkedinIn } from "react-icons/fa"
 const Footer = () => {
   const textColor = useColorModeValue("black","#b9b9b9")
   const gmail = useColorModeValue("#F04235","#b6b6b6")
-  const footer = useColorModeValue("#d4d4d4","black")
-  const headerColor = useColorModeValue("#4f89e8","#c6dbfb")
+  const footer = useColorModeValue("#e3eeff","black")
+  const headerColor = useColorModeValue("#2d5ba6","#c6dbfb")
   const tradeMark = useColorModeValue("black","white")
-  const dami = useColorModeValue("#4F89E8","#C6DBFB")
+  const dami = useColorModeValue("#2d5ba6","#C6DBFB")
   const icons = useColorModeValue("#545454","#b9b9b9")
   return (
     <Flex
@@ -179,7 +179,7 @@ const Footer = () => {
           >
             <Text 
               mb="0.5rem" 
-              fontSize={["0.7rem","0.7rem","0.8rem","0.8rem" ]}  
+              fontSize={["0.75rem","0.75rem","0.9rem","0.9rem" ]}  
               color={textColor}
               >
               trackdaily23@gmail.com
@@ -211,7 +211,7 @@ const Footer = () => {
         <Text 
           fontWeight={600}
           color={dami}
-          fontSize={["0.7rem","0.7rem","0.8rem","0.8rem" ]}
+          fontSize={["0.75rem","0.75rem","0.85rem","0.85rem" ]}
         >
         Oyeniyi Damilola
         </Text>

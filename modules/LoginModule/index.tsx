@@ -226,13 +226,6 @@ const LogInModule = () => {
               </Link>
             </Flex> */}
 
-              <Flex
-                justifyContent="center"
-                alignItems="center"
-              >
-                {loading ? <CircularProgress isIndeterminate value={40} thickness='4px' size="2rem"/> : ''} 
-              </Flex>
-
             <Flex
               flexDir="column"
               // ml={["1.4rem","1.4rem","1.7rem","2rem"]}
@@ -244,7 +237,7 @@ const LogInModule = () => {
               <Button
                 bg={signIn}
                 color="white"
-                // onClick={handleLogin}
+                onClick={handleLogin}
                 type="submit"
                 mt={["3.3rem","2rem","2.5rem","3rem"]}
                 borderRadius="1rem 0 1rem 0"
@@ -284,6 +277,13 @@ const LogInModule = () => {
                </Text>
             </Flex>
         </Flex>
+        
+        <Flex
+                justifyContent="center"
+                alignItems="center"
+              >
+                {loading ? <CircularProgress isIndeterminate value={40} thickness='4px' size="2rem"/> : ''} 
+              </Flex>
     </Container>
   )
 }
