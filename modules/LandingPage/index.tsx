@@ -14,8 +14,9 @@ import {
   } from '@chakra-ui/react'
   import { Inter } from '@next/font/google'
   import Image from 'next/image'
-  import SavingImage from '../../images/mainpic4.png'
-  import GrapgImage from '../../images/pic2.png'
+  import DivPic1 from '../../images/mainpicture7.png'
+  import DivPic2 from '../../images/pic2.png'
+  import DivPic3 from '../../images/budgetpic1.png'
   import React from 'react'
   import { VscGraph } from 'react-icons/vsc'
   import Link from 'next/link'
@@ -36,17 +37,6 @@ const LandingPage = () => {
   const pgBg = useColorModeValue("#EEF4FC","#EEF4FC")
 
   const secondDivCOlor = useColorModeValue("#262d45","#333f55")
-// background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
-// background-image: linear-gradient(90deg, #00DBDE 0%, #FC00FF 100%); 
-// background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
-// background-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);
-// background-image: linear-gradient(180deg, #A9C9FF 0%, #FFBBEC 100%);
-// background-image: linear-gradient( 135deg, #FFA6B7 10%, #1E2AD2 100%);
-// background-image: linear-gradient( 135deg, #6B73FF 10%, #000DFF 100%);
-// background-image: linear-gradient( 135deg, #97ABFF 10%, #123597 100%);
-
-
-
 
 
   return (
@@ -125,12 +115,13 @@ const LandingPage = () => {
           </VStack>
           
           <Box
-            ml={["0.2rem", "4rem", "3rem", "1rem"]}
+            // ml={["0.2rem", "4rem", "3rem", "1rem"]}
+            mr={["","","","4rem"]}
             w={["27rem", "40rem", "40rem", "51rem"]}
-            mt={["5.5rem", "5.5rem", "3rem", "4rem"]}
+            mt={["5.5rem", "5.5rem", "3rem", "-1rem"]}
           >
             <Image
-              src={SavingImage}
+              src={DivPic1}
               alt=""
               priority
               placeholder="blur"
@@ -142,15 +133,15 @@ const LandingPage = () => {
           alignItems={["center","center","center","center"]}
           mt={["9rem", "9rem", "6rem","6rem"]}
           mb={["","","","8rem"]}
-          flexDir={["column", "column", "column", "row"]}
+          flexDir={["column", "column", "column", "column"]}
           bg={secondDivCOlor}
           w={["30rem","50rem","70rem ","100rem"]}
           h={["35rem","30rem","35rem","40rem"]}
         >
           <Flex
             mr={["","","","1.7rem"]}
-            mt={["9rem","","","1rem"]}
-            ml={["","","","10rem"]}
+            mt={["9rem","","","9rem"]}
+            // ml={["","","","10rem"]}
           >
             <VscGraph
               fontSize="5rem"
@@ -164,13 +155,13 @@ const LandingPage = () => {
               >
                 <Heading
                   size="xl"
-                  w={["20rem", "30rem", "30rem", "45rem"]}
+                  w={["20rem", "30rem", "30rem", "50rem"]}
                   noOfLines={[3,3,3,1]}
-                  mt={["1rem","","","10rem"]}
-                  lineHeight={["2rem", "4.5rem", "2rem", "2.3rem"]}
-                  mb={["0.4rem", "0.4rem", "0.5rem", "0.2rem"]}
-                  ml={["", "", "", "-15rem"]}
-                  textAlign={["center", "initial"]}
+                  mt={["1rem","1rem","","0.1rem"]}
+                  lineHeight={["2rem", "4.5rem", "2.7rem", "3.5rem"]}
+                  // mb={["0.4rem", "0.4rem", "0.5rem", "0.2rem"]}
+                  // ml={["", "", "", "-15rem"]}
+                  textAlign={["center"]}
                   fontFamily="'poppins', sans-serif"
                   color={headerBg}
                 >
@@ -180,7 +171,7 @@ const LandingPage = () => {
               <Fade
                 in={true}
               >
-                <Text
+                {/* <Text
                   fontWeight={500}
                   color={pgBg}
                   fontSize={["1.1rem", "1.1rem", "1.1rem", "1.3rem"]}
@@ -195,18 +186,18 @@ const LandingPage = () => {
                 >
                   It's hard to keep track of how much we spend in a day, this may result to people spending more than they plan to.
                   TrackDaily helps to keep tabs on what we spend on and the total amount spent.
-                </Text>
+                </Text> */}
               </Fade>
               <Fade
                 in={true}
               >
                 <Link href={"/about"}>
                   <Text
-                    ml={["","","","-30rem"]}
+                    // ml={["","","","-30rem"]}
                     color={learnmore}
                     fontWeight={500}
                     fontSize="1.1rem"
-                    mt={["1rem", "-0.4rem", "-0.4rem", "-2rem"]}
+                    mt={["1rem", "-0.4rem", "-0.4rem", "-1rem"]}
                     mb={["10rem","","",""]}
                   >
                     Learn more <ChevronRightIcon/>
@@ -219,23 +210,26 @@ const LandingPage = () => {
           flexDir={["column", "column", "column", "row"]}
         >
           <Box
-            ml={["0.2rem", "4rem", "4rem", "-5rem"]}
             w={["27rem", "40rem", "40rem", "51rem"]}
             mt={["8rem", "", "3rem", "-3rem"]}
           >
             <Image
-              src={GrapgImage}
+              src={DivPic2}
               alt=""
               placeholder="blur"
               priority
             />
           </Box>
 
-          <VStack
+          <Flex
             w={["","","",""]}
             h={["18rem","","","25rem"]}
             borderRadius="1.2rem"
             mt={["0.1rem", "5rem", "2rem", "7rem"]}
+            flexDir="column"
+            justifyContent="center"
+            alignItems="center"
+            ml={["","","","3rem"]}
           >
             <Fade
               in={true}
@@ -245,9 +239,9 @@ const LandingPage = () => {
                 w={["20rem", "30rem", "30rem", "30rem"]}
                 lineHeight={["2rem", "4.5rem", "3.5rem", "3rem"]}
                 mb="0.6rem"
-                ml={["", "", "", "6rem"]}
+                // ml={["", "", "", "6rem"]}
                 textAlign={["center", "initial"]}
-                fontFamily="'Roboto', sans-serif"
+                fontFamily="'Poppins', sans-serif"
               >
                 Visualize your daily and weekly expenses.
               </Heading>
@@ -274,26 +268,45 @@ const LandingPage = () => {
                 </Text>
               </Fade>
             </Flex>
-          </VStack>
+          </Flex>
 
         </Flex>
         
-        {/* <Flex
+        <Flex
           justifyContent={["center","center","center","center"]}
           alignItems={["center","center","center","center"]}
           mt={["9rem", "9rem", "6rem","6rem"]}
           mb={["","","","8rem"]}
-          flexDir={["column", "column", "column", "row"]}
+          flexDir={["column", "column", "column", "column"]}
           bg={secondDivCOlor}
           w={["30rem","50rem","70rem ","100rem"]}
-          h={["35rem","30rem","35rem","40rem"]}
+          h={["45rem","30rem","52rem","53rem"]}
         >
-          <Heading
-            color="white"
+          <Flex
+            w={["27rem", "27rem", "40rem", "51rem"]}
+            mt={["-1.5rem","-1.5rem","-3rem","-7rem"]}
           >
-            Budget div
-          </Heading>
-        </Flex> */}
+            <Image
+              src={DivPic3}
+              alt=""
+            />
+          </Flex>
+          <Flex
+            alignItems="center"
+            justifyContent="center"
+          >
+            <Heading
+              textAlign="center"
+              color="white"
+              size="2xl"
+                lineHeight={["3rem", "3rem", "3.5rem", "4rem"]}
+                w={["20rem", "30rem", "40rem", "80rem"]}
+                fontFamily="'Poppins', sans-serif"
+            >
+              Take control of your finances <br/> with our budget feature.
+            </Heading>
+          </Flex>
+        </Flex>
 
         <Flex
           w={["20rem","30rem","40rem","90rem"]}

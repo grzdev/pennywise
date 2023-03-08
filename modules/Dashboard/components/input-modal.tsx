@@ -35,16 +35,53 @@ const InputModal = () => {
   const modal3 = useDisclosure()
   const modal4 = useDisclosure()
   const modal5 = useDisclosure()
-
-  const dispatch = useAppDispatch()
   
 
-  const [dailyNameInput, setDailyNameInput] = useState(0)
+  const [dailyNameInput, setDailyNameInput] = useState({
+    food: 0,
+    transit: 0,
+    data: 0,
+    transfers: 0,
+    others: 0
+  })
+
+  const handleFoodChange = (e: { target: { valueAsNumber: any } }) => {
+    setDailyNameInput({
+        ...dailyNameInput,
+       food: e.target.valueAsNumber
+  })
+    console.log(dailyNameInput.food)
+  }
+
+  const handleTransitChange = (e: { target: { valueAsNumber: any } }) => {
+    setDailyNameInput({
+        ...dailyNameInput,
+       transit: e.target.valueAsNumber
+  })
+  }
+
+  const handleDataChange = (e: { target: { valueAsNumber: any } }) => {
+    setDailyNameInput({
+        ...dailyNameInput,
+       data: e.target.valueAsNumber
+  })
+  }
+
+  const handleTransfersChange = (e: { target: { valueAsNumber: any } }) => {
+    setDailyNameInput({
+        ...dailyNameInput,
+       transfers: e.target.valueAsNumber
+  })
+  }
+
+  const handleOthersChange = (e: { target: { valueAsNumber: any } }) => {
+    setDailyNameInput({
+        ...dailyNameInput,
+       others: e.target.valueAsNumber
+  })
+  }
 
    const handleAddInput = () => {
-    if(!dailyNameInput)return
-    dispatch(addInput(dailyNameInput))
-    setDailyNameInput(0)
     modal1.onClose()
     modal2.onClose()
     modal3.onClose()
@@ -84,21 +121,27 @@ const InputModal = () => {
                 justifyContent="center"
                 mt={["1.5rem","1.5rem","1.5rem","2rem"]}
             >
-                <Text 
-                 mt={["0.2rem","0.2rem","0.2rem","0.3rem"]}
-                 fontSize={["1.3rem","1.3rem","1.7rem","2rem"]} 
-                 color={header}
-                 mr="0.1rem"
+                <Flex
+                    flexDir="column"
+                    alignItems="center"
+                    justifyContent="center"
                 >
-                    <IoFastFoodSharp/>
-                </Text>
-                <Text 
-                 fontSize={["1.7rem","1.7rem","2rem","2.4rem"]} 
-                 fontWeight={700}
-                 color={header}
-                 >
-                    Food
-                </Text>
+                    <Text 
+                    mt={["-0.05rem","-0.05rem","0.2rem","0.3rem"]}
+                    fontSize={["1.3rem","1.3rem","1.7rem","2rem"]} 
+                    color={header}
+                    mr="0.1rem"
+                    >
+                        <IoFastFoodSharp/>
+                    </Text>
+                    <Text 
+                    fontSize={["1.9rem","1.9rem","2.2rem","2.6rem"]} 
+                    fontWeight={700}
+                    color={header}
+                    >
+                        Food
+                    </Text>
+                </Flex>
             </Flex>
           </ModalHeader>
           <ModalCloseButton />
@@ -183,8 +226,8 @@ const InputModal = () => {
                             type='number'
                             variant="filled"
                             placeholder='Amount'
-                            // value={dailyNameInput}
-                            onChange={(e)=> setDailyNameInput(e.target.valueAsNumber)}
+                            value={dailyNameInput.food}
+                            onChange={handleFoodChange}
                         />
                     </InputGroup>
                 </Flex>
@@ -231,21 +274,27 @@ const InputModal = () => {
                 justifyContent="center"
                 mt={["1.5rem","1.5rem","1.5rem","2rem"]}
             >
-                <Text 
-                 mt={["0.2rem","0.2rem","0.2rem","0.3rem"]}
-                 fontSize={["1.3rem","1.3rem","1.7rem","2rem"]} 
-                 color={header}
-                 mr="0.1rem"
+                <Flex
+                    flexDir="column"
+                    justifyContent="center"
+                    alignItems="center"
                 >
-                    <IoBusOutline/>
-                </Text>
-                <Text 
-                 fontSize={["1.7rem","1.7rem","2rem","2.4rem"]} 
-                 fontWeight={700}
-                 color={header}
-                 >
-                    Transit 
-                </Text>
+                    <Text 
+                    mt={["-0.09rem","-0.05rem","0.2rem","0.3rem"]}
+                    fontSize={["1.3rem","1.3rem","1.7rem","2rem"]} 
+                    color={header}
+                    mr="0.1rem"
+                    >
+                        <IoBusOutline/>
+                    </Text>
+                    <Text 
+                    fontSize={["1.9rem","1.9rem","2.2rem","2.6rem"]}
+                    fontWeight={700}
+                    color={header}
+                    >
+                        Transit 
+                    </Text>
+                </Flex>
             </Flex>
           </ModalHeader>
           <ModalCloseButton>
@@ -335,8 +384,8 @@ const InputModal = () => {
                             type='number'
                             variant="filled"
                             placeholder='Amount'
-                            // value={dailyNameInput}
-                            onChange={(e)=> setDailyNameInput(e.target.valueAsNumber)}
+                            value={dailyNameInput.transit}
+                            onChange={handleTransitChange}
                         />
                     </InputGroup>
                 </Flex>
@@ -383,21 +432,27 @@ const InputModal = () => {
                 justifyContent="center"
                 mt={["1.5rem","1.5rem","1.5rem","2rem"]}
             >
-                <Text 
-                 mt={["0.2rem","0.2rem","0.2rem","0.3rem"]}
-                 fontSize={["1.3rem","1.3rem","1.7rem","2rem"]} 
-                 color={header}
-                 mr="0.1rem"
+                <Flex
+                    flexDir="column"
+                    justifyContent="center"
+                    alignItems="center"
                 >
-                   <IoWifi/>
-                </Text>
-                <Text 
-                 fontSize={["1.7rem","1.7rem","2rem","2.4rem"]} 
-                 fontWeight={700}
-                 color={header}
-                 >
-                    Data 
-                </Text>
+                    <Text 
+                    mt={["-0.05rem","-0.05rem","0.2rem","0.3rem"]}
+                    fontSize={["1.3rem","1.3rem","1.7rem","2rem"]} 
+                    color={header}
+                    mr="0.1rem"
+                    >
+                    <IoWifi/>
+                    </Text>
+                    <Text 
+                    fontSize={["1.9rem","1.9rem","2.2rem","2.6rem"]}
+                    fontWeight={700}
+                    color={header}
+                    >
+                        Data 
+                    </Text>
+                </Flex>
             </Flex>
           </ModalHeader>
           <ModalCloseButton>
@@ -487,8 +542,8 @@ const InputModal = () => {
                             type='number'
                             variant="filled"
                             placeholder='Amount'
-                            // value={dailyNameInput}
-                            onChange={(e)=> setDailyNameInput(e.target.valueAsNumber)}
+                            value={dailyNameInput.data}
+                            onChange={handleDataChange}
                         />
                     </InputGroup>
                 </Flex>
@@ -535,21 +590,27 @@ const InputModal = () => {
                 justifyContent="center"
                 mt={["1.5rem","1.5rem","1.5rem","2rem"]}
             >
-                <Text 
-                 mt={["0.2rem","0.2rem","0.2rem","0.3rem"]}
-                 fontSize={["1.3rem","1.3rem","1.7rem","2rem"]} 
-                 color={header}
-                 mr="0.1rem"
+                <Flex
+                    flexDir="column"
+                    justifyContent="center"
+                    alignItems="center"
                 >
-                   <BiTransferAlt/>
-                </Text>
-                <Text 
-                 fontSize={["1.7rem","1.7rem","2rem","2.4rem"]} 
-                 fontWeight={700}
-                 color={header}
-                 >
-                    Transfers 
-                </Text>
+                    <Text 
+                    mt={["-0.05rem","-0.05rem","0.2rem","0.3rem"]}
+                    fontSize={["1.3rem","1.3rem","1.7rem","2rem"]} 
+                    color={header}
+                    mr="0.1rem"
+                    >
+                    <BiTransferAlt/>
+                    </Text>
+                    <Text 
+                    fontSize={["1.9rem","1.9rem","2.2rem","2.6rem"]} 
+                    fontWeight={700}
+                    color={header}
+                    >
+                        Transfers 
+                    </Text>
+                </Flex>
             </Flex>
           </ModalHeader>
           <ModalCloseButton>
@@ -639,8 +700,8 @@ const InputModal = () => {
                             type='number'
                             variant="filled"
                             placeholder='Amount'
-                            // value={dailyNameInput}
-                            onChange={(e)=> setDailyNameInput(e.target.valueAsNumber)}
+                            value={dailyNameInput.transfers}
+                            onChange={handleTransfersChange}
                         />
                     </InputGroup>
                 </Flex>
@@ -687,21 +748,27 @@ const InputModal = () => {
                 justifyContent="center"
                 mt={["1.5rem","1.5rem","1.5rem","2rem"]}
             >
-                <Text 
-                 mt={["0.2rem","0.2rem","0.2rem","0.3rem"]}
-                 fontSize={["1.3rem","1.3rem","1.7rem","2rem"]} 
-                 color={header}
-                 mr="0.1rem"
+                <Flex
+                    flexDir="column"
+                    justifyContent="center"
+                    alignItems="center"
                 >
-                   <BiDotsHorizontalRounded/>
-                </Text>
-                <Text 
-                 fontSize={["1.7rem","1.7rem","2rem","2.4rem"]} 
-                 fontWeight={700}
-                 color={header}
-                 >
-                    Others 
-                </Text>
+                    <Text 
+                    mt={["-0.05rem","-0.05rem","0.2rem","0.3rem"]}
+                    fontSize={["1.3rem","1.3rem","1.7rem","2rem"]} 
+                    color={header}
+                    mr="0.1rem"
+                    >
+                    <BiDotsHorizontalRounded/>
+                    </Text>
+                    <Text 
+                    fontSize={["1.9rem","1.9rem","2.2rem","2.6rem"]} 
+                    fontWeight={700}
+                    color={header}
+                    >
+                        Others 
+                    </Text>
+                </Flex>
             </Flex>
           </ModalHeader>
           <ModalCloseButton>
@@ -791,8 +858,8 @@ const InputModal = () => {
                             type='number'
                             variant="filled"
                             placeholder='Amount'
-                            // value={dailyNameInput}
-                            onChange={(e)=> setDailyNameInput(e.target.valueAsNumber)}
+                            value={dailyNameInput.others}
+                            onChange={handleOthersChange}
                         />
                     </InputGroup>
                 </Flex>
