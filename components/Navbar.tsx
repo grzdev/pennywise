@@ -75,7 +75,7 @@ const Navbar = () => {
         <Flex
           justifyContent="center"
           alignItems="center"
-          ml={["0.rem", "1rem", "7rem", "12.4rem"]}
+          ml={["0.rem", "1rem", "7rem", "10.4rem"]}
           flexDir="initial"
           mt={["0.6rem","0.4rem","0.4rem","0.4rem"]}
         >
