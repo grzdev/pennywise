@@ -23,6 +23,7 @@ import { TbCurrency, TbCurrencyNaira } from 'react-icons/tb'
 import { useAppSelector, useAppDispatch } from 'redux/hooks';
 import { addInput } from 'redux/slices/dailyInputSlice'
 import { BiDotsHorizontalRounded, BiTransferAlt } from 'react-icons/bi'
+import { parse } from 'path'
 
 
 const InputModal = () => {
@@ -48,7 +49,7 @@ const InputModal = () => {
   const handleFoodChange = (e: { target: { valueAsNumber: any } }) => {
     setDailyNameInput({
         ...dailyNameInput,
-       food: e.target.valueAsNumber
+       food: parseInt(e.target.valueAsNumber) || 0
   })
     console.log(dailyNameInput.food)
   }
@@ -56,28 +57,28 @@ const InputModal = () => {
   const handleTransitChange = (e: { target: { valueAsNumber: any } }) => {
     setDailyNameInput({
         ...dailyNameInput,
-       transit: e.target.valueAsNumber
+       transit: parseInt(e.target.valueAsNumber) || 0
   })
   }
 
   const handleDataChange = (e: { target: { valueAsNumber: any } }) => {
     setDailyNameInput({
         ...dailyNameInput,
-       data: e.target.valueAsNumber
+       data: parseInt(e.target.valueAsNumber) || 0
   })
   }
 
   const handleTransfersChange = (e: { target: { valueAsNumber: any } }) => {
     setDailyNameInput({
         ...dailyNameInput,
-       transfers: e.target.valueAsNumber
+       transfers: parseInt(e.target.valueAsNumber) || 0
   })
   }
 
   const handleOthersChange = (e: { target: { valueAsNumber: any } }) => {
     setDailyNameInput({
         ...dailyNameInput,
-       others: e.target.valueAsNumber
+       others: parseInt(e.target.valueAsNumber) || 0
   })
   }
 
@@ -240,10 +241,10 @@ const InputModal = () => {
             <Text 
                 fontWeight={600}
                 fontSize="0.8rem"
-                mr={["6.4rem","8.4rem","13.6rem","17rem"]}
+                mr={["11.4rem","11.4rem","16.6rem","20rem"]}
                 color={header}
             >
-                Category 1 of 5
+             1 of 5
             </Text>
             <Button 
                 colorScheme='blue'
@@ -398,10 +399,10 @@ const InputModal = () => {
             <Text 
                 fontWeight={600}
                 fontSize="0.8rem"
-                mr={["6.4rem","8.4rem","13.6rem","17rem"]}
+                mr={["11.4rem","11.4rem","16.6rem","20rem"]}
                 color={header}
             >
-                Category 2 of 5
+             2 of 5
             </Text>
             <Button 
                 colorScheme='blue'
@@ -556,10 +557,10 @@ const InputModal = () => {
             <Text 
                 fontWeight={600}
                 fontSize="0.8rem"
-                mr={["6.4rem","8.4rem","13.6rem","17rem"]}
+                mr={["11.4rem","11.4rem","16.6rem","20rem"]}
                 color={header}
             >
-                Category 3 of 5
+             3 of 5
             </Text>
             <Button 
                 colorScheme='blue'
@@ -714,10 +715,10 @@ const InputModal = () => {
             <Text 
                 fontWeight={600}
                 fontSize="0.8rem"
-                mr={["6.4rem","8.4rem","13.6rem","17rem"]}
+                mr={["11.4rem","11.4rem","16.6rem","20rem"]}
                 color={header}
             >
-                Category 4 of 5
+             4 of 5
             </Text>
             <Button 
                 colorScheme='blue'
@@ -872,10 +873,10 @@ const InputModal = () => {
             <Text 
                 fontWeight={600}
                 fontSize="0.8rem"
-                mr={["6.4rem","8.4rem","13.6rem","17rem"]}
+                mr={["11.4rem","11.4rem","16.6rem","20rem"]}
                 color={header}
             >
-                Category 5 of 5
+             5 of 5
             </Text>
             <Button 
                 colorScheme='blue'

@@ -139,14 +139,17 @@ const LandingPage = () => {
           h={["35rem","30rem","35rem","40rem"]}
         >
           <Flex
-            mr={["","","","1.7rem"]}
+            // mr={["","","","1.7rem"]}
             mt={["9rem","","","9rem"]}
             // ml={["","","","10rem"]}
           >
-            <VscGraph
-              fontSize="5rem"
+            <Text
+              fontSize={["7rem","7rem","8rem","10rem"]}
               color={vsgraph}
-            />
+            >
+              <VscGraph
+              />
+            </Text>
           </Flex>
             <VStack
             >
@@ -154,15 +157,15 @@ const LandingPage = () => {
                 in={true}
               >
                 <Heading
-                  size="xl"
-                  w={["20rem", "30rem", "30rem", "50rem"]}
-                  noOfLines={[3,3,3,1]}
+                  size={["xl","xl","2xl","2xl"]}
+                  w={["20rem", "30rem", "30rem", "35rem"]}
+                  noOfLines={[3,3,3,2]}
                   mt={["1rem","1rem","","0.1rem"]}
-                  lineHeight={["2rem", "4.5rem", "2.7rem", "3.5rem"]}
+                  lineHeight={["","","4rem","4rem"]}
                   // mb={["0.4rem", "0.4rem", "0.5rem", "0.2rem"]}
                   // ml={["", "", "", "-15rem"]}
                   textAlign={["center"]}
-                  fontFamily="'poppins', sans-serif"
+                fontFamily="monospace"
                   color={headerBg}
                 >
                   We will help you economize efficiently.
@@ -197,7 +200,7 @@ const LandingPage = () => {
                     color={learnmore}
                     fontWeight={500}
                     fontSize="1.1rem"
-                    mt={["1rem", "-0.4rem", "-0.4rem", "-1rem"]}
+                    mt={["1rem", "-0.4rem", "-0.4rem", "2rem"]}
                     mb={["10rem","","",""]}
                   >
                     Learn more <ChevronRightIcon/>
@@ -229,7 +232,7 @@ const LandingPage = () => {
             flexDir="column"
             justifyContent="center"
             alignItems="center"
-            ml={["","","","3rem"]}
+            ml={["","","","-2rem"]}
           >
             <Fade
               in={true}
@@ -239,7 +242,7 @@ const LandingPage = () => {
                 w={["20rem", "30rem", "30rem", "30rem"]}
                 lineHeight={["2rem", "4.5rem", "3.5rem", "3rem"]}
                 mb="0.6rem"
-                // ml={["", "", "", "6rem"]}
+                ml={["", "", "", "6rem"]}
                 textAlign={["center", "initial"]}
                 fontFamily="'Poppins', sans-serif"
               >
@@ -301,7 +304,7 @@ const LandingPage = () => {
               size="2xl"
                 lineHeight={["3rem", "3rem", "3.5rem", "4rem"]}
                 w={["20rem", "30rem", "40rem", "80rem"]}
-                fontFamily="'Poppins', sans-serif"
+                fontFamily="monospace"
             >
               Take control of your finances <br/> with our budget feature.
             </Heading>
@@ -312,7 +315,7 @@ const LandingPage = () => {
           w={["20rem","30rem","40rem","90rem"]}
           h={["20rem","20rem","20rem","15rem"]}
           bg={divColor2}
-          mt={["5rem","7rem","7rem","7rem"]}
+          mt={["14rem","14rem","14rem","7rem"]}
           mb={["7rem","7rem","7rem","7rem"]}
           borderRadius="1rem 0 1rem 0"
           boxShadow="2xl"
