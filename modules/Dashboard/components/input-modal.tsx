@@ -15,15 +15,19 @@ import {
     HStack,
     InputGroup,
     InputLeftElement,
+    useToast,
+    Box,
+    Icon
 } from '@chakra-ui/react'
 import React, { useState } from 'react'
-import { AddIcon, ChevronLeftIcon } from "@chakra-ui/icons"
+import { AddIcon, CheckCircleIcon, ChevronLeftIcon } from "@chakra-ui/icons"
 import { IoBusOutline, IoFastFoodOutline, IoFastFoodSharp, IoWifi } from "react-icons/io5"
 import { TbCurrency, TbCurrencyNaira } from 'react-icons/tb'
 import { useAppSelector, useAppDispatch } from 'redux/hooks';
 import { addInput } from 'redux/slices/dailyInputSlice'
 import { BiDotsHorizontalRounded, BiTransferAlt } from 'react-icons/bi'
 import { parse } from 'path'
+import { render } from 'react-dom'
 
 
 const InputModal = () => {
@@ -36,51 +40,36 @@ const InputModal = () => {
   const modal3 = useDisclosure()
   const modal4 = useDisclosure()
   const modal5 = useDisclosure()
+
+  const toast = useToast()
   
 
   const [dailyNameInput, setDailyNameInput] = useState({
-    food: 0,
-    transit: 0,
-    data: 0,
-    transfers: 0,
-    others: 0
+    food: "",
+    transit: "",
+    data: "",
+    transfers: "",
+    others: "",
+    sum: ""
   })
 
-  const handleFoodChange = (e: { target: { valueAsNumber: any } }) => {
-    setDailyNameInput({
+  const handleChange = (e: { target: {
+      name: any
+      value: any 
+      valueAsNumber: any 
+    } }) => {   
+        let name=e.target.name;
+        let value=e.target.value;
+        const newValues = {
         ...dailyNameInput,
-       food: parseInt(e.target.valueAsNumber) || 0
-  })
-    console.log(dailyNameInput.food)
-  }
+        [name]: value
+    } 
+        setDailyNameInput(newValues)
+        console.log(dailyNameInput.food)
+    }
 
-  const handleTransitChange = (e: { target: { valueAsNumber: any } }) => {
-    setDailyNameInput({
-        ...dailyNameInput,
-       transit: parseInt(e.target.valueAsNumber) || 0
-  })
-  }
 
-  const handleDataChange = (e: { target: { valueAsNumber: any } }) => {
-    setDailyNameInput({
-        ...dailyNameInput,
-       data: parseInt(e.target.valueAsNumber) || 0
-  })
-  }
 
-  const handleTransfersChange = (e: { target: { valueAsNumber: any } }) => {
-    setDailyNameInput({
-        ...dailyNameInput,
-       transfers: parseInt(e.target.valueAsNumber) || 0
-  })
-  }
-
-  const handleOthersChange = (e: { target: { valueAsNumber: any } }) => {
-    setDailyNameInput({
-        ...dailyNameInput,
-       others: parseInt(e.target.valueAsNumber) || 0
-  })
-  }
 
    const handleAddInput = () => {
     modal1.onClose()
@@ -88,6 +77,27 @@ const InputModal = () => {
     modal3.onClose()
     modal4.onClose()
     modal5.onClose()
+    toast({
+        position: 'bottom',
+        
+        render: () =>(
+            <Flex
+                justifyContent="center"
+                alignItems="center" 
+            >
+                <Button
+                    borderRadius="1rem 0 1rem 0"
+                    w={["8rem","8rem","9rem","10rem"]}
+                    h={["3rem","3rem","3rem","3rem"]}
+                    colorScheme="blue"
+                    leftIcon={<CheckCircleIcon/>}
+                >
+                    Done
+                </Button>
+            </Flex>
+        )
+    })
+   
   }
   
 
@@ -167,6 +177,7 @@ const InputModal = () => {
                         colorScheme="blue"
                         borderRadius="full"
                         size={["sm","sm","md","md"]}
+                        // onClick={increase1000}
                     >
                        <TbCurrencyNaira/> 1,000
                     </Button>
@@ -228,7 +239,8 @@ const InputModal = () => {
                             variant="filled"
                             placeholder='Amount'
                             value={dailyNameInput.food}
-                            onChange={handleFoodChange}
+                            onChange={handleChange}
+                            name="food"
                         />
                     </InputGroup>
                 </Flex>
@@ -241,7 +253,7 @@ const InputModal = () => {
             <Text 
                 fontWeight={600}
                 fontSize="0.8rem"
-                mr={["11.4rem","11.4rem","16.6rem","20rem"]}
+                mr={["10rem","10rem","16.6rem","20rem"]}
                 color={header}
             >
              1 of 5
@@ -386,7 +398,8 @@ const InputModal = () => {
                             variant="filled"
                             placeholder='Amount'
                             value={dailyNameInput.transit}
-                            onChange={handleTransitChange}
+                            name='transit'
+                            onChange={handleChange}
                         />
                     </InputGroup>
                 </Flex>
@@ -399,7 +412,7 @@ const InputModal = () => {
             <Text 
                 fontWeight={600}
                 fontSize="0.8rem"
-                mr={["11.4rem","11.4rem","16.6rem","20rem"]}
+                mr={["10rem","10rem","16.6rem","20rem"]}
                 color={header}
             >
              2 of 5
@@ -544,7 +557,8 @@ const InputModal = () => {
                             variant="filled"
                             placeholder='Amount'
                             value={dailyNameInput.data}
-                            onChange={handleDataChange}
+                            name='data'
+                            onChange={handleChange}
                         />
                     </InputGroup>
                 </Flex>
@@ -557,7 +571,7 @@ const InputModal = () => {
             <Text 
                 fontWeight={600}
                 fontSize="0.8rem"
-                mr={["11.4rem","11.4rem","16.6rem","20rem"]}
+                mr={["10rem","10rem","16.6rem","20rem"]}
                 color={header}
             >
              3 of 5
@@ -574,7 +588,7 @@ const InputModal = () => {
         </ModalContent>
       </Modal>
 
-          {/* Transfer Modal */}
+          {/* Transfers Modal */}
       <Modal 
          closeOnOverlayClick={false} 
          isOpen={modal4.isOpen}
@@ -701,8 +715,9 @@ const InputModal = () => {
                             type='number'
                             variant="filled"
                             placeholder='Amount'
+                            name='transfers'
                             value={dailyNameInput.transfers}
-                            onChange={handleTransfersChange}
+                            onChange={handleChange}
                         />
                     </InputGroup>
                 </Flex>
@@ -715,7 +730,7 @@ const InputModal = () => {
             <Text 
                 fontWeight={600}
                 fontSize="0.8rem"
-                mr={["11.4rem","11.4rem","16.6rem","20rem"]}
+                mr={["10rem","10rem","16.6rem","20rem"]}
                 color={header}
             >
              4 of 5
@@ -860,7 +875,8 @@ const InputModal = () => {
                             variant="filled"
                             placeholder='Amount'
                             value={dailyNameInput.others}
-                            onChange={handleOthersChange}
+                            name="others"
+                            onChange={handleChange}
                         />
                     </InputGroup>
                 </Flex>
@@ -873,7 +889,7 @@ const InputModal = () => {
             <Text 
                 fontWeight={600}
                 fontSize="0.8rem"
-                mr={["11.4rem","11.4rem","16.6rem","20rem"]}
+                mr={["10rem","10rem","16.6rem","20rem"]}
                 color={header}
             >
              5 of 5
