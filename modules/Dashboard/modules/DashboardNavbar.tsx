@@ -10,7 +10,6 @@ import {
   VStack,
   Icon,
   useColorModeValue,
-  Link,
   Drawer,
   DrawerContent,
   Text,
@@ -37,6 +36,7 @@ import {
   FiChevronDown,
 } from 'react-icons/fi';
 import { IconType } from 'react-icons';
+import Link from 'next/link';
 import { ReactText } from 'react';
 import { AiFillHome } from 'react-icons/ai';
 import { SiGoogleanalytics } from "react-icons/si"
@@ -164,6 +164,10 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
               bg: "#4f6382",
               color: 'white',
             }}
+            _active={{
+              bg: "#4f6382",
+              color: 'white',
+            }}
             p="4"
             mx="4"
             borderRadius="0.7rem"
@@ -176,7 +180,6 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
           </Link>
           <Link 
             href='/dashboard' 
-            _hover={{textDecoration: "none"}}
             >
             <Text
               fontSize="1rem"
@@ -199,7 +202,6 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
             borderRadius="0.7rem"
           >
             <Link 
-              _hover={{textDecoration: "none"}}
               href='/analytics'
             >
               <SiGoogleanalytics
@@ -209,7 +211,6 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
             </Link>
             <Link 
               href='/analytics'
-              _hover={{textDecoration: "none"}}
               >
               <Text
                 fontWeight={700}
@@ -240,7 +241,6 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
             </Link>
             <Link 
               href='/budget'
-             _hover={{textDecoration: "none"}}
             >
               <Text
                 fontWeight={700}
@@ -271,7 +271,6 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
             </Link>
             <Link 
               href='/account'
-             _hover={{textDecoration: "none"}}
             >
               <Text
                 fontWeight={700}
@@ -301,7 +300,7 @@ interface NavItemProps extends FlexProps {
 }
 const NavItem = ({ icon, children, ...rest }: NavItemProps) => {
   return (
-    <Link href="#" style={{ textDecoration: 'none' }} _focus={{ boxShadow: 'none' }}>
+    <Link href="#" style={{ textDecoration: 'none' }}>
       <Flex
         align="center"
         p="4"
@@ -402,14 +401,18 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
           <Flex
             flexDir="column"
             alignItems="center"
-            _visited={{
-              color: 'lightgrey',
+           _active={{
+              bg: "#4f6382",
+              color: 'white',
             }}
+            p="1"
+            mx="1"
+            borderRadius="0.7rem"
           >
           <Link href='/dashboard'>
             <AiFillHome
               fontSize="1.1rem"
-              color={icon}
+              // color={icon}
             /> 
           </Link>
           <Link href='/dashboard'>
@@ -424,13 +427,17 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
           <Flex
             alignItems="center"
             flexDir="column"
-            _visited={{
-              color: 'lightgrey',
+            _hover={{
+              bg: "#4f6382",
+              color: 'white',
             }}
+            p="1"
+            mx="1"
+            borderRadius="0.7rem"
           >
             <Link href='/analytics'>
               <SiGoogleanalytics
-                color={icon}
+                // color={icon}
                 fontSize="1.1rem"
               />
             </Link>
@@ -446,13 +453,17 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
           <Flex
             alignItems="center"
             flexDir="column"
-            _visited={{
-              color: 'lightgrey',
+            _hover={{
+              bg: "#4f6382",
+              color: 'white',
             }}
+            p="1"
+            mx="1"
+            borderRadius="0.7rem"
           >
             <Link href='/budget'>
               <FaWallet
-                color={icon}
+                // color={icon}
                 fontSize="1.1rem"
               />
             </Link>
@@ -468,13 +479,17 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
           <Flex
             alignItems="center"
             flexDir="column"
-            _visited={{
-              color: 'lightgrey',
+            _hover={{
+              bg: "#4f6382",
+              color: 'white',
             }}
+            p="1"
+            mx="1"
+            borderRadius="0.7rem"
           >
             <Link href='/account'>
               <BsFillPersonFill
-                color={icon}
+                // color={icon}
                 fontSize="1.1rem"
               /> 
             </Link>
