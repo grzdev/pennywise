@@ -390,7 +390,7 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
         overflow="hidden"
         zIndex="1"
         bg={footer}
-        h="3rem"
+        h="4rem"
         display={{ base: 'flex', md: 'none' }}
         justifyContent="center"
         alignItems="center"
@@ -405,19 +405,19 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
               bg: "#4f6382",
               color: 'white',
             }}
-            p="1"
-            mx="1"
+            // p="1"
+            // mx="0.5"
             borderRadius="0.7rem"
           >
           <Link href='/dashboard'>
             <AiFillHome
-              fontSize="1.1rem"
+              fontSize="1.2rem"
               // color={icon}
             /> 
           </Link>
           <Link href='/dashboard'>
             <Text
-              fontSize="0.5rem"
+              fontSize="0.6rem"
             >
               Home
             </Text>
@@ -431,19 +431,19 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
               bg: "#4f6382",
               color: 'white',
             }}
-            p="1"
-            mx="1"
+            // p="1"
+            // mx="0.5"
             borderRadius="0.7rem"
           >
             <Link href='/analytics'>
               <SiGoogleanalytics
                 // color={icon}
-                fontSize="1.1rem"
+                fontSize="1.2rem"
               />
             </Link>
             <Link href='/analytics'>
               <Text
-                fontSize="0.5rem"
+                fontSize="0.6rem"
               >
                 Analytics
               </Text>
@@ -457,19 +457,19 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
               bg: "#4f6382",
               color: 'white',
             }}
-            p="1"
-            mx="1"
+            // p="1"
+            // mx="0.5"
             borderRadius="0.7rem"
           >
             <Link href='/budget'>
               <FaWallet
                 // color={icon}
-                fontSize="1.1rem"
+                fontSize="1.2rem"
               />
             </Link>
             <Link href='/budget'>
               <Text
-                fontSize="0.5rem"
+                fontSize="0.6rem"
               >
                 Budget
               </Text>
@@ -483,19 +483,19 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
               bg: "#4f6382",
               color: 'white',
             }}
-            p="1"
-            mx="1"
+            // p="1"
+            // mx="0.5"
             borderRadius="0.7rem"
           >
             <Link href='/account'>
               <BsFillPersonFill
                 // color={icon}
-                fontSize="1.1rem"
+                fontSize="1.2rem"
               /> 
             </Link>
             <Link href='/account'>
               <Text
-                fontSize="0.5rem"
+                fontSize="0.6rem"
               >
                 Account
               </Text>

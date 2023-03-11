@@ -15,15 +15,19 @@ import {
     HStack,
     InputGroup,
     InputLeftElement,
+    useToast,
+    Box,
+    Icon
 } from '@chakra-ui/react'
 import React, { useState } from 'react'
-import { AddIcon, ChevronLeftIcon } from "@chakra-ui/icons"
+import { AddIcon, CheckCircleIcon, ChevronLeftIcon } from "@chakra-ui/icons"
 import { IoBusOutline, IoFastFoodOutline, IoFastFoodSharp, IoWifi } from "react-icons/io5"
 import { TbCurrency, TbCurrencyNaira } from 'react-icons/tb'
 import { useAppSelector, useAppDispatch } from 'redux/hooks';
 import { addInput } from 'redux/slices/dailyInputSlice'
 import { BiDotsHorizontalRounded, BiTransferAlt } from 'react-icons/bi'
 import { parse } from 'path'
+import { render } from 'react-dom'
 
 
 const InputModal = () => {
@@ -36,59 +40,204 @@ const InputModal = () => {
   const modal3 = useDisclosure()
   const modal4 = useDisclosure()
   const modal5 = useDisclosure()
+
+  const toast = useToast()
   
+    //onChange Function
+  const [food, setFood] = useState<number>(0);
+  const [transit, setTransit] = useState<number>(0);
+  const [data, setData] = useState<number>(0);
+  const [transfers, setTransfers] = useState<number>(0);
+  const [others, setOthers] = useState<number>(0);
 
-  const [dailyNameInput, setDailyNameInput] = useState({
-    food: 0,
-    transit: 0,
-    data: 0,
-    transfers: 0,
-    others: 0
-  })
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = event.target;
+    const parsedValue = parseInt(value, 10); // convert input value to number
 
-  const handleFoodChange = (e: { target: { valueAsNumber: any } }) => {
-    setDailyNameInput({
-        ...dailyNameInput,
-       food: parseInt(e.target.valueAsNumber) || 0
-  })
-    console.log(dailyNameInput.food)
-  }
+    if (name === "food") {
+      setFood(parsedValue);
+    } else if (name === "data") {
+      setData(parsedValue);
+    } else if (name === "transit") {
+      setTransit(parsedValue);
+    } else if (name === "transfers") {
+      setTransfers(parsedValue);
+    } else if (name === "others") {
+      setOthers(parsedValue);
+    }
+  };
 
-  const handleTransitChange = (e: { target: { valueAsNumber: any } }) => {
-    setDailyNameInput({
-        ...dailyNameInput,
-       transit: parseInt(e.target.valueAsNumber) || 0
-  })
-  }
+  //Funtional modal buttons
+  //add 1k
+  const handleAdd1kFood = () => {
+    const newValue = food + 1000;
+    setFood(newValue);
+    modal2.onOpen()
+  };
+  const handleAdd1kTransit = () => {
+    const newValue = transit + 1000;
+    setTransit(newValue);
+    modal3.onOpen()
+  };
+  const handleAdd1kData = () => {
+    const newValue = data + 1000;
+    setData(newValue);
+    modal4.onOpen()
+  };
+  const handleAdd1kTransfers = () => {
+    const newValue = transfers + 1000;
+    setTransfers(newValue);
+    modal5.onOpen()
+  };
+  const handleAdd1kOthers = () => {
+    const newValue = others + 1000;
+    setOthers(newValue);
+    handleAddInput()
+  };
 
-  const handleDataChange = (e: { target: { valueAsNumber: any } }) => {
-    setDailyNameInput({
-        ...dailyNameInput,
-       data: parseInt(e.target.valueAsNumber) || 0
-  })
-  }
+   //add 2k
+   const handleAdd2kFood = () => {
+    const newValue = food + 2000;
+    setFood(newValue);
+    modal2.onOpen()
+  };
+  const handleAdd2kTransit = () => {
+    const newValue = transit + 2000;
+    setTransit(newValue);
+    modal3.onOpen()
+  };
+  const handleAdd2kData = () => {
+    const newValue = data + 2000;
+    setData(newValue);
+    modal4.onOpen()
+  };
+  const handleAdd2kTransfers = () => {
+    const newValue = transfers + 2000;
+    setTransfers(newValue);
+    modal5.onOpen()
+  };
+  const handleAdd2kOthers = () => {
+    const newValue = others + 2000;
+    setOthers(newValue);
+    handleAddInput()
+  };
 
-  const handleTransfersChange = (e: { target: { valueAsNumber: any } }) => {
-    setDailyNameInput({
-        ...dailyNameInput,
-       transfers: parseInt(e.target.valueAsNumber) || 0
-  })
-  }
+  //add 3k
+  const handleAdd3kFood = () => {
+    const newValue = food + 3000;
+    setFood(newValue);
+    modal2.onOpen()
+  };
+  const handleAdd3kTransit = () => {
+    const newValue = transit + 3000;
+    setTransit(newValue);
+    modal3.onOpen()
+  };
+  const handleAdd3kData = () => {
+    const newValue = data + 3000;
+    setData(newValue);
+    modal4.onOpen()
+  };
+  const handleAdd3kTransfers = () => {
+    const newValue = transfers + 3000;
+    setTransfers(newValue);
+    modal5.onOpen()
+  };
+  const handleAdd3kOthers = () => {
+    const newValue = others + 3000;
+    setOthers(newValue);
+    handleAddInput()
+  };
 
-  const handleOthersChange = (e: { target: { valueAsNumber: any } }) => {
-    setDailyNameInput({
-        ...dailyNameInput,
-       others: parseInt(e.target.valueAsNumber) || 0
-  })
-  }
+  //add 5k
+  const handleAdd5kFood = () => {
+    const newValue = food + 5000;
+    setFood(newValue);
+    modal2.onOpen()
+  };
+  const handleAdd5kTransit = () => {
+    const newValue = transit + 5000;
+    setTransit(newValue);
+    modal3.onOpen()
+  };
+  const handleAdd5kData = () => {
+    const newValue = data + 5000;
+    setData(newValue);
+    modal4.onOpen()
+  };
+  const handleAdd5kTransfers = () => {
+    const newValue = transfers + 5000;
+    setTransfers(newValue);
+    modal5.onOpen()
+  };
+  const handleAdd5kOthers = () => {
+    const newValue = others + 5000;
+    setOthers(newValue);
+    handleAddInput()
+  };
 
+  //add 10k
+  const handleAdd10kFood = () => {
+    const newValue = food + 10000;
+    setFood(newValue);
+    modal2.onOpen()
+  };
+  const handleAdd10kTransit = () => {
+    const newValue = transit + 10000;
+    setTransit(newValue);
+    modal3.onOpen()
+  };
+  const handleAdd10kData = () => {
+    const newValue = data + 10000;
+    setData(newValue);
+    modal4.onOpen()
+  };
+  const handleAdd10kTransfers = () => {
+    const newValue = transfers + 10000;
+    setTransfers(newValue);
+    modal5.onOpen()
+  };
+  const handleAdd10kOthers = () => {
+    const newValue = others + 10000;
+    setOthers(newValue);
+    handleAddInput()
+  };
+
+  //Sum of all input
+  const Sum = food + transit + data + transfers + others
+
+
+  //Modal Save
    const handleAddInput = () => {
     modal1.onClose()
     modal2.onClose()
     modal3.onClose()
     modal4.onClose()
     modal5.onClose()
+    toast({
+        position: 'bottom',
+        
+        render: () =>(
+            <Flex
+                justifyContent="center"
+                alignItems="center" 
+            >
+                <Button
+                    borderRadius="1rem 0 1rem 0"
+                    w={["8rem","8rem","9rem","10rem"]}
+                    h={["3rem","3rem","3rem","3rem"]}
+                    colorScheme="blue"
+                    leftIcon={<CheckCircleIcon/>}
+                >
+                    Done
+                </Button>
+            </Flex>
+        )
+    })
+   
   }
+  
+  //Modal button 
   
 
   return (
@@ -167,6 +316,7 @@ const InputModal = () => {
                         colorScheme="blue"
                         borderRadius="full"
                         size={["sm","sm","md","md"]}
+                        onClick={handleAdd1kFood}
                     >
                        <TbCurrencyNaira/> 1,000
                     </Button>
@@ -174,6 +324,7 @@ const InputModal = () => {
                         size={["sm","sm","md","md"]}
                         colorScheme="blue"
                         borderRadius="full"
+                        onClick={handleAdd2kFood}
                     >
                        <TbCurrencyNaira/> 2,000
                     </Button>
@@ -181,6 +332,7 @@ const InputModal = () => {
                         size={["sm","sm","md","md"]}
                         colorScheme="blue"
                         borderRadius="full"
+                        onClick={handleAdd3kFood}
                     >
                        <TbCurrencyNaira/> 3,000
                     </Button>
@@ -192,6 +344,7 @@ const InputModal = () => {
                         size={["sm","sm","md","md"]}
                         colorScheme="blue"
                         borderRadius="full"
+                        onClick={handleAdd5kFood}
                     >
                        <TbCurrencyNaira/> 5,000
                     </Button>
@@ -199,7 +352,7 @@ const InputModal = () => {
                         size={["sm","sm","md","md"]}
                         colorScheme="blue"
                         borderRadius="full"
-                        value={10000}
+                        onClick={handleAdd10kFood}
                     >
                        <TbCurrencyNaira/> 10,000
                     </Button>
@@ -227,8 +380,9 @@ const InputModal = () => {
                             type='number'
                             variant="filled"
                             placeholder='Amount'
-                            value={dailyNameInput.food}
-                            onChange={handleFoodChange}
+                            value={food}
+                            onChange={handleInputChange}
+                            name="food"
                         />
                     </InputGroup>
                 </Flex>
@@ -241,7 +395,7 @@ const InputModal = () => {
             <Text 
                 fontWeight={600}
                 fontSize="0.8rem"
-                mr={["11.4rem","11.4rem","16.6rem","20rem"]}
+                mr={["10rem","10rem","16.6rem","20rem"]}
                 color={header}
             >
              1 of 5
@@ -326,6 +480,7 @@ const InputModal = () => {
                         colorScheme="blue"
                         borderRadius="full"
                         size={["sm","sm","md","md"]}
+                        onClick={handleAdd1kTransit}
                     >
                        <TbCurrencyNaira/> 1,000
                     </Button>
@@ -333,6 +488,7 @@ const InputModal = () => {
                         size={["sm","sm","md","md"]}
                         colorScheme="blue"
                         borderRadius="full"
+                        onClick={handleAdd2kTransit}
                     >
                        <TbCurrencyNaira/> 2,000
                     </Button>
@@ -340,6 +496,7 @@ const InputModal = () => {
                         size={["sm","sm","md","md"]}
                         colorScheme="blue"
                         borderRadius="full"
+                        onClick={handleAdd3kTransit}
                     >
                        <TbCurrencyNaira/> 3,000
                     </Button>
@@ -351,6 +508,7 @@ const InputModal = () => {
                         size={["sm","sm","md","md"]}
                         colorScheme="blue"
                         borderRadius="full"
+                        onClick={handleAdd5kTransit}
                     >
                        <TbCurrencyNaira/> 5,000
                     </Button>
@@ -358,6 +516,7 @@ const InputModal = () => {
                         size={["sm","sm","md","md"]}
                         colorScheme="blue"
                         borderRadius="full"
+                        onClick={handleAdd10kTransit}
                     >
                        <TbCurrencyNaira/> 10,000
                     </Button>
@@ -385,8 +544,9 @@ const InputModal = () => {
                             type='number'
                             variant="filled"
                             placeholder='Amount'
-                            value={dailyNameInput.transit}
-                            onChange={handleTransitChange}
+                            value={transit}
+                            name='transit'
+                            onChange={handleInputChange}
                         />
                     </InputGroup>
                 </Flex>
@@ -399,7 +559,7 @@ const InputModal = () => {
             <Text 
                 fontWeight={600}
                 fontSize="0.8rem"
-                mr={["11.4rem","11.4rem","16.6rem","20rem"]}
+                mr={["10rem","10rem","16.6rem","20rem"]}
                 color={header}
             >
              2 of 5
@@ -484,6 +644,7 @@ const InputModal = () => {
                         colorScheme="blue"
                         borderRadius="full"
                         size={["sm","sm","md","md"]}
+                        onClick={handleAdd1kData}
                     >
                        <TbCurrencyNaira/> 1,000
                     </Button>
@@ -491,6 +652,7 @@ const InputModal = () => {
                         size={["sm","sm","md","md"]}
                         colorScheme="blue"
                         borderRadius="full"
+                        onClick={handleAdd2kData}
                     >
                        <TbCurrencyNaira/> 2,000
                     </Button>
@@ -498,6 +660,7 @@ const InputModal = () => {
                         size={["sm","sm","md","md"]}
                         colorScheme="blue"
                         borderRadius="full"
+                        onClick={handleAdd3kData}
                     >
                        <TbCurrencyNaira/> 3,000
                     </Button>
@@ -509,6 +672,7 @@ const InputModal = () => {
                         size={["sm","sm","md","md"]}
                         colorScheme="blue"
                         borderRadius="full"
+                        onClick={handleAdd5kData}
                     >
                        <TbCurrencyNaira/> 5,000
                     </Button>
@@ -516,6 +680,7 @@ const InputModal = () => {
                         size={["sm","sm","md","md"]}
                         colorScheme="blue"
                         borderRadius="full"
+                        onClick={handleAdd10kData}
                     >
                        <TbCurrencyNaira/> 10,000
                     </Button>
@@ -543,8 +708,9 @@ const InputModal = () => {
                             type='number'
                             variant="filled"
                             placeholder='Amount'
-                            value={dailyNameInput.data}
-                            onChange={handleDataChange}
+                            value={data}
+                            name='data'
+                            onChange={handleInputChange}
                         />
                     </InputGroup>
                 </Flex>
@@ -557,7 +723,7 @@ const InputModal = () => {
             <Text 
                 fontWeight={600}
                 fontSize="0.8rem"
-                mr={["11.4rem","11.4rem","16.6rem","20rem"]}
+                mr={["10rem","10rem","16.6rem","20rem"]}
                 color={header}
             >
              3 of 5
@@ -574,7 +740,7 @@ const InputModal = () => {
         </ModalContent>
       </Modal>
 
-          {/* Transfer Modal */}
+          {/* Transfers Modal */}
       <Modal 
          closeOnOverlayClick={false} 
          isOpen={modal4.isOpen}
@@ -642,6 +808,7 @@ const InputModal = () => {
                         colorScheme="blue"
                         borderRadius="full"
                         size={["sm","sm","md","md"]}
+                        onClick={handleAdd1kTransfers}
                     >
                        <TbCurrencyNaira/> 1,000
                     </Button>
@@ -649,6 +816,7 @@ const InputModal = () => {
                         size={["sm","sm","md","md"]}
                         colorScheme="blue"
                         borderRadius="full"
+                        onClick={handleAdd2kTransfers}
                     >
                        <TbCurrencyNaira/> 2,000
                     </Button>
@@ -656,6 +824,7 @@ const InputModal = () => {
                         size={["sm","sm","md","md"]}
                         colorScheme="blue"
                         borderRadius="full"
+                        onClick={handleAdd3kTransfers}
                     >
                        <TbCurrencyNaira/> 3,000
                     </Button>
@@ -667,6 +836,7 @@ const InputModal = () => {
                         size={["sm","sm","md","md"]}
                         colorScheme="blue"
                         borderRadius="full"
+                        onClick={handleAdd5kTransfers}
                     >
                        <TbCurrencyNaira/> 5,000
                     </Button>
@@ -674,6 +844,7 @@ const InputModal = () => {
                         size={["sm","sm","md","md"]}
                         colorScheme="blue"
                         borderRadius="full"
+                        onClick={handleAdd10kTransfers}
                     >
                        <TbCurrencyNaira/> 10,000
                     </Button>
@@ -701,8 +872,9 @@ const InputModal = () => {
                             type='number'
                             variant="filled"
                             placeholder='Amount'
-                            value={dailyNameInput.transfers}
-                            onChange={handleTransfersChange}
+                            name='transfers'
+                            value={transfers}
+                            onChange={handleInputChange}
                         />
                     </InputGroup>
                 </Flex>
@@ -715,7 +887,7 @@ const InputModal = () => {
             <Text 
                 fontWeight={600}
                 fontSize="0.8rem"
-                mr={["11.4rem","11.4rem","16.6rem","20rem"]}
+                mr={["10rem","10rem","16.6rem","20rem"]}
                 color={header}
             >
              4 of 5
@@ -800,6 +972,7 @@ const InputModal = () => {
                         colorScheme="blue"
                         borderRadius="full"
                         size={["sm","sm","md","md"]}
+                        onClick={handleAdd1kOthers}
                     >
                        <TbCurrencyNaira/> 1,000
                     </Button>
@@ -807,6 +980,7 @@ const InputModal = () => {
                         size={["sm","sm","md","md"]}
                         colorScheme="blue"
                         borderRadius="full"
+                        onClick={handleAdd2kOthers}
                     >
                        <TbCurrencyNaira/> 2,000
                     </Button>
@@ -814,6 +988,7 @@ const InputModal = () => {
                         size={["sm","sm","md","md"]}
                         colorScheme="blue"
                         borderRadius="full"
+                        onClick={handleAdd3kOthers}
                     >
                        <TbCurrencyNaira/> 3,000
                     </Button>
@@ -825,6 +1000,7 @@ const InputModal = () => {
                         size={["sm","sm","md","md"]}
                         colorScheme="blue"
                         borderRadius="full"
+                        onClick={handleAdd5kOthers}
                     >
                        <TbCurrencyNaira/> 5,000
                     </Button>
@@ -832,6 +1008,7 @@ const InputModal = () => {
                         size={["sm","sm","md","md"]}
                         colorScheme="blue"
                         borderRadius="full"
+                        onClick={handleAdd10kOthers}
                     >
                        <TbCurrencyNaira/> 10,000
                     </Button>
@@ -859,8 +1036,9 @@ const InputModal = () => {
                             type='number'
                             variant="filled"
                             placeholder='Amount'
-                            value={dailyNameInput.others}
-                            onChange={handleOthersChange}
+                            value={others}
+                            name="others"
+                            onChange={handleInputChange}
                         />
                     </InputGroup>
                 </Flex>
@@ -873,7 +1051,7 @@ const InputModal = () => {
             <Text 
                 fontWeight={600}
                 fontSize="0.8rem"
-                mr={["11.4rem","11.4rem","16.6rem","20rem"]}
+                mr={["10rem","10rem","16.6rem","20rem"]}
                 color={header}
             >
              5 of 5

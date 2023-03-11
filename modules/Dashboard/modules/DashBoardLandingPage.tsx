@@ -15,7 +15,8 @@ import {
   PopoverArrow,
   PopoverCloseButton,
   PopoverBody,
-  PopoverFooter
+  PopoverFooter,
+  others
 } from '@chakra-ui/react'
 import React, { useState } from 'react'
 import router from "next/router";
@@ -42,23 +43,9 @@ import {
  import InputModal from '../components/input-modal';
  import { useDispatch, useSelector } from 'react-redux';
  import { RootState } from 'redux/store';
-
-// interface Props {
-//     children?: React.ReactNode
-// }
+ 
 
 const DashBoardLandingPage = () => {
-  // const [input, setInput] = useState('')
-
-  // const { colorMode, toggleColorMode } = useColorMode()
-  // const { user, logout } = useAuth()
-
-  // const { onOpen, onClose, isOpen } = useDisclosure()
-  // const firstFieldRef = React.useRef(null)
-  const dailyInput = useSelector(
-    (state: RootState)=> state.dailyInput.input
-  )
-
   const header = useColorModeValue("white","white")
   const SecondBox = useColorModeValue("#407adf","#70a1c8")
   const pieColor = useColorModeValue("#4F89E8","#4F89E8")
@@ -70,12 +57,7 @@ const DashBoardLandingPage = () => {
   const bgGradient = useColorModeValue("linear-gradient(to right, #536976, #292e49)","linear-gradient(to right, #4b79a1, #283e51);")
 
 
-
-
-
-
-
-  
+  //PieChart data
   const data01 = [
     {
       "name": "Food",
@@ -226,7 +208,7 @@ const DashBoardLandingPage = () => {
                 <Heading
                 size={["sm","sm","md","lg"]}
                 >
-                 {dailyInput}
+                 {/* {sumOfInput} */}
                 </Heading>
               </Flex>
             </Flex>

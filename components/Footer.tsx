@@ -46,7 +46,7 @@ const Footer = () => {
       mb="1rem"
     >
       <Flex
-        w={["20rem","30rem","40rem","90rem"]}
+        w={["20rem","30rem","40rem","85rem"]}
         justifyContent={["center","","","center"]}
         alignItems={["center","","","center"]}
         gap={["","","","14rem"]}
@@ -79,75 +79,7 @@ const Footer = () => {
           </Heading>
         </Flex>
 
-        {/* <Flex
-          gap={["4rem","4rem","4rem","17rem"]}
-          mt={["","","","1.7rem"]}
-        >
-          <Flex
-            flexDir="column"
-          >
-            <Heading
-              size='xs'
-            >
-              Company
-            </Heading>
-            <List
-             mt={["2rem","","","1.5rem"]}
-            >
-              <Link href={'/about'}>
-                <ListItem 
-                mb="1rem"
-                color={textColor}
-                fontWeight={600}
-                fontSize={["0.7rem","0.7rem","0.8rem","0.8rem" ]}
-                >
-                  About 
-                </ListItem>
-              </Link>
-            </List>
-          </Flex>
-
-          <Flex
-           flexDir="column"
-          >
-            <Heading
-             size='xs'
-            >
-              Legal
-            </Heading>
-            <List
-             mt={["2rem","","","1.5rem"]}
-            >
-              <Link href={'/terms'}>
-                <ListItem
-                mb="1rem"
-                fontWeight={600}
-                color={textColor}
-                fontSize={["0.7rem","0.7rem","0.8rem","0.8rem" ]}
-                >
-                  Terms 
-                </ListItem>
-              </Link>
-
-              <Link href={'/privacy'}>
-                <ListItem
-                mb="1rem"
-                fontWeight={600}
-                color={textColor}
-                fontSize={["0.7rem","0.7rem","0.8rem","0.8rem" ]}
-                >
-                  Privacy 
-                </ListItem>
-              </Link>
-               <ListItem
-              mb="1rem"
-              color={textColor}
-              >
-                Security 
-              </ListItem> 
-            </List>
-          </Flex>
-        </Flex> */}
+       
 
         <Flex
           flexDir="column"
@@ -160,9 +92,6 @@ const Footer = () => {
           <Flex
             gap="0.3rem"
           >
-           {/* <AiFillFacebook fontSize="2rem" color={textColor}/>
-           <AiFillInstagram fontSize="2rem" color={textColor}/>
-           <AiFillTwitterSquare fontSize="2rem" color={textColor}/> */}
            <Text
             fontSize={["0.7rem","0.7","0.7rem","1.2rem" ]}
             color={gmail}
