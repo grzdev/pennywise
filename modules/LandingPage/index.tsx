@@ -14,14 +14,16 @@ import {
   } from '@chakra-ui/react'
   import { Inter } from '@next/font/google'
   import Image from 'next/image'
-  import DivPic1 from '../../images/mainpicture7.png'
-  import DivPic2 from '../../images/pic2.png'
+  import DivPicture1 from '../../images/picredo1.png'
+  import DivPicture2 from '../../images/pic2.png'
   import DivPic3 from '../../images/budgetpic1.png'
-  import React from 'react'
+  import React, { useState } from 'react'
   import { VscGraph } from 'react-icons/vsc'
   import Link from 'next/link'
+  import { useEffect } from 'react'
   import { ChevronRightIcon } from "@chakra-ui/icons"
   import { useColorModeValue } from '@chakra-ui/react'
+  import { motion, useScroll } from "framer-motion"
 
 const LandingPage = () => {
   const buttonColor = useColorModeValue("linear-gradient( 135deg, #FFA6B7 10%, #1E2AD2 100%)","linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%)")
@@ -36,8 +38,10 @@ const LandingPage = () => {
   const headerBg = useColorModeValue("#EEF4FC","white")
   const pgBg = useColorModeValue("#EEF4FC","#EEF4FC")
 
-  const secondDivCOlor = useColorModeValue("#262d45","#333f55")
+  const secondDivCOlor = useColorModeValue("linear-gradient(45deg, #262d45 0%, #3261ff 100%)","#333f55")
+  // background-image: linear-gradient(45deg, #262d45 0%, #2340a3 100%);
 
+  const { scrollYProgress } = useScroll();
 
   return (
     <>
@@ -53,27 +57,31 @@ const LandingPage = () => {
         >
           <VStack
           >
-            <Fade
-              in={true}
+            <motion.div
+              animate={{ y: 0 }}
+              initial={{ y: 150 }}
+              transition={{ duration: 0.8 }}
             >
-              <Heading
-                size="3xl"
-                w={["20rem", "30rem", "30rem", "30rem"]}
-                lineHeight={["3.9rem", "4.5rem", "4.5rem", "4.5rem"]}
-                mb="0.6rem"
-                mt={["3rem", "10rem", "10rem", "12rem"]}
-                // ml={["", "", "", "6rem"]}
-                textAlign={["center"]}
-                fontFamily="'Roboto', sans-serif"
-              >
-                Keep Tabs On Your Daily Spendings.
-              </Heading>
-            </Fade>
+                <Heading
+                  size="3xl"
+                  w={["20rem", "30rem", "30rem", "30rem"]}
+                  lineHeight={["3.9rem", "4.5rem", "4.5rem", "4.5rem"]}
+                  mb="0.6rem"
+                  mt={["3rem", "10rem", "10rem", "12rem"]}
+                  // ml={["", "", "", "6rem"]}
+                  textAlign={["center"]}
+                  fontFamily="'Roboto', sans-serif"
+                >
+                  Keep Tabs On Your Daily Spendings.
+                </Heading>
+            </motion.div>
 
             <Flex
             >
-              <Fade
-                in={true}
+              <motion.div
+                animate={{ y: 0 }}
+                initial={{ y: 150 }}
+                transition={{ duration: 1.1 }}
               >
                 <Text
                   fontWeight={500}
@@ -90,42 +98,54 @@ const LandingPage = () => {
                   TrackDaily helps customers achieve their budget goals by storing the 
                   amount they spend on a daily basis,
                 </Text>
-              </Fade>
+              </motion.div>
             </Flex>
             <Flex
             >
-              <Link href="signup">
-                <Button
-                  size="lg"
-                  h="3.5rem"
-                  variant='solid'
-                  bg={buttonColor}
-                  boxShadow="2xl"
-                  color={buttonTextColor}
-                  mt={["2rem", "1.3rem", "1.3rem", "-1.3rem"]}
-                  borderRadius="1rem 0 1rem 0"
-                  _hover={{
-                    bg: '#308DFF',
-                  }}
-                >
-                  Sign up for free
-                </Button>
-              </Link>
+              <motion.div
+                animate={{ y: 0 }}
+                initial={{ y: 150 }}
+                transition={{ duration: 1.3 }}
+              >
+                <Link href="signup">
+                  <Button
+                    size="lg"
+                    h="3.5rem"
+                    variant='solid'
+                    bg={buttonColor}
+                    boxShadow="2xl"
+                    color={buttonTextColor}
+                    mt={["2rem", "1.3rem", "1.3rem", "-1.3rem"]}
+                    borderRadius="1rem 0 1rem 0"
+                    _hover={{
+                      bg: '#308DFF',
+                    }}
+                  >
+                    Sign up for free
+                  </Button>
+                </Link>
+              </motion.div>
             </Flex>
           </VStack>
           
           <Box
             // ml={["0.2rem", "4rem", "3rem", "1rem"]}
-            mr={["","","","4rem"]}
+            mr={["","","","1rem"]}
             w={["27rem", "40rem", "40rem", "51rem"]}
             mt={["5.5rem", "5.5rem", "3rem", "-1rem"]}
           >
-            <Image
-              src={DivPic1}
-              alt=""
-              priority
-              placeholder="blur"
-            />
+            <motion.div
+              whileInView={{ x: 0 }}
+              initial={{ x: 150 }}
+              transition={{ duration: 1  }}
+            >  
+              <Image
+                src={DivPicture1}
+                alt=""
+                priority
+                placeholder="blur"
+              />
+            </motion.div>
           </Box>
         </Flex>
         <Flex
@@ -139,39 +159,46 @@ const LandingPage = () => {
           h={["28rem","28rem","35rem","40rem"]}
           borderRadius="1rem 0 1rem 0"
         >
-          <Flex
-            // mr={["","","","1.7rem"]}
-            mt={["9rem","","","9rem"]}
-            // ml={["","","","10rem"]}
-          >
-            <Text
-              fontSize={["6rem","7rem","8rem","10rem"]}
-              color={vsgraph}
+          <motion.div
+             whileInView={{ y: 0, opacity: 1}}
+             initial={{ y: 150, opacity: 0 }}
+             transition={{ duration: 0.8  }}
+            //  style={{ scaleY: scrollYProgress }}
+          >  
+            <Flex
+              // mr={["","","","1.7rem"]}
+              mt={["9rem","","","9rem"]}
+              // ml={["","","","10rem"]}
             >
-              <VscGraph
-              />
-            </Text>
-          </Flex>
+                <Text
+                  fontSize={["6rem","7rem","8rem","10rem"]}
+                  color={vsgraph}
+                >
+                  <VscGraph
+                  />
+                </Text>
+            </Flex>
+          </motion.div>
             <VStack
             >
-              <Fade
-                in={true}
+              <motion.div
+                 whileInView={{ y: 0, opacity: 1}}
+                 initial={{ y: 150, opacity: 0 }}
+                 transition={{ duration: 0.9  }}
               >
                 <Heading
                   size={["xl","xl","2xl","2xl"]}
-                  w={["20rem", "30rem", "30rem", "35rem"]}
+                  w={["17rem", "17rem", "30rem", "35rem"]}
                   noOfLines={[3,3,3,2]}
                   mt={["1rem","1rem","","0.1rem"]}
-                  lineHeight={["","","4rem","4rem"]}
-                  // mb={["0.4rem", "0.4rem", "0.5rem", "0.2rem"]}
-                  // ml={["", "", "", "-15rem"]}
+                  lineHeight={["3rem","3rem","4rem","4rem"]}
                   textAlign={["center"]}
-                fontFamily="monospace"
+                  fontFamily="monospace"
                   color={headerBg}
                 >
                   We will help you economize efficiently.
                 </Heading>
-              </Fade>
+              </motion.div>
               <Fade
                 in={true}
               >
@@ -192,8 +219,10 @@ const LandingPage = () => {
                   TrackDaily helps to keep tabs on what we spend on and the total amount spent.
                 </Text> */}
               </Fade>
-              <Fade
-                in={true}
+              <motion.div
+                whileInView={{ y: 0, opacity: 1}}
+                initial={{ y: 150, opacity: 0 }}
+                transition={{ duration: 1  }}
               >
                 <Link href={"/about"}>
                   <Text
@@ -207,7 +236,7 @@ const LandingPage = () => {
                     Learn more <ChevronRightIcon/>
                   </Text>
                 </Link>
-              </Fade>
+              </motion.div>
             </VStack>
         </Flex>
         <Flex
@@ -217,12 +246,18 @@ const LandingPage = () => {
             w={["27rem", "40rem", "40rem", "51rem"]}
             mt={["8rem", "", "3rem", "-3rem"]}
           >
-            <Image
-              src={DivPic2}
-              alt=""
-              placeholder="blur"
-              priority
-            />
+            <motion.div
+              whileInView={{ x: 0 }}
+              initial={{ x: -150 }}
+              transition={{ duration: 1  }}
+            >
+              <Image
+                src={DivPicture2}
+                alt=""
+                placeholder="blur"
+                priority
+              />
+            </motion.div>
           </Box>
 
           <Flex
@@ -235,13 +270,15 @@ const LandingPage = () => {
             alignItems="center"
             ml={["","","","-2rem"]}
           >
-            <Fade
-              in={true}
+            <motion.div
+              whileInView={{ y: 0, opacity: 1}}
+              initial={{ y: 100, opacity: 0 }}
+              transition={{ duration: 0.9  }}
             >
               <Heading
                 size="2xl"
                 w={["20rem", "30rem", "30rem", "30rem"]}
-                lineHeight={["2rem", "4.5rem", "3.5rem", "3rem"]}
+                lineHeight={["3rem", "4.5rem", "3.5rem", "3rem"]}
                 mb="1rem"
                 // ml={["", "", "", "6rem"]}
                 textAlign={["center"]}
@@ -249,12 +286,14 @@ const LandingPage = () => {
               >
                 Visualize your daily and weekly expenses.
               </Heading>
-            </Fade>
+            </motion.div>
 
             <Flex
             >
-              <Fade
-                in={true}
+              <motion.div
+                whileInView={{ y: 0, opacity: 1}}
+                initial={{ y: 100, opacity: 0 }}
+                transition={{ duration: 1  }}
               >
                 <Text
                   fontWeight={500}
@@ -270,7 +309,7 @@ const LandingPage = () => {
                 >
                 A graph that shows your spending data will be provided to you so you can take note of any spike or decrease in expenses.
                 </Text>
-              </Fade>
+              </motion.div>
             </Flex>
           </Flex>
 
@@ -292,25 +331,37 @@ const LandingPage = () => {
             mt={["-1.5rem","-1.5rem","-3rem","-3rem"]}
             // mb={["","","","-4rem"]}
           >
-            <Image
-              src={DivPic3}
-              alt=""
-            />
+            <motion.div
+              whileInView={{ x: 0 }}
+              initial={{ x: 150 }}
+              transition={{ duration: 1  }}
+            >
+              <Image
+                src={DivPic3}
+                alt=""
+              />
+            </motion.div>
           </Flex>
           <Flex
             alignItems="center"
             justifyContent="center"
           >
-            <Heading
-              textAlign="center"
-              color="white"
-              size="2xl"
-                lineHeight={["3rem", "3rem", "3.5rem", "4rem"]}
-                  w={["20rem", "30rem", "30rem", "35rem"]}
-                fontFamily="monospace"
+            <motion.div
+              whileInView={{ y: 0, opacity: 1}}
+              initial={{ y: 100, opacity: 0 }}
+              transition={{ duration: 1  }}
             >
-              Take control of your finances <br/> with our budget feature.
-            </Heading>
+              <Heading
+                textAlign="center"
+                color="white"
+                size="2xl"
+                  lineHeight={["3rem", "3rem", "3.5rem", "4rem"]}
+                    w={["20rem", "30rem", "30rem", "35rem"]}
+                  fontFamily="monospace"
+              >
+                Take control of your finances <br/> with our budget feature.
+              </Heading>
+            </motion.div>
           </Flex>
         </Flex>
 
@@ -361,22 +412,28 @@ const LandingPage = () => {
               variant='filled'
               mr="0.4rem"
             /> */}
-            <Link href="/signup">
-              <Button
-                size={["md","lg","lg","lg"]}
-                h="3.5rem"
-                variant='solid'
-                bg={signUp}
-                color="white"
-                mt={["0.1rem","","","-2rem"]}
-                borderRadius="1rem 0 1rem 0"
-                _hover={{
-                  bg: '#308DFF',
-                }}
-              >
-                Get started
-              </Button>
-            </Link>
+            <motion.div
+              whileInView={{ y: 0, opacity: 1}}
+              initial={{ y: 100, opacity: 0 }}
+              transition={{ duration: 1  }}
+            >
+              <Link href="/signup">
+                <Button
+                  size={["md","lg","lg","lg"]}
+                  h="3.5rem"
+                  variant='solid'
+                  bg={signUp}
+                  color="white"
+                  mt={["0.1rem","","","-2rem"]}
+                  borderRadius="1rem 0 1rem 0"
+                  _hover={{
+                    bg: '#308DFF',
+                  }}
+                >
+                  Get started
+                </Button>
+              </Link>
+            </motion.div>
           </Flex>
         </Flex>
       </Container>
