@@ -23,8 +23,6 @@ import React, { useState } from 'react'
 import { AddIcon, CheckCircleIcon, ChevronLeftIcon } from "@chakra-ui/icons"
 import { IoBusOutline, IoFastFoodOutline, IoFastFoodSharp, IoWifi } from "react-icons/io5"
 import { TbCurrency, TbCurrencyNaira } from 'react-icons/tb'
-import { useAppSelector, useAppDispatch } from 'redux/hooks';
-import { addInput } from 'redux/slices/dailyInputSlice'
 import { BiDotsHorizontalRounded, BiTransferAlt } from 'react-icons/bi'
 import { parse } from 'path'
 import { render } from 'react-dom'
