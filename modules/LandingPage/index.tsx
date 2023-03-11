@@ -62,8 +62,8 @@ const LandingPage = () => {
                 lineHeight={["3.9rem", "4.5rem", "4.5rem", "4.5rem"]}
                 mb="0.6rem"
                 mt={["3rem", "10rem", "10rem", "12rem"]}
-                ml={["", "", "", "6rem"]}
-                textAlign={["center", "initial"]}
+                // ml={["", "", "", "6rem"]}
+                textAlign={["center"]}
                 fontFamily="'Roboto', sans-serif"
               >
                 Keep Tabs On Your Daily Spendings.
@@ -83,7 +83,7 @@ const LandingPage = () => {
                   w={["18rem", "30rem", "30rem", "23.6rem"]}
                   justifyContent="center"
                   alignItems="center"
-                  textAlign={["center", "initial"]}
+                  textAlign={["center"]}
                  fontFamily="'Ubuntu', sans-serif"
                   
                 >
@@ -135,8 +135,9 @@ const LandingPage = () => {
           mb={["","","","8rem"]}
           flexDir={["column", "column", "column", "column"]}
           bg={secondDivCOlor}
-          w={["30rem","50rem","70rem ","100rem"]}
-          h={["35rem","30rem","35rem","40rem"]}
+          w={["24rem","50rem","53rem ","85rem"]}
+          h={["28rem","28rem","35rem","40rem"]}
+          borderRadius="1rem 0 1rem 0"
         >
           <Flex
             // mr={["","","","1.7rem"]}
@@ -144,7 +145,7 @@ const LandingPage = () => {
             // ml={["","","","10rem"]}
           >
             <Text
-              fontSize={["7rem","7rem","8rem","10rem"]}
+              fontSize={["6rem","7rem","8rem","10rem"]}
               color={vsgraph}
             >
               <VscGraph
@@ -200,7 +201,7 @@ const LandingPage = () => {
                     color={learnmore}
                     fontWeight={500}
                     fontSize="1.1rem"
-                    mt={["1rem", "-0.4rem", "-0.4rem", "2rem"]}
+                    mt={["1rem", "-0.4rem", "1.8rem", "2rem"]}
                     mb={["10rem","","",""]}
                   >
                     Learn more <ChevronRightIcon/>
@@ -241,9 +242,9 @@ const LandingPage = () => {
                 size="2xl"
                 w={["20rem", "30rem", "30rem", "30rem"]}
                 lineHeight={["2rem", "4.5rem", "3.5rem", "3rem"]}
-                mb="0.6rem"
-                ml={["", "", "", "6rem"]}
-                textAlign={["center", "initial"]}
+                mb="1rem"
+                // ml={["", "", "", "6rem"]}
+                textAlign={["center"]}
                 fontFamily="'Poppins', sans-serif"
               >
                 Visualize your daily and weekly expenses.
@@ -263,7 +264,7 @@ const LandingPage = () => {
                   w={["18rem", "30rem", "30rem", "23.6rem"]}
                   justifyContent="center"
                   alignItems="center"
-                  textAlign={["center", "initial"]}
+                  textAlign={["center"]}
                   // fontFamily="'DM Sans',sans-serif "
                 fontFamily="'Ubuntu', sans-serif"
                 >
@@ -282,12 +283,14 @@ const LandingPage = () => {
           mb={["","","","8rem"]}
           flexDir={["column", "column", "column", "column"]}
           bg={secondDivCOlor}
-          w={["30rem","50rem","70rem ","100rem"]}
-          h={["45rem","30rem","52rem","53rem"]}
+          w={["24rem","50rem","53rem ","85rem"]}
+          h={["42rem","30rem","52rem","50rem"]}
+          borderRadius="1rem 0 1rem 0"
         >
           <Flex
-            w={["27rem", "27rem", "40rem", "51rem"]}
-            mt={["-1.5rem","-1.5rem","-3rem","-7rem"]}
+            w={["27rem", "27rem", "40rem", "35rem"]}
+            mt={["-1.5rem","-1.5rem","-3rem","-3rem"]}
+            // mb={["","","","-4rem"]}
           >
             <Image
               src={DivPic3}
@@ -303,7 +306,7 @@ const LandingPage = () => {
               color="white"
               size="2xl"
                 lineHeight={["3rem", "3rem", "3.5rem", "4rem"]}
-                w={["20rem", "30rem", "40rem", "80rem"]}
+                  w={["20rem", "30rem", "30rem", "35rem"]}
                 fontFamily="monospace"
             >
               Take control of your finances <br/> with our budget feature.
@@ -312,7 +315,7 @@ const LandingPage = () => {
         </Flex>
 
         <Flex
-          w={["20rem","30rem","40rem","90rem"]}
+          w={["20rem","30rem","40rem","85rem"]}
           h={["20rem","20rem","20rem","15rem"]}
           bg={divColor2}
           mt={["14rem","14rem","14rem","7rem"]}
