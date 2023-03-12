@@ -106,6 +106,8 @@ const LandingPage = () => {
                 animate={{ y: 0 }}
                 initial={{ y: 150 }}
                 transition={{ duration: 1.3 }}
+                whileHover={{ scale: 1.1 , transition: { duration: 0.3 }}}
+                whileTap={{ scale: 0.8 , transition: { duration: 0.2 }}}
               >
                 <Link href="signup">
                   <Button
@@ -118,7 +120,7 @@ const LandingPage = () => {
                     mt={["2rem", "1.3rem", "1.3rem", "-1.3rem"]}
                     borderRadius="1rem 0 1rem 0"
                     _hover={{
-                      bg: '#308DFF',
+                      bg: '#2f3c93',
                     }}
                   >
                     Sign up for free
@@ -155,7 +157,7 @@ const LandingPage = () => {
           mb={["","","","8rem"]}
           flexDir={["column", "column", "column", "column"]}
           bg={secondDivCOlor}
-          w={["24rem","50rem","53rem ","85rem"]}
+          w={["21rem","21rem","53rem ","85rem"]}
           h={["28rem","28rem","35rem","40rem"]}
           borderRadius="1rem 0 1rem 0"
         >
@@ -163,7 +165,7 @@ const LandingPage = () => {
              whileInView={{ y: 0, opacity: 1}}
              initial={{ y: 150, opacity: 0 }}
              transition={{ duration: 0.8  }}
-            //  style={{ scaleY: scrollYProgress }}
+             viewport={{ once: true }}
           >  
             <Flex
               // mr={["","","","1.7rem"]}
@@ -185,13 +187,14 @@ const LandingPage = () => {
                  whileInView={{ y: 0, opacity: 1}}
                  initial={{ y: 150, opacity: 0 }}
                  transition={{ duration: 0.9  }}
+                 viewport={{ once: true }}
               >
                 <Heading
                   size={["xl","xl","2xl","2xl"]}
                   w={["17rem", "17rem", "30rem", "35rem"]}
                   noOfLines={[3,3,3,2]}
                   mt={["1rem","1rem","","0.1rem"]}
-                  lineHeight={["3rem","3rem","4rem","4rem"]}
+                  lineHeight={["3.5rem","3.5rem","4rem","4rem"]}
                   textAlign={["center"]}
                   fontFamily="monospace"
                   color={headerBg}
@@ -223,7 +226,8 @@ const LandingPage = () => {
                 whileInView={{ y: 0, opacity: 1}}
                 initial={{ y: 150, opacity: 0 }}
                 transition={{ duration: 1  }}
-              >
+                viewport={{ once: true }}
+                >
                 <Link href={"/about"}>
                   <Text
                     // ml={["","","","-30rem"]}
@@ -274,7 +278,8 @@ const LandingPage = () => {
               whileInView={{ y: 0, opacity: 1}}
               initial={{ y: 100, opacity: 0 }}
               transition={{ duration: 0.9  }}
-            >
+              viewport={{ once: true }}
+              >
               <Heading
                 size="2xl"
                 w={["20rem", "30rem", "30rem", "30rem"]}
@@ -294,6 +299,7 @@ const LandingPage = () => {
                 whileInView={{ y: 0, opacity: 1}}
                 initial={{ y: 100, opacity: 0 }}
                 transition={{ duration: 1  }}
+                viewport={{ once: true }}
               >
                 <Text
                   fontWeight={500}
@@ -322,7 +328,7 @@ const LandingPage = () => {
           mb={["","","","8rem"]}
           flexDir={["column", "column", "column", "column"]}
           bg={secondDivCOlor}
-          w={["24rem","50rem","53rem ","85rem"]}
+          w={["21rem","21rem","53rem ","85rem"]}
           h={["42rem","30rem","52rem","50rem"]}
           borderRadius="1rem 0 1rem 0"
         >
@@ -350,23 +356,24 @@ const LandingPage = () => {
               whileInView={{ y: 0, opacity: 1}}
               initial={{ y: 100, opacity: 0 }}
               transition={{ duration: 1  }}
+              viewport={{ once: true }}
             >
               <Heading
                 textAlign="center"
                 color="white"
                 size="2xl"
                   lineHeight={["3rem", "3rem", "3.5rem", "4rem"]}
-                    w={["20rem", "30rem", "30rem", "35rem"]}
+                    w={["17rem", "17rem", "30rem", "35rem"]}
                   fontFamily="monospace"
               >
-                Take control of your finances <br/> with our budget feature.
+                Take control of your finances.
               </Heading>
             </motion.div>
           </Flex>
         </Flex>
 
         <Flex
-          w={["20rem","30rem","40rem","85rem"]}
+          w={["20rem","20rem","40rem","85rem"]}
           h={["20rem","20rem","20rem","15rem"]}
           bg={divColor2}
           mt={["14rem","14rem","14rem","7rem"]}
@@ -405,22 +412,17 @@ const LandingPage = () => {
             alignItems="center"
             mt={["2rem","","",""]}
           >
-            {/* <Input
-              placeholder='Your email...'
-              _placeholder={{color: 'lightgrey' }}
-              size={["md","lg","lg","lg"]}
-              variant='filled'
-              mr="0.4rem"
-            /> */}
             <motion.div
               whileInView={{ y: 0, opacity: 1}}
               initial={{ y: 100, opacity: 0 }}
               transition={{ duration: 1  }}
+              viewport={{ once: true }}
+              whileHover={{ scale: 1.1 , transition: { duration: 0.3 }}}
             >
               <Link href="/signup">
                 <Button
                   size={["md","lg","lg","lg"]}
-                  h="3.5rem"
+                  h="4rem"
                   variant='solid'
                   bg={signUp}
                   color="white"

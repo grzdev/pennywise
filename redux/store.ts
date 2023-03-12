@@ -1,11 +1,11 @@
-import { configureStore } from '@reduxjs/toolkit'
-import dailyInputReducer from "./slices/dailyInputSlice"
+// import { configureStore } from '@reduxjs/toolkit'
+// import dailyInputReducer from "./slices/dailyInputSlice"
 
-export const store = configureStore({
-  reducer: {
-    dailyInput: dailyInputReducer
-  },
-})
+// export const store = configureStore({
+//   reducer: {
+//     dailyInput: dailyInputReducer
+//   },
+// })
 
 
 
@@ -29,6 +29,17 @@ export const store = configureStore({
 //  export const store = configureStore({
 //   reducer: rootReducers
 //  })
+
+
+import { configureStore } from '@reduxjs/toolkit'
+import numberReducer from "../redux/slices/dailyInputSlice"
+
+export const store = configureStore({
+  reducer: {
+    numbers: numberReducer
+  },
+})
+
 
  export type RootState = ReturnType<typeof store.getState>
  export type AppDispatch = typeof store.dispatch

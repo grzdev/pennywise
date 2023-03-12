@@ -26,6 +26,9 @@ import { TbCurrency, TbCurrencyNaira } from 'react-icons/tb'
 import { BiDotsHorizontalRounded, BiTransferAlt } from 'react-icons/bi'
 import { parse } from 'path'
 import { render } from 'react-dom'
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from 'redux/store'
+import { setNumberAtIndex } from 'redux/slices/dailyInputSlice'
 
 
 const InputModal = () => {
@@ -40,8 +43,10 @@ const InputModal = () => {
   const modal5 = useDisclosure()
 
   const toast = useToast()
+
   
-    //onChange Function
+  
+  //onChange Function
   const [food, setFood] = useState<number>(0);
   const [transit, setTransit] = useState<number>(0);
   const [data, setData] = useState<number>(0);
@@ -65,10 +70,19 @@ const InputModal = () => {
     }
   };
 
+  // Onchange trial 2
+  const dispatch = useDispatch();
+  const numbers = useSelector((state: RootState) => state.numbers.numbers);
+
+  const handleNumberChange = (index: number, value: number) => {
+    dispatch(setNumberAtIndex({ index, value }));
+  };
+  console.log(numbers[0])
+
   //Funtional modal buttons
   //add 1k
   const handleAdd1kFood = () => {
-    const newValue = food + 1000;
+    const newValue = numbers[0] + 1000;
     setFood(newValue);
     modal2.onOpen()
   };
@@ -378,8 +392,8 @@ const InputModal = () => {
                             type='number'
                             variant="filled"
                             placeholder='Amount'
-                            value={food}
-                            onChange={handleInputChange}
+                            value={numbers[0]}
+                            onChange={(e) => handleNumberChange(0, parseInt(e.target.value))}
                             name="food"
                         />
                     </InputGroup>
@@ -542,9 +556,9 @@ const InputModal = () => {
                             type='number'
                             variant="filled"
                             placeholder='Amount'
-                            value={transit}
                             name='transit'
-                            onChange={handleInputChange}
+                            value={numbers[1]}
+                            onChange={(e) => handleNumberChange(1, parseInt(e.target.value))}
                         />
                     </InputGroup>
                 </Flex>
@@ -706,9 +720,9 @@ const InputModal = () => {
                             type='number'
                             variant="filled"
                             placeholder='Amount'
-                            value={data}
                             name='data'
-                            onChange={handleInputChange}
+                            value={numbers[2]}
+                            onChange={(e) => handleNumberChange(2, parseInt(e.target.value))}
                         />
                     </InputGroup>
                 </Flex>
@@ -871,8 +885,8 @@ const InputModal = () => {
                             variant="filled"
                             placeholder='Amount'
                             name='transfers'
-                            value={transfers}
-                            onChange={handleInputChange}
+                            value={numbers[3]}
+                            onChange={(e) => handleNumberChange(3, parseInt(e.target.value))}
                         />
                     </InputGroup>
                 </Flex>
@@ -1034,9 +1048,9 @@ const InputModal = () => {
                             type='number'
                             variant="filled"
                             placeholder='Amount'
-                            value={others}
                             name="others"
-                            onChange={handleInputChange}
+                            value={numbers[4]}
+                            onChange={(e) => handleNumberChange(4, parseInt(e.target.value))}
                         />
                     </InputGroup>
                 </Flex>

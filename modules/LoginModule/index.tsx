@@ -88,7 +88,7 @@ const LogInModule = () => {
           h={["32rem","32rem","32rem","35rem"]}
           bg={divColor}
           mb="3rem"
-          boxShadow="dark-lg"
+          boxShadow="2xl"
           justifyContent="center"
           alignContent="center"
           borderRadius="1rem 0 1rem 0"
