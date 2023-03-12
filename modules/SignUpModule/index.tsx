@@ -73,7 +73,7 @@ const SignUpModule = () => {
        w={["20.5rem","20.5rem","24rem","28rem"]}
        h={["33rem","33rem","32rem","35rem"]}
        mb="3rem"
-       boxShadow="dark-lg"
+       boxShadow="2xl"
        bg={divColor}
        // h={["","","","30rem"]}
        justifyContent="center"

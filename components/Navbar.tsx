@@ -158,7 +158,7 @@ const Navbar = () => {
                 bg={buttonColor}
                 // href={'#'}
                 _hover={{
-                  bg: '#308DFF',
+                  bg: '#2f3c93',
                 }}
                 borderRadius="1rem 0 1rem 0"
                 display={{ base: 'none', md: 'none', lg: "inline-flex" }}

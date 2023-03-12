@@ -1,34 +1,34 @@
-import { createSlice, PayloadAction, } from "@reduxjs/toolkit";
+// import { createSlice, PayloadAction, } from "@reduxjs/toolkit";
 
-export interface DailyInputState {
-    food: number
-    transit: number
-    data: number
-    transfers: number
-    others: number
-}
+// export interface DailyInputState {
+//     food: number
+//     transit: number
+//     data: number
+//     transfers: number
+//     others: number
+// }
 
-export const dailyInputSlice = createSlice({
-    name: "dailyInput",
-    initialState: {
-        food: 0,
-        data: 0,
-        transit: 0,
-        transfers: 0,
-        others: 0
-    } as DailyInputState,
-    reducers:{
-        setFood: (state, action) =>{
-            state.food = action.payload
-        }
-    }
-})
+// export const dailyInputSlice = createSlice({
+//     name: "dailyInput",
+//     initialState: {
+//         food: 0,
+//         data: 0,
+//         transit: 0,
+//         transfers: 0,
+//         others: 0
+//     } as DailyInputState,
+//     reducers:{
+//         setFood: (state, action) =>{
+//             state.food = action.payload
+//         }
+//     }
+// })
 
-export const {
-    setFood,
-} = dailyInputSlice.actions
+// export const {
+//     setFood,
+// } = dailyInputSlice.actions
 
-export default dailyInputSlice.reducer 
+// export default dailyInputSlice.reducer 
 
 // import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
@@ -113,3 +113,29 @@ export default dailyInputSlice.reducer
 // export const { dataOnChange } = dataSlice.actions
 // export const { transfersOnChange } = transfersSlice.actions
 // export const { othersOnChange } = othersSlice.actions
+
+
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+
+interface NumbersState {
+  numbers: number[];
+}
+
+const initialState: NumbersState = {
+  numbers: [0, 0, 0, 0, 0],
+};
+
+const numbersSlice = createSlice({
+  name: 'numbers',
+  initialState,
+  reducers: {
+    setNumberAtIndex(state, action: PayloadAction<{ index: number; value: number }>) {
+      const { index, value } = action.payload;
+      state.numbers[index] = value;
+    },
+  },
+});
+
+export const { setNumberAtIndex } = numbersSlice.actions;
+
+export default numbersSlice.reducer;
