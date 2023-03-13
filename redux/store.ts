@@ -1,45 +1,20 @@
 // import { configureStore } from '@reduxjs/toolkit'
-// import dailyInputReducer from "./slices/dailyInputSlice"
+// import numberReducer from "../redux/slices/dailyInputSlice"
 
 // export const store = configureStore({
 //   reducer: {
-//     dailyInput: dailyInputReducer
+//     numbers: numberReducer
 //   },
 // })
 
-
-
-// import { configureStore, combineReducers } from "@reduxjs/toolkit";
-// import { 
-//   foodSlice,
-//   transitSlice,
-//   dataSlice,
-//   transfersSlice,
-//   othersSlice
-//  } from "./slices/dailyInputSlice";
-
-//  const rootReducers = combineReducers({
-//   food: foodSlice.reducer,
-//   transit: transitSlice.reducer,
-//   data: dataSlice.reducer,
-//   transfers: transfersSlice.reducer,
-//   others: othersSlice.reducer
-//  })
-
-//  export const store = configureStore({
-//   reducer: rootReducers
-//  })
-
-
 import { configureStore } from '@reduxjs/toolkit'
-import numberReducer from "../redux/slices/dailyInputSlice"
+import dailyInputReducer from './slices/dailyInputSlice'
 
 export const store = configureStore({
   reducer: {
-    numbers: numberReducer
+    dailyInput: dailyInputReducer
   },
 })
-
 
  export type RootState = ReturnType<typeof store.getState>
  export type AppDispatch = typeof store.dispatch
