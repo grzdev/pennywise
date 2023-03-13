@@ -126,7 +126,7 @@ const About = () => {
             <Flex
             >
               <Text
-              ml={["", "", "", "-6rem"]}
+                ml={["", "", "", "-6rem"]}
                 fontWeight={550}
                 color={textColor}
                 fontSize={["1.1rem", "1.1rem", "1.1rem", "1.2rem"]}
@@ -137,18 +137,7 @@ const About = () => {
                 textAlign={["center", "initial"]}
                 fontFamily="'Ubuntu', sans-serif"
               >
-               {/* TrackDaily is the first online "Money tracking" app in West-Africa.
-               It first came about when the team noticed that they don't have
-               an idea of how much they spend on a daily basis.<br/><br/>
-
-               This was a problem because when calculated, they spent more than
-               their income.
-               It drove the team to find a solution.<br/><br/>
-
-               TrackDaily is on a mission to help everyone budget their income better,
-               and we tend to be the best at this. From all of us at TrackDaily, Thank you ❤️ */}
-
-               This idea came to me at Unilorin one afternoon,  I had just finished a plate of Item 7, then the post item clarity hit me. <br/><br/>
+               I had this idea at Unilorin one afternoon,  I had just finished a plate of Item 7, then the post item clarity hit me. <br/><br/>
                The amount of money I spent that day could feed a Nursery 2 student at King's college for a week<br/><br/> 
                " This no be life ", I said to myself. That night, I picked up my laptop and started coding...
               </Text>

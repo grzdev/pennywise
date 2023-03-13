@@ -329,12 +329,12 @@ const LandingPage = () => {
           flexDir={["column", "column", "column", "column"]}
           bg={secondDivCOlor}
           w={["21rem","21rem","53rem ","85rem"]}
-          h={["42rem","30rem","52rem","50rem"]}
+          h={["34rem","34rem","45rem","42rem"]}
           borderRadius="1rem 0 1rem 0"
         >
           <Flex
             w={["27rem", "27rem", "40rem", "35rem"]}
-            mt={["-1.5rem","-1.5rem","-3rem","-3rem"]}
+            mt={["-3rem","-3rem","-4rem","-4rem"]}
             // mb={["","","","-4rem"]}
           >
             <motion.div
@@ -363,7 +363,7 @@ const LandingPage = () => {
                 color="white"
                 size="2xl"
                   lineHeight={["3rem", "3rem", "3.5rem", "4rem"]}
-                    w={["17rem", "17rem", "30rem", "35rem"]}
+                  w={["15rem", "15rem", "30rem", "35rem"]}
                   fontFamily="monospace"
               >
                 Take control of your finances.

@@ -43,7 +43,7 @@ import {
  import InputModal from '../components/input-modal';
  import { useDispatch, useSelector } from 'react-redux';
  import { RootState } from 'redux/store';
- 
+ import { selectMyObject } from "../../../redux/slices/dailyInputSlice"
 
 const DashBoardLandingPage = () => {
   const header = useColorModeValue("white","white")
@@ -56,6 +56,9 @@ const DashBoardLandingPage = () => {
   const bg = useColorModeValue("#FF3CAC","#667eea")
   const bgGradient = useColorModeValue("linear-gradient(to right, #536976, #292e49)","linear-gradient(to right, #4b79a1, #283e51);")
 
+
+  const myObject = useSelector(selectMyObject);
+  const Sum = myObject.food + myObject.transit + myObject.data + myObject.transfers + myObject.others
 
   //PieChart data
   const data01 = [
@@ -194,15 +197,23 @@ const DashBoardLandingPage = () => {
               >
                 <Flex
                   mt={["","","","0.2rem"]}
+                  flexDir="row"
+                  textAlign="center"
                 >
                   <Heading
                     textAlign="center"
                     color={header} 
                     size={["sm","sm","lg","xl"]}
-                    // mt={["0.1rem","0.1rem","-0.1rem","-1rem"]}
-                    mt={["0.1rem","0.1rem","-0.1rem","0.2rem"]}
+                    mt={["0.1rem","0.1rem","0.25rem","-0.2rem"]}
                   >
-                  <TbCurrencyNaira/>
+                    <TbCurrencyNaira/>
+                  </Heading>
+                  <Heading
+                    color={header} 
+                    size={["sm","sm","lg","lg"]}
+                    mt={["","","","0.2rem"]}
+                  >
+                    {Sum}
                   </Heading>
                 </Flex>
                 <Heading

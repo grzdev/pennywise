@@ -17,7 +17,14 @@ import {
     InputLeftElement,
     useToast,
     Box,
-    Icon
+    Icon,
+    Popover,
+    PopoverTrigger,
+    PopoverArrow,
+    PopoverContent,
+    PopoverCloseButton,
+    PopoverHeader,
+    PopoverBody
 } from '@chakra-ui/react'
 import React, { useState } from 'react'
 import { AddIcon, CheckCircleIcon, ChevronLeftIcon } from "@chakra-ui/icons"
@@ -28,7 +35,10 @@ import { parse } from 'path'
 import { render } from 'react-dom'
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from 'redux/store'
-import { setNumberAtIndex } from 'redux/slices/dailyInputSlice'
+import { add10k, add1k, add2k, add3k, add5k, MyObject, onChange, selectMyObject } from 'redux/slices/dailyInputSlice'
+import { RiInformationLine } from 'react-icons/ri'
+import { BsInfo } from 'react-icons/bs'
+import { createSelector } from '@reduxjs/toolkit'
 
 
 const InputModal = () => {
@@ -45,178 +55,135 @@ const InputModal = () => {
   const toast = useToast()
 
   
-  
-  //onChange Function
-  const [food, setFood] = useState<number>(0);
-  const [transit, setTransit] = useState<number>(0);
-  const [data, setData] = useState<number>(0);
-  const [transfers, setTransfers] = useState<number>(0);
-  const [others, setOthers] = useState<number>(0);
-
-  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = event.target;
-    const parsedValue = parseInt(value, 10); // convert input value to number
-
-    if (name === "food") {
-      setFood(parsedValue);
-    } else if (name === "data") {
-      setData(parsedValue);
-    } else if (name === "transit") {
-      setTransit(parsedValue);
-    } else if (name === "transfers") {
-      setTransfers(parsedValue);
-    } else if (name === "others") {
-      setOthers(parsedValue);
-    }
-  };
 
   // Onchange trial 2
   const dispatch = useDispatch();
-  const numbers = useSelector((state: RootState) => state.numbers.numbers);
+  const myObject = useSelector(selectMyObject);
+  
+  const handleNumberChange = (name: keyof MyObject, value: number) => {
+    dispatch(onChange({ name, value }));
+  }
 
-  const handleNumberChange = (index: number, value: number) => {
-    dispatch(setNumberAtIndex({ index, value }));
-  };
-  console.log(numbers[0])
+
+  // const [food, setFood] = useState<number>(0);
+  // const [transit, setTransit] = useState<number>(0);
+  // const [data, setData] = useState<number>(0);
+  // const [transfers, setTransfers] = useState<number>(0);
+  // const [others, setOthers] = useState<number>(0);
 
   //Funtional modal buttons
   //add 1k
-  const handleAdd1kFood = () => {
-    const newValue = numbers[0] + 1000;
-    setFood(newValue);
+  const handleAdd1kFood = (name: keyof MyObject, value: number) => {
+    dispatch(add1k({ name : "food", value })),
     modal2.onOpen()
   };
-  const handleAdd1kTransit = () => {
-    const newValue = transit + 1000;
-    setTransit(newValue);
+  const handleAdd1kTransit = (name: keyof MyObject, value: number) => {
+    dispatch(add1k({ name : "transit", value })),
     modal3.onOpen()
   };
-  const handleAdd1kData = () => {
-    const newValue = data + 1000;
-    setData(newValue);
+  const handleAdd1kData = (name: keyof MyObject, value: number) => {
+    dispatch(add1k({ name : "data", value })),
     modal4.onOpen()
   };
-  const handleAdd1kTransfers = () => {
-    const newValue = transfers + 1000;
-    setTransfers(newValue);
+  const handleAdd1kTransfers = (name: keyof MyObject, value: number) => {
+    dispatch(add1k({ name : "transfers", value })),
     modal5.onOpen()
   };
-  const handleAdd1kOthers = () => {
-    const newValue = others + 1000;
-    setOthers(newValue);
+  const handleAdd1kOthers = (name: keyof MyObject, value: number) => {
+    dispatch(add1k({ name : "others", value })),
     handleAddInput()
   };
 
    //add 2k
-   const handleAdd2kFood = () => {
-    const newValue = food + 2000;
-    setFood(newValue);
+   const handleAdd2kFood = (name: keyof MyObject, value: number) => {
+    dispatch(add2k({ name : "food", value })),
     modal2.onOpen()
   };
-  const handleAdd2kTransit = () => {
-    const newValue = transit + 2000;
-    setTransit(newValue);
+  const handleAdd2kTransit = (name: keyof MyObject, value: number) => {
+    dispatch(add2k({ name : "transit", value })),
     modal3.onOpen()
   };
-  const handleAdd2kData = () => {
-    const newValue = data + 2000;
-    setData(newValue);
+  const handleAdd2kData = (name: keyof MyObject, value: number) => {
+    dispatch(add2k({ name : "data", value })),
     modal4.onOpen()
   };
-  const handleAdd2kTransfers = () => {
-    const newValue = transfers + 2000;
-    setTransfers(newValue);
+  const handleAdd2kTransfers = (name: keyof MyObject, value: number) => {
+    dispatch(add2k({ name : "transfers", value })),
     modal5.onOpen()
   };
-  const handleAdd2kOthers = () => {
-    const newValue = others + 2000;
-    setOthers(newValue);
+  const handleAdd2kOthers = (name: keyof MyObject, value: number) => {
+    dispatch(add2k({ name : "others", value })),
     handleAddInput()
   };
 
   //add 3k
-  const handleAdd3kFood = () => {
-    const newValue = food + 3000;
-    setFood(newValue);
+  const handleAdd3kFood = (name: keyof MyObject, value: number) => {
+    dispatch(add3k({ name : "food", value })),
     modal2.onOpen()
   };
-  const handleAdd3kTransit = () => {
-    const newValue = transit + 3000;
-    setTransit(newValue);
+  const handleAdd3kTransit =(name: keyof MyObject, value: number) => {
+    dispatch(add3k({ name : "transit", value })),
     modal3.onOpen()
   };
-  const handleAdd3kData = () => {
-    const newValue = data + 3000;
-    setData(newValue);
+  const handleAdd3kData = (name: keyof MyObject, value: number) => {
+    dispatch(add3k({ name : "data", value })),
     modal4.onOpen()
   };
-  const handleAdd3kTransfers = () => {
-    const newValue = transfers + 3000;
-    setTransfers(newValue);
+  const handleAdd3kTransfers = (name: keyof MyObject, value: number) => {
+    dispatch(add3k({ name : "transfers", value })),
     modal5.onOpen()
   };
-  const handleAdd3kOthers = () => {
-    const newValue = others + 3000;
-    setOthers(newValue);
+  const handleAdd3kOthers = (name: keyof MyObject, value: number) => {
+    dispatch(add3k({ name : "others", value })),
     handleAddInput()
   };
 
   //add 5k
-  const handleAdd5kFood = () => {
-    const newValue = food + 5000;
-    setFood(newValue);
+  const handleAdd5kFood = (name: keyof MyObject, value: number) => {
+    dispatch(add5k({ name : "food", value })),
     modal2.onOpen()
   };
-  const handleAdd5kTransit = () => {
-    const newValue = transit + 5000;
-    setTransit(newValue);
+  const handleAdd5kTransit = (name: keyof MyObject, value: number) => {
+    dispatch(add5k({ name : "transit", value })),
     modal3.onOpen()
   };
-  const handleAdd5kData = () => {
-    const newValue = data + 5000;
-    setData(newValue);
+  const handleAdd5kData = (name: keyof MyObject, value: number) => {
+    dispatch(add5k({ name : "data", value })),
     modal4.onOpen()
   };
-  const handleAdd5kTransfers = () => {
-    const newValue = transfers + 5000;
-    setTransfers(newValue);
+  const handleAdd5kTransfers = (name: keyof MyObject, value: number) => {
+    dispatch(add5k({ name : "transfers", value })),
     modal5.onOpen()
   };
-  const handleAdd5kOthers = () => {
-    const newValue = others + 5000;
-    setOthers(newValue);
+  const handleAdd5kOthers = (name: keyof MyObject, value: number) => {
+    dispatch(add5k({ name : "others", value })),
     handleAddInput()
   };
 
   //add 10k
-  const handleAdd10kFood = () => {
-    const newValue = food + 10000;
-    setFood(newValue);
+  const handleAdd10kFood = (name: keyof MyObject, value: number) => {
+    dispatch(add10k({ name : "food", value })),
     modal2.onOpen()
   };
-  const handleAdd10kTransit = () => {
-    const newValue = transit + 10000;
-    setTransit(newValue);
+  const handleAdd10kTransit = (name: keyof MyObject, value: number) => {
+    dispatch(add10k({ name : "transit", value })),
     modal3.onOpen()
   };
-  const handleAdd10kData = () => {
-    const newValue = data + 10000;
-    setData(newValue);
+  const handleAdd10kData = (name: keyof MyObject, value: number) => {
+    dispatch(add10k({ name : "data", value })),
     modal4.onOpen()
   };
-  const handleAdd10kTransfers = () => {
-    const newValue = transfers + 10000;
-    setTransfers(newValue);
+  const handleAdd10kTransfers = (name: keyof MyObject, value: number) => {
+    dispatch(add10k({ name : "transfers", value })),
     modal5.onOpen()
   };
-  const handleAdd10kOthers = () => {
-    const newValue = others + 10000;
-    setOthers(newValue);
+  const handleAdd10kOthers = (name: keyof MyObject, value: number) => {
+    dispatch(add10k({ name : "others", value })),
     handleAddInput()
   };
 
   //Sum of all input
-  const Sum = food + transit + data + transfers + others
+  // const Sum = food + transit + data + transfers + others
 
 
   //Modal Save
@@ -277,6 +244,35 @@ const InputModal = () => {
         >
         <ModalOverlay />
         <ModalContent>
+        <Flex
+            p={1.5}
+          >
+            <Popover>
+              <PopoverTrigger>
+                <Button
+                  variant="ghost"
+                >
+                  <Text
+                    fontSize={["1.2rem","1.2rem","1.3rem","1.5rem"]}
+                  >
+                   <RiInformationLine/>
+                  </Text>
+                </Button>
+              </PopoverTrigger>
+              <PopoverContent color='white' bg='blue.800' borderColor='blue.800'>
+                <PopoverHeader pt={4} fontWeight='bold' border='0'>
+                  Hey there.
+                </PopoverHeader>
+                <PopoverArrow />
+                <PopoverCloseButton />
+                <PopoverBody
+                  mb="2rem"
+                >
+                  Please try to add the exact amount of money spent to get an accurate result.
+                </PopoverBody>
+              </PopoverContent>
+            </Popover>
+          </Flex>
           <ModalHeader>
             <Flex
                 alignItems="center"
@@ -328,7 +324,8 @@ const InputModal = () => {
                         colorScheme="blue"
                         borderRadius="full"
                         size={["sm","sm","md","md"]}
-                        onClick={handleAdd1kFood}
+                        value={myObject.food}
+                        onClick={()=> handleAdd1kFood("food", myObject.food)}
                     >
                        <TbCurrencyNaira/> 1,000
                     </Button>
@@ -336,7 +333,8 @@ const InputModal = () => {
                         size={["sm","sm","md","md"]}
                         colorScheme="blue"
                         borderRadius="full"
-                        onClick={handleAdd2kFood}
+                        value={myObject.food}
+                        onClick={()=> handleAdd2kFood("food", myObject.food)}
                     >
                        <TbCurrencyNaira/> 2,000
                     </Button>
@@ -344,7 +342,8 @@ const InputModal = () => {
                         size={["sm","sm","md","md"]}
                         colorScheme="blue"
                         borderRadius="full"
-                        onClick={handleAdd3kFood}
+                        value={myObject.food}
+                        onClick={()=> handleAdd3kFood("food", myObject.food)}
                     >
                        <TbCurrencyNaira/> 3,000
                     </Button>
@@ -356,7 +355,9 @@ const InputModal = () => {
                         size={["sm","sm","md","md"]}
                         colorScheme="blue"
                         borderRadius="full"
-                        onClick={handleAdd5kFood}
+                        value={myObject.food}
+                        onClick={()=> handleAdd5kFood("food", myObject.food)}
+                        
                     >
                        <TbCurrencyNaira/> 5,000
                     </Button>
@@ -364,7 +365,8 @@ const InputModal = () => {
                         size={["sm","sm","md","md"]}
                         colorScheme="blue"
                         borderRadius="full"
-                        onClick={handleAdd10kFood}
+                        value={myObject.food}
+                        onClick={()=> handleAdd10kFood("food", myObject.food)}
                     >
                        <TbCurrencyNaira/> 10,000
                     </Button>
@@ -392,8 +394,8 @@ const InputModal = () => {
                             type='number'
                             variant="filled"
                             placeholder='Amount'
-                            value={numbers[0]}
-                            onChange={(e) => handleNumberChange(0, parseInt(e.target.value))}
+                            value={myObject.food}
+                            onChange={(e) => handleNumberChange('food', parseInt(e.target.value, 10))}
                             name="food"
                         />
                     </InputGroup>
@@ -435,6 +437,35 @@ const InputModal = () => {
         >
         <ModalOverlay />
         <ModalContent>
+        <Flex
+            p={1.5}
+          >
+            <Popover>
+              <PopoverTrigger>
+                <Button
+                  variant="ghost"
+                >
+                  <Text
+                    fontSize={["1.2rem","1.2rem","1.3rem","1.5rem"]}
+                  >
+                   <RiInformationLine/>
+                  </Text>
+                </Button>
+              </PopoverTrigger>
+              <PopoverContent color='white' bg='blue.800' borderColor='blue.800'>
+                <PopoverHeader pt={4} fontWeight='bold' border='0'>
+                  Hey there.
+                </PopoverHeader>
+                <PopoverArrow />
+                <PopoverCloseButton />
+                <PopoverBody
+                  mb="2rem"
+                >
+                  Please try to add the exact amount of money spent to get an accurate result.
+                </PopoverBody>
+              </PopoverContent>
+            </Popover>
+          </Flex>
           <ModalHeader>
             <Flex
                 alignItems="center"
@@ -492,7 +523,8 @@ const InputModal = () => {
                         colorScheme="blue"
                         borderRadius="full"
                         size={["sm","sm","md","md"]}
-                        onClick={handleAdd1kTransit}
+                        value={myObject.transit}
+                        onClick={()=> handleAdd1kTransit("transit", myObject.transit)}
                     >
                        <TbCurrencyNaira/> 1,000
                     </Button>
@@ -500,7 +532,8 @@ const InputModal = () => {
                         size={["sm","sm","md","md"]}
                         colorScheme="blue"
                         borderRadius="full"
-                        onClick={handleAdd2kTransit}
+                        value={myObject.transit}
+                        onClick={()=> handleAdd2kTransit("transit", myObject.transit)}
                     >
                        <TbCurrencyNaira/> 2,000
                     </Button>
@@ -508,7 +541,8 @@ const InputModal = () => {
                         size={["sm","sm","md","md"]}
                         colorScheme="blue"
                         borderRadius="full"
-                        onClick={handleAdd3kTransit}
+                        value={myObject.transit}
+                        onClick={()=> handleAdd3kTransit("transit", myObject.transit)}
                     >
                        <TbCurrencyNaira/> 3,000
                     </Button>
@@ -520,7 +554,8 @@ const InputModal = () => {
                         size={["sm","sm","md","md"]}
                         colorScheme="blue"
                         borderRadius="full"
-                        onClick={handleAdd5kTransit}
+                        value={myObject.transit}
+                        onClick={()=> handleAdd5kTransit("transit", myObject.transit)}
                     >
                        <TbCurrencyNaira/> 5,000
                     </Button>
@@ -528,7 +563,8 @@ const InputModal = () => {
                         size={["sm","sm","md","md"]}
                         colorScheme="blue"
                         borderRadius="full"
-                        onClick={handleAdd10kTransit}
+                        value={myObject.transit}
+                        onClick={()=> handleAdd10kTransit("transit", myObject.transit)}
                     >
                        <TbCurrencyNaira/> 10,000
                     </Button>
@@ -557,8 +593,8 @@ const InputModal = () => {
                             variant="filled"
                             placeholder='Amount'
                             name='transit'
-                            value={numbers[1]}
-                            onChange={(e) => handleNumberChange(1, parseInt(e.target.value))}
+                            value={myObject.transit}
+                            onChange={(e) => handleNumberChange('transit', parseInt(e.target.value, 10))}
                         />
                     </InputGroup>
                 </Flex>
@@ -599,6 +635,35 @@ const InputModal = () => {
         >
         <ModalOverlay />
         <ModalContent>
+        <Flex
+            p={1.5}
+          >
+            <Popover>
+              <PopoverTrigger>
+                <Button
+                  variant="ghost"
+                >
+                  <Text
+                    fontSize={["1.2rem","1.2rem","1.3rem","1.5rem"]}
+                  >
+                   <RiInformationLine/>
+                  </Text>
+                </Button>
+              </PopoverTrigger>
+              <PopoverContent color='white' bg='blue.800' borderColor='blue.800'>
+                <PopoverHeader pt={4} fontWeight='bold' border='0'>
+                  Hey there.
+                </PopoverHeader>
+                <PopoverArrow />
+                <PopoverCloseButton />
+                <PopoverBody
+                  mb="2rem"
+                >
+                  Please try to add the exact amount of money spent to get an accurate result.
+                </PopoverBody>
+              </PopoverContent>
+            </Popover>
+          </Flex>
           <ModalHeader>
             <Flex
                 alignItems="center"
@@ -656,7 +721,8 @@ const InputModal = () => {
                         colorScheme="blue"
                         borderRadius="full"
                         size={["sm","sm","md","md"]}
-                        onClick={handleAdd1kData}
+                        value={myObject.data}
+                        onClick={()=> handleAdd1kData("data", myObject.data)}
                     >
                        <TbCurrencyNaira/> 1,000
                     </Button>
@@ -664,7 +730,8 @@ const InputModal = () => {
                         size={["sm","sm","md","md"]}
                         colorScheme="blue"
                         borderRadius="full"
-                        onClick={handleAdd2kData}
+                        value={myObject.data}
+                        onClick={()=> handleAdd2kData("data", myObject.data)}
                     >
                        <TbCurrencyNaira/> 2,000
                     </Button>
@@ -672,7 +739,8 @@ const InputModal = () => {
                         size={["sm","sm","md","md"]}
                         colorScheme="blue"
                         borderRadius="full"
-                        onClick={handleAdd3kData}
+                        value={myObject.data}
+                        onClick={()=> handleAdd3kData("data", myObject.data)}
                     >
                        <TbCurrencyNaira/> 3,000
                     </Button>
@@ -684,7 +752,8 @@ const InputModal = () => {
                         size={["sm","sm","md","md"]}
                         colorScheme="blue"
                         borderRadius="full"
-                        onClick={handleAdd5kData}
+                        value={myObject.data}
+                        onClick={()=> handleAdd5kData("data", myObject.data)}
                     >
                        <TbCurrencyNaira/> 5,000
                     </Button>
@@ -692,7 +761,8 @@ const InputModal = () => {
                         size={["sm","sm","md","md"]}
                         colorScheme="blue"
                         borderRadius="full"
-                        onClick={handleAdd10kData}
+                        value={myObject.data}
+                        onClick={()=> handleAdd10kData("data", myObject.data)}
                     >
                        <TbCurrencyNaira/> 10,000
                     </Button>
@@ -721,8 +791,8 @@ const InputModal = () => {
                             variant="filled"
                             placeholder='Amount'
                             name='data'
-                            value={numbers[2]}
-                            onChange={(e) => handleNumberChange(2, parseInt(e.target.value))}
+                            value={myObject.data}
+                            onChange={(e) => handleNumberChange('data', parseInt(e.target.value, 10))}
                         />
                     </InputGroup>
                 </Flex>
@@ -763,6 +833,35 @@ const InputModal = () => {
         >
         <ModalOverlay />
         <ModalContent>
+        <Flex
+            p={1.5}
+          >
+            <Popover>
+              <PopoverTrigger>
+                <Button
+                  variant="ghost"
+                >
+                  <Text
+                    fontSize={["1.2rem","1.2rem","1.3rem","1.5rem"]}
+                  >
+                   <RiInformationLine/>
+                  </Text>
+                </Button>
+              </PopoverTrigger>
+              <PopoverContent color='white' bg='blue.800' borderColor='blue.800'>
+                <PopoverHeader pt={4} fontWeight='bold' border='0'>
+                  Hey there.
+                </PopoverHeader>
+                <PopoverArrow />
+                <PopoverCloseButton />
+                <PopoverBody
+                  mb="2rem"
+                >
+                  Please try to add the exact amount of money spent to get an accurate result.
+                </PopoverBody>
+              </PopoverContent>
+            </Popover>
+          </Flex>
           <ModalHeader>
             <Flex
                 alignItems="center"
@@ -820,7 +919,8 @@ const InputModal = () => {
                         colorScheme="blue"
                         borderRadius="full"
                         size={["sm","sm","md","md"]}
-                        onClick={handleAdd1kTransfers}
+                        value={myObject.transfers}
+                        onClick={()=> handleAdd1kTransfers("transfers", myObject.transfers)}
                     >
                        <TbCurrencyNaira/> 1,000
                     </Button>
@@ -828,7 +928,8 @@ const InputModal = () => {
                         size={["sm","sm","md","md"]}
                         colorScheme="blue"
                         borderRadius="full"
-                        onClick={handleAdd2kTransfers}
+                        value={myObject.transfers}
+                        onClick={()=> handleAdd2kTransfers("transfers", myObject.transfers)}
                     >
                        <TbCurrencyNaira/> 2,000
                     </Button>
@@ -836,7 +937,8 @@ const InputModal = () => {
                         size={["sm","sm","md","md"]}
                         colorScheme="blue"
                         borderRadius="full"
-                        onClick={handleAdd3kTransfers}
+                        value={myObject.transfers}
+                        onClick={()=> handleAdd3kTransfers("transfers", myObject.transfers)}
                     >
                        <TbCurrencyNaira/> 3,000
                     </Button>
@@ -848,7 +950,8 @@ const InputModal = () => {
                         size={["sm","sm","md","md"]}
                         colorScheme="blue"
                         borderRadius="full"
-                        onClick={handleAdd5kTransfers}
+                        value={myObject.transfers}
+                        onClick={()=> handleAdd5kTransfers("transfers", myObject.transfers)}
                     >
                        <TbCurrencyNaira/> 5,000
                     </Button>
@@ -856,7 +959,8 @@ const InputModal = () => {
                         size={["sm","sm","md","md"]}
                         colorScheme="blue"
                         borderRadius="full"
-                        onClick={handleAdd10kTransfers}
+                        value={myObject.transfers}
+                        onClick={()=> handleAdd10kTransfers("transfers", myObject.transfers)}
                     >
                        <TbCurrencyNaira/> 10,000
                     </Button>
@@ -885,8 +989,8 @@ const InputModal = () => {
                             variant="filled"
                             placeholder='Amount'
                             name='transfers'
-                            value={numbers[3]}
-                            onChange={(e) => handleNumberChange(3, parseInt(e.target.value))}
+                            value={myObject.transfers}
+                            onChange={(e) => handleNumberChange('transfers', parseInt(e.target.value, 10))}
                         />
                     </InputGroup>
                 </Flex>
@@ -927,6 +1031,35 @@ const InputModal = () => {
         >
         <ModalOverlay />
         <ModalContent>
+        <Flex
+            p={1.5}
+          >
+            <Popover>
+              <PopoverTrigger>
+                <Button
+                  variant="ghost"
+                >
+                  <Text
+                    fontSize={["1.2rem","1.2rem","1.3rem","1.5rem"]}
+                  >
+                   <RiInformationLine/>
+                  </Text>
+                </Button>
+              </PopoverTrigger>
+              <PopoverContent color='white' bg='blue.800' borderColor='blue.800'>
+                <PopoverHeader pt={4} fontWeight='bold' border='0'>
+                  Hey there.
+                </PopoverHeader>
+                <PopoverArrow />
+                <PopoverCloseButton />
+                <PopoverBody
+                  mb="2rem"
+                >
+                  Please try to add the exact amount of money spent to get an accurate result.
+                </PopoverBody>
+              </PopoverContent>
+            </Popover>
+          </Flex>
           <ModalHeader>
             <Flex
                 alignItems="center"
@@ -984,7 +1117,8 @@ const InputModal = () => {
                         colorScheme="blue"
                         borderRadius="full"
                         size={["sm","sm","md","md"]}
-                        onClick={handleAdd1kOthers}
+                        value={myObject.others}
+                        onClick={()=> handleAdd1kOthers("transfers", myObject.others)}
                     >
                        <TbCurrencyNaira/> 1,000
                     </Button>
@@ -992,7 +1126,8 @@ const InputModal = () => {
                         size={["sm","sm","md","md"]}
                         colorScheme="blue"
                         borderRadius="full"
-                        onClick={handleAdd2kOthers}
+                        value={myObject.others}
+                        onClick={()=> handleAdd2kOthers("transfers", myObject.others)}
                     >
                        <TbCurrencyNaira/> 2,000
                     </Button>
@@ -1000,7 +1135,8 @@ const InputModal = () => {
                         size={["sm","sm","md","md"]}
                         colorScheme="blue"
                         borderRadius="full"
-                        onClick={handleAdd3kOthers}
+                        value={myObject.others}
+                        onClick={()=> handleAdd3kOthers("transfers", myObject.others)}
                     >
                        <TbCurrencyNaira/> 3,000
                     </Button>
@@ -1012,7 +1148,8 @@ const InputModal = () => {
                         size={["sm","sm","md","md"]}
                         colorScheme="blue"
                         borderRadius="full"
-                        onClick={handleAdd5kOthers}
+                        value={myObject.others}
+                        onClick={()=> handleAdd5kOthers("transfers", myObject.others)}
                     >
                        <TbCurrencyNaira/> 5,000
                     </Button>
@@ -1020,7 +1157,8 @@ const InputModal = () => {
                         size={["sm","sm","md","md"]}
                         colorScheme="blue"
                         borderRadius="full"
-                        onClick={handleAdd10kOthers}
+                        value={myObject.others}
+                        onClick={()=> handleAdd10kOthers("transfers", myObject.others)}
                     >
                        <TbCurrencyNaira/> 10,000
                     </Button>
@@ -1049,8 +1187,8 @@ const InputModal = () => {
                             variant="filled"
                             placeholder='Amount'
                             name="others"
-                            value={numbers[4]}
-                            onChange={(e) => handleNumberChange(4, parseInt(e.target.value))}
+                            value={myObject.others}
+                            onChange={(e) => handleNumberChange('others', parseInt(e.target.value, 10))}
                         />
                     </InputGroup>
                 </Flex>
