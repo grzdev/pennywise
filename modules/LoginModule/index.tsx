@@ -163,7 +163,7 @@ const LogInModule = () => {
                       size="lg"
                       w={["17.2rem","17.2rem","20.7rem","24rem"]}
                       // h={["2.4rem","","",""]}
-                      color="white"
+                      // color="white"
                       // mt="0.5rem"
                       id='email'
                       bg={signUpBg}
@@ -190,7 +190,7 @@ const LogInModule = () => {
                     </FormLabel>
                     <Input
                       variant="filled"
-                      color="white"
+                      // color="white"
                       bg={signUpBg}
                       size="lg"
                       // mt="0.5rem"

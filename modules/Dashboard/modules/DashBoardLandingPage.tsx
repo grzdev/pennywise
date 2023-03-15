@@ -147,13 +147,13 @@ const DashBoardLandingPage = ({ className }: DateTimeProps) => {
       >
         <Flex
           flexDir="column"
-          mt={["0.8rem","2rem","3rem","4rem"]}
+          mt={["2rem","2rem","3rem","4rem"]}
           ml={["1rem","2rem","2rem","2rem"]}
         >
           <Heading
             size={["lg","lg","xl","xl"]}
           >
-            Dami👋,
+            Hey👋,
           </Heading>
           <Text
             fontWeight={500}
@@ -167,11 +167,11 @@ const DashBoardLandingPage = ({ className }: DateTimeProps) => {
         <Flex
           alignItems="center"
           justifyContent="center"
-          mt={["1rem","2rem","1.5rem","2rem"]}
+          mt={["2rem","2rem","1.5rem","2rem"]}
         >
           <Flex
             w={["20rem","20rem","33rem","60rem"]}
-            h={["30rem","25rem","35rem","32rem"]}
+            h={["32rem","32rem","35rem","32rem"]}
             bg= {bgGradient}
             borderRadius="1rem 0 1rem 0"
           >
@@ -204,13 +204,13 @@ const DashBoardLandingPage = ({ className }: DateTimeProps) => {
                   >
                     <Heading
                       size={["lg","xl","xl","2xl"]}
-                      mr="-0.4rem"
+                      mr="-0.1rem"
                     >
                       <TbCurrencyNaira/>
                     </Heading>
                     <Heading
                       size={["md","lg","lg","xl"]}
-                      mt={["-0.1rem","0.1rem","-0.1rem",""]}
+                      mt={["-0.01rem","0.1rem","-0.1rem",""]}
                     >
                       {Sum}
                     </Heading>
@@ -229,7 +229,7 @@ const DashBoardLandingPage = ({ className }: DateTimeProps) => {
               </Flex>
 
               <Flex
-                mt={["-1.2rem","-1.2rem","-1rem","-4rem"]}
+                mt={["1rem","-1.2rem","-1rem","-4rem"]}
                 alignItems="center"
                 justifyContent="center"
                 w={["","","",""]}
@@ -267,7 +267,7 @@ const DashBoardLandingPage = ({ className }: DateTimeProps) => {
         <Divider
           orientation='horizontal'
           w="100%"
-          mt={["5rem","5rem","3rem","3rem"]}
+          mt={["8rem","8rem","3rem","3rem"]}
         />
 
         {/* <Flex
