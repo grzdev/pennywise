@@ -57,7 +57,7 @@ const Footer = () => {
       >
         <Flex>
           <Flex
-            mt={["-0.1rem", "-0.05rem", "-0.04rem", "-0.01rem"]}
+            mt={["-0.2rem", "-0.05rem", "-0.04rem", "-0.01rem"]}
             mb={["6rem","","",""]}
             mr={["","","0.05rem","0.05rem"]}
           >

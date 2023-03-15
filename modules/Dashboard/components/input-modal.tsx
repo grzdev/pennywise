@@ -42,7 +42,7 @@ import { createSelector } from '@reduxjs/toolkit'
 
 
 const InputModal = () => {
-  const button = useColorModeValue("#4F89E8","#4F89E8")
+  const button = useColorModeValue("linear-gradient( 135deg, #FFA6B7 10%, #1E2AD2 100%)","linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%)")
   const header = useColorModeValue("#2c4658","")
   const text = useColorModeValue("#0081e7","")
 
@@ -207,6 +207,7 @@ const InputModal = () => {
                     h={["3rem","3rem","3rem","3rem"]}
                     colorScheme="blue"
                     leftIcon={<CheckCircleIcon/>}
+                    
                 >
                     Done
                 </Button>
@@ -222,7 +223,9 @@ const InputModal = () => {
   return (
     <Flex>
         <Button
-         size={["md","md","lg","lg"]}
+        //  size={["md","md","lg","lg"]}
+        w={["4rem","5rem","6rem","7rem"]}
+        h={["2.8rem","2.8rem","3.2rem","3.8rem"]}
          borderRadius="1rem 0 1rem 0"
          bg={button}
          _hover={{
@@ -315,6 +318,7 @@ const InputModal = () => {
             >
                 <HStack
                     gap={["0.5rem","0.6rem","1rem","1rem"]}
+                    mt="-2rem"
                     // w={["","","","26rem"]}
                     // noOfLines={2}
                     // justifyContent="center"
@@ -518,6 +522,7 @@ const InputModal = () => {
                     // noOfLines={2}
                     // justifyContent="center"
                     // alignItems="center"
+                    mt="-2rem"
                 >
                     <Button
                         colorScheme="blue"
@@ -716,6 +721,7 @@ const InputModal = () => {
                     // noOfLines={2}
                     // justifyContent="center"
                     // alignItems="center"
+                    mt="-2rem"
                 >
                     <Button
                         colorScheme="blue"
@@ -913,7 +919,8 @@ const InputModal = () => {
                     // w={["","","","26rem"]}
                     // noOfLines={2}
                     // justifyContent="center"
-                    // alignItems="center"
+                    // alignItems="center
+                    mt="-2rem"
                 >
                     <Button
                         colorScheme="blue"
@@ -1112,6 +1119,7 @@ const InputModal = () => {
                     // noOfLines={2}
                     // justifyContent="center"
                     // alignItems="center"
+                    mt="-2rem"
                 >
                     <Button
                         colorScheme="blue"
