@@ -39,12 +39,16 @@ import { add10k, add1k, add2k, add3k, add5k, MyObject, onChange, selectMyObject 
 import { RiInformationLine } from 'react-icons/ri'
 import { BsInfo } from 'react-icons/bs'
 import { createSelector } from '@reduxjs/toolkit'
+import { motion } from 'framer-motion'
 
 
 const InputModal = () => {
-  const button = useColorModeValue("linear-gradient( 135deg, #FFA6B7 10%, #1E2AD2 100%)","linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%)")
+  const button = useColorModeValue("linear-gradient(to right, #acb6e5, #86fde8);","linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%)")
   const header = useColorModeValue("#2c4658","")
   const text = useColorModeValue("#0081e7","")
+  const addIcon = useColorModeValue("#172A63","")
+// background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
+
 
   const modal1 = useDisclosure()
   const modal2 = useDisclosure()
@@ -187,12 +191,15 @@ const InputModal = () => {
 
 
   //Modal Save
+  const [isFormComplete, setIsFormComplete] = useState(false);
+
    const handleAddInput = () => {
     modal1.onClose()
     modal2.onClose()
     modal3.onClose()
     modal4.onClose()
     modal5.onClose()
+    setIsFormComplete(true);
     toast({
         position: 'bottom',
         
@@ -214,6 +221,8 @@ const InputModal = () => {
             </Flex>
         )
     })
+
+    
    
   }
   
@@ -222,6 +231,13 @@ const InputModal = () => {
 
   return (
     <Flex>
+      <motion.div
+        whileInView={{ y: 0, opacity: 1}}
+        initial={{ y: 100, opacity: 0 }}
+        viewport={{ once: true }}
+        whileHover={{ scale: 1.1 }}
+        transition={{ type: "spring", stiffness: 200, damping: 10 }}
+      >
         <Button
         //  size={["md","md","lg","lg"]}
         w={["4rem","5rem","6rem","7rem"]}
@@ -229,12 +245,20 @@ const InputModal = () => {
          borderRadius="1rem 0 1rem 0"
          bg={button}
          _hover={{
-         bg: "#61c5ff"
+         bg: "#171923"
          }}
          onClick={modal1.onOpen}
         >
-         <AddIcon color="white" fontSize="1.2rem" fontWeight={900}/>
+          <Text
+            color={addIcon} 
+            fontSize={["1.1rem","1.1rem","1.3rem","1.4rem"]}
+            fontWeight={900}
+          >
+            <AddIcon/>
+          </Text>
+
         </Button>
+      </motion.div>
         
         {/* Food Modal */}
         <Modal 
@@ -243,7 +267,7 @@ const InputModal = () => {
          onClose={modal1.onClose}
          isCentered
          size={["xs","xs","md","lg"]}
-         blockScrollOnMount={false}
+         blockScrollOnMount={true}
         >
         <ModalOverlay />
         <ModalContent>

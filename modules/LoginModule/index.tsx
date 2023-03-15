@@ -19,6 +19,7 @@ import Link from 'next/link'
 import { useAuth } from 'context/AuthContext'
 import { useRouter} from 'next/router'
 import { CircularProgress, } from "@chakra-ui/react";
+import { motion } from 'framer-motion'
 
 const LogInModule = () => {
   const divColor = useColorModeValue("white","#333f55")
@@ -83,7 +84,7 @@ const LogInModule = () => {
   return (
     <Container centerContent>
        <Flex
-          mt={["5rem","5rem","6rem","6rem"]}
+          mt={["3.5rem","3.5rem","6rem","6rem"]}
           w={["20rem","20rem","24rem","28rem"]}
           h={["32rem","32rem","32rem","35rem"]}
           bg={divColor}
@@ -234,22 +235,29 @@ const LogInModule = () => {
               justifyContent="center"
               alignItems="center"
             >
-              
-              <Button
-                bg={signIn}
-                color="white"
-                onClick={handleLogin}
-                type="submit"
-                mt={["2.2rem","2rem","2.5rem","3rem"]}
-                borderRadius="1rem 0 1rem 0"
-                w={["9.2rem","9.2rem","11rem","15rem"]}
-                h={["2.3rem","2.3rem","2.6rem","3rem"]}
-                _hover={{
-                  bg: '#2f3c93',
-                }}
+              <motion.div
+                whileInView={{ y: 0, opacity: 1}}
+                initial={{ y: 100, opacity: 0 }}
+                viewport={{ once: true }}
+                whileHover={{ scale: 1.1 }}
+                transition={{ type: "spring", stiffness: 200, damping: 10 }}
               >
-                Sign in
-              </Button>
+                <Button
+                  bg={signIn}
+                  color="white"
+                  onClick={handleLogin}
+                  type="submit"
+                  mt={["2.2rem","2rem","2.5rem","3rem"]}
+                  borderRadius="1rem 0 1rem 0"
+                  w={["9.2rem","9.2rem","11rem","15rem"]}
+                  h={["2.3rem","2.3rem","2.6rem","3rem"]}
+                  _hover={{
+                    bg: '#2f3c93',
+                  }}
+                >
+                  Sign in
+                </Button>
+              </motion.div>
               {/* <Button
                 onClick={handleGoogleClick}
                 type="submit"

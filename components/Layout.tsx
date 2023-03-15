@@ -12,8 +12,8 @@ const Layout = ({ children }: Props) => {
   return (
     <div>
         <Head>
-            <title>Track Daily</title>
-            <meta name="description" content="A site that tracks how much you spend daily." />
+            <title>Penny Wise</title>
+            <meta name="description" content="Track your daily expenses." />
             <meta name="viewport" content="width=device-width, initial-scale=1" />
             <link rel="icon" href="/favicon.ico" />
         </Head>

@@ -18,7 +18,7 @@ import { FcGoogle } from "react-icons/fc"
 import { useRouter} from 'next/router'
 import { useAuth } from 'context/AuthContext'
 import { CircularProgress, } from "@chakra-ui/react";
-
+import { motion } from 'framer-motion'
 
 const SignUpModule = () => {
   const divColor = useColorModeValue("white","#333f55")
@@ -70,7 +70,7 @@ const SignUpModule = () => {
   return (
     <Container centerContent>
     <Flex
-       mt={["5rem","5rem","6rem","6rem"]}
+       mt={["3.4rem","3.4rem","6rem","6rem"]}
        w={["20.5rem","20.5rem","24rem","28rem"]}
        h={["33rem","33rem","32rem","35rem"]}
        mb="3rem"
@@ -204,21 +204,29 @@ const SignUpModule = () => {
            justifyContent="center"
           alignItems="center"
          >
-           <Button
-             bg={signIn}
-             color="white"
-             onClick={handleSignup}
-              type="submit"
-              mt={["2.2rem","2.2rem","2.5rem","3rem"]}
-              borderRadius="1rem 0 1rem 0"
-              w={["9.2rem","9.2rem","11rem","15rem"]}
-              h={["2.3rem","2.3rem","2.6rem","3rem"]}
-                _hover={{
-                  bg: '#2f3c93',
-                }}
-           >
-              Create account
-           </Button>
+          <motion.div
+            whileInView={{ y: 0, opacity: 1}}
+            initial={{ y: 100, opacity: 0 }}
+            viewport={{ once: true }}
+            whileHover={{ scale: 1.1 }}
+            transition={{ type: "spring", stiffness: 200, damping: 10 }}
+          >
+            <Button
+              bg={signIn}
+              color="white"
+              onClick={handleSignup}
+                type="submit"
+                mt={["2.2rem","2.2rem","2.5rem","3rem"]}
+                borderRadius="1rem 0 1rem 0"
+                w={["9.2rem","9.2rem","11rem","15rem"]}
+                h={["2.3rem","2.3rem","2.6rem","3rem"]}
+                  _hover={{
+                    bg: '#2f3c93',
+                  }}
+            >
+                Create account
+            </Button>
+          </motion.div>
            {/* <Button
             onClick={handleGoogleClick}
            >
