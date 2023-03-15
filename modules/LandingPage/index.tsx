@@ -99,7 +99,7 @@ const LandingPage = () => {
                   {/* TrackDaily helps customers achieve their budget goals by storing the amount they spend on a daily basis, */}
                   {/* By keeping track of clients' daily spending, 
                   TrackDaily enables users to meet their financial goals. */}
-                  TrackDaily helps users meet their financial goals by keeping a record of their clients' daily spending.
+                  PennyWise helps users meet their financial goals by keeping a record of their clients' daily spending.
                 </Text>
               </motion.div>
             </Flex>
@@ -376,7 +376,8 @@ const LandingPage = () => {
                   w={["15rem", "15rem", "30rem", "35rem"]}
                   fontFamily="monospace"
               >
-                Take control of your finances.
+                {/* Take control of your finances. */}
+                Make wise financial decisions.
               </Heading>
             </motion.div>
           </Flex>
@@ -425,9 +426,7 @@ const LandingPage = () => {
             <motion.div
               whileInView={{ y: 0, opacity: 1}}
               initial={{ y: 100, opacity: 0 }}
-              // transition={{ duration: 1  }}
               viewport={{ once: true }}
-              // whileHover={{ scale: 1.1 , transition: { duration: 0.3 }}}
               whileHover={{ scale: 1.1 }}
               transition={{ type: "spring", stiffness: 400, damping: 10 }}
             >

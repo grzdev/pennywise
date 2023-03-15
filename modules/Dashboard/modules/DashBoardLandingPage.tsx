@@ -44,6 +44,7 @@ import {
  import { useDispatch, useSelector } from 'react-redux';
  import { RootState } from 'redux/store';
  import { selectMyObject } from "../../../redux/slices/dailyInputSlice"
+ import { motion } from 'framer-motion';
 
  interface DateTimeProps {
   className?: string;
@@ -56,13 +57,13 @@ const DashBoardLandingPage = ({ className }: DateTimeProps) => {
   
   const header = useColorModeValue("white","white")
   const SecondBox = useColorModeValue("#407adf","#70a1c8")
-  const pieColor = useColorModeValue("#94bdff","#4F89E8")
-  const pieColor2 = useColorModeValue("#94bdff","#6aa2ff")
+  const pieColor = useColorModeValue("#8ab7ff","#8ab4ff")
+  const pieColor2 = useColorModeValue("#8ab7ff","#8ab4ff")
   const addButton = useColorModeValue("#0050d6","#1c5dd0")
   const color = useColorModeValue("#ff003d","#ff003d")
   const button = useColorModeValue("#4aafe9","#e3379b")
   const bg = useColorModeValue("#FF3CAC","#667eea")
-  const bgGradient = useColorModeValue("linear-gradient(to right, #536976, #292e49)","linear-gradient(to right, #4b79a1, #283e51);")
+  const bgGradient = useColorModeValue("linear-gradient(to right, #162961, #3969b9)","linear-gradient(to right, #6289ff, #28355e);")
 
 
   const myObject = useSelector(selectMyObject);
@@ -180,7 +181,7 @@ const DashBoardLandingPage = ({ className }: DateTimeProps) => {
               <Flex
                 flexDir="row"
                 p={["2rem","2rem","3rem","3rem"]}
-                gap={["8.5rem","","17.8rem","43rem"]}
+                gap={["8.5rem","8.5rem","16.8rem","43rem"]}
                 color="white"
                 >
                 <Flex
@@ -202,14 +203,14 @@ const DashBoardLandingPage = ({ className }: DateTimeProps) => {
                     // ml={["","","","-1rem"]
                   >
                     <Heading
-                      size={["xl","xl","xl","2xl"]}
-                      mr="-0.3rem"
+                      size={["lg","xl","xl","2xl"]}
+                      mr="-0.4rem"
                     >
                       <TbCurrencyNaira/>
                     </Heading>
                     <Heading
-                      size={["lg","lg","lg","xl"]}
-                      mt={["-0.1rem","0.1rem","-0.1rem","-0.01rem"]}
+                      size={["md","lg","lg","xl"]}
+                      mt={["-0.1rem","0.1rem","-0.1rem",""]}
                     >
                       {Sum}
                     </Heading>
@@ -219,7 +220,8 @@ const DashBoardLandingPage = ({ className }: DateTimeProps) => {
 
                 <Flex>
                   <Text
-                    fontSize={["1.6rem","1.6rem","2rem","3rem"]}
+                    fontSize={["1.9rem","1.9rem","3rem","3rem"]}
+                    mt={["0.4rem","0.4rem","",""]}
                   >
                     <MdTrackChanges/>
                   </Text>
@@ -227,7 +229,7 @@ const DashBoardLandingPage = ({ className }: DateTimeProps) => {
               </Flex>
 
               <Flex
-                mt={["-1.8rem","-1.8rem","-1rem","-4rem"]}
+                mt={["-1.2rem","-1.2rem","-1rem","-4rem"]}
                 alignItems="center"
                 justifyContent="center"
                 w={["","","",""]}
@@ -244,7 +246,7 @@ const DashBoardLandingPage = ({ className }: DateTimeProps) => {
               <Flex
                 justifyContent="center"
                 alignItems="center"
-                mt={["2.3rem","2rem","3rem","2rem"]}
+                mt={["4.3rem","2rem","3rem","2rem"]}
                 gap={["6.5rem","2.4rem","15rem","38rem"]}
                 ml={["1rem","","","1.7rem"]}
               >
@@ -265,7 +267,7 @@ const DashBoardLandingPage = ({ className }: DateTimeProps) => {
         <Divider
           orientation='horizontal'
           w="100%"
-          mt="3rem"
+          mt={["5rem","5rem","3rem","3rem"]}
         />
 
         {/* <Flex
