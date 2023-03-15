@@ -57,8 +57,9 @@ const Footer = () => {
       >
         <Flex>
           <Flex
-            mt={["-0.4rem", "-0.4rem", "-0.2rem", "-0.3rem"]}
+            mt={["-0.1rem", "-0.05rem", "-0.04rem", "-0.01rem"]}
             mb={["6rem","","",""]}
+            mr={["","","0.05rem","0.05rem"]}
           >
             <Text
               fontSize={["1.7rem","1.7rem","2rem","2rem"]}
@@ -71,13 +72,14 @@ const Footer = () => {
 
           <Heading
             size={["sm","sm","md","md"]}
-            ml={["-0.05rem","-0.1rem","-0.1rem","0.1rem"]}
+            ml={["-0.06rem","-0.05rem","-0.1rem","0.1rem"]}
             color={headerColor}
 
           >
-            trackdaily
+            pennywise
           </Heading>
         </Flex>
+        
 
        
 
@@ -147,7 +149,7 @@ const Footer = () => {
       </Flex>
       <Flex
         flexDir="row"
-        gap="0.6rem"
+        gap="0.8rem"
       >
         <Link href="https://github.com/19zay?tab=repositories">
           <Text

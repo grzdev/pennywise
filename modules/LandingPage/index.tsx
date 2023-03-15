@@ -67,12 +67,13 @@ const LandingPage = () => {
                   w={["20rem", "30rem", "30rem", "30rem"]}
                   lineHeight={["3.9rem", "4.5rem", "4.5rem", "4.5rem"]}
                   mb="0.6rem"
-                  mt={["3rem", "10rem", "10rem", "12rem"]}
+                  mt={["3rem", "10rem", "10rem", "10rem"]}
                   // ml={["", "", "", "6rem"]}
                   textAlign={["center"]}
                   fontFamily="'Roboto', sans-serif"
                 >
-                  Keep Tabs On Your Daily Spendings.
+                  {/* Keep Tabs On Your Daily Spendings. */}
+                  Keep track of your daily expenditures.
                 </Heading>
             </motion.div>
 
@@ -87,16 +88,18 @@ const LandingPage = () => {
                   fontWeight={500}
                   color={textColor}
                   fontSize={["1.1rem", "1.1rem", "1.1rem", "1.3rem"]}
-                  mb={["0.4rem", "0.4rem", "0.4rem", "2rem"]}
-                  w={["18rem", "30rem", "30rem", "23.6rem"]}
+                  mb={["0.4rem", "0.4rem", "0.4rem", "2.5rem"]}
+                  w={["18rem", "18rem", "22rem", "23.6rem"]}
                   justifyContent="center"
                   alignItems="center"
                   textAlign={["center"]}
                  fontFamily="'Ubuntu', sans-serif"
                   
                 >
-                  TrackDaily helps customers achieve their budget goals by storing the 
-                  amount they spend on a daily basis,
+                  {/* TrackDaily helps customers achieve their budget goals by storing the amount they spend on a daily basis, */}
+                  {/* By keeping track of clients' daily spending, 
+                  TrackDaily enables users to meet their financial goals. */}
+                  TrackDaily helps users meet their financial goals by keeping a record of their clients' daily spending.
                 </Text>
               </motion.div>
             </Flex>
@@ -107,6 +110,8 @@ const LandingPage = () => {
                 initial={{ y: 150 }}
                 transition={{ duration: 1.3 }}
                 whileHover={{ scale: 1.1 , transition: { duration: 0.3 }}}
+                // whileHover={{ scale: 1.1 }}
+                // transition={{ type: "spring", stiffness: 400, damping: 10 }}
                 whileTap={{ scale: 0.8 , transition: { duration: 0.2 }}}
               >
                 <Link href="signup">
@@ -160,6 +165,7 @@ const LandingPage = () => {
           w={["21rem","21rem","53rem ","85rem"]}
           h={["28rem","28rem","35rem","40rem"]}
           borderRadius="1rem 0 1rem 0"
+          boxShadow="2xl"
         >
           <motion.div
              whileInView={{ y: 0, opacity: 1}}
@@ -199,7 +205,8 @@ const LandingPage = () => {
                   fontFamily="monospace"
                   color={headerBg}
                 >
-                  We will help you economize efficiently.
+                  {/* We will help you economize efficiently. */}
+                  We'll offer you effective budgeting assistance.
                 </Heading>
               </motion.div>
               <Fade
@@ -313,7 +320,9 @@ const LandingPage = () => {
                   // fontFamily="'DM Sans',sans-serif "
                 fontFamily="'Ubuntu', sans-serif"
                 >
-                A graph that shows your spending data will be provided to you so you can take note of any spike or decrease in expenses.
+                  A graph displaying your spending information will be provided to you so that you can keep track of any increases or decreases in expenses.
+                    {/* You will be provided a graph that displays your spending information so you can keep track of any increases or decreases in costs.
+                    A graph that shows your spending data will be provided to you so you can take note of any spike or decrease in expenses. */}
                 </Text>
               </motion.div>
             </Flex>
@@ -327,6 +336,7 @@ const LandingPage = () => {
           mt={["9rem", "9rem", "6rem","6rem"]}
           mb={["","","","8rem"]}
           flexDir={["column", "column", "column", "column"]}
+          boxShadow="2xl"
           bg={secondDivCOlor}
           w={["21rem","21rem","53rem ","85rem"]}
           h={["34rem","34rem","45rem","42rem"]}
@@ -376,7 +386,7 @@ const LandingPage = () => {
           w={["20rem","20rem","40rem","85rem"]}
           h={["20rem","20rem","20rem","15rem"]}
           bg={divColor2}
-          mt={["14rem","14rem","14rem","7rem"]}
+          mt={["14rem","14rem","12rem","5rem"]}
           mb={["7rem","7rem","7rem","7rem"]}
           borderRadius="1rem 0 1rem 0"
           boxShadow="2xl"
@@ -415,9 +425,11 @@ const LandingPage = () => {
             <motion.div
               whileInView={{ y: 0, opacity: 1}}
               initial={{ y: 100, opacity: 0 }}
-              transition={{ duration: 1  }}
+              // transition={{ duration: 1  }}
               viewport={{ once: true }}
-              whileHover={{ scale: 1.1 , transition: { duration: 0.3 }}}
+              // whileHover={{ scale: 1.1 , transition: { duration: 0.3 }}}
+              whileHover={{ scale: 1.1 }}
+              transition={{ type: "spring", stiffness: 400, damping: 10 }}
             >
               <Link href="/signup">
                 <Button

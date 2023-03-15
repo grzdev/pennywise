@@ -21,14 +21,14 @@ import { useRouter} from 'next/router'
 import { CircularProgress, } from "@chakra-ui/react";
 
 const LogInModule = () => {
-  const divColor = useColorModeValue("linear-gradient( 135deg, #FFA6B7 10%, #1E2AD2 100%)","linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%)")
-  const headerColor = useColorModeValue("white","#c6dbfb")
-  const header2Color = useColorModeValue("#f1f1f1","white")
-  const TextColor2 = useColorModeValue("white","")
+  const divColor = useColorModeValue("white","#333f55")
+  const headerColor = useColorModeValue("#374D9A","#c6dbfb")
+  const header2Color = useColorModeValue("black","white")
+  const TextColor2 = useColorModeValue("black","")
   const signUp = useColorModeValue("white","white")
-  const signUpBg = useColorModeValue("#e6e6e6","white")
-  const signIn = useColorModeValue("#5092ff","#4f89e8")
-  
+  const signUpBg = useColorModeValue("#e6e6e6","#2a3549")
+  const signIn = useColorModeValue("linear-gradient( 135deg, #FFA6B7 10%, #1E2AD2 100%)","linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%)")
+  const textColor3 = useColorModeValue("black","")
 
 
   const router = useRouter()
@@ -83,7 +83,7 @@ const LogInModule = () => {
   return (
     <Container centerContent>
        <Flex
-          mt={["5rem","5rem","6rem","4rem"]}
+          mt={["5rem","5rem","6rem","6rem"]}
           w={["20rem","20rem","24rem","28rem"]}
           h={["32rem","32rem","32rem","35rem"]}
           bg={divColor}
@@ -99,7 +99,7 @@ const LogInModule = () => {
             ml={["1.1rem","1.1rem","1rem","1.5rem"]}
           >
             <Flex
-              mt={["-0.3rem", "-0.3rem", "-0.3rem", "-0.3rem"]}
+              mt={["-0.3rem", "-0.3rem", "-0.3rem", "-0.1rem"]}
             >
               <Link href="/">
                 <MdTrackChanges
@@ -112,9 +112,10 @@ const LogInModule = () => {
             <Link href="/">
               <Heading
                 size="md"
+                ml={["-0.05rem","-0.05rem","-0.05rem","-0.1rem"]}
                 color={headerColor}
               >
-                trackdaily
+                pennywise
               </Heading>
             </Link>
           </Flex>
@@ -122,10 +123,10 @@ const LogInModule = () => {
           <Flex
             flexDir="column"
             ml={["1.3rem","1.3rem","1.5rem","2rem"]}
-            mt="1.5rem"
+            mt={["2rem","2rem","2rem","2.5rem"]}
           >
             <Heading
-              size={["lg","lg","lg","lg"]}
+              size="md"
               color={headerColor}
 
             >
@@ -239,9 +240,13 @@ const LogInModule = () => {
                 color="white"
                 onClick={handleLogin}
                 type="submit"
-                mt={["3.3rem","2rem","2.5rem","3rem"]}
+                mt={["2.2rem","2rem","2.5rem","3rem"]}
                 borderRadius="1rem 0 1rem 0"
-                w={["13.2rem","14.2rem","16.7rem","20rem"]}
+                w={["9.2rem","9.2rem","11rem","15rem"]}
+                h={["2.3rem","2.3rem","2.6rem","3rem"]}
+                _hover={{
+                  bg: '#2f3c93',
+                }}
               >
                 Sign in
               </Button>
@@ -261,17 +266,20 @@ const LogInModule = () => {
               flexDir="row"
             >
               <Text
-                color="white"
+                color={textColor3}
                 >
                Don't have an account? 
               </Text>
                <Text
-                color={signUp}
+                color={textColor3}
                 ml="0.4rem"
              fontWeight={700}
 
                >
-                <Link href="/signup" >
+                <Link 
+                  href="/signup" 
+                  color={textColor3}
+                >
                   Sign up
                 </Link>
                </Text>
