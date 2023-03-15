@@ -21,13 +21,14 @@ import { CircularProgress, } from "@chakra-ui/react";
 
 
 const SignUpModule = () => {
-  const divColor = useColorModeValue("linear-gradient( 135deg, #FFA6B7 10%, #1E2AD2 100%)","linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%)")
-  const headerColor = useColorModeValue("white","#c6dbfb")
-  const TextColor2 = useColorModeValue("white","")
+  const divColor = useColorModeValue("white","#333f55")
+  const headerColor = useColorModeValue("#374D9A","#c6dbfb")
+  const TextColor2 = useColorModeValue("black","")
   const signUp = useColorModeValue("white","white")
-  const signUpBg = useColorModeValue("#e6e6e6","white")
-  const header2Color = useColorModeValue("#f1f1f1","white")
-  const signIn = useColorModeValue("#5092ff","#4f89e8")
+  const signUpBg = useColorModeValue("#e6e6e6","#2a3549")
+  const header2Color = useColorModeValue("black","white")
+  const textColor3 = useColorModeValue("black","")
+  const signIn = useColorModeValue("linear-gradient( 135deg, #FFA6B7 10%, #1E2AD2 100%)","linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%)")
   const router = useRouter()
 
   const { signIWithGoogle } = useAuth()
@@ -69,7 +70,7 @@ const SignUpModule = () => {
   return (
     <Container centerContent>
     <Flex
-       mt={["5rem","5rem","6rem","4rem"]}
+       mt={["5rem","5rem","6rem","6rem"]}
        w={["20.5rem","20.5rem","24rem","28rem"]}
        h={["33rem","33rem","32rem","35rem"]}
        mb="3rem"
@@ -86,7 +87,7 @@ const SignUpModule = () => {
         ml={["1.1rem","1.1rem","1rem","1.5rem"]}
        >
          <Flex
-           mt={["-0.3rem", "-0.3rem", "-0.3rem", "-0.3rem"]}
+           mt={["-0.3rem", "-0.3rem", "-0.3rem", "-0.1rem"]}
          >
            <Link href="/">
              <MdTrackChanges
@@ -100,9 +101,10 @@ const SignUpModule = () => {
            <Heading
              size="md"
             //  ml="0.2rem"
-             color={headerColor}
+                ml={["-0.05rem","-0.05rem","-0.05rem","-0.1rem"]}
+                color={headerColor}
            >
-             trackdaily
+             pennywise
            </Heading>
          </Link>
        </Flex>
@@ -110,10 +112,10 @@ const SignUpModule = () => {
        <Flex
          flexDir="column"
          ml={["1.3rem","1.3rem","1.5rem","2rem"]}
-         mt="1.5rem"
+         mt={["2rem","2rem","2rem","2.5rem"]}
        >
          <Heading
-          size={["lg","lg","lg","lg"]}
+          size="md"
           color={headerColor}
          >
           Create a Secure Account
@@ -196,7 +198,7 @@ const SignUpModule = () => {
 
          <Flex
            flexDir="column"
-           ml={["0.1rem","0.1rem","0.1rem","2rem"]}
+          //  ml={["0.1rem","0.1rem","0.1rem","2rem"]}
            gap="1rem"
           //  mt="2rem"
            justifyContent="center"
@@ -206,10 +208,14 @@ const SignUpModule = () => {
              bg={signIn}
              color="white"
              onClick={handleSignup}
-            type="submit"
-                mt={["3.3rem","2rem","2.5rem","3rem"]}
-                borderRadius="1rem 0 1rem 0"
-                w={["13.2rem","14.2rem","16.7rem","20rem"]}
+              type="submit"
+              mt={["2.2rem","2.2rem","2.5rem","3rem"]}
+              borderRadius="1rem 0 1rem 0"
+              w={["9.2rem","9.2rem","11rem","15rem"]}
+              h={["2.3rem","2.3rem","2.6rem","3rem"]}
+                _hover={{
+                  bg: '#2f3c93',
+                }}
            >
               Create account
            </Button>
@@ -229,12 +235,12 @@ const SignUpModule = () => {
            flexDir="row"
          >
            <Text
-             color={signUp}
+             color={textColor3}
            >
              Already have an account?  
            </Text>
             <Text
-             color={signUp}
+             color={textColor3}
              ml="0.4rem"
              fontWeight={700}
             >

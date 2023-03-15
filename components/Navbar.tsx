@@ -81,7 +81,7 @@ const Navbar = () => {
         >
           <Link href="/">
             <Flex
-              mt={["-0.1rem", "-0.2rem", "-0.1rem", "-0.1rem"]}
+              mt={["0.12rem", "-0.2rem", "0.47rem", "0.43rem"]}
             >
               <Text
                 fontSize={["1.7rem","1.7rem","2rem","2rem"]}
@@ -98,7 +98,7 @@ const Navbar = () => {
               ml={["-0.05rem","-0.05rem","-0.05rem","0.1rem"]}
               color={headerColor}
             >
-              trackdaily
+              pennywise
             </Heading>
           </Link>
         </Flex>
