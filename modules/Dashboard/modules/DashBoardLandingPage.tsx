@@ -18,7 +18,7 @@ import {
   PopoverFooter,
   others
 } from '@chakra-ui/react'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import router from "next/router";
 import { MdTrackChanges } from "react-icons/md"
 import { useAuth } from 'context/AuthContext';
@@ -45,11 +45,19 @@ import {
  import { RootState } from 'redux/store';
  import { selectMyObject } from "../../../redux/slices/dailyInputSlice"
 
-const DashBoardLandingPage = () => {
+ interface DateTimeProps {
+  className?: string;
+}
+
+interface DateTimeState {
+  dateTime: Date;
+}
+const DashBoardLandingPage = ({ className }: DateTimeProps) => {
+  
   const header = useColorModeValue("white","white")
   const SecondBox = useColorModeValue("#407adf","#70a1c8")
-  const pieColor = useColorModeValue("#4F89E8","#4F89E8")
-  const pieColor2 = useColorModeValue("#75a9ff","#6aa2ff")
+  const pieColor = useColorModeValue("#94bdff","#4F89E8")
+  const pieColor2 = useColorModeValue("#94bdff","#6aa2ff")
   const addButton = useColorModeValue("#0050d6","#1c5dd0")
   const color = useColorModeValue("#ff003d","#ff003d")
   const button = useColorModeValue("#4aafe9","#e3379b")
@@ -60,6 +68,24 @@ const DashBoardLandingPage = () => {
   const myObject = useSelector(selectMyObject);
   const Sum = myObject.food + myObject.transit + myObject.data + myObject.transfers + myObject.others
 
+ //Date
+  const [state, setState] = useState<DateTimeState>({
+    dateTime: new Date(),
+  });
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setState({ dateTime: new Date() });
+    }, 1000);
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, []);
+
+  const dateOptions: Intl.DateTimeFormatOptions = { weekday: 'short', month: 'long', day: 'numeric' };
+  const timeOptions: Intl.DateTimeFormatOptions = { hour: 'numeric', minute: 'numeric', second: 'numeric' };
+ 
   //PieChart data
   const data01 = [
     {
@@ -136,134 +162,110 @@ const DashBoardLandingPage = () => {
             What did you spend on today?
           </Text>
         </Flex>
+
         <Flex
           alignItems="center"
           justifyContent="center"
           mt={["1rem","2rem","1.5rem","2rem"]}
-          // ml={["0.1rem","","-10rem","-2rem"]}
-          mb="7rem"
-        >  
-
+        >
           <Flex
             w={["20rem","20rem","33rem","60rem"]}
-            h={["30rem","25rem","35rem","30rem"]}
-            // background= {bg}
+            h={["30rem","25rem","35rem","32rem"]}
             bg= {bgGradient}
             borderRadius="1rem 0 1rem 0"
-            // boxShadow= "rgba(17, 12, 46, 0.15) 0px 48px 100px 0px"
-            // boxShadow= "rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px"
-            boxShadow= "rgba(0, 0, 0, 0.25) 0px 25px 50px -12px"
-            flexDir="column"
-            // justifyContent="center"
-            alignItems="center"
           >
             <Flex
-              p={["3","3","4","5"]}
-              color={header}
-            >
-              <Flex
-              mr={["15rem","15rem","25rem","51rem"]}
-              >
-                <Text 
-                  fontSize={["1.7rem","1.7rem","2rem","3rem"]
-                }>
-                  <HiCash/>
-                </Text>
-              </Flex>
-              <Flex>
-                <Text
-                  fontSize={["1.6rem","1.6rem","2rem","3rem"]}
-                >
-                  <MdTrackChanges/>
-                </Text>
-              </Flex>
-            </Flex>
-
-            <Flex
               flexDir="column"
-              alignItems="center"
-              justifyContent="center"
-              mt={["0.5rem","-2rem","0.2rem","-3rem"]}
-              color={header}
-              >
-              <Heading
-                size={["sm","sm","lg","xl"]}
-              >
-                Total amount spent:
-              </Heading>
-
+            >
               <Flex
                 flexDir="row"
-              >
+                p={["2rem","2rem","3rem","3rem"]}
+                gap={["8.5rem","","17.8rem","43rem"]}
+                color="white"
+                >
                 <Flex
-                  mt={["","","","0.2rem"]}
-                  flexDir="row"
-                  textAlign="center"
+                  flexDir="column"
+                  alignItems="center"
+                  // justifyContent="center"
+                  w={["","","7rem",""]}
+                  // ml={["","","-8rem",""]}  
                 >
                   <Heading
+                    size={["sm","sm","md","md"]}
+                    mb="0.2rem"
+                  >
+                    Total spent
+                  </Heading>
+                  <Flex
                     textAlign="center"
-                    color={header} 
-                    size={["sm","sm","lg","xl"]}
-                    mt={["0.1rem","0.1rem","0.25rem","-0.2rem"]}
+                    alignItems="center"
+                    // ml={["","","","-1rem"]
                   >
-                    <TbCurrencyNaira/>
-                  </Heading>
-                  <Heading
-                    color={header} 
-                    size={["sm","sm","lg","lg"]}
-                    mt={["","","","0.2rem"]}
-                  >
-                    {Sum}
-                  </Heading>
+                    <Heading
+                      size={["xl","xl","xl","2xl"]}
+                      mr="-0.3rem"
+                    >
+                      <TbCurrencyNaira/>
+                    </Heading>
+                    <Heading
+                      size={["lg","lg","lg","xl"]}
+                      mt={["-0.1rem","0.1rem","-0.1rem","-0.01rem"]}
+                    >
+                      {Sum}
+                    </Heading>
+                  </Flex>
                 </Flex>
-                <Heading
-                size={["sm","sm","md","lg"]}
-                >
-                 {/* {sumOfInput} */}
-                </Heading>
-              </Flex>
-            </Flex>
+                
 
-            <Flex
-              mt={["1.8rem","1.8rem","1.5rem","1rem"]}
-            >
-              <PieChart 
-                width={250} 
-                height={250}
-              >
-                <Pie data={data01} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={32} fill={pieColor} />
-                <Pie data={data02} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={42} outerRadius={75} fill={pieColor2} label />
-              </PieChart>
-            </Flex>
-            <Flex
-              mt={["2.6rem","2rem","1.4rem","-2rem"]}
-              >
-              <Text
-                color={header} 
-                fontWeight={700}
-                mr={["13.4rem","11rem","24.7rem","52rem"]}
-                mt={["1.35rem","1rem","2rem",""]}
-                fontSize={["0.8rem","0.8rem","0.9rem","0.9rem"]}
-                ml={["","","","1rem"]}
-              >
-                13th Feb
-              </Text>
-            </Flex>
+                <Flex>
+                  <Text
+                    fontSize={["1.6rem","1.6rem","2rem","3rem"]}
+                  >
+                    <MdTrackChanges/>
+                  </Text>
+                </Flex>
+              </Flex>
+
               <Flex
-                mt={["-2.1rem","-2.1rem","-1.7rem","-2rem"]}
-                ml={["14.7rem","15rem","26.3rem","53rem"]}
+                mt={["-1.8rem","-1.8rem","-1rem","-4rem"]}
+                alignItems="center"
+                justifyContent="center"
+                w={["","","",""]}
               >
+                <PieChart 
+                  width={250} 
+                  height={250}
+                >
+                  <Pie data={data01} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={32} fill={pieColor} />
+                  <Pie data={data02} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={42} outerRadius={75} fill={pieColor2} label />
+                </PieChart>
+              </Flex>
+
+              <Flex
+                justifyContent="center"
+                alignItems="center"
+                mt={["2.3rem","2rem","3rem","2rem"]}
+                gap={["6.5rem","2.4rem","15rem","38rem"]}
+                ml={["1rem","","","1.7rem"]}
+              >
+                <Heading
+                  fontSize={["0.8rem","0.8rem","1rem","1.3rem"]}
+                  color="white"
+                >
+                  {state.dateTime.toLocaleDateString('en-US', dateOptions)}
+                </Heading>
+
                 <InputModal/>
               </Flex>
-          </Flex>
+            </Flex>
 
+          </Flex>
         </Flex>
 
         <Divider
           orientation='horizontal'
           w="100%"
-          mt={["2rem","2rem","2rem","2rem"]}
-          // mb={["7rem","7rem","8rem","9rem"]}
+          mt="3rem"
         />
 
         {/* <Flex

@@ -115,11 +115,11 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
           alignItems="center"
           // ml={["0.rem", "1rem", "1rem", "8.4rem"]}
           flexDir="initial"
-          mt={["0.6rem","0.4rem","0.4rem","0.4rem"]}
+          mt={["0.6rem","0.4remf","0.4rem","0.4rem"]}
           
         >
             <Flex
-              mt={["-0.1rem", "-0.2rem", "-0.1rem", "-0.1rem"]}
+              mt={["-0.1rem", "-0.2rem", "0.12rem", "0.2rem"]}
             >
               <Text>
                 <MdTrackChanges
@@ -133,7 +133,7 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
               ml="-0.05rem"
               color={headerColor}
             >
-              trackdaily
+              pennywise
             </Heading>
         </Flex>
         <CloseButton display={{ base: 'flex', md: 'none' }} onClick={onClose} />
@@ -168,7 +168,7 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
               bg: "#4f6382",
               color: 'white',
             }}
-            p="4"
+            p="2rem"
             mx="4"
             borderRadius="0.7rem"
           >
@@ -355,7 +355,7 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
           mr="9.5rem"
         >
             <Flex
-              mt={["-0.1rem", "-0.2rem", "-0.1rem", "-0.1rem"]}
+              mt={["0.1rem", "-0.2rem", "-0.1rem", "-0.1rem"]}
             >
               <Text
                 fontSize={["1.7rem","1.7rem","2rem","2rem"]}
@@ -371,7 +371,7 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
               ml={["-0.05rem","0.1rem","0.1rem","0.1rem"]}
               color={headerColor}
             >
-              trackdaily
+              pennywise
             </Heading>
         </Flex>
 
