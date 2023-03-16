@@ -46,7 +46,7 @@ const InputModal = () => {
   const button = useColorModeValue("linear-gradient(to right, #acb6e5, #86fde8);","linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%)")
   const header = useColorModeValue("#2c4658","")
   const text = useColorModeValue("#0081e7","")
-  const addIcon = useColorModeValue("#172A63","")
+  const addIcon = useColorModeValue("#162A62","")
 // background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
 
 
@@ -245,7 +245,7 @@ const InputModal = () => {
          borderRadius="1rem 0 1rem 0"
          bg={button}
          _hover={{
-         bg: "#171923"
+         bg: "#718aff"
          }}
          onClick={modal1.onOpen}
         >
