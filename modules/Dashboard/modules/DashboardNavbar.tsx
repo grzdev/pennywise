@@ -114,6 +114,7 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
           justifyContent="center"
           alignItems="center"
           // ml={["0.rem", "1rem", "1rem", "8.4rem"]}
+          ml={["","","1.3rem","1.4rem"]}
           flexDir="initial"
           mt={["0.6rem","0.4remf","0.4rem","0.4rem"]}
           
