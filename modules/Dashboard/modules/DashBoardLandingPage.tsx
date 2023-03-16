@@ -33,18 +33,12 @@ import {
 } from '@chakra-ui/icons';
 import { useColorMode } from '@chakra-ui/react';
 import Head from 'next/head'
-import { 
-  PieChart,
-  Pie,
-  Cell,
-  Tooltip,
-  Legend
- } from "recharts"
  import InputModal from '../components/input-modal';
  import { useDispatch, useSelector } from 'react-redux';
  import { RootState } from 'redux/store';
  import { selectMyObject } from "../../../redux/slices/dailyInputSlice"
  import { motion } from 'framer-motion';
+ import InputPiechart from '../components/piechart';
 
  interface DateTimeProps {
   className?: string;
@@ -57,19 +51,19 @@ const DashBoardLandingPage = ({ className }: DateTimeProps) => {
   
   const header = useColorModeValue("white","white")
   const SecondBox = useColorModeValue("#407adf","#70a1c8")
-  const pieColor = useColorModeValue("#8ab7ff","#8ab4ff")
-  const pieColor2 = useColorModeValue("#8ab7ff","#8ab4ff")
   const addButton = useColorModeValue("#0050d6","#1c5dd0")
   const color = useColorModeValue("#ff003d","#ff003d")
   const button = useColorModeValue("#4aafe9","#e3379b")
   const bg = useColorModeValue("#FF3CAC","#667eea")
-  const bgGradient = useColorModeValue("linear-gradient(to right, #162961, #3969b9)","linear-gradient(to right, #6289ff, #28355e);")
+  const bgGradient = useColorModeValue("linear-gradient(to right, #162961, #3969b9)","linear-gradient(to right, #28355e, #28355e);")
 
+  const [myState, setMyState] = useState('');
 
+  //Retrieved state
   const myObject = useSelector(selectMyObject);
   const Sum = myObject.food + myObject.transit + myObject.data + myObject.transfers + myObject.others
 
- //Date
+  //Date
   const [state, setState] = useState<DateTimeState>({
     dateTime: new Date(),
   });
@@ -88,50 +82,6 @@ const DashBoardLandingPage = ({ className }: DateTimeProps) => {
   const timeOptions: Intl.DateTimeFormatOptions = { hour: 'numeric', minute: 'numeric', second: 'numeric' };
  
   //PieChart data
-  const data01 = [
-    {
-      "name": "Food",
-      "value": 2000
-    },
-    {
-      "name": "Transportation",
-      "value": 500
-    },
-    {
-      "name": "Data",
-      "value": 500
-    },
-    {
-      "name": "Mobile Transfers",
-      "value": 1000
-    },
-    {
-      "name": "Others",
-      "value": 500
-    }
-  ];
-  const data02 = [
-    {
-      "name": "Food",
-      "value": 2000
-    },
-    {
-      "name": "Transportation",
-      "value": 500
-    },
-    {
-      "name": "Data",
-      "value": 500
-    },
-    {
-      "name": "Mobile Transfers",
-      "value": 1000
-    },
-    {
-      "name": "Others",
-      "value": 500
-    },
-  ];
 
 
   return (
@@ -234,13 +184,7 @@ const DashBoardLandingPage = ({ className }: DateTimeProps) => {
                 justifyContent="center"
                 w={["","","",""]}
               >
-                <PieChart 
-                  width={250} 
-                  height={250}
-                >
-                  <Pie data={data01} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={32} fill={pieColor} />
-                  <Pie data={data02} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={42} outerRadius={75} fill={pieColor2} label />
-                </PieChart>
+                <InputPiechart />
               </Flex>
 
               <Flex
