@@ -45,19 +45,19 @@ const InputPiechart = () => {
           alignItems="center"
           mb={["-1.9rem","-1.9rem","-3.7rem","-4.5rem"]}
           >
-                <Heading
-                  mt={["1.7rem","1.7rem","2.3rem","2.3rem"]}
-                  size={["xs","xs","sm","md"]}
-                  color="white"
-                >
-                  What did you spend on today?
-                </Heading>
-                <Image
-                  src={ArrowPic}
-                  alt=""
-                  placeholder="blur"
-                  priority
-                  />
+            <Heading
+              mt={["1.7rem","1.7rem","2.3rem","2.3rem"]}
+              size={["xs","xs","sm","md"]}
+              color="white"
+            >
+              What did you spend on today?
+            </Heading>
+            <Image
+              src={ArrowPic}
+              alt=""
+              placeholder="blur"
+              priority
+            />
           </Flex>
         </motion.div>
       ) : (
