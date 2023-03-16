@@ -202,7 +202,7 @@ const InputModal = () => {
     setIsFormComplete(true);
     toast({
         position: 'bottom',
-        
+        duration: 3000,
         render: () =>(
             <Flex
                 justifyContent="center"

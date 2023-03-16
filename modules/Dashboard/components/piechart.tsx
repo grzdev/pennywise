@@ -11,8 +11,9 @@ import {
 import { connect, useSelector } from 'react-redux';
 import { RootState } from 'redux/store';
 import { MyObject, selectMyObject } from 'redux/slices/dailyInputSlice';
-import ArrowPic from "../../../images/arrow.png"
+import ArrowPic from "../../../images/arrow2.png"
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 
 
 const InputPiechart = () => {
@@ -32,25 +33,33 @@ const InputPiechart = () => {
   return (
     <Flex>
       {myObject.food === 0 ? (
-        <Flex
-         w={["17rem", "40rem", "18rem", "18rem"]}
-         flexDir="column"
-         justifyContent="center"
-         alignItems="center"
-         mb={["-2.6rem","-2.6rem","-3.7rem","-4.5rem"]}
+        <motion.div
+          initial={{ opacity: 0 }} 
+          animate={{ opacity: 1 }}
+          transition={{duration: 2}}
         >
-            <Heading
-              mt="2.3rem"
-              size={["xs","xs","sm","md"]}
-              color="white"
-            >
-              What did you spend on today?
-            </Heading>
-          <Image
-            src={ArrowPic}
-            alt=""
-            />
-        </Flex>
+          <Flex
+          w={["15rem", "15rem", "18rem", "18rem"]}
+          flexDir="column"
+          justifyContent="center"
+          alignItems="center"
+          mb={["-1.9rem","-1.9rem","-3.7rem","-4.5rem"]}
+          >
+                <Heading
+                  mt={["1.7rem","1.7rem","2.3rem","2.3rem"]}
+                  size={["xs","xs","sm","md"]}
+                  color="white"
+                >
+                  What did you spend on today?
+                </Heading>
+                <Image
+                  src={ArrowPic}
+                  alt=""
+                  placeholder="blur"
+                  priority
+                  />
+          </Flex>
+        </motion.div>
       ) : (
       <PieChart 
           width={250} 
@@ -100,11 +109,4 @@ const InputPiechart = () => {
   )
 }
 
-const mapStateToProps = (state: RootState) => {
-    return {
-      data: state.dailyInput.myObject,
-    };
-  };
 export default InputPiechart
-// export default connect(mapStateToProps)(InputPiechart);
-  
