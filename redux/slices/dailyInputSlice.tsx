@@ -1,27 +1,4 @@
-// import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-// interface NumbersState {
-//   numbers: number[];
-// }
-
-// const initialState: NumbersState = {
-//   numbers: [0, 0, 0, 0, 0],
-// };
-
-// const numbersSlice = createSlice({ 
-//   name: 'numbers',
-//   initialState,
-//   reducers: {
-//     setNumberAtIndex(state, action: PayloadAction<{ index: number; value: number }>) {
-//       const { index, value } = action.payload;
-//       state.numbers[index] = value;
-//     },
-//   },
-// });
-
-// export const { setNumberAtIndex } = numbersSlice.actions;
-
-// export default numbersSlice.reducer;
 
 import { createSelector, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from 'redux/store';
