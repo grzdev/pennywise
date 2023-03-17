@@ -169,7 +169,7 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
               bg: "#4f6382",
               color: 'white',
             }}
-            p="2rem"
+            p="1rem"
             mx="4"
             borderRadius="0.7rem"
           >

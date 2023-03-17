@@ -11,17 +11,6 @@ import {
   useColorModeValue 
 } from '@chakra-ui/react'
 import React from 'react'
-import { 
-  BarChart, 
-  Bar, 
-  Cell, 
-  XAxis, 
-  YAxis, 
-  CartesianGrid, 
-  Tooltip, 
-  Legend, 
-  ResponsiveContainer 
-} from 'recharts';
 import Head from "next/head"
 import { TriangleUpIcon } from "@chakra-ui/icons"
 import { TbCurrencyNaira } from "react-icons/tb"
@@ -34,6 +23,9 @@ import {
   IoFastFoodSharp, 
   IoWifi 
 } from "react-icons/io5"
+import InputBarchart from '../components/barchart';
+import { useSelector } from 'react-redux'
+import { selectMyObject } from 'redux/slices/dailyInputSlice'
 
 
 const AnalyticsModule = () => {
@@ -44,66 +36,8 @@ const AnalyticsModule = () => {
   const header2 = useColorModeValue("white", "white")
   const bgGradient = useColorModeValue("linear-gradient(to right, #536976, #292e49)","linear-gradient(to right, #4b79a1, #283e51);")
 
-  const data = [
-    {
-      name: 'M',
-      Food: 2000,
-      Transit: 500,
-      Data: 250,
-      Transfers: 1000,
-      Others: 750,
-    },
-    {
-      name: 'T',
-      Food: 2500,
-      Transit: 500,
-      Data: 550,
-      Transfers: 1500,
-      Others: 900,
-    },
-    {
-      name: 'W',
-      Food: 1500,
-      Transit: 400,
-      Data: 500,
-      Transfers: 500,
-      Others: 300,
-    },
-    {
-      name: 'T',
-      Food: 500,
-      Transit: 500,
-      Data: 1000,
-      Transfers: 2000,
-      Others: 750,
-    },
-    {
-      name: 'F',
-      Food: 2000,
-      Transit: 1000,
-      Data: 2000,
-      Transfers: 1000,
-      Others: 3500,
-    },
-    {
-      name: 'S',
-      Food: 3000,
-      Transit: 100,
-      Data: 3050,
-      Transfers: 1500,
-      Others: 150,
-    },
-    {
-      name: 'S',
-      Food: 1000,
-      Transit: 100,
-      Data: 1050,
-      Transfers: 1000,
-      Others: 750,
-    },
-  ];
-
-
+  const myObject = useSelector(selectMyObject)
+  const Sum = myObject.food + myObject.data + myObject.others + myObject.transfers + myObject.transit
   return (
     <Container
       centerContent
@@ -175,33 +109,7 @@ const AnalyticsModule = () => {
             w={["19rem","20rem","30rem","35rem"]}
             h={["21rem","21rem","25rem","20rem"]}
           >
-            <ResponsiveContainer 
-              width="100%" 
-              height="100%"
-            >
-              <BarChart
-                width={500}
-                height={300}
-                data={data}
-                margin={{
-                  top: 10,
-                  right: 30,
-                  left: 20,
-                  bottom: 5,
-                }}
-              >
-                <CartesianGrid strokeDasharray="2 2" />
-                <XAxis dataKey="name" />
-                <YAxis />
-                <Tooltip />
-                <Legend />
-                <Bar dataKey="Food" stackId="a" fill="#2897e4"/>
-                <Bar dataKey="Transit" stackId="a" fill="#ff9232" />
-                <Bar dataKey="Data" stackId="a" fill="#27ddff" />
-                <Bar dataKey="Transfers" stackId="a" fill="#1e21a8" />
-                <Bar dataKey="Others" stackId="a" fill="#9539ff" />
-              </BarChart>
-            </ResponsiveContainer>
+            <InputBarchart/>
           </Flex>
 
           <Divider
@@ -232,7 +140,7 @@ const AnalyticsModule = () => {
               <Heading
                size={["xs","xs","sm","md"]}
               >
-                20,000
+                {Sum}
               </Heading>
             </Flex>
           </Flex>
@@ -383,7 +291,7 @@ const AnalyticsModule = () => {
                   fontSize={["1rem","1rem","1.2rem","1.1rem"]}
                   fontWeight={600}
                 >
-                  20,000
+                  {myObject.food}
                 </Text>
               </Flex>
 
@@ -400,7 +308,7 @@ const AnalyticsModule = () => {
                   fontSize={["1rem","1rem","1.2rem","1.1rem"]}
                   fontWeight={600}
                 >
-                  10,000
+                  {myObject.data}
                 </Text>
               </Flex>
 
@@ -417,7 +325,7 @@ const AnalyticsModule = () => {
                   fontSize={["1rem","1rem","1.2rem","1.1rem"]}
                   fontWeight={600}
                 >
-                  5,000
+                  {myObject.transit}
                 </Text>
               </Flex>
 
@@ -434,7 +342,7 @@ const AnalyticsModule = () => {
                   fontSize={["1rem","1rem","1.2rem","1.1rem"]}
                   fontWeight={600}
                 >
-                  6,000
+                  {myObject.transfers}
                 </Text>
               </Flex>
 
@@ -451,7 +359,7 @@ const AnalyticsModule = () => {
                   fontSize={["1rem","1rem","1.2rem","1.1rem"]}
                   fontWeight={600}
                 >
-                  9,000
+                  {myObject.others}
                 </Text>
               </Flex>
             </Flex>

@@ -97,7 +97,7 @@ const DashBoardLandingPage = ({ className }: DateTimeProps) => {
       >
         <Flex
           flexDir="column"
-          mt={["2rem","2rem","3rem","4rem"]}
+          mt={["1.2rem","1.2rem","3rem","4rem"]}
           ml={["1rem","2rem","2rem","2rem"]}
         >
           <Heading
@@ -117,7 +117,7 @@ const DashBoardLandingPage = ({ className }: DateTimeProps) => {
         <Flex
           alignItems="center"
           justifyContent="center"
-          mt={["2rem","2rem","1.5rem","2rem"]}
+          mt={["1rem","1rem","1.5rem","2rem"]}
         >
           <Flex
             w={["20rem","20rem","33rem","60rem"]}
