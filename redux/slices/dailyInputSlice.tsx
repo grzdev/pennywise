@@ -3,7 +3,7 @@
 import { createSelector, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from 'redux/store';
 
-export interface MyObject {
+export interface InputData {
   food: number;
   transit: number;
   data: number;
@@ -11,47 +11,49 @@ export interface MyObject {
   others: number;
 }
 
-interface MyState {
-  myObject: MyObject;
+interface InputState {
+  inputData: InputData;
+  currentDay: string;
 }
 
-const initialState: MyState = {
-  myObject: {
+const initialState: InputState = {
+  inputData: {
     food: 0,
     transit: 0,
     data: 0,
     transfers: 0,
     others: 0,
   },
+  currentDay: new Date().toLocaleDateString('en-US', {weekday: 'short'}),
 };
 
 const dailyInputSlice = createSlice({
   name: 'dailyInput',
   initialState,
   reducers: {
-    onChange: (state, action: PayloadAction<{ name: keyof MyObject, value: number }>) => {
+    onChange: (state, action: PayloadAction<{ name: keyof InputData, value: number }>) => {
       const { name, value } = action.payload;
-      state.myObject[name] = value;
+      state.inputData[name] = value;
     },
-    add1k: (state, action: PayloadAction<{ name: keyof MyObject, value: number }>) => {
+    add1k: (state, action: PayloadAction<{ name: keyof InputData, value: number }>) => {
       const { name, value } = action.payload
-      state.myObject[name] = value + 1000
+      state.inputData[name] = value + 1000
     },
-    add2k: (state, action: PayloadAction<{ name: keyof MyObject, value: number }>) => {
+    add2k: (state, action: PayloadAction<{ name: keyof InputData, value: number }>) => {
       const { name, value } = action.payload
-      state.myObject[name] = value + 2000
+      state.inputData[name] = value + 2000
     },
-    add3k: (state, action: PayloadAction<{ name: keyof MyObject, value: number }>) => {
+    add3k: (state, action: PayloadAction<{ name: keyof InputData, value: number }>) => {
       const { name, value } = action.payload
-      state.myObject[name] = value + 3000
+      state.inputData[name] = value + 3000
     },
-    add5k: (state, action: PayloadAction<{ name: keyof MyObject, value: number }>) => {
+    add5k: (state, action: PayloadAction<{ name: keyof InputData, value: number }>) => {
       const { name, value } = action.payload
-      state.myObject[name] = value + 5000
+      state.inputData[name] = value + 5000
     },
-    add10k: (state, action: PayloadAction<{ name: keyof MyObject, value: number }>) => {
+    add10k: (state, action: PayloadAction<{ name: keyof InputData, value: number }>) => {
       const { name, value } = action.payload
-      state.myObject[name] = value + 10000
+      state.inputData[name] = value + 10000
     }
   },
 });
@@ -68,6 +70,10 @@ export const {
 export default dailyInputSlice.reducer;
 
 export const selectMyObject = createSelector(
-  (state: RootState) => state.dailyInput.myObject,
-  (myObject) => myObject
+  (state: RootState) => state.dailyInput.inputData,
+  (inputData) => inputData
 );
+export const selectDate = createSelector(
+  (state: RootState) => state.dailyInput.currentDay,
+  (dateSelect) => dateSelect
+)

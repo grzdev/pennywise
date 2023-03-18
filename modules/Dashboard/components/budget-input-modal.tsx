@@ -20,15 +20,24 @@ import {
 import React from 'react'
 import { AddIcon } from "@chakra-ui/icons"
 import { TbCurrencyNaira } from 'react-icons/tb'
+import { motion } from 'framer-motion'
 
 const BudgetModal = () => {
-  const bg = useColorModeValue("#437ecb","#4581ff")
+  const bg = useColorModeValue("linear-gradient(to right, #acb6e5, #86fde8);","linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%)")
   const selectBg = useColorModeValue("#407dd0","#407dd0")
   const naira = useColorModeValue("#407dd0","white")
   const { isOpen, onOpen, onClose } = useDisclosure()
+  const addIcon = useColorModeValue("#162A62","")
 
   return (
     <Flex>
+      <motion.div
+        whileInView={{ y: 0, opacity: 1}}
+        initial={{ y: 100, opacity: 0 }}
+        viewport={{ once: true }}
+        whileHover={{ scale: 1.1 }}
+        transition={{ type: "spring", stiffness: 200, damping: 10 }}
+      >
         <Button
             // size={["","","","lg"]}
             width={["5rem","5rem","6.5rem","9rem"]}
@@ -40,8 +49,9 @@ const BudgetModal = () => {
               bg: "#4e93ec"
             }}
           >
-            <AddIcon color="white" fontSize="1.2rem" fontWeight={900}/>
+            <AddIcon color={addIcon} fontSize="1.2rem" fontWeight={900}/>
         </Button>
+      </motion.div>
         <Modal 
             closeOnOverlayClick={false} 
             isOpen={isOpen} 

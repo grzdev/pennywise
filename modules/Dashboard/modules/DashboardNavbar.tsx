@@ -23,7 +23,7 @@ import {
   MenuList,
   Heading,
   Button,
-  useColorMode
+  useColorMode,
 } from '@chakra-ui/react';
 import {
   FiHome,
@@ -43,6 +43,9 @@ import { SiGoogleanalytics } from "react-icons/si"
 import { BsFillPersonFill } from "react-icons/bs"
 import { FaWallet } from "react-icons/fa"
 import { MoonIcon, SunIcon } from '@chakra-ui/icons';
+import logoP from "../../../images/logoP.png"
+import Image from 'next/dist/client/image';
+import { FaGem } from "react-icons/fa"
 
 interface LinkItemProps {
   name: string;
@@ -94,7 +97,7 @@ interface SidebarProps extends BoxProps {
 }
 
 const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
-  const headerColor = useColorModeValue("#4f89e8","#c6dbfb")
+  const headerColor = useColorModeValue("#070D59","#c6dbfb")
   const hover = useColorModeValue("","#171923")
   const { colorMode, toggleColorMode } = useColorMode()
   const icon = useColorModeValue("black","lightgrey")
@@ -123,19 +126,28 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
               mt={["-0.1rem", "-0.2rem", "0.12rem", "0.2rem"]}
             >
               <Text>
-                <MdTrackChanges
-                  fontSize="2rem"
+                <FaGem
+                  fontSize="1.6rem"
                   color={headerColor}
                 />
               </Text>
             </Flex>
             <Heading
               size="md"
-              ml="-0.05rem"
+              ml="0.2rem"
+              fontFamily="'Lato', sans-serif"
               color={headerColor}
             >
               pennywise
             </Heading>
+            {/* <Flex
+              w={["","","","12rem"]}
+            >
+              <Image
+                src={logoP}
+                alt=""
+              />
+            </Flex> */}
         </Flex>
         <CloseButton display={{ base: 'flex', md: 'none' }} onClick={onClose} />
       </Flex>
@@ -175,7 +187,7 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
           >
           <Link href='/dashboard' >
             <AiFillHome
-              fontSize="1.2rem"
+              fontSize="1.5rem"
               fontWeight={700}
             /> 
           </Link>
@@ -183,8 +195,8 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
             href='/dashboard' 
             >
             <Text
-              fontSize="1rem"
-              fontWeight={700}
+              fontSize="1.4rem"
+              fontWeight={600}
             >
               Home
             </Text>
@@ -198,7 +210,7 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
               bg: "#4f6382",
               color: 'white',
             }}
-            p="4"
+            p="1rem"
             mx="4"
             borderRadius="0.7rem"
           >
@@ -206,7 +218,7 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
               href='/analytics'
             >
               <SiGoogleanalytics
-                fontSize="1.2rem"
+                fontSize="1.5rem"
                 fontWeight={700}
               />
             </Link>
@@ -214,8 +226,8 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
               href='/analytics'
               >
               <Text
-                fontWeight={700}
-                fontSize="1rem"
+                fontWeight={600}
+                fontSize="1.4rem"
               >
                 Analytics
               </Text>
@@ -230,22 +242,22 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
               bg: "#4f6382",
               color: 'white',
             }}
-            p="4"
+            p="1rem"
             mx="4"
             borderRadius="0.7rem"
           >
             <Link href='/budget'>
               <FaWallet
                 fontWeight={700}
-                fontSize="1.2rem"
+                fontSize="1.5rem"
               /> 
             </Link>
             <Link 
               href='/budget'
             >
               <Text
-                fontWeight={700}
-                fontSize="1rem"
+                fontWeight={600}
+                fontSize="1.4rem"
               >
                 Budget
               </Text>
@@ -260,22 +272,22 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
               bg: "#4f6382",
               color: 'white',
             }}
-            p="4"
+            p="1rem"
             mx="4"
             borderRadius="0.7rem"
           >
             <Link href='/account'>
               <BsFillPersonFill
                 fontWeight={700}
-                fontSize="1.2rem"
+                fontSize="1.5rem"
               /> 
             </Link>
             <Link 
               href='/account'
             >
               <Text
-                fontWeight={700}
-                fontSize="1rem"
+                fontWeight={600}
+                fontSize="1.4rem"
               >
                 Account
               </Text>
@@ -283,11 +295,17 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
           </Flex>
 
           <Flex>
-          <Button 
-           onClick={toggleColorMode}
+
+          <Flex
+            mt="12rem"
           >
-            {colorMode === 'light' ? <MoonIcon/> : <SunIcon/>}
-          </Button>
+            <Button 
+            onClick={toggleColorMode}
+            >
+              {colorMode === 'light' ? <MoonIcon/> : <SunIcon/>}
+            </Button>
+          </Flex>
+
           </Flex>
         </VStack>
       </Flex>
@@ -336,7 +354,7 @@ interface MobileProps extends FlexProps {
 const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
   const icon = useColorModeValue("black","lightgrey")
   const footer = useColorModeValue("white","#12141c")
-  const headerColor = useColorModeValue("#4f89e8","#c6dbfb")
+  const headerColor = useColorModeValue("#070D59","#c6dbfb")
   const { colorMode, toggleColorMode } = useColorMode()
   const _hover = useColorModeValue("","#171923")
 
@@ -359,17 +377,18 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
               mt={["0.1rem", "-0.2rem", "-0.1rem", "-0.1rem"]}
             >
               <Text
-                fontSize={["1.7rem","1.7rem","2rem","2rem"]}
+                mt="0.1rem"
               >
-                <MdTrackChanges
-                  fontSize="2rem"
+                <FaGem
+                  fontSize="1.4rem"
                   color={headerColor}
                 />
               </Text>
             </Flex>
             <Heading
               size={["sm","sm","md","md"]}
-              ml={["-0.05rem","0.1rem","0.1rem","0.1rem"]}
+              ml="0.2rem"
+              fontFamily="'Lato', sans-serif"
               color={headerColor}
             >
               pennywise

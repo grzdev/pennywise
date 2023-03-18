@@ -34,7 +34,7 @@ const AnalyticsModule = () => {
   const divGradient = useColorModeValue("linear-gradient(to bottom, #505285 0%, #585e92 12%, #65689f 25%, #7474b0 37%, #7e7ebb 50%, #8389c7 62%, #9795d4 75%, #a2a1dc 87%, #b5aee4 100%);","linear-gradient(to right, #6a85b6 0%, #bac8e0 100%);")
   const header = useColorModeValue("#777777", "white")
   const header2 = useColorModeValue("white", "white")
-  const bgGradient = useColorModeValue("linear-gradient(to right, #536976, #292e49)","linear-gradient(to right, #4b79a1, #283e51);")
+  const bgGradient = useColorModeValue("linear-gradient(to right, #162961, #3969b9)","linear-gradient(to right, #28355e, #28355e);")
 
   const myObject = useSelector(selectMyObject)
   const Sum = myObject.food + myObject.data + myObject.others + myObject.transfers + myObject.transit
