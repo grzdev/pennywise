@@ -200,26 +200,34 @@ const InputModal = () => {
     modal4.onClose()
     modal5.onClose()
     setIsFormComplete(true);
-    toast({
-        position: 'bottom',
-        duration: 3000,
-        render: () =>(
-            <Flex
-                justifyContent="center"
-                alignItems="center" 
-            >
-                <Button
-                    borderRadius="1rem 0 1rem 0"
-                    w={["8rem","8rem","9rem","10rem"]}
-                    h={["3rem","3rem","3rem","3rem"]}
-                    colorScheme="blue"
-                    leftIcon={<CheckCircleIcon/>}
+    // toast({
+    //     position: 'bottom',
+    //     duration: 3000,
+    //     render: () =>(
+    //         <Flex
+    //             justifyContent="center"
+    //             alignItems="center" 
+    //         >
+    //             <Button
+    //                 borderRadius="1rem 0 1rem 0"
+    //                 w={["8rem","8rem","9rem","10rem"]}
+    //                 h={["3rem","3rem","3rem","3rem"]}
+    //                 colorScheme="blue"
+    //                 leftIcon={<CheckCircleIcon/>}
                     
-                >
-                    Done
-                </Button>
-            </Flex>
-        )
+    //             >
+    //                 Done
+    //             </Button>
+    //         </Flex>
+    //     )
+    // })
+    toast({
+      title: 'Done',
+      position: 'top',
+      description: "See you tomorrow.",
+      status: 'success',
+      duration: 3000,
+      isClosable: true,
     })
 
     
