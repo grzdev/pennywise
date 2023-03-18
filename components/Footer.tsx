@@ -26,15 +26,15 @@ import {
 import { useColorModeValue } from '@chakra-ui/react'
 import Link from 'next/link'
 import { SiGmail, SiNetlify } from 'react-icons/si'
-import { FaLinkedinIn } from "react-icons/fa"
+import { FaGem } from "react-icons/fa"
 
 const Footer = () => {
   const textColor = useColorModeValue("black","#b9b9b9")
   const gmail = useColorModeValue("#F04235","#b6b6b6")
   const footer = useColorModeValue("#e3eeff","black")
-  const headerColor = useColorModeValue("#2d5ba6","#c6dbfb")
+  const headerColor = useColorModeValue("#070D59","#c6dbfb")
   const tradeMark = useColorModeValue("black","white")
-  const dami = useColorModeValue("#2d5ba6","#C6DBFB")
+  const dami = useColorModeValue("#070D59","#C6DBFB")
   const icons = useColorModeValue("#545454","#b9b9b9")
   return (
     <Flex
@@ -57,24 +57,24 @@ const Footer = () => {
       >
         <Flex>
           <Flex
-            mt={["-0.2rem", "-0.05rem", "-0.04rem", "-0.01rem"]}
+            // mt={["-0.2rem", "-0.05rem", "-0.04rem", "-0.01rem"]}f
             mb={["6rem","","",""]}
-            mr={["","","0.05rem","0.05rem"]}
+            mr="0.2rem"
           >
             <Text
-              fontSize={["1.7rem","1.7rem","2rem","2rem"]}
+              fontSize={["1.5rem","1.5rem","2rem","2rem"]}
               color={headerColor}
             >
-              <MdTrackChanges 
+              <FaGem 
               />
             </Text>
           </Flex>
 
           <Heading
             size={["sm","sm","md","md"]}
-            ml={["-0.06rem","-0.05rem","-0.1rem","0.1rem"]}
+            // ml={["-0.06rem","-0.05rem","-0.1rem","0.1rem"]}
             color={headerColor}
-
+            fontFamily="'Lato', sans-serif"
           >
             pennywise
           </Heading>
@@ -113,7 +113,7 @@ const Footer = () => {
               fontSize={["0.75rem","0.75rem","0.9rem","0.9rem" ]}  
               color={textColor}
               >
-              trackdaily23@gmail.com
+              pennywise@gmail.com
             </Text>
           </Flex>
         </Flex>

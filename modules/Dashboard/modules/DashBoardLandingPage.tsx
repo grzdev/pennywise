@@ -124,6 +124,7 @@ const DashBoardLandingPage = ({ className }: DateTimeProps) => {
             h={["32rem","32rem","35rem","32rem"]}
             bg= {bgGradient}
             borderRadius="1rem 0 1rem 0"
+            boxShadow="2xl"
           >
             <Flex
               flexDir="column"

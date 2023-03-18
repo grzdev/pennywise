@@ -28,6 +28,8 @@ import Link from 'next/link'
 import { useColorMode } from "@chakra-ui/react";
 import { useAuth } from "context/AuthContext";
 import router from "next/router";
+import { FaGem } from "react-icons/fa"
+
 
 
 
@@ -35,7 +37,7 @@ const Navbar = () => {
   const { isOpen, onToggle } = useDisclosure();
   const { colorMode, toggleColorMode } = useColorMode()
   const buttonColor = useColorModeValue("linear-gradient( 135deg, #FFA6B7 10%, #1E2AD2 100%)","linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%)")
-  const headerColor = useColorModeValue("#2d5ba6","#c6dbfb")
+  const headerColor = useColorModeValue("#070D59","#c6dbfb")
 
   const { user, logout } = useAuth()
 
@@ -84,10 +86,11 @@ const Navbar = () => {
               mt={["0.12rem", "-0.2rem", "0.47rem", "0.43rem"]}
             >
               <Text
-                fontSize={["1.7rem","1.7rem","2rem","2rem"]}
+                fontSize={["1.5rem","1.5rem","2rem","2rem"]}
                 color={headerColor}
+                mr="0.2rem"
               >
-                <MdTrackChanges
+                <FaGem
                 />
               </Text>
             </Flex>
@@ -95,7 +98,8 @@ const Navbar = () => {
           <Link href="/">         
             <Heading
               size={["sm","sm","md","md"]}
-              ml={["-0.05rem","-0.05rem","-0.05rem","0.1rem"]}
+              fontFamily="'Lato', sans-serif"
+              // ml={["-0.05rem","-0.05rem","-0.05rem","0.2rem"]}
               color={headerColor}
             >
               pennywise

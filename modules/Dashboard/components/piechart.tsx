@@ -10,7 +10,7 @@ import {
    } from "recharts"
 import { connect, useSelector } from 'react-redux';
 import { RootState } from 'redux/store';
-import { MyObject, selectMyObject } from 'redux/slices/dailyInputSlice';
+import { InputData, selectMyObject } from 'redux/slices/dailyInputSlice';
 import ArrowPic from "../../../images/arrow2.png"
 import Image from 'next/image';
 import { motion } from 'framer-motion';
@@ -20,19 +20,21 @@ const InputPiechart = () => {
     const pieColor = useColorModeValue("#8ab7ff","#8ab4ff")
     const pieColor2 = useColorModeValue("#8ab7ff","#8ab4ff")
 
-    const myObject = useSelector(selectMyObject);
-    const chartData = Object.entries(myObject).map(([name, value], index) => {
+    const inputData = useSelector(selectMyObject);
+    const chartData = Object.entries(inputData).map(([name, value], index) => {
         return {
           name,
           value,
         //   color: `#${Math.floor(Math.random() * 16777215).toString(16)}`,
         };
       });
+      const COLORS = ['#8ab7ff', '#7190eb', '#5596ff', '#4666cd', "#2e6cd0"];
+
     
 
   return (
     <Flex>
-      {myObject.food === 0 ? (
+      {inputData.food === 0 ? (
         <motion.div
           initial={{ opacity: 0 }} 
           animate={{ opacity: 1 }}
@@ -96,11 +98,11 @@ const InputPiechart = () => {
                 </text>
               );
             }}
-          fill={pieColor2} 
+          // fill={pieColor2} 
           dataKey="value"
         >
           {chartData.map((entry, index) => (
-            <Cell key={`cell-${index}`} />
+            <Cell key={`cell-${index}`}   fill={COLORS[index % COLORS.length]}/>
           ))}
         </Pie>
       </PieChart>
