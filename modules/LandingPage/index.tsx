@@ -125,7 +125,7 @@ const LandingPage = () => {
                     mt={["2rem", "1.3rem", "1.3rem", "-1.3rem"]}
                     borderRadius="1rem 0 1rem 0"
                     _hover={{
-                      bg: '#2f3c93',
+                      bg: '#7858ff',
                     }}
                   >
                     Sign up for free

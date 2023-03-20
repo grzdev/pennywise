@@ -1,12 +1,3 @@
-// import { configureStore } from '@reduxjs/toolkit'
-// import numberReducer from "../redux/slices/dailyInputSlice"
-
-// export const store = configureStore({
-//   reducer: {
-//     numbers: numberReducer
-//   },
-// })
-
 import { configureStore } from '@reduxjs/toolkit'
 import dailyInputReducer from './slices/dailyInputSlice'
 

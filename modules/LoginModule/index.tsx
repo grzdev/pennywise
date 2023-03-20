@@ -20,6 +20,7 @@ import { useAuth } from 'context/AuthContext'
 import { useRouter} from 'next/router'
 import { CircularProgress, } from "@chakra-ui/react";
 import { motion } from 'framer-motion'
+import { FaGem } from 'react-icons/fa'
 
 const LogInModule = () => {
   const divColor = useColorModeValue("white","#333f55")
@@ -103,17 +104,22 @@ const LogInModule = () => {
               mt={["-0.3rem", "-0.3rem", "-0.3rem", "-0.1rem"]}
             >
               <Link href="/">
-                <MdTrackChanges
-                  fontSize="2rem"
+                <Text
+                  fontSize={["1.3rem","1.3rem","1.8rem","1.8rem"]}
                   color={headerColor}
-                />
+                  mr="0.2rem"
+                >
+                  <FaGem
+                  />
+                </Text>
               </Link>
             </Flex>
 
             <Link href="/">
               <Heading
-                size="md"
-                ml={["-0.05rem","-0.05rem","-0.05rem","-0.1rem"]}
+               size={["sm","sm","md","md"]}
+               fontFamily="'Lato', sans-serif"
+                // ml={["-0.05rem","-0.05rem","-0.05rem","-0.1rem"]}
                 color={headerColor}
               >
                 pennywise
@@ -252,7 +258,7 @@ const LogInModule = () => {
                   w={["9.2rem","9.2rem","11rem","15rem"]}
                   h={["2.3rem","2.3rem","2.6rem","3rem"]}
                   _hover={{
-                    bg: '#2f3c93',
+                    bg: '#7858ff',
                   }}
                 >
                   Sign in
