@@ -26,7 +26,7 @@ import {
     PopoverHeader,
     PopoverBody
 } from '@chakra-ui/react'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { AddIcon, CheckCircleIcon, ChevronLeftIcon } from "@chakra-ui/icons"
 import { IoBusOutline, IoFastFoodOutline, IoFastFoodSharp, IoWifi } from "react-icons/io5"
 import { TbCurrency, TbCurrencyNaira } from 'react-icons/tb'
@@ -40,16 +40,43 @@ import { RiInformationLine } from 'react-icons/ri'
 import { BsInfo } from 'react-icons/bs'
 import { createSelector } from '@reduxjs/toolkit'
 import { motion } from 'framer-motion'
-
+import { db } from 'config/firebase'
+import { collection, doc, setDoc } from "firebase/firestore";
 
 const InputModal = () => {
+
+  //Firebase
+    // useEffect(() => {
+    //   ;( async ()=>{
+    //     const getDataFromDatabase: any[] = []
+    //     const userData = database.collection("userData").onSnapshot((QuerySnapshot: { array: any[] })=>{
+    //       QuerySnapshot.array.forEach(doc => {
+    //         getDataFromDatabase.push({...doc, database,
+    //         key: doc.id})
+    //       });f
+    //     })
+    //     return () => userData
+    //     const snapshots = await getDocs()
+    //   })
+    // }, [])
+    // const dataCollection = collection(db, "userData")
+    // const userData = {
+    //   food: myObject.food,
+    //   transit: myObject.transit,
+    //   data: myObject.data,
+    //   transfers: myObject.transfers,
+    //   others: myObject.others
+    // };
+    // const newDocRef = doc(dataCollection);
+
+  //Colormode change
   const button = useColorModeValue("linear-gradient(to right, #acb6e5, #86fde8);","linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%)")
   const header = useColorModeValue("#2c4658","")
   const text = useColorModeValue("#0081e7","")
   const addIcon = useColorModeValue("#162A62","")
-// background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
 
 
+  //Modals
   const modal1 = useDisclosure()
   const modal2 = useDisclosure()
   const modal3 = useDisclosure()
@@ -60,20 +87,13 @@ const InputModal = () => {
 
   
 
-  // Onchange trial 2
+  // Onchange function
   const dispatch = useDispatch();
   const myObject = useSelector(selectMyObject);
-  
   const handleNumberChange = (name: keyof InputData, value: number) => {
     dispatch(onChange({ name, value }));
   }
 
-
-  // const [food, setFood] = useState<number>(0);
-  // const [transit, setTransit] = useState<number>(0);
-  // const [data, setData] = useState<number>(0);
-  // const [transfers, setTransfers] = useState<number>(0);
-  // const [others, setOthers] = useState<number>(0);
 
   //Funtional modal buttons
   //add 1k
@@ -192,7 +212,6 @@ const InputModal = () => {
 
   //Modal Save
   const [isFormComplete, setIsFormComplete] = useState(false);
-
    const handleAddInput = () => {
     modal1.onClose()
     modal2.onClose()
@@ -200,27 +219,6 @@ const InputModal = () => {
     modal4.onClose()
     modal5.onClose()
     setIsFormComplete(true);
-    // toast({
-    //     position: 'bottom',
-    //     duration: 3000,
-    //     render: () =>(
-    //         <Flex
-    //             justifyContent="center"
-    //             alignItems="center" 
-    //         >
-    //             <Button
-    //                 borderRadius="1rem 0 1rem 0"
-    //                 w={["8rem","8rem","9rem","10rem"]}
-    //                 h={["3rem","3rem","3rem","3rem"]}
-    //                 colorScheme="blue"
-    //                 leftIcon={<CheckCircleIcon/>}
-                    
-    //             >
-    //                 Done
-    //             </Button>
-    //         </Flex>
-    //     )
-    // })
     toast({
       title: 'Done',
       position: 'top',
@@ -230,8 +228,22 @@ const InputModal = () => {
       isClosable: true,
     })
 
-    
-   
+    const dataCollection = collection(db, "userData")
+    const userData = {
+      food: myObject.food,
+      transit: myObject.transit,
+      data: myObject.data,
+      transfers: myObject.transfers,
+      others: myObject.others
+    };
+    const newDocRef = doc(dataCollection);
+    setDoc(newDocRef, userData)
+    .then(() => {
+      console.log("Document written successfully!");
+    })
+    .catch((error) => {
+      console.error("Error writing document: ", error);
+    });
   }
   
   //Modal button 
