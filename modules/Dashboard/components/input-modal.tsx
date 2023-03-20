@@ -228,7 +228,7 @@ const InputModal = () => {
       isClosable: true,
     })
 
-    const dataCollection = collection(db, "userData")
+    const dataCollection = collection(db, "test")
     const userData = {
       food: myObject.food,
       transit: myObject.transit,
@@ -286,7 +286,7 @@ const InputModal = () => {
          isOpen={modal1.isOpen}
          onClose={modal1.onClose}
          isCentered
-         size={["xs","xs","lg","lg"]}
+         size={["sm","sm","lg","lg"]}
          blockScrollOnMount={true}
         >
         <ModalOverlay />
@@ -333,14 +333,14 @@ const InputModal = () => {
                 >
                     <Text 
                     mt={["-0.05rem","-0.05rem","0.2rem","0.3rem"]}
-                    fontSize={["1.3rem","1.3rem","1.7rem","2rem"]} 
+                    fontSize={["1.4rem","1.4rem","1.7rem","2rem"]} 
                     color={header}
                     mr="0.1rem"
                     >
                         <IoFastFoodSharp/>
                     </Text>
                     <Text 
-                    fontSize={["1.9rem","1.9rem","2.7rem","3rem"]} 
+                    fontSize={["2.2rem","2.2rem","2.7rem","3rem"]} 
                     fontWeight={700}
                     color={header}
                     >
@@ -371,14 +371,15 @@ const InputModal = () => {
                     <Button
                         colorScheme="blue"
                         borderRadius="full"
-                        size={["sm","sm","lg","lg"]}
+                        size={["md","md","lg","lg"]}
+                        // h={["2rem","","",""]}
                         value={myObject.food}
                         onClick={()=> handleAdd1kFood("food", myObject.food)}
                     >
                        <TbCurrencyNaira/> 1,000
                     </Button>
                     <Button
-                        size={["sm","sm","lg","lg"]}
+                        size={["md","md","lg","lg"]}
                         colorScheme="blue"
                         borderRadius="full"
                         value={myObject.food}
@@ -387,7 +388,7 @@ const InputModal = () => {
                        <TbCurrencyNaira/> 2,000
                     </Button>
                     <Button
-                        size={["sm","sm","lg","lg"]}
+                        size={["md","md","lg","lg"]}
                         colorScheme="blue"
                         borderRadius="full"
                         value={myObject.food}
@@ -400,7 +401,7 @@ const InputModal = () => {
                     gap={["0.5rem","0.6rem","1rem","1rem"]}
                 >
                     <Button
-                        size={["sm","sm","lg","lg"]}
+                        size={["md","md","lg","lg"]}
                         colorScheme="blue"
                         borderRadius="full"
                         value={myObject.food}
@@ -410,7 +411,7 @@ const InputModal = () => {
                        <TbCurrencyNaira/> 5,000
                     </Button>
                     <Button
-                        size={["sm","sm","lg","lg"]}
+                        size={["md","md","lg","lg"]}
                         colorScheme="blue"
                         borderRadius="full"
                         value={myObject.food}
@@ -457,7 +458,7 @@ const InputModal = () => {
             <Text 
                 fontWeight={600}
                 fontSize="0.8rem"
-                mr={["10rem","10rem","16.6rem","20rem"]}
+                mr={["13rem","13rem","20.6rem","21rem"]}
                 color={header}
             >
              1 of 5
@@ -465,7 +466,7 @@ const InputModal = () => {
             <Button 
                 colorScheme='blue'
                 borderRadius="full" mr={3}
-                size={["sm","sm","md","md"]}
+                size={["md","md","md","md"]}
                 onClick={modal2.onOpen}
             >
               Next
@@ -480,7 +481,7 @@ const InputModal = () => {
          isOpen={modal2.isOpen}
          onClose={modal2.onClose}
          isCentered
-         size={["xs","xs","lg","lg"]}
+         size={["sm","sm","lg","lg"]}
          blockScrollOnMount={false}
         >
         <ModalOverlay />
@@ -527,14 +528,14 @@ const InputModal = () => {
                 >
                     <Text 
                     mt={["-0.09rem","-0.05rem","0.2rem","0.3rem"]}
-                    fontSize={["1.3rem","1.3rem","1.7rem","2rem"]} 
+                    fontSize={["1.4rem","1.4rem","1.7rem","2rem"]} 
                     color={header}
                     mr="0.1rem"
                     >
                         <IoBusOutline/>
                     </Text>
                     <Text 
-                    fontSize={["1.9rem","1.9rem","2.7rem","3rem"]}
+                    fontSize={["2.2rem","2.2rem","2.7rem","3rem"]}
                     fontWeight={700}
                     color={header}
                     >
@@ -571,14 +572,14 @@ const InputModal = () => {
                     <Button
                         colorScheme="blue"
                         borderRadius="full"
-                        size={["sm","sm","lg","lg"]}
+                        size={["md","md","lg","lg"]}
                         value={myObject.transit}
                         onClick={()=> handleAdd1kTransit("transit", myObject.transit)}
                     >
                        <TbCurrencyNaira/> 1,000
                     </Button>
                     <Button
-                        size={["sm","sm","lg","lg"]}
+                        size={["md","md","lg","lg"]}
                         colorScheme="blue"
                         borderRadius="full"
                         value={myObject.transit}
@@ -587,7 +588,7 @@ const InputModal = () => {
                        <TbCurrencyNaira/> 2,000
                     </Button>
                     <Button
-                        size={["sm","sm","lg","lg"]}
+                        size={["md","md","lg","lg"]}
                         colorScheme="blue"
                         borderRadius="full"
                         value={myObject.transit}
@@ -600,7 +601,7 @@ const InputModal = () => {
                     gap={["0.5rem","0.6rem","1rem","1rem"]}
                 >
                     <Button
-                        size={["sm","sm","lg","lg"]}
+                        size={["md","md","lg","lg"]}
                         colorScheme="blue"
                         borderRadius="full"
                         value={myObject.transit}
@@ -609,7 +610,7 @@ const InputModal = () => {
                        <TbCurrencyNaira/> 5,000
                     </Button>
                     <Button
-                        size={["sm","sm","lg","lg"]}
+                        size={["md","md","lg","lg"]}
                         colorScheme="blue"
                         borderRadius="full"
                         value={myObject.transit}
@@ -656,7 +657,7 @@ const InputModal = () => {
             <Text 
                 fontWeight={600}
                 fontSize="0.8rem"
-                mr={["10rem","10rem","16.6rem","20rem"]}
+                mr={["13rem","13rem","20.6rem","21rem"]}
                 color={header}
             >
              2 of 5
@@ -664,7 +665,7 @@ const InputModal = () => {
             <Button 
                 colorScheme='blue'
                 borderRadius="full" mr={3}
-                size={["sm","sm","md","md"]}
+                size={["md","md","md","md"]}
                 onClick={modal3.onOpen}
             >
               Next
@@ -679,7 +680,7 @@ const InputModal = () => {
          isOpen={modal3.isOpen}
          onClose={modal3.onClose}
          isCentered
-         size={["xs","xs","lg","lg"]}
+         size={["sm","sm","lg","lg"]}
          blockScrollOnMount={false}
         >
         <ModalOverlay />
@@ -726,14 +727,14 @@ const InputModal = () => {
                 >
                     <Text 
                     mt={["-0.05rem","-0.05rem","0.2rem","0.3rem"]}
-                    fontSize={["1.3rem","1.3rem","1.7rem","2rem"]} 
+                    fontSize={["1.4rem","1.4rem","1.7rem","2rem"]} 
                     color={header}
                     mr="0.1rem"
                     >
                     <IoWifi/>
                     </Text>
                     <Text 
-                    fontSize={["1.9rem","1.9rem","2.7rem","3rem"]}
+                    fontSize={["2.2rem","2.2rem","2.7rem","3rem"]}
                     fontWeight={700}
                     color={header}
                     >
@@ -777,7 +778,7 @@ const InputModal = () => {
                        <TbCurrencyNaira/> 1,000
                     </Button>
                     <Button
-                        size={["sm","sm","lg","lg"]}
+                        size={["md","md","lg","lg"]}
                         colorScheme="blue"
                         borderRadius="full"
                         value={myObject.data}
@@ -786,7 +787,7 @@ const InputModal = () => {
                        <TbCurrencyNaira/> 2,000
                     </Button>
                     <Button
-                        size={["sm","sm","lg","lg"]}
+                        size={["md","md","lg","lg"]}
                         colorScheme="blue"
                         borderRadius="full"
                         value={myObject.data}
@@ -799,7 +800,7 @@ const InputModal = () => {
                     gap={["0.5rem","0.6rem","1rem","1rem"]}
                 >
                     <Button
-                        size={["sm","sm","lg","lg"]}
+                        size={["md","md","lg","lg"]}
                         colorScheme="blue"
                         borderRadius="full"
                         value={myObject.data}
@@ -808,7 +809,7 @@ const InputModal = () => {
                        <TbCurrencyNaira/> 5,000
                     </Button>
                     <Button
-                        size={["sm","sm","lg","lg"]}
+                        size={["md","md","lg","lg"]}
                         colorScheme="blue"
                         borderRadius="full"
                         value={myObject.data}
@@ -855,7 +856,7 @@ const InputModal = () => {
             <Text 
                 fontWeight={600}
                 fontSize="0.8rem"
-                mr={["10rem","10rem","16.6rem","20rem"]}
+                mr={["13rem","13rem","20.6rem","21rem"]}
                 color={header}
             >
              3 of 5
@@ -863,7 +864,7 @@ const InputModal = () => {
             <Button 
                 colorScheme='blue'
                 borderRadius="full" mr={3}
-                size={["sm","sm","md","md"]}
+                size={["md","md","md","md"]}
                 onClick={modal4.onOpen}
             >
               Next
@@ -878,7 +879,7 @@ const InputModal = () => {
          isOpen={modal4.isOpen}
          onClose={modal4.onClose}
          isCentered
-         size={["xs","xs","lg","lg"]}
+         size={["sm","sm","lg","lg"]}
          blockScrollOnMount={false}
         >
         <ModalOverlay />
@@ -925,14 +926,14 @@ const InputModal = () => {
                 >
                     <Text 
                     mt={["-0.05rem","-0.05rem","0.2rem","0.3rem"]}
-                    fontSize={["1.3rem","1.3rem","1.7rem","2rem"]} 
+                    fontSize={["1.4rem","1.4rem","1.7rem","2rem"]} 
                     color={header}
                     mr="0.1rem"
                     >
                     <BiTransferAlt/>
                     </Text>
                     <Text 
-                    fontSize={["1.9rem","1.9rem","2.7rem","3rem"]} 
+                    fontSize={["2.2rem","2.2rem","2.7rem","3rem"]} 
                     fontWeight={700}
                     color={header}
                     >
@@ -969,14 +970,14 @@ const InputModal = () => {
                     <Button
                         colorScheme="blue"
                         borderRadius="full"
-                        size={["sm","sm","lg","lg"]}
+                        size={["md","md","lg","lg"]}
                         value={myObject.transfers}
                         onClick={()=> handleAdd1kTransfers("transfers", myObject.transfers)}
                     >
                        <TbCurrencyNaira/> 1,000
                     </Button>
                     <Button
-                        size={["sm","sm","lg","lg"]}
+                        size={["md","md","lg","lg"]}
                         colorScheme="blue"
                         borderRadius="full"
                         value={myObject.transfers}
@@ -985,7 +986,7 @@ const InputModal = () => {
                        <TbCurrencyNaira/> 2,000
                     </Button>
                     <Button
-                        size={["sm","sm","lg","lg"]}
+                        size={["md","md","lg","lg"]}
                         colorScheme="blue"
                         borderRadius="full"
                         value={myObject.transfers}
@@ -998,7 +999,7 @@ const InputModal = () => {
                     gap={["0.5rem","0.6rem","1rem","1rem"]}
                 >
                     <Button
-                        size={["sm","sm","lg","lg"]}
+                        size={["md","md","lg","lg"]}
                         colorScheme="blue"
                         borderRadius="full"
                         value={myObject.transfers}
@@ -1054,7 +1055,7 @@ const InputModal = () => {
             <Text 
                 fontWeight={600}
                 fontSize="0.8rem"
-                mr={["10rem","10rem","16.6rem","20rem"]}
+                mr={["13rem","13rem","20.6rem","21rem"]}
                 color={header}
             >
              4 of 5
@@ -1062,7 +1063,7 @@ const InputModal = () => {
             <Button 
                 colorScheme='blue'
                 borderRadius="full" mr={3}
-                size={["sm","sm","md","md"]}
+                size={["md","md","md","md"]}
                 onClick={modal5.onOpen}
             >
               Next
@@ -1077,7 +1078,7 @@ const InputModal = () => {
          isOpen={modal5.isOpen}
          onClose={modal5.onClose}
          isCentered
-         size={["xs","xs","lg","lg"]}
+         size={["sm","sm","lg","lg"]}
          blockScrollOnMount={false}
         >
         <ModalOverlay />
@@ -1124,14 +1125,14 @@ const InputModal = () => {
                 >
                     <Text 
                     mt={["-0.05rem","-0.05rem","0.2rem","0.3rem"]}
-                    fontSize={["1.3rem","1.3rem","1.7rem","2rem"]} 
+                    fontSize={["1.4rem","1.4rem","1.7rem","2rem"]} 
                     color={header}
                     mr="0.1rem"
                     >
                     <BiDotsHorizontalRounded/>
                     </Text>
                     <Text 
-                    fontSize={["1.9rem","1.9rem","2.7rem","3rem"]} 
+                    fontSize={["2.2rem","2.2rem","2.7rem","3rem"]} 
                     fontWeight={700}
                     color={header}
                     >
@@ -1168,14 +1169,14 @@ const InputModal = () => {
                     <Button
                         colorScheme="blue"
                         borderRadius="full"
-                        size={["sm","sm","lg","lg"]}
+                        size={["md","md","lg","lg"]}
                         value={myObject.others}
                         onClick={()=> handleAdd1kOthers("others", myObject.others)}
                     >
                        <TbCurrencyNaira/> 1,000
                     </Button>
                     <Button
-                        size={["sm","sm","lg","lg"]}
+                        size={["md","md","lg","lg"]}
                         colorScheme="blue"
                         borderRadius="full"
                         value={myObject.others}
@@ -1184,7 +1185,7 @@ const InputModal = () => {
                        <TbCurrencyNaira/> 2,000
                     </Button>
                     <Button
-                        size={["sm","sm","lg","lg"]}
+                        size={["md","md","lg","lg"]}
                         colorScheme="blue"
                         borderRadius="full"
                         value={myObject.others}
@@ -1197,7 +1198,7 @@ const InputModal = () => {
                     gap={["0.5rem","0.6rem","1rem","1rem"]}
                 >
                     <Button
-                        size={["sm","sm","lg","lg"]}
+                        size={["md","md","lg","lg"]}
                         colorScheme="blue"
                         borderRadius="full"
                         value={myObject.others}
@@ -1206,7 +1207,7 @@ const InputModal = () => {
                        <TbCurrencyNaira/> 5,000
                     </Button>
                     <Button
-                        size={["sm","sm","lg","lg"]}
+                        size={["md","md","lg","lg"]}
                         colorScheme="blue"
                         borderRadius="full"
                         value={myObject.others}
@@ -1253,7 +1254,7 @@ const InputModal = () => {
             <Text 
                 fontWeight={600}
                 fontSize="0.8rem"
-                mr={["10rem","10rem","16.6rem","20rem"]}
+                mr={["13rem","13rem","20.6rem","21rem"]}
                 color={header}
             >
              5 of 5
@@ -1261,7 +1262,7 @@ const InputModal = () => {
             <Button 
                 colorScheme='blue'
                 borderRadius="full" mr={3}
-                size={["sm","sm","md","md"]}
+                size={["md","md","md","md"]}
                 onClick={handleAddInput}
             >
               Save

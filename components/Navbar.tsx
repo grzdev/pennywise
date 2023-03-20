@@ -37,7 +37,7 @@ const Navbar = () => {
   const { isOpen, onToggle } = useDisclosure();
   const { colorMode, toggleColorMode } = useColorMode()
   const buttonColor = useColorModeValue("linear-gradient( 135deg, #FFA6B7 10%, #1E2AD2 100%)","linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%)")
-  const headerColor = useColorModeValue("#070D59","#c6dbfb")
+  const headerColor = useColorModeValue("#374D9A","#c6dbfb")
 
   const { user, logout } = useAuth()
 
@@ -86,7 +86,7 @@ const Navbar = () => {
               mt={["0.12rem", "-0.2rem", "0.47rem", "0.43rem"]}
             >
               <Text
-                fontSize={["1.5rem","1.5rem","2rem","2rem"]}
+                fontSize={["1.5rem","1.5rem","1.8rem","1.8rem"]}
                 color={headerColor}
                 mr="0.2rem"
               >
@@ -162,7 +162,7 @@ const Navbar = () => {
                 bg={buttonColor}
                 // href={'#'}
                 _hover={{
-                  bg: '#2f3c93',
+                  bg: '#7858ff',
                 }}
                 borderRadius="1rem 0 1rem 0"
                 display={{ base: 'none', md: 'none', lg: "inline-flex" }}

@@ -19,6 +19,7 @@ import { useRouter} from 'next/router'
 import { useAuth } from 'context/AuthContext'
 import { CircularProgress, } from "@chakra-ui/react";
 import { motion } from 'framer-motion'
+import { FaGem } from 'react-icons/fa'
 
 const SignUpModule = () => {
   const divColor = useColorModeValue("white","#333f55")
@@ -90,19 +91,21 @@ const SignUpModule = () => {
            mt={["-0.3rem", "-0.3rem", "-0.3rem", "-0.1rem"]}
          >
            <Link href="/">
-             <MdTrackChanges
-               fontSize="2rem"
-               color={headerColor}
-             />
+              <Text
+                color={headerColor}
+                mr="0.2rem"
+                fontSize={["1.3rem","1.3rem","1.8rem","1.8rem"]}
+              >
+                <FaGem/>
+              </Text>
            </Link>
          </Flex>
 
          <Link href="/">
            <Heading
-             size="md"
-            //  ml="0.2rem"
-                ml={["-0.05rem","-0.05rem","-0.05rem","-0.1rem"]}
-                color={headerColor}
+            size={["sm","sm","md","md"]}
+            fontFamily="'Lato', sans-serif"
+            color={headerColor}
            >
              pennywise
            </Heading>
@@ -221,7 +224,7 @@ const SignUpModule = () => {
                 w={["9.2rem","9.2rem","11rem","15rem"]}
                 h={["2.3rem","2.3rem","2.6rem","3rem"]}
                   _hover={{
-                    bg: '#2f3c93',
+                    bg: '#7858ff',
                   }}
             >
                 Create account

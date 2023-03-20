@@ -32,7 +32,7 @@ const Footer = () => {
   const textColor = useColorModeValue("black","#b9b9b9")
   const gmail = useColorModeValue("#F04235","#b6b6b6")
   const footer = useColorModeValue("#e3eeff","black")
-  const headerColor = useColorModeValue("#070D59","#c6dbfb")
+  const headerColor = useColorModeValue("#374D9A","#c6dbfb")
   const tradeMark = useColorModeValue("black","white")
   const dami = useColorModeValue("#070D59","#C6DBFB")
   const icons = useColorModeValue("#545454","#b9b9b9")
@@ -62,7 +62,7 @@ const Footer = () => {
             mr="0.2rem"
           >
             <Text
-              fontSize={["1.5rem","1.5rem","2rem","2rem"]}
+              fontSize={["1.5rem","1.5rem","1.8rem","1.8rem"]}
               color={headerColor}
             >
               <FaGem 
