@@ -230,9 +230,10 @@ const InputModal = () => {
       title: 'Done',
       position: 'top',
       description: "See you tomorrow.",
-      status: 'success',
+      status: 'info',
       duration: 5000,
       isClosable: true,
+      // variant: "left-accent",
     })
 
     const dataCollection = collection(db, "test2")
@@ -1290,13 +1291,15 @@ const InputModal = () => {
                 <Image
                   src={CompletedImg}
                   alt=""
+                  priority
+                  placeholder="blur"
                 />
               </Box>
               <Heading
                 size={["md","md","lg","lg"]}
                 mt="-3rem"
               >
-                Filled successfully!
+                Successful!
               </Heading>
 
               <Flex
@@ -1319,7 +1322,7 @@ const InputModal = () => {
                     color="white"
                     fontWeight={700}
                     _hover={{
-                      bg: '#7858ff',
+                      bg: '#718aff',
                     }}
                   >
                     Close
