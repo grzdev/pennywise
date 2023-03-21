@@ -217,7 +217,7 @@ const DashBoardLandingPage = ({ className }: DateTimeProps) => {
         <Divider
           orientation='horizontal'
           w="100%"
-          mt={["8rem","8rem","3rem","3rem"]}
+          mt={["10rem","10rem","3rem","3rem"]}
         />
 
         {/* <Flex
