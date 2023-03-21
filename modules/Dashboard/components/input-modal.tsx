@@ -24,7 +24,8 @@ import {
     PopoverContent,
     PopoverCloseButton,
     PopoverHeader,
-    PopoverBody
+    PopoverBody,
+    Heading
 } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
 import { AddIcon, CheckCircleIcon, ChevronLeftIcon } from "@chakra-ui/icons"
@@ -41,6 +42,8 @@ import { BsInfo } from 'react-icons/bs'
 import { createSelector } from '@reduxjs/toolkit'
 import { motion } from 'framer-motion'
 import { db } from 'config/firebase'
+import Image from "next/image"
+import CompletedImg from "../../../images/check1.png"
 import { collection, doc, setDoc } from "firebase/firestore";
 
 const InputModal = () => {
@@ -50,7 +53,7 @@ const InputModal = () => {
   const header = useColorModeValue("#2c4658","")
   const text = useColorModeValue("#0081e7","")
   const addIcon = useColorModeValue("#162A62","")
-
+  const completed = useColorModeValue("linear-gradient( 135deg, #FFA6B7 10%, #1E2AD2 100%)","linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%)")
 
 
 
@@ -228,11 +231,11 @@ const InputModal = () => {
       position: 'top',
       description: "See you tomorrow.",
       status: 'success',
-      duration: 3000,
+      duration: 5000,
       isClosable: true,
     })
 
-    const dataCollection = collection(db, "test1")
+    const dataCollection = collection(db, "test2")
     const userData = {
       food: myObject.food,
       transit: myObject.transit,
@@ -371,10 +374,6 @@ const InputModal = () => {
                 <HStack
                     gap={["0.5rem","0.6rem","1rem","1rem"]}
                     mt="-2rem"
-                    // w={["","","","26rem"]}
-                    // noOfLines={2}
-                    // justifyContent="center"
-                    // alignItems="center"
                 >
                     <Button
                         colorScheme="blue"
@@ -571,10 +570,6 @@ const InputModal = () => {
             >
                 <HStack
                     gap={["0.5rem","0.6rem","1rem","1rem"]}
-                    // w={["","","","26rem"]}
-                    // noOfLines={2}
-                    // justifyContent="center"
-                    // alignItems="center"
                     mt="-2rem"
                 >
                     <Button
@@ -770,16 +765,12 @@ const InputModal = () => {
             >
                 <HStack
                     gap={["0.5rem","0.6rem","1rem","1rem"]}
-                    // w={["","","","26rem"]}
-                    // noOfLines={2}
-                    // justifyContent="center"
-                    // alignItems="center"
                     mt="-2rem"
                 >
                     <Button
                         colorScheme="blue"
                         borderRadius="full"
-                        size={["sm","sm","lg","lg"]}
+                        size={["md","md","lg","lg"]}
                         value={myObject.data}
                         onClick={()=> handleAdd1kData("data", myObject.data)}
                     >
@@ -969,10 +960,6 @@ const InputModal = () => {
             >
                 <HStack
                     gap={["0.5rem","0.6rem","1rem","1rem"]}
-                    // w={["","","","26rem"]}
-                    // noOfLines={2}
-                    // justifyContent="center"
-                    // alignItems="center
                     mt="-2rem"
                 >
                     <Button
@@ -1016,7 +1003,7 @@ const InputModal = () => {
                        <TbCurrencyNaira/> 5,000
                     </Button>
                     <Button
-                        size={["sm","sm","lg","lg"]}
+                        size={["md","md","lg","lg"]}
                         colorScheme="blue"
                         borderRadius="full"
                         value={myObject.transfers}
@@ -1275,25 +1262,81 @@ const InputModal = () => {
         </ModalContent>
       </Modal>
 
+
+         {/* Success Modal */}
       <Modal 
         closeOnOverlayClick={false} 
         isOpen={modal6.isOpen}
         onClose={modal6.onClose}
+        size={["sm","sm","lg","lg"]}
+        blockScrollOnMount={false}
+        isCentered
         >
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>Modal Title</ModalHeader>
-          <ModalCloseButton />
+          {/* <ModalHeader>Modal Title</ModalHeader> */}
+          {/* <ModalCloseButton /> */}
           <ModalBody>
-           Done
+           <Flex
+            justifyContent="center"
+            alignItems="center"
+            flexDir="column"
+            mb={["3rem","3rem","5rem","8rem"]}
+           >
+              <Box
+                w={["16rem","16rem","18rem","20rem"]}
+                mt={["3rem","3rem","3rem","4rem"]}
+              >
+                <Image
+                  src={CompletedImg}
+                  alt=""
+                />
+              </Box>
+              <Heading
+                size={["md","md","lg","lg"]}
+                mt="-3rem"
+              >
+                Filled successfully!
+              </Heading>
+
+              <Flex
+                mt={["7rem","7rem","6rem","6rem"]}
+                mb={["2rem","2rem","-0.5rem","-5rem"]}
+              >
+                <motion.div
+                   whileInView={{ y: 0, opacity: 1}}
+                   initial={{ y: 100, opacity: 0 }}
+                   viewport={{ once: true }}
+                   whileHover={{ scale: 1.1 }}
+                   transition={{ type: "spring", stiffness: 200, damping: 10 }}
+                >
+                  <Button 
+                    bg={completed}
+                    borderRadius="1rem 0 1rem 0"
+                    w={["10rem","10rem","10rem","12rem"]}
+                    h={["3rem","3rem","4rem","4rem"]}
+                    onClick={handleAddInput}
+                    color="white"
+                    fontWeight={700}
+                    _hover={{
+                      bg: '#7858ff',
+                    }}
+                  >
+                    Close
+                  </Button>
+                </motion.div>
+              </Flex>
+           </Flex>
           </ModalBody>
 
-          <ModalFooter>
-            <Button colorScheme='blue' mr={3} onClick={handleAddInput}>
-              Close
-            </Button>
-            <Button variant='ghost'>Secondary Action</Button>
-          </ModalFooter>
+          {/* <ModalFooter>
+            <Flex
+              justifyContent="center"
+              alignItems="center"
+            >
+            
+            </Flex>
+          </ModalFooter> */}
         </ModalContent>
       </Modal>
 
