@@ -19,7 +19,7 @@ import { motion } from 'framer-motion';
 const InputPiechart = () => {
     const pieColor = useColorModeValue("#8ab7ff","#8ab4ff")
     const pieColor2 = useColorModeValue("#8ab7ff","#8ab4ff")
-
+    const textColor = useColorModeValue("#90b9ff","white")
     const inputData = useSelector(selectMyObject);
     const chartData = Object.entries(inputData).map(([name, value], index) => {
         return {
@@ -50,7 +50,7 @@ const InputPiechart = () => {
             <Heading
               mt={["1.7rem","1.7rem","2.3rem","2.3rem"]}
               size={["xs","xs","sm","md"]}
-              color="white"
+              color={textColor}
             >
               What did you spend on today?
             </Heading>
@@ -86,7 +86,7 @@ const InputPiechart = () => {
                 <text
                   x={x}
                   y={y}
-                  fill="#fff"
+                  fill={textColor}
                   textAnchor={x > cx ? 'start' : 'end'}
                   dominantBaseline="central"
                   fontSize="16"

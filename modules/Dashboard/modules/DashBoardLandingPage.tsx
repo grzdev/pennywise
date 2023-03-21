@@ -39,6 +39,7 @@ import Head from 'next/head'
  import { selectMyObject } from "../../../redux/slices/dailyInputSlice"
  import { motion } from 'framer-motion';
  import InputPiechart from '../components/piechart';
+import { FaGem } from 'react-icons/fa';
 
  interface DateTimeProps {
   className?: string;
@@ -67,7 +68,7 @@ const DashBoardLandingPage = ({ className }: DateTimeProps) => {
   const [state, setState] = useState<DateTimeState>({
     dateTime: new Date(),
   });
-
+ 
   useEffect(() => {
     const interval = setInterval(() => {
       setState({ dateTime: new Date() });
@@ -80,7 +81,7 @@ const DashBoardLandingPage = ({ className }: DateTimeProps) => {
 
   const dateOptions: Intl.DateTimeFormatOptions = { weekday: 'short', month: 'long', day: 'numeric' };
   const timeOptions: Intl.DateTimeFormatOptions = { hour: 'numeric', minute: 'numeric', second: 'numeric' };
- 
+
   //PieChart data
 
 
@@ -97,7 +98,7 @@ const DashBoardLandingPage = ({ className }: DateTimeProps) => {
       >
         <Flex
           flexDir="column"
-          mt={["1.2rem","1.2rem","3rem","4rem"]}
+          mt={["2.5rem","2.5rem","3rem","4rem"]}
           ml={["1rem","2rem","2rem","2rem"]}
         >
           <Heading
@@ -125,6 +126,7 @@ const DashBoardLandingPage = ({ className }: DateTimeProps) => {
             bg= {bgGradient}
             borderRadius="1rem 0 1rem 0"
             boxShadow="2xl"
+            display={{ base: 'none', md: 'block' }} 
           >
             <Flex
               flexDir="column"
@@ -138,9 +140,7 @@ const DashBoardLandingPage = ({ className }: DateTimeProps) => {
                 <Flex
                   flexDir="column"
                   alignItems="center"
-                  // justifyContent="center"
                   w={["","","7rem",""]}
-                  // ml={["","","-8rem",""]}  
                 >
                   <Heading
                     size={["sm","sm","md","md"]}
@@ -151,7 +151,6 @@ const DashBoardLandingPage = ({ className }: DateTimeProps) => {
                   <Flex
                     textAlign="center"
                     alignItems="center"
-                    // ml={["","","","-1rem"]
                   >
                     <Heading
                       size={["lg","xl","xl","2xl"]}
@@ -176,10 +175,10 @@ const DashBoardLandingPage = ({ className }: DateTimeProps) => {
 
                 <Flex>
                   <Text
-                    fontSize={["1.9rem","1.9rem","3rem","3rem"]}
+                    fontSize={["1.9rem","1.9rem","2.1rem","2.5rem"]}
                     mt={["0.4rem","0.4rem","",""]}
                   >
-                    <MdTrackChanges/>
+                    <FaGem/>
                   </Text>
                 </Flex>
               </Flex>
@@ -212,22 +211,152 @@ const DashBoardLandingPage = ({ className }: DateTimeProps) => {
             </Flex>
 
           </Flex>
+
+          <MobileNav/>          
+
+          {/* <Flex
+            w={["","","","33rem"]}
+            h={["","","","30rem"]}
+            bg= {bgGradient}
+            borderRadius="1rem 0 1rem 0"
+          >
+
+          </Flex> */}
         </Flex>
 
-        <Divider
+        {/* <Divider
           orientation='horizontal'
           w="100%"
           mt={["10rem","10rem","3rem","3rem"]}
-        />
-
-        {/* <Flex
-          mt={["","","","5rem"]}
-        >
-
-        </Flex> */}
+        /> */}
       </Flex>
     </>
   )
 }
 
+const MobileNav = () =>{
+  const bgGradient2 = useColorModeValue("#white","#28355e")
+  const bgGradient = useColorModeValue("linear-gradient(to right, #162961, #3969b9)","linear-gradient(to right, #28355e, #28355e);")
+  const myObject = useSelector(selectMyObject)
+  
+  const [myState, setMyState] = useState('');;
+  const Sum = myObject.food + myObject.transit + myObject.data + myObject.transfers + myObject.others
+
+  //Date
+  const [state, setState] = useState<DateTimeState>({
+    dateTime: new Date(),
+  });
+ 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setState({ dateTime: new Date() });
+    }, 1000);
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, []);
+
+  const dateOptions: Intl.DateTimeFormatOptions = { weekday: 'short', month: 'long', day: 'numeric' };
+  const timeOptions: Intl.DateTimeFormatOptions = { hour: 'numeric', minute: 'numeric', second: 'numeric' };
+
+
+  return(
+    <Flex
+      flexDir="column"
+      gap="2rem"
+      display={{ base: 'flex', md: 'none' }}
+    >
+      <Flex
+        w="21.5rem"
+        h="18.5rem"
+        bg= {bgGradient}
+        borderRadius="1rem 0 1rem 0"
+        flexDir="column"
+        color="white"
+        boxShadow="2xl"
+      >
+        <Flex
+          p="2rem"
+          gap="7rem"
+        >
+          <Heading
+            size="md"
+          >
+           {state.dateTime.toLocaleDateString('en-US', dateOptions)}
+          </Heading>
+
+          <Text
+            fontSize="1.6rem"
+          >
+            <FaGem/>
+          </Text>
+        </Flex>
+
+        <Flex
+          flexDir="column"
+          mt="5rem"
+          p="2rem"
+        >
+          <Heading
+            size="sm"
+          >
+           Total spent
+          </Heading>
+          <Flex
+            textAlign="center"
+            alignItems="center"
+            ml="-0.5rem"
+          >
+            <Heading
+              size="2xl"
+              mr="-0.4rem"
+            >
+              <TbCurrencyNaira/>
+            </Heading>
+            <Heading
+              size="xl"
+            >  
+              {myObject.food === 0 ? (
+                <p>XXX</p>
+              ) : (
+                
+                <p>{Sum}</p>
+              )}
+            </Heading>
+          </Flex>
+        </Flex>
+      </Flex>
+
+      <Flex
+        w="21.5rem"
+        h="28rem"
+        bg= {bgGradient2}
+        borderRadius="1rem 0 1rem 0"
+        mb="12rem"
+        boxShadow="2xl"
+        flexDir="column"
+      >
+        <Flex
+          flexDir="column"
+          alignItems="center"
+          justifyContent="center"
+          mt="4rem"
+        >
+          <Heading
+          >
+            <InputPiechart />
+          </Heading>
+        </Flex>
+
+        <Flex
+          mt="1.5rem"
+          ml="15.5rem"
+        >
+          <InputModal/>
+        </Flex>
+      </Flex>
+    </Flex>
+  )
+}
 export default DashBoardLandingPage

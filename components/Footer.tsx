@@ -144,7 +144,7 @@ const Footer = () => {
           color={dami}
           fontSize={["0.75rem","0.75rem","0.85rem","0.85rem" ]}
         >
-        Oyeniyi Damilola
+        Damilola Oyeniyi 
         </Text>
       </Flex>
       <Flex

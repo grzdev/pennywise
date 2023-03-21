@@ -371,7 +371,7 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
         <Flex
           justifyContent="center"
           alignItems="center"
-          mr="9.5rem"
+          mr="10.5rem"
         >
             <Flex
               mt={["0.1rem", "-0.2rem", "-0.1rem", "-0.1rem"]}
