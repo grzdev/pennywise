@@ -45,35 +45,13 @@ import { collection, doc, setDoc } from "firebase/firestore";
 
 const InputModal = () => {
 
-  //Firebase
-    // useEffect(() => {
-    //   ;( async ()=>{
-    //     const getDataFromDatabase: any[] = []
-    //     const userData = database.collection("userData").onSnapshot((QuerySnapshot: { array: any[] })=>{
-    //       QuerySnapshot.array.forEach(doc => {
-    //         getDataFromDatabase.push({...doc, database,
-    //         key: doc.id})
-    //       });f
-    //     })
-    //     return () => userData
-    //     const snapshots = await getDocs()
-    //   })
-    // }, [])
-    // const dataCollection = collection(db, "userData")
-    // const userData = {
-    //   food: myObject.food,
-    //   transit: myObject.transit,
-    //   data: myObject.data,
-    //   transfers: myObject.transfers,
-    //   others: myObject.others
-    // };
-    // const newDocRef = doc(dataCollection);
-
   //Colormode change
   const button = useColorModeValue("linear-gradient(to right, #acb6e5, #86fde8);","linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%)")
   const header = useColorModeValue("#2c4658","")
   const text = useColorModeValue("#0081e7","")
   const addIcon = useColorModeValue("#162A62","")
+
+
 
 
   //Modals
@@ -82,8 +60,16 @@ const InputModal = () => {
   const modal3 = useDisclosure()
   const modal4 = useDisclosure()
   const modal5 = useDisclosure()
+  const modal6 = useDisclosure()
 
+
+
+
+
+  //Toast
   const toast = useToast()
+
+
 
   
 
@@ -95,7 +81,11 @@ const InputModal = () => {
   }
 
 
+
+
+
   //Funtional modal buttons
+
   //add 1k
   const handleAdd1kFood = (name: keyof InputData, value: number) => {
     dispatch(add1k({ name : "food", value })),
@@ -115,8 +105,11 @@ const InputModal = () => {
   };
   const handleAdd1kOthers = (name: keyof InputData, value: number) => {
     dispatch(add1k({ name : "others", value })),
-    handleAddInput()
+    modal6.onOpen()
   };
+
+
+
 
    //add 2k
    const handleAdd2kFood = (name: keyof InputData, value: number) => {
@@ -137,8 +130,11 @@ const InputModal = () => {
   };
   const handleAdd2kOthers = (name: keyof InputData, value: number) => {
     dispatch(add2k({ name : "others", value })),
-    handleAddInput()
+    modal6.onOpen()
   };
+
+
+
 
   //add 3k
   const handleAdd3kFood = (name: keyof InputData, value: number) => {
@@ -159,8 +155,12 @@ const InputModal = () => {
   };
   const handleAdd3kOthers = (name: keyof InputData, value: number) => {
     dispatch(add3k({ name : "others", value })),
-    handleAddInput()
+    modal6.onOpen()
   };
+
+
+
+
 
   //add 5k
   const handleAdd5kFood = (name: keyof InputData, value: number) => {
@@ -181,8 +181,12 @@ const InputModal = () => {
   };
   const handleAdd5kOthers = (name: keyof InputData, value: number) => {
     dispatch(add5k({ name : "others", value })),
-    handleAddInput()
+    modal6.onOpen()
   };
+
+
+
+
 
   //add 10k
   const handleAdd10kFood = (name: keyof InputData, value: number) => {
@@ -203,22 +207,22 @@ const InputModal = () => {
   };
   const handleAdd10kOthers = (name: keyof InputData, value: number) => {
     dispatch(add10k({ name : "others", value })),
-    handleAddInput()
+    modal6.onOpen()
   };
 
-  //Sum of all input
-  // const Sum = food + transit + data + transfers + others
+  
 
 
-  //Modal Save
-  const [isFormComplete, setIsFormComplete] = useState(false);
+
+  //Modal Save function
    const handleAddInput = () => {
     modal1.onClose()
     modal2.onClose()
     modal3.onClose()
     modal4.onClose()
     modal5.onClose()
-    setIsFormComplete(true);
+    modal6.onClose()
+
     toast({
       title: 'Done',
       position: 'top',
@@ -228,7 +232,7 @@ const InputModal = () => {
       isClosable: true,
     })
 
-    const dataCollection = collection(db, "test")
+    const dataCollection = collection(db, "test1")
     const userData = {
       food: myObject.food,
       transit: myObject.transit,
@@ -244,9 +248,13 @@ const InputModal = () => {
     .catch((error) => {
       console.error("Error writing document: ", error);
     });
+    console.log(userData)
+
   }
   
-  //Modal button 
+  
+
+
   
 
   return (
@@ -1160,10 +1168,6 @@ const InputModal = () => {
             >
                 <HStack
                     gap={["0.5rem","0.6rem","1rem","1rem"]}
-                    // w={["","","","26rem"]}
-                    // noOfLines={2}
-                    // justifyContent="center"
-                    // alignItems="center"
                     mt="-2rem"
                 >
                     <Button
@@ -1263,10 +1267,32 @@ const InputModal = () => {
                 colorScheme='blue'
                 borderRadius="full" mr={3}
                 size={["md","md","md","md"]}
-                onClick={handleAddInput}
+                onClick={modal6.onOpen}
             >
-              Save
+              Next
             </Button>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
+
+      <Modal 
+        closeOnOverlayClick={false} 
+        isOpen={modal6.isOpen}
+        onClose={modal6.onClose}
+        >
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader>Modal Title</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody>
+           Done
+          </ModalBody>
+
+          <ModalFooter>
+            <Button colorScheme='blue' mr={3} onClick={handleAddInput}>
+              Close
+            </Button>
+            <Button variant='ghost'>Secondary Action</Button>
           </ModalFooter>
         </ModalContent>
       </Modal>
