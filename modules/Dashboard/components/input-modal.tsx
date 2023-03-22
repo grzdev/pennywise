@@ -270,26 +270,30 @@ const InputModal = () => {
         whileHover={{ scale: 1.1 }}
         transition={{ type: "spring", stiffness: 200, damping: 10 }}
       >
-        <Button
-        //  size={["md","md","lg","lg"]}
-        w={["4rem","5rem","6rem","7rem"]}
-        h={["2.8rem","2.8rem","3.2rem","3.8rem"]}
-         borderRadius="1rem 0 1rem 0"
-         bg={button}
-         _hover={{
-         bg: "#718aff"
-         }}
-         onClick={modal1.onOpen}
-        >
-          <Text
-            color={addIcon} 
-            fontSize={["1.1rem","1.1rem","1.3rem","1.4rem"]}
-            fontWeight={900}
+        {myObject.food === 0 ?(
+          <Button
+            w={["4rem","5rem","6rem","7rem"]}
+            h={["2.8rem","2.8rem","3.2rem","3.8rem"]}
+            borderRadius="1rem 0 1rem 0"
+            bg={button}
+            _hover={{
+            bg: "#718aff"
+            }}
+            onClick={modal1.onOpen}
           >
-            <AddIcon/>
+            <Text
+              color={addIcon} 
+              fontSize={["1.1rem","1.1rem","1.3rem","1.4rem"]}
+              fontWeight={900}
+            >
+              <AddIcon/>
+            </Text>
+          </Button>
+        ) : (
+          <Text>
+            
           </Text>
-
-        </Button>
+        )}
       </motion.div>
         
         {/* Food Modal */}

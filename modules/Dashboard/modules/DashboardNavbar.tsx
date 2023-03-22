@@ -378,9 +378,9 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
             >
               <Text
                 mt="0.1rem"
+                fontSize="1.4rem"
               >
                 <FaGem
-                  fontSize="1.4rem"
                   color={headerColor}
                 />
               </Text>
@@ -425,10 +425,10 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
               bg: "#4f6382",
               color: 'white',
             }}
-            // p="1"
+            // p="1rem"
             // mx="0.5"
             borderRadius="0.7rem"
-          >
+            >
           <Link href='/dashboard'>
             <AiFillHome
               fontSize="1.2rem"
