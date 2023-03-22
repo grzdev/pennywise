@@ -10,7 +10,8 @@ import {
   FormLabel,
   Heading,
   Input,
-  Text, 
+  Text,
+  useToast, 
 } from '@chakra-ui/react'
 import { MdTrackChanges } from 'react-icons/md'
 import { FcGoogle } from "react-icons/fc"
@@ -68,14 +69,29 @@ const LogInModule = () => {
     }
   }
 
+  const toast = useToast()
   const handleLogin = async (e: any) =>{
     e.preventDefault()
-
     try {
       await login(data.email, data.password)
       router.push("/dashboard")
+      toast({
+        title: 'Login successful',
+        description: "",
+        position:"top",
+        status: 'success',
+        duration: 5000,
+        isClosable: true,
+    })
     } catch (err) {
-      console.log(err)
+      toast({
+        position:"top",
+        title: 'Wrong password or email',
+        description: "",
+        status: 'error',
+        duration: 5000,
+        isClosable: true,
+    })
     }
 
    setLoading(true)

@@ -140,7 +140,12 @@ const AnalyticsModule = () => {
               <Heading
                size={["xs","xs","sm","md"]}
               >
-                {Sum}
+                {myObject.food === 0 ? (
+                <p>XXX</p>
+              ) : (
+                
+                <p>{Sum}</p>
+              )}
               </Heading>
             </Flex>
           </Flex>
@@ -165,7 +170,7 @@ const AnalyticsModule = () => {
             mt={["2.4rem","2.4rem","3rem","2rem"]}
             size={["md","md","md","md"]}
           >
-            Most spent on categories
+            Categories
           </Heading>
           
           <Flex
@@ -291,7 +296,12 @@ const AnalyticsModule = () => {
                   fontSize={["1rem","1rem","1.2rem","1.1rem"]}
                   fontWeight={600}
                 >
-                  {myObject.food}
+                  {myObject.food === 0 ? (
+                    <p>XXX</p>
+                  ) : (
+                    
+                    <p>{myObject.food}</p>
+                  )}
                 </Text>
               </Flex>
 
@@ -308,7 +318,12 @@ const AnalyticsModule = () => {
                   fontSize={["1rem","1rem","1.2rem","1.1rem"]}
                   fontWeight={600}
                 >
-                  {myObject.data}
+                  {myObject.data === 0 ? (
+                    <p>XXX</p>
+                  ) : (
+                    
+                    <p>{myObject.data}</p>
+                  )}
                 </Text>
               </Flex>
 
@@ -325,7 +340,12 @@ const AnalyticsModule = () => {
                   fontSize={["1rem","1rem","1.2rem","1.1rem"]}
                   fontWeight={600}
                 >
-                  {myObject.transit}
+                  {myObject.transit === 0 ? (
+                    <p>XXX</p>
+                  ) : (
+                    
+                    <p>{myObject.transit}</p>
+                  )}
                 </Text>
               </Flex>
 
@@ -342,7 +362,12 @@ const AnalyticsModule = () => {
                   fontSize={["1rem","1rem","1.2rem","1.1rem"]}
                   fontWeight={600}
                 >
-                  {myObject.transfers}
+                  {myObject.transfers === 0 ? (
+                    <p>XXX</p>
+                  ) : (
+                    
+                    <p>{myObject.transfers}</p>
+                  )}
                 </Text>
               </Flex>
 
@@ -359,7 +384,12 @@ const AnalyticsModule = () => {
                   fontSize={["1rem","1rem","1.2rem","1.1rem"]}
                   fontWeight={600}
                 >
-                  {myObject.others}
+                  {myObject.others === 0 ? (
+                    <p>XXX</p>
+                  ) : (
+                    
+                    <p>{myObject.others}</p>
+                  )}
                 </Text>
               </Flex>
             </Flex>

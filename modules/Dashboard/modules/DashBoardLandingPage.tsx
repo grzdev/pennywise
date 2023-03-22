@@ -98,8 +98,8 @@ const DashBoardLandingPage = ({ className }: DateTimeProps) => {
       >
         <Flex
           flexDir="column"
-          mt={["2.5rem","2.5rem","3rem","4rem"]}
-          ml={["1rem","2rem","2rem","2rem"]}
+          mt={["1.5rem","2.5rem","3rem","4rem"]}
+          ml={["0.5rem","2rem","2rem","2rem"]}
         >
           <Heading
             size={["lg","lg","xl","xl"]}
@@ -197,7 +197,7 @@ const DashBoardLandingPage = ({ className }: DateTimeProps) => {
                 alignItems="center"
                 mt={["3.8rem","4.3rem","3rem","2rem"]}
                 gap={["7.3rem","7rem","15rem","38rem"]}
-                ml={["1rem","","","1.7rem"]}
+                ml={["1rem","","","-1.7rem"]}
               >
                 <Heading
                   fontSize={["0.8rem","0.8rem","1rem","1.3rem"]}
@@ -235,7 +235,7 @@ const DashBoardLandingPage = ({ className }: DateTimeProps) => {
 }
 
 const MobileNav = () =>{
-  const bgGradient2 = useColorModeValue("#white","#28355e")
+  const bgGradient2 = useColorModeValue("white","#28355e")
   const bgGradient = useColorModeValue("linear-gradient(to right, #162961, #3969b9)","linear-gradient(to right, #28355e, #28355e);")
   const myObject = useSelector(selectMyObject)
   
@@ -268,20 +268,20 @@ const MobileNav = () =>{
       display={{ base: 'flex', md: 'none' }}
     >
       <Flex
-        w="21.5rem"
-        h="18.5rem"
+        w="21rem"
+        h="17.5rem"
         bg= {bgGradient}
         borderRadius="1rem 0 1rem 0"
         flexDir="column"
         color="white"
-        boxShadow="2xl"
+        boxShadow="lg"
       >
         <Flex
-          p="2rem"
-          gap="7rem"
+          p="1.6rem"
+          gap="9rem"
         >
           <Heading
-            size="md"
+            size="sm"
           >
            {state.dateTime.toLocaleDateString('en-US', dateOptions)}
           </Heading>
@@ -329,12 +329,12 @@ const MobileNav = () =>{
       </Flex>
 
       <Flex
-        w="21.5rem"
-        h="28rem"
+        w="21rem"
+        h="26.5rem"
         bg= {bgGradient2}
         borderRadius="1rem 0 1rem 0"
         mb="12rem"
-        boxShadow="2xl"
+        boxShadow="lg"
         flexDir="column"
       >
         <Flex

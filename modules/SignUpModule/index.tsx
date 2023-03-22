@@ -8,7 +8,8 @@ import {
   Input,
   Text, 
   FormControl,
-  FormLabel
+  FormLabel,
+  useToast
 } from '@chakra-ui/react'
 import React,{ useState } from 'react'
 import { MdTrackChanges } from 'react-icons/md'
@@ -33,6 +34,8 @@ const SignUpModule = () => {
   const router = useRouter()
 
   const { signIWithGoogle } = useAuth()
+
+  const toast = useToast()
 
   const [loading, setLoading] = useState(false)
 
@@ -62,8 +65,23 @@ const SignUpModule = () => {
     try {
       await signup(data.email, data.password)
       router.push("/dashboard")
+      toast({
+        title: 'Account created.',
+        description: "",
+        position:"top",
+        status: 'success',
+        duration: 5000,
+        isClosable: true,
+    })
     } catch (err) {
-      console.log(err)
+      toast({
+          title: 'There seems to ba an error :(',
+          description: "",
+          position:"top",
+          status: 'error',
+          duration: 5000,
+          isClosable: true,
+      })
     }
 
    setLoading(true)

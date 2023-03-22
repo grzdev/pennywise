@@ -142,7 +142,7 @@ const Footer = () => {
         <Text 
           fontWeight={600}
           color={dami}
-          fontSize={["0.75rem","0.75rem","0.85rem","0.85rem" ]}
+          fontSize={["0.7rem","0.7rem","0.8rem","0.8rem" ]}
         >
         Damilola Oyeniyi 
         </Text>
