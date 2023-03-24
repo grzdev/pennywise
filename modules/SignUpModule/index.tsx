@@ -70,7 +70,7 @@ const SignUpModule = () => {
         description: "",
         position:"top",
         status: 'success',
-        duration: 5000,
+        duration: 6000,
         isClosable: true,
     })
     } catch (err) {

@@ -80,7 +80,7 @@ const LogInModule = () => {
         description: "",
         position:"top",
         status: 'success',
-        duration: 10000,
+        duration: 6000,
         isClosable: true,
     })
     } catch (err) {

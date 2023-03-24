@@ -136,12 +136,14 @@ const DashBoardLandingPage = ({ className }: DateTimeProps) => {
         <Flex
           flexDir="column"
           mt={["1rem","2.5rem","3rem","4rem"]}
-          ml={["1.7rem","6rem","2rem","2rem"]}
+          ml={["0.7rem","0.7rem","2rem","2rem"]}
+          // textAlign="initial"
         >
           <Heading
             size={["lg","lg","xl","xl"]}
           >
-           {displayName},
+           {/* {displayName} */}
+            Hey,
           </Heading>
           <Text
             fontWeight={500}
