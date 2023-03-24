@@ -15,7 +15,7 @@ import {
   import { Inter } from '@next/font/google'
   import Image from 'next/image'
   import DivPicture1 from '../../images/picredo1.png'
-  import DivPicture2 from '../../images/person-working4.png'
+  import DivPicture2 from '../../images/person-working5.png'
   import DivPic3 from '../../images/budgetpic1.png'
   import React, { useState } from 'react'
   import { VscGraph } from 'react-icons/vsc'
@@ -159,7 +159,7 @@ const LandingPage = () => {
           mb={["","","","8rem"]}
           flexDir={["column", "column", "column", "column"]}
           bg={secondDivCOlor}
-          w={["23rem","23rem","53rem ","85rem"]}
+          w={["21.5rem","21.5rem","53rem ","85rem"]}
           h={["28rem","28rem","35rem","40rem"]}
           borderRadius="1rem 0 1rem 0"
           boxShadow="2xl"
@@ -277,7 +277,7 @@ const LandingPage = () => {
                 textAlign={["center"]}
                 fontFamily="'Poppins', sans-serif"
               >
-                Get a list of <br/>  your weekly <br/> expenses.
+                Make a note of <br/>  your weekly <br/> expenses.
               </Heading>
             </motion.div>
 
@@ -318,7 +318,7 @@ const LandingPage = () => {
           flexDir={["column", "column", "column", "column"]}
           boxShadow="2xl"
           bg={secondDivCOlor}
-          w={["22rem","21rem","53rem ","85rem"]}
+          w={["21.5rem","21.5rem","53rem ","85rem"]}
           h={["34rem","34rem","45rem","42rem"]}
           borderRadius="1rem 0 1rem 0"
         >
