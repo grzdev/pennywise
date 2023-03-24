@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import { 
   Flex, 
   Button, 
@@ -40,6 +41,7 @@ import Head from 'next/head'
  import { motion } from 'framer-motion';
  import InputPiechart from '../components/piechart';
 import { FaGem } from 'react-icons/fa';
+import { auth } from 'config/firebase';
 
  interface DateTimeProps {
   className?: string;
@@ -82,8 +84,43 @@ const DashBoardLandingPage = ({ className }: DateTimeProps) => {
   const dateOptions: Intl.DateTimeFormatOptions = { weekday: 'short', month: 'long', day: 'numeric' };
   const timeOptions: Intl.DateTimeFormatOptions = { hour: 'numeric', minute: 'numeric', second: 'numeric' };
 
-  //PieChart data
 
+  //Get display name from Firebase
+  const user = auth.currentUser
+  const displayName = user?.displayName
+
+
+  //Get time of the day
+  const currentDate = new Date();
+  const currentHour = currentDate.getHours();
+
+  let timeOfDay: string;
+
+  if (currentHour >= 5 && currentHour < 12) {
+    timeOfDay = "morning";
+  } else if (currentHour >= 12 && currentHour < 18) {
+    timeOfDay = "afternoon";
+  } else {
+    timeOfDay = "evening";
+  }
+
+  //Save state to local storg
+  
+
+
+
+
+  //Know if user is loged in
+
+  // const user = auth.onAuthStateChanged((user) =>{
+  //    if (user) {
+  //   // User is signed in
+  //   console.log("User is signed in");
+  // } else {
+  //   // User is signed out
+  //   console.log("User is signed out");
+  // }
+  // })
 
   return (
     <>
@@ -99,19 +136,22 @@ const DashBoardLandingPage = ({ className }: DateTimeProps) => {
         <Flex
           flexDir="column"
           mt={["1.5rem","2.5rem","3rem","4rem"]}
-          ml={["0.5rem","2rem","2rem","2rem"]}
+          ml={["2rem","6rem","2rem","2rem"]}
         >
           <Heading
             size={["lg","lg","xl","xl"]}
           >
-            Hey👋
+           {displayName},
           </Heading>
           <Text
             fontWeight={500}
-            mt="-0.2rem"
+            mt="0.2rem"
             fontSize={["0.8rem","0.8rem","1rem","1rem"]}
           >
             {/* What did you spend on today? */}
+            {timeOfDay === "morning" && <h1>Good morning, Have a productive day ☀️.</h1>}
+            {timeOfDay === "afternoon" && <h1>Wash your hands, its lunch time 🍲!</h1>}
+            {timeOfDay === "evening" && <h1>Get a good night's sleep 🌃.</h1>}
           </Text>
         </Flex>
 
@@ -269,7 +309,7 @@ const MobileNav = () =>{
     >
       <Flex
         w="21rem"
-        h="17.5rem"
+        h="17rem"
         bg= {bgGradient}
         borderRadius="1rem 0 1rem 0"
         flexDir="column"
@@ -278,16 +318,16 @@ const MobileNav = () =>{
       >
         <Flex
           p="1.6rem"
-          gap="9rem"
+          gap="10rem"
         >
           <Heading
-            size="sm"
+            size="xs"
           >
            {state.dateTime.toLocaleDateString('en-US', dateOptions)}
           </Heading>
 
           <Text
-            fontSize="1.6rem"
+            fontSize="1.4rem"
           >
             <FaGem/>
           </Text>

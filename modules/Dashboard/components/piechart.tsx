@@ -48,18 +48,22 @@ const InputPiechart = () => {
           mb={["-1.9rem","-1.9rem","-3.7rem","-4.5rem"]}
           >
             <Heading
-              mt={["1.7rem","1.7rem","2.3rem","2.3rem"]}
-              size={["xs","xs","sm","md"]}
+              mt={["-0.1rem","1.7rem","2.3rem","2.3rem"]}
+              size={["sm","xs","sm","md"]}
               color={textColor}
             >
               What did you spend on today?
             </Heading>
-            <Image
-              src={ArrowPic}
-              alt=""
-              placeholder="blur"
-              priority
-            />
+            <Flex
+              mt={["1rem","","",""]}
+            >
+              <Image
+                src={ArrowPic}
+                alt=""
+                placeholder="blur"
+                priority
+              />
+            </Flex>
           </Flex>
         </motion.div>
       ) : (

@@ -80,7 +80,7 @@ const LogInModule = () => {
         description: "",
         position:"top",
         status: 'success',
-        duration: 5000,
+        duration: 10000,
         isClosable: true,
     })
     } catch (err) {
@@ -117,7 +117,7 @@ const LogInModule = () => {
             ml={["1.1rem","1.1rem","1rem","1.5rem"]}
           >
             <Flex
-              mt={["-0.3rem", "-0.3rem", "-0.3rem", "-0.1rem"]}
+              // mt={["-0.3rem", "-0.3rem", "-0.3rem", "-0.1rem"]}
             >
               <Link href="/">
                 <Text

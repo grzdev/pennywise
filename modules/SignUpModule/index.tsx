@@ -106,7 +106,7 @@ const SignUpModule = () => {
         ml={["1.1rem","1.1rem","1rem","1.5rem"]}
        >
          <Flex
-           mt={["-0.3rem", "-0.3rem", "-0.3rem", "-0.1rem"]}
+          //  mt={["-0.3rem", "-0.3rem", "-0.3rem", "-0.1rem"]}
          >
            <Link href="/">
               <Text
