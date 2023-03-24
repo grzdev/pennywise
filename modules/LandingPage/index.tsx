@@ -15,7 +15,7 @@ import {
   import { Inter } from '@next/font/google'
   import Image from 'next/image'
   import DivPicture1 from '../../images/picredo1.png'
-  import DivPicture2 from '../../images/pic2.png'
+  import DivPicture2 from '../../images/person-working4.png'
   import DivPic3 from '../../images/budgetpic1.png'
   import React, { useState } from 'react'
   import { VscGraph } from 'react-icons/vsc'
@@ -66,7 +66,7 @@ const LandingPage = () => {
                   size="3xl"
                   w={["20rem", "30rem", "30rem", "30rem"]}
                   lineHeight={["3.9rem", "4.5rem", "4.5rem", "4.5rem"]}
-                  mb="0.6rem"
+                  mb="0.8rem"
                   mt={["3rem", "10rem", "10rem", "10rem"]}
                   // ml={["", "", "", "6rem"]}
                   textAlign={["center"]}
@@ -96,10 +96,7 @@ const LandingPage = () => {
                  fontFamily="'Ubuntu', sans-serif"
                   
                 >
-                  {/* TrackDaily helps customers achieve their budget goals by storing the amount they spend on a daily basis, */}
-                  {/* By keeping track of clients' daily spending, 
-                  TrackDaily enables users to meet their financial goals. */}
-                  PennyWise helps users meet their financial goals by keeping a record of their clients' daily spending.
+                  PennyWise assists users in meeting their financial goals by keeping track of their everyday spending.
                 </Text>
               </motion.div>
             </Flex>
@@ -162,7 +159,7 @@ const LandingPage = () => {
           mb={["","","","8rem"]}
           flexDir={["column", "column", "column", "column"]}
           bg={secondDivCOlor}
-          w={["21rem","21rem","53rem ","85rem"]}
+          w={["23rem","23rem","53rem ","85rem"]}
           h={["28rem","28rem","35rem","40rem"]}
           borderRadius="1rem 0 1rem 0"
           boxShadow="2xl"
@@ -197,7 +194,7 @@ const LandingPage = () => {
               >
                 <Heading
                   size={["xl","xl","2xl","2xl"]}
-                  w={["17rem", "17rem", "30rem", "35rem"]}
+                  w={["18rem", "17rem", "30rem", "35rem"]}
                   noOfLines={[3,3,3,2]}
                   mt={["1rem","1rem","","0.1rem"]}
                   lineHeight={["3.5rem","3.5rem","4rem","4rem"]}
@@ -205,34 +202,17 @@ const LandingPage = () => {
                   fontFamily="monospace"
                   color={headerBg}
                 >
-                  {/* We will help you economize efficiently. */}
-                  We'll offer you effective budgeting assistance.
+                  PennyWise offers you effective budgeting.
                 </Heading>
               </motion.div>
               <Fade
                 in={true}
               >
-                {/* <Text
-                  fontWeight={500}
-                  color={pgBg}
-                  fontSize={["1.1rem", "1.1rem", "1.1rem", "1.3rem"]}
-                  mb={["0.4rem", "0.4rem", "0.4rem", "3rem"]}
-                  w={["18rem", "30rem", "30rem", "60rem"]}
-                  noOfLines={[6,6,6,2]}
-                  justifyContent="center"
-                  alignItems="center"
-                  textAlign={["center", "initial"]}
-                  fontFamily="'Ubuntu', sans-serif"
-                  
-                >
-                  It's hard to keep track of how much we spend in a day, this may result to people spending more than they plan to.
-                  TrackDaily helps to keep tabs on what we spend on and the total amount spent.
-                </Text> */}
               </Fade>
               <motion.div
                 whileInView={{ y: 0, opacity: 1}}
                 initial={{ y: 150, opacity: 0 }}
-                transition={{ duration: 1  }}
+                transition={{ duration: 0.9  }}
                 viewport={{ once: true }}
                 >
                 <Link href={"/about"}>
@@ -256,6 +236,7 @@ const LandingPage = () => {
           <Box
             w={["27rem", "40rem", "40rem", "51rem"]}
             mt={["8rem", "", "3rem", "-3rem"]}
+            ml={["","","","-7rem"]}
           >
             <motion.div
               whileInView={{ x: 0 }}
@@ -279,7 +260,7 @@ const LandingPage = () => {
             flexDir="column"
             justifyContent="center"
             alignItems="center"
-            ml={["","","","-2rem"]}
+            ml={["","","","4rem"]}
           >
             <motion.div
               whileInView={{ y: 0, opacity: 1}}
@@ -289,14 +270,14 @@ const LandingPage = () => {
               >
               <Heading
                 size="2xl"
-                w={["20rem", "30rem", "30rem", "30rem"]}
-                lineHeight={["3rem", "4.5rem", "3.5rem", "3rem"]}
+                w={["20rem", "30rem", "22rem", "25rem"]}
+                lineHeight={["3rem", "4.5rem", "3.5rem", "3.4rem"]}
                 mb="1rem"
                 // ml={["", "", "", "6rem"]}
                 textAlign={["center"]}
                 fontFamily="'Poppins', sans-serif"
               >
-                Visualize your daily and weekly expenses.
+                Get a list of <br/>  your weekly <br/> expenses.
               </Heading>
             </motion.div>
 
@@ -320,9 +301,8 @@ const LandingPage = () => {
                   // fontFamily="'DM Sans',sans-serif "
                 fontFamily="'Ubuntu', sans-serif"
                 >
-                  A graph displaying your spending information will be provided to you so that you can keep track of any increases or decreases in expenses.
-                    {/* You will be provided a graph that displays your spending information so you can keep track of any increases or decreases in costs.
-                    A graph that shows your spending data will be provided to you so you can take note of any spike or decrease in expenses. */}
+                  You will be given a detailed information page with the specific amount
+                  you spent and what you spent it on.
                 </Text>
               </motion.div>
             </Flex>
@@ -338,7 +318,7 @@ const LandingPage = () => {
           flexDir={["column", "column", "column", "column"]}
           boxShadow="2xl"
           bg={secondDivCOlor}
-          w={["21rem","21rem","53rem ","85rem"]}
+          w={["22rem","21rem","53rem ","85rem"]}
           h={["34rem","34rem","45rem","42rem"]}
           borderRadius="1rem 0 1rem 0"
         >
@@ -372,9 +352,9 @@ const LandingPage = () => {
                 textAlign="center"
                 color="white"
                 size="2xl"
-                  lineHeight={["3rem", "3rem", "3.5rem", "4rem"]}
-                  w={["15rem", "15rem", "30rem", "35rem"]}
-                  fontFamily="monospace"
+                lineHeight={["3rem", "3rem", "3.5rem", "4rem"]}
+                w={["15rem", "15rem", "30rem", "35rem"]}
+                fontFamily="monospace"
               >
                 {/* Take control of your finances. */}
                 Make wise financial decisions.
@@ -388,7 +368,7 @@ const LandingPage = () => {
           h={["20rem","20rem","20rem","15rem"]}
           bg={divColor2}
           mt={["14rem","14rem","12rem","5rem"]}
-          mb={["7rem","7rem","7rem","7rem"]}
+          mb={["12rem","7rem","7rem","7rem"]}
           borderRadius="1rem 0 1rem 0"
           boxShadow="2xl"
           justifyContent="center"

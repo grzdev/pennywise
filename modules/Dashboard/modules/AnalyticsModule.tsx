@@ -27,7 +27,6 @@ import InputBarchart from '../components/barchart';
 import { useSelector } from 'react-redux'
 import { selectMyObject } from 'redux/slices/dailyInputSlice'
 
-
 const AnalyticsModule = () => {
   const divColor = useColorModeValue("white","#222636")
   const secondDivColor = useColorModeValue("linear-gradient(to right, #536976, #292e49)","#292c3d")
@@ -38,6 +37,7 @@ const AnalyticsModule = () => {
 
   const myObject = useSelector(selectMyObject)
   const Sum = myObject.food + myObject.data + myObject.others + myObject.transfers + myObject.transit
+
   return (
     <Container
       centerContent

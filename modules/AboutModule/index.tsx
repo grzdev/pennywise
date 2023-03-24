@@ -10,7 +10,7 @@ import {
 } from '@chakra-ui/react'
 import React from 'react'
 import Image from 'next/image'
-import AboutImg from "../../images/about1.png"
+import AboutImg from "../../images/people-communicating1.png"
 import AboutImg2 from "../../images/aboutpic.png"
 import { motion } from 'framer-motion'
 
@@ -36,7 +36,7 @@ const About = () => {
         ml={["", "", "", "12rem"]}
       >
         <VStack
-          mt={["3rem", "3rem", "10rem", "10rem"]}
+          mt={["5rem", "3rem", "7rem", "10rem"]}
         >
           <Flex
             ml={["","","","28rem"]}
@@ -53,7 +53,7 @@ const About = () => {
                 borderRadius="full"
                 justifyContent="center"
                 alignItems="center"
-                ml={["","","","-19rem"]}
+                ml={["","","","-20.5rem"]}
                 mb={["1.4rem","1.4rem","1.4rem","2rem"]}
               >
                 <Heading
@@ -77,22 +77,20 @@ const About = () => {
               size="2xl"
               w={["20rem", "30rem", "30rem", "30rem"]}
               lineHeight={["3rem", "3rem", "3.6rem", "3.9rem"]}
-              // mt={["4rem","2rem","2rem","10rem"]}
+              ml={["","","","-3rem"]}
               fontWeight={600}
-              // ml={["", "", "", "1rem"]}
               textAlign={["center"]}
               fontFamily="'Rubik', sans-serif"
             >
-              {/* To give everyone the power to better manage and keep track of their finances. */}
-              To empower everyone with the ability to better manage and track their finances.
+              To give everyone the ability to better manage and track their finances.
             </Heading>
           </motion.div>
         </VStack>
 
         <Box
             ml={["0.2rem", "4rem", "3rem", "1.8rem"]}
-            w={["27rem", "40rem", "40rem", "51rem"]}
-            mt={["3rem", "3rem", "3rem", "3rem"]}
+            w={["27rem", "40rem", "50rem", "51rem"]}
+            mt={["4rem", "4rem", "-1rem", "3rem"]}
           >
             <motion.div
               whileInView={{ x: 0 }}
@@ -118,35 +116,15 @@ const About = () => {
           boxShadow="2xl"
           borderRadius="1rem 0 1rem 0"
           w={["22rem","22rem","53rem ","85rem"]}
-          h={["","","","47rem"]}
+          h={["37rem","37rem","38rem","44rem"]}
           justifyContent={["center","center","center","center"]}
           alignItems={["center","center","center","center"]}
         >
-          <Box
-            ml={["0.2rem", "4rem", "4rem", "-1rem"]}
-            w={["27rem", "40rem", "40rem", "51rem"]}
-            mt={["10rem", "10rem", "14rem", "-2rem"]}
-            mb={["6rem","6rem","5rem","0.1rem"]}
-          >
-            <motion.div
-              whileInView={{ x: 0 }}
-              initial={{ x: -150 }}
-              transition={{ duration: 1 }}
-            >
-              <Image
-                src={AboutImg2}
-                alt=""
-                placeholder="blur"
-                priority
-              />
-            </motion.div>
-          </Box>
-
           <VStack
             w={["","","",""]}
             h={["18rem","","","25rem"]}
             borderRadius="1.2rem"
-            mt={["8rem", "2rem", "5rem", "-8rem"]}
+            mt={["-6rem", "-8rem", "-6rem", "-2rem"]}
           >
             <Heading
               size="2xl"
@@ -154,7 +132,7 @@ const About = () => {
               lineHeight={["2rem", "4.5rem", "4.5rem", "3rem"]}
               mb={["2rem","","",""]}
               color="white"
-              textAlign={["center", "initial"]}
+              textAlign={["center"]}
               fontFamily="'Roboto', sans-serif"
             >
               A Short Story
@@ -163,20 +141,18 @@ const About = () => {
             <Flex
             >
               <Text
-                ml={["", "", "", "-6rem"]}
-                fontWeight={550}
                 color={textColor}
-                fontSize={["1.1rem", "1.1rem", "1.3rem", "1.3rem"]}
+                fontSize={["1.1rem", "1.1rem", "1.3rem", "1.5rem"]}
                 mb={["0.4rem", "0.4rem", "0.4rem", "2rem"]}
-                w={["18rem", "30rem", "25rem", "23.6rem"]}
+                w={["15rem", "30rem", "30rem", "30.6rem"]}
                 justifyContent="center"
                 alignItems="center"
-                textAlign={["center", "initial"]}
+                textAlign={["center"]}
                 fontFamily="'Ubuntu', sans-serif"
               >
-               I had this idea one afternoon at Unilorin after finishing a plate of Item 7, the post item clarity hit me then it dawned on me... <br/><br/>
-               ..I spent enough money that day to feed a Nursery 2 student at King's college for a week<br/><br/> 
-               " This no be life ", I said to myself. That night, I grabbed my laptop and began to code...
+               I had just finished a plate of Item 7 in Ilorin when the post Item clarity hit me.<br/><br/>
+               The amount of money I spent that day could feed a Nursery 2 student at King's College for a week.<br/><br/>
+               " This no be life ", I said to myself. That night, I grabbed my laptop and began to code.
               </Text>
             </Flex>
           </VStack>

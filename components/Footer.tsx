@@ -42,11 +42,11 @@ const Footer = () => {
       fontFamily="'Fira Sans', sans-serif"
       bg={footer}
       borderRadius="1.2rem"
-      mt="4rem"
-      mb="1rem"
+      mt={["1rem","1rem","6rem","4rem"]}
+      mb="3rem"
     >
       <Flex
-        w={["20rem","30rem","40rem","85rem"]}
+        w={["23rem","23rem","53rem","85rem"]}
         justifyContent={["center","","","center"]}
         alignItems={["center","","","center"]}
         gap={["","","","14rem"]}
