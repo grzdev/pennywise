@@ -75,7 +75,7 @@ const About = () => {
           >
             <Heading
               size="2xl"
-              w={["20rem", "30rem", "30rem", "30rem"]}
+              w={["21.5rem", "30rem", "30rem", "30rem"]}
               lineHeight={["3rem", "3rem", "3.6rem", "3.9rem"]}
               ml={["","","","-3rem"]}
               fontWeight={600}
@@ -88,14 +88,14 @@ const About = () => {
         </VStack>
 
         <Box
-            ml={["0.2rem", "4rem", "3rem", "1.8rem"]}
-            w={["27rem", "40rem", "50rem", "51rem"]}
-            mt={["4rem", "4rem", "-1rem", "3rem"]}
+            ml={["0.2rem", "4rem", "3rem", "-1.8rem"]}
+            w={["30rem", "30rem", "50rem", "60rem"]}
+            mt={["4rem", "4rem", "-1rem", "-2rem"]}
           >
             <motion.div
-              whileInView={{ x: 0 }}
-              initial={{ x: 150 }}
-              transition={{ duration: 1 }}
+              animate={{ y: 0 }}
+              initial={{ y: 150 }}
+              transition={{ duration: 1.1 }}
             >
               <Image
                 src={AboutImg}

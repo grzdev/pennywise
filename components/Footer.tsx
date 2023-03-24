@@ -46,7 +46,7 @@ const Footer = () => {
       mb="3rem"
     >
       <Flex
-        w={["23rem","23rem","53rem","85rem"]}
+        w={["21.5rem","21.5rem","53rem","85rem"]}
         justifyContent={["center","","","center"]}
         alignItems={["center","","","center"]}
         gap={["","","","14rem"]}

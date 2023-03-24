@@ -135,8 +135,8 @@ const DashBoardLandingPage = ({ className }: DateTimeProps) => {
       >
         <Flex
           flexDir="column"
-          mt={["1.5rem","2.5rem","3rem","4rem"]}
-          ml={["2rem","6rem","2rem","2rem"]}
+          mt={["1rem","2.5rem","3rem","4rem"]}
+          ml={["1.7rem","6rem","2rem","2rem"]}
         >
           <Heading
             size={["lg","lg","xl","xl"]}
@@ -145,7 +145,7 @@ const DashBoardLandingPage = ({ className }: DateTimeProps) => {
           </Heading>
           <Text
             fontWeight={500}
-            mt="0.2rem"
+            mt="0.1rem"
             fontSize={["0.8rem","0.8rem","1rem","1rem"]}
           >
             {/* What did you spend on today? */}
@@ -158,7 +158,7 @@ const DashBoardLandingPage = ({ className }: DateTimeProps) => {
         <Flex
           alignItems="center"
           justifyContent="center"
-          mt={["1rem","1rem","1.5rem","2rem"]}
+          mt={["1.7rem","1rem","1.5rem","2rem"]}
         >
           <Flex
             w={["20rem","20rem","33rem","60rem"]}
@@ -224,7 +224,7 @@ const DashBoardLandingPage = ({ className }: DateTimeProps) => {
               </Flex>
 
               <Flex
-                mt={["1rem","-1.2rem","-1rem","-4rem"]}
+                mt={["2rem","2rem","-1rem","-4rem"]}
                 alignItems="center"
                 justifyContent="center"
                 w={["","","",""]}
