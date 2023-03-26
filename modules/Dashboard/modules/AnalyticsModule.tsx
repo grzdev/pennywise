@@ -1,13 +1,27 @@
 /* eslint-disable react/no-unescaped-entities */
 import { 
+  Button,
   Container, 
   Divider, 
   Flex, 
   Heading, 
+  Popover, 
+  PopoverArrow, 
+  PopoverBody, 
+  PopoverCloseButton, 
+  PopoverContent, 
+  PopoverHeader, 
+  PopoverTrigger, 
   Stat, 
   StatArrow, 
   StatHelpText, 
+  Table, 
+  Tbody, 
+  Td, 
   Text, 
+  Th, 
+  Thead, 
+  Tr, 
   useColorModeValue 
 } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
@@ -84,7 +98,7 @@ const AnalyticsModule = ({ className }: DateTimeProps) => {
         mt={["0.5rem","1.5rem","4rem","5rem"]}
         >
         <Flex
-          w={["21rem","21rem","34rem","61rem"]}
+          w={["21rem","21rem","38rem","61rem"]}
           h={["28rem","30rem","38rem","35rem"]}
           borderRadius="1rem 0 1rem 0"
           bg= {divColor}
@@ -104,7 +118,7 @@ const AnalyticsModule = ({ className }: DateTimeProps) => {
               flexDir="column"
             >
               <Flex
-                w={["25rem","","34rem","35rem"]}
+                w={["25rem","25rem","34rem","35rem"]}
                 justifyContent="center"
                 alignItems="center"
                 mt={["2rem","","3rem","1rem"]}
@@ -128,8 +142,8 @@ const AnalyticsModule = ({ className }: DateTimeProps) => {
             flexDir="column"
           >
             <Flex
-              w={["18rem","18rem","30rem","57rem"]}
-              h={["4rem","4rem","4rem","5rem"]}
+              w={["18rem","18rem","33rem","55rem"]}
+              h={["4rem","4rem","5rem","5rem"]}
               boxShadow="lg"
               borderRadius="1rem 0 1rem 0"
               mt="2rem"
@@ -140,7 +154,7 @@ const AnalyticsModule = ({ className }: DateTimeProps) => {
               alignItems="center"
             >
               <Flex
-                gap={["","","2rem","27rem"]}
+                gap={["","","2rem","23rem"]}
                 alignItems="center"
               >
                 <Heading
@@ -178,20 +192,120 @@ const AnalyticsModule = ({ className }: DateTimeProps) => {
                      {Sum}
                     </Heading>
   
-                    <Heading
-                      size={["lg","","lg","lg"]}
-                      ml={["","","0.9rem","2rem"]}
-                      >
-                      <ChevronRightIcon/>
-                    </Heading>
+
+                    <Popover
+                      // closeOnBlur={false}
+                    >
+                      <PopoverTrigger>
+                        <Button
+                          variant="ghost"
+                          >
+                            <Heading
+                            size={["lg","","lg","lg"]}
+                            >                          
+                            <ChevronRightIcon/>
+                            </Heading>
+                        </Button>
+                      </PopoverTrigger>
+                      <PopoverContent>
+                        <PopoverArrow />
+                        <PopoverCloseButton />
+                        <PopoverBody>
+                          <Flex>
+                          <Table variant="striped">
+                            <Thead>
+                              <Tr>
+                                <Th>Catergories</Th>
+                                <Th>Prices</Th>
+                              </Tr>
+                            </Thead>
+                            <Tbody>
+                              <Tr>
+                                <Td fontWeight={700}>Food</Td>
+                                <Td
+                                  display="flex"
+                                  flexDir="row"
+                                  fontWeight={700}
+                                >
+                                  <Text
+                                    fontSize={["1.2rem","1.2rem","1.2rem","1.3rem"]}
+                                  >
+                                    <TbCurrencyNaira/>
+                                  </Text>
+                                 {myObject.food}
+                                </Td>
+                              </Tr>
+                              <Tr>
+                                <Td fontWeight={700}>Transit</Td>
+                                <Td
+                                  display="flex"
+                                  flexDir="row"
+                                  fontWeight={700}
+                                >
+                                  <Text
+                                    fontSize={["1.2rem","1.2rem","1.2rem","1.3rem"]}
+                                  >
+                                    <TbCurrencyNaira/>
+                                  </Text>
+                                 {myObject.transit}
+                                </Td>
+                              </Tr>
+                              <Tr>
+                                <Td fontWeight={700}>Data</Td>
+                                <Td
+                                  display="flex"
+                                  flexDir="row"
+                                  fontWeight={700}
+                                >
+                                  <Text
+                                    fontSize={["1.2rem","1.2rem","1.2rem","1.3rem"]}
+                                  >
+                                    <TbCurrencyNaira/>
+                                  </Text>
+                                 {myObject.data}
+                                </Td>
+                              </Tr>
+                              <Tr>
+                                <Td fontWeight={700}>Transfers</Td>
+                                <Td
+                                  display="flex"
+                                  flexDir="row"
+                                  fontWeight={700}
+                                >
+                                  <Text
+                                    fontSize={["1.2rem","1.2rem","1.2rem","1.3rem"]}
+                                  >
+                                    <TbCurrencyNaira/>
+                                  </Text>
+                                 {myObject.transfers}
+                                </Td>
+                              </Tr>
+                              <Tr>
+                                <Td fontWeight={700}>Others</Td>
+                                <Td
+                                  display="flex"
+                                  flexDir="row"
+                                  fontWeight={700}
+                                >
+                                  <Text
+                                    fontSize={["1.2rem","1.2rem","1.2rem","1.3rem"]}
+                                  >
+                                    <TbCurrencyNaira/>
+                                  </Text>
+                                 {myObject.others}
+                                </Td>
+                              </Tr>
+                            </Tbody>
+                          </Table>
+                   </Flex>
+                        </PopoverBody>
+                      </PopoverContent>
+                    </Popover>
                   </Flex>
                 </Flex>
               </Flex>
             </Flex>
-          </Flex>
-
-            
-              )}
+          </Flex> )}
         </Flex>
 
       </Flex>

@@ -60,11 +60,17 @@ const DashBoardLandingPage = ({ className }: DateTimeProps) => {
   const bg = useColorModeValue("#FF3CAC","#667eea")
   const bgGradient = useColorModeValue("linear-gradient(to right, #162961, #3969b9)","linear-gradient(to right, #28355e, #28355e);")
 
-  const [myState, setMyState] = useState('');
+  const [sum, setSum] = useState('');
 
   //Retrieved state
   const myObject = useSelector(selectMyObject);
   const Sum = myObject.food + myObject.transit + myObject.data + myObject.transfers + myObject.others
+
+  //Save data to local storage
+  // function saveToLocalStorage(Sum: string) {
+  //   localStorage.setItem('Sum', Sum);
+  // }
+  
 
   //Date
   const [state, setState] = useState<DateTimeState>({
@@ -240,7 +246,7 @@ const DashBoardLandingPage = ({ className }: DateTimeProps) => {
               <Flex
                 justifyContent="center"
                 alignItems="center"
-                mt={["3.8rem","4.3rem","3rem","2rem"]}
+                mt={["3.8rem","4.3rem","4rem","2rem"]}
                 gap={["7.3rem","7rem","15rem","38rem"]}
                 ml={["1rem","","","1rem"]}
               >
