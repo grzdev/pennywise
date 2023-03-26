@@ -43,7 +43,7 @@ const Footer = () => {
       bg={footer}
       borderRadius="1.2rem"
       mt={["1rem","1rem","6rem","4rem"]}
-      mb="3rem"
+      mb="2rem"
     >
       <Flex
         w={["21.5rem","21.5rem","53rem","85rem"]}

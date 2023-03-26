@@ -10,9 +10,9 @@ import {
   Text, 
   useColorModeValue 
 } from '@chakra-ui/react'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Head from "next/head"
-import { TriangleUpIcon } from "@chakra-ui/icons"
+import { ChevronRightIcon, TriangleUpIcon } from "@chakra-ui/icons"
 import { TbCurrencyNaira } from "react-icons/tb"
 import { 
   BiTransferAlt, 
@@ -26,17 +26,45 @@ import {
 import InputBarchart from '../components/barchart';
 import { useSelector } from 'react-redux'
 import { selectMyObject } from 'redux/slices/dailyInputSlice'
+import Image from 'next/image'
+import Notfound from "../../../images/notfound.png"
 
-const AnalyticsModule = () => {
+interface DateTimeProps {
+  className?: string;
+}
+
+interface DateTimeState {
+  dateTime: Date;
+}
+
+const AnalyticsModule = ({ className }: DateTimeProps) => {
   const divColor = useColorModeValue("white","#222636")
   const secondDivColor = useColorModeValue("linear-gradient(to right, #536976, #292e49)","#292c3d")
   const divGradient = useColorModeValue("linear-gradient(to bottom, #505285 0%, #585e92 12%, #65689f 25%, #7474b0 37%, #7e7ebb 50%, #8389c7 62%, #9795d4 75%, #a2a1dc 87%, #b5aee4 100%);","linear-gradient(to right, #6a85b6 0%, #bac8e0 100%);")
-  const header = useColorModeValue("#777777", "white")
+  const divColor2 = useColorModeValue("#EDF2F7", "#353b54")
   const header2 = useColorModeValue("white", "white")
   const bgGradient = useColorModeValue("linear-gradient(to right, #162961, #3969b9)","linear-gradient(to right, #28355e, #28355e);")
-
+  const borderColor = useColorModeValue("black","white")
+  
   const myObject = useSelector(selectMyObject)
   const Sum = myObject.food + myObject.data + myObject.others + myObject.transfers + myObject.transit
+
+  const [state, setState] = useState<DateTimeState>({
+    dateTime: new Date(),
+  });
+ 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setState({ dateTime: new Date() });
+    }, 1000);
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, []);
+
+  const dateOptions: Intl.DateTimeFormatOptions = { weekday: 'long', month: 'long', day: 'numeric' };
+  const timeOptions: Intl.DateTimeFormatOptions = { hour: 'numeric', minute: 'numeric', second: 'numeric' };
 
   return (
     <Container
@@ -53,348 +81,119 @@ const AnalyticsModule = () => {
         alignItems="center"
         flexDir={["column","column","column","row"]}
         gap={["3rem","3rem","4rem","5rem"]}
-        mt={["1.5rem","1.5rem","4rem","5rem"]}
+        mt={["0.5rem","1.5rem","4rem","5rem"]}
         >
         <Flex
-          w={["21rem","21rem","34rem","40rem"]}
-          h={["35rem","30rem","39rem","34rem"]}
+          w={["21rem","21rem","34rem","61rem"]}
+          h={["28rem","30rem","38rem","35rem"]}
           borderRadius="1rem 0 1rem 0"
           bg= {divColor}
           // bgGradient= {divGradient}
           // mb="5rem"
           boxShadow="lg"
-          justifyContent="center"
-          alignItems="center"
-          flexDir="column"
-        >
-          <Flex
-            flexDir="row"
-            mb={["2rem","0.3rem","2rem","1rem"]}
-            
-            >
-            <Flex
-              mr={["1.2rem","1rem","7rem","12rem"]}
-            >
-              <Heading
-                size={["xs","xs","md","md"]}
-                color={header}
-              >
-                Last week's expense
-              </Heading>
-            </Flex>
-            <Flex
-              alignItems="center"
-              color={header}
-              fontWeight={500}
-            >
-              <Stat>
-                <StatHelpText>
-                  <StatArrow type='increase' />
-                  23.36% last week
-                </StatHelpText>
-              </Stat>
-              {/* <Text
-                mt="-0.3rem"
-              >
-                <TriangleUpIcon/>
-              </Text> */}
-              {/* <Text
-                fontSize={["0.7rem","1rem","1rem","1rem"]}
-              >
-                10% from last week
-              </Text> */}
-            </Flex>
-          </Flex>
-          <Flex
-            w={["19rem","20rem","30rem","35rem"]}
-            h={["21rem","21rem","25rem","20rem"]}
-          >
-            <InputBarchart/>
-          </Flex>
-
-          <Divider
-            mt={["2rem","2rem","2rem","2rem"]}
-          />
-
-          <Flex 
-            alignItems="center"
-            mt={["1.9rem","1.9rem","2rem","2rem"]}
-            color={header}
-          >
-            <Heading
-              size={["sm","sm","md","md"]}
-              mr={["2.5rem","2.5rem ","11rem","13rem"]}
-            >
-              Total Amount Spent
-            </Heading>
-            <Flex
-              alignItems="center"
-            >
-              <Heading
-                size={["xs","xs","md","md"]}
-                mt={["0.1rem","0.1rem","-0.1rem","0.3rem"]}
-                color="#21c902" 
-              >
-                <TbCurrencyNaira/>
-              </Heading>
-              <Heading
-               size={["xs","xs","sm","md"]}
-              >
-                {myObject.food === 0 ? (
-                <p>XXX</p>
-              ) : (
-                
-                <p>{Sum}</p>
-              )}
-              </Heading>
-            </Flex>
-          </Flex>
-        </Flex>
-
-        <Flex
-          w={["21rem","21rem","34rem","30rem"]}
-          h={["24.5rem","24.5rem","29rem","34rem"]}
-          // bgGradient= {divGradient}
-          // ml={["","","","2rem"]}
-          bg={bgGradient}
-          borderRadius="1rem 0 1rem 0"
-          boxShadow="lg"
           // justifyContent="center"
           alignItems="center"
           flexDir="column"
-          mb={["8rem","4rem","4rem","0.1rem"]}
-          color={header2}
+          overflowY="scroll"
+          overflowX="hidden"
         >
-          <Heading
-            color={header2}
-            mt={["2.4rem","2.4rem","3rem","2rem"]}
-            size={["md","md","md","md"]}
-          >
-            Categories
-          </Heading>
-          
-          <Flex
-            flexDir="row"
-            alignItems="center"
-          >
-
+          {Sum === 0 ? (
             <Flex
-              flexDir="column"
-              mr={["-4rem","-4rem","-7rem","-8rem"]}
-              mt={["2.5rem","2.5rem","3rem","4rem"]}
-            >
-              <Flex
-                alignItems="center"
-              >
-                <Text
-                  fontSize={["1.5rem","1.5rem","1.8rem","1.8rem"]}
-                  mr={["0.5rem","0.5rem","1rem","1rem"]}
-                  color="#64c0ff"
-                >
-                  <IoFastFoodSharp/>
-                </Text>
-                <Heading
-                  mr={["7rem","7rem","14rem","30rem"]}
-                  size={["sm","sm","md","md"]}
-                >
-                  Food
-                </Heading>
-              </Flex>
-
-              <Flex
-                  alignItems="center"
-                  mt={["1.6rem","1.6rem","2rem","2rem"]}
-              >
-                  <Text
-                    fontSize={["1.5rem","1.5rem","1.8rem","1.8rem"]}
-                    mr={["0.5rem","0.5rem","1rem","1rem"]}
-                    color="#FF9232"
-                  >
-                    <IoBusOutline/>
-                  </Text>
-                  <Heading
-                    mr={["7rem","7rem","14rem","30rem"]}
-                    size={["sm","sm","md","md"]}
-                  >
-                    Transit
-                  </Heading>
-                </Flex>
-
-                <Flex
-                  alignItems="center"
-                  mt={["1.6rem","1.6rem","2rem","2rem"]}
-                >
-                  <Text
-                    fontSize={["1.5rem","1.5rem","1.8rem","1.8rem"]}
-                    mr={["0.5rem","0.5rem","1rem","1rem"]}
-                    color="#0de90d"
-                  >
-                    <IoWifi/>
-                  </Text>
-                  <Heading
-                    mr={["7rem","7rem","14rem","30rem"]}
-                    size={["sm","sm","md","md"]}
-                  >
-                    Data
-                  </Heading>
-                </Flex>
-
-                <Flex
-                  alignItems="center"
-                  mt={["1.6rem","1.6rem","2rem","2rem"]}
-                >
-                  <Text
-                    fontSize={["1.5rem","1.5rem","1.8rem","1.8rem"]}
-                    mr={["0.5rem","0.5rem","1rem","1rem"]}
-                    color="#ff3fb7"
-                  >
-                    <BiTransferAlt/>
-                  </Text>
-                  <Heading
-                    mr={["7rem","7rem","14rem","30rem"]}
-                    size={["sm","sm","md","md"]}
-                  >
-                    Transfers
-                  </Heading>
-                </Flex>
-
-                <Flex
-                  alignItems="center"
-                  mt={["1.6rem","1.6rem","2rem","2rem"]}
-                >
-                  <Text
-                    fontSize={["1.5rem","1.5rem","1.8rem","1.8rem"]}
-                    mr={["0.5rem","0.5rem","1rem","1rem"]}
-                    color="#5a5eff"
-                  >
-                    <BiDotsHorizontalRounded/>
-                  </Text>
-                  <Heading
-                    mr={["7rem","7rem","14rem","30rem"]}
-                    size={["sm","sm","md","md"]}
-                  >
-                    Others
-                  </Heading>
-                </Flex>
-            </Flex>
-            
-            <Flex
+              justifyContent="center"
               alignItems="center"
               flexDir="column"
-              mt={["1rem","1rem","1rem","3rem"]}
             >
               <Flex
-                mt={["1.6rem","1.6rem","2rem","1rem"]}
+                w={["25rem","","34rem","35rem"]}
+                justifyContent="center"
+                alignItems="center"
+                mt={["2rem","","3rem","1rem"]}
+                ml={["2rem","","3rem","3rem"]}
               >
-                <Text
-                mt={["0.2rem","0.1rem","0.1rem","0.3rem"]}
-                fontSize={['1.1rem','1.1rem','1.5rem','1.1rem']}
-                >
-                  <TbCurrencyNaira/>
-                </Text>
-                <Text
-                  fontSize={["1rem","1rem","1.2rem","1.1rem"]}
-                  fontWeight={600}
-                >
-                  {myObject.food === 0 ? (
-                    <p>XXX</p>
-                  ) : (
-                    
-                    <p>{myObject.food}</p>
-                  )}
-                </Text>
+                <Image
+                  src={Notfound}
+                  alt=""
+                />
               </Flex>
-
-              <Flex
-               mt={["1.6rem","1.6rem","2rem","2.3rem"]}
+              <Heading
+                ml={["1rem","","3rem","-1rem"]}
+                mt={["-3rem","","-3rem","-3rem"]}
+                size={["md","md","lg","lg"]}
               >
-                <Text
-                mt={["0.2rem","0.1rem","0.1rem","0.3rem"]}
-                fontSize={['1.1rem','1.1rem','1.5rem','1.1rem']}
-                >
-                  <TbCurrencyNaira/>
-                </Text>
-                <Text
-                  fontSize={["1rem","1rem","1.2rem","1.1rem"]}
-                  fontWeight={600}
-                >
-                  {myObject.data === 0 ? (
-                    <p>XXX</p>
-                  ) : (
-                    
-                    <p>{myObject.data}</p>
-                  )}
-                </Text>
-              </Flex>
-
+                Nothing to see here yet.
+              </Heading>
+            </Flex>
+          ): (
+          <Flex
+            flexDir="column"
+          >
+            <Flex
+              w={["18rem","18rem","30rem","57rem"]}
+              h={["4rem","4rem","4rem","5rem"]}
+              boxShadow="lg"
+              borderRadius="1rem 0 1rem 0"
+              mt="2rem"
+              // border="0.1px solid black"
+              // mt="2rem"
+              bg= {divColor2}
+              justifyContent="center"
+              alignItems="center"
+            >
               <Flex
-                mt={["1.6rem","1.6rem","2rem","2.3rem"]}
+                gap={["","","2rem","27rem"]}
+                alignItems="center"
               >
-                <Text
-                mt={["0.2rem","0.1rem","0.1rem","0.3rem"]}
-                fontSize={['1.1rem','1.1rem','1.5rem','1.1rem']}
+                <Heading
+                  size={["","","md","md"]}
+                  mr={["3rem","","",""]}
                 >
-                  <TbCurrencyNaira/>
-                </Text>
-                <Text
-                  fontSize={["1rem","1rem","1.2rem","1.1rem"]}
-                  fontWeight={600}
+                  {state.dateTime.toLocaleDateString('en-US', dateOptions)}
+                </Heading>
+                
+                <Flex
+                  alignItems="center"
                 >
-                  {myObject.transit === 0 ? (
-                    <p>XXX</p>
-                  ) : (
-                    
-                    <p>{myObject.transit}</p>
-                  )}
-                </Text>
-              </Flex>
-
-              <Flex
-                mt={["1.6rem","1.6rem","2rem","2.3rem"]}
-              >
-                <Text
-                mt={["0.2rem","0.1rem","0.1rem","0.3rem"]}
-                fontSize={['1.1rem','1.1rem','1.5rem','1.1rem']}
-                >
-                  <TbCurrencyNaira/>
-                </Text>
-                <Text
-                  fontSize={["1rem","1rem","1.2rem","1.1rem"]}
-                  fontWeight={600}
-                >
-                  {myObject.transfers === 0 ? (
-                    <p>XXX</p>
-                  ) : (
-                    
-                    <p>{myObject.transfers}</p>
-                  )}
-                </Text>
-              </Flex>
-
-              <Flex
-                mt={["1.6rem","1.6rem","2rem","2rem"]}
-              >
-                <Text
-                mt={["0.2rem","0.1rem","0.1rem","0.3rem"]}
-                fontSize={['1.1rem','1.1rem','1.5rem','1.1rem']}
-                >
-                  <TbCurrencyNaira/>
-                </Text>
-                <Text
-                  fontSize={["1rem","1rem","1.2rem","1.1rem"]}
-                  fontWeight={600}
-                >
-                  {myObject.others === 0 ? (
-                    <p>XXX</p>
-                  ) : (
-                    
-                    <p>{myObject.others}</p>
-                  )}
-                </Text>
+                  <Heading
+                   size={["","","md","md"]}
+                   mr={["","","0.1rem","0.5rem"]}
+                   display={{ base: 'none', md: 'block' }}
+                  >
+                    Total: 
+                  </Heading>
+                  <Flex
+                    alignItems="center"
+                  >
+                    <Heading
+                      size={["","","lg","lg"]}
+                      mr={["","","-0.1rem","-0.2rem"]}
+                      mt={["","","0.2rem","0.2rem"]}
+                      display={{ base: 'none', md: 'block' }}
+                    >
+                      <TbCurrencyNaira/> 
+                    </Heading>
+                    <Heading
+                      size={["","","md","md"]}
+                      display={{ base: 'none', md: 'block' }}
+                    >
+                     {Sum}
+                    </Heading>
+  
+                    <Heading
+                      size={["lg","","lg","lg"]}
+                      ml={["","","0.9rem","2rem"]}
+                      >
+                      <ChevronRightIcon/>
+                    </Heading>
+                  </Flex>
+                </Flex>
               </Flex>
             </Flex>
           </Flex>
-        </Flex> 
+
+            
+              )}
+        </Flex>
+
       </Flex>
     </Container>
   )

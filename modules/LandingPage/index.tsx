@@ -139,7 +139,7 @@ const LandingPage = () => {
             mt={["5.5rem", "5.5rem", "3rem", "-1rem"]}
           >
             <motion.div
-              whileInView={{ x: 0 }}
+              animate={{ x: 0 }}
               initial={{ x: 150 }}
               transition={{ duration: 1  }}
             >  
@@ -235,7 +235,7 @@ const LandingPage = () => {
         >
           <Box
             w={["27rem", "40rem", "40rem", "51rem"]}
-            mt={["8rem", "", "3rem", "-3rem"]}
+            mt={["8rem", "", "8rem", "1rem"]}
             ml={["","","","-7rem"]}
           >
             <motion.div
@@ -256,7 +256,7 @@ const LandingPage = () => {
             w={["","","",""]}
             h={["18rem","","","25rem"]}
             borderRadius="1.2rem"
-            mt={["0.1rem", "5rem", "2rem", "7rem"]}
+            mt={["0.1rem", "5rem", "-2rem", "11rem"]}
             flexDir="column"
             justifyContent="center"
             alignItems="center"
@@ -313,7 +313,7 @@ const LandingPage = () => {
         <Flex
           justifyContent={["center","center","center","center"]}
           alignItems={["center","center","center","center"]}
-          mt={["9rem", "9rem", "6rem","6rem"]}
+          mt={["9rem", "9rem", "6rem","11rem"]}
           mb={["","","","8rem"]}
           flexDir={["column", "column", "column", "column"]}
           boxShadow="2xl"

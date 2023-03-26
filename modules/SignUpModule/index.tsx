@@ -45,19 +45,19 @@ const SignUpModule = () => {
   const [ data, setData ] = useState({
     email:'',
     password:'',
-    username: ''
+    // username: ''
   })
 
-  const handleGoogleClick = async (e: any) => {
-    e.preventDefault()
+  // const handleGoogleClick = async (e: any) => {
+  //   e.preventDefault()
 
-    try {
-      await signIWithGoogle()
-      router.push("/dashboard")
-    } catch (error) {
-      console.log(error)
-    }
-  }
+  //   try {
+  //     await signIWithGoogle()
+  //     router.push("/dashboard")
+  //   } catch (error) {
+  //     console.log(error)
+  //   }
+  // }
 
   const handleSignup = async (e: any) => {
     e.preventDefault()
@@ -70,7 +70,7 @@ const SignUpModule = () => {
         description: "",
         position:"top",
         status: 'success',
-        duration: 5000,
+        duration: 6000,
         isClosable: true,
     })
     } catch (err) {
@@ -89,10 +89,11 @@ const SignUpModule = () => {
   return (
     <Container centerContent>
     <Flex
-       mt={["3.4rem","3.4rem","6rem","6rem"]}
-       w={["20.5rem","20.5rem","24rem","28rem"]}
-       h={["33rem","33rem","32rem","35rem"]}
-       mb="3rem"
+       mt={["3rem","3rem","5rem","5rem"]}
+       w={["20.5rem","20.5rem","24.5rem","28rem"]}
+       h={["33rem","33rem","35rem","37rem"]}
+       mb="2rem"
+       overflow="hidden"
        boxShadow="2xl"
        bg={divColor}
        // h={["","","","30rem"]}
@@ -155,6 +156,35 @@ const SignUpModule = () => {
          flexDir="column"
        >
            <FormControl>
+                  {/* <Flex
+                    flexDir="column"
+                    mt={["0.8rem","1rem","1rem","1rem"]}
+                  >
+                    <FormLabel
+                      color={TextColor2}
+                      fontWeight={600}
+                    >
+                      Username
+                    </FormLabel>
+                    <Input
+                      variant="filled"
+                      bg={signUpBg}
+                      w={["17.2rem","17.2rem","20.7rem","24rem"]}
+                      size="lg"
+                      
+                      id="email"
+                      onChange={(e: any)=>
+                        setData({
+                          ...data,
+                          username: e.target.value
+                        })
+                      }
+                      value={data.username}
+                      type="userame"
+                      placeholder='Username'
+                    />
+                  </Flex> */}
+
                   <Flex
                     flexDir="column"
                     mt={["0.8rem","1rem","1rem","1rem"]}

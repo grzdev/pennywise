@@ -427,7 +427,7 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
             }}
             // p="1rem"
             // mx="0.5"
-            borderRadius="0.7rem"
+            borderRadius="0.2rem"
             >
           <Link href='/dashboard'>
             <AiFillHome
@@ -453,7 +453,7 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
             }}
             // p="1"
             // mx="0.5"
-            borderRadius="0.7rem"
+            borderRadius="0.2rem"
           >
             <Link href='/analytics'>
               <SiGoogleanalytics
@@ -479,7 +479,7 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
             }}
             // p="1"
             // mx="0.5"
-            borderRadius="0.7rem"
+            borderRadius="0.2rem"
           >
             <Link href='/budget'>
               <FaWallet
@@ -505,7 +505,7 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
             }}
             // p="1"
             // mx="0.5"
-            borderRadius="0.7rem"
+            borderRadius="0.2rem"
           >
             <Link href='/account'>
               <BsFillPersonFill
