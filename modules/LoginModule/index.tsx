@@ -103,7 +103,8 @@ const LogInModule = () => {
        <Flex
           mt={["3.5rem","3.5rem","6rem","6rem"]}
           w={["20rem","20rem","24rem","28rem"]}
-          h={["32rem","32rem","32rem","35rem"]}
+          h={["32rem","32rem","34rem","36rem"]}
+          overflow="hidden"
           bg={divColor}
           mb="3rem"
           boxShadow="2xl"
@@ -280,12 +281,12 @@ const LogInModule = () => {
                   Sign in
                 </Button>
               </motion.div>
-              {/* <Button
-                onClick={handleGoogleClick}
-                type="submit"
-              >
-               <FcGoogle fontSize="1.5rem"/> <Text ml="0.3rem">Sign in with google</Text>
-              </Button> */}
+                {/* <Button
+                  onClick={handleGoogleClick}
+                  type="submit"
+                >
+                <FcGoogle fontSize="1.5rem"/> <Text ml="0.3rem">Sign in with google</Text>
+                </Button> */}
             </Flex>
 
             <Flex

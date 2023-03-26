@@ -135,15 +135,18 @@ const DashBoardLandingPage = ({ className }: DateTimeProps) => {
       >
         <Flex
           flexDir="column"
-          mt={["1rem","2.5rem","3rem","4rem"]}
+          mt={["1rem","2.5rem","1.5rem","2rem"]}
           ml={["0.7rem","0.7rem","2rem","2rem"]}
           // textAlign="initial"
         >
           <Heading
             size={["lg","lg","xl","xl"]}
           >
-           {/* {displayName} */}
-            Hey,
+           {displayName ? (
+              <Text>{displayName.split(' ')[0]},</Text>
+            ) : (
+              <Text>Hi,</Text>
+            )}
           </Heading>
           <Text
             fontWeight={500}
@@ -151,9 +154,9 @@ const DashBoardLandingPage = ({ className }: DateTimeProps) => {
             fontSize={["0.8rem","0.8rem","1rem","1rem"]}
           >
             {/* What did you spend on today? */}
-            {timeOfDay === "morning" && <h1>Good morning, Have a productive day ☀️.</h1>}
+            {timeOfDay === "morning" && <h1>Good morning, have a productive day ⛅</h1>}
             {timeOfDay === "afternoon" && <h1>Wash your hands, its lunch time 🍲!</h1>}
-            {timeOfDay === "evening" && <h1>Get a good night's sleep 🌃.</h1>}
+            {timeOfDay === "evening" && <h1>Have a good evening ✨</h1>}
           </Text>
         </Flex>
 
@@ -164,7 +167,7 @@ const DashBoardLandingPage = ({ className }: DateTimeProps) => {
         >
           <Flex
             w={["20rem","20rem","33rem","60rem"]}
-            h={["32rem","32rem","35rem","32rem"]}
+            h={["32rem","32rem","36.5rem","34rem"]}
             bg= {bgGradient}
             borderRadius="1rem 0 1rem 0"
             boxShadow="2xl"
@@ -239,7 +242,7 @@ const DashBoardLandingPage = ({ className }: DateTimeProps) => {
                 alignItems="center"
                 mt={["3.8rem","4.3rem","3rem","2rem"]}
                 gap={["7.3rem","7rem","15rem","38rem"]}
-                ml={["1rem","","","-1.7rem"]}
+                ml={["1rem","","","1rem"]}
               >
                 <Heading
                   fontSize={["0.8rem","0.8rem","1rem","1.3rem"]}
@@ -375,7 +378,7 @@ const MobileNav = () =>{
         h="26.5rem"
         bg= {bgGradient2}
         borderRadius="1rem 0 1rem 0"
-        mb="12rem"
+        mb="8rem"
         boxShadow="lg"
         flexDir="column"
       >
