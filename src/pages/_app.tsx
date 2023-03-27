@@ -5,8 +5,8 @@ import { ChakraProvider } from '@chakra-ui/react'
 import { AuthContextProvider } from 'context/AuthContext';
 import { useRouter } from "next/router"
 import ProtectedRoute from 'components/ProtectedRoute';
-// import { store } from 'redux/store';
-import store from 'redux/store';
+import { store } from 'redux/store';
+// import store from 'redux/store';
 import { Provider } from 'react-redux';
 import { persistStore } from 'redux-persist';
 import { PersistGate } from 'redux-persist/integration/react'
@@ -20,7 +20,7 @@ export default function App({ Component, pageProps }: AppProps) {
     <AuthContextProvider>
       <ChakraProvider>
         <Provider store={store}>
-          <PersistGate persistor={persistor}>
+          {/* <PersistGate persistor={persistor}> */}
           {noAuthRequired.includes(router.pathname)?(
             <Component {...pageProps}/>
             ) : (
@@ -28,7 +28,7 @@ export default function App({ Component, pageProps }: AppProps) {
                 <Component {...pageProps} />
               </ProtectedRoute>
             )}
-          </PersistGate>
+          {/* </PersistGate> */}
         </Provider>
       </ChakraProvider>
      </AuthContextProvider>
