@@ -101,9 +101,9 @@ const LogInModule = () => {
   return (
     <Container centerContent>
        <Flex
-          mt={["3.5rem","3.5rem","6rem","6rem"]}
+          mt={["3.5rem","3.5rem","6rem","4rem"]}
           w={["20rem","20rem","24rem","28rem"]}
-          h={["32rem","32rem","34rem","36rem"]}
+          h={["34rem","32rem","36rem","38rem"]}
           overflow="hidden"
           bg={divColor}
           mb="3rem"
@@ -160,7 +160,7 @@ const LogInModule = () => {
               color={header2Color}
               fontSize={["0.8rem","0.8rem","0.9rem","1rem"]}
             >
-             Securly login to your Trackdaily account.
+             Securly login to your PennyWise account.
             </Text>
           </Flex>
 
@@ -272,7 +272,7 @@ const LogInModule = () => {
                   type="submit"
                   mt={["2.2rem","2rem","2.5rem","3rem"]}
                   borderRadius="1rem 0 1rem 0"
-                  w={["9.2rem","9.2rem","11rem","15rem"]}
+                  w={["9.2rem","9.2rem","11rem","13rem"]}
                   h={["2.3rem","2.3rem","2.6rem","3rem"]}
                   _hover={{
                     bg: '#7858ff',
@@ -281,18 +281,27 @@ const LogInModule = () => {
                   Sign in
                 </Button>
               </motion.div>
-                {/* <Button
+              <motion.div
+                whileInView={{ y: 0, opacity: 1}}
+                initial={{ y: 100, opacity: 0 }}
+                viewport={{ once: true }}
+                whileHover={{ scale: 1.1 }}
+                transition={{ type: "spring", stiffness: 200, damping: 10 }}
+              >
+                <Button
                   onClick={handleGoogleClick}
                   type="submit"
+                  borderRadius="1rem 0 1rem 0"
                 >
                 <FcGoogle fontSize="1.5rem"/> <Text ml="0.3rem">Sign in with google</Text>
-                </Button> */}
+                </Button>
+              </motion.div>
             </Flex>
 
             <Flex
               justifyContent="center"
               alignItems="center"
-              mt={["2rem","2rem","1rem","2rem"]}
+              mt={["2rem","2rem","2rem","2rem"]}
               mb="2rem"
               flexDir="row"
             >

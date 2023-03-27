@@ -212,7 +212,7 @@ const AnalyticsModule = ({ className }: DateTimeProps) => {
                         <PopoverCloseButton />
                         <PopoverBody>
                           <Flex>
-                          <Table variant="striped">
+                          <Table variant="simple">
                             <Thead>
                               <Tr>
                                 <Th>Catergories</Th>
@@ -221,11 +221,11 @@ const AnalyticsModule = ({ className }: DateTimeProps) => {
                             </Thead>
                             <Tbody>
                               <Tr>
-                                <Td fontWeight={700}>Food</Td>
+                                <Td fontWeight={600}>Food</Td>
                                 <Td
                                   display="flex"
                                   flexDir="row"
-                                  fontWeight={700}
+                                  fontWeight={600}
                                 >
                                   <Text
                                     fontSize={["1.2rem","1.2rem","1.2rem","1.3rem"]}
@@ -236,11 +236,11 @@ const AnalyticsModule = ({ className }: DateTimeProps) => {
                                 </Td>
                               </Tr>
                               <Tr>
-                                <Td fontWeight={700}>Transit</Td>
+                                <Td fontWeight={600}>Transit</Td>
                                 <Td
                                   display="flex"
                                   flexDir="row"
-                                  fontWeight={700}
+                                  fontWeight={600}
                                 >
                                   <Text
                                     fontSize={["1.2rem","1.2rem","1.2rem","1.3rem"]}
@@ -251,11 +251,11 @@ const AnalyticsModule = ({ className }: DateTimeProps) => {
                                 </Td>
                               </Tr>
                               <Tr>
-                                <Td fontWeight={700}>Data</Td>
+                                <Td fontWeight={600}>Data</Td>
                                 <Td
                                   display="flex"
                                   flexDir="row"
-                                  fontWeight={700}
+                                  fontWeight={600}
                                 >
                                   <Text
                                     fontSize={["1.2rem","1.2rem","1.2rem","1.3rem"]}
@@ -266,11 +266,11 @@ const AnalyticsModule = ({ className }: DateTimeProps) => {
                                 </Td>
                               </Tr>
                               <Tr>
-                                <Td fontWeight={700}>Transfers</Td>
+                                <Td fontWeight={600}>Transfers</Td>
                                 <Td
                                   display="flex"
                                   flexDir="row"
-                                  fontWeight={700}
+                                  fontWeight={600}
                                 >
                                   <Text
                                     fontSize={["1.2rem","1.2rem","1.2rem","1.3rem"]}
@@ -281,7 +281,24 @@ const AnalyticsModule = ({ className }: DateTimeProps) => {
                                 </Td>
                               </Tr>
                               <Tr>
-                                <Td fontWeight={700}>Others</Td>
+                                <Td fontWeight={600}>Others</Td>
+                                <Td
+                                  display="flex"
+                                  flexDir="row"
+                                  fontWeight={600}
+                                >
+                                  <Text
+                                    fontSize={["1.2rem","1.2rem","1.2rem","1.3rem"]}
+                                  >
+                                    <TbCurrencyNaira/>
+                                  </Text>
+                                 {myObject.others}
+                                </Td>
+                              </Tr>
+                              <Tr
+                                display={{ base: 'flex', md: 'none' }}
+                              >
+                                <Td fontWeight={700}>Total:</Td>
                                 <Td
                                   display="flex"
                                   flexDir="row"
@@ -292,7 +309,7 @@ const AnalyticsModule = ({ className }: DateTimeProps) => {
                                   >
                                     <TbCurrencyNaira/>
                                   </Text>
-                                 {myObject.others}
+                                 {Sum}
                                 </Td>
                               </Tr>
                             </Tbody>

@@ -16,11 +16,10 @@ export const firebaseConfig = {
   measurementId: "G-J0QHMRSE6T"
 };
 
-const app = initializeApp(firebaseConfig);
+export const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app)
 // export const analytics = getAnalytics(app);
-// export const database = getDatabase(app)
 export const db = getFirestore(app);
-// export const userDataRef = ref(database, "userData")
-
-export default app
+export const initFirebase = () => {
+  return app
+}

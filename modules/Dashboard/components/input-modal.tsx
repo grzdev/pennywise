@@ -35,7 +35,7 @@ import { BiDotsHorizontalRounded, BiTransferAlt } from 'react-icons/bi'
 import { parse } from 'path'
 import { render } from 'react-dom'
 import { useDispatch, useSelector } from 'react-redux';
-import { RootState } from 'redux/store'
+// import { RootState } from 'redux/store'
 import { add10k, add1k, add2k, add3k, add5k, InputData, onChange, selectMyObject } from 'redux/slices/dailyInputSlice'
 import { RiInformationLine } from 'react-icons/ri'
 import { BsInfo } from 'react-icons/bs'
@@ -270,7 +270,7 @@ const InputModal = () => {
         whileHover={{ scale: 1.1 }}
         transition={{ type: "spring", stiffness: 200, damping: 10 }}
       >
-        {myObject.food === 0 ?(
+        {/* {myObject.food === 0 ?( */}
           <Button
             w={["4rem","5rem","6rem","7rem"]}
             h={["2.8rem","2.8rem","3.2rem","3.8rem"]}
@@ -289,11 +289,7 @@ const InputModal = () => {
               <AddIcon/>
             </Text>
           </Button>
-        ) : (
-          <Text>
-            
-          </Text>
-        )}
+        
       </motion.div>
         
         {/* Food Modal */}
