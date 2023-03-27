@@ -45,19 +45,18 @@ const SignUpModule = () => {
   const [ data, setData ] = useState({
     email:'',
     password:'',
-    // username: ''
   })
 
-  // const handleGoogleClick = async (e: any) => {
-  //   e.preventDefault()
+  const handleGoogleClick = async (e: any) => {
+    e.preventDefault()
 
-  //   try {
-  //     await signIWithGoogle()
-  //     router.push("/dashboard")
-  //   } catch (error) {
-  //     console.log(error)
-  //   }
-  // }
+    try {
+      await signIWithGoogle()
+      router.push("/dashboard")
+    } catch (error) {
+      console.log(error)
+    }
+  }
 
   const handleSignup = async (e: any) => {
     e.preventDefault()
@@ -91,7 +90,7 @@ const SignUpModule = () => {
     <Flex
        mt={["3rem","3rem","5rem","5rem"]}
        w={["20.5rem","20.5rem","24.5rem","28rem"]}
-       h={["33rem","33rem","35rem","37rem"]}
+       h={["34rem","34rem","36rem","38rem"]}
        mb="2rem"
        overflow="hidden"
        boxShadow="2xl"
@@ -269,7 +268,7 @@ const SignUpModule = () => {
                 type="submit"
                 mt={["2.2rem","2.2rem","2.5rem","3rem"]}
                 borderRadius="1rem 0 1rem 0"
-                w={["9.2rem","9.2rem","11rem","15rem"]}
+                w={["9.2rem","9.2rem","11rem","13rem"]}
                 h={["2.3rem","2.3rem","2.6rem","3rem"]}
                   _hover={{
                     bg: '#7858ff',
@@ -278,11 +277,20 @@ const SignUpModule = () => {
                 Create account
             </Button>
           </motion.div>
-           {/* <Button
+          <motion.div
+            whileInView={{ y: 0, opacity: 1}}
+            initial={{ y: 100, opacity: 0 }}
+            viewport={{ once: true }}
+            whileHover={{ scale: 1.1 }}
+            transition={{ type: "spring", stiffness: 200, damping: 10 }}
+          >
+           <Button
             onClick={handleGoogleClick}
+            borderRadius="1rem 0 1rem 0"
            >
             <FcGoogle fontSize="1.5rem"/> <Text ml="0.3rem">Continue with google</Text>
-           </Button> */}
+           </Button>
+          </motion.div>
          </Flex>
 
          <Flex

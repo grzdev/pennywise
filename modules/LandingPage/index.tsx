@@ -24,7 +24,7 @@ import {
   import { ChevronRightIcon } from "@chakra-ui/icons"
   import { useColorModeValue } from '@chakra-ui/react'
   import { motion, useScroll } from "framer-motion"
-
+  
 const LandingPage = () => {
   const buttonColor = useColorModeValue("linear-gradient( 135deg, #FFA6B7 10%, #1E2AD2 100%)","linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%)")
   const textColor = useColorModeValue("#6a6a6a","#b6b6b6")
@@ -42,7 +42,6 @@ const LandingPage = () => {
   // background-image: linear-gradient(45deg, #262d45 0%, #2340a3 100%);
 
   const { scrollYProgress } = useScroll();
-
   return (
     <>
     <main>
@@ -139,7 +138,7 @@ const LandingPage = () => {
             mt={["5.5rem", "5.5rem", "3rem", "-1rem"]}
           >
             <motion.div
-              animate={{ x: 0 }}
+              whileInView={{ x: 0 }}
               initial={{ x: 150 }}
               transition={{ duration: 1  }}
             >  

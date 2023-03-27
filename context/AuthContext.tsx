@@ -44,7 +44,7 @@ export const AuthContextProvider = ({
 
     
     const signIWithGoogle = () => {
-        signInWithPopup(auth, provider)
+        return signInWithPopup(auth, provider)
     }
 
     // getRedirectResult(auth) 
