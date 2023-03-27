@@ -9,6 +9,7 @@ import {
     Text
    } from "recharts"
 import { connect, useSelector } from 'react-redux';
+import { RootState } from 'redux/store';
 import { InputData, selectMyObject } from 'redux/slices/dailyInputSlice';
 import ArrowPic from "../../../images/arrow2.png"
 import Image from 'next/image';
