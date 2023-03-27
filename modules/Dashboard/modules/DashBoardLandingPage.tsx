@@ -36,7 +36,7 @@ import { useColorMode } from '@chakra-ui/react';
 import Head from 'next/head'
  import InputModal from '../components/input-modal';
  import { useDispatch, useSelector } from 'react-redux';
- import { RootState } from 'redux/store';
+//  import { RootState } from 'redux/store';
  import { selectMyObject } from "../../../redux/slices/dailyInputSlice"
  import { motion } from 'framer-motion';
  import InputPiechart from '../components/piechart';
