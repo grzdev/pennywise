@@ -64,8 +64,23 @@ const LogInModule = () => {
     try {
       await signIWithGoogle()
       router.push("/dashboard")
+      toast({
+        title: 'Login successful',
+        description: "",
+        position:"top",
+        status: 'success',
+        duration: 6000,
+        isClosable: true,
+    })
     } catch (error) {
-      console.log(error)
+      toast({
+        position:"top",
+        title: 'Wrong password or email',
+        description: "",
+        status: 'error',
+        duration: 5000,
+        isClosable: true,
+    })
     }
   }
 
@@ -107,7 +122,8 @@ const LogInModule = () => {
           overflow="hidden"
           bg={divColor}
           mb="3rem"
-          boxShadow="2xl"
+          boxShadow="rgba(100, 100, 111, 0.2) 0px 7px 29px 0px"
+          // box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
           justifyContent="center"
           alignContent="center"
           borderRadius="1rem 0 1rem 0"
@@ -272,8 +288,8 @@ const LogInModule = () => {
                   type="submit"
                   mt={["2.2rem","2rem","2.5rem","3rem"]}
                   borderRadius="1rem 0 1rem 0"
-                  w={["9.2rem","9.2rem","11rem","13rem"]}
-                  h={["2.3rem","2.3rem","2.6rem","3rem"]}
+                  w={["9.2rem","9.2rem","11rem","12.6rem"]}
+                  h={["2.3rem","2.3rem","2.6rem","2.8rem"]}
                   _hover={{
                     bg: '#7858ff',
                   }}

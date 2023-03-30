@@ -363,7 +363,7 @@ const LandingPage = () => {
         </Flex>
 
         <Flex
-          w={["20rem","20rem","40rem","85rem"]}
+          w={["21rem","21rem","53rem","85rem"]}
           h={["20rem","20rem","20rem","15rem"]}
           bg={divColor2}
           mt={["14rem","14rem","12rem","5rem"]}

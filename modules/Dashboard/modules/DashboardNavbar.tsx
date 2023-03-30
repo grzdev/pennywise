@@ -421,7 +421,7 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
           <Flex
             flexDir="column"
             alignItems="center"
-           _active={{
+            _hover={{
               bg: "#4f6382",
               color: 'white',
             }}

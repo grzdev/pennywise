@@ -44,14 +44,10 @@ const BudgetModule = () => {
       mt={["1rem","1rem","0.1rem","1rem"]}
     >
       <Flex
-        // w={["20rem","20rem","30rem","40rem"]}
-        h={["22rem","22rem","25rem","34rem"]}
-
+        h={["22rem","22rem","33rem","34rem"]}
         w={["21rem","21rem","34rem","40rem"]}
-        // h={["35rem","30rem","39rem","34rem"]}
-        mt={["","","3rem","4rem"]}
+        mt={["2rem","2rem","5rem","4rem"]}
         boxShadow="lg"
-        // justifyContent="center"
         borderRadius="1rem 0 1rem 0"
         alignItems="center"
         flexDir="column"
@@ -60,43 +56,21 @@ const BudgetModule = () => {
         
       >
         <Heading
-          mt={["3rem","3rem","2.5rem","5rem"]}
-          size={["md","md","lg","xl"]}
-          mb={["","","","3.5rem"]}
+          size={["lg","lg","xl","xl"]}
+          mt={["4rem","4rem","7rem","7rem"]}
+          mb={["4rem","4rem","2rem","3.5rem"]}
         >
-          My Budget
+          My Budgets
         </Heading>
-        <Heading
-          mt={["4rem","4rem","4.5rem","9rem"]}
-          // mt={["","","","8rem"]}
-          size={["xs","xs","sm","sm"]}
-          ml={["0.2rem","0.2rem","0.4rem","0.5rem"]}
-        >
-          Total
-        </Heading>
+        
         <Flex
-          mt={["0.2rem","0.2rem","0.4rem","0.1rem"]}
-        >
-          <Heading
-            mt={["0.13rem","0.2rem","0.2rem","0.3rem"]}
-            size={["md","md","lg","xl"]}
-          >
-            <TbCurrencyNaira color="#d1d1d1" />
-          </Heading>
-          <Heading
-            size={["md","md","lg","xl"]}
-          >
-            30,000
-          </Heading>
-        </Flex>
-        <Flex
-          mt={["5rem","5rem","6rem","8rem"]}
+          mt={["5rem","5rem","11rem","10rem"]}
         >
          <BudgetModal/>
         </Flex>
       </Flex>
 
-      <Flex
+      {/* <Flex
       //  w={["20rem","20rem","40rem","20rem"]}
        h={["12rem","12rem","15rem","34rem"]}
        w={["21rem","21rem","34rem","30rem"]}
@@ -412,7 +386,7 @@ const BudgetModule = () => {
               </Slider>
             </Flex>
         </Flex>
-      </Flex>
+      </Flex> */}
     </Flex>
     </>
   )
