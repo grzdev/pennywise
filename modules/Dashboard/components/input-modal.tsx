@@ -28,7 +28,7 @@ import {
     Heading
 } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
-import { AddIcon, CheckCircleIcon, ChevronLeftIcon } from "@chakra-ui/icons"
+import { AddIcon, CheckCircleIcon, CheckIcon, ChevronLeftIcon } from "@chakra-ui/icons"
 import { IoBusOutline, IoFastFoodOutline, IoFastFoodSharp, IoWifi } from "react-icons/io5"
 import { TbCurrency, TbCurrencyNaira } from 'react-icons/tb'
 import { BiDotsHorizontalRounded, BiTransferAlt } from 'react-icons/bi'
@@ -38,7 +38,7 @@ import { useDispatch, useSelector } from 'react-redux';
 // import { RootState } from 'redux/store'
 import { add10k, add1k, add2k, add3k, add5k, InputData, onChange, selectMyObject } from 'redux/slices/dailyInputSlice'
 import { RiInformationLine } from 'react-icons/ri'
-import { BsInfo } from 'react-icons/bs'
+import { BsFillCheckCircleFill, BsInfo } from 'react-icons/bs'
 import { createSelector } from '@reduxjs/toolkit'
 import { motion } from 'framer-motion'
 import { db } from 'config/firebase'
@@ -271,6 +271,7 @@ const InputModal = () => {
         transition={{ type: "spring", stiffness: 200, damping: 10 }}
       >
         {/* {myObject.food === 0 ?( */}
+        {myObject.food === 0 ? (
           <Button
             w={["4rem","5rem","6rem","7rem"]}
             h={["2.8rem","2.8rem","3.2rem","3.8rem"]}
@@ -289,6 +290,26 @@ const InputModal = () => {
               <AddIcon/>
             </Text>
           </Button>
+        ) : (
+          <Button
+          w={["4rem","5rem","6rem","7rem"]}
+          h={["2.8rem","2.8rem","3.2rem","3.8rem"]}
+          borderRadius="1rem 0 1rem 0"
+          bg={button}
+          _hover={{
+          bg: "#718aff"
+          }}
+          // onClick={modal1.onOpen}
+        >
+          <Text
+            color={addIcon} 
+            fontSize={["1.1rem","1.1rem","1.3rem","1.4rem"]}
+            fontWeight={900}
+          >
+            <CheckIcon/>
+          </Text>
+        </Button>
+        )}
         
       </motion.div>
         
@@ -1284,27 +1305,23 @@ const InputModal = () => {
             flexDir="column"
             mb={["3rem","3rem","5rem","8rem"]}
            >
-              <Box
-                w={["16rem","16rem","18rem","20rem"]}
-                mt={["3rem","3rem","3rem","4rem"]}
-              >
-                <Image
-                  src={CompletedImg}
-                  alt=""
-                  priority
-                  placeholder="blur"
-                />
-              </Box>
+              <Text
+              fontSize={["6rem","6rem","7rem","7rem"]}
+              mt={["7rem","7rem","7rem","9rem"]}
+              color="#1ca8e2"
+             >
+              <BsFillCheckCircleFill/>
+             </Text>
               <Heading
                 size={["md","md","lg","lg"]}
-                mt="-3rem"
+                mt="2rem"
               >
                 Successful!
               </Heading>
 
               <Flex
                 mt={["7rem","7rem","6rem","6rem"]}
-                mb={["2rem","2rem","-0.5rem","-5rem"]}
+                mb={["2rem","2rem","2rem","-2rem"]}
               >
                 <motion.div
                    whileInView={{ y: 0, opacity: 1}}
@@ -1316,8 +1333,8 @@ const InputModal = () => {
                   <Button 
                     bg={completed}
                     borderRadius="1rem 0 1rem 0"
-                    w={["10rem","10rem","10rem","12rem"]}
-                    h={["3rem","3rem","4rem","4rem"]}
+                    w={["8rem","10rem","10rem","12rem"]}
+                    h={["3.8rem","3rem","4rem","4rem"]}
                     onClick={handleAddInput}
                     color="white"
                     fontWeight={700}

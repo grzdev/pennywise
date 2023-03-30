@@ -53,8 +53,23 @@ const SignUpModule = () => {
     try {
       await signIWithGoogle()
       router.push("/dashboard")
+      toast({
+        title: 'Account created.',
+        description: "",
+        position:"top",
+        status: 'success',
+        duration: 6000,
+        isClosable: true,
+    })
     } catch (error) {
-      console.log(error)
+      toast({
+        title: 'There seems to ba an error :(',
+        description: "",
+        position:"top",
+        status: 'error',
+        duration: 5000,
+        isClosable: true,
+    })
     }
   }
 
@@ -88,12 +103,12 @@ const SignUpModule = () => {
   return (
     <Container centerContent>
     <Flex
-       mt={["3rem","3rem","5rem","5rem"]}
+       mt={["3rem","3rem","4rem","4rem"]}
        w={["20.5rem","20.5rem","24.5rem","28rem"]}
        h={["34rem","34rem","36rem","38rem"]}
-       mb="2rem"
+       mb="3rem"
+       boxShadow="rgba(100, 100, 111, 0.2) 0px 7px 29px 0px"
        overflow="hidden"
-       boxShadow="2xl"
        bg={divColor}
        // h={["","","","30rem"]}
        justifyContent="center"

@@ -95,10 +95,10 @@ const AnalyticsModule = ({ className }: DateTimeProps) => {
         alignItems="center"
         flexDir={["column","column","column","row"]}
         gap={["3rem","3rem","4rem","5rem"]}
-        mt={["0.5rem","1.5rem","4rem","5rem"]}
+        mt={["2rem","2rem","4rem","5rem"]}
         >
         <Flex
-          w={["21rem","21rem","38rem","61rem"]}
+          w={["21rem","21rem","39rem","62rem"]}
           h={["28rem","30rem","38rem","35rem"]}
           borderRadius="1rem 0 1rem 0"
           bg= {divColor}
@@ -154,12 +154,13 @@ const AnalyticsModule = ({ className }: DateTimeProps) => {
               alignItems="center"
             >
               <Flex
-                gap={["","","2rem","23rem"]}
+                gap={["","","4rem","23rem"]}
                 alignItems="center"
               >
                 <Heading
                   size={["","","md","md"]}
-                  mr={["3rem","","",""]}
+                  mr={["1rem","","2rem",""]}
+                  ml={["","","1.5rem",""]}
                 >
                   {state.dateTime.toLocaleDateString('en-US', dateOptions)}
                 </Heading>
@@ -186,7 +187,7 @@ const AnalyticsModule = ({ className }: DateTimeProps) => {
                       <TbCurrencyNaira/> 
                     </Heading>
                     <Heading
-                      size={["","","md","md"]}
+                      size={["","","lg","lg"]}
                       display={{ base: 'none', md: 'block' }}
                     >
                      {Sum}
@@ -194,7 +195,6 @@ const AnalyticsModule = ({ className }: DateTimeProps) => {
   
 
                     <Popover
-                      // closeOnBlur={false}
                     >
                       <PopoverTrigger>
                         <Button

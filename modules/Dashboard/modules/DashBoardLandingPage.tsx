@@ -320,16 +320,16 @@ const MobileNav = () =>{
     >
       <Flex
         w="21rem"
-        h="17rem"
+        h="18rem"
         bg= {bgGradient}
         borderRadius="1rem 0 1rem 0"
         flexDir="column"
         color="white"
-        boxShadow="lg"
+        boxShadow="xl"
       >
         <Flex
-          p="1.6rem"
-          gap="10rem"
+          p="2rem"
+          gap="9rem"
         >
           <Heading
             size="xs"
