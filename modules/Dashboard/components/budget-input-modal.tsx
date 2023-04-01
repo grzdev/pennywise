@@ -104,7 +104,7 @@ const BudgetModal = () => {
             <Flex
               alignItems="center"
               justifyContent="center"
-              mt={["5rem","5rem","8rem","9rem"]}
+              mt={["8rem","5rem","8rem","9rem"]}
             >
              <Heading
               size={["lg","lg","xl","xl"]}
@@ -115,7 +115,7 @@ const BudgetModal = () => {
           </ModalHeader>
           <ModalCloseButton />
           <ModalBody pb={6}
-            mb={["3rem","3rem","4rem","4rem"]}
+            mb={["5rem","3rem","4rem","4rem"]}
           >
             <Flex
               justifyContent="center"
@@ -123,7 +123,7 @@ const BudgetModal = () => {
               alignItems="center"
             >
               <Flex
-                mt={["5.5rem","4.5rem","3rem","2rem"]}
+                mt={["1.5rem","4.5rem","3rem","2rem"]}
                 flexDir="column"
                 alignItems="center"
               >
@@ -204,10 +204,10 @@ const BudgetModal = () => {
             <Flex
               alignItems="center"
               justifyContent="center"
-              mt={["2.5rem","2.5rem","4rem","3rem"]}
+              mt={["3.5rem","2.5rem","4rem","3rem"]}
             >
              <Heading
-              size={["lg","lg","xl","xl"]}
+              size={["xl","lg","xl","xl"]}
              >
               Amount
              </Heading>
@@ -229,7 +229,7 @@ const BudgetModal = () => {
             >
                 <HStack
                     gap={["0.5rem","0.6rem","1rem","1rem"]}
-                    mt={["1rem","1rem","2rem","3rem"]}
+                    mt={["2rem","1rem","2rem","3rem"]}
                 >
                     <Button
                         colorScheme="blue"
@@ -342,7 +342,7 @@ const BudgetModal = () => {
             <Flex
               alignItems="center"
               justifyContent="center"
-              mt={["6rem","6rem","8rem","9rem"]}
+              mt={["9rem","6rem","8rem","9rem"]}
             >
              <Heading
               size={["lg","lg","xl","xl"]}
@@ -363,7 +363,7 @@ const BudgetModal = () => {
               // w={["","","","16rem"]}
               justifyContent="center"
               alignItems="center"
-              mt={["3rem","3rem","3rem","3rem"]}
+              mt={["1rem","3rem","3rem","3rem"]}
             >
               <Input
                 type="date"
@@ -377,13 +377,14 @@ const BudgetModal = () => {
                 _hover={{
                   bg:"#3968B8"
                 }}
+                placeholder="Date"
                 color="white"
                 fontWeight={700}
               />
             </Flex>
           </ModalBody>
           <ModalFooter
-            mt={["3rem","3rem","4rem","3rem"]}
+            mt={["5rem","3rem","4rem","3rem"]}
             mb={["3rem","3rem","3rem","3rem"]}
           >
             <Button 
@@ -418,20 +419,13 @@ const BudgetModal = () => {
               flexDir="column"
             >
              <Text
-              fontSize={["6rem","6rem","7rem","7rem"]}
+              fontSize={["8rem","6rem","7rem","7rem"]}
               color="#1ca8e2  "
              >
               <BsFillCheckCircleFill/>
              </Text>
             </Flex>
           </ModalHeader>
-          <ModalCloseButton>
-          <Text
-                fontSize={["1.6rem","1.6rem","1.8rem","2rem"]}
-            >
-                <ChevronLeftIcon/>
-            </Text>
-          </ModalCloseButton>
           <ModalBody pb={6}> 
             <Flex
               justifyContent="center"

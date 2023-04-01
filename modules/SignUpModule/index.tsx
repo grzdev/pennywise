@@ -160,7 +160,7 @@ const SignUpModule = () => {
           color={header2Color}
           fontSize={["0.8rem","0.8rem","0.9rem","1rem"]}
          >
-          Welcome to the future of budgeting
+          Welcome to the future of budgeting.
          </Text>
        </Flex>
 

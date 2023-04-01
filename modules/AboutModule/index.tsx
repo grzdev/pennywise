@@ -151,7 +151,7 @@ const About = () => {
                 fontFamily="'Ubuntu', sans-serif"
               >
                I had just finished a plate of Item 7 in Ilorin when the post Item clarity hit me.<br/><br/>
-               The amount of money I spent that day could feed a Nursery 2 student at King's College for a week.<br/><br/>
+               The amount of money I spent that day could feed a primary student at King's College for a week.<br/><br/>
                " This no be life ", I said to myself. That night, I grabbed my laptop and began to code.
               </Text>
             </Flex>
