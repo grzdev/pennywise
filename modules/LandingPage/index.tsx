@@ -214,9 +214,8 @@ const LandingPage = () => {
                 transition={{ duration: 0.9  }}
                 viewport={{ once: true }}
                 >
-                <Link href={"/about"}>
+                <Link href="/about">
                   <Text
-                    // ml={["","","","-30rem"]}
                     color={learnmore}
                     fontWeight={500}
                     fontSize="1.1rem"

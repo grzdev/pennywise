@@ -299,7 +299,6 @@ const InputModal = () => {
           _hover={{
           bg: "#718aff"
           }}
-          // onClick={modal1.onOpen}
         >
           <Text
             color={addIcon} 

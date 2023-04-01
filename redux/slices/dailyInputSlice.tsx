@@ -5,6 +5,7 @@ import { RootState } from 'redux/store';
 // import { Rootst}
 
 export interface InputData {
+  [x: string]: any;
   food: number;
   transit: number;
   data: number;
