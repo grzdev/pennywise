@@ -26,6 +26,8 @@ const AnalyticsContent = ({ className }: DateTimeProps) => {
   const myObject = useSelector(selectMyObject)
   const Sum = myObject.food + myObject.data + myObject.others + myObject.transfers + myObject.transit
 
+
+  //Date
   const [state, setState] = useState<DateTimeState>({
     dateTime: new Date(),
   });

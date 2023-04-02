@@ -5,7 +5,6 @@ import { RootState } from 'redux/store';
 // import { Rootst}
 
 export interface InputData {
-  [x: string]: any;
   food: number;
   transit: number;
   data: number;
@@ -79,3 +78,13 @@ export const selectDate = createSelector(
   (state: RootState) => state.dailyInput.currentDay,
   (dateSelect) => dateSelect
 )
+
+export const saveStateToLocalStorage = (state: RootState) => {
+  try {
+    const serializedState = JSON.stringify(state);
+    localStorage.setItem('InputState', serializedState);
+  } catch (e) {
+    console.log('Error saving state to local storage:', e);
+  }
+};
+
