@@ -44,7 +44,16 @@ import { motion } from 'framer-motion'
 import { db } from 'config/firebase'
 import Image from "next/image"
 import CompletedImg from "../../../images/check1.png"
-import { collection, doc, setDoc } from "firebase/firestore";
+import { addDoc, collection, doc, getDocs, query, setDoc, Timestamp, where } from "firebase/firestore";
+
+interface DateTimeProps {
+  className?: string;
+}
+
+interface DateTimeState {
+  dateTime: Date;
+}
+
 
 const InputModal = () => {
 
@@ -214,11 +223,28 @@ const InputModal = () => {
   };
 
   
+  //Date
+  const [state, setState] = useState<DateTimeState>({
+    dateTime: new Date(),
+  });
+ 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setState({ dateTime: new Date() });
+    }, 1000);
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, []);
+
+  const dateOptions: Intl.DateTimeFormatOptions = { weekday: 'long', month: 'long', day: 'numeric' };
+  const timeOptions: Intl.DateTimeFormatOptions = { hour: 'numeric', minute: 'numeric', second: 'numeric' };
 
 
 
   //Modal Save function
-   const handleAddInput = () => {
+   const handleAddInput = async () => {
     modal1.onClose()
     modal2.onClose()
     modal3.onClose()
@@ -236,23 +262,37 @@ const InputModal = () => {
       // variant: "left-accent",
     })
 
-    const dataCollection = collection(db, "test2")
+    const dataCollection = collection(db, "test3")
     const userData = {
       food: myObject.food,
       transit: myObject.transit,
       data: myObject.data,
       transfers: myObject.transfers,
-      others: myObject.others
+      others: myObject.others,
+      date: state.dateTime.toLocaleDateString('en-US', dateOptions)
     };
-    const newDocRef = doc(dataCollection);
-    setDoc(newDocRef, userData)
-    .then(() => {
-      console.log("Document written successfully!");
-    })
-    .catch((error) => {
-      console.error("Error writing document: ", error);
-    });
-    console.log(userData)
+    // const newDocRef = doc(dataCollection);
+    // setDoc(newDocRef, userData)
+    // .then(() => {
+    //   console.log("Document written successfully!");
+    // })
+    // .catch((error) => {
+    //   console.error("Error writing document: ", error);
+    // });
+    // console.log(userData)
+
+    // update state
+    const queryRef = query(dataCollection, where("date", "==", userData.date))
+    const querySnapshot = await getDocs(queryRef);
+    if (!querySnapshot.empty) {
+      const docRef = doc(db, "test3", querySnapshot.docs[0].id);
+      await setDoc(docRef, userData, { merge: true });
+      console.log("Fields updated successfully!");
+    } else {
+      // If a document with the current date does not exist, create a new document
+      await addDoc(dataCollection, userData );
+      console.log("New document created successfully!");
+    }
 
   }
   
@@ -270,8 +310,7 @@ const InputModal = () => {
         whileHover={{ scale: 1.1 }}
         transition={{ type: "spring", stiffness: 200, damping: 10 }}
       >
-        {/* {myObject.food === 0 ?( */}
-        {myObject.food === 0 ? (
+        {/* {myObject.food === 0 ? ( */}
           <Button
             w={["4rem","5rem","6rem","7rem"]}
             h={["2.8rem","2.8rem","3.2rem","3.8rem"]}
@@ -290,7 +329,7 @@ const InputModal = () => {
               <AddIcon/>
             </Text>
           </Button>
-        ) : (
+        {/* ) : (
           <Button
           w={["4rem","5rem","6rem","7rem"]}
           h={["2.8rem","2.8rem","3.2rem","3.8rem"]}
@@ -308,7 +347,7 @@ const InputModal = () => {
             <CheckIcon/>
           </Text>
         </Button>
-        )}
+        )} */}
         
       </motion.div>
         

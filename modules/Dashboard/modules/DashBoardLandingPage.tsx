@@ -149,9 +149,9 @@ const DashBoardLandingPage = ({ className }: DateTimeProps) => {
             size={["lg","lg","xl","xl"]}
           >
            {displayName ? (
-              <Text>{displayName.split(' ')[0]},</Text>
+              <Text>Hey {displayName.split(' ')[0]},</Text>
             ) : (
-              <Text>Hi,</Text>
+              <Text>Hey,</Text>
             )}
           </Heading>
           <Text
@@ -235,7 +235,7 @@ const DashBoardLandingPage = ({ className }: DateTimeProps) => {
               </Flex>
 
               <Flex
-                mt={["2rem","2rem","-1rem","-4rem"]}
+                mt={["2rem","2rem","-1rem","-3rem"]}
                 alignItems="center"
                 justifyContent="center"
                 w={["","","",""]}

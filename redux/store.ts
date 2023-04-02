@@ -1,14 +1,36 @@
 import { configureStore } from '@reduxjs/toolkit'
-import dailyInputReducer from './slices/dailyInputSlice'
+import dailyInputReducer, { saveStateToLocalStorage } from './slices/dailyInputSlice'
+
+
+
+const loadStateFromLocalStorage = () => {
+  try {
+    const serializedState = localStorage.getItem('InputState');
+    if (serializedState === null) {
+      return undefined;
+    }
+    return JSON.parse(serializedState);
+  } catch (e) {
+    console.log('Error loading state from local storage:', e);
+    return undefined;
+  }
+};
+
+const initialState = loadStateFromLocalStorage();
 
 export const store = configureStore({
   reducer: {
     dailyInput: dailyInputReducer
   },
+  preloadedState: initialState,
 })
 
- export type RootState = ReturnType<typeof store.getState>
- export type AppDispatch = typeof store.dispatch
+store.subscribe(() => {
+  saveStateToLocalStorage(store.getState());
+});
+
+export type RootState = ReturnType<typeof store.getState>
+export type AppDispatch = typeof store.dispatch
 
 // import { configureStore } from '@reduxjs/toolkit'
 // import { setupListeners } from '@reduxjs/toolkit/query'

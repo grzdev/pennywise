@@ -347,7 +347,7 @@ const BudgetModal = () => {
              <Heading
               size={["lg","lg","xl","xl"]}
              >
-               Deadline
+              Select Deadline
              </Heading>
             </Flex>
           </ModalHeader>

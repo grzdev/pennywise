@@ -81,12 +81,12 @@ const AnalyticsModule = ({ className }: DateTimeProps) => {
   const dateOptions: Intl.DateTimeFormatOptions = { weekday: 'long', month: 'long', day: 'numeric' };
   const timeOptions: Intl.DateTimeFormatOptions = { hour: 'numeric', minute: 'numeric', second: 'numeric' };
 
-  const result = Object.keys(myObject).map((key: string | number) => {
-    return {
-      key: key,
-      value: myObject[key]
-    }
-  })
+  // const result = Object.keys(myObject).map((key: string | number) => {
+  //   return {
+  //     key: key,
+  //     value: myObject[key]
+  //   }
+  // })
 
   return (
     <Container
