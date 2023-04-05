@@ -415,11 +415,11 @@ const BudgetModal = () => {
             <Flex
               alignItems="center"
               justifyContent="center"
-              mt={["6rem","6rem","7rem","9rem"]}
+              mt={["8rem","6rem","7rem","9rem"]}
               flexDir="column"
             >
              <Text
-              fontSize={["8rem","6rem","7rem","7rem"]}
+              fontSize={["6rem","6rem","7rem","7rem"]}
               color="#1ca8e2  "
              >
               <BsFillCheckCircleFill/>

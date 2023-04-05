@@ -361,7 +361,7 @@ const MobileNav = () =>{
           >
             <Heading
               size="2xl"
-              mr="-0.4rem"
+              mr="-0.2rem"
             >
               <TbCurrencyNaira/>
             </Heading>

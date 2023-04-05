@@ -20,8 +20,8 @@ const AnalyticsContent = ({ className }: DateTimeProps) => {
   const divGradient = useColorModeValue("linear-gradient(to bottom, #505285 0%, #585e92 12%, #65689f 25%, #7474b0 37%, #7e7ebb 50%, #8389c7 62%, #9795d4 75%, #a2a1dc 87%, #b5aee4 100%);","linear-gradient(to right, #6a85b6 0%, #bac8e0 100%);")
   const divColor2 = useColorModeValue("#EDF2F7", "#353b54")
   const header2 = useColorModeValue("white", "white")
-  const bgGradient = useColorModeValue("linear-gradient(to right, #162961, #3969b9)","linear-gradient(to right, #28355e, #28355e);")
   const borderColor = useColorModeValue("black","white")
+  const bgGradient = useColorModeValue("linear-gradient(to right, #162961, #3969b9)","linear-gradient(to right, #28355e, #28355e);")
 
   const myObject = useSelector(selectMyObject)
   const Sum = myObject.food + myObject.data + myObject.others + myObject.transfers + myObject.transit
@@ -55,7 +55,7 @@ const AnalyticsContent = ({ className }: DateTimeProps) => {
       boxShadow="lg"
       borderRadius="1rem 0 1rem 0"
       mt="2rem"
-      bg= {divColor2}
+      bg= {bgGradient}
       justifyContent="center"
       alignItems="center"
     >
@@ -67,15 +67,17 @@ const AnalyticsContent = ({ className }: DateTimeProps) => {
           size={["","","md","md"]}
           mr={["1rem","","2rem",""]}
           ml={["","","1.5rem",""]}
+          color="white"
         >
           {state.dateTime.toLocaleDateString('en-US', dateOptions)}
         </Heading>
         
         <Flex
           alignItems="center"
-        >
+          >
           <Heading
            size={["","","md","md"]}
+           color="white" 
            mr={["","","0.1rem","0.5rem"]}
            display={{ base: 'none', md: 'block' }}
           >
@@ -89,12 +91,14 @@ const AnalyticsContent = ({ className }: DateTimeProps) => {
               mr={["","","-0.1rem","-0.2rem"]}
               mt={["","","0.2rem","0.2rem"]}
               display={{ base: 'none', md: 'block' }}
+              color="white" 
             >
               <TbCurrencyNaira/> 
             </Heading>
             <Heading
               size={["","","lg","lg"]}
               display={{ base: 'none', md: 'block' }}
+              color="white" 
             >
              {Sum}
             </Heading>
@@ -108,6 +112,7 @@ const AnalyticsContent = ({ className }: DateTimeProps) => {
                   >
                     <Heading
                     size={["lg","","lg","lg"]}
+                    color="white" 
                     >                          
                     <ChevronRightIcon/>
                     </Heading>
@@ -202,7 +207,7 @@ const AnalyticsContent = ({ className }: DateTimeProps) => {
                         </Td>
                       </Tr>
                       <Tr
-                        display={{ base: 'flex', md: 'none' }}
+                        // display={{ base: 'flex', md: 'none' }}
                       >
                         <Td fontWeight={700}>Total:</Td>
                         <Td
