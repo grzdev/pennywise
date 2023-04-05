@@ -103,7 +103,7 @@ const AnalyticsModule = ({ className }: DateTimeProps) => {
         alignItems="center"
         flexDir={["column","column","column","row"]}
         gap={["3rem","3rem","4rem","5rem"]}
-        mt={["2rem","2rem","4rem","5rem"]}
+        mt={["1.5rem","1.5rem","4rem","5rem"]}
         >
         <Flex
           w={["21rem","21rem","39rem","62rem"]}
