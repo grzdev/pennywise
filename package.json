@@ -25,7 +25,7 @@
     "eslint-config-next": "13.1.6",
     "firebase": "^9.18.0",
     "framer-motion": "^10.2.4",
-    "next": "13.1.6",
+    "next": "^13.3.0",
     "react": "^18.2.0",
     "react-animated-text-content": "^1.0.1",
     "react-dom": "^18.2.0",

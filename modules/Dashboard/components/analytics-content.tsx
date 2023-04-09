@@ -21,7 +21,7 @@ const AnalyticsContent = ({ className }: DateTimeProps) => {
   const divColor2 = useColorModeValue("#EDF2F7", "#353b54")
   const header2 = useColorModeValue("white", "white")
   const borderColor = useColorModeValue("black","white")
-  const bgGradient = useColorModeValue("linear-gradient(to right, #162961, #3969b9)","linear-gradient(to right, #28355e, #28355e);")
+  const bgGradient = useColorModeValue("linear-gradient(to right, #162961, #3969b9)","linear-gradient(to right, #28355e, #4e67b6);")
 
   const myObject = useSelector(selectMyObject)
   const Sum = myObject.food + myObject.data + myObject.others + myObject.transfers + myObject.transit

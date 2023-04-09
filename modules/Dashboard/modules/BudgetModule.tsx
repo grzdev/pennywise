@@ -16,9 +16,11 @@ import { AddIcon } from "@chakra-ui/icons"
 import { TbCurrencyNaira } from 'react-icons/tb'
 import BudgetModal from '../components/budget-input-modal'
 import BudgetDiv from '../components/budgets-div'
+import { useSelector } from 'react-redux'
+import { selectExpense } from 'redux/slices/budgetSlice'
 
 const BudgetModule = () => {
-  const bgGradient = useColorModeValue("linear-gradient(to right, #162961, #3969b9)","linear-gradient(to right, #28355e, #28355e);")
+  const bgGradient = useColorModeValue("linear-gradient(to right, #162961, #3969b9)","linear-gradient(to right, #28355e, #4e67b6);")
   const bg = useColorModeValue("linear-gradient(to right, #457fca 0%, #5691c8 100%)","")  
   const divColor2 = useColorModeValue("white", "#222636")
   const secondBg = useColorModeValue("white","#222636")
@@ -29,6 +31,8 @@ const BudgetModule = () => {
   const transfers = useColorModeValue("#03af00","#03af00")
 // background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
 
+
+const expense = useSelector(selectExpense)
 
   return (
     <>
@@ -68,7 +72,7 @@ const BudgetModule = () => {
         <Flex
           mt={["5rem","5rem","11rem","10rem"]}
         >
-         <BudgetModal/>
+         <BudgetModal id={''}/>
         </Flex>
       </Flex>
 
@@ -79,13 +83,23 @@ const BudgetModule = () => {
         mt={["","","0.1rem","4rem"]}
         boxShadow="lg"
         borderRadius="1rem 0 1rem 0"
-        justifyContent="center"
+        // justifyContent="center"
         mb={["4rem","4rem","2rem","0.1rem"]}
         overflowY="scroll"
+        flexDir="column"
           // overflowX="hidden"
-        // alignItems="center"
+        alignItems="center"
       >
-        <BudgetDiv/>
+        {/* <BudgetDiv/> */}
+        {expense?.map((budget)=>(
+          <BudgetDiv
+            key={budget.id} 
+            id={budget.id} 
+            category={budget.category} 
+            amount={budget.amount} 
+            date={budget.date}                     
+            />
+        ))}
       </Flex>
     </Flex>
     </>

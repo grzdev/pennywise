@@ -214,7 +214,6 @@ const LandingPage = () => {
                 transition={{ duration: 0.9  }}
                 viewport={{ once: true }}
                 >
-                <Link href="/about">
                   <Text
                     color={learnmore}
                     fontWeight={500}
@@ -222,9 +221,12 @@ const LandingPage = () => {
                     mt={["1rem", "-0.4rem", "1.8rem", "2rem"]}
                     mb={["10rem","","",""]}
                   >
-                    Learn more <ChevronRightIcon/>
+                    <Link
+                      href="/about"
+                    >
+                      Learn more <ChevronRightIcon/>
+                    </Link>
                   </Text>
-                </Link>
               </motion.div>
             </VStack>
         </Flex>
