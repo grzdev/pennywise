@@ -21,6 +21,13 @@ import {
     MenuList,
     MenuItem,
     HStack,
+    NumberInput,
+    NumberInputField,
+    NumberInputStepper,
+    NumberIncrementStepper,
+    NumberDecrementStepper,
+    FormControl,
+    FormLabel,
 } from '@chakra-ui/react'
 import React, { useState } from 'react'
 import { AddIcon, ChevronDownIcon, ChevronLeftIcon } from "@chakra-ui/icons"
@@ -29,8 +36,15 @@ import { motion } from 'framer-motion'
 import { IoBusOutline, IoFastFoodOutline, IoFastFoodSharp, IoWifi } from 'react-icons/io5'
 import { BiDotsHorizontalRounded, BiTransferAlt } from 'react-icons/bi'
 import { BsFillCheckCircleFill } from 'react-icons/bs'
+import { useDispatch } from 'react-redux'
+import { addExpense } from 'redux/slices/budgetSlice'
 
-const BudgetModal = () => {
+interface Expense {
+  id: string;
+};
+
+
+const BudgetModal = ( {id}:  Expense) => {
   const bg = useColorModeValue("linear-gradient(to right, #acb6e5, #86fde8);","linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%)")
   const selectBg = useColorModeValue("#407dd0","#407dd0")
   const naira = useColorModeValue("#407dd0","white")
@@ -45,13 +59,50 @@ const BudgetModal = () => {
   const modal3 = useDisclosure()
   const modal4 = useDisclosure()
 
-  const [selectedDate, setSelectedDate] = useState<string>('');
+  // const [selectedDate, setSelectedDate] = useState<string>('');
+  // const handleDateChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  //   setSelectedDate(event.target.value);
+  // };
 
+
+  //Modal
+  const [category, setCategory] = useState<string>("");
+  const [amount, setAmount] = useState<number>(0);
+  const [date, setDate] = useState<Date>(new Date());
+
+  const options = [
+  { value: 'food', label: 'Food' },
+  { value: 'data', label: 'Data' },
+  { value: 'transit', label: 'Transit' },
+  { value: 'transfers', label: 'Transfers' },
+  { value: 'others', label: 'Others' },
+];
+
+  const handleCategoryChange = (value: string) => {
+    setCategory(value);
+    modal2.onOpen()
+  };
   const handleDateChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setSelectedDate(event.target.value);
+    if (date) {
+    setDate(date);
+  }
   };
 
-  const handleBudgetSave = () => {
+  //Modal save funtion
+  const dispatch = useDispatch()
+  const handleBudgetSave = (event: { preventDefault: () => void }) => {
+    event.preventDefault();
+    dispatch(addExpense({
+      category: category,
+      amount: amount,
+      // date : date,
+      id: Date.now()
+    }))
+
+    console.log("Category: ", category);
+    console.log("Amount: ", amount);
+    console.log("Date: ", date);
+
     modal1.onClose()
     modal2.onClose()
     modal3.onClose()
@@ -143,48 +194,29 @@ const BudgetModal = () => {
                       p={["","","1rem","1rem"]}
                       color="white"
                     >
-                      Categories
+                      {/* Categories */}
+                      {category || 'Categories'}
                     </Heading>
                   </MenuButton>
+                  
                   <MenuList>
-                    <Flex
-                      flexDir="column"
+                  {options.map((option) => (
+                    <MenuItem
+                      key={option.value}
+                      onClick={() => handleCategoryChange(option.value)}
                     >
-                      <Button
-                      onClick={modal2.onOpen} 
-                      >
-                        <MenuItem icon={<IoFastFoodOutline />}>Food</MenuItem>
-                      </Button>
-                      <Button
-                        onClick={modal2.onOpen}
-                      >
-                        <MenuItem icon={<IoBusOutline />}>Transit</MenuItem>
-                      </Button>
-                      <Button
-                        onClick={modal2.onOpen}
-                      >
-                        <MenuItem icon={<IoWifi />}>Data</MenuItem>
-                      </Button>
-                      <Button
-                        onClick={modal2.onOpen}
-                      >
-                        <MenuItem icon={<BiTransferAlt />}>Transfers</MenuItem>
-                      </Button>
-                      <Button
-                        onClick={modal2.onOpen}
-                      >
-                        <MenuItem icon={<BiDotsHorizontalRounded />}>Others</MenuItem>
-                      </Button>
-                    </Flex>
-                  </MenuList>
+                      {option.label}
+                    </MenuItem>
+                  ))}
+                </MenuList>
                 </Menu>
               </Flex>
             </Flex>
           </ModalBody>
-
           <ModalFooter
             mt="1.7rem"
           >
+            
           </ModalFooter>
         </ModalContent>
       </Modal>
@@ -204,7 +236,7 @@ const BudgetModal = () => {
             <Flex
               alignItems="center"
               justifyContent="center"
-              mt={["3.5rem","2.5rem","4rem","3rem"]}
+              mt={["6.5rem","2.5rem","9rem","8rem"]}
             >
              <Heading
               size={["xl","lg","xl","xl"]}
@@ -227,86 +259,30 @@ const BudgetModal = () => {
                 alignItems="center"
                 gap="1.5rem"
             >
-                <HStack
-                    gap={["0.5rem","0.6rem","1rem","1rem"]}
-                    mt={["2rem","1rem","2rem","3rem"]}
-                >
-                    <Button
-                        colorScheme="blue"
-                        borderRadius="full"
-                        size={["md","md","lg","lg"]}
-                        // value={myObject.others}
-                        onClick={modal3.onOpen} 
-                    >
-                       <TbCurrencyNaira/> 1,000
-                    </Button>
-                    <Button
-                        size={["md","md","lg","lg"]}
-                        colorScheme="blue"
-                        borderRadius="full"
-                        // value={myObject.others}
-                        onClick={modal3.onOpen}
-                    >
-                       <TbCurrencyNaira/> 2,000
-                    </Button>
-                    <Button
-                        size={["md","md","lg","lg"]}
-                        colorScheme="blue"
-                        borderRadius="full"
-                        // value={myObject.others}
-                        onClick={modal3.onOpen}
-                    >
-                       <TbCurrencyNaira/> 3,000
-                    </Button>
-                </HStack>
-                <HStack
-                    gap={["0.5rem","0.6rem","1rem","1rem"]}
-                >
-                    <Button
-                        size={["md","md","lg","lg"]}
-                        colorScheme="blue"
-                        borderRadius="full"
-                        // value={myObject.others}
-                        onClick={modal3.onOpen}
-                    >
-                       <TbCurrencyNaira/> 5,000
-                    </Button>
-                    <Button
-                        size={["md","md","lg","lg"]}
-                        colorScheme="blue"
-                        borderRadius="full"
-                        // value={myObject.others}
-                        onClick={modal3.onOpen}
-                    >
-                       <TbCurrencyNaira/> 10,000
-                    </Button>
-                </HStack>
                 <Flex
-                    mt="1rem"
+                    mt={["1rem","4rem","2rem","2rem"]}
+                    mb={["4rem","4rem","4rem","5rem"]}
                     flexDir="column"
                 >
-                    <Text
-                        color={text}
-                    >
-                        Different amount?
-                    </Text>
                     <InputGroup>
                         <InputLeftElement
                         pointerEvents='none'
                         // eslint-disable-next-line react/no-children-prop
                         children={<TbCurrencyNaira color='#0aba00' fontSize="1.3rem" />}
-                        mt={["0.25rem","0.25rem","0.25rem","0.35rem"]}
+                        mt={["0.45rem","0.45rem","0.6rem","1.1rem"]}
                         />
                         <Input
                             mt={["0.2rem","0.2rem","0.3rem","0.3rem"]}
+                            w={["8rem","8rem","10rem","10rem"]}
+                            h={["3rem","3rem","3rem","4rem"]}
                             htmlSize={5} 
                             width="8rem"
                             type='number'
                             variant="filled"
                             placeholder='Amount'
                             name="others"
-                            // value={myObject.others}
-                            // onChange={(e) => handleNumberChange('others', parseInt(e.target.value, 10))}
+                            value={amount} 
+                            onChange={(e) => setAmount(+e.target.value)}
                         />
                     </InputGroup>
                 </Flex>
@@ -342,7 +318,7 @@ const BudgetModal = () => {
             <Flex
               alignItems="center"
               justifyContent="center"
-              mt={["9rem","6rem","8rem","9rem"]}
+              mt={["7rem","6rem","9rem","7.6rem"]}
             >
              <Heading
               size={["lg","lg","xl","xl"]}
@@ -363,13 +339,12 @@ const BudgetModal = () => {
               // w={["","","","16rem"]}
               justifyContent="center"
               alignItems="center"
-              mt={["1rem","3rem","3rem","3rem"]}
+              mt={["1rem","3rem","1rem","3rem"]}
             >
+              {/* Date Input */}
               <Input
                 type="date"
                 id="date-input"
-                value={selectedDate}
-                onChange={handleDateChange}
                 size="lg"
                 w={["11.5rem","11.5rem","12rem","12rem"]}
                 h={["3rem","3rem","4rem","4rem"]}
@@ -380,11 +355,12 @@ const BudgetModal = () => {
                 placeholder="Date"
                 color="white"
                 fontWeight={700}
+                value={date?.toISOString().substr(0, 10) ?? ''} onChange={handleDateChange}
               />
             </Flex>
           </ModalBody>
           <ModalFooter
-            mt={["5rem","3rem","4rem","3rem"]}
+            mt={["3rem","3rem","3rem","3rem"]}
             mb={["3rem","3rem","3rem","3rem"]}
           >
             <Button 
@@ -415,7 +391,7 @@ const BudgetModal = () => {
             <Flex
               alignItems="center"
               justifyContent="center"
-              mt={["8rem","6rem","7rem","9rem"]}
+              mt={["5rem","5rem","5rem","7rem"]}
               flexDir="column"
             >
              <Text
@@ -430,7 +406,7 @@ const BudgetModal = () => {
             <Flex
               justifyContent="center"
               alignItems="center"
-              mt={["4rem","4rem","5rem","4rem"]}
+              mt={["3rem","4rem","5rem","4.8rem"]}
               mb={["4rem","4rem","5rem","4rem"]}
             >
               <motion.div

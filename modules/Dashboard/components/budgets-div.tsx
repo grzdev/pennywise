@@ -1,172 +1,99 @@
-import { Button, Flex, Heading, Popover, PopoverArrow, PopoverBody, PopoverCloseButton, PopoverContent, PopoverHeader, PopoverTrigger, Progress, useColorModeValue } from '@chakra-ui/react'
+import { Button, Flex, Heading, Popover, PopoverArrow, PopoverBody, PopoverCloseButton, PopoverContent, PopoverHeader, PopoverTrigger, Progress, Text, useColorModeValue } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
+import { AiOutlineDelete } from 'react-icons/ai';
 import { TbCurrencyNaira } from 'react-icons/tb'
+import { useDispatch } from 'react-redux';
+import { deleteExpense } from 'redux/slices/budgetSlice';
 
-interface DateTimeProps {
-    className?: string;
-  }
+interface Expense {
+    id: string;
+    category: string;
+    amount: number;
+    date: string;
+  };
   
-  interface DateTimeState {
-    dateTime: Date;
-  }
+const BudgetDiv = ({id, category, amount, date }:  Expense) => {
 
-const BudgetDiv = ({ className }: DateTimeProps) => {
+  const deleteIcon = useColorModeValue("red", "white")
+  const bgGradient = useColorModeValue("#EDF2F7","linear-gradient(to right, #28355e, #4e67b6);")
 
-  const divColor2 = useColorModeValue("#EDF2F7", "#28355E")
 
-  const [state, setState] = useState<DateTimeState>({
-    dateTime: new Date(),
-  });
- 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setState({ dateTime: new Date() });
-    }, 1000);
+  const dispatch = useDispatch();
 
-    return () => {
-      clearInterval(interval);
-    };
-  }, []);
-
-  const dateOptions: Intl.DateTimeFormatOptions = { weekday: 'short', month: 'long', day: 'numeric' };
-  const timeOptions: Intl.DateTimeFormatOptions = { hour: 'numeric', minute: 'numeric', second: 'numeric' };
+  const handleDeleteExpense = () => {
+    dispatch(deleteExpense(id));
+  };
 
   return (
     <Flex
-        flexDir="column"
     >
     <Flex
       w={["18rem","18rem","25rem","24rem"]}
-      h={["10rem","10rem","10rem","10rem"]}
-      bg={divColor2}
-      mt={["2rem","2rem","2rem","3rem"]}
+      h={["9rem","9rem","10rem","10rem"]}
+      bg={bgGradient}
+      mt={["1.6rem","1.6rem","2rem","2rem"]}
+      mb="1rem"
       boxShadow="lg"
       borderRadius="1rem 0 1rem 0"
       justifyContent="center"
       alignItems="center"
       flexDir="column"
       >
-        <Flex
-            gap={["7rem","7rem","10rem","9rem"]}
-            // mt={["","","","1.5rem"]}
-        >
-            <Heading
-                size={["md","md","lg","lg"]}
-            >
-                Food
-            </Heading>
-
-            
-            <Flex>
-                <Heading
-                size={["lg","lg","lg","lg"]}
-                mt={["0.1rem","0.1rem","0.2rem","0.2rem"]}
-                >
-                    <TbCurrencyNaira/>
-                </Heading>
-                <Heading
-                size={["md","md","lg","lg"]}
-                >
-                    3000
-                </Heading>
-            </Flex>
-        </Flex>
-
-        <Flex
-            mt={["2rem","2rem","2rem","2rem"]}
-        >
-            <Progress 
+             {/* <Progress 
                 value={100}
                 w={["14rem","14rem","20rem","19rem"]}
                 borderRadius="1rem 0 1rem 0"
-            />
-        </Flex>
+            />  */}
 
         <Flex
-            gap={["7rem","7rem","11rem","11rem"]}
-            mt={["1rem","1rem","1rem","1rem"]}
+            flexDir="row"
+            gap={["5rem","5rem","8rem","8rem"]}
         >
-            <Heading
-                size={["","","sm","sm"]}
+            <Flex
+                flexDir="column"
+                gap={["0.5rem","0.5rem","0.5rem","0.5rem"]}
             >
-                {state.dateTime.toLocaleDateString('en-US', dateOptions)}
-            </Heading>
-
-            <Heading
-                size={["","","sm","sm"]}
-            >
-                60%
-            </Heading>
-        </Flex>
-    </Flex>
-
-    <Flex
-      w={["18rem","18rem","25rem","24rem"]}
-      h={["10rem","10rem","10rem","10rem"]}
-      bg={divColor2}
-      mt={["2rem","2rem","2rem","3rem"]}
-      boxShadow="lg"
-      borderRadius="1rem 0 1rem 0"
-      justifyContent="center"
-      alignItems="center"
-      flexDir="column"
-      >
-        <Flex
-            gap={["7rem","7rem","10rem","9rem"]}
-            // mt={["","","","1.5rem"]}
-        >
-            <Heading
-                size={["md","md","lg","lg"]}
-            >
-                Food
-            </Heading>
-
-            
-            <Flex>
                 <Heading
-                size={["lg","lg","lg","lg"]}
-                mt={["0.1rem","0.1rem","0.2rem","0.2rem"]}
+                    size={["xs","xs","sm","sm"]}
                 >
-                    <TbCurrencyNaira/>
+                    Sun, March 30
                 </Heading>
                 <Heading
-                size={["md","md","lg","lg"]}
+                    size={["lg","lg","xl","xl"]}
                 >
-                    3000
+                    {category}
                 </Heading>
+                <Flex>
+                    <Heading
+                        size={["lg","lg","xl","xl"]}
+                        mt={["0.05rem","0.05rem","0.05rem","0.05rem"]}
+                    >
+                        <TbCurrencyNaira/>
+                    </Heading>
+                    <Heading
+                    size={["md","md","lg","lg"]}
+                    >
+                        {amount}
+                    </Heading>
+                </Flex>
+                
+            </Flex>
+            <Flex
+                mt={["1.4rem","1.4rem","1.9rem","2rem"]}
+            >
+                <Button
+                    onClick={()=> handleDeleteExpense()}
+                    variant="ghost"
+                    fontSize={["1.4rem","1.4rem","1.6rem","1.6rem"]}
+                    color={deleteIcon}
+                    fontWeight={700}
+                >
+                    <AiOutlineDelete/>
+                </Button>
             </Flex>
         </Flex>
-
-        <Flex
-            mt={["2rem","2rem","2rem","2rem"]}
-        >
-            <Progress 
-                value={100}
-                w={["14rem","14rem","20rem","19rem"]}
-                borderRadius="1rem 0 1rem 0"
-            />
-        </Flex>
-
-        <Flex
-            gap={["7rem","7rem","11rem","11rem"]}
-            mt={["1rem","1rem","1rem","1rem"]}
-        >
-            <Heading
-                size={["","","sm","sm"]}
-            >
-                {state.dateTime.toLocaleDateString('en-US', dateOptions)}
-            </Heading>
-
-            <Heading
-                size={["","","sm","sm"]}
-            >
-                60%
-            </Heading>
-        </Flex>
-    </Flex>
-
-    
-    </Flex>
+    </Flex> 
+</Flex>
   )
 }
 

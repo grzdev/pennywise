@@ -12,7 +12,7 @@ import {
   HStack
 } from '@chakra-ui/react'
 import React from 'react'
-import { MdTrackChanges } from 'react-icons/md'
+import { MdOutlineEmail, MdTrackChanges } from 'react-icons/md'
 import {
   AiFillFacebook,
   AiFillGithub,
@@ -26,6 +26,7 @@ import {
 import { useColorModeValue } from '@chakra-ui/react'
 import Link from 'next/link'
 import { SiGmail, SiNetlify } from 'react-icons/si'
+import { IoMdMail } from 'react-icons/io'
 import { FaGem } from "react-icons/fa"
 
 const Footer = () => {
@@ -47,6 +48,7 @@ const Footer = () => {
     >
       <Flex
         w={["21.5rem","21.5rem","53rem","85rem"]}
+        h={["","","22rem","16rem"]}
         justifyContent={["center","","","center"]}
         alignItems={["center","","","center"]}
         gap={["","","","14rem"]}
@@ -55,7 +57,9 @@ const Footer = () => {
         mt="5rem"
         
       >
-        <Flex>
+        <Flex
+          mt={["","","-2rem","-8rem"]}
+        >
           <Flex
             // mt={["-0.2rem", "-0.05rem", "-0.04rem", "-0.01rem"]}f
             mb={["6rem","","",""]}
@@ -76,7 +80,7 @@ const Footer = () => {
             color={headerColor}
             fontFamily="'Lato', sans-serif"
           >
-            pennywise
+            pennywiise
           </Heading>
         </Flex>
         
@@ -85,7 +89,7 @@ const Footer = () => {
 
         <Flex
           flexDir="column"
-          mt={["3rem","","","-3rem"]}
+          mt={["3rem","","7rem","-10rem"]}
           ml={["","","","29rem"]}
           mb={["4rem","4rem","4rem",""]}
           justifyContent={["center","","","center"]}
@@ -95,7 +99,7 @@ const Footer = () => {
             gap="0.3rem"
           >
            <Text
-            fontSize={["0.7rem","0.7","0.7rem","1.2rem" ]}
+            fontSize={["0.7rem","0.7","1rem","1.4rem" ]}
             color={gmail}
            >
             <SiGmail />
@@ -110,7 +114,7 @@ const Footer = () => {
           >
             <Text 
               mb="0.5rem" 
-              fontSize={["0.75rem","0.75rem","0.9rem","0.9rem" ]}  
+              fontSize={["1rem","1rem","1rem","1rem" ]}  
               color={textColor}
               >
               pennywise@gmail.com
@@ -134,7 +138,7 @@ const Footer = () => {
         <Text
           fontWeight={600}
           color={tradeMark}
-          fontSize={["0.7rem","0.7rem","0.8rem","0.8rem" ]}
+          fontSize={["0.8rem","0.9rem","1rem","1rem" ]}
           mr="0.3rem"
         >
           Made in NG by
@@ -142,18 +146,18 @@ const Footer = () => {
         <Text 
           fontWeight={600}
           color={dami}
-          fontSize={["0.7rem","0.7rem","0.8rem","0.8rem" ]}
+          fontSize={["0.9rem","0.9rem","1rem","1rem" ]}
         >
         Damilola Oyeniyi 
         </Text>
       </Flex>
       <Flex
         flexDir="row"
-        gap="0.8rem"
+        gap={["0.9rem","0.9rem","1.1rem","1.2rem"]}
       >
         <Link href="https://github.com/19zay?tab=repositories">
           <Text
-            fontSize={["1.2rem","1.2rem","1.3rem","1.5rem" ]}
+            fontSize={["1.4rem","1.4rem","1.5rem","1.6rem" ]}
             color={icons}
           >
             <AiFillGithub/>
@@ -161,7 +165,7 @@ const Footer = () => {
         </Link>
         <Link href="https://twitter.com/grzdev_">
           <Text
-            fontSize={["1.2rem","1.2rem","1.3rem","1.5rem" ]}
+            fontSize={["1.4rem","1.4rem","1.5rem","1.6rem" ]}
             color={icons}
           >
             <AiOutlineTwitter/>
@@ -169,23 +173,23 @@ const Footer = () => {
         </Link>
         <Link href="https://www.linkedin.com/in/damilola-oyeniyi-97805b23a/">
           <Text
-            fontSize={["1.2rem","1.2rem","1.3rem","1.5rem" ]}
+            fontSize={["1.4rem","1.4rem","1.5rem","1.6rem" ]}
             color={icons}
           >
             <AiFillLinkedin/>
           </Text>
         </Link>
-        <Link href="https://app.netlify.com/teams/19zay/overview">
+        <Link href="https://mail.google.com/mail/u/1/#inbox?compose=new">
           <Text
-            fontSize={["1.2rem","1.2rem","1.3rem","1.5rem" ]}
+            fontSize={["1.4rem","1.4rem","1.5rem","1.6rem" ]}
             color={icons}
           >
-            <SiNetlify/>
+            <IoMdMail/>
           </Text>
         </Link>
         <Link href="https://www.instagram.com/grzdev_/">
           <Text
-            fontSize={["1.1rem","1.2rem","1.3rem","1.5rem" ]}
+            fontSize={["1.4rem","1.4rem","1.5rem","1.6rem" ]}
             color={icons}
           >
             <AiFillInstagram/>

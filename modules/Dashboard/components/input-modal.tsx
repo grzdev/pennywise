@@ -95,7 +95,6 @@ const InputModal = () => {
 
 
 
-
   //Funtional modal buttons
 
   //add 1k

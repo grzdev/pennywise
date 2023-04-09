@@ -58,7 +58,7 @@ const DashBoardLandingPage = ({ className }: DateTimeProps) => {
   const color = useColorModeValue("#ff003d","#ff003d")
   const button = useColorModeValue("#4aafe9","#e3379b")
   const bg = useColorModeValue("#FF3CAC","#667eea")
-  const bgGradient = useColorModeValue("linear-gradient(to right, #162961, #3969b9)","linear-gradient(to right, #28355e, #28355e);")
+  const bgGradient = useColorModeValue("linear-gradient(to right, #162961, #3969b9)","linear-gradient(to right, #28355e, #4e67b6);")
 
   const [sum, setSum] = useState('');
 
@@ -287,7 +287,7 @@ const DashBoardLandingPage = ({ className }: DateTimeProps) => {
 
 const MobileNav = () =>{
   const bgGradient2 = useColorModeValue("white","#28355e")
-  const bgGradient = useColorModeValue("linear-gradient(to right, #162961, #3969b9)","linear-gradient(to right, #28355e, #28355e);")
+  const bgGradient = useColorModeValue("linear-gradient(to right, #162961, #3969b9)","linear-gradient(to right, #28355e, #4e67b6);")
   const myObject = useSelector(selectMyObject)
   
   const [myState, setMyState] = useState('');;

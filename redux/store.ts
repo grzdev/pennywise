@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit'
 import dailyInputReducer, { saveStateToLocalStorage } from './slices/dailyInputSlice'
-
+import budgetReducer from './slices/budgetSlice';
 
 
 const loadStateFromLocalStorage = () => {
@@ -20,7 +20,8 @@ const initialState = loadStateFromLocalStorage();
 
 export const store = configureStore({
   reducer: {
-    dailyInput: dailyInputReducer
+    dailyInput: dailyInputReducer,
+    budget: budgetReducer
   },
   preloadedState: initialState,
 })
