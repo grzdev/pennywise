@@ -1,4 +1,4 @@
-.chakra-tabs__tab:focus {
+.tab-list button:focus {
   outline: none;
   box-shadow: none;
   border-color: blue;

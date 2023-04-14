@@ -30,21 +30,6 @@ export type ExpensesState = {
           state.expenses.splice(index, 1);
         }
       },
-      // add1kAmount: (state, action: PayloadAction<string>) => {
-      //   const expense = state.expenses.find((e) => e.id === action.payload);
-      //   if (expense) {
-      //     expense.amount += 1000;
-      //   }
-      // },
-      // add1kAmount: (state, action: PayloadAction<{ amount: string, value: number }>) => {
-      //   const { amount, value } = action.payload;
-      //   const expenseIndex = parseInt(amount, 10); // convert amount to number
-      //   const expense = state.expenses[expenseIndex];
-      
-      //   if (expense) {
-      //     expense.amount += 1000;
-      //   }
-      // },
     },
   });
   

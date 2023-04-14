@@ -24,6 +24,11 @@ import {
   Heading,
   Button,
   useColorMode,
+  Tabs,
+  TabList,
+  Tab,
+  TabPanels,
+  TabPanel,
 } from '@chakra-ui/react';
 import {
   FiHome,
@@ -357,6 +362,8 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
   const headerColor = useColorModeValue("#070D59","#c6dbfb")
   const { colorMode, toggleColorMode } = useColorMode()
   const _hover = useColorModeValue("","#171923")
+  const tabBg = useColorModeValue("white","#a5bcff")
+  
 
   return (
     <Box
@@ -404,125 +411,139 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
           </Flex>
       </Flex>
       <Flex
-        bottom={0}
-        w="100%"
-        position="fixed"
-        overflow="hidden"
-        zIndex="1"
-        bg={footer}
-        h="4rem"
-        display={{ base: 'flex', md: 'none' }}
-        justifyContent="center"
-        alignItems="center"
-      >
-        <HStack
-          gap="3rem"
+      justifyContent="center"
+      display={{ base: 'flex', md: 'none' }}
+      alignItems="center"
+      position="fixed"
+      bottom={0}
+      mb="2rem"
+      w="100%"
+      zIndex={1}
+    >
+      <Tabs 
+        variant='soft-rounded' 
+        colorScheme='blue'
+        // isFitted
+        bg={tabBg}
+        borderRadius="full"
+        h="4.6rem"
         >
-          <Flex
-            flexDir="column"
-            alignItems="center"
-            _hover={{
-              bg: "#4f6382",
-              color: 'white',
-            }}
-            // p="1rem"
-            // mx="0.5"
-            borderRadius="0.2rem"
+        <TabList
+            gap="1rem"
+            mt="0.6rem"
+          >
+            <Tab
+              ml="0.5rem"
             >
-          <Link href='/dashboard'>
-            <AiFillHome
-              fontSize="1.2rem"
-              // color={icon}
-            /> 
-          </Link>
-          <Link href='/dashboard'>
-            <Text
-              fontSize="0.6rem"
+              <Flex
+                flexDir="column"
+                alignItems="center"
+                >
+              <Link href='/dashboard'>
+                <AiFillHome
+                  fontSize="1.2rem"
+                  // color={icon}
+                /> 
+              </Link>
+              <Link href='/dashboard'>
+                <Text
+                  fontSize="0.8rem"
+                >
+                  Home
+                </Text>
+              </Link>
+              </Flex>
+            </Tab>
+
+            <Tab
             >
-              Home
-            </Text>
-          </Link>
-          </Flex>
-
-          <Flex
-            alignItems="center"
-            flexDir="column"
-            _hover={{
-              bg: "#4f6382",
-              color: 'white',
-            }}
-            // p="1"
-            // mx="0.5"
-            borderRadius="0.2rem"
-          >
-            <Link href='/analytics'>
-              <SiGoogleanalytics
-                // color={icon}
-                fontSize="1.2rem"
-              />
-            </Link>
-            <Link href='/analytics'>
-              <Text
-                fontSize="0.6rem"
+              <Flex
+                alignItems="center"
+                flexDir="column"
               >
-                Analytics
-              </Text>
-            </Link>
-          </Flex>
-
-          <Flex
-            alignItems="center"
-            flexDir="column"
-            _hover={{
-              bg: "#4f6382",
-              color: 'white',
-            }}
-            // p="1"
-            // mx="0.5"
-            borderRadius="0.2rem"
-          >
-            <Link href='/budget'>
-              <FaWallet
-                // color={icon}
-                fontSize="1.2rem"
-              />
-            </Link>
-            <Link href='/budget'>
-              <Text
-                fontSize="0.6rem"
+                <Link href='/analytics'>
+                  <SiGoogleanalytics
+                    // color={icon}
+                    fontSize="1.2rem"
+                  />
+                </Link>
+                <Link href='/analytics'>
+                  <Text
+                    fontSize="0.8rem"
+                  >
+                    Analytics
+                  </Text>
+                </Link>
+              </Flex>
+            </Tab>
+            <Tab
+            >
+              <Flex
+                alignItems="center"
+                flexDir="column"
               >
-                Budget
-              </Text>
-            </Link>
-          </Flex>
-
-          <Flex
-            alignItems="center"
-            flexDir="column"
-            _hover={{
-              bg: "#4f6382",
-              color: 'white',
-            }}
-            // p="1"
-            // mx="0.5"
-            borderRadius="0.2rem"
-          >
-            <Link href='/account'>
-              <BsFillPersonFill
-                // color={icon}
-                fontSize="1.2rem"
-              /> 
-            </Link>
-            <Link href='/account'>
-              <Text
-                fontSize="0.6rem"
+                <Link href='/budget'>
+                  <FaWallet
+                    // color={icon}
+                    fontSize="1.2rem"
+                  />
+                </Link>
+                <Link href='/budget'>
+                  <Text
+                    fontSize="0.8rem"
+                  >
+                    Budget
+                  </Text>
+                </Link>
+              </Flex>
+            </Tab>
+            <Tab
+              mr="0.5rem" 
+            >
+              <Flex
+                alignItems="center"
+                flexDir="column"
               >
-                Account
-              </Text>
-            </Link>
-          </Flex>
-        </HStack>
-      </Flex>
+                <Link href='/account'>
+                  <BsFillPersonFill
+                    // color={icon}
+                    fontSize="1.2rem"
+                  /> 
+                </Link>
+                <Link href='/account'>
+                  <Text
+                    fontSize="0.8rem"
+                  >
+                    Account
+                  </Text>
+                </Link>
+              </Flex>
+            </Tab>
+        </TabList>
+        {/* <TabPanels>
+          <TabPanel>
+            <Flex>
+              1
+            </Flex>
+          </TabPanel>
+          <TabPanel>
+            <Flex>
+              2
+            </Flex>
+          </TabPanel>
+          <TabPanel>
+            <Flex>
+              3
+            </Flex>
+          </TabPanel>
+          <TabPanel>
+            <Flex>
+              4
+            </Flex>
+          </TabPanel>
+        </TabPanels> */}
+      </Tabs>
+    </Flex>
     </Box>
 
   );
