@@ -179,7 +179,7 @@ const Footer = () => {
             <AiFillLinkedin/>
           </Text>
         </Link>
-        <Link href="https://mail.google.com/mail/u/1/#inbox?compose=new">
+        <Link href="mailto:damilolaoyeniyi13@gmail.com">
           <Text
             fontSize={["1.4rem","1.4rem","1.5rem","1.6rem" ]}
             color={icons}

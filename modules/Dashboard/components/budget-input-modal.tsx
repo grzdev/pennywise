@@ -59,11 +59,6 @@ const BudgetModal = ( {id}:  Expense) => {
   const modal3 = useDisclosure()
   const modal4 = useDisclosure()
 
-  // const [selectedDate, setSelectedDate] = useState<string>('');
-  // const handleDateChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-  //   setSelectedDate(event.target.value);
-  // };
-
 
   //Modal
   const [category, setCategory] = useState<string>("");
@@ -95,7 +90,7 @@ const BudgetModal = ( {id}:  Expense) => {
     dispatch(addExpense({
       category: category,
       amount: amount,
-      // date : date,
+      date : date,
       id: Date.now()
     }))
 

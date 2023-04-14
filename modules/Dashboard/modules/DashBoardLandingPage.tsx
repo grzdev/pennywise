@@ -329,7 +329,6 @@ const MobileNav = () =>{
       >
         <Flex
           p="2rem"
-          gap="9rem"
         >
           <Heading
             size="xs"
@@ -339,6 +338,7 @@ const MobileNav = () =>{
 
           <Text
             fontSize="1.4rem"
+            ml="auto"
           >
             <FaGem/>
           </Text>
