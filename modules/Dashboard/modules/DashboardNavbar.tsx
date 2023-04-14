@@ -362,7 +362,7 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
   const headerColor = useColorModeValue("#070D59","#c6dbfb")
   const { colorMode, toggleColorMode } = useColorMode()
   const _hover = useColorModeValue("","#171923")
-  const tabBg = useColorModeValue("white","#a5bcff")
+  const tabBg = useColorModeValue("white","#8AB7FF")
   
 
   return (
@@ -416,7 +416,7 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
       alignItems="center"
       position="fixed"
       bottom={0}
-      mb="2rem"
+      mb="1rem"
       w="100%"
       zIndex={1}
     >
@@ -429,7 +429,7 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
         h="4.6rem"
         >
         <TabList
-            gap="1rem"
+            gap="0.2rem"
             mt="0.6rem"
           >
             <Tab
