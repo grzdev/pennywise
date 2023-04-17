@@ -47,7 +47,8 @@ const LandingPage = () => {
     <main>
       <Container
         centerContent
-        maxW="container.lg"
+        maxW="container.xl"
+        overflowX="hidden"
       >
         <Flex
           mt={["3rem", "1rem"]}

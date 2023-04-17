@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React, { ReactNode, useState } from 'react';
 import { MdTrackChanges } from "react-icons/md"
 import {
   IconButton,
@@ -51,7 +51,10 @@ import { MoonIcon, SunIcon } from '@chakra-ui/icons';
 import logoP from "../../../images/logoP.png"
 import Image from 'next/dist/client/image';
 import { FaGem } from "react-icons/fa"
-
+import DashboardModule from '..';
+import AnalyticsModule from './AnalyticsModule';
+import BudgetModule from './BudgetModule';
+import AccountModule from './AccountModule';
 interface LinkItemProps {
   name: string;
   icon: IconType;
@@ -362,8 +365,9 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
   const headerColor = useColorModeValue("#070D59","#c6dbfb")
   const { colorMode, toggleColorMode } = useColorMode()
   const _hover = useColorModeValue("","#171923")
-  const tabBg = useColorModeValue("white","#8AB7FF")
+  const tabBg = useColorModeValue("#f4f6f9","#8AB7FF")
   
+  const [tabIndex, setTabIndex] = useState(0)
 
   return (
     <Box
@@ -411,139 +415,127 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
           </Flex>
       </Flex>
       <Flex
-      justifyContent="center"
-      display={{ base: 'flex', md: 'none' }}
-      alignItems="center"
-      position="fixed"
-      bottom={0}
-      mb="1rem"
-      w="100%"
-      zIndex={1}
-    >
-      <Tabs 
-        variant='soft-rounded' 
-        colorScheme='blue'
-        // isFitted
-        bg={tabBg}
-        borderRadius="full"
-        h="4.6rem"
-        >
-        <TabList
-            gap="0.2rem"
-            mt="0.6rem"
+        justifyContent="center"
+        display={{ base: 'flex', md: 'none' }}
+        alignItems="center"
+        position="fixed"
+        bottom={0}
+        mb="1rem"
+        w="100%"
+        zIndex={1}
+      >
+        <Tabs 
+          variant='soft-rounded' 
+          colorScheme='blue'
+          // isFitted
+          bg={tabBg}
+          borderRadius="full"
+          h="4.6rem"
+          onChange={(index) => setTabIndex(index)} 
           >
-            <Tab
-              ml="0.5rem"
+          <TabList
+              gap="0.2rem"
+              mt="0.6rem"
             >
-              <Flex
-                flexDir="column"
-                alignItems="center"
+              <Link href='/dashboard' passHref>
+                <Tab
+                  as="a"
+                  ml="0.5rem" 
                 >
-              <Link href='/dashboard'>
-                <AiFillHome
-                  fontSize="1.2rem"
-                  // color={icon}
-                /> 
+                  <Flex
+                    flexDir="column"
+                    alignItems="center"
+                  >
+                      <AiFillHome
+                        fontSize="1.2rem"
+                        // color={icon}
+                      /> 
+                      <Text
+                        fontSize="0.8rem"
+                        >
+                        Home
+                      </Text>
+                  </Flex>
+                </Tab>
               </Link>
-              <Link href='/dashboard'>
-                <Text
-                  fontSize="0.8rem"
-                >
-                  Home
-                </Text>
-              </Link>
-              </Flex>
-            </Tab>
 
-            <Tab
-            >
-              <Flex
-                alignItems="center"
-                flexDir="column"
-              >
-                <Link href='/analytics'>
-                  <SiGoogleanalytics
-                    // color={icon}
-                    fontSize="1.2rem"
-                  />
-                </Link>
-                <Link href='/analytics'>
-                  <Text
-                    fontSize="0.8rem"
+              <Link href='/analytics' passHref>
+                <Tab
+                  as="a"
+                >
+                  <Flex
+                    alignItems="center"
+                    flexDir="column"
                   >
-                    Analytics
-                  </Text>
-                </Link>
-              </Flex>
-            </Tab>
-            <Tab
-            >
-              <Flex
-                alignItems="center"
-                flexDir="column"
-              >
-                <Link href='/budget'>
-                  <FaWallet
-                    // color={icon}
-                    fontSize="1.2rem"
-                  />
-                </Link>
-                <Link href='/budget'>
-                  <Text
-                    fontSize="0.8rem"
+                      <SiGoogleanalytics
+                        // color={icon}
+                        fontSize="1.2rem"
+                      />
+                      <Text
+                        fontSize="0.8rem"
+                        >
+                        Analytics
+                      </Text>
+                  </Flex>
+                </Tab>
+              </Link>
+              <Link href='/budget' passHref>
+                <Tab
+                as ="a"
+                >
+                  <Flex
+                    alignItems="center"
+                    flexDir="column"
                   >
-                    Budget
-                  </Text>
-                </Link>
-              </Flex>
-            </Tab>
-            <Tab
-              mr="0.5rem" 
-            >
-              <Flex
-                alignItems="center"
-                flexDir="column"
-              >
-                <Link href='/account'>
-                  <BsFillPersonFill
-                    // color={icon}
-                    fontSize="1.2rem"
-                  /> 
-                </Link>
-                <Link href='/account'>
-                  <Text
-                    fontSize="0.8rem"
+                      <FaWallet
+                        // color={icon}
+                        fontSize="1.2rem"
+                      />
+                      <Text
+                        fontSize="0.8rem"
+                        >
+                        Budget
+                      </Text>
+                  </Flex>
+                </Tab>
+              </Link>
+              <Link href='/account' passHref>
+                <Tab
+                  mr="0.5rem" 
+                  as="a"
+                >
+                  <Flex
+                    alignItems="center"
+                    flexDir="column"
                   >
-                    Account
-                  </Text>
-                </Link>
-              </Flex>
-            </Tab>
-        </TabList>
-        {/* <TabPanels>
-          <TabPanel>
-            <Flex>
-              1
-            </Flex>
-          </TabPanel>
-          <TabPanel>
-            <Flex>
-              2
-            </Flex>
-          </TabPanel>
-          <TabPanel>
-            <Flex>
-              3
-            </Flex>
-          </TabPanel>
-          <TabPanel>
-            <Flex>
-              4
-            </Flex>
-          </TabPanel>
-        </TabPanels> */}
-      </Tabs>
-    </Flex>
+                      <BsFillPersonFill
+                        fontSize="1.2rem"
+                      /> 
+                      <Text
+                        fontSize="0.8rem"
+                        >
+                        Account
+                      </Text>
+                  </Flex>
+                </Tab>
+              </Link>
+          </TabList>
+          {/* <TabPanels>
+            <TabPanel>
+              <DashboardModule/>
+            </TabPanel>
+            <TabPanel>
+              <AnalyticsModule/>
+            </TabPanel>
+            <TabPanel>
+              <BudgetModule/>
+            </TabPanel>
+            <TabPanel>
+              <AccountModule/>
+            </TabPanel>
+          </TabPanels> */}
+        </Tabs>
+      </Flex>
     </Box>
 
   );
