@@ -1,10 +1,19 @@
 /* eslint-disable react/jsx-no-undef */
 import { ChevronRightIcon } from '@chakra-ui/icons';
-import { Button, Flex, Heading, Popover, PopoverArrow, PopoverBody, PopoverCloseButton, PopoverContent, PopoverTrigger, Table, Tbody, Td, Text, Th, Thead, Tr, useColorModeValue } from '@chakra-ui/react'
+import { Button, Flex, Heading, Popover, PopoverArrow, PopoverBody, PopoverCloseButton, PopoverContent, PopoverTrigger, Stack, Table, Tbody, Td, Text, Th, Thead, Tr, useColorModeValue } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
 import { TbCurrencyNaira } from 'react-icons/tb';
 import { useSelector } from 'react-redux';
 import { selectMyObject } from 'redux/slices/dailyInputSlice';
+import {
+  collection,
+  query,
+  where,
+  onSnapshot,
+  addDoc,
+  DocumentData,
+} from "firebase/firestore";
+import { db } from 'config/firebase';
 
 interface DateTimeProps {
   className?: string;
@@ -42,8 +51,41 @@ const AnalyticsContent = ({ className }: DateTimeProps) => {
     };
   }, []);
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const dateOptions: Intl.DateTimeFormatOptions = { weekday: 'long', month: 'long', day: 'numeric' };
   const timeOptions: Intl.DateTimeFormatOptions = { hour: 'numeric', minute: 'numeric', second: 'numeric' };
+
+
+  const [data, setData] = useState<DocumentData | null>(null);
+
+  useEffect(() => {
+    // Set up a query that listens for new documents added to the collection
+    const dataCollection = collection(db, "test3");
+    const queryRef = query(
+      dataCollection,
+      where("date", "==", state.dateTime.toLocaleDateString("en-US", dateOptions))
+    );
+    const unsubscribe = onSnapshot(queryRef, (snapshot) => {
+      snapshot.docChanges().forEach((change) => {
+        if (change.type === "added") {
+          setData(change.doc.data() ?? null);
+          unsubscribe();
+        }
+      });
+    });
+
+    // Add a new document to the collection
+    const userData = {
+      food: myObject.food,
+      transit: myObject.transit,
+      data: myObject.data,
+      transfers: myObject.transfers,
+      others: myObject.others,
+      date: state.dateTime.toLocaleDateString("en-US", dateOptions),
+    };
+    addDoc(dataCollection, userData);
+  }, [dateOptions, myObject.data, myObject.food, myObject.others, myObject.transfers, myObject.transit, state.dateTime]);
+  
 
   return (
     <Flex
@@ -130,6 +172,8 @@ const AnalyticsContent = ({ className }: DateTimeProps) => {
                         <Th>Prices</Th>
                       </Tr>
                     </Thead>
+                    {data ? (
+
                     <Tbody>
                       <Tr>
                         <Td fontWeight={600}>Food</Td>
@@ -143,7 +187,7 @@ const AnalyticsContent = ({ className }: DateTimeProps) => {
                           >
                             <TbCurrencyNaira/>
                           </Text>
-                         {myObject.food}
+                         {data.food}
                         </Td>
                       </Tr>
                       <Tr>
@@ -158,7 +202,7 @@ const AnalyticsContent = ({ className }: DateTimeProps) => {
                           >
                             <TbCurrencyNaira/>
                           </Text>
-                         {myObject.transit}
+                         {data.transit}
                         </Td>
                       </Tr>
                       <Tr>
@@ -173,7 +217,7 @@ const AnalyticsContent = ({ className }: DateTimeProps) => {
                           >
                             <TbCurrencyNaira/>
                           </Text>
-                         {myObject.data}
+                         {data.data}
                         </Td>
                       </Tr>
                       <Tr>
@@ -188,7 +232,7 @@ const AnalyticsContent = ({ className }: DateTimeProps) => {
                           >
                             <TbCurrencyNaira/>
                           </Text>
-                         {myObject.transfers}
+                         {data.transfers}
                         </Td>
                       </Tr>
                       <Tr>
@@ -203,7 +247,7 @@ const AnalyticsContent = ({ className }: DateTimeProps) => {
                           >
                             <TbCurrencyNaira/>
                           </Text>
-                         {myObject.others}
+                         {data.others}
                         </Td>
                       </Tr>
                       <Tr
@@ -224,7 +268,32 @@ const AnalyticsContent = ({ className }: DateTimeProps) => {
                         </Td>
                       </Tr>
                     </Tbody>
+                    ) : (
+                      <Text>Loading...</Text>
+                    )}
                   </Table>
+
+                  {/* {data ? (
+                    <Stack spacing={2}>
+                      <Text>
+                        <b>Food:</b> {data.food}
+                      </Text>
+                      <Text>
+                        <b>Transit:</b> {data.transit}
+                      </Text>
+                      <Text>
+                        <b>Data:</b> {data.data}
+                      </Text>
+                      <Text>
+                        <b>Transfers:</b> {data.transfers}
+                      </Text>
+                      <Text>
+                        <b>Others:</b> {data.others}
+                      </Text>
+                    </Stack>
+                  ) : (
+                    <Text>Loading...</Text>
+                  )} */}
            </Flex>
                 </PopoverBody>
               </PopoverContent>

@@ -8,16 +8,14 @@ import {
   useColorModeValue, 
   Heading,
   Divider,
-  Popover,
-  PopoverTrigger,
   useDisclosure,
-  PopoverContent,
-  PopoverHeader,
-  PopoverArrow,
-  PopoverCloseButton,
-  PopoverBody,
-  PopoverFooter,
-  others
+  Drawer,
+  DrawerOverlay,
+  DrawerContent,
+  DrawerCloseButton,
+  DrawerHeader,
+  DrawerBody,
+  DrawerFooter
 } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
 import router from "next/router";
@@ -42,6 +40,8 @@ import Head from 'next/head'
  import InputPiechart from '../components/piechart';
 import { FaGem } from 'react-icons/fa';
 import { auth } from 'config/firebase';
+import { RiMenu4Line } from 'react-icons/ri';
+import Link from 'next/link';
 
  interface DateTimeProps {
   className?: string;
@@ -127,7 +127,11 @@ const DashBoardLandingPage = ({ className }: DateTimeProps) => {
   //   console.log("User is signed out");
   // }
   // })
-
+ 
+  const { colorMode, toggleColorMode } = useColorMode()
+  const { isOpen, onClose, onOpen } = useDisclosure()
+  const headerColor = useColorModeValue("#070D59","#c6dbfb")
+  
   return (
     <>
        <Head>
@@ -140,30 +144,138 @@ const DashBoardLandingPage = ({ className }: DateTimeProps) => {
         flexDir="column"
       >
         <Flex
-          flexDir="column"
-          mt={["1rem","2.5rem","1.5rem","2rem"]}
-          ml={["0.7rem","0.7rem","2rem","2rem"]}
-          // textAlign="initial"
+          flexDir="row"
+          gap="auto"
+          mt={["2rem","0rem","1.2rem","2rem"]}
         >
-          <Heading
-            size={["lg","lg","xl","xl"]}
+          <Flex
+            flexDir="column"
           >
-           {displayName ? (
-              <Text>Hey {displayName.split(' ')[0]},</Text>
-            ) : (
-              <Text>Hey,</Text>
-            )}
-          </Heading>
-          <Text
-            fontWeight={500}
-            mt="0.1rem"
-            fontSize={["0.8rem","0.8rem","1rem","1rem"]}
-          >
-            {/* What did you spend on today? */}
-            {timeOfDay === "morning" && <h1>Good morning, have a productive day ⛅</h1>}
-            {timeOfDay === "afternoon" && <h1>Wash your hands, its lunch time 🍲!</h1>}
-            {timeOfDay === "evening" && <h1>Have a good evening ✨</h1>}
-          </Text>
+            <Heading
+              size={["lg","lg","xl","xl"]}
+            >
+            {displayName ? (
+                <Text>Hey {displayName.split(' ')[0]},</Text>
+              ) : (
+                <Text>Hey,</Text>
+              )}
+            </Heading>
+            <Text
+              fontWeight={500}
+              mt="0.1rem"
+              fontSize={["0.8rem","0.8rem","1rem","1rem"]}
+            >
+              {/* What did you spend on today? */}
+              {timeOfDay === "morning" && <h1>Good morning, have a productive day ⛅</h1>}
+              {timeOfDay === "afternoon" && <h1>Wash your hands, its lunch time 🍲!</h1>}
+              {timeOfDay === "evening" && <h1>Have a good evening ✨</h1>}
+            </Text>
+          </Flex>
+
+            {/* mobile nav */}
+            <Flex
+                ml="auto"
+                display={{ base: 'flex', md: 'none' }}
+            >
+              <Button  variant="ghost" onClick={onOpen}>
+                <Text
+                  fontSize="1.5rem"
+                >
+                <RiMenu4Line/>  
+                </Text>
+              </Button>
+              <Drawer
+                isOpen={isOpen}
+                placement='right'
+                onClose={onClose}
+              >
+                <DrawerOverlay />
+                <DrawerContent>
+                  <DrawerCloseButton />
+                  <DrawerHeader>
+                    <Flex
+                      justifyContent="center"
+                      alignItems="center"
+                      mr="10.5rem"
+                    >
+                        <Flex
+                          mt={["0.1rem", "-0.2rem", "-0.1rem", "-0.1rem"]}
+                        >
+                          <Text
+                            mt="0.1rem"
+                            fontSize="1.4rem"
+                          >
+                            <FaGem
+                              color={headerColor}
+                            />
+                          </Text>
+                        </Flex>
+                        <Heading
+                          size={["sm","sm","md","md"]}
+                          ml="0.2rem"
+                          fontFamily="'Lato', sans-serif"
+                          color={headerColor}
+                        >
+                          pennywise
+                        </Heading>
+                    </Flex>
+                  </DrawerHeader>
+
+                  <DrawerBody>
+                    <Flex
+                      flexDir="column"
+                      gap="1rem"
+                      mt="2rem"
+                    >
+                      <Link
+                        href="/dashboard"
+                      >
+                        <Text
+                          fontSize="1.3rem"
+                        >
+                          dashboard
+                        </Text>
+                      </Link>
+
+                      <Divider/>
+
+                      <Link
+                        href="/analytics"
+                      >
+                        <Text
+                          fontSize="1.3rem"
+                        >
+                          analytics
+                        </Text>
+                      </Link>
+
+                      <Divider/>
+
+                      <Link
+                        href="/budget"
+                      >
+                        <Text
+                          fontSize="1.3rem"
+                        >
+                          budget
+                        </Text>
+                      </Link>
+
+                      <Divider/>
+
+                    </Flex>
+                  </DrawerBody>
+
+                  <DrawerFooter>
+                  <Button 
+                    onClick={toggleColorMode}
+                  >
+                    {colorMode === 'light' ? <MoonIcon/> : <SunIcon/>}
+                  </Button>
+                  </DrawerFooter>
+                </DrawerContent>
+              </Drawer>
+            </Flex>
         </Flex>
 
         <Flex

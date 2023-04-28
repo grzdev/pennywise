@@ -29,6 +29,12 @@ import {
   Tab,
   TabPanels,
   TabPanel,
+  DrawerOverlay,
+  DrawerCloseButton,
+  DrawerHeader,
+  DrawerBody,
+  DrawerFooter,
+  Input,
 } from '@chakra-ui/react';
 import {
   FiHome,
@@ -51,10 +57,7 @@ import { MoonIcon, SunIcon } from '@chakra-ui/icons';
 import logoP from "../../../images/logoP.png"
 import Image from 'next/dist/client/image';
 import { FaGem } from "react-icons/fa"
-import DashboardModule from '..';
-import AnalyticsModule from './AnalyticsModule';
-import BudgetModule from './BudgetModule';
-import AccountModule from './AccountModule';
+
 interface LinkItemProps {
   name: string;
   icon: IconType;
@@ -92,7 +95,7 @@ export default function SidebarWithHeader({
         </DrawerContent>
       </Drawer>
       {/* mobilenav */}
-      <MobileNav onOpen={onOpen} />
+      {/* <MobileNav  /> */}
       <Box ml={{ base: 0, md: 60 }} p="4">
         {children}
       </Box>
@@ -359,183 +362,22 @@ const NavItem = ({ icon, children, ...rest }: NavItemProps) => {
 interface MobileProps extends FlexProps {
   onOpen: () => void;
 }
-const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
+const MobileNav = () => {
   const icon = useColorModeValue("black","lightgrey")
   const footer = useColorModeValue("white","#12141c")
   const headerColor = useColorModeValue("#070D59","#c6dbfb")
   const { colorMode, toggleColorMode } = useColorMode()
   const _hover = useColorModeValue("","#171923")
   const tabBg = useColorModeValue("#f4f6f9","#8AB7FF")
-  
-  const [tabIndex, setTabIndex] = useState(0)
+
 
   return (
     <Box
-      justifyContent="center"
       display={{ base: 'flex', md: 'none' }}
-      alignItems="center"
-      h="full"
       >
       <Flex
         mt={["2rem"]}
       >
-        <Flex
-          justifyContent="center"
-          alignItems="center"
-          mr="10.5rem"
-        >
-            <Flex
-              mt={["0.1rem", "-0.2rem", "-0.1rem", "-0.1rem"]}
-            >
-              <Text
-                mt="0.1rem"
-                fontSize="1.4rem"
-              >
-                <FaGem
-                  color={headerColor}
-                />
-              </Text>
-            </Flex>
-            <Heading
-              size={["sm","sm","md","md"]}
-              ml="0.2rem"
-              fontFamily="'Lato', sans-serif"
-              color={headerColor}
-            >
-              pennywise
-            </Heading>
-        </Flex>
-
-        <Flex>
-          <Button 
-           onClick={toggleColorMode}
-          >
-            {colorMode === 'light' ? <MoonIcon/> : <SunIcon/>}
-          </Button>
-          </Flex>
-      </Flex>
-      <Flex
-        justifyContent="center"
-        display={{ base: 'flex', md: 'none' }}
-        alignItems="center"
-        position="fixed"
-        bottom={0}
-        mb="1rem"
-        w="100%"
-        zIndex={1}
-      >
-        <Tabs 
-          variant='soft-rounded' 
-          colorScheme='blue'
-          // isFitted
-          bg={tabBg}
-          borderRadius="full"
-          h="4.6rem"
-          onChange={(index) => setTabIndex(index)} 
-          >
-          <TabList
-              gap="0.2rem"
-              mt="0.6rem"
-            >
-              <Link href='/dashboard' passHref>
-                <Tab
-                  as="a"
-                  ml="0.5rem" 
-                >
-                  <Flex
-                    flexDir="column"
-                    alignItems="center"
-                  >
-                      <AiFillHome
-                        fontSize="1.2rem"
-                        // color={icon}
-                      /> 
-                      <Text
-                        fontSize="0.8rem"
-                        >
-                        Home
-                      </Text>
-                  </Flex>
-                </Tab>
-              </Link>
-
-              <Link href='/analytics' passHref>
-                <Tab
-                  as="a"
-                >
-                  <Flex
-                    alignItems="center"
-                    flexDir="column"
-                  >
-                      <SiGoogleanalytics
-                        // color={icon}
-                        fontSize="1.2rem"
-                      />
-                      <Text
-                        fontSize="0.8rem"
-                        >
-                        Analytics
-                      </Text>
-                  </Flex>
-                </Tab>
-              </Link>
-              <Link href='/budget' passHref>
-                <Tab
-                as ="a"
-                >
-                  <Flex
-                    alignItems="center"
-                    flexDir="column"
-                  >
-                      <FaWallet
-                        // color={icon}
-                        fontSize="1.2rem"
-                      />
-                      <Text
-                        fontSize="0.8rem"
-                        >
-                        Budget
-                      </Text>
-                  </Flex>
-                </Tab>
-              </Link>
-              <Link href='/account' passHref>
-                <Tab
-                  mr="0.5rem" 
-                  as="a"
-                >
-                  <Flex
-                    alignItems="center"
-                    flexDir="column"
-                  >
-                      <BsFillPersonFill
-                        fontSize="1.2rem"
-                      /> 
-                      <Text
-                        fontSize="0.8rem"
-                        >
-                        Account
-                      </Text>
-                  </Flex>
-                </Tab>
-              </Link>
-          </TabList>
-          {/* <TabPanels>
-            <TabPanel>
-              <DashboardModule/>
-            </TabPanel>
-            <TabPanel>
-              <AnalyticsModule/>
-            </TabPanel>
-            <TabPanel>
-              <BudgetModule/>
-            </TabPanel>
-            <TabPanel>
-              <AccountModule/>
-            </TabPanel>
-          </TabPanels> */}
-        </Tabs>
-      </Flex>
     </Box>
 
   );

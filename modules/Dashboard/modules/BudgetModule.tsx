@@ -18,6 +18,7 @@ import BudgetModal from '../components/budget-input-modal'
 import BudgetDiv from '../components/budgets-div'
 import { useSelector } from 'react-redux'
 import { selectExpense } from 'redux/slices/budgetSlice'
+import MobileNav from '../components/mobile-nav'
 
 const BudgetModule = () => {
   const bgGradient = useColorModeValue("linear-gradient(to right, #162961, #3969b9)","linear-gradient(to right, #28355e, #4e67b6);")
@@ -49,10 +50,12 @@ const expense = useSelector(selectExpense)
       gap={["3rem","3rem","4.5rem","5rem"]}
       mt={["1rem","1rem","0.1rem","1rem"]}
     >
+      <MobileNav/>
+
       <Flex
         h={["22rem","22rem","33rem","34rem"]}
         w={["21rem","21rem","34rem","40rem"]}
-        mt={["1rem","2rem","5rem","4rem"]}
+        mt={["0.2rem","2rem","5rem","4rem"]}
         boxShadow="lg"
         borderRadius="1rem 0 1rem 0"
         alignItems="center"

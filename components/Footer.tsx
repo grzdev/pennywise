@@ -47,7 +47,7 @@ const Footer = () => {
       mb={["1.5rem","1.5rem","2rem","2rem"]}
     >
       <Flex
-        w={["21.5rem","21.5rem","53rem","85rem"]}
+        w={["21.5rem","21.5rem","45rem ","80rem"]}
         h={["","","22rem","16rem"]}
         justifyContent={["center","","","center"]}
         alignItems={["center","","","center"]}
