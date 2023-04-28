@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React, { ReactNode, useState } from 'react';
 import { MdTrackChanges } from "react-icons/md"
 import {
   IconButton,
@@ -57,7 +57,6 @@ import { MoonIcon, SunIcon } from '@chakra-ui/icons';
 import logoP from "../../../images/logoP.png"
 import Image from 'next/dist/client/image';
 import { FaGem } from "react-icons/fa"
-import { RiMenu4Line } from 'react-icons/ri';
 
 interface LinkItemProps {
   name: string;
@@ -369,7 +368,7 @@ const MobileNav = () => {
   const headerColor = useColorModeValue("#070D59","#c6dbfb")
   const { colorMode, toggleColorMode } = useColorMode()
   const _hover = useColorModeValue("","#171923")
-  const tabBg = useColorModeValue("white","#8AB7FF")
+  
 
   return (
     <Box
@@ -378,9 +377,141 @@ const MobileNav = () => {
       <Flex
         mt={["2rem"]}
       >
-       
-
       </Flex>
+      {/* <Flex
+      justifyContent="center"
+      display={{ base: 'flex', md: 'none' }}
+      alignItems="center"
+      position="fixed"
+      bottom={0}
+      mb="1rem"
+      w="100%"
+      zIndex={1}
+    >
+      <Tabs 
+        variant='soft-rounded' 
+        colorScheme='blue'
+        // isFitted
+        bg={tabBg}
+        borderRadius="full"
+        h="4.6rem"
+        >
+        <TabList
+            gap="0.2rem"
+            mt="0.6rem"
+          >
+            <Tab
+              ml="0.5rem"
+            >
+              <Flex
+                flexDir="column"
+                alignItems="center"
+                >
+              <Link href='/dashboard'>
+                <AiFillHome
+                  fontSize="1.2rem"
+                  // color={icon}
+                /> 
+              </Link>
+              <Link href='/dashboard'>
+                <Text
+                  fontSize="0.8rem"
+                >
+                  Home
+                </Text>
+              </Link>
+              </Flex>
+            </Tab>
+
+            <Tab
+            >
+              <Flex
+                alignItems="center"
+                flexDir="column"
+              >
+                <Link href='/analytics'>
+                  <SiGoogleanalytics
+                    // color={icon}
+                    fontSize="1.2rem"
+                  />
+                </Link>
+                <Link href='/analytics'>
+                  <Text
+                    fontSize="0.8rem"
+                  >
+                    Analytics
+                  </Text>
+                </Link>
+              </Flex>
+            </Tab>
+            <Tab
+            >
+              <Flex
+                alignItems="center"
+                flexDir="column"
+              >
+                <Link href='/budget'>
+                  <FaWallet
+                    // color={icon}
+                    fontSize="1.2rem"
+                  />
+                </Link>
+                <Link href='/budget'>
+                  <Text
+                    fontSize="0.8rem"
+                  >
+                    Budget
+                  </Text>
+                </Link>
+              </Flex>
+            </Tab>
+            <Tab
+              mr="0.5rem" 
+            >
+              <Flex
+                alignItems="center"
+                flexDir="column"
+              >
+                <Link href='/account'>
+                  <BsFillPersonFill
+                    // color={icon}
+                    fontSize="1.2rem"
+                  /> 
+                </Link>
+                <Link href='/account'>
+                  <Text
+                    fontSize="0.8rem"
+                  >
+                    Account
+                  </Text>
+                </Link>
+              </Flex>
+            </Tab>
+        </TabList>
+        {/* <TabPanels>
+          <TabPanel>
+            <Flex>
+              1
+            </Flex>
+          </TabPanel>
+          <TabPanel>
+            <Flex>
+              2
+            </Flex>
+          </TabPanel>
+          <TabPanel>
+            <Flex>
+              3
+            </Flex>
+          </TabPanel>
+          <TabPanel>
+            <Flex>
+              4
+            </Flex>
+          </TabPanel>
+        </TabPanels>
+      </Tabs>
+    </Flex> */}
     </Box>
 
   );
