@@ -14,6 +14,7 @@ import { PersistGate } from 'redux-persist/integration/react'
 const noAuthRequired = ['/' ,'/login', '/signup', "/about"]
 let persistor = persistStore(store)
 
+
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter()
   return (
