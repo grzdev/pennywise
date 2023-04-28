@@ -29,6 +29,12 @@ import {
   Tab,
   TabPanels,
   TabPanel,
+  DrawerOverlay,
+  DrawerCloseButton,
+  DrawerHeader,
+  DrawerBody,
+  DrawerFooter,
+  Input,
 } from '@chakra-ui/react';
 import {
   FiHome,
@@ -51,6 +57,7 @@ import { MoonIcon, SunIcon } from '@chakra-ui/icons';
 import logoP from "../../../images/logoP.png"
 import Image from 'next/dist/client/image';
 import { FaGem } from "react-icons/fa"
+import { RiMenu4Line } from 'react-icons/ri';
 
 interface LinkItemProps {
   name: string;
@@ -89,7 +96,7 @@ export default function SidebarWithHeader({
         </DrawerContent>
       </Drawer>
       {/* mobilenav */}
-      <MobileNav onOpen={onOpen} />
+      {/* <MobileNav  /> */}
       <Box ml={{ base: 0, md: 60 }} p="4">
         {children}
       </Box>
@@ -356,7 +363,7 @@ const NavItem = ({ icon, children, ...rest }: NavItemProps) => {
 interface MobileProps extends FlexProps {
   onOpen: () => void;
 }
-const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
+const MobileNav = () => {
   const icon = useColorModeValue("black","lightgrey")
   const footer = useColorModeValue("white","#12141c")
   const headerColor = useColorModeValue("#070D59","#c6dbfb")
@@ -364,53 +371,20 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
   const _hover = useColorModeValue("","#171923")
   const tabBg = useColorModeValue("white","#8AB7FF")
   
+  const { isOpen, onClose, onOpen } = useDisclosure()
+  const btnRef = React.useRef()
 
   return (
     <Box
-      justifyContent="center"
       display={{ base: 'flex', md: 'none' }}
-      alignItems="center"
-      h="full"
       >
       <Flex
         mt={["2rem"]}
       >
-        <Flex
-          justifyContent="center"
-          alignItems="center"
-          mr="10.5rem"
-        >
-            <Flex
-              mt={["0.1rem", "-0.2rem", "-0.1rem", "-0.1rem"]}
-            >
-              <Text
-                mt="0.1rem"
-                fontSize="1.4rem"
-              >
-                <FaGem
-                  color={headerColor}
-                />
-              </Text>
-            </Flex>
-            <Heading
-              size={["sm","sm","md","md"]}
-              ml="0.2rem"
-              fontFamily="'Lato', sans-serif"
-              color={headerColor}
-            >
-              pennywise
-            </Heading>
-        </Flex>
+       
 
-        <Flex>
-          <Button 
-           onClick={toggleColorMode}
-          >
-            {colorMode === 'light' ? <MoonIcon/> : <SunIcon/>}
-          </Button>
-          </Flex>
       </Flex>
-      <Flex
+      {/* <Flex
       justifyContent="center"
       display={{ base: 'flex', md: 'none' }}
       alignItems="center"
@@ -541,9 +515,9 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
               4
             </Flex>
           </TabPanel>
-        </TabPanels> */}
+        </TabPanels>
       </Tabs>
-    </Flex>
+    </Flex> */}
     </Box>
 
   );

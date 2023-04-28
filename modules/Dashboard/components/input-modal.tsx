@@ -44,7 +44,7 @@ import { motion } from 'framer-motion'
 import { db } from 'config/firebase'
 import Image from "next/image"
 import CompletedImg from "../../../images/check1.png"
-import { addDoc, collection, doc, getDocs, query, setDoc, Timestamp, where } from "firebase/firestore";
+import { addDoc, collection, doc, getDocs, limit, onSnapshot, orderBy, query, setDoc, Timestamp, where } from "firebase/firestore";
 
 interface DateTimeProps {
   className?: string;
@@ -270,15 +270,6 @@ const InputModal = () => {
       others: myObject.others,
       date: state.dateTime.toLocaleDateString('en-US', dateOptions)
     };
-    // const newDocRef = doc(dataCollection);
-    // setDoc(newDocRef, userData)
-    // .then(() => {
-    //   console.log("Document written successfully!");
-    // })
-    // .catch((error) => {
-    //   console.error("Error writing document: ", error);
-    // });
-    // console.log(userData)
 
     // update state
     const queryRef = query(dataCollection, where("date", "==", userData.date))
@@ -294,6 +285,30 @@ const InputModal = () => {
     }
 
   }
+
+
+//   const dataCollection = collection(db, "test3");
+//   const userData = {
+//     food: myObject.food,
+//     transit: myObject.transit,
+//     data: myObject.data,
+//     transfers: myObject.transfers,
+//     others: myObject.others,
+//     date: state.dateTime.toLocaleDateString('en-US', dateOptions)
+//   };
+
+// // Set up a query that listens for new documents added to the collection
+//   const queryReff = query(dataCollection, where("date", "==", userData.date));
+//   const unsubscribe = onSnapshot(queryReff, (snapshot) => {
+//     snapshot.docChanges().forEach((change) => {
+//       if (change.type === "added") {
+//         // Log the newly added document data
+//         console.log(change.doc.data());
+//         unsubscribe();
+//       }
+//     });
+//   });
+
   
   
 

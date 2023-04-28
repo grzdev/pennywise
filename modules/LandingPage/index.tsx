@@ -34,12 +34,10 @@ const LandingPage = () => {
   const learnmore = useColorModeValue("#97c3ff","#97c3ff")
   const divColor2 = useColorModeValue("linear-gradient( 135deg, #FFA6B7 10%, #1E2AD2 100%)","linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%)")
   const signUp = useColorModeValue("#3289ff","#3289ff")
-  // const secondDivCOlor = useColorModeValue("#e6f1ff","")
   const headerBg = useColorModeValue("#EEF4FC","white")
   const pgBg = useColorModeValue("#EEF4FC","#EEF4FC")
 
   const secondDivCOlor = useColorModeValue("linear-gradient(45deg, #262d45 0%, #3261ff 100%)","#333f55")
-  // background-image: linear-gradient(45deg, #262d45 0%, #2340a3 100%);
 
   const { scrollYProgress } = useScroll();
   return (
@@ -47,7 +45,8 @@ const LandingPage = () => {
     <main>
       <Container
         centerContent
-        maxW="container.lg"
+        maxW="container.xl"
+        overflowX="hidden"
       >
         <Flex
           mt={["3rem", "1rem"]}
@@ -138,7 +137,7 @@ const LandingPage = () => {
             mt={["5.5rem", "5.5rem", "3rem", "-1rem"]}
           >
             <motion.div
-              whileInView={{ x: 0 }}
+              animate={{ x: 0 }}
               initial={{ x: 150 }}
               transition={{ duration: 1  }}
             >  
@@ -158,7 +157,7 @@ const LandingPage = () => {
           mb={["","","","8rem"]}
           flexDir={["column", "column", "column", "column"]}
           bg={secondDivCOlor}
-          w={["21.5rem","21.5rem","53rem ","85rem"]}
+          w={["21.5rem","21.5rem","45rem ","80rem"]}
           h={["28rem","28rem","35rem","40rem"]}
           borderRadius="1rem 0 1rem 0"
           boxShadow="2xl"
@@ -239,7 +238,7 @@ const LandingPage = () => {
             ml={["","","","-7rem"]}
           >
             <motion.div
-              whileInView={{ x: 0 }}
+              animate={{ x: 0 }}
               initial={{ x: -150 }}
               transition={{ duration: 1  }}
             >
@@ -318,7 +317,7 @@ const LandingPage = () => {
           flexDir={["column", "column", "column", "column"]}
           boxShadow="2xl"
           bg={secondDivCOlor}
-          w={["21.5rem","21.5rem","53rem ","85rem"]}
+          w={["21.5rem","21.5rem","45rem ","80rem"]}
           h={["34rem","34rem","45rem","42rem"]}
           borderRadius="1rem 0 1rem 0"
         >
@@ -328,7 +327,7 @@ const LandingPage = () => {
             // mb={["","","","-4rem"]}
           >
             <motion.div
-              whileInView={{ x: 0 }}
+              animate={{ x: 0 }}
               initial={{ x: 150 }}
               transition={{ duration: 1  }}
             >
@@ -364,7 +363,7 @@ const LandingPage = () => {
         </Flex>
 
         <Flex
-          w={["21rem","21rem","53rem","85rem"]}
+          w={["21.5rem","21.5rem","45rem ","80rem"]}
           h={["20rem","20rem","20rem","15rem"]}
           bg={divColor2}
           mt={["14rem","14rem","12rem","5rem"]}

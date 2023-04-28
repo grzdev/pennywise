@@ -43,6 +43,7 @@ import { selectMyObject } from 'redux/slices/dailyInputSlice'
 import Image from 'next/image'
 import Notfound from "../../../images/notfound.png"
 import AnalyticsContent from '../components/analytics-content'
+import MobileNav from '../components/mobile-nav'
 
 interface DateTimeProps {
   className?: string;
@@ -103,8 +104,11 @@ const AnalyticsModule = ({ className }: DateTimeProps) => {
         alignItems="center"
         flexDir={["column","column","column","row"]}
         gap={["3rem","3rem","4rem","5rem"]}
-        mt={["1.5rem","1.5rem","4rem","5rem"]}
+        mt={["1rem","1.5rem","4rem","5rem"]}
         >
+        
+        <MobileNav/>
+        
         <Flex
           w={["21rem","21rem","39rem","62rem"]}
           h={["28rem","30rem","38rem","35rem"]}
