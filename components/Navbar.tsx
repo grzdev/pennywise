@@ -29,6 +29,7 @@ import { useColorMode } from "@chakra-ui/react";
 import { useAuth } from "context/AuthContext";
 import router from "next/router";
 import { FaGem } from "react-icons/fa"
+import { RiMenu4Line } from "react-icons/ri";
 
 
 
@@ -53,7 +54,8 @@ const Navbar = () => {
       borderStyle={'solid'}
       borderColor={useColorModeValue('gray.200', 'gray.900')}
       align={'center'}
-      // position="fixed"
+      position="fixed"
+      zIndex="sticky"
       w="100%"
       >
       <Flex
@@ -64,7 +66,7 @@ const Navbar = () => {
         <IconButton
           onClick={onToggle}
           icon={
-            isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />
+            isOpen ? <CloseIcon w={3} h={3} /> : <RiMenu4Line/>
           }
           variant={'ghost'}
           aria-label={'Toggle Navigation'}
@@ -295,6 +297,7 @@ const MobileNav = () => {
         flexDir="column"
         gap="1rem"
         mb="1rem"
+        mt="6rem"
       >
         <Link 
           href="/about">

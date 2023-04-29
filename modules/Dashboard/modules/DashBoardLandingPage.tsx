@@ -147,6 +147,7 @@ const DashBoardLandingPage = ({ className }: DateTimeProps) => {
           flexDir="row"
           gap="auto"
           mt={["2rem","0rem","1.2rem","2rem"]}
+          ml={["1.7rem","","",""]}
         >
           <Flex
             flexDir="column"
@@ -191,12 +192,13 @@ const DashBoardLandingPage = ({ className }: DateTimeProps) => {
               >
                 <DrawerOverlay />
                 <DrawerContent>
-                  <DrawerCloseButton />
+                  <DrawerCloseButton mt="2.8rem" mr="1rem" fontSize="1.1rem" />
                   <DrawerHeader>
                     <Flex
                       justifyContent="center"
                       alignItems="center"
                       mr="10.5rem"
+                      mt="2.4rem" 
                     >
                         <Flex
                           mt={["0.1rem", "-0.2rem", "-0.1rem", "-0.1rem"]}
@@ -224,8 +226,8 @@ const DashBoardLandingPage = ({ className }: DateTimeProps) => {
                   <DrawerBody>
                     <Flex
                       flexDir="column"
-                      gap="1rem"
-                      mt="2rem"
+                      gap="1.2rem"
+                      mt="4rem"
                     >
                       <Link
                         href="/dashboard"

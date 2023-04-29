@@ -55,7 +55,7 @@ const expense = useSelector(selectExpense)
       <Flex
         h={["22rem","22rem","33rem","34rem"]}
         w={["21rem","21rem","34rem","40rem"]}
-        mt={["0.2rem","2rem","5rem","4rem"]}
+        mt={["-1rem","2rem","5rem","4rem"]}
         boxShadow="lg"
         borderRadius="1rem 0 1rem 0"
         alignItems="center"
