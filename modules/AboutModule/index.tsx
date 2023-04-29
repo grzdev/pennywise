@@ -24,141 +24,147 @@ const About = () => {
 
 
   return (
-    <Container
-      centerContent
-      maxW="container.lg"
+    <Box
+      overflowX="hidden"
     >
-      <Flex
-        mt={["3rem","3rem","1rem", "1rem"]}
-        flexDir={["column", "column", "column", "row"]}
-        justifyContent={["center","","","flex-start"]}
-        alignItems={["center","","","flex-start"]}
-        ml={["", "", "", "12rem"]}
+      <Container
+        centerContent
+        maxW="container.xl"
+        max-width="100%"
       >
-        <VStack
-          mt={["5rem", "3rem", "7rem", "10rem"]}
+        <Flex
+          mt={["6rem","6rem","4rem", "4rem"]}
+          flexDir={["column", "column", "column", "row"]}
+          justifyContent={["center","","","flex-start"]}
+          alignItems={["center","","","flex-start"]}
+          ml={["", "", "", "12rem"]}
         >
-          <Flex
-            ml={["","","","28rem"]}
+          <VStack
+            mt={["5rem", "3rem", "7rem", "10rem"]}
           >
-            <motion.div
-              animate={{ y: 0 }}
-              initial={{ y: 150 }}
-              transition={{ duration: 0.8 }}
+            <Flex
+              ml={["","","","28rem"]}
             >
-              <Flex
-                bg={headerBg}
-                w="10rem"
-                h="2rem"
-                borderRadius="full"
-                justifyContent="center"
-                alignItems="center"
-                ml={["","","","-20.5rem"]}
-                mb={["1.4rem","1.4rem","1.4rem","2rem"]}
+              <motion.div
+                animate={{ y: 0 }}
+                initial={{ y: 150 }}
+                transition={{ duration: 0.8 }}
               >
-                <Heading
-                  size="md"
-                  color={header}
-                  mt="-0.25rem"
-                  
+                <Flex
+                  bg={headerBg}
+                  w="10rem"
+                  h="2rem"
+                  borderRadius="full"
+                  justifyContent="center"
+                  alignItems="center"
+                  ml={["","","","-20.5rem"]}
+                  mb={["1.4rem","1.4rem","1.4rem","2rem"]}
                 >
-                  Mission
-                </Heading>
-              </Flex>
-            </motion.div>
-          </Flex>
+                  <Heading
+                    size="md"
+                    color={header}
+                    mt="-0.25rem"
+                    
+                  >
+                    Mission
+                  </Heading>
+                </Flex>
+              </motion.div>
+            </Flex>
 
-          <motion.div
-            animate={{ y: 0 }}
-            initial={{ y: 150 }}
-            transition={{ duration: 1.1 }}
-          >
-            <Heading
-              size="2xl"
-              w={["21.5rem", "30rem", "30rem", "30rem"]}
-              lineHeight={["3rem", "3rem", "3.6rem", "3.9rem"]}
-              ml={["","","","-3rem"]}
-              fontWeight={600}
-              textAlign={["center"]}
-              fontFamily="'Rubik', sans-serif"
-            >
-              To give everyone the ability to better manage and track their finances.
-            </Heading>
-          </motion.div>
-        </VStack>
-
-        <Box
-            ml={["0.2rem", "4rem", "3rem", "-1.8rem"]}
-            w={["30rem", "30rem", "50rem", "60rem"]}
-            mt={["4rem", "4rem", "-1rem", "-2rem"]}
-          >
             <motion.div
               animate={{ y: 0 }}
               initial={{ y: 150 }}
               transition={{ duration: 1.1 }}
             >
-              <Image
-                src={AboutImg}
-                alt=""
-                placeholder="blur"
-                priority
-              />
-            </motion.div>
-          </Box>
-      </Flex>
-
-      <Flex
-          flexDir={["column-reverse", "column-reverse", "column-reverse", "row"]}
-          mt={["4rem","4rem","6rem","5rem"]}
-          mb="12rem"
-          bg={secondDivCOlor}
-          // w={["30rem","50rem","70rem ","96rem"]}
-          boxShadow="2xl"
-          borderRadius="1rem 0 1rem 0"
-          w={["22rem","22rem","53rem ","85rem"]}
-          h={["37rem","37rem","38rem","44rem"]}
-          justifyContent={["center","center","center","center"]}
-          alignItems={["center","center","center","center"]}
-        >
-          <VStack
-            w={["","","",""]}
-            h={["18rem","","","25rem"]}
-            borderRadius="1.2rem"
-            mt={["-6rem", "-8rem", "-6rem", "-2rem"]}
-          >
-            <Heading
-              size="2xl"
-              w={["20rem", "30rem", "25rem", "30rem"]}
-              lineHeight={["2rem", "4.5rem", "4.5rem", "3rem"]}
-              mb={["2rem","","",""]}
-              color="white"
-              textAlign={["center"]}
-              fontFamily="'Roboto', sans-serif"
-            >
-              A Short Story
-            </Heading>
-
-            <Flex
-            >
-              <Text
-                color={textColor}
-                fontSize={["1.1rem", "1.1rem", "1.3rem", "1.5rem"]}
-                mb={["0.4rem", "0.4rem", "0.4rem", "2rem"]}
-                w={["15rem", "30rem", "30rem", "30.6rem"]}
-                justifyContent="center"
-                alignItems="center"
+              <Heading
+                size="2xl"
+                w={["21.5rem", "21.5rem", "30rem", "30rem"]}
+                lineHeight={["3rem", "3rem", "3.6rem", "3.9rem"]}
+                ml={["","","","-3rem"]}
+                fontWeight={600}
                 textAlign={["center"]}
-                fontFamily="'Ubuntu', sans-serif"
+                fontFamily="'Rubik', sans-serif"
               >
-               I had just finished a plate of Item 7 in Ilorin when the post Item clarity hit me.<br/><br/>
-               The amount of money I spent that day could feed a primary student at King's College for a week.<br/><br/>
-               " This no be life ", I said to myself. That night, I grabbed my laptop and began to code.
-              </Text>
-            </Flex>
+                To help everyne better manage and track their finances.
+              </Heading>
+            </motion.div>
           </VStack>
 
+          <Box
+              // ml={["0.2rem", "4rem", "3rem", "-1.8rem"]}
+              w={["22rem", "22rem", "50rem", "60rem"]}
+              mt={["2rem", "4rem", "-3rem", "-2rem"]}
+            >
+              <motion.div
+                animate={{ y: 0 }}
+                initial={{ y: 150 }}
+                transition={{ duration: 1.1 }}
+              >
+                <Image
+                  src={AboutImg}
+                  alt=""
+                  placeholder="blur"
+                  priority
+                />
+              </motion.div>
+            </Box>
         </Flex>
-    </Container>
+
+        <Flex
+            flexDir={["column-reverse", "column-reverse", "column-reverse", "row"]}
+            mt={["4rem","4rem","6rem","3rem"]}
+            mb="12rem"
+            bg={secondDivCOlor}
+            overflow="hidden"
+            // w={["30rem","50rem","70rem ","96rem"]}
+            boxShadow="2xl"
+            borderRadius="1rem 0 1rem 0"
+            w={["22rem","22rem","45rem ","80rem"]}
+            h={["37rem","37rem","38rem","44rem"]}
+            justifyContent={["center","center","center","center"]}
+            alignItems={["center","center","center","center"]}
+          >
+            <VStack
+              w={["","","",""]}
+              h={["18rem","","","25rem"]}
+              borderRadius="1.2rem"
+              mt={["-6rem", "-8rem", "-6rem", "-2rem"]}
+            >
+              <Heading
+                size="2xl"
+                w={["20rem", "20rem", "25rem", "30rem"]}
+                lineHeight={["2rem", "4.5rem", "4.5rem", "3rem"]}
+                mb={["2rem","","",""]}
+                color="white"
+                textAlign={["center"]}
+                fontFamily="'Roboto', sans-serif"
+              >
+                A Short Story
+              </Heading>
+
+              <Flex
+              >
+                <Text
+                  color={textColor}
+                  fontSize={["1.1rem", "1.1rem", "1.3rem", "1.5rem"]}
+                  mb={["0.4rem", "0.4rem", "0.4rem", "2rem"]}
+                  w={["15rem", "15rem", "30rem", "30.6rem"]}
+                  justifyContent="center"
+                  alignItems="center"
+                  textAlign={["center"]}
+                  fontFamily="'Ubuntu', sans-serif"
+                >
+                I had just finished a plate of Item 7 in Ilorin when the post Item clarity hit me.<br/><br/>
+                The amount of money I spent that day could feed a primary student at King's College for a week.<br/><br/>
+                " This no be life ", I said to myself. That night, I grabbed my laptop and began to code.
+                </Text>
+              </Flex>
+            </VStack>
+
+          </Flex>
+      </Container>
+    </Box>
   )
 }
 

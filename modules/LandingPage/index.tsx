@@ -41,15 +41,16 @@ const LandingPage = () => {
 
   const { scrollYProgress } = useScroll();
   return (
-    <>
-    <main>
+    <Box
+      overflowX="auto"
+    >
       <Container
         centerContent
         maxW="container.xl"
-        overflowX="hidden"
+        max-width="100%"
       >
         <Flex
-          mt={["3rem", "1rem"]}
+          mt={["8rem", "1rem", "4rem" ,"4rem"]}
           flexDir={["column", "column", "column", "row"]}
           ml={["","","","7rem"]}
         >
@@ -62,7 +63,7 @@ const LandingPage = () => {
             >
                 <Heading
                   size="3xl"
-                  w={["20rem", "30rem", "30rem", "30rem"]}
+                  w={["20rem", "20rem", "30rem", "30rem"]}
                   lineHeight={["3.9rem", "4.5rem", "4.5rem", "4.5rem"]}
                   mb="0.8rem"
                   mt={["3rem", "10rem", "10rem", "10rem"]}
@@ -133,7 +134,7 @@ const LandingPage = () => {
           <Box
             // ml={["0.2rem", "4rem", "3rem", "1rem"]}
             mr={["","","","1rem"]}
-            w={["27rem", "40rem", "40rem", "51rem"]}
+            w={["21rem", "20rem", "40rem", "51rem"]}
             mt={["5.5rem", "5.5rem", "3rem", "-1rem"]}
           >
             <motion.div
@@ -233,7 +234,7 @@ const LandingPage = () => {
           flexDir={["column", "column", "column", "row"]}
         >
           <Box
-            w={["27rem", "40rem", "40rem", "51rem"]}
+            w={["21rem", "21rem", "40rem", "51rem"]}
             mt={["8rem", "", "8rem", "1rem"]}
             ml={["","","","-7rem"]}
           >
@@ -269,7 +270,7 @@ const LandingPage = () => {
               >
               <Heading
                 size="2xl"
-                w={["20rem", "30rem", "22rem", "25rem"]}
+                w={["20rem", "20rem", "22rem", "25rem"]}
                 lineHeight={["3rem", "4.5rem", "3.5rem", "3.4rem"]}
                 mb="1rem"
                 // ml={["", "", "", "6rem"]}
@@ -293,7 +294,7 @@ const LandingPage = () => {
                   color={textColor}
                   fontSize={["1.1rem", "1.1rem", "1.1rem", "1.3rem"]}
                   mb={["0.4rem", "0.4rem", "0.4rem", "2rem"]}
-                  w={["18rem", "30rem", "30rem", "23.6rem"]}
+                  w={["18rem", "18rem", "30rem", "23.6rem"]}
                   justifyContent="center"
                   alignItems="center"
                   textAlign={["center"]}
@@ -322,7 +323,7 @@ const LandingPage = () => {
           borderRadius="1rem 0 1rem 0"
         >
           <Flex
-            w={["27rem", "27rem", "40rem", "35rem"]}
+            w={["21rem", "21rem", "40rem", "35rem"]}
             mt={["-3rem","-3rem","-4rem","-4rem"]}
             // mb={["","","","-4rem"]}
           >
@@ -429,8 +430,7 @@ const LandingPage = () => {
           </Flex>
         </Flex>
       </Container>
-    </main>   
-  </>
+    </Box>
   )
 }
 
