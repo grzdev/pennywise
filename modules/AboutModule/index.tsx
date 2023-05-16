@@ -57,8 +57,8 @@ const About = () => {
                   borderRadius="full"
                   justifyContent="center"
                   alignItems="center"
-                  ml={["","","","-20.5rem"]}
-                  mb={["1.4rem","1.4rem","1.4rem","2rem"]}
+                  ml={["","","","-18.5rem"]}
+                  mb={["1.4rem","1.4rem","1.4rem","1rem"]}
                 >
                   <Heading
                     size="md"
@@ -80,15 +80,36 @@ const About = () => {
               <Heading
                 size="2xl"
                 w={["21.5rem", "21.5rem", "30rem", "30rem"]}
-                lineHeight={["3rem", "3rem", "3.6rem", "3.9rem"]}
-                ml={["","","","-3rem"]}
+                lineHeight={["3rem", "3rem", "3.6rem", "3.5rem"]}
+                // ml={["","","","-3rem"]}
                 fontWeight={600}
                 textAlign={["center"]}
                 fontFamily="'Rubik', sans-serif"
               >
-                To help everyne better manage and track their finances.
+                To help everyone better manage and track their finances.
               </Heading>
             </motion.div>
+
+              <motion.div
+                animate={{ y: 0 }}
+                initial={{ y: 150 }}
+                transition={{ duration: 1.1 }}
+              >
+                <Text
+                  fontWeight={500}
+                  color={textColor}
+                  fontSize={["1.1rem", "1.1rem", "1.1rem", "1.3rem"]}
+                  mb={["0.4rem", "0.4rem", "0.4rem", "2.5rem"]}
+                  w={["18rem", "18rem", "22rem", "23.6rem"]}
+                  justifyContent="center"
+                  alignItems="center"
+                  textAlign={["center"]}
+                 fontFamily="'Ubuntu', sans-serif"
+                  mt={["","","","1rem"]}
+                >
+                  Take control of your finances with our budget feature.
+                </Text>
+              </motion.div>
           </VStack>
 
           <Box

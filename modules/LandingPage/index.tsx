@@ -271,7 +271,7 @@ const LandingPage = () => {
               <Heading
                 size="2xl"
                 w={["20rem", "20rem", "22rem", "25rem"]}
-                lineHeight={["3rem", "4.5rem", "3.5rem", "3.4rem"]}
+                lineHeight={["3rem", "4.5rem", "3.2rem", "3.4rem"]}
                 mb="1rem"
                 // ml={["", "", "", "6rem"]}
                 textAlign={["center"]}
@@ -294,7 +294,7 @@ const LandingPage = () => {
                   color={textColor}
                   fontSize={["1.1rem", "1.1rem", "1.1rem", "1.3rem"]}
                   mb={["0.4rem", "0.4rem", "0.4rem", "2rem"]}
-                  w={["18rem", "18rem", "30rem", "23.6rem"]}
+                  w={["18rem", "18rem", "24rem", "23.6rem"]}
                   justifyContent="center"
                   alignItems="center"
                   textAlign={["center"]}
@@ -319,7 +319,7 @@ const LandingPage = () => {
           boxShadow="2xl"
           bg={secondDivCOlor}
           w={["21.5rem","21.5rem","45rem ","80rem"]}
-          h={["34rem","34rem","45rem","42rem"]}
+          h={["34rem","34rem","40rem","40rem"]}
           borderRadius="1rem 0 1rem 0"
         >
           <Flex
@@ -353,7 +353,8 @@ const LandingPage = () => {
                 color="white"
                 size="2xl"
                 lineHeight={["3rem", "3rem", "3.5rem", "4rem"]}
-                w={["15rem", "15rem", "30rem", "35rem"]}
+                w={["15rem", "15rem", "35rem", "35rem"]}
+                mt={["","","-2rem",""]}
                 fontFamily="monospace"
               >
                 {/* Take control of your finances. */}

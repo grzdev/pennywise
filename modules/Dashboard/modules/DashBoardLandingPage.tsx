@@ -15,7 +15,14 @@ import {
   DrawerCloseButton,
   DrawerHeader,
   DrawerBody,
-  DrawerFooter
+  DrawerFooter,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalCloseButton,
+  ModalBody,
+  ModalFooter
 } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
 import router from "next/router";
@@ -42,6 +49,8 @@ import { FaGem } from 'react-icons/fa';
 import { auth } from 'config/firebase';
 import { RiMenu4Line } from 'react-icons/ri';
 import Link from 'next/link';
+import { IoExitOutline } from 'react-icons/io5';
+import LogoutModal from '../components/logout-modal';
 
  interface DateTimeProps {
   className?: string;
@@ -59,17 +68,6 @@ const DashBoardLandingPage = ({ className }: DateTimeProps) => {
   const button = useColorModeValue("#4aafe9","#e3379b")
   const bg = useColorModeValue("#FF3CAC","#667eea")
   const bgGradient = useColorModeValue("linear-gradient(to right, #162961, #3969b9)","linear-gradient(to right, #28355e, #4e67b6);")
-
-  const [sum, setSum] = useState('');
-
-  //Retrieved state
-  const myObject = useSelector(selectMyObject);
-  const Sum = myObject.food + myObject.transit + myObject.data + myObject.transfers + myObject.others
-
-  //Save data to local storage
-  // function saveToLocalStorage(Sum: string) {
-  //   localStorage.setItem('Sum', Sum);
-  // }
   
 
   //Date
@@ -90,6 +88,16 @@ const DashBoardLandingPage = ({ className }: DateTimeProps) => {
   const dateOptions: Intl.DateTimeFormatOptions = { weekday: 'short', month: 'long', day: 'numeric' };
   const timeOptions: Intl.DateTimeFormatOptions = { hour: 'numeric', minute: 'numeric', second: 'numeric' };
 
+   const [sum, setSum] = useState('');
+
+  //Retrieved state
+  const myObject = useSelector(selectMyObject);
+  const Sum = myObject.food + myObject.transit + myObject.data + myObject.transfers + myObject.others
+
+  //Save data to local storage
+  // function saveToLocalStorage(Sum: string) {
+  //   localStorage.setItem('Sum', Sum);
+  // }
 
   //Get display name from Firebase
   const user = auth.currentUser
@@ -127,10 +135,12 @@ const DashBoardLandingPage = ({ className }: DateTimeProps) => {
   //   console.log("User is signed out");
   // }
   // })
+  
  
   const { colorMode, toggleColorMode } = useColorMode()
   const { isOpen, onClose, onOpen } = useDisclosure()
   const headerColor = useColorModeValue("#070D59","#c6dbfb")
+  const logout = useColorModeValue("red","#C6dbfb")
   
   return (
     <>
@@ -147,7 +157,7 @@ const DashBoardLandingPage = ({ className }: DateTimeProps) => {
           flexDir="row"
           gap="auto"
           mt={["2rem","0rem","1.2rem","2rem"]}
-          ml={["1.7rem","","",""]}
+          ml={["0.7rem","","",""]}
         >
           <Flex
             flexDir="column"
@@ -269,11 +279,18 @@ const DashBoardLandingPage = ({ className }: DateTimeProps) => {
                   </DrawerBody>
 
                   <DrawerFooter>
-                  <Button 
-                    onClick={toggleColorMode}
-                  >
-                    {colorMode === 'light' ? <MoonIcon/> : <SunIcon/>}
-                  </Button>
+                    <Flex
+                      gap="11rem"
+                    >
+                      <Flex>
+                        <LogoutModal/>
+                      </Flex>
+                      <Button 
+                        onClick={toggleColorMode}
+                      >
+                        {colorMode === 'light' ? <MoonIcon/> : <SunIcon/>}
+                      </Button>
+                    </Flex>
                   </DrawerFooter>
                 </DrawerContent>
               </Drawer>
@@ -377,23 +394,10 @@ const DashBoardLandingPage = ({ className }: DateTimeProps) => {
 
           </Flex>
 
-          <MobileNav/>          
+          <MobileNav/>
 
-          {/* <Flex
-            w={["","","","33rem"]}
-            h={["","","","30rem"]}
-            bg= {bgGradient}
-            borderRadius="1rem 0 1rem 0"
-          >
-
-          </Flex> */}
         </Flex>
 
-        {/* <Divider
-          orientation='horizontal'
-          w="100%"
-          mt={["10rem","10rem","3rem","3rem"]}
-        /> */}
       </Flex>
     </>
   )

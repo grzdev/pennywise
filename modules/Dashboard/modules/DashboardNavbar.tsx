@@ -57,6 +57,7 @@ import { MoonIcon, SunIcon } from '@chakra-ui/icons';
 import logoP from "../../../images/logoP.png"
 import Image from 'next/dist/client/image';
 import { FaGem } from "react-icons/fa"
+import LogoutModal from '../components/logout-modal';
 
 interface LinkItemProps {
   name: string;
@@ -287,7 +288,7 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
             mx="4"
             borderRadius="0.7rem"
           >
-            <Link href='/account'>
+            {/* <Link href='/account'>
               <BsFillPersonFill
                 fontWeight={700}
                 fontSize="1.5rem"
@@ -302,14 +303,18 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
               >
                 Account
               </Text>
-            </Link>
+            </Link> */}
           </Flex>
 
           <Flex>
 
           <Flex
-            mt="12rem"
+            mt="14rem"
+            gap="3rem"
           >
+            <Flex>
+              <LogoutModal/>
+            </Flex>
             <Button 
             onClick={toggleColorMode}
             >
