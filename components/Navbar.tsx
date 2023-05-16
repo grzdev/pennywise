@@ -60,13 +60,14 @@ const Navbar = () => {
       >
       <Flex
         flex={{ base: 1, md: 'auto' }}
-        ml={{ base: -2 }}
+        ml={{ base: "-0.2rem" }}
+        mt={{ base: "0.8rem" }}
         display={{ base: 'flex', md: 'none' }}
       >
         <IconButton
           onClick={onToggle}
           icon={
-            isOpen ? <CloseIcon w={3} h={3} /> : <RiMenu4Line/>
+            isOpen ? <CloseIcon w={3} h={3} /> : <RiMenu4Line fontSize="1.2rem"/>
           }
           variant={'ghost'}
           aria-label={'Toggle Navigation'}
