@@ -35,16 +35,18 @@ import { BiDotsHorizontalRounded, BiTransferAlt } from 'react-icons/bi'
 import { parse } from 'path'
 import { render } from 'react-dom'
 import { useDispatch, useSelector } from 'react-redux';
-// import { RootState } from 'redux/store'
+import { RootState } from 'redux/store'
 import { add10k, add1k, add2k, add3k, add5k, InputData, onChange, selectMyObject } from 'redux/slices/dailyInputSlice'
 import { RiInformationLine } from 'react-icons/ri'
 import { BsFillCheckCircleFill, BsInfo } from 'react-icons/bs'
 import { createSelector } from '@reduxjs/toolkit'
 import { motion } from 'framer-motion'
 import { db } from 'config/firebase'
+import { BiEditAlt } from "react-icons/bi"
 import Image from "next/image"
 import CompletedImg from "../../../images/check1.png"
 import { addDoc, collection, doc, getDocs, limit, onSnapshot, orderBy, query, setDoc, Timestamp, where } from "firebase/firestore";
+import { addItem, updateItem } from 'redux/slices/inputSlice'
 
 interface DateTimeProps {
   className?: string;
@@ -54,6 +56,15 @@ interface DateTimeState {
   dateTime: Date;
 }
 
+interface Item {
+  id?: number;
+  food: number;
+  data: number;
+  transit: number;
+  transfers: number;
+  others: number;
+  sum: number;
+}
 
 const InputModal = () => {
 
@@ -77,6 +88,52 @@ const InputModal = () => {
 
 
 
+  const dispatch = useDispatch();
+  const [food, setFood] = useState(0);
+  const [data, setData] = useState(0);
+  const [transit, setTransit] = useState(0);
+  const [transfers, setTransfers] = useState(0);
+  const [others, setOthers] = useState(0);
+  const [sum, setSum] = useState(0);
+
+  const handleSubmit = (e: { preventDefault: () => void; }) => {
+    e.preventDefault();
+
+    modal1.onClose()
+    modal2.onClose()
+    modal3.onClose()
+    modal4.onClose()
+    modal5.onClose()
+    modal6.onClose()
+
+    toast({
+      title: 'Done',
+      position: 'top',
+      description: "See you tomorrow.",
+      status: 'info',
+      duration: 5000,
+      isClosable: true,
+      // variant: "left-accent",
+    })
+    // Perform any necessary logic with the form data
+    const newItem = {
+      food,
+      data,
+      transit,
+      transfers,
+      others,
+      sum,
+    };
+    dispatch(addItem(newItem));
+    // Reset input fields
+    setFood(0);
+    setData(0);
+    setTransit(0);
+    setTransfers(0);
+    setOthers(0);
+    setSum(0)
+    
+  };
 
   //Toast
   const toast = useToast()
@@ -86,7 +143,7 @@ const InputModal = () => {
   
 
   // Onchange function
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const myObject = useSelector(selectMyObject);
   const handleNumberChange = (name: keyof InputData, value: number) => {
     dispatch(onChange({ name, value }));
@@ -261,8 +318,8 @@ const InputModal = () => {
       // variant: "left-accent",
     })
 
-    const dataCollection = collection(db, "test3")
-    const userData = {
+    const dataCollection = collection(db, "test4")
+    const userData = { 
       food: myObject.food,
       transit: myObject.transit,
       data: myObject.data,
@@ -275,7 +332,7 @@ const InputModal = () => {
     const queryRef = query(dataCollection, where("date", "==", userData.date))
     const querySnapshot = await getDocs(queryRef);
     if (!querySnapshot.empty) {
-      const docRef = doc(db, "test3", querySnapshot.docs[0].id);
+      const docRef = doc(db, "test4", querySnapshot.docs[0].id);
       await setDoc(docRef, userData, { merge: true });
       console.log("Fields updated successfully!");
     } else {
@@ -286,6 +343,15 @@ const InputModal = () => {
 
   }
 
+  const items = useSelector((state: RootState) => state.number.items);
+  const sumOfCategories = items.reduce(
+    (total, item) => total + item.food + item.data + item.transit + item.transfers + item.others,
+    0
+  );
+
+  const handleUpdateItem = (updatedItem: Item) => {
+    dispatch(updateItem(updatedItem));
+  };
 
 //   const dataCollection = collection(db, "test3");
 //   const userData = {
@@ -324,7 +390,7 @@ const InputModal = () => {
         whileHover={{ scale: 1.1 }}
         transition={{ type: "spring", stiffness: 200, damping: 10 }}
       >
-        {/* {myObject.food === 0 ? ( */}
+        {sumOfCategories === 0 ? (
           <Button
             w={["4rem","5rem","6rem","7rem"]}
             h={["2.8rem","2.8rem","3.2rem","3.8rem"]}
@@ -343,7 +409,7 @@ const InputModal = () => {
               <AddIcon/>
             </Text>
           </Button>
-        {/* ) : (
+         ) : (
           <Button
           w={["4rem","5rem","6rem","7rem"]}
           h={["2.8rem","2.8rem","3.2rem","3.8rem"]}
@@ -352,6 +418,7 @@ const InputModal = () => {
           _hover={{
           bg: "#718aff"
           }}
+          // onClick={handleUpdateItem}
         >
           <Text
             color={addIcon} 
@@ -361,7 +428,7 @@ const InputModal = () => {
             <CheckIcon/>
           </Text>
         </Button>
-        )} */}
+        )}
         
       </motion.div>
         
@@ -524,8 +591,10 @@ const InputModal = () => {
                             type='number'
                             variant="filled"
                             placeholder='Amount'
-                            value={myObject.food}
-                            onChange={(e) => handleNumberChange('food', parseInt(e.target.value, 10))}
+                            // value={myObject.food}
+                            // onChange={(e) => handleNumberChange('food', parseInt(e.target.value, 10))}
+                            value={food}
+                            onChange={(e) => setFood(Number(e.target.value))}
                             name="food"
                         />
                     </InputGroup>
@@ -720,8 +789,10 @@ const InputModal = () => {
                             variant="filled"
                             placeholder='Amount'
                             name='transit'
-                            value={myObject.transit}
-                            onChange={(e) => handleNumberChange('transit', parseInt(e.target.value, 10))}
+                            // value={myObject.transit}
+                            // onChange={(e) => handleNumberChange('transit', parseInt(e.target.value, 10))}
+                            value={transit}
+                            onChange={(e) => setTransit(Number(e.target.value))}
                         />
                     </InputGroup>
                 </Flex>
@@ -915,8 +986,10 @@ const InputModal = () => {
                             variant="filled"
                             placeholder='Amount'
                             name='data'
-                            value={myObject.data}
-                            onChange={(e) => handleNumberChange('data', parseInt(e.target.value, 10))}
+                            // value={myObject.data}
+                            // onChange={(e) => handleNumberChange('data', parseInt(e.target.value, 10))}
+                            value={data}
+                            onChange={(e) => setData(Number(e.target.value))}
                         />
                     </InputGroup>
                 </Flex>
@@ -1110,8 +1183,10 @@ const InputModal = () => {
                             variant="filled"
                             placeholder='Amount'
                             name='transfers'
-                            value={myObject.transfers}
-                            onChange={(e) => handleNumberChange('transfers', parseInt(e.target.value, 10))}
+                            // value={myObject.transfers}
+                            // onChange={(e) => handleNumberChange('transfers', parseInt(e.target.value, 10))}
+                            value={transfers}
+                            onChange={(e) => setTransfers(Number(e.target.value))}
                         />
                     </InputGroup>
                 </Flex>
@@ -1305,8 +1380,10 @@ const InputModal = () => {
                             variant="filled"
                             placeholder='Amount'
                             name="others"
-                            value={myObject.others}
-                            onChange={(e) => handleNumberChange('others', parseInt(e.target.value, 10))}
+                            // value={myObject.others}
+                            // onChange={(e) => handleNumberChange('others', parseInt(e.target.value, 10))}
+                            value={others}
+                            onChange={(e) => setOthers(Number(e.target.value))}
                         />
                     </InputGroup>
                 </Flex>
@@ -1387,7 +1464,7 @@ const InputModal = () => {
                     borderRadius="1rem 0 1rem 0"
                     w={["8rem","10rem","10rem","12rem"]}
                     h={["3.8rem","3rem","4rem","4rem"]}
-                    onClick={handleAddInput}
+                    onClick={handleSubmit}
                     color="white"
                     fontWeight={700}
                     _hover={{

@@ -44,6 +44,7 @@ import Image from 'next/image'
 import Notfound from "../../../images/notfound.png"
 import AnalyticsContent from '../components/analytics-content'
 import MobileNav from '../components/mobile-nav'
+import { RootState } from 'redux/store'
 
 interface DateTimeProps {
   className?: string;
@@ -51,6 +52,16 @@ interface DateTimeProps {
 
 interface DateTimeState {
   dateTime: Date;
+}
+
+interface Item {
+  id?: number;
+  food: number;
+  data: number;
+  transit: number;
+  transfers: number;
+  others: number;
+  sum: number;  
 }
 
 const AnalyticsModule = ({ className }: DateTimeProps) => {
@@ -89,6 +100,13 @@ const AnalyticsModule = ({ className }: DateTimeProps) => {
   //   }
   // })
 
+  const items = useSelector((state: RootState) => state.number.items);
+  const sumOfCategoriesById: { [id: number]: number } = {};
+  const sumOfCategories = items.reduce(
+    (total, item) => total + item.food + item.data + item.transit + item.transfers + item.others,
+    0
+  );
+
   return (
     <Container
       centerContent
@@ -123,7 +141,7 @@ const AnalyticsModule = ({ className }: DateTimeProps) => {
           overflowY="scroll"
           overflowX="hidden"
         >
-          {Sum === 0 ? (
+          {sumOfCategories === 0 ? (
             <Flex
               justifyContent="center"
               alignItems="center"
@@ -151,7 +169,7 @@ const AnalyticsModule = ({ className }: DateTimeProps) => {
             </Flex>
           ): (
             <AnalyticsContent />
-          )}
+          )} 
         </Flex>
 
       </Flex>

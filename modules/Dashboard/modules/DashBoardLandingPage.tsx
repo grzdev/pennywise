@@ -51,6 +51,7 @@ import { RiMenu4Line } from 'react-icons/ri';
 import Link from 'next/link';
 import { IoExitOutline } from 'react-icons/io5';
 import LogoutModal from '../components/logout-modal';
+import { RootState } from 'redux/store';
 
  interface DateTimeProps {
   className?: string;
@@ -59,6 +60,17 @@ import LogoutModal from '../components/logout-modal';
 interface DateTimeState {
   dateTime: Date;
 }
+
+interface Item {
+  id?: number;
+  food: number;
+  data: number;
+  transit: number;
+  transfers: number;
+  others: number;
+  sum: number;  
+}
+
 const DashBoardLandingPage = ({ className }: DateTimeProps) => {
   
   const header = useColorModeValue("white","white")
@@ -104,6 +116,9 @@ const DashBoardLandingPage = ({ className }: DateTimeProps) => {
   const displayName = user?.displayName
 
 
+ 
+  
+
   //Get time of the day
   const currentDate = new Date();
   const currentHour = currentDate.getHours();
@@ -141,6 +156,29 @@ const DashBoardLandingPage = ({ className }: DateTimeProps) => {
   const { isOpen, onClose, onOpen } = useDisclosure()
   const headerColor = useColorModeValue("#070D59","#c6dbfb")
   const logout = useColorModeValue("red","#C6dbfb")
+  
+  const items = useSelector((state: RootState) => state.number.items);
+  const sumOfCategoriesById: { [id: number]: number } = {};
+  const sumOfCategories = items.reduce(
+    (total, item) => total + item.food + item.data + item.transit + item.transfers + item.others,
+    0
+  );
+
+  items.forEach((item: Item) => {
+    const id = item.id || 0;
+    const sumOfCategories =
+      item.food + item.data + item.transit + item.transfers + item.others;
+
+    if (sumOfCategoriesById[id]) {
+      sumOfCategoriesById[id] += sumOfCategories;
+    } else {
+      sumOfCategoriesById[id] = sumOfCategories;
+    }
+  });
+
+  const calculateSum = (item: Item) => {
+    return item.food + item.data + item.transit + item.transfers + item.others;
+  };
   
   return (
     <>
@@ -344,12 +382,17 @@ const DashBoardLandingPage = ({ className }: DateTimeProps) => {
                       size={["md","lg","lg","xl"]}
                       mt={["-0.01rem","0.1rem","-0.1rem",""]}
                     >
-                      {myObject.food === 0 ? (
+                      {sumOfCategories === 0 ? (
                         <p>XXX</p>
                       ) : (
-                        
-                        <p>{Sum}</p>
-                      )}
+                        <p>
+                          {items.map((item: Item)=>(
+                            <div key={item.id}>
+                             {calculateSum(item)}
+                            </div>
+                          ))}
+                        </p>
+                      )} 
                     </Heading>
                   </Flex>
                 </Flex>

@@ -15,26 +15,51 @@ import ArrowPic from "../../../images/arrow2.png"
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 
+interface Item {
+  id?: number;
+  food: number;
+  data: number;
+  transit: number;
+  transfers: number;
+  others: number;
+  sum: number;  
+}
+
 
 const InputPiechart = () => {
     const pieColor = useColorModeValue("#8ab7ff","#8ab4ff")
     const pieColor2 = useColorModeValue("#8ab7ff","#8ab4ff")
-    const textColor = useColorModeValue("#90b9ff","white")
-    const inputData = useSelector(selectMyObject);
-    const chartData = Object.entries(inputData).map(([name, value], index) => {
-        return {
-          name,
-          value,
-        //   color: `#${Math.floor(Math.random() * 16777215).toString(16)}`,
-        };
-      });
-      const COLORS = ['#8ab7ff', '#7190eb', '#5596ff', '#4666cd', "#2e6cd0"];
+    const textColor = useColorModeValue("white","white")
+    const items = useSelector((state: RootState) => state.number.items);
 
+    const chartData = [
+      { name: 'Food', value: 0 },
+      { name: 'Data', value: 0 },
+      { name: 'Transit', value: 0 },
+      { name: 'Transfers', value: 0 },
+      { name: 'Others', value: 0 },
+    ];
+    
+    items.forEach((item) => {
+      chartData[0].value += item.food;
+      chartData[1].value += item.data;
+      chartData[2].value += item.transit;
+      chartData[3].value += item.transfers;
+      chartData[4].value += item.others;
+    });
+    
+  
+    const COLORS = ['#8ab7ff', '#7190eb', '#5596ff', '#4666cd', '#2e6cd0'];
+
+    const sumOfCategories = items.reduce(
+      (total, item) => total + item.food + item.data + item.transit + item.transfers + item.others,
+      0
+    );
     
 
   return (
     <Flex>
-      {inputData.food === 0 ? (
+      {sumOfCategories === 0 ? (
         <motion.div
           initial={{ opacity: 0 }} 
           animate={{ opacity: 1 }}
@@ -67,25 +92,20 @@ const InputPiechart = () => {
           </Flex>
         </motion.div>
       ) : (
-      <PieChart 
-          width={250} 
-          height={250}
-      >
-        <Pie
-          data={chartData}
-          cx="50%" 
-          cy="50%" 
-          outerRadius={82}
-          labelLine={false}
-          // label={({ name }) => name}
-          label={({ cx, cy, midAngle, innerRadius, outerRadius, value, name }) => {
+        <PieChart width={250} height={250}>
+          <Pie
+            data={chartData}
+            cx="50%"
+            cy="50%"
+            outerRadius={82}
+            labelLine={false}
+            label={({ cx, cy, midAngle, innerRadius, outerRadius, value, index }) => {
               const RADIAN = Math.PI / 189;
-              // Calculate the angle of the label position
               const angle = -midAngle * RADIAN;
               // Calculate the x and y positions for the label
-              const x = cx + (outerRadius + innerRadius) / 0.9 * Math.cos(angle);
-              const y = cy + (outerRadius + innerRadius) / 0.8 * Math.sin(angle);
-    
+              const x = cx + (outerRadius + innerRadius) / 1.7 * Math.cos(angle);
+              const y = cy + (outerRadius + innerRadius) / 1 * Math.sin(angle);
+
               return (
                 <text
                   x={x}
@@ -96,20 +116,21 @@ const InputPiechart = () => {
                   fontSize="16"
                   textDecoration=""
                   fontWeight={600}
-                  style={{ textTransform: 'capitalize'}}
                 >
-                  {`${name}`}
+                  <tspan x={x} dy="1.2em">
+                    {/* {`${chartData[index].name}: ${chartData[index].value}`} */}
+                    {`${chartData[index].name}`}
+                  </tspan>
                 </text>
               );
             }}
-          // fill={pieColor2} 
-          dataKey="value"
-        >
-          {chartData.map((entry, index) => (
-            <Cell key={`cell-${index}`}   fill={COLORS[index % COLORS.length]}/>
-          ))}
-        </Pie>
-      </PieChart>
+            dataKey="value"
+          >
+            {chartData.map((entry, index) => (
+              <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+            ))}
+          </Pie>
+        </PieChart>
       )}
     </Flex>
   )
