@@ -9,7 +9,6 @@ interface Item {
   transfers: number;
   others: number;
   sum: number;
-  date: Date; 
 }
 
 interface MySliceState {
@@ -39,7 +38,6 @@ export const inputSlice = createSlice({
           transfers: action.payload.transfers,
           others: action.payload.others,
           sum: action.payload.food + action.payload.data + action.payload.transit + action.payload.transfers + action.payload.others,
-          date: new Date()
         };
         state.items.push(newItem);
       },

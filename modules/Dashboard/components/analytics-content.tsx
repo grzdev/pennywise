@@ -33,7 +33,6 @@ interface Item {
   transfers: number;
   others: number;
   sum: number;
-  date: Date;
 }
 
 const AnalyticsContent = ({ className }: DateTimeProps) => {
