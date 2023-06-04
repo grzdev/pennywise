@@ -409,7 +409,8 @@ const DashBoardLandingPage = ({ className }: DateTimeProps) => {
               </Flex>
 
               <Flex
-                mt={["2rem","2rem","-1rem","-3rem"]}
+                // mt={["-1rem","2rem","-1.5rem","-4rem"]}
+                mt={["1rem","1rem","-1.5rem","-4rem"]}
                 alignItems="center"
                 justifyContent="center"
                 w={["","","",""]}
@@ -472,6 +473,14 @@ const MobileNav = () =>{
   const dateOptions: Intl.DateTimeFormatOptions = { weekday: 'short', month: 'long', day: 'numeric' };
   const timeOptions: Intl.DateTimeFormatOptions = { hour: 'numeric', minute: 'numeric', second: 'numeric' };
 
+  const items = useSelector((state: RootState) => state.number.items);
+  const sumOfCategories = items.reduce(
+    (total, item) => total + item.food + item.data + item.transit + item.transfers + item.others,
+    0
+  );
+  const calculateSum = (item: Item) => {
+    return item.food + item.data + item.transit + item.transfers + item.others;
+  };
 
   return(
     <Flex
@@ -481,7 +490,7 @@ const MobileNav = () =>{
     >
       <Flex
         w="21rem"
-        h="18rem"
+        h="19rem"
         bg= {bgGradient}
         borderRadius="1rem 0 1rem 0"
         flexDir="column"
@@ -529,11 +538,16 @@ const MobileNav = () =>{
             <Heading
               size="xl"
             >  
-              {myObject.food === 0 ? (
+              {sumOfCategories === 0 ? (
                 <p>XXX</p>
               ) : (
-                
-                <p>{Sum}</p>
+                <p>
+                  {items.map((item: Item)=>(
+                    <div key={item.id}>
+                     {calculateSum(item)}
+                    </div>
+                  ))}
+                </p>
               )}
             </Heading>
           </Flex>
