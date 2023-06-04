@@ -182,8 +182,6 @@ const AnalyticsContent = ({ className }: DateTimeProps) => {
             >
               <TbCurrencyNaira/> 
             </Heading>
-            {/* {Object.keys(sumOfCategoriesById).map((id: string) => (
-              <div key={id}> */}
                 <Heading
                   size={["","","lg","lg"]}
                   display={{ base: 'none', md: 'block' }}
@@ -191,10 +189,6 @@ const AnalyticsContent = ({ className }: DateTimeProps) => {
                 >
                   {calculateSum(item)}
                 </Heading>
-              {/* </div>
-            ))} */}
-            
-
             <Popover
             >
               <PopoverTrigger>
@@ -345,7 +339,7 @@ const AnalyticsContent = ({ className }: DateTimeProps) => {
                       variant="outline"
                       colorScheme="blue"
                     >
-                      Edit
+                      edit
                     </Button>
                   </Flex>
                 </Flex>
@@ -360,7 +354,12 @@ const AnalyticsContent = ({ className }: DateTimeProps) => {
     ))}
 
       {editedItem && (
-        <Modal isOpen onClose={() => setEditedItem(null)}>
+        <Modal 
+          isOpen onClose={() => setEditedItem(null)} 
+          isCentered 
+          blockScrollOnMount={false}
+          closeOnOverlayClick={false}
+        >
           <ModalOverlay />
           <ModalContent>
             <ModalHeader>Edit Item</ModalHeader>
@@ -368,12 +367,15 @@ const AnalyticsContent = ({ className }: DateTimeProps) => {
               {/* Render the edit form inputs */}
               <Flex
                 flexDir="column"
+                gap="1rem"
               >
                 <Flex
-                  flexDir="column"
+                  alignItems="center"
+                  // gap="16rem"
                 >
                   <Heading
-                    fontSize="sm"
+                    fontSize="lg"
+                    mr="auto"
                   >
                     Food
                   </Heading>
@@ -382,11 +384,16 @@ const AnalyticsContent = ({ className }: DateTimeProps) => {
                     onChange={(e) =>
                       setEditedItem({ ...editedItem, food: Number(e.target.value) })
                     }
+                    w="5rem"
                   />
                 </Flex>
-                <Flex>
+                <Flex
+                  alignItems="center"
+                  // gap="16rem"
+                >
                   <Heading
-                    fontSize="sm"
+                    fontSize="lg"
+                    mr="auto"
                   >
                     Data
                   </Heading>
@@ -395,11 +402,16 @@ const AnalyticsContent = ({ className }: DateTimeProps) => {
                     onChange={(e) =>
                       setEditedItem({ ...editedItem, data: Number(e.target.value) })
                     }
+                    w="5rem"
                   />
                 </Flex>
-                <Flex>
+                <Flex
+                  alignItems="center"
+                  // gap="16rem"
+                >
                   <Heading
-                    fontSize="sm"
+                    fontSize="lg"
+                    mr="auto"
                   >
                     Transit
                   </Heading>        
@@ -408,11 +420,16 @@ const AnalyticsContent = ({ className }: DateTimeProps) => {
                     onChange={(e) =>
                       setEditedItem({ ...editedItem, transit: Number(e.target.value) })
                     }
+                    w="5rem"
                   />
                 </Flex>
-                <Flex>
+                <Flex
+                  alignItems="center"
+                  // gap="16rem"
+                >
                   <Heading
-                    fontSize="sm"
+                    fontSize="lg"
+                    mr="auto"
                   >
                     Transfers
                   </Heading>
@@ -421,12 +438,17 @@ const AnalyticsContent = ({ className }: DateTimeProps) => {
                     onChange={(e) =>
                       setEditedItem({ ...editedItem, transfers: Number(e.target.value) })
                     }
+                    w="5rem"
                   />
                 </Flex>
-                <Flex>
+                <Flex
+                  alignItems="center"
+                  // gap="16rem"
+                >
                   <Heading
-                    fontSize="sm"
-                  >
+                    fontSize="lg"
+                    mr="auto"
+                  > 
                     Others
                   </Heading>
                   <Input
@@ -434,16 +456,19 @@ const AnalyticsContent = ({ className }: DateTimeProps) => {
                     onChange={(e) =>
                       setEditedItem({ ...editedItem, others: Number(e.target.value) })
                     }
+                    w="5rem"
                   />
                 </Flex>
               </Flex>
               {/* Render other form inputs */}
             </ModalBody>
-            <ModalFooter>
+            <ModalFooter
+              gap="1rem"
+            >
               <Button colorScheme="blue" onClick={() => handleUpdateItem(editedItem)}>
                 Save
               </Button>
-              <Button variant="ghost" onClick={() => setEditedItem(null)}>
+              <Button variant="outline" onClick={() => setEditedItem(null)}>
                 Cancel
               </Button>
             </ModalFooter>

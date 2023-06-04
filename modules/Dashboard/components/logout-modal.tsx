@@ -54,7 +54,7 @@ const LogoutModal = () => {
                     >
                         Yes
                     </Button>
-                    <Button variant='outline' colorScheme={yes} onClick={onClose}>
+                    <Button variant='outline' colorScheme="blue" onClick={onClose}>
                         Cancel
                     </Button>
                 </Flex>

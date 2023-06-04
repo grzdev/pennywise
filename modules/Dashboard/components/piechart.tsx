@@ -29,7 +29,7 @@ interface Item {
 const InputPiechart = () => {
     const pieColor = useColorModeValue("#8ab7ff","#8ab4ff")
     const pieColor2 = useColorModeValue("#8ab7ff","#8ab4ff")
-    const textColor = useColorModeValue("white","white")
+    const textColor = useColorModeValue("#92b3ff","white")
     const items = useSelector((state: RootState) => state.number.items);
 
     const chartData = [
@@ -58,7 +58,9 @@ const InputPiechart = () => {
     
 
   return (
-    <Flex>
+    <Flex
+      mt={["-1.5rem","","",""]}
+    >
       {sumOfCategories === 0 ? (
         <motion.div
           initial={{ opacity: 0 }} 
@@ -92,7 +94,7 @@ const InputPiechart = () => {
           </Flex>
         </motion.div>
       ) : (
-        <PieChart width={250} height={250}>
+        <PieChart width={350} height={270}>
           <Pie
             data={chartData}
             cx="50%"
@@ -103,8 +105,8 @@ const InputPiechart = () => {
               const RADIAN = Math.PI / 189;
               const angle = -midAngle * RADIAN;
               // Calculate the x and y positions for the label
-              const x = cx + (outerRadius + innerRadius) / 1.7 * Math.cos(angle);
-              const y = cy + (outerRadius + innerRadius) / 1 * Math.sin(angle);
+              const x = cx + (outerRadius + innerRadius) / 0.9 * Math.cos(angle);
+              const y = cy + (outerRadius + innerRadius) / 0.7 * Math.sin(angle);
 
               return (
                 <text
