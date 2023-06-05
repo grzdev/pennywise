@@ -17,7 +17,8 @@ import { motion } from 'framer-motion'
 const About = () => {
   const headerBg = useColorModeValue("#EEF4FC","#256EC1")
   const header = useColorModeValue("#0F60D6","whitre")
-  const textColor = useColorModeValue("white","#b6b6b6")
+  const textColor = useColorModeValue("#6a6a6a","#b6b6b6")
+  const textColor2 = useColorModeValue("white","#b6b6b6")
   // const secondDivCOlor = useColorModeValue("#e6f1ff","#333f55")
   const secondDivCOlor = useColorModeValue("linear-gradient(45deg, #262d45 0%, #3261ff 100%)","#333f55")
 
@@ -114,8 +115,8 @@ const About = () => {
 
           <Box
               // ml={["0.2rem", "4rem", "3rem", "-1.8rem"]}
-              w={["22rem", "22rem", "50rem", "60rem"]}
-              mt={["2rem", "4rem", "-3rem", "-2rem"]}
+              w={["24rem", "24  rem", "50rem", "60rem"]}
+              mt={["1rem", "1rem", "-3rem", "-2rem"]}
             >
               <motion.div
                 animate={{ y: 0 }}
@@ -134,7 +135,7 @@ const About = () => {
 
         <Flex
             flexDir={["column-reverse", "column-reverse", "column-reverse", "row"]}
-            mt={["4rem","4rem","6rem","3rem"]}
+            mt={["3rem","3rem","6rem","1rem"]}
             mb="12rem"
             bg={secondDivCOlor}
             overflow="hidden"
@@ -150,7 +151,7 @@ const About = () => {
               w={["","","",""]}
               h={["18rem","","","25rem"]}
               borderRadius="1.2rem"
-              mt={["-6rem", "-8rem", "-6rem", "-2rem"]}
+              mt={["-7.5rem", "-8rem", "-6rem", "-2rem"]}
             >
               <Heading
                 size="2xl"
@@ -167,7 +168,7 @@ const About = () => {
               <Flex
               >
                 <Text
-                  color={textColor}
+                  color={textColor2}
                   fontSize={["1.1rem", "1.1rem", "1.3rem", "1.5rem"]}
                   mb={["0.4rem", "0.4rem", "0.4rem", "2rem"]}
                   w={["15rem", "15rem", "30rem", "30.6rem"]}

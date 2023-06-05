@@ -16,24 +16,10 @@ import {
   DrawerHeader,
   DrawerBody,
   DrawerFooter,
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalCloseButton,
-  ModalBody,
-  ModalFooter
 } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
-import router from "next/router";
-import { MdTrackChanges } from "react-icons/md"
-import { useAuth } from 'context/AuthContext';
-import { AddIcon } from "@chakra-ui/icons"
-import { HiCash } from "react-icons/hi"
 import { TbCurrencyNaira } from "react-icons/tb"
 import { 
-  ChevronLeftIcon, 
-  ChevronRightIcon, 
   MoonIcon, 
   SunIcon 
 } from '@chakra-ui/icons';
@@ -73,14 +59,9 @@ interface Item {
 
 const DashBoardLandingPage = ({ className }: DateTimeProps) => {
   
-  const header = useColorModeValue("white","white")
-  const SecondBox = useColorModeValue("#407adf","#70a1c8")
-  const addButton = useColorModeValue("#0050d6","#1c5dd0")
-  const color = useColorModeValue("#ff003d","#ff003d")
-  const button = useColorModeValue("#4aafe9","#e3379b")
-  const bg = useColorModeValue("#FF3CAC","#667eea")
+  //ColorMode
   const bgGradient = useColorModeValue("linear-gradient(to right, #162961, #3969b9)","linear-gradient(to right, #28355e, #4e67b6);")
-  
+  const headerColor = useColorModeValue("#070D59","#c6dbfb")
 
   //Date
   const [state, setState] = useState<DateTimeState>({
@@ -100,24 +81,10 @@ const DashBoardLandingPage = ({ className }: DateTimeProps) => {
   const dateOptions: Intl.DateTimeFormatOptions = { weekday: 'short', month: 'long', day: 'numeric' };
   const timeOptions: Intl.DateTimeFormatOptions = { hour: 'numeric', minute: 'numeric', second: 'numeric' };
 
-   const [sum, setSum] = useState('');
-
-  //Retrieved state
-  const myObject = useSelector(selectMyObject);
-  const Sum = myObject.food + myObject.transit + myObject.data + myObject.transfers + myObject.others
-
-  //Save data to local storage
-  // function saveToLocalStorage(Sum: string) {
-  //   localStorage.setItem('Sum', Sum);
-  // }
-
   //Get display name from Firebase
   const user = auth.currentUser
   const displayName = user?.displayName
 
-
- 
-  
 
   //Get time of the day
   const currentDate = new Date();
@@ -133,30 +100,12 @@ const DashBoardLandingPage = ({ className }: DateTimeProps) => {
     timeOfDay = "evening";
   }
 
-  //Save state to local storg
-  
-
-
-
-
-  //Know if user is loged in
-
-  // const user = auth.onAuthStateChanged((user) =>{
-  //    if (user) {
-  //   // User is signed in
-  //   console.log("User is signed in");
-  // } else {
-  //   // User is signed out
-  //   console.log("User is signed out");
-  // }
-  // })
-  
  
   const { colorMode, toggleColorMode } = useColorMode()
   const { isOpen, onClose, onOpen } = useDisclosure()
-  const headerColor = useColorModeValue("#070D59","#c6dbfb")
   const logout = useColorModeValue("red","#C6dbfb")
   
+  //Redux state
   const items = useSelector((state: RootState) => state.number.items);
   const sumOfCategoriesById: { [id: number]: number } = {};
   const sumOfCategories = items.reduce(
