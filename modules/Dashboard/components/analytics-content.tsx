@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-no-undef */
 import { ChevronRightIcon } from '@chakra-ui/icons';
-import { Button, Flex, Heading, Input, Modal, ModalBody, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Popover, PopoverArrow, PopoverBody, PopoverCloseButton, PopoverContent, PopoverTrigger, Stack, Table, Tbody, Td, Text, Th, Thead, Tr, useColorModeValue } from '@chakra-ui/react'
+import { Button, Flex, Heading, Input, Modal, ModalBody, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Popover, PopoverArrow, PopoverBody, PopoverCloseButton, PopoverContent, PopoverTrigger, Stack, Table, Tbody, Td, Text, Th, Thead, Tr, useColorModeValue, useToast } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
 import { TbCurrencyNaira } from 'react-icons/tb';
 import { useDispatch, useSelector } from 'react-redux';
@@ -36,16 +36,8 @@ interface Item {
 }
 
 const AnalyticsContent = ({ className }: DateTimeProps) => {
-  const divColor = useColorModeValue("white","#222636")
-  const secondDivColor = useColorModeValue("linear-gradient(to right, #536976, #292e49)","#292c3d")
-  const divGradient = useColorModeValue("linear-gradient(to bottom, #505285 0%, #585e92 12%, #65689f 25%, #7474b0 37%, #7e7ebb 50%, #8389c7 62%, #9795d4 75%, #a2a1dc 87%, #b5aee4 100%);","linear-gradient(to right, #6a85b6 0%, #bac8e0 100%);")
-  const divColor2 = useColorModeValue("#EDF2F7", "#353b54")
-  const header2 = useColorModeValue("white", "white")
   const deleteScheme = useColorModeValue("red","blue")
   const bgGradient = useColorModeValue("linear-gradient(to right, #162961, #3969b9)","linear-gradient(to right, #28355e, #4e67b6);")
-
-  const myObject = useSelector(selectMyObject)
-  const Sum = myObject.food + myObject.data + myObject.others + myObject.transfers + myObject.transit
 
 
   //Date
@@ -70,40 +62,52 @@ const AnalyticsContent = ({ className }: DateTimeProps) => {
 
   const [data, setData] = useState<DocumentData | null>(null);
 
-  useEffect(() => {
-    // Set up a query that listens for new documents added to the collection
-    const dataCollection = collection(db, "test3");
-    const queryRef = query(
-      dataCollection,
-      where("date", "==", state.dateTime.toLocaleDateString("en-US", dateOptions))
-    );
-    const unsubscribe = onSnapshot(queryRef, (snapshot) => {
-      snapshot.docChanges().forEach((change) => {
-        if (change.type === "added") {
-          setData(change.doc.data() ?? null);
-          unsubscribe();
-        }
-      });
-    });
+  // useEffect(() => {
+  //   // Set up a query that listens for new documents added to the collection
+  //   const dataCollection = collection(db, "test3");
+  //   const queryRef = query(
+  //     dataCollection,
+  //     where("date", "==", state.dateTime.toLocaleDateString("en-US", dateOptions))
+  //   );
+  //   const unsubscribe = onSnapshot(queryRef, (snapshot) => {
+  //     snapshot.docChanges().forEach((change) => {
+  //       if (change.type === "added") {
+  //         setData(change.doc.data() ?? null);
+  //         unsubscribe();
+  //       }
+  //     });
+  //   });
 
     
 
-    // Add a new document to the collection
-    const userData = {
-      food: myObject.food,
-      transit: myObject.transit,
-      data: myObject.data,
-      transfers: myObject.transfers,
-      others: myObject.others,
-      date: state.dateTime.toLocaleDateString("en-US", dateOptions),
-    };
-    addDoc(dataCollection, userData);
-  }, [dateOptions, myObject.data, myObject.food, myObject.others, myObject.transfers, myObject.transit, state.dateTime]);
+  //   // Add a new document to the collection
+  //   const userData = {
+  //     food: myObject.food,
+  //     transit: myObject.transit,
+  //     data: myObject.data,
+  //     transfers: myObject.transfers,
+  //     others: myObject.others,
+  //     date: state.dateTime.toLocaleDateString("en-US", dateOptions),
+  //   };
+  //   addDoc(dataCollection, userData);
+  // }, [dateOptions, myObject.data, myObject.food, myObject.others, myObject.transfers, myObject.transit, state.dateTime]);
   
 
   const dispatch = useDispatch()
+  const toast = useToast()
+
     const handleDelete = (itemId: number) => {
       dispatch(deleteItem(itemId))
+
+      toast({
+        title: 'Deleted',
+        position: 'top',
+        // description: "See you tomorrow.",
+        status: 'success',
+        duration: 5000,
+        isClosable: true,
+        // variant: "left-accent",
+      })
     }
   
     const items = useSelector((state: RootState) => state.number.items);
@@ -125,6 +129,16 @@ const AnalyticsContent = ({ className }: DateTimeProps) => {
     const handleUpdateItem = (updatedItem: Item) => {
       dispatch(updateItem(updatedItem));
       setEditedItem(null); // Clear the edited item state
+
+      toast({
+        title: 'Edited',
+        position: 'top',
+        // description: "See you tomorrow.",
+        status: 'success',
+        duration: 5000,
+        isClosable: true,
+        // variant: "left-accent",
+      })
     };
     
     const calculateSum = (item: Item) => {
@@ -385,6 +399,7 @@ const AnalyticsContent = ({ className }: DateTimeProps) => {
                       setEditedItem({ ...editedItem, food: Number(e.target.value) })
                     }
                     w="5rem"
+                    type="number"
                   />
                 </Flex>
                 <Flex
@@ -403,6 +418,7 @@ const AnalyticsContent = ({ className }: DateTimeProps) => {
                       setEditedItem({ ...editedItem, data: Number(e.target.value) })
                     }
                     w="5rem"
+                    type="number"
                   />
                 </Flex>
                 <Flex
@@ -421,6 +437,7 @@ const AnalyticsContent = ({ className }: DateTimeProps) => {
                       setEditedItem({ ...editedItem, transit: Number(e.target.value) })
                     }
                     w="5rem"
+                    type="number"
                   />
                 </Flex>
                 <Flex
@@ -439,6 +456,7 @@ const AnalyticsContent = ({ className }: DateTimeProps) => {
                       setEditedItem({ ...editedItem, transfers: Number(e.target.value) })
                     }
                     w="5rem"
+                    type="number"
                   />
                 </Flex>
                 <Flex
@@ -457,6 +475,7 @@ const AnalyticsContent = ({ className }: DateTimeProps) => {
                       setEditedItem({ ...editedItem, others: Number(e.target.value) })
                     }
                     w="5rem"
+                    type="number"
                   />
                 </Flex>
               </Flex>

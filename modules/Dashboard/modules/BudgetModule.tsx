@@ -21,19 +21,13 @@ import { selectExpense } from 'redux/slices/budgetSlice'
 import MobileNav from '../components/mobile-nav'
 
 const BudgetModule = () => {
+  //ColorMode
   const bgGradient = useColorModeValue("linear-gradient(to right, #162961, #3969b9)","linear-gradient(to right, #28355e, #4e67b6);")
-  const bg = useColorModeValue("linear-gradient(to right, #457fca 0%, #5691c8 100%)","")  
   const divColor2 = useColorModeValue("white", "#222636")
-  const secondBg = useColorModeValue("white","#222636")
-  const thirdBg = useColorModeValue("white","#32384f")
-  const food = useColorModeValue("#d61212","#d61212")
-  const transit = useColorModeValue("#d77000","#d77000")
-  const data = useColorModeValue("#008eff","#008eff")
-  const transfers = useColorModeValue("#03af00","#03af00")
-// background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
 
 
-const expense = useSelector(selectExpense)
+  //Redux state
+  const expense = useSelector(selectExpense)
 
   return (
     <>

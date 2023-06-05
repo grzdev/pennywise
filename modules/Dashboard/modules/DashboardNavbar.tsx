@@ -1,8 +1,5 @@
 import React, { ReactNode, useState } from 'react';
-import { MdTrackChanges } from "react-icons/md"
 import {
-  IconButton,
-  Avatar,
   Box,
   CloseButton,
   Flex,
@@ -16,36 +13,10 @@ import {
   useDisclosure,
   BoxProps,
   FlexProps,
-  Menu,
-  MenuButton,
-  MenuDivider,
-  MenuItem,
-  MenuList,
   Heading,
   Button,
   useColorMode,
-  Tabs,
-  TabList,
-  Tab,
-  TabPanels,
-  TabPanel,
-  DrawerOverlay,
-  DrawerCloseButton,
-  DrawerHeader,
-  DrawerBody,
-  DrawerFooter,
-  Input,
 } from '@chakra-ui/react';
-import {
-  FiHome,
-  FiTrendingUp,
-  FiCompass,
-  FiStar,
-  FiSettings,
-  FiMenu,
-  FiBell,
-  FiChevronDown,
-} from 'react-icons/fi';
 import { IconType } from 'react-icons';
 import Link from 'next/link';
 import { ReactText } from 'react';
@@ -54,8 +25,6 @@ import { SiGoogleanalytics } from "react-icons/si"
 import { BsFillPersonFill } from "react-icons/bs"
 import { FaWallet } from "react-icons/fa"
 import { MoonIcon, SunIcon } from '@chakra-ui/icons';
-import logoP from "../../../images/logoP.png"
-import Image from 'next/dist/client/image';
 import { FaGem } from "react-icons/fa"
 import LogoutModal from '../components/logout-modal';
 

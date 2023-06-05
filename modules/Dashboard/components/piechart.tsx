@@ -1,4 +1,4 @@
-import { Flex, Heading, useColorModeValue } from '@chakra-ui/react';
+import { Box, Flex, Heading, useColorModeValue } from '@chakra-ui/react';
 import React from 'react'
 import { 
     PieChart,
@@ -72,10 +72,10 @@ const InputPiechart = () => {
           flexDir="column"
           justifyContent="center"
           alignItems="center"
-          mb={["-1.9rem","-1.9rem","-3.7rem","-4.5rem"]}
+          mb={["-1.9rem","-1.9rem","-3.7rem","-3.5rem"]}
           >
             <Heading
-              mt={["-0.1rem","1.7rem","2.3rem","2.3rem"]}
+              mt={["2rem","2rem","3.7rem","2.3rem"]}
               size={["sm","xs","sm","md"]}
               color={textColor}
             >
@@ -94,45 +94,49 @@ const InputPiechart = () => {
           </Flex>
         </motion.div>
       ) : (
-        <PieChart width={350} height={270}>
-          <Pie
-            data={chartData}
-            cx="50%"
-            cy="50%"
-            outerRadius={82}
-            labelLine={false}
-            label={({ cx, cy, midAngle, innerRadius, outerRadius, value, index }) => {
-              const RADIAN = Math.PI / 189;
-              const angle = -midAngle * RADIAN;
-              // Calculate the x and y positions for the label
-              const x = cx + (outerRadius + innerRadius) / 0.9 * Math.cos(angle);
-              const y = cy + (outerRadius + innerRadius) / 0.7 * Math.sin(angle);
+        <Box
+          mt={["-1rem","","",""]}
+        >
+          <PieChart width={350} height={290}>
+            <Pie
+              data={chartData}
+              cx="50%"
+              cy="50%"
+              outerRadius={82}
+              labelLine={false}
+              label={({ cx, cy, midAngle, innerRadius, outerRadius, value, index }) => {
+                const RADIAN = Math.PI / 189;
+                const angle = -midAngle * RADIAN;
+                // Calculate the x and y positions for the label
+                const x = cx + (outerRadius + innerRadius) / 0.9 * Math.cos(angle);
+                const y = cy + (outerRadius + innerRadius) / 0.7 * Math.sin(angle);
 
-              return (
-                <text
-                  x={x}
-                  y={y}
-                  fill={textColor}
-                  textAnchor={x > cx ? 'start' : 'end'}
-                  dominantBaseline="central"
-                  fontSize="16"
-                  textDecoration=""
-                  fontWeight={600}
-                >
-                  <tspan x={x} dy="1.2em">
-                    {/* {`${chartData[index].name}: ${chartData[index].value}`} */}
-                    {`${chartData[index].name}`}
-                  </tspan>
-                </text>
-              );
-            }}
-            dataKey="value"
-          >
-            {chartData.map((entry, index) => (
-              <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-            ))}
-          </Pie>
-        </PieChart>
+                return (
+                  <text
+                    x={x}
+                    y={y}
+                    fill={textColor}
+                    textAnchor={x > cx ? 'start' : 'end'}
+                    dominantBaseline="central"
+                    fontSize="16"
+                    textDecoration=""
+                    fontWeight={600}
+                  >
+                    <tspan x={x} dy="1.2em">
+                      {/* {`${chartData[index].name}: ${chartData[index].value}`} */}
+                      {`${chartData[index].name}`}
+                    </tspan>
+                  </text>
+                );
+              }}
+              dataKey="value"
+            >
+              {chartData.map((entry, index) => (
+                <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+              ))}
+            </Pie>
+          </PieChart>
+        </Box>
       )}
     </Flex>
   )

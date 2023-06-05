@@ -138,20 +138,6 @@ const InputModal = () => {
   //Toast
   const toast = useToast()
 
-
-
-  
-
-  // Onchange function
-  // const dispatch = useDispatch();
-  const myObject = useSelector(selectMyObject);
-  const handleNumberChange = (name: keyof InputData, value: number) => {
-    dispatch(onChange({ name, value }));
-  }
-
-
-
-
   //Funtional modal buttons
 
   //onchange action
@@ -319,130 +305,6 @@ const InputModal = () => {
       }
     };
 
-  //add 1k
-  const handleAdd1kFood = (name: keyof InputData, value: number) => {
-    dispatch(add1k({ name : "food", value })),
-    modal2.onOpen()
-  };
-  const handleAdd1kTransit = (name: keyof InputData, value: number) => {
-    dispatch(add1k({ name : "transit", value })),
-    modal3.onOpen()
-  };
-  const handleAdd1kData = (name: keyof InputData, value: number) => {
-    dispatch(add1k({ name : "data", value })),
-    modal4.onOpen()
-  };
-  const handleAdd1kTransfers = (name: keyof InputData, value: number) => {
-    dispatch(add1k({ name : "transfers", value })),
-    modal5.onOpen()
-  };
-  const handleAdd1kOthers = (name: keyof InputData, value: number) => {
-    dispatch(add1k({ name : "others", value })),
-    modal6.onOpen()
-  };
-
-
-
-
-   //add 2k
-   const handleAdd2kFood = (name: keyof InputData, value: number) => {
-    dispatch(add2k({ name : "food", value })),
-    modal2.onOpen()
-  };
-  const handleAdd2kTransit = (name: keyof InputData, value: number) => {
-    dispatch(add2k({ name : "transit", value })),
-    modal3.onOpen()
-  };
-  const handleAdd2kData = (name: keyof InputData, value: number) => {
-    dispatch(add2k({ name : "data", value })),
-    modal4.onOpen()
-  };
-  const handleAdd2kTransfers = (name: keyof InputData, value: number) => {
-    dispatch(add2k({ name : "transfers", value })),
-    modal5.onOpen()
-  };
-  const handleAdd2kOthers = (name: keyof InputData, value: number) => {
-    dispatch(add2k({ name : "others", value })),
-    modal6.onOpen()
-  };
-
-
-
-
-  //add 3k
-  const handleAdd3kFood = (name: keyof InputData, value: number) => {
-    dispatch(add3k({ name : "food", value })),
-    modal2.onOpen()
-  };
-  const handleAdd3kTransit =(name: keyof InputData, value: number) => {
-    dispatch(add3k({ name : "transit", value })),
-    modal3.onOpen()
-  };
-  const handleAdd3kData = (name: keyof InputData, value: number) => {
-    dispatch(add3k({ name : "data", value })),
-    modal4.onOpen()
-  };
-  const handleAdd3kTransfers = (name: keyof InputData, value: number) => {
-    dispatch(add3k({ name : "transfers", value })),
-    modal5.onOpen()
-  };
-  const handleAdd3kOthers = (name: keyof InputData, value: number) => {
-    dispatch(add3k({ name : "others", value })),
-    modal6.onOpen()
-  };
-
-
-
-
-
-  //add 5k
-  const handleAdd5kFood = (name: keyof InputData, value: number) => {
-    dispatch(add5k({ name : "food", value })),
-    modal2.onOpen()
-  };
-  const handleAdd5kTransit = (name: keyof InputData, value: number) => {
-    dispatch(add5k({ name : "transit", value })),
-    modal3.onOpen()
-  };
-  const handleAdd5kData = (name: keyof InputData, value: number) => {
-    dispatch(add5k({ name : "data", value })),
-    modal4.onOpen()
-  };
-  const handleAdd5kTransfers = (name: keyof InputData, value: number) => {
-    dispatch(add5k({ name : "transfers", value })),
-    modal5.onOpen()
-  };
-  const handleAdd5kOthers = (name: keyof InputData, value: number) => {
-    dispatch(add5k({ name : "others", value })),
-    modal6.onOpen()
-  };
-
-
-
-
-
-  //add 10k
-  const handleAdd10kFood = (name: keyof InputData, value: number) => {
-    dispatch(add10k({ name : "food", value })),
-    modal2.onOpen()
-  };
-  const handleAdd10kTransit = (name: keyof InputData, value: number) => {
-    dispatch(add10k({ name : "transit", value })),
-    modal3.onOpen()
-  };
-  const handleAdd10kData = (name: keyof InputData, value: number) => {
-    dispatch(add10k({ name : "data", value })),
-    modal4.onOpen()
-  };
-  const handleAdd10kTransfers = (name: keyof InputData, value: number) => {
-    dispatch(add10k({ name : "transfers", value })),
-    modal5.onOpen()
-  };
-  const handleAdd10kOthers = (name: keyof InputData, value: number) => {
-    dispatch(add10k({ name : "others", value })),
-    modal6.onOpen()
-  };
-
   
   //Date
   const [state, setState] = useState<DateTimeState>({
@@ -463,88 +325,13 @@ const InputModal = () => {
   const timeOptions: Intl.DateTimeFormatOptions = { hour: 'numeric', minute: 'numeric', second: 'numeric' };
 
 
-
-  //Modal Save function
-   const handleAddInput = async () => {
-    modal1.onClose()
-    modal2.onClose()
-    modal3.onClose()
-    modal4.onClose()
-    modal5.onClose()
-    modal6.onClose()
-
-    toast({
-      title: 'Done',
-      position: 'top',
-      description: "See you tomorrow.",
-      status: 'info',
-      duration: 5000,
-      isClosable: true,
-      // variant: "left-accent",
-    })
-
-    const dataCollection = collection(db, "test4")
-    const userData = { 
-      food: myObject.food,
-      transit: myObject.transit,
-      data: myObject.data,
-      transfers: myObject.transfers,
-      others: myObject.others,
-      date: state.dateTime.toLocaleDateString('en-US', dateOptions)
-    };
-
-    // update state
-    const queryRef = query(dataCollection, where("date", "==", userData.date))
-    const querySnapshot = await getDocs(queryRef);
-    if (!querySnapshot.empty) {
-      const docRef = doc(db, "test4", querySnapshot.docs[0].id);
-      await setDoc(docRef, userData, { merge: true });
-      console.log("Fields updated successfully!");
-    } else {
-      // If a document with the current date does not exist, create a new document
-      await addDoc(dataCollection, userData );
-      console.log("New document created successfully!");
-    }
-
-  }
-
+  //redux state
   const items = useSelector((state: RootState) => state.number.items);
   const sumOfCategories = items.reduce(
     (total, item) => total + item.food + item.data + item.transit + item.transfers + item.others,
     0
   );
 
-  const handleUpdateItem = (updatedItem: Item) => {
-    dispatch(updateItem(updatedItem));
-  };
-
-//   const dataCollection = collection(db, "test3");
-//   const userData = {
-//     food: myObject.food,
-//     transit: myObject.transit,
-//     data: myObject.data,
-//     transfers: myObject.transfers,
-//     others: myObject.others,
-//     date: state.dateTime.toLocaleDateString('en-US', dateOptions)
-//   };
-
-// // Set up a query that listens for new documents added to the collection
-//   const queryReff = query(dataCollection, where("date", "==", userData.date));
-//   const unsubscribe = onSnapshot(queryReff, (snapshot) => {
-//     snapshot.docChanges().forEach((change) => {
-//       if (change.type === "added") {
-//         // Log the newly added document data
-//         console.log(change.doc.data());
-//         unsubscribe();
-//       }
-//     });
-//   });
-
-  
-  
-
-
-  
 
   return (
     <Flex>

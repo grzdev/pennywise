@@ -1,45 +1,13 @@
 /* eslint-disable react/no-unescaped-entities */
 import { 
-  Button,
-  Container, 
-  Divider, 
+  Container,  
   Flex, 
   Heading, 
-  Popover, 
-  PopoverArrow, 
-  PopoverBody, 
-  PopoverCloseButton, 
-  PopoverContent, 
-  PopoverHeader, 
-  PopoverTrigger, 
-  Stat, 
-  StatArrow, 
-  StatHelpText, 
-  Table, 
-  Tbody, 
-  Td, 
-  Text, 
-  Th, 
-  Thead, 
-  Tr, 
   useColorModeValue 
 } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
 import Head from "next/head"
-import { ChevronRightIcon, TriangleUpIcon } from "@chakra-ui/icons"
-import { TbCurrencyNaira } from "react-icons/tb"
-import { 
-  BiTransferAlt, 
-  BiDotsHorizontalRounded } from "react-icons/bi"
-import { 
-  IoFastFoodOutline, 
-  IoBusOutline,
-  IoFastFoodSharp, 
-  IoWifi 
-} from "react-icons/io5"
-import InputBarchart from '../components/barchart';
 import { useSelector } from 'react-redux'
-import { selectMyObject } from 'redux/slices/dailyInputSlice'
 import Image from 'next/image'
 import Notfound from "../../../images/notfound.png"
 import AnalyticsContent from '../components/analytics-content'
@@ -65,17 +33,10 @@ interface Item {
 }
 
 const AnalyticsModule = ({ className }: DateTimeProps) => {
+  //ColorMode
   const divColor = useColorModeValue("white","#222636")
-  const secondDivColor = useColorModeValue("linear-gradient(to right, #536976, #292e49)","#292c3d")
-  const divGradient = useColorModeValue("linear-gradient(to bottom, #505285 0%, #585e92 12%, #65689f 25%, #7474b0 37%, #7e7ebb 50%, #8389c7 62%, #9795d4 75%, #a2a1dc 87%, #b5aee4 100%);","linear-gradient(to right, #6a85b6 0%, #bac8e0 100%);")
-  const divColor2 = useColorModeValue("#EDF2F7", "#353b54")
-  const header2 = useColorModeValue("white", "white")
-  const bgGradient = useColorModeValue("linear-gradient(to right, #162961, #3969b9)","linear-gradient(to right, #28355e, #28355e);")
-  const borderColor = useColorModeValue("black","white")
-  
-  const myObject = useSelector(selectMyObject)
-  const Sum = myObject.food + myObject.data + myObject.others + myObject.transfers + myObject.transit
 
+  //Date
   const [state, setState] = useState<DateTimeState>({
     dateTime: new Date(),
   });
@@ -93,13 +54,7 @@ const AnalyticsModule = ({ className }: DateTimeProps) => {
   const dateOptions: Intl.DateTimeFormatOptions = { weekday: 'long', month: 'long', day: 'numeric' };
   const timeOptions: Intl.DateTimeFormatOptions = { hour: 'numeric', minute: 'numeric', second: 'numeric' };
 
-  // const result = Object.keys(myObject).map((key: string | number) => {
-  //   return {
-  //     key: key,
-  //     value: myObject[key]
-  //   }
-  // })
-
+  //Redux state
   const items = useSelector((state: RootState) => state.number.items);
   const sumOfCategoriesById: { [id: number]: number } = {};
   const sumOfCategories = items.reduce(

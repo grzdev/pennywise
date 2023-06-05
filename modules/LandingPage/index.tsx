@@ -95,7 +95,7 @@ const LandingPage = () => {
                  fontFamily="'Ubuntu', sans-serif"
                   
                 >
-                  PennyWise assists users in meeting their financial goals by keeping track of their everyday spending.
+                  PennyWise helps users reach their financial objectives by keeping track of their daily spending.
                 </Text>
               </motion.div>
             </Flex>
@@ -134,7 +134,7 @@ const LandingPage = () => {
           <Box
             // ml={["0.2rem", "4rem", "3rem", "1rem"]}
             mr={["","","","1rem"]}
-            w={["21rem", "20rem", "40rem", "51rem"]}
+            w={["24rem", "24rem", "40rem", "51rem"]}
             mt={["5.5rem", "5.5rem", "3rem", "-1rem"]}
           >
             <motion.div
@@ -413,7 +413,7 @@ const LandingPage = () => {
             >
               <Link href="/signup">
                 <Button
-                  size={["md","lg","lg","lg"]}
+                  size={["lg","lg","lg","lg"]}
                   h="4rem"
                   variant='solid'
                   bg={signUp}
