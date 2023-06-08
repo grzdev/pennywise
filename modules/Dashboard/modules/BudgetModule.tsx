@@ -19,6 +19,15 @@ import BudgetDiv from '../components/budgets-div'
 import { useSelector } from 'react-redux'
 import { selectExpense } from 'redux/slices/budgetSlice'
 import MobileNav from '../components/mobile-nav'
+import Image from 'next/image'
+import Notfound from "../../../images/notfound.png"
+
+interface Expense {
+  id: string;
+  category: string;
+  amount: number;
+  date: string;
+}
 
 const BudgetModule = () => {
   //ColorMode
@@ -76,7 +85,7 @@ const BudgetModule = () => {
       <Flex
         w={["21rem","21rem","34rem","30rem"]}
         bg= {divColor2}
-        h={["25rem","25rem","30rem","34rem"]}
+        h={["25rem","25rem","34rem","34rem"]}
         mt={["-1rem","-1rem","-1rem","4rem"]}
         boxShadow="lg"
         borderRadius="1rem 0 1rem 0"
@@ -87,16 +96,44 @@ const BudgetModule = () => {
           // overflowX="hidden"
         alignItems="center"
       >
-        {/* <BudgetDiv/> */}
-        {expense?.map((budget)=>(
-          <BudgetDiv
-            key={budget.id} 
-            id={budget.id} 
-            category={budget.category} 
-            amount={budget.amount} 
-            date={budget.date}                     
-            />
-        ))}
+        {expense && expense.length > 0 ? (
+          <Flex
+            flexDir="column"
+          >
+            {expense.map((budget) => (
+              <BudgetDiv
+                key={budget.id}
+                id={budget.id}
+                category={budget.category}
+                amount={budget.amount}
+                date={budget.date}
+              />
+            ))}
+          </Flex>
+        ) : (
+          <Flex
+            flexDir="column"
+            justifyContent="center"
+            alignItems="center"
+          >
+            <Flex
+              w={["","","",""]}
+              mt={["2rem","2rem","2rem","3rem"]}
+              ml={["2rem","2rem","2rem","2rem"]}
+            >
+              <Image
+                src={Notfound}
+                alt=""
+              />
+            </Flex>
+            <Heading
+              mt={["-2rem","-2rem","-2rem","-2rem"]}
+              size={["md","md","lg","lg"]}
+            >
+              Nothing to see here yet.
+            </Heading>
+          </Flex>
+        )}    
       </Flex>
     </Flex>
     </>

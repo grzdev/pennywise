@@ -151,11 +151,12 @@ const AnalyticsContent = ({ className }: DateTimeProps) => {
     {items.map((item: Item) => (
       <div key={item.id}>
     <Flex
-      w={["18rem","18rem","33rem","55rem"]}
+      w={["18rem","18rem","30rem","55rem"]}
       h={["4rem","4rem","5rem","5rem"]}
       boxShadow="lg"
       borderRadius="1rem 0 1rem 0"
       mt="2rem"
+      mb="1rem"
       bg= {bgGradient}
       justifyContent="center"
       alignItems="center"

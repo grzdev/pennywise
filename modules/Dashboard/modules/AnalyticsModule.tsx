@@ -83,7 +83,7 @@ const AnalyticsModule = ({ className }: DateTimeProps) => {
         <MobileNav/>
         
         <Flex
-          w={["21rem","21rem","39rem","62rem"]}
+          w={["21rem","21rem","35rem","62rem"]}
           h={["28rem","30rem","38rem","35rem"]}
           borderRadius="1rem 0 1rem 0"
           bg= {divColor}
@@ -106,8 +106,8 @@ const AnalyticsModule = ({ className }: DateTimeProps) => {
                 w={["25rem","25rem","34rem","35rem"]}
                 justifyContent="center"
                 alignItems="center"
-                mt={["2rem","","3rem","1rem"]}
-                ml={["2rem","","3rem","3rem"]}
+                mt={["2rem","2rem","3rem","1rem"]}
+                ml={["2rem","2rem","3rem","3rem"]}
               >
                 <Image
                   src={Notfound}

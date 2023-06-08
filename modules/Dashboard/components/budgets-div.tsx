@@ -1,6 +1,7 @@
-import { Button, Flex, Heading, Popover, PopoverArrow, PopoverBody, PopoverCloseButton, PopoverContent, PopoverHeader, PopoverTrigger, Progress, Text, useColorModeValue } from '@chakra-ui/react'
+import { Button, Checkbox, Flex, Heading, Popover, PopoverArrow, PopoverBody, PopoverCloseButton, PopoverContent, PopoverFooter, PopoverHeader, PopoverTrigger, Progress, Text, useColorModeValue } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
 import { AiOutlineDelete } from 'react-icons/ai';
+import { BsInfoCircle } from 'react-icons/bs';
 import { TbCurrencyNaira } from 'react-icons/tb'
 import { useDispatch } from 'react-redux';
 import { deleteExpense } from 'redux/slices/budgetSlice';
@@ -81,7 +82,7 @@ const BudgetDiv = ({id, category, amount, date }:  Expense) => {
             <Flex
                 mt={["1.4rem","1.4rem","1.9rem","2rem"]}
             >
-                <Button
+                {/* <Button
                     onClick={()=> handleDeleteExpense()}
                     variant="ghost"
                     fontSize={["1.4rem","1.4rem","1.6rem","1.6rem"]}
@@ -89,7 +90,89 @@ const BudgetDiv = ({id, category, amount, date }:  Expense) => {
                     fontWeight={700}
                 >
                     <AiOutlineDelete/>
-                </Button>
+                </Button> */}
+                <Popover>
+                    <PopoverTrigger>
+                        <Button
+                            variant="ghost"
+                        >
+                            <Text
+                                fontSize={["1.3rem","1.3rem","1.5rem","1.5rem"]}
+                            >
+                                <BsInfoCircle/>
+                            </Text>
+                        </Button>
+                    </PopoverTrigger>
+                    <PopoverContent>
+                        <PopoverArrow />
+                        <PopoverCloseButton />
+                        <PopoverHeader
+                            fontSize={["1.2rem","1.2rem","1.3rem","1.3rem"]}
+                            fontWeight={600}
+                        >
+                            More Info
+                        </PopoverHeader>
+                        <PopoverBody>
+                            <Flex
+                                flexDir="row"
+                                gap={["6rem","6rem","6rem","6rem"]}
+                            >
+                                <Text
+                                   fontSize={["1.1rem","1.1rem","1.1rem","1.1rem"]}
+                                   fontWeight={500} 
+                                >
+                                    From:
+                                </Text>
+                                <Text
+                                    fontSize={["1.1rem","1.1rem","1.1rem","1.1rem"]}
+                                    fontWeight={500}
+                                >
+                                    Sunday, June 30 
+                                </Text>
+                            </Flex>
+                            <Flex
+                                flexDir="row"
+                                gap={["7.5rem","7.5rem","7.5rem","7.5rem"]}
+                                mt={["0.5rem","0.5rem","0.5rem","0.5rem"]}
+                            >
+                                <Text
+                                    fontSize={["1.1rem","1.1rem","1.1rem","1.1rem"]}
+                                    fontWeight={500}
+                                >
+                                    To:
+                                </Text>
+                                <Text
+                                    fontSize={["1.1rem","1.1rem","1.1rem","1.1rem"]}
+                                    fontWeight={500}
+                                >
+                                    Monday, July 7 
+                                </Text>
+                            </Flex>
+                        </PopoverBody>
+                        <PopoverFooter>
+                            <Flex
+                                justifyContent="center"
+                                alignItems="center"
+                                gap="1rem"
+                            >
+                                <Button
+                                    onClick={()=> handleDeleteExpense()}
+                                    variant="ghost"
+                                    fontSize={["1.4rem","1.4rem","1.6rem","1.6rem"]}
+                                    color={deleteIcon}
+                                    fontWeight={700}
+                                >
+                                    <AiOutlineDelete/>
+                                </Button>
+                                <Checkbox
+                                    size={["lg","lg","lg","lg"]}
+                                >
+                                    Done
+                                </Checkbox>
+                            </Flex>
+                        </PopoverFooter>
+                    </PopoverContent>
+                </Popover>
             </Flex>
         </Flex>
     </Flex> 
