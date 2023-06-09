@@ -33,6 +33,7 @@ interface Item {
   transfers: number;
   others: number;
   sum: number;
+  date: string
 }
 
 const AnalyticsContent = ({ className }: DateTimeProps) => {
@@ -171,7 +172,7 @@ const AnalyticsContent = ({ className }: DateTimeProps) => {
           ml={["","","1.5rem",""]}
           color="white"
         >
-          {state.dateTime.toLocaleDateString('en-US', dateOptions)}
+        {item.date}
         </Heading>
         
         <Flex

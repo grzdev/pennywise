@@ -1,27 +1,32 @@
 import { createSelector, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { Key } from 'react';
 import { RootState } from 'redux/store';
+import { produce } from 'immer';
 
 export type Expense = {
     id: string;
     category: string;
     amount: number;
     date: string;
+    isDone: boolean;
+    selectedDate: string;
   };
   
 export type ExpensesState = {
     expenses: Expense[];
+    isBudgetDone: boolean;
   };
   
   const initialState: ExpensesState = {
     expenses: [],
+    isBudgetDone: false,
   };
   
   export const budgetSlice = createSlice({
     name: 'budget',
     initialState,
     reducers: {
-      addExpense: (state, action) => {
+      addExpense: (state, action: PayloadAction<Expense>) => {
         state.expenses.push(action.payload);
       },
       deleteExpense: (state, action: PayloadAction<string>) => {
@@ -30,10 +35,16 @@ export type ExpensesState = {
           state.expenses.splice(index, 1);
         }
       },
+      toggleBudgetDone: (state, action: PayloadAction<string>) => {
+        const budget = state.expenses.find((expense) => expense.id === action.payload);
+        if (budget) {
+          budget.isDone = !budget.isDone;
+        }
+      },
     },
   });
   
-  export const { addExpense, deleteExpense} = budgetSlice.actions;
+  export const { addExpense, deleteExpense, toggleBudgetDone} = budgetSlice.actions;
   export default budgetSlice.reducer;
 
   export const selectExpense = createSelector(

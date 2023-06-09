@@ -44,7 +44,7 @@ interface Expense {
 };
 
 
-const BudgetModal = ( {id}:  Expense) => {
+const   BudgetModal = ( {id}:  Expense) => {
   const bg = useColorModeValue("linear-gradient(to right, #acb6e5, #86fde8);","linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%)")
   const selectBg = useColorModeValue("#407dd0","#407dd0")
   const naira = useColorModeValue("#407dd0","white")
@@ -64,6 +64,7 @@ const BudgetModal = ( {id}:  Expense) => {
   const [category, setCategory] = useState<string>("");
   const [amount, setAmount] = useState<number>(0);
   const [date, setDate] = useState<Date>(new Date());
+  const [selectedDate, setSelectedDate] = useState('');
 
   const options = [
   { value: 'food', label: 'Food' },
@@ -77,22 +78,43 @@ const BudgetModal = ( {id}:  Expense) => {
     setCategory(value);
     modal2.onOpen()
   };
+
   const handleDateChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    if (date) {
-    setDate(date);
-  }
+    const selectedDateValue = event.target.value;
+    const date = new Date(selectedDateValue);
+    const options: Intl.DateTimeFormatOptions = {
+      weekday: 'short',
+      month: 'long',
+      day: 'numeric',
+    };
+    const formattedDate = date.toLocaleDateString('en-US', options);
+    setSelectedDate(formattedDate);
   };
+
 
   //Modal save funtion
   const dispatch = useDispatch()
   const handleBudgetSave = (event: { preventDefault: () => void }) => {
     event.preventDefault();
-    dispatch(addExpense({
-      category: category,
-      amount: amount,
-      date : date,
-      id: Date.now()
-    }))
+    // dispatch(
+    //   addExpense({
+    //     category: category,
+    //     amount: amount,
+    //     date: new Date(date),
+    //     id: Date.now().toString(),
+    //   })
+    // );
+    dispatch(
+      addExpense({
+        category: category,
+        amount: amount,
+        date: date.toISOString(),
+        id: Date.now().toString(),
+        isDone: false,
+        selectedDate: selectedDate,
+      })
+    );
+
 
     console.log("Category: ", category);
     console.log("Amount: ", amount);
@@ -350,7 +372,8 @@ const BudgetModal = ( {id}:  Expense) => {
                 placeholder="Date"
                 color="white"
                 fontWeight={700}
-                value={date?.toISOString().substr(0, 10) ?? ''} onChange={handleDateChange}
+                value={selectedDate}
+                onChange={handleDateChange}
               />
             </Flex>
           </ModalBody>
