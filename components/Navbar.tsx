@@ -1,4 +1,3 @@
-import { MdTrackChanges } from "react-icons/md"
 import {
   Box,
   Flex,
@@ -7,41 +6,41 @@ import {
   Button,
   Stack,
   Collapse,
-  Icon,
-  Popover,
-  PopoverTrigger,
-  PopoverContent,
   useColorModeValue,
-  useBreakpointValue,
   useDisclosure,
-  Heading
+  Heading,
+  Divider
 } from '@chakra-ui/react';
 import {
-  HamburgerIcon,
   CloseIcon,
-  ChevronDownIcon,
-  ChevronRightIcon,
   MoonIcon,
   SunIcon
 } from '@chakra-ui/icons';
 import Link from 'next/link'
 import { useColorMode } from "@chakra-ui/react";
 import { useAuth } from "context/AuthContext";
-import router from "next/router";
 import { FaGem } from "react-icons/fa"
 import { RiMenu4Line } from "react-icons/ri";
+import {
+  Drawer,
+  DrawerBody,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerOverlay,
+  DrawerContent,
+  DrawerCloseButton,
+} from '@chakra-ui/react'
 
 
 
 
 const Navbar = () => {
-  const { isOpen, onToggle } = useDisclosure();
   const { colorMode, toggleColorMode } = useColorMode()
   const buttonColor = useColorModeValue("linear-gradient( 135deg, #FFA6B7 10%, #1E2AD2 100%)","linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%)")
   const headerColor = useColorModeValue("#374D9A","#c6dbfb")
+  const linkColor = useColorModeValue('gray.600', 'gray.200');
 
-  const { user, logout } = useAuth()
-
+  const { isOpen, onOpen, onClose } = useDisclosure()
   return (
     <Box>
     <Flex
@@ -65,7 +64,7 @@ const Navbar = () => {
         display={{ base: 'flex', md: 'none' }}
       >
         <IconButton
-          onClick={onToggle}
+          onClick={onOpen}
           icon={
             isOpen ? <CloseIcon w={3} h={3} /> : <RiMenu4Line fontSize="1.2rem"/>
           }
@@ -124,21 +123,6 @@ const Navbar = () => {
         mt={["0.6rem", "0.1rem", "0.1rem", "0.1rem"]}
         ml={["1.9rem","1.4rem","",""]}
         >
-          {/* {user ? (
-            <Flex>
-              <Button
-              fontSize={'sm'}
-              fontWeight={600}
-              variant={'outlne'}
-              onClick={()=>{
-                logout(),
-                router.push("/login")
-              }}
-              >
-              Logout
-            </Button>
-            </Flex>
-          ) : ( */}
           <Flex>
             <Link href="/login">
               <Button
@@ -174,7 +158,6 @@ const Navbar = () => {
               </Button>
             </Link>
           </Flex>
-          {/* )} */}
 
         <Button 
           onClick={toggleColorMode}
@@ -185,9 +168,58 @@ const Navbar = () => {
       </Stack>
     </Flex>
 
-    <Collapse in={isOpen} animateOpacity>
+    {/* <Collapse in={isOpen} animateOpacity>
       <MobileNav />
-    </Collapse>
+    </Collapse> */}
+    <>
+      <Button colorScheme='teal' onClick={onOpen}>
+        Open
+      </Button>
+      <Drawer
+        isOpen={isOpen}
+        placement='left'
+        onClose={onClose}
+        size="xs"
+      >
+        <DrawerOverlay />
+        <DrawerContent>
+          <DrawerCloseButton />
+          <DrawerHeader>
+            
+          </DrawerHeader>
+
+          <DrawerBody>
+            <Flex
+              flexDir="column"
+              gap="1.2rem"
+              justifyContent="center"
+              alignItems="center"
+              mt="4rem"
+            >
+              <Divider/>
+              <Link 
+                href="/about">
+                <Text
+                  fontSize="1.5rem"
+                >
+                  About
+                </Text>
+              </Link>
+              <Divider/>
+            </Flex>
+          </DrawerBody>
+
+          <DrawerFooter>
+          <Button 
+            onClick={toggleColorMode}
+            >
+            {colorMode === 'light' ? <MoonIcon/> : <SunIcon/>}
+            </Button>
+          </DrawerFooter>
+        </DrawerContent>
+      </Drawer>
+    </>
+
   </Box>
   )
 }
@@ -207,79 +239,11 @@ const DesktopNav = () => {
       <Flex
         gap="5rem"
       >
-        {/* <Link href="/about">
-          <Text
-            fontWeight={600}
-            color={linkColor}
-            _hover={{
-              color: "#7d9eff"
-            }}
-          >
-            About
-          </Text>
-        </Link> */}
-
-        {/* <Link href="/privacy">
-          <Text
-            fontWeight={600}
-            color={linkColor}
-            _hover={{
-              color: "#7d9eff"
-            }}
-          >
-            Privacy
-          </Text>
-        </Link>
-
-        <Link href="/terms">
-          <Text
-            fontWeight={600}
-            color={linkColor}
-            _hover={{
-              color: "#7d9eff"
-            }}
-          >
-            Terms
-          </Text>
-        </Link> */}
       </Flex>
     </Stack>
   );
 };
 
-// const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
-//   return (
-//     <Link
-//       // href={href}
-//       role={'group'}
-//       display={'block'}
-//       p={2}
-//       rounded={'md'}
-//       _hover={{ bg: useColorModeValue('pink.50', 'gray.900') }}>
-//       <Stack direction={'row'} align={'center'}>
-//         <Box>
-//           <Text
-//             transition={'all .3s ease'}
-//             _groupHover={{ color: 'pink.400' }}
-//             fontWeight={500}>
-//             {label}
-//           </Text>
-//           <Text fontSize={'sm'}>{subLabel}</Text>
-//         </Box>
-//         <Flex
-//           transition={'all .3s ease'}
-//           transform={'translateX(-10px)'}
-//           opacity={0}
-//           _groupHover={{ opacity: '100%', transform: 'translateX(0)' }}
-//           justify={'flex-end'}
-//           align={'center'}
-//           flex={1}>
-//           <Icon color={'pink.400'} w={5} h={5} as={ChevronRightIcon} />
-//         </Flex>
-//       </Stack>
-//     </Link>
-//   );
-// };
 
 const MobileNav = () => {
   const { colorMode, toggleColorMode } = useColorMode()
@@ -290,9 +254,6 @@ const MobileNav = () => {
       bg={useColorModeValue('white', 'gray.800')}
       p={4}
       display={{ md: 'none' }}>
-      {/* {NAV_ITEMS.map((navItem) => (
-        <MobileNavItem key={navItem.label} {...navItem} />
-      ))} */}
 
       <Flex
         flexDir="column"
@@ -300,42 +261,7 @@ const MobileNav = () => {
         mb="1rem"
         mt="6rem"
       >
-        <Link 
-          href="/about">
-          <Text
-            fontWeight={600}
-            color={linkColor}
-            _hover={{
-              color: "#7d9eff"
-            }}
-          >
-            About
-          </Text>
-        </Link>
-
-        {/* <Link href="/privacy">
-          <Text
-            fontWeight={600}
-            color={linkColor}
-            _hover={{
-              color: "#7d9eff"
-            }}
-          >
-            Privacy
-          </Text>
-        </Link>
-
-        <Link href="/terms">
-          <Text
-            fontWeight={600}
-            color={linkColor}
-            _hover={{
-              color: "#7d9eff"
-            }}
-          >
-            Terms
-          </Text>
-        </Link> */}
+        
       </Flex>
 
       <Button 
@@ -346,102 +272,5 @@ const MobileNav = () => {
     </Stack>
   );
 };
-
-// const MobileNavItem = ({ label, children, href }: NavItem) => {
-//   const { isOpen, onToggle } = useDisclosure();
-
-//   return (
-//     <Stack spacing={4} onClick={children && onToggle}>
-//       <Flex
-//         py={2}
-//         as={Link}
-//         href={href ?? '#'}
-//         justify={'space-between'}
-//         align={'center'}
-//         _hover={{
-//           textDecoration: 'none',
-//         }}>
-//         <Text
-//           fontWeight={600}
-//           color={useColorModeValue('gray.600', 'gray.200')}>
-//           {label}
-//         </Text>
-//         {children && (
-//           <Icon
-//             as={ChevronDownIcon}
-//             transition={'all .25s ease-in-out'}
-//             transform={isOpen ? 'rotate(180deg)' : ''}
-//             w={6}
-//             h={6}
-//           />
-//         )}
-//       </Flex>
-//       <Collapse in={isOpen} animateOpacity style={{ marginTop: '0!important' }}>
-//         <Stack
-//           mt={2}
-//           pl={4}
-//           borderLeft={1}
-//           borderStyle={'solid'}
-//           borderColor={useColorModeValue('gray.200', 'gray.700')}
-//           align={'start'}>
-//           {children &&
-//             children.map((child) => (
-//               <Link key={child.label} py={2} href={child.href}>
-//                 {child.label}
-//               </Link>
-//             ))}
-//         </Stack>
-//       </Collapse>
-//     </Stack>
-//   );
-// };
-
-interface NavItem {
-  label: string;
-  subLabel?: string;
-  children?: Array<NavItem>;
-  href?: string;
-}
-
-const NAV_ITEMS: Array<NavItem> = [
-  {
-    label: 'About',
-    children: [
-      {
-        label: 'Explore Design Work',
-        subLabel: 'Trending Design to inspire you',
-        href: '#',
-      },
-      {
-        label: 'New & Noteworthy',
-        subLabel: 'Up-and-coming Designers',
-        href: '#',
-      },
-    ],
-  },
-  {
-    label: 'Invest',
-    // children: [
-    //   {
-    //     label: 'Job Board',
-    //     subLabel: 'Find your dream design job',
-    //     href: '#',
-    //   },
-    //   {
-    //     label: 'Freelance Projects',
-    //     subLabel: 'An exclusive list for contract work',
-    //     href: '#',
-    //   },
-    // ],
-  },
-  {
-    label: 'Stories',
-    // href: '#',
-  },
-  // {
-  //   label: 'Hire Designers',
-  //   href: '#',
-  // },
-];
 
 export default Navbar

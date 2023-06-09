@@ -64,6 +64,7 @@ interface Item {
   transfers: number;
   others: number;
   sum: number;
+  date: string;
 }
 
 const InputModal = () => {
@@ -115,6 +116,10 @@ const InputModal = () => {
       isClosable: true,
       // variant: "left-accent",
     })
+
+    const currentDate = new Date();
+    const date = currentDate.toDateString();
+  
     // Perform any necessary logic with the form data
     const newItem = {
       food,
@@ -123,6 +128,7 @@ const InputModal = () => {
       transfers,
       others,
       sum,
+      date
     };
     dispatch(addItem(newItem));
     // Reset input fields

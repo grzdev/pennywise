@@ -106,8 +106,9 @@ const BudgetModule = () => {
                 id={budget.id}
                 category={budget.category}
                 amount={budget.amount}
-                date={budget.date}
-              />
+                date={budget.date} 
+                isDone={false}
+                selectedDate={budget.selectedDate}              />
             ))}
           </Flex>
         ) : (

@@ -1,29 +1,75 @@
-import { Button, Checkbox, Flex, Heading, Popover, PopoverArrow, PopoverBody, PopoverCloseButton, PopoverContent, PopoverFooter, PopoverHeader, PopoverTrigger, Progress, Text, useColorModeValue } from '@chakra-ui/react'
+import { Button, Checkbox, Flex, Heading, Popover, PopoverArrow, PopoverBody, PopoverCloseButton, PopoverContent, PopoverFooter, PopoverHeader, PopoverTrigger, Progress, Text, useColorModeValue, useToast } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
 import { AiOutlineDelete } from 'react-icons/ai';
 import { BsInfoCircle } from 'react-icons/bs';
 import { TbCurrencyNaira } from 'react-icons/tb'
-import { useDispatch } from 'react-redux';
-import { deleteExpense } from 'redux/slices/budgetSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import { deleteExpense, toggleBudgetDone } from 'redux/slices/budgetSlice';
+import { RootState } from 'redux/store';
 
 interface Expense {
     id: string;
     category: string;
     amount: number;
     date: string;
+    isDone: boolean;
+    selectedDate: string;
   };
   
-const BudgetDiv = ({id, category, amount, date }:  Expense) => {
-
+const BudgetDiv = ({id, category, amount, date, selectedDate }:  Expense) => {
+  //Colomode
   const deleteIcon = useColorModeValue("red", "white")
   const bgGradient = useColorModeValue("#EDF2F7","linear-gradient(to right, #28355e, #4e67b6);")
 
 
   const dispatch = useDispatch();
 
+  //Delete
+  const toast = useToast()
   const handleDeleteExpense = () => {
     dispatch(deleteExpense(id));
+    toast({
+        title: 'Budget deleted',
+        position: 'top',
+        // description: "See you tomorrow.",
+        status: 'success',
+        duration: 5000,
+        isClosable: true,
+        // variant: "left-accent",
+      })
   };
+
+  // Getting the budget done status from the state
+    const isDone = useSelector((state: RootState) => {
+      const budget = state.budget.expenses.find((expense) => expense.id === id);
+      return budget ? budget.isDone : false;
+    });
+
+    const handleCheckboxChange = () => {
+      dispatch(toggleBudgetDone(id));
+    };
+
+  // Format the date to "Sun, June 30"
+  const formatDate = (dateString: string) => {
+    const date = new Date(dateString);
+    const options: Intl.DateTimeFormatOptions = {
+      weekday: 'short',
+      month: 'long',
+      day: 'numeric',
+    };
+    return date.toLocaleDateString('en-US', options);
+  };
+
+  const formatDate2 = (dateString: string) => {
+    const date = new Date(dateString);
+    const options: Intl.DateTimeFormatOptions = {
+      weekday: 'short',
+      month: 'long',
+      day: 'numeric',
+    };
+    return date.toLocaleDateString('en-US', options);
+  };
+
 
   return (
     <Flex
@@ -48,19 +94,26 @@ const BudgetDiv = ({id, category, amount, date }:  Expense) => {
 
         <Flex
             flexDir="row"
-            gap={["5rem","5rem","8rem","8rem"]}
+            // gap={["5rem","5rem","8rem","8rem"]}
+            gap="auto"
+            w={["15rem","","20rem","20rem"]}
         >
             <Flex
                 flexDir="column"
                 gap={["0.5rem","0.5rem","0.5rem","0.5rem"]}
+
             >
                 <Heading
                     size={["xs","xs","sm","sm"]}
+                    textDecor={isDone ? "line-through" : "none"}
+                    color={isDone? "#bfbfbf" : "default"}
                 >
-                    Sun, March 30
+                     {formatDate(date)}
                 </Heading>
                 <Heading
                     size={["lg","lg","xl","xl"]}
+                    textDecor={isDone ? "line-through" : "none"}
+                    color={isDone? "#bfbfbf" : "default"}
                 >
                     {category}
                 </Heading>
@@ -68,11 +121,15 @@ const BudgetDiv = ({id, category, amount, date }:  Expense) => {
                     <Heading
                         size={["lg","lg","xl","xl"]}
                         mt={["0.05rem","0.05rem","0.05rem","0.05rem"]}
+                        textDecor={isDone ? "line-through" : "none"}
+                        color={isDone? "#bfbfbf" : "default"}
                     >
                         <TbCurrencyNaira/>
                     </Heading>
                     <Heading
                     size={["md","md","lg","lg"]}
+                    textDecor={isDone ? "line-through" : "none"}
+                    color={isDone? "#bfbfbf" : "default"}
                     >
                         {amount}
                     </Heading>
@@ -81,16 +138,8 @@ const BudgetDiv = ({id, category, amount, date }:  Expense) => {
             </Flex>
             <Flex
                 mt={["1.4rem","1.4rem","1.9rem","2rem"]}
+                ml="auto"
             >
-                {/* <Button
-                    onClick={()=> handleDeleteExpense()}
-                    variant="ghost"
-                    fontSize={["1.4rem","1.4rem","1.6rem","1.6rem"]}
-                    color={deleteIcon}
-                    fontWeight={700}
-                >
-                    <AiOutlineDelete/>
-                </Button> */}
                 <Popover>
                     <PopoverTrigger>
                         <Button
@@ -127,7 +176,7 @@ const BudgetDiv = ({id, category, amount, date }:  Expense) => {
                                     fontSize={["1.1rem","1.1rem","1.1rem","1.1rem"]}
                                     fontWeight={500}
                                 >
-                                    Sunday, June 30 
+                                  {formatDate2(date)}
                                 </Text>
                             </Flex>
                             <Flex
@@ -145,7 +194,7 @@ const BudgetDiv = ({id, category, amount, date }:  Expense) => {
                                     fontSize={["1.1rem","1.1rem","1.1rem","1.1rem"]}
                                     fontWeight={500}
                                 >
-                                    Monday, July 7 
+                                    {selectedDate}
                                 </Text>
                             </Flex>
                         </PopoverBody>
@@ -166,6 +215,8 @@ const BudgetDiv = ({id, category, amount, date }:  Expense) => {
                                 </Button>
                                 <Checkbox
                                     size={["lg","lg","lg","lg"]}
+                                    isChecked={isDone} 
+                                    onChange={handleCheckboxChange}
                                 >
                                     Done
                                 </Checkbox>
