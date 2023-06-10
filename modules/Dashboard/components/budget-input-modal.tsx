@@ -28,6 +28,7 @@ import {
     NumberDecrementStepper,
     FormControl,
     FormLabel,
+    useToast,
 } from '@chakra-ui/react'
 import React, { useState } from 'react'
 import { AddIcon, ChevronDownIcon, ChevronLeftIcon } from "@chakra-ui/icons"
@@ -38,6 +39,7 @@ import { BiDotsHorizontalRounded, BiTransferAlt } from 'react-icons/bi'
 import { BsFillCheckCircleFill } from 'react-icons/bs'
 import { useDispatch } from 'react-redux'
 import { addExpense } from 'redux/slices/budgetSlice'
+// import { parseISO, format } from 'date-fns';
 
 interface Expense {
   id: string;
@@ -91,19 +93,22 @@ const   BudgetModal = ( {id}:  Expense) => {
     setSelectedDate(formattedDate);
   };
 
+  // const handleDateChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  //   const selectedDateValue = event.target.value;
+  //   const parsedDate = parseISO(selectedDateValue);
+  //   const formattedDate = format(parsedDate, 'EEE, MMM d');
+  
+  //   setSelectedDate(formattedDate);
+  // };
+
 
   //Modal save funtion
   const dispatch = useDispatch()
+  const toast = useToast()
+
+
   const handleBudgetSave = (event: { preventDefault: () => void }) => {
     event.preventDefault();
-    // dispatch(
-    //   addExpense({
-    //     category: category,
-    //     amount: amount,
-    //     date: new Date(date),
-    //     id: Date.now().toString(),
-    //   })
-    // );
     dispatch(
       addExpense({
         category: category,
@@ -115,6 +120,15 @@ const   BudgetModal = ( {id}:  Expense) => {
       })
     );
 
+    toast({
+      title: 'Budget added.',
+      position: 'top',
+      // description: "See you tomorrow.",
+      status: 'success',
+      duration: 5000,
+      isClosable: true,
+      // variant: "left-accent",
+    })
 
     console.log("Category: ", category);
     console.log("Amount: ", amount);
