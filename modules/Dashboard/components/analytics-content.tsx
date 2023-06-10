@@ -15,6 +15,7 @@ import {
 } from "firebase/firestore";
 import { db } from 'config/firebase';
 import { RootState } from 'redux/store';
+import { motion, useScroll } from "framer-motion"
 import { deleteItem, updateItem } from 'redux/slices/inputSlice';
 
 interface DateTimeProps {
@@ -149,225 +150,235 @@ const AnalyticsContent = ({ className }: DateTimeProps) => {
     <Flex
     flexDir="column"
   >
+    <motion.div
+      animate={{ y: 0 }}
+      initial={{ y: 150 }}
+      transition={{ duration: 0.8 }}
+    >  
     {items.map((item: Item) => (
       <div key={item.id}>
-    <Flex
-      w={["18rem","18rem","30rem","55rem"]}
-      h={["4rem","4rem","5rem","5rem"]}
-      boxShadow="lg"
-      borderRadius="1rem 0 1rem 0"
-      mt="2rem"
-      mb="1rem"
-      bg= {bgGradient}
-      justifyContent="center"
-      alignItems="center"
-      >
       <Flex
-        gap={["","","4rem","23rem"]}
+        w={["18rem","18rem","30rem","55rem"]}
+        h={["4rem","4rem","5rem","5rem"]}
+        boxShadow="lg"
+        borderRadius="1rem 0 1rem 0"
+        mt="1.7rem"
+        mb="0.5rem"
+        bg= {bgGradient}
+        justifyContent="center"
         alignItems="center"
-      >
-        <Heading
-          size={["","","md","md"]}
-          mr={["1rem","","2rem",""]}
-          ml={["","","1.5rem",""]}
-          color="white"
         >
-        {item.date}
-        </Heading>
-        
         <Flex
           alignItems="center"
-          >
-          <Heading
-           size={["","","md","md"]}
-           color="white" 
-           mr={["","","0.1rem","0.5rem"]}
-           display={{ base: 'none', md: 'block' }}
-          >
-            Total: 
-          </Heading>
+          w={["15rem","15rem","29rem","52rem"]}
+        >
+          <Flex>
+            <Heading
+              size={["","","md","md"]}
+              mr={["1rem","","2rem",""]}
+              ml={["","","1.5rem",""]}
+              color="white"
+            >
+            {item.date}
+            </Heading>
+          </Flex>
+          
           <Flex
             alignItems="center"
-          >
+            ml="auto"
+            >
             <Heading
-              size={["","","lg","lg"]}
-              mr={["","","-0.1rem","-0.2rem"]}
-              mt={["","","0.2rem","0.2rem"]}
-              display={{ base: 'none', md: 'block' }}
-              color="white" 
+            size={["","","md","md"]}
+            color="white" 
+            mr={["","","0.1rem","0.5rem"]}
+            display={{ base: 'none', md: 'block' }}
             >
-              <TbCurrencyNaira/> 
+              Total: 
             </Heading>
-                <Heading
-                  size={["","","lg","lg"]}
-                  display={{ base: 'none', md: 'block' }}
-                  color="white" 
-                >
-                  {calculateSum(item)}
-                </Heading>
-            <Popover
+            <Flex
+              alignItems="center"
             >
-              <PopoverTrigger>
-                <Button
-                  variant="ghost"
-                  >
-                    <Heading
-                    size={["lg","","lg","lg"]}
+              <Heading
+                size={["","","lg","lg"]}
+                mr={["","","-0.1rem","-0.2rem"]}
+                mt={["","","0.2rem","0.2rem"]}
+                display={{ base: 'none', md: 'block' }}
+                color="white" 
+              >
+                <TbCurrencyNaira/> 
+              </Heading>
+                  <Heading
+                    size={["","","lg","lg"]}
+                    display={{ base: 'none', md: 'block' }}
                     color="white" 
-                    >                          
-                    <ChevronRightIcon/>
-                    </Heading>
-                </Button>
-              </PopoverTrigger>
-              <PopoverContent>
-                <PopoverArrow />
-                <PopoverCloseButton />
-                <PopoverBody>
-                <Flex
-                  flexDir="column"
-                >
-                  <Table variant="simple">
-                    <Thead>
-                      <Tr>
-                        <Th>Catergories</Th>
-                        <Th>Prices</Th>
-                      </Tr>
-                    </Thead>
-                    <Tbody>
-                      <Tr>
-                        <Td fontWeight={600}>Food</Td>
-                        <Td
-                          display="flex"
-                          flexDir="row"
-                          fontWeight={600}
-                        >
-                          <Text
-                            fontSize={["1.2rem","1.2rem","1.2rem","1.3rem"]}
-                          >
-                            <TbCurrencyNaira/>
-                          </Text>
-                         {item.food}
-                        </Td>
-                      </Tr>
-                      <Tr>
-                        <Td fontWeight={600}>Transit</Td>
-                        <Td
-                          display="flex"
-                          flexDir="row"
-                          fontWeight={600}
-                        >
-                          <Text
-                            fontSize={["1.2rem","1.2rem","1.2rem","1.3rem"]}
-                          >
-                            <TbCurrencyNaira/>
-                          </Text>
-                         {item.transit}
-                        </Td>
-                      </Tr>
-                      <Tr>
-                        <Td fontWeight={600}>Data</Td>
-                        <Td
-                          display="flex"
-                          flexDir="row"
-                          fontWeight={600}
-                        >
-                          <Text
-                            fontSize={["1.2rem","1.2rem","1.2rem","1.3rem"]}
-                          >
-                            <TbCurrencyNaira/>
-                          </Text>
-                         {item.data}
-                        </Td>
-                      </Tr>
-                      <Tr>
-                        <Td fontWeight={600}>Transfers</Td>
-                        <Td
-                          display="flex"
-                          flexDir="row"
-                          fontWeight={600}
-                        >
-                          <Text
-                            fontSize={["1.2rem","1.2rem","1.2rem","1.3rem"]}
-                          >
-                            <TbCurrencyNaira/>
-                          </Text>
-                         {item.transfers}
-                        </Td>
-                      </Tr>
-                      <Tr>
-                        <Td fontWeight={600}>Others</Td>
-                        <Td
-                          display="flex"
-                          flexDir="row"
-                          fontWeight={600}
-                        >
-                          <Text
-                            fontSize={["1.2rem","1.2rem","1.2rem","1.3rem"]}
-                          >
-                            <TbCurrencyNaira/>
-                          </Text>
-                         {item.others}
-                        </Td>
-                      </Tr>
-                      <Tr
-                        // display={{ base: 'flex', md: 'none' }}
-                      >
-                        <Td fontWeight={700}>Total:</Td>
-                        <Td
-                          display="flex"
-                          flexDir="row"
-                          fontWeight={700}
-                        >
-                          <Text
-                            fontSize={["1.2rem","1.2rem","1.2rem","1.3rem"]}
-                          >
-                            <TbCurrencyNaira/>
-                          </Text>
-                          {/* {Object.keys(sumOfCategoriesById).map((id: string) => (
-                            <div key={id}>
-                              <p>{sumOfCategoriesById[parseInt(id)]}</p>
-                              <hr />
-                            </div>
-                          ))} */}
-                          {calculateSum(item)}
-                        </Td>
-                      </Tr>
-                    </Tbody>
-
-                  </Table>
-                  <Flex
-                    flexDir="row"
-                    justifyContent="center"
-                    alignItems="center"
-                    gap="1.9rem"
-                    mt="1rem"
-                    mb="1rem"
                   >
-                    <Button
-                      onClick={() => handleDelete(item.id as number)}
-                      colorScheme={deleteScheme}
+                    {calculateSum(item)}
+                  </Heading>
+              <Popover
+                isLazy
+              >
+                <PopoverTrigger>
+                  <Button
+                    variant="ghost"
+                    >
+                      <Heading
+                      size={["lg","","lg","lg"]}
+                      color="white" 
+                      >                          
+                      <ChevronRightIcon/>
+                      </Heading>
+                  </Button>
+                </PopoverTrigger>
+                <PopoverContent>
+                  <PopoverArrow />
+                  <PopoverCloseButton />
+                  <PopoverBody>
+                  <Flex
+                    flexDir="column"
+                  >
+                    <Table variant="simple">
+                      <Thead>
+                        <Tr>
+                          <Th>Catergories</Th>
+                          <Th>Prices</Th>
+                        </Tr>
+                      </Thead>
+                      <Tbody>
+                        <Tr>
+                          <Td fontWeight={600}>Food</Td>
+                          <Td
+                            display="flex"
+                            flexDir="row"
+                            fontWeight={600}
+                          >
+                            <Text
+                              fontSize={["1.2rem","1.2rem","1.2rem","1.3rem"]}
+                            >
+                              <TbCurrencyNaira/>
+                            </Text>
+                          {item.food}
+                          </Td>
+                        </Tr>
+                        <Tr>
+                          <Td fontWeight={600}>Transit</Td>
+                          <Td
+                            display="flex"
+                            flexDir="row"
+                            fontWeight={600}
+                          >
+                            <Text
+                              fontSize={["1.2rem","1.2rem","1.2rem","1.3rem"]}
+                            >
+                              <TbCurrencyNaira/>
+                            </Text>
+                          {item.transit}
+                          </Td>
+                        </Tr>
+                        <Tr>
+                          <Td fontWeight={600}>Data</Td>
+                          <Td
+                            display="flex"
+                            flexDir="row"
+                            fontWeight={600}
+                          >
+                            <Text
+                              fontSize={["1.2rem","1.2rem","1.2rem","1.3rem"]}
+                            >
+                              <TbCurrencyNaira/>
+                            </Text>
+                          {item.data}
+                          </Td>
+                        </Tr>
+                        <Tr>
+                          <Td fontWeight={600}>Transfers</Td>
+                          <Td
+                            display="flex"
+                            flexDir="row"
+                            fontWeight={600}
+                          >
+                            <Text
+                              fontSize={["1.2rem","1.2rem","1.2rem","1.3rem"]}
+                            >
+                              <TbCurrencyNaira/>
+                            </Text>
+                          {item.transfers}
+                          </Td>
+                        </Tr>
+                        <Tr>
+                          <Td fontWeight={600}>Others</Td>
+                          <Td
+                            display="flex"
+                            flexDir="row"
+                            fontWeight={600}
+                          >
+                            <Text
+                              fontSize={["1.2rem","1.2rem","1.2rem","1.3rem"]}
+                            >
+                              <TbCurrencyNaira/>
+                            </Text>
+                          {item.others}
+                          </Td>
+                        </Tr>
+                        <Tr
+                          // display={{ base: 'flex', md: 'none' }}
+                        >
+                          <Td fontWeight={700}>Total:</Td>
+                          <Td
+                            display="flex"
+                            flexDir="row"
+                            fontWeight={700}
+                          >
+                            <Text
+                              fontSize={["1.2rem","1.2rem","1.2rem","1.3rem"]}
+                            >
+                              <TbCurrencyNaira/>
+                            </Text>
+                            {/* {Object.keys(sumOfCategoriesById).map((id: string) => (
+                              <div key={id}>
+                                <p>{sumOfCategoriesById[parseInt(id)]}</p>
+                                <hr />
+                              </div>
+                            ))} */}
+                            {calculateSum(item)}
+                          </Td>
+                        </Tr>
+                      </Tbody>
 
+                    </Table>
+                    <Flex
+                      flexDir="row"
+                      justifyContent="center"
+                      alignItems="center"
+                      gap="1.9rem"
+                      mt="1rem"
+                      mb="1rem"
                     >
-                      delete
-                    </Button>
-                    <Button 
-                      onClick={() => setEditedItem(item)}
-                      variant="outline"
-                      colorScheme="blue"
-                    >
-                      edit
-                    </Button>
+                      <Button
+                        onClick={() => handleDelete(item.id as number)}
+                        colorScheme={deleteScheme}
+
+                      >
+                        delete
+                      </Button>
+                      <Button 
+                        onClick={() => setEditedItem(item)}
+                        variant="outline"
+                        colorScheme="blue"
+                      >
+                        edit
+                      </Button>
+                    </Flex>
                   </Flex>
-                </Flex>
-                </PopoverBody>
-              </PopoverContent>
-            </Popover>
+                  </PopoverBody>
+                </PopoverContent>
+              </Popover>
+            </Flex>
           </Flex>
         </Flex>
       </Flex>
-    </Flex>
       </div>
     ))}
+    </motion.div>
 
       {editedItem && (
         <Modal 
