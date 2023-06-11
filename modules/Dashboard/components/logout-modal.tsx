@@ -5,15 +5,20 @@ import router from "next/router";
 import { IoExitOutline } from 'react-icons/io5'
 
 const LogoutModal = () => {
+
+  // Colormodes
   const logoutColor = useColorModeValue("red","#C6dbfb")
   const yes = useColorModeValue("red","blue")
+
+  //Disclosure
   const { isOpen, onClose, onOpen } = useDisclosure()
+
+  // Auth
   const { user, logout } = useAuth()
 
   return (
     <Flex>
         <Button
-        
             variant="ghost"
             onClick={onOpen}
         >

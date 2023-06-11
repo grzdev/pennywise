@@ -23,6 +23,8 @@ import { motion } from 'framer-motion'
 import { FaGem } from 'react-icons/fa'
 
 const SignUpModule = () => {
+
+  // Colormodes
   const divColor = useColorModeValue("white","#333f55")
   const headerColor = useColorModeValue("#374D9A","#c6dbfb")
   const TextColor2 = useColorModeValue("black","")
@@ -33,20 +35,23 @@ const SignUpModule = () => {
   const signIn = useColorModeValue("linear-gradient( 135deg, #FFA6B7 10%, #1E2AD2 100%)","linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%)")
   const router = useRouter()
 
-  const { signIWithGoogle } = useAuth()
-
+  
   const toast = useToast()
-
+  
+  // States
   const [loading, setLoading] = useState(false)
-
-  const { user, signup } = useAuth()
-  console.log(user)
-
   const [ data, setData ] = useState({
     email:'',
     password:'',
   })
+  
+  // Auth
+  const { signIWithGoogle } = useAuth()
+  const { user, signup } = useAuth()
+  console.log(user)
 
+
+  // Google sign in function
   const handleGoogleClick = async (e: any) => {
     e.preventDefault()
 
@@ -73,6 +78,7 @@ const SignUpModule = () => {
     }
   }
 
+  // Sign in function
   const handleSignup = async (e: any) => {
     e.preventDefault()
   
@@ -100,6 +106,7 @@ const SignUpModule = () => {
 
    setLoading(true)
   }
+  
   return (
     <Container centerContent>
     <Flex

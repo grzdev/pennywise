@@ -26,6 +26,8 @@ import {
   import { motion, useScroll } from "framer-motion"
   
 const LandingPage = () => {
+
+  //Colormodes
   const buttonColor = useColorModeValue("linear-gradient( 135deg, #FFA6B7 10%, #1E2AD2 100%)","linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%)")
   const textColor = useColorModeValue("#6a6a6a","#b6b6b6")
   const buttonTextColor = useColorModeValue("white","white")
@@ -36,7 +38,6 @@ const LandingPage = () => {
   const signUp = useColorModeValue("#3289ff","#3289ff")
   const headerBg = useColorModeValue("#EEF4FC","white")
   const pgBg = useColorModeValue("#EEF4FC","#EEF4FC")
-
   const secondDivCOlor = useColorModeValue("linear-gradient(45deg, #262d45 0%, #3261ff 100%)","#333f55")
 
   const { scrollYProgress } = useScroll();
@@ -50,10 +51,11 @@ const LandingPage = () => {
         max-width="100%"
       >
         <Flex
-          mt={["8rem", "1rem", "4rem" ,"4rem"]}
+          mt={["6rem", "6rem", "2rem" ,"2rem"]}
           flexDir={["column", "column", "column", "row"]}
           ml={["","","","7rem"]}
         >
+          {/* First Div */}
           <VStack
           >
             <motion.div
@@ -151,6 +153,8 @@ const LandingPage = () => {
             </motion.div>
           </Box>
         </Flex>
+
+        {/* Second Div: Budgeting ad */}
         <Flex
           justifyContent={["center","center","center","center"]}
           alignItems={["center","center","center","center"]}
@@ -230,6 +234,8 @@ const LandingPage = () => {
               </motion.div>
             </VStack>
         </Flex>
+
+        {/*Third Div: Analytics page ad*/}
         <Flex
           flexDir={["column", "column", "column", "row"]}
         >
@@ -310,6 +316,7 @@ const LandingPage = () => {
 
         </Flex>
         
+        {/* Fourth Div: Motto */}
         <Flex
           justifyContent={["center","center","center","center"]}
           alignItems={["center","center","center","center"]}
@@ -358,12 +365,14 @@ const LandingPage = () => {
                 fontFamily="monospace"
               >
                 {/* Take control of your finances. */}
-                Make wise financial decisions.
+                {/* Make wise financial decisions. */}
+                Be wise with your penny.
               </Heading>
             </motion.div>
           </Flex>
         </Flex>
 
+        {/* Fifth Div: Sign Up */}
         <Flex
           w={["21.5rem","21.5rem","45rem ","80rem"]}
           h={["20rem","20rem","20rem","15rem"]}

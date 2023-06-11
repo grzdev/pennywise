@@ -2,8 +2,8 @@
 
 import { createSelector, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from 'redux/store';
-// import { Rootst}
 
+// Interface
 export interface InputData {
   food: number;
   transit: number;
@@ -11,12 +11,12 @@ export interface InputData {
   transfers: number;
   others: number;
 }
-
 interface InputState {
   inputData: InputData;
   currentDay: string;
 }
 
+//Initial State
 const initialState: InputState = {
   inputData: {
     food: 0,
@@ -28,6 +28,7 @@ const initialState: InputState = {
   currentDay: new Date().toLocaleDateString('en-US', {weekday: 'short'}),
 };
 
+// Slice
 const dailyInputSlice = createSlice({
   name: 'dailyInput',
   initialState,
@@ -59,6 +60,7 @@ const dailyInputSlice = createSlice({
   },
 });
 
+// Action export
 export const { 
   onChange, 
   add1k, 
@@ -70,6 +72,7 @@ export const {
 
 export default dailyInputSlice.reducer;
 
+// Selectors
 export const selectMyObject = createSelector(
   (state: RootState) => state.dailyInput.inputData,
   (inputData) => inputData
@@ -79,6 +82,7 @@ export const selectDate = createSelector(
   (dateSelect) => dateSelect
 )
 
+// Save to local storage
 export const saveStateToLocalStorage = (state: RootState) => {
   try {
     const serializedState = JSON.stringify(state);

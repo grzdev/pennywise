@@ -18,7 +18,8 @@ interface Expense {
   };
   
 const BudgetDiv = ({id, category, amount, date, selectedDate }:  Expense) => {
-  //Colomode
+
+  //Colomodes
   const deleteIcon = useColorModeValue("red", "white")
   const bgGradient = useColorModeValue("#EDF2F7","linear-gradient(to right, #28355e, #4e67b6);")
   const bgGradient2 = useColorModeValue("#bfbfbf","#171923")
@@ -26,9 +27,9 @@ const BudgetDiv = ({id, category, amount, date, selectedDate }:  Expense) => {
 
 
   const dispatch = useDispatch();
-
-  //Delete
   const toast = useToast()
+
+  //Delete Function
   const handleDeleteExpense = () => {
     dispatch(deleteExpense(id));
     toast({
@@ -48,6 +49,7 @@ const BudgetDiv = ({id, category, amount, date, selectedDate }:  Expense) => {
       return budget ? budget.isDone : false;
     });
 
+    //Checkbox
     const handleCheckboxChange = () => {
       dispatch(toggleBudgetDone(id));
     };

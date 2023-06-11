@@ -24,6 +24,8 @@ import { motion } from 'framer-motion'
 import { FaGem } from 'react-icons/fa'
 
 const LogInModule = () => {
+  
+  // Colormodes
   const divColor = useColorModeValue("white","#333f55")
   const headerColor = useColorModeValue("#374D9A","#c6dbfb")
   const header2Color = useColorModeValue("black","white")
@@ -35,17 +37,19 @@ const LogInModule = () => {
 
 
   const router = useRouter()
+  const toast = useToast()
 
-  const { signIWithGoogle, forgotPassword } = useAuth()
-
+  // States
   const [loading, setLoading] = useState(false)
-  
-  const { user, login } = useAuth()
-
   const [ data, setData ] = useState({
     email:'',
     password:''
   })
+  
+  // Auth
+  const { signIWithGoogle, forgotPassword } = useAuth()
+  const { user, login } = useAuth()
+
 
   // const handleForgotPassword = async (e: any) => {
   //   e.preventDefault()
@@ -58,6 +62,7 @@ const LogInModule = () => {
   // }
 
 
+  // Google login function
   const handleGoogleClick = async (e: any) => {
     e.preventDefault()
 
@@ -84,7 +89,7 @@ const LogInModule = () => {
     }
   }
 
-  const toast = useToast()
+  // Login function
   const handleLogin = async (e: any) =>{
     e.preventDefault()
     try {
@@ -343,11 +348,11 @@ const LogInModule = () => {
         </Flex>
         
         <Flex
-                justifyContent="center"
-                alignItems="center"
-              >
-                {loading ? <CircularProgress isIndeterminate value={40} thickness='4px' size="2rem"/> : ''} 
-              </Flex>
+          justifyContent="center"
+          alignItems="center"
+        >
+          {loading ? <CircularProgress isIndeterminate value={40} thickness='4px' size="2rem"/> : ''} 
+        </Flex>
     </Container>
   )
 }

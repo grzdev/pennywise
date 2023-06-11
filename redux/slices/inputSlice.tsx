@@ -2,6 +2,7 @@ import { createSelector, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "redux/store";
 
 
+// Interface
 interface Item {
   id?: number;
   food: number;
@@ -12,30 +13,33 @@ interface Item {
   date: string;
   sum: number;
 }
-
 interface MySliceState {
   items: Item[];
 }
 
+// Initial state
 const initialState: MySliceState = {
   items: [],
 }; 
 
+// Auto id
 const generateId = (): number => {
   return Math.floor(Math.random() * 100000);
 };
 
-
-
+//Slice
 export const inputSlice = createSlice({
     name: "input",
     initialState,
     reducers: {
       addItem: (state, action: PayloadAction<Item>) => {
         const currentDate = new Date();
-        const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-        const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-        const formattedDate = `${weekdays[currentDate.getDay()]}, ${months[currentDate.getMonth()]} ${currentDate.getDate()}`;
+        const options: Intl.DateTimeFormatOptions = {
+          weekday: 'long',
+          month: 'long',
+          day: 'numeric',
+        };
+        const formattedDate = currentDate.toLocaleDateString('en-US', options);
 
         const newItem: Item = {
           id: generateId(),
@@ -69,7 +73,11 @@ export const inputSlice = createSlice({
     }
 })
 
+// Action export
 export const {
-    addItem, deleteItem, updateItem
+  addItem, 
+  deleteItem, 
+  updateItem
 } = inputSlice.actions
+
 export default inputSlice.reducer
