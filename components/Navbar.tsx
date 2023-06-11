@@ -76,6 +76,7 @@ const Navbar = () => {
        flex={{ base: 1 }}
        justify={{ base: 'center', md: 'start' }}
        >
+        {/* Logo */}
         <Flex
           justifyContent="center"
           alignItems="center"
@@ -109,11 +110,12 @@ const Navbar = () => {
           </Link>
         </Flex>
 
-        <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
+        {/* <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
           <DesktopNav />
-        </Flex>
+        </Flex> */}
       </Flex>
 
+        {/* Sign in/Sign out buttons */}
       <Stack
         flex={{ base: 1, md: 0 }}
         justify={'flex-end'}
@@ -168,9 +170,8 @@ const Navbar = () => {
       </Stack>
     </Flex>
 
-    {/* <Collapse in={isOpen} animateOpacity>
-      <MobileNav />
-    </Collapse> */}
+
+        {/* Mobile Nav/Slide */}
     <>
       <Button colorScheme='teal' onClick={onOpen}>
         Open
@@ -224,53 +225,53 @@ const Navbar = () => {
   )
 }
 
-const DesktopNav = () => {
-  const linkColor = useColorModeValue('gray.600', 'gray.200');
-  const linkHoverColor = useColorModeValue('gray.800', 'white');
-  const popoverContentBgColor = useColorModeValue('white', 'gray.800');
+// const DesktopNav = () => {
+//   const linkColor = useColorModeValue('gray.600', 'gray.200');
+//   const linkHoverColor = useColorModeValue('gray.800', 'white');
+//   const popoverContentBgColor = useColorModeValue('white', 'gray.800');
 
-  return (
-    <Stack
-     direction={'row'}
-     spacing={12}
-     ml={["0.1rem","4rem", "8rem", "16rem"]}
-     mt="0.8rem"
-    >
-      <Flex
-        gap="5rem"
-      >
-      </Flex>
-    </Stack>
-  );
-};
+//   return (
+//     <Stack
+//      direction={'row'}
+//      spacing={12}
+//      ml={["0.1rem","4rem", "8rem", "16rem"]}
+//      mt="0.8rem"
+//     >
+//       <Flex
+//         gap="5rem"
+//       >
+//       </Flex>
+//     </Stack>
+//   );
+// };
 
 
-const MobileNav = () => {
-  const { colorMode, toggleColorMode } = useColorMode()
-  const linkColor = useColorModeValue('gray.600', 'gray.200');
+// const MobileNav = () => {
+//   const { colorMode, toggleColorMode } = useColorMode()
+//   const linkColor = useColorModeValue('gray.600', 'gray.200');
 
-  return (
-    <Stack
-      bg={useColorModeValue('white', 'gray.800')}
-      p={4}
-      display={{ md: 'none' }}>
+//   return (
+//     <Stack
+//       bg={useColorModeValue('white', 'gray.800')}
+//       p={4}
+//       display={{ md: 'none' }}>
 
-      <Flex
-        flexDir="column"
-        gap="1rem"
-        mb="1rem"
-        mt="6rem"
-      >
+//       <Flex
+//         flexDir="column"
+//         gap="1rem"
+//         mb="1rem"
+//         mt="6rem"
+//       >
         
-      </Flex>
+//       </Flex>
 
-      <Button 
-       onClick={toggleColorMode}
-      >
-       {colorMode === 'light' ? <MoonIcon/> : <SunIcon/>}
-      </Button>
-    </Stack>
-  );
-};
+//       <Button 
+//        onClick={toggleColorMode}
+//       >
+//        {colorMode === 'light' ? <MoonIcon/> : <SunIcon/>}
+//       </Button>
+//     </Stack>
+//   );
+// };
 
 export default Navbar

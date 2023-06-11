@@ -57,11 +57,11 @@ const Footer = () => {
         mt="5rem"
         
       >
+        {/* Logo */}
         <Flex
           mt={["","","-2rem","-8rem"]}
         >
           <Flex
-            // mt={["-0.2rem", "-0.05rem", "-0.04rem", "-0.01rem"]}f
             mb={["6rem","","",""]}
             mr="0.2rem"
           >
@@ -76,17 +76,14 @@ const Footer = () => {
 
           <Heading
             size={["sm","sm","md","md"]}
-            // ml={["-0.06rem","-0.05rem","-0.1rem","0.1rem"]}
             color={headerColor}
             fontFamily="'Lato', sans-serif"
           >
-            pennywiise
+            pennywise
           </Heading>
         </Flex>
         
-
-       
-
+        {/* Project Gmail */}
         <Flex
           flexDir="column"
           mt={["3rem","","7rem","-10rem"]}
@@ -123,6 +120,7 @@ const Footer = () => {
         </Flex>
     </Flex>
 
+      {/* Author's Signature and Links */}
       <Flex
         justifyContent={["center","","","center"]}
         alignItems={["center","","","center"]}

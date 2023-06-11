@@ -39,6 +39,8 @@ import { BiDotsHorizontalRounded, BiTransferAlt } from 'react-icons/bi'
 import { BsFillCheckCircleFill } from 'react-icons/bs'
 import { useDispatch } from 'react-redux'
 import { addExpense } from 'redux/slices/budgetSlice'
+import { addDoc, collection } from '@firebase/firestore'
+import { db } from 'config/firebase'
 // import { parseISO, format } from 'date-fns';
 
 interface Expense {
@@ -47,6 +49,8 @@ interface Expense {
 
 
 const   BudgetModal = ( {id}:  Expense) => {
+
+  // Colormodes
   const bg = useColorModeValue("linear-gradient(to right, #acb6e5, #86fde8);","linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%)")
   const selectBg = useColorModeValue("#407dd0","#407dd0")
   const naira = useColorModeValue("#407dd0","white")
@@ -55,31 +59,38 @@ const   BudgetModal = ( {id}:  Expense) => {
   const text = useColorModeValue("#0081e7","")
   const completed = useColorModeValue("linear-gradient( 135deg, #FFA6B7 10%, #1E2AD2 100%)","linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%)")
 
-
+  //Modal
   const modal1 = useDisclosure()
   const modal2 = useDisclosure()
   const modal3 = useDisclosure()
   const modal4 = useDisclosure()
 
+  
+  const dispatch = useDispatch()
+  const toast = useToast()
 
-  //Modal
+
+  // States
   const [category, setCategory] = useState<string>("");
   const [amount, setAmount] = useState<number>(0);
   const [date, setDate] = useState<Date>(new Date());
   const [selectedDate, setSelectedDate] = useState('');
 
+
+  // Category change funtion
+  const handleCategoryChange = (value: string) => {
+    setCategory(value);
+    modal2.onOpen()
+  };
+  
+  // Date change function
   const options = [
   { value: 'food', label: 'Food' },
   { value: 'data', label: 'Data' },
   { value: 'transit', label: 'Transit' },
   { value: 'transfers', label: 'Transfers' },
   { value: 'others', label: 'Others' },
-];
-
-  const handleCategoryChange = (value: string) => {
-    setCategory(value);
-    modal2.onOpen()
-  };
+  ];
 
   const handleDateChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const selectedDateValue = event.target.value;
@@ -92,22 +103,10 @@ const   BudgetModal = ( {id}:  Expense) => {
     const formattedDate = date.toLocaleDateString('en-US', options);
     setSelectedDate(formattedDate);
   };
-
-  // const handleDateChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-  //   const selectedDateValue = event.target.value;
-  //   const parsedDate = parseISO(selectedDateValue);
-  //   const formattedDate = format(parsedDate, 'EEE, MMM d');
   
-  //   setSelectedDate(formattedDate);
-  // };
-
 
   //Modal save funtion
-  const dispatch = useDispatch()
-  const toast = useToast()
-
-
-  const handleBudgetSave = (event: { preventDefault: () => void }) => {
+  const handleBudgetSave = async (event: { preventDefault: () => void }) => {
     event.preventDefault();
     dispatch(
       addExpense({
@@ -119,6 +118,21 @@ const   BudgetModal = ( {id}:  Expense) => {
         selectedDate: selectedDate,
       })
     );
+    const newExpense = {
+      category,
+      amount,
+      date,
+      selectedDate,
+    };
+
+      // Add the expense document to the Firestore collection
+      try {
+        const docRef = await addDoc(collection(db, "budgetTest"), newExpense);
+        console.log("Expense document added with ID: ", docRef.id);
+      } catch (error) {
+        console.error("Error adding expense document: ", error);
+      }
+
 
     toast({
       title: 'Budget added.',
@@ -129,10 +143,6 @@ const   BudgetModal = ( {id}:  Expense) => {
       isClosable: true,
       // variant: "left-accent",
     })
-
-    console.log("Category: ", category);
-    console.log("Amount: ", amount);
-    console.log("Date: ", date);
 
     modal1.onClose()
     modal2.onClose()
@@ -171,7 +181,7 @@ const   BudgetModal = ( {id}:  Expense) => {
         </Button>
       </motion.div>
 
-      {/* Modal 1 */}
+      {/* Modal 1: Select Category */}
         <Modal 
             closeOnOverlayClick={false} 
             isOpen={modal1.isOpen}
@@ -252,7 +262,7 @@ const   BudgetModal = ( {id}:  Expense) => {
         </ModalContent>
       </Modal>
 
-      {/* Modal 2 */}
+      {/* Modal 2: Amount Input */}
       <Modal 
             closeOnOverlayClick={false} 
             isOpen={modal2.isOpen}
@@ -334,7 +344,7 @@ const   BudgetModal = ( {id}:  Expense) => {
         </ModalContent>
       </Modal>
 
-      {/* Model 3 */}
+      {/* Model 3: Deadline Pick  */}
       <Modal 
             closeOnOverlayClick={false} 
             isOpen={modal3.isOpen}
@@ -408,7 +418,7 @@ const   BudgetModal = ( {id}:  Expense) => {
         </ModalContent>
       </Modal>
 
-       {/* Model 4 */}
+       {/* Model 4: Success Page */}
        <Modal 
             closeOnOverlayClick={false} 
             isOpen={modal4.isOpen}

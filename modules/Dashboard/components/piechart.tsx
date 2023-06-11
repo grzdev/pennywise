@@ -27,11 +27,16 @@ interface Item {
 
 
 const InputPiechart = () => {
+
+  //Colormodes
     const pieColor = useColorModeValue("#8ab7ff","#8ab4ff")
     const pieColor2 = useColorModeValue("#8ab7ff","#8ab4ff")
     const textColor = useColorModeValue("#92b3ff","white")
+
+    //Redux selector
     const items = useSelector((state: RootState) => state.number.items);
 
+    // Chart data
     const chartData = [
       { name: 'Food', value: 0 },
       { name: 'Data', value: 0 },
@@ -39,7 +44,6 @@ const InputPiechart = () => {
       { name: 'Transfers', value: 0 },
       { name: 'Others', value: 0 },
     ];
-    
     items.forEach((item) => {
       chartData[0].value += item.food;
       chartData[1].value += item.data;
@@ -47,10 +51,9 @@ const InputPiechart = () => {
       chartData[3].value += item.transfers;
       chartData[4].value += item.others;
     });
-    
-  
     const COLORS = ['#8ab7ff', '#7190eb', '#5596ff', '#4666cd', '#2e6cd0'];
 
+    // Sum
     const sumOfCategories = items.reduce(
       (total, item) => total + item.food + item.data + item.transit + item.transfers + item.others,
       0

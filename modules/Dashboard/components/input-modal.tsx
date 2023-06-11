@@ -69,13 +69,12 @@ interface Item {
 
 const InputModal = () => {
 
-  //Colormode change
+  //Colormodes
   const button = useColorModeValue("linear-gradient(to right, #acb6e5, #86fde8);","linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%)")
   const header = useColorModeValue("#2c4658","")
   const text = useColorModeValue("#0081e7","")
   const addIcon = useColorModeValue("#162A62","")
   const completed = useColorModeValue("linear-gradient( 135deg, #FFA6B7 10%, #1E2AD2 100%)","linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%)")
-
 
 
   //Modals
@@ -86,10 +85,10 @@ const InputModal = () => {
   const modal5 = useDisclosure()
   const modal6 = useDisclosure()
 
-
-
-
   const dispatch = useDispatch();
+  const toast = useToast()
+
+  //States
   const [food, setFood] = useState(0);
   const [data, setData] = useState(0);
   const [transit, setTransit] = useState(0);
@@ -97,7 +96,8 @@ const InputModal = () => {
   const [others, setOthers] = useState(0);
   const [sum, setSum] = useState(0);
 
-  const handleSubmit = (e: { preventDefault: () => void; }) => {
+  //Submit function
+  const handleSubmit = async (e: { preventDefault: () => void; }) => {
     e.preventDefault();
 
     modal1.onClose()
@@ -131,6 +131,14 @@ const InputModal = () => {
       date
     };
     dispatch(addItem(newItem));
+
+     // Save data to Firebase collection
+    try {
+      const docRef = await addDoc(collection(db, "test5"), newItem);
+      console.log("Document written with ID: ", docRef.id);
+    } catch (error) {
+      console.error("Error adding document: ", error);
+    }
     // Reset input fields
     setFood(0);
     setData(0);
@@ -140,11 +148,6 @@ const InputModal = () => {
     setSum(0)
     
   };
-
-  //Toast
-  const toast = useToast()
-
-  //Funtional modal buttons
 
   //onchange action
   const handleInputChange = (e: { target: { name: any; value: any } }) => {
@@ -170,7 +173,7 @@ const InputModal = () => {
     }
   };
 
-  //add1K
+  //add1K function
   const handle1kClick = (category: any) => {
     switch (category) {
       case "food":
@@ -199,7 +202,7 @@ const InputModal = () => {
   };
 
 
-  //add2K
+  //add2K function
   const handle2kClick = (category: any) => {
     switch (category) {
       case "food":
@@ -227,7 +230,7 @@ const InputModal = () => {
     }
   };
 
-  //add3K
+  //add3K function
   const handle3kClick = (category: any) => {
     switch (category) {
       case "food":
@@ -255,7 +258,7 @@ const InputModal = () => {
     }
   };
 
-   //add5K
+   //add5K function
    const handle5kClick = (category: any) => {
     switch (category) {
       case "food":
@@ -283,7 +286,7 @@ const InputModal = () => {
     }
   };
 
-     //add10K
+     //add10K function
      const handle10kClick = (category: any) => {
       switch (category) {
         case "food":

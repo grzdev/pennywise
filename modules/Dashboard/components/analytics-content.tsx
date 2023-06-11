@@ -12,6 +12,10 @@ import {
   onSnapshot,
   addDoc,
   DocumentData,
+  doc,
+  updateDoc,
+  getDocs,
+  setDoc,
 } from "firebase/firestore";
 import { db } from 'config/firebase';
 import { RootState } from 'redux/store';
@@ -41,29 +45,29 @@ const AnalyticsContent = ({ className }: DateTimeProps) => {
   const deleteScheme = useColorModeValue("red","blue")
   const bgGradient = useColorModeValue("linear-gradient(to right, #162961, #3969b9)","linear-gradient(to right, #28355e, #4e67b6);")
 
-
+  const dispatch = useDispatch()
+  const toast = useToast()
   //Date
-  const [state, setState] = useState<DateTimeState>({
-    dateTime: new Date(),
-  });
+  // const [state, setState] = useState<DateTimeState>({
+  //   dateTime: new Date(),
+  // });
  
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setState({ dateTime: new Date() });
-    }, 1000);
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setState({ dateTime: new Date() });
+  //   }, 1000);
 
-    return () => {
-      clearInterval(interval);
-    };
-  }, []);
+  //   return () => {
+  //     clearInterval(interval);
+  //   };
+  // }, []);
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  const dateOptions: Intl.DateTimeFormatOptions = { weekday: 'long', month: 'long', day: 'numeric' };
-  const timeOptions: Intl.DateTimeFormatOptions = { hour: 'numeric', minute: 'numeric', second: 'numeric' };
+  // // eslint-disable-next-line react-hooks/exhaustive-deps
+  // const dateOptions: Intl.DateTimeFormatOptions = { weekday: 'long', month: 'long', day: 'numeric' };
+  // const timeOptions: Intl.DateTimeFormatOptions = { hour: 'numeric', minute: 'numeric', second: 'numeric' };
 
 
-  const [data, setData] = useState<DocumentData | null>(null);
-
+  //Firebase Collection
   // useEffect(() => {
   //   // Set up a query that listens for new documents added to the collection
   //   const dataCollection = collection(db, "test3");
@@ -79,9 +83,6 @@ const AnalyticsContent = ({ className }: DateTimeProps) => {
   //       }
   //     });
   //   });
-
-    
-
   //   // Add a new document to the collection
   //   const userData = {
   //     food: myObject.food,
@@ -93,61 +94,87 @@ const AnalyticsContent = ({ className }: DateTimeProps) => {
   //   };
   //   addDoc(dataCollection, userData);
   // }, [dateOptions, myObject.data, myObject.food, myObject.others, myObject.transfers, myObject.transit, state.dateTime]);
-  
 
-  const dispatch = useDispatch()
-  const toast = useToast()
+  //Delete Function
+  const handleDelete = (itemId: number) => {
+    dispatch(deleteItem(itemId))
+    toast({
+      title: 'Deleted',
+      position: 'top',
+      // description: "See you tomorrow.",
+      status: 'success',
+      duration: 5000,
+      isClosable: true,
+      // variant: "left-accent",
+    })
+  }
 
-    const handleDelete = (itemId: number) => {
-      dispatch(deleteItem(itemId))
+  //Redux selector
+  const items = useSelector((state: RootState) => state.number.items);
+  const sumOfCategoriesById: { [id: number]: number } = {};
+  const [editedItem, setEditedItem] = useState<Item | null>(null);
 
-      toast({
-        title: 'Deleted',
-        position: 'top',
-        // description: "See you tomorrow.",
-        status: 'success',
-        duration: 5000,
-        isClosable: true,
-        // variant: "left-accent",
-      })
+  items.forEach((item: Item) => {
+    const id = item.id || 0;
+    const sumOfCategories =
+      item.food + item.data + item.transit + item.transfers + item.others;
+
+    if (sumOfCategoriesById[id]) {
+      sumOfCategoriesById[id] += sumOfCategories;
+    } else {
+      sumOfCategoriesById[id] = sumOfCategories;
     }
-  
-    const items = useSelector((state: RootState) => state.number.items);
-    const sumOfCategoriesById: { [id: number]: number } = {};
-    const [editedItem, setEditedItem] = useState<Item | null>(null);
-  
-    items.forEach((item: Item) => {
-      const id = item.id || 0;
-      const sumOfCategories =
-        item.food + item.data + item.transit + item.transfers + item.others;
-  
-      if (sumOfCategoriesById[id]) {
-        sumOfCategoriesById[id] += sumOfCategories;
-      } else {
-        sumOfCategoriesById[id] = sumOfCategories;
-      }
-    });
+  });
 
-    const handleUpdateItem = (updatedItem: Item) => {
-      dispatch(updateItem(updatedItem));
-      setEditedItem(null); // Clear the edited item state
-
-      toast({
-        title: 'Edited',
-        position: 'top',
-        // description: "See you tomorrow.",
-        status: 'success',
-        duration: 5000,
-        isClosable: true,
-        // variant: "left-accent",
-      })
-    };
+  //Update function
+  const handleUpdateItem = async (updatedItem: Item) => {
+    dispatch(updateItem(updatedItem));
+    setEditedItem(null); // Clear the edited item state
+    toast({
+      title: 'Edited',
+      position: 'top',
+      // description: "See you tomorrow.",
+      status: 'success',
+      duration: 5000,
+      isClosable: true,
+      // variant: "left-accent",
+    })
     
-    const calculateSum = (item: Item) => {
-      return item.food + item.data + item.transit + item.transfers + item.others;
-    };
+    // Update the item in the Firebase collection
+    if (updatedItem.id) {
+      try {
+        const docRef = doc(db, "test5", updatedItem.id.toString());
+  
+        // Create an object with the updated data
+        const itemData = {
+          food: updatedItem.food,
+          data: updatedItem.data,
+          transit: updatedItem.transit,
+          transfers: updatedItem.transfers,
+          others: updatedItem.others,
+          date: updatedItem.date,
+          sum: updatedItem.sum,
+        };
+  
+        await setDoc(docRef, itemData);
+        console.log("Document updated successfully");
+      } catch (error) {
+        console.error("Error updating document: ", error);
+      }
+    } else {
+      console.error("Error updating document: Invalid item ID");
+    }
+  };
+  
+  //Sum
+  const calculateSum = (item: Item) => {
+    return item.food + item.data + item.transit + item.transfers + item.others;
+  };
+  
   return (
-    <Flex
+  
+    // Main div
+  <Flex
     flexDir="column"
   >
     <motion.div
@@ -333,12 +360,6 @@ const AnalyticsContent = ({ className }: DateTimeProps) => {
                             >
                               <TbCurrencyNaira/>
                             </Text>
-                            {/* {Object.keys(sumOfCategoriesById).map((id: string) => (
-                              <div key={id}>
-                                <p>{sumOfCategoriesById[parseInt(id)]}</p>
-                                <hr />
-                              </div>
-                            ))} */}
                             {calculateSum(item)}
                           </Td>
                         </Tr>
@@ -380,6 +401,7 @@ const AnalyticsContent = ({ className }: DateTimeProps) => {
     ))}
     </motion.div>
 
+      {/* Edit Modal */}
       {editedItem && (
         <Modal 
           isOpen onClose={() => setEditedItem(null)} 
