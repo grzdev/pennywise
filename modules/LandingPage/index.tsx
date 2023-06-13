@@ -196,8 +196,8 @@ const LandingPage = () => {
                  viewport={{ once: true }}
               >
                 <Heading
-                  size={["xl","xl","xl","2xl"]}
-                  w={["18rem", "17rem", "24rem", "35rem"]}
+                  size={["xl","xl","2xl","2xl"]}
+                  w={["18rem", "17rem", "30rem", "35rem"]}
                   noOfLines={[3,3,3,2]}
                   mt={["1rem","1rem","","0.1rem"]}
                   lineHeight={["3.5rem","3.5rem","4rem","4rem"]}

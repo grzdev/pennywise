@@ -46,7 +46,7 @@ const About = () => {
           ml={["", "", "", "12rem"]}
         >
           <VStack
-            mt={["5rem", "3rem", "7rem", "10rem"]}
+            mt={["3rem", "3rem", "3rem", "10rem"]}
           >
             <Flex
               ml={["","","","28rem"]}
@@ -95,33 +95,12 @@ const About = () => {
                 To help everyone better manage and track their finances.
               </Heading>
             </motion.div>
-
-              <motion.div
-                animate={{ y: 0 }}
-                initial={{ y: 150 }}
-                transition={{ duration: 1.1 }}
-              >
-                {/* <Text
-                  fontWeight={500}
-                  color={textColor}
-                  fontSize={["1.1rem", "1.1rem", "1.1rem", "1.3rem"]}
-                  mb={["0.4rem", "0.4rem", "0.4rem", "2.5rem"]}
-                  w={["18rem", "18rem", "22rem", "23.6rem"]}
-                  justifyContent="center"
-                  alignItems="center"
-                  textAlign={["center"]}
-                 fontFamily="'Ubuntu', sans-serif"
-                  mt={["","","","1rem"]}
-                >
-                  Take control of your finances with our budget feature.
-                </Text> */}
-              </motion.div>
           </VStack>
 
           <Box
               // ml={["0.2rem", "4rem", "3rem", "-1.8rem"]}
               w={["24rem", "24  rem", "50rem", "60rem"]}
-              mt={["1rem", "1rem", "-3rem", "-2rem"]}
+              mt={["-2rem", "1rem", "-5rem", "-2rem"]}
             >
               <motion.div
                 animate={{ y: 0 }}
@@ -140,7 +119,7 @@ const About = () => {
 
         <Flex
             flexDir={["column-reverse", "column-reverse", "column-reverse", "row"]}
-            mt={["3rem","3rem","1rem","1rem"]}
+            mt={["1rem","3rem","1rem","1rem"]}
             mb="12rem"
             bg={secondDivCOlor}
             overflow="hidden"

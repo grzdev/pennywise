@@ -113,7 +113,7 @@ const BudgetModule = () => {
       <Flex
         w={["21rem","21rem","34rem","30rem"]}
         bg= {divColor2}
-        h={["25rem","25rem","34rem","34rem"]}
+        h={["28rem","25rem","34rem","34rem"]}
         mt={["-1rem","-1rem","-1rem","4rem"]}
         boxShadow="lg"
         borderRadius="1rem 0 1rem 0"
@@ -131,7 +131,7 @@ const BudgetModule = () => {
             value={selectedOption}
             onChange={handleOptionChange}
             mb={4}
-            mt={["","","","1.5rem"]}
+            mt='1.5rem'
             bg={bgGradient2}
             border="none"
             fontWeight={600}
