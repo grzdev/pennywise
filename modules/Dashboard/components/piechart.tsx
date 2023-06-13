@@ -35,6 +35,7 @@ const InputPiechart = () => {
 
     //Redux selector
     const items = useSelector((state: RootState) => state.number.items);
+    const totalSum = useSelector((state: RootState) => state.number.totalSum);
 
     // Chart data
     const chartData = [
@@ -44,6 +45,8 @@ const InputPiechart = () => {
       { name: 'Transfers', value: 0 },
       { name: 'Others', value: 0 },
     ];
+  
+    // Calculate the values for each category in chartData
     items.forEach((item) => {
       chartData[0].value += item.food;
       chartData[1].value += item.data;
@@ -51,6 +54,7 @@ const InputPiechart = () => {
       chartData[3].value += item.transfers;
       chartData[4].value += item.others;
     });
+
     const COLORS = ['#8ab7ff', '#7190eb', '#5596ff', '#4666cd', '#2e6cd0'];
 
     // Sum

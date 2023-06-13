@@ -351,7 +351,7 @@ const InputModal = () => {
         whileHover={{ scale: 1.1 }}
         transition={{ type: "spring", stiffness: 200, damping: 10 }}
       >
-        {sumOfCategories === 0 ? (
+        {/* {sumOfCategories === 0 ? ( */}
           <Button
             w={["5rem","5rem","6rem","7rem"]}
             h={["3rem","2.8rem","3.2rem","3.8rem"]}
@@ -371,7 +371,7 @@ const InputModal = () => {
               <AddIcon/>
             </Text>
           </Button>
-         ) : (
+         {/* ) : (
           <Button
           w={["4rem","5rem","6rem","7rem"]}
           h={["2.8rem","2.8rem","3.2rem","3.8rem"]}
@@ -390,7 +390,7 @@ const InputModal = () => {
             <CheckIcon/>
           </Text>
         </Button>
-        )}
+        )} */}
         
       </motion.div>
         

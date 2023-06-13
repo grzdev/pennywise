@@ -27,7 +27,6 @@ import { useColorMode } from '@chakra-ui/react';
 import Head from 'next/head'
  import InputModal from '../components/input-modal';
  import { useDispatch, useSelector } from 'react-redux';
-//  import { RootState } from 'redux/store';
  import { selectMyObject } from "../../../redux/slices/dailyInputSlice"
  import { motion } from 'framer-motion';
  import InputPiechart from '../components/piechart';
@@ -128,6 +127,7 @@ const DashBoardLandingPage = ({ className }: DateTimeProps) => {
   const calculateSum = (item: Item) => {
     return item.food + item.data + item.transit + item.transfers + item.others;
   };
+  const totalSum = useSelector((state: RootState) => state.number.totalSum);
   
   return (
     <>
@@ -331,15 +331,16 @@ const DashBoardLandingPage = ({ className }: DateTimeProps) => {
                       size={["md","lg","lg","xl"]}
                       mt={["-0.01rem","0.1rem","-0.1rem",""]}
                     >
-                      {sumOfCategories === 0 ? (
+                      {totalSum === 0 ? (
                         <p>XXX</p>
                       ) : (
                         <p>
-                          {items.map((item: Item)=>(
+                          {/* {items.map((item: Item)=>(
                             <div key={item.id}>
                              {calculateSum(item)}
                             </div>
-                          ))}
+                          ))} */}
+                          {totalSum}
                         </p>
                       )} 
                     </Heading>
@@ -422,6 +423,8 @@ const MobileNav = () =>{
   const dateOptions: Intl.DateTimeFormatOptions = { weekday: 'short', month: 'long', day: 'numeric' };
   const timeOptions: Intl.DateTimeFormatOptions = { hour: 'numeric', minute: 'numeric', second: 'numeric' };
 
+  //Redux state
+  const totalSum = useSelector((state: RootState) => state.number.totalSum);
   const items = useSelector((state: RootState) => state.number.items);
   const sumOfCategories = items.reduce(
     (total, item) => total + item.food + item.data + item.transit + item.transfers + item.others,
@@ -487,15 +490,16 @@ const MobileNav = () =>{
             <Heading
               size="xl"
             >  
-              {sumOfCategories === 0 ? (
+              {totalSum === 0 ? (
                 <p>XXX</p>
               ) : (
                 <p>
-                  {items.map((item: Item)=>(
+                  {/* {items.map((item: Item)=>(
                     <div key={item.id}>
                      {calculateSum(item)}
                     </div>
-                  ))}
+                  ))} */}
+                  {totalSum}
                 </p>
               )}
             </Heading>
