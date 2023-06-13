@@ -131,7 +131,7 @@ const BudgetModule = () => {
             value={selectedOption}
             onChange={handleOptionChange}
             mb={4}
-            mt={["","","","1.5rem"]}
+            mt='1.5rem'
             bg={bgGradient2}
             border="none"
             fontWeight={600}
