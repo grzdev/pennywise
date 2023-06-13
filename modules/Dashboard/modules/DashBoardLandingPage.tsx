@@ -526,7 +526,7 @@ const MobileNav = () =>{
 
         <Flex
           mt="1.5rem"
-          ml="15.5rem"
+          ml="14rem"
         >
           <InputModal/>
         </Flex>

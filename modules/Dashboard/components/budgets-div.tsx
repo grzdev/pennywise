@@ -75,6 +75,7 @@ const BudgetDiv = ({id, category, amount, date, selectedDate }:  Expense) => {
     return date.toLocaleDateString('en-US', options);
   };
 
+//   Sorting of budgets
 
   return (
     <Flex
@@ -88,7 +89,7 @@ const BudgetDiv = ({id, category, amount, date, selectedDate }:  Expense) => {
         w={["18rem","18rem","25rem","24rem"]}
         h={["6.5rem","9rem","10rem","8.5rem"]}
         bg={ isDone ? bgGradient2 : bgGradient}
-        mt={["1.3rem","1.6rem","1.6rem","1.6rem"]}
+        mt={["1.3rem","1.6rem","1.6rem","1rem"]}
         mb="0.6rem"
         boxShadow="lg"
         borderRadius="1rem 0 1rem 0"
@@ -229,7 +230,7 @@ const BudgetDiv = ({id, category, amount, date, selectedDate }:  Expense) => {
                                         isChecked={isDone} 
                                         onChange={handleCheckboxChange}
                                     >
-                                        Done
+                                        Completed
                                     </Checkbox>
                                 </Flex>
                             </PopoverFooter>

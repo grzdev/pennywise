@@ -3,6 +3,7 @@ import {
   Container, 
   Flex, 
   Heading, 
+  Select, 
   Slider, 
   SliderFilledTrack, 
   SliderThumb, 
@@ -10,7 +11,7 @@ import {
   Text, 
   useColorModeValue
 } from '@chakra-ui/react'
-import React from 'react'
+import React, { useState } from 'react'
 import Head from "next/head"
 import { AddIcon } from "@chakra-ui/icons"
 import { TbCurrencyNaira } from 'react-icons/tb'
@@ -27,16 +28,43 @@ interface Expense {
   category: string;
   amount: number;
   date: string;
+  isDone: boolean;
 }
 
 const BudgetModule = () => {
   //ColorMode
   const bgGradient = useColorModeValue("linear-gradient(to right, #162961, #3969b9)","linear-gradient(to right, #28355e, #4e67b6);")
   const divColor2 = useColorModeValue("white", "#222636")
+  const optionColor = useColorModeValue("black","white")
+  const bgGradient2 = useColorModeValue("linear-gradient(to right, #acb6e5, #86fde8);","linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%)")
 
 
   //Redux state
   const expense = useSelector(selectExpense)
+  const [selectedOption, setSelectedOption] = useState('all');
+
+  //Sort budgets
+  const sortedExpenses = expense.slice().filter((budget) => {
+    if (selectedOption === 'checked') {
+      return budget.isDone;
+    } else if (selectedOption === 'unchecked') {
+      return !budget.isDone;
+    } else {
+      return true; // Show all expenses
+    }
+  }).sort((a, b) => {
+    if (selectedOption === 'all') {
+      // Sort by isDone and original index
+      return a.isDone === b.isDone ? 0 : a.isDone ? 1 : -1;
+    } else {
+      // Sort only by isDone
+      return a.isDone === b.isDone ? 0 : a.isDone ? -1 : 1;
+    }
+  });
+
+  const handleOptionChange = (event: { target: { value: React.SetStateAction<string> } }) => {
+    setSelectedOption(event.target.value);
+  };
 
   return (
     <>
@@ -96,11 +124,43 @@ const BudgetModule = () => {
           // overflowX="hidden"
         alignItems="center"
       >
+        <Flex
+
+        >
+          <Select
+            value={selectedOption}
+            onChange={handleOptionChange}
+            mb={4}
+            mt={["","","","1.5rem"]}
+            bg={bgGradient2}
+            border="none"
+            fontWeight={600}
+            color={optionColor}
+            
+          >
+            <option 
+              value="all" 
+            >
+              All Budgets
+            </option>
+            <option 
+              value="checked" 
+            >
+             Completed
+            </option>
+            <option 
+              value="unchecked" 
+            >
+              Incomplete
+            </option>
+          </Select>
+        </Flex>
+
         {expense && expense.length > 0 ? (
           <Flex
             flexDir="column"
           >
-            {expense.map((budget) => (
+            {sortedExpenses.map((budget) => (
               <BudgetDiv
                 key={budget.id}
                 id={budget.id}

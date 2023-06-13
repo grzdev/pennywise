@@ -78,8 +78,8 @@ const InputPiechart = () => {
           mb={["-1.9rem","-1.9rem","-3.7rem","-3.5rem"]}
           >
             <Heading
-              mt={["2rem","2rem","3.7rem","2.3rem"]}
-              size={["sm","xs","sm","md"]}
+              mt={["1.2rem","2rem","3rem","2rem"]}
+              size={["sm","xs","md","md"]}
               color={textColor}
             >
               What did you spend on today?
@@ -98,7 +98,7 @@ const InputPiechart = () => {
         </motion.div>
       ) : (
         <Box
-          mt={["-1rem","","",""]}
+          mt={["-1rem","-1rem","0.1rem","0.1rem"]}
         >
           <PieChart width={350} height={290}>
             <Pie

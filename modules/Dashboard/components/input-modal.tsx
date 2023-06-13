@@ -353,14 +353,15 @@ const InputModal = () => {
       >
         {sumOfCategories === 0 ? (
           <Button
-            w={["4rem","5rem","6rem","7rem"]}
-            h={["2.8rem","2.8rem","3.2rem","3.8rem"]}
+            w={["5rem","5rem","6rem","7rem"]}
+            h={["3rem","2.8rem","3.2rem","3.8rem"]}
             borderRadius="1rem 0 1rem 0"
             bg={button}
             _hover={{
             bg: "#718aff"
             }}
             onClick={modal1.onOpen}
+            boxShadow="lg"
           >
             <Text
               color={addIcon} 
