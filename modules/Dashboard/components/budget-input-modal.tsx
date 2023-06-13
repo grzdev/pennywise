@@ -384,7 +384,7 @@ const   BudgetModal = ( {id}:  Expense) => {
             >
               {/* Date Input */}
               <Input
-                type="date"
+                type="datetime-local"
                 id="date-input"
                 size="lg"
                 w={["11.5rem","11.5rem","12rem","12rem"]}

@@ -60,7 +60,7 @@ const Navbar = () => {
       <Flex
         flex={{ base: 1, md: 'auto' }}
         ml={{ base: "-0.2rem" }}
-        mt={{ base: "0.8rem" }}
+        mt={{ base: "0.6rem" }}
         display={{ base: 'flex', md: 'none' }}
       >
         <IconButton
