@@ -128,6 +128,9 @@ const DashBoardLandingPage = ({ className }: DateTimeProps) => {
     return item.food + item.data + item.transit + item.transfers + item.others;
   };
   const totalSum = useSelector((state: RootState) => state.number.totalSum);
+  const formatNumber = (number: number): string => {
+    return number.toLocaleString();
+  };
   
   return (
     <>
@@ -323,7 +326,7 @@ const DashBoardLandingPage = ({ className }: DateTimeProps) => {
                   >
                     <Heading
                       size={["lg","xl","xl","2xl"]}
-                      mr="-0.1rem"
+                      mr="-0.3rem"
                     >
                       <TbCurrencyNaira/>
                     </Heading>
@@ -335,12 +338,7 @@ const DashBoardLandingPage = ({ className }: DateTimeProps) => {
                         <p>XXX</p>
                       ) : (
                         <p>
-                          {/* {items.map((item: Item)=>(
-                            <div key={item.id}>
-                             {calculateSum(item)}
-                            </div>
-                          ))} */}
-                          {totalSum}
+                          {formatNumber(totalSum)}
                         </p>
                       )} 
                     </Heading>
@@ -425,6 +423,10 @@ const MobileNav = () =>{
 
   //Redux state
   const totalSum = useSelector((state: RootState) => state.number.totalSum);
+  const formatNumber = (number: number): string => {
+    return number.toLocaleString();
+  };
+  
   const items = useSelector((state: RootState) => state.number.items);
   const sumOfCategories = items.reduce(
     (total, item) => total + item.food + item.data + item.transit + item.transfers + item.others,
@@ -494,12 +496,7 @@ const MobileNav = () =>{
                 <p>XXX</p>
               ) : (
                 <p>
-                  {/* {items.map((item: Item)=>(
-                    <div key={item.id}>
-                     {calculateSum(item)}
-                    </div>
-                  ))} */}
-                  {totalSum}
+                  {formatNumber(totalSum)}
                 </p>
               )}
             </Heading>

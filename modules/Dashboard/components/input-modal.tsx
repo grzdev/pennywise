@@ -110,8 +110,8 @@ const InputModal = () => {
     toast({
       title: 'Done',
       position: 'top',
-      description: "See you tomorrow.",
-      status: 'info',
+      // description: "See you tomorrow.",
+      status: 'success',
       duration: 5000,
       isClosable: true,
       // variant: "left-accent",
@@ -134,7 +134,7 @@ const InputModal = () => {
 
      // Save data to Firebase collection
     try {
-      const docRef = await addDoc(collection(db, "test5"), newItem);
+      const docRef = await addDoc(collection(db, "userData"), newItem);
       console.log("Document written with ID: ", docRef.id);
     } catch (error) {
       console.error("Error adding document: ", error);

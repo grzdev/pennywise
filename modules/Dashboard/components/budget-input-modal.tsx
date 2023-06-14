@@ -127,7 +127,7 @@ const   BudgetModal = ( {id}:  Expense) => {
 
       // Add the expense document to the Firestore collection
       try {
-        const docRef = await addDoc(collection(db, "budgetTest"), newExpense);
+        const docRef = await addDoc(collection(db, "budgetData"), newExpense);
         console.log("Expense document added with ID: ", docRef.id);
       } catch (error) {
         console.error("Error adding expense document: ", error);
@@ -148,6 +148,9 @@ const   BudgetModal = ( {id}:  Expense) => {
     modal2.onClose()
     modal3.onClose()
     modal4.onClose()
+
+    setCategory("")
+    setAmount(0)
   }
 
   return (
@@ -384,7 +387,7 @@ const   BudgetModal = ( {id}:  Expense) => {
             >
               {/* Date Input */}
               <Input
-                type="datetime-local"
+                type="date"
                 id="date-input"
                 size="lg"
                 w={["11.5rem","11.5rem","12rem","12rem"]}
