@@ -167,9 +167,9 @@ const DashBoardLandingPage = ({ className }: DateTimeProps) => {
               fontSize={["0.8rem","0.8rem","1rem","1rem"]}
             >
               {/* What did you spend on today? */}
-              {timeOfDay === "morning" && <h1>Good morning, have a productive day ⛅</h1>}
+              {timeOfDay === "morning" && <h1>Have a productive day ⛅</h1>}
               {timeOfDay === "afternoon" && <h1>Wash your hands, its lunch time 🍲!</h1>}
-              {timeOfDay === "evening" && <h1>Have a good evening ✨</h1>}
+              {timeOfDay === "evening" && <h1>Enjoy your evening ✨</h1>}
             </Text>
           </Flex>
 

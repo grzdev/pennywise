@@ -179,7 +179,7 @@ const BudgetModule = () => {
           >
             <Flex
               w={["","","",""]}
-              mt={["2rem","2rem","2rem","3rem"]}
+              mt={["1rem","1rem","-1.8rem","-1rem"]}
               ml={["2rem","2rem","2rem","2rem"]}
             >
               <Image
