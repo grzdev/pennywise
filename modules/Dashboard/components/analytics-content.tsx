@@ -240,7 +240,7 @@ const AnalyticsContent = ({ className }: DateTimeProps) => {
                             >
                               <TbCurrencyNaira/>
                             </Text>
-                          {item.food}
+                            {formatNumber(item.food)}
                           </Td>
                         </Tr>
                         <Tr>
@@ -255,7 +255,7 @@ const AnalyticsContent = ({ className }: DateTimeProps) => {
                             >
                               <TbCurrencyNaira/>
                             </Text>
-                          {item.transit}
+                            {formatNumber(item.transit)}
                           </Td>
                         </Tr>
                         <Tr>
@@ -270,7 +270,7 @@ const AnalyticsContent = ({ className }: DateTimeProps) => {
                             >
                               <TbCurrencyNaira/>
                             </Text>
-                          {item.data}
+                            {formatNumber(item.data)}
                           </Td>
                         </Tr>
                         <Tr>
@@ -285,7 +285,7 @@ const AnalyticsContent = ({ className }: DateTimeProps) => {
                             >
                               <TbCurrencyNaira/>
                             </Text>
-                          {item.transfers}
+                            {formatNumber(item.transfers)}
                           </Td>
                         </Tr>
                         <Tr>
@@ -300,7 +300,7 @@ const AnalyticsContent = ({ className }: DateTimeProps) => {
                             >
                               <TbCurrencyNaira/>
                             </Text>
-                          {item.others}
+                            {formatNumber(item.others)}
                           </Td>
                         </Tr>
                         <Tr
