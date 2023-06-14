@@ -47,53 +47,6 @@ const AnalyticsContent = ({ className }: DateTimeProps) => {
 
   const dispatch = useDispatch()
   const toast = useToast()
-  //Date
-  // const [state, setState] = useState<DateTimeState>({
-  //   dateTime: new Date(),
-  // });
- 
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     setState({ dateTime: new Date() });
-  //   }, 1000);
-
-  //   return () => {
-  //     clearInterval(interval);
-  //   };
-  // }, []);
-
-  // // eslint-disable-next-line react-hooks/exhaustive-deps
-  // const dateOptions: Intl.DateTimeFormatOptions = { weekday: 'long', month: 'long', day: 'numeric' };
-  // const timeOptions: Intl.DateTimeFormatOptions = { hour: 'numeric', minute: 'numeric', second: 'numeric' };
-
-
-  //Firebase Collection
-  // useEffect(() => {
-  //   // Set up a query that listens for new documents added to the collection
-  //   const dataCollection = collection(db, "test3");
-  //   const queryRef = query(
-  //     dataCollection,
-  //     where("date", "==", state.dateTime.toLocaleDateString("en-US", dateOptions))
-  //   );
-  //   const unsubscribe = onSnapshot(queryRef, (snapshot) => {
-  //     snapshot.docChanges().forEach((change) => {
-  //       if (change.type === "added") {
-  //         setData(change.doc.data() ?? null);
-  //         unsubscribe();
-  //       }
-  //     });
-  //   });
-  //   // Add a new document to the collection
-  //   const userData = {
-  //     food: myObject.food,
-  //     transit: myObject.transit,
-  //     data: myObject.data,
-  //     transfers: myObject.transfers,
-  //     others: myObject.others,
-  //     date: state.dateTime.toLocaleDateString("en-US", dateOptions),
-  //   };
-  //   addDoc(dataCollection, userData);
-  // }, [dateOptions, myObject.data, myObject.food, myObject.others, myObject.transfers, myObject.transit, state.dateTime]);
 
   //Delete Function
   const handleDelete = (itemId: number) => {
@@ -143,7 +96,7 @@ const AnalyticsContent = ({ className }: DateTimeProps) => {
     // Update the item in the Firebase collection
     if (updatedItem.id) {
       try {
-        const docRef = doc(db, "test5", updatedItem.id.toString());
+        const docRef = doc(db, "userData", updatedItem.id.toString());
   
         // Create an object with the updated data
         const itemData = {
@@ -169,6 +122,10 @@ const AnalyticsContent = ({ className }: DateTimeProps) => {
   //Sum
   const calculateSum = (item: Item) => {
     return item.food + item.data + item.transit + item.transfers + item.others;
+  };
+
+  const formatNumber = (number: number): string => {
+    return number.toLocaleString();
   };
   
   return (
@@ -201,7 +158,7 @@ const AnalyticsContent = ({ className }: DateTimeProps) => {
         >
           <Flex>
             <Heading
-              size={["","","md","md"]}
+              size={["","","sm","md"]}
               mr={["1rem","","2rem",""]}
               ml={["","","1.5rem",""]}
               color="white"
@@ -235,11 +192,11 @@ const AnalyticsContent = ({ className }: DateTimeProps) => {
                 <TbCurrencyNaira/> 
               </Heading>
                   <Heading
-                    size={["","","lg","lg"]}
+                    size={["","","md","lg"]}
                     display={{ base: 'none', md: 'block' }}
                     color="white" 
                   >
-                    {calculateSum(item)}
+                    {formatNumber(calculateSum(item))}
                   </Heading>
               <Popover
                 isLazy

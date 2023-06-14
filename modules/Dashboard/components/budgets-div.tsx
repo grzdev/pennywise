@@ -76,6 +76,10 @@ const BudgetDiv = ({id, category, amount, date, selectedDate }:  Expense) => {
   };
 
 //   Sorting of budgets
+    const formatNumber = (number: number): string => {
+    return number.toLocaleString();
+  };
+
 
   return (
     <Flex
@@ -138,12 +142,12 @@ const BudgetDiv = ({id, category, amount, date, selectedDate }:  Expense) => {
                             <TbCurrencyNaira/>
                         </Heading>
                         <Heading
-                        size={["sm","sm","md","md"]}
-                        textDecor={isDone ? "line-through" : "none"}
-                        color={isDone? defaultGradient : "default"}
-                        mt={["0.12rem","0.12rem","0.2rem","0.2rem"]}
+                            size={["sm","sm","md","md"]}
+                            textDecor={isDone ? "line-through" : "none"}
+                            color={isDone? defaultGradient : "default"}
+                            mt={["0.12rem","0.12rem","0.2rem","0.2rem"]}
                         >
-                            {amount}
+                            {formatNumber(amount)}
                         </Heading>
                     </Flex>
                     
