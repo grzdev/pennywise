@@ -149,7 +149,7 @@ const Footer = () => {
         Damilola Oyeniyi 
         </Text>
       </Flex>
-      <Flex
+      {/* <Flex
         flexDir="row"
         gap={["0.9rem","0.9rem","1.1rem","1.2rem"]}
       >
@@ -193,7 +193,7 @@ const Footer = () => {
             <AiFillInstagram/>
           </Text>
         </Link>
-      </Flex>
+      </Flex> */}
     </Flex>
   </Flex>
 )
